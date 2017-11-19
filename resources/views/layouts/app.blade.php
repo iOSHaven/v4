@@ -37,9 +37,14 @@
     </div>
     <div id="app">
 
-      <sidebar color="#F44336" title="{{ config('app.name', 'Laravel') }}">
+      <sidebar color="#F44336" is-admin="{{Auth::check() && Auth::user()->isAdmin}}" title="{{ config('app.name', 'Laravel') }}">
         <a href="/profile" slot="links" class="mr-5">
+          @if(Auth::check())
           <square-button icon="fas fa-user" class="fill--white dark"/>
+          @else
+          <square-button icon="fas fa-sign-in" class="fill--white dark"/>
+          @endif
+
         </a>
         <!-- <a href="/auth" slot="links"><i class="fas fa-user"></i></a> -->
         <div slot="content">

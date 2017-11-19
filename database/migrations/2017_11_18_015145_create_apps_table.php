@@ -22,11 +22,12 @@ class CreateAppsTable extends Migration
             $table->string('unsigned')->nullable();
             $table->string('signed')->nullable();
             $table->string('version')->nullable();
-            $table->text('description')->nullable();
+            $table->string('short', 18)->nullable();
+            $table->text('description');
             $table->string('tags')->nullable();
-            $table->integer('views')->default(0);
-            $table->integer('downloads')->default(0);
-            $table->integer('size')->default(0);
+            $table->bigInteger('views')->default(0);
+            $table->bigInteger('downloads')->default(0);
+            $table->bigInteger('size')->default(0);
             $table->softDeletes();
             $table->timestamps();
         });

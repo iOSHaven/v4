@@ -39,13 +39,13 @@ export const mutations = {
 
   },
 
-  // remove (state, val) {
-  //   let i = state.apps.findIndex(app => {
-  //     return app.uid === val.uid
-  //   })
-  //   state.apps.splice(i, 1)
-  //   this.$axios.post('/apps/remove', {_id: val._id})
-  // },
+  'app:remove' (state, val) {
+    let i = state.apps.findIndex(app => {
+      return app.uid === val.uid
+    })
+    state.apps.splice(i, 1)
+    axios.post('/app/remove', {uid: val.uid})
+  },
 
   'app:save' (state) {
     let i

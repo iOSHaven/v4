@@ -22,4 +22,8 @@ class App extends Model
                          'version',
                          'size'];
   protected $hidden = ['id'];
+
+  public static function findByUid ($uid) {
+    return App::where('uid', $uid)->firstOrFail();
+  }
 }

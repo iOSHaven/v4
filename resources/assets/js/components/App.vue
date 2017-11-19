@@ -24,26 +24,14 @@ export default {
     }
   },
   methods: {
-    resizeSquare () {
-      let d = this.$refs.image
-      d.style['padding'] = '0px'
-      let h = d.clientHeight
-      d.style.flex = 'none'
-      this.$refs.image.style['padding'] = h + 'px'
-    },
     remove (e) {
+      // prevent default so it doesn't take you to the app page.
       e.preventDefault()
-      this.$store.commit('apps/remove', {
-        uid: this.data.uid,
-        _id: this.data._id
+      this.$store.commit('app:remove', {
+        uid: this.data.uid
       })
       this.$emit('removed')
     }
-  },
-  mounted () {
-    console.log('app mounted');
-    // this.resizeSquare()
-    // window.addEventListener('resize', this.resizeSquare)
   }
 }
 </script>
@@ -74,6 +62,8 @@ export default {
     top: 100%;
 }
 .image {
+  width: 0;
+  height: 0;
   padding: 2rem;
   background-position: center;
   background-size: contain;

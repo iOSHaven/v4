@@ -13,28 +13,51 @@ class AppController extends Controller
       return view('apps');
     }
 
-    public function create (Request $request) {
+    public function create (Request $request)
+    {
       $app = new App;
       $app->uid = str_random(5);
+      $app->description = "No description";
       $app->save();
       return response()->json($app);
     }
 
-    public function update (Request $request) {
-      $app = App::where('uid', $request->uid)->firstOrFail();
+    public function remove(Request $request)
+    {
+      $app = App::findByUid($request->uid);
+      $app->delete();
+      return response()->json(App::get());
+    }
+
+    public function update (Request $request)
+    {
+      $app = App::findByUid($request->uid);
       $app->update($request->all());
       return response()->json($app);
     }
 
-    public function get ($uid) {
-      $app = App::where('uid', $uid)->firstOrFail();
+    public function get ($uid)
+    {
       $p = new Parsedown;
+      $app = App::findByUid($uid);
+      $app->increment('views');
       $app->html = $p->text($app->description);
       return view('uid')->with(['app' => $app]);
     }
 
-    public function getJson($uid = null) {
-      if ($uid) return response()->json(App::where('uid', $uid)->firstOrFail());
+    public function getJson($uid = null)
+    {
+      if ($uid) return response()->json(App::findByUid($uid));
       return response()->json(App::get());
+    }
+
+    public function install($uid)
+    {
+      $app = App::findByUid($uid);
+      if ($app->signed) {
+        $app->increment('downloads');
+        return redirect($app->signed);
+      }
+      else abort(404);
     }
 }

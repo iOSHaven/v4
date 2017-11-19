@@ -19,8 +19,14 @@ Auth::routes();
 
 Route::get('/profile', 'HomeController@index')->name('profile');
 Route::any('/auth/toggleEditing', 'HomeController@toggleEditing');
+
 Route::any('/app/create', 'AppController@create');
-Route::any('/app/update', 'AppController@update');
 Route::get('/app/{uid}', 'AppController@get');
+Route::any('/app/update', 'AppController@update');
+Route::any('/app/remove', 'AppController@remove');
+
+Route::get('/install/{uid}', 'AppController@install');
+Route::get('/download/{uid}', 'AppController@download');
+
 Route::get('/apps/getJson/{uid?}', 'AppController@getJson');
 Route::get('/apps', 'AppController@page')->name('apps');

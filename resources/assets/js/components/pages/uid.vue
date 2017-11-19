@@ -5,36 +5,52 @@
     <div class="card" v-if="!!auth.isEditing">
       <div class="field">
         <div class="h5 mb-5">Name</div>
-        <input type="text" v-model="app.name" class="fancy">
+        <input type="text" v-model="app.name" class="fancy" maxlength="255">
       </div>
       <div class="field">
         <div class="h5 mb-5">Version</div>
-        <input type="text" v-model="app.version" class="fancy">
+        <input type="text" v-model="app.version" class="fancy" maxlength="7">
+      </div>
+      <div class="field">
+        <div class="h5 mb-5">Size (in bytes)</div>
+        <input type="text" v-model.number="app.size" class="fancy" maxlength="20">
       </div>
       <div class="field">
         <div class="h5 mb-5">Icon</div>
-        <input type="text" v-model="app.icon" class="fancy">
+        <input type="text" v-model="app.icon" class="fancy" maxlength="255">
       </div>
       <div class="field">
         <div class="h5 mb-5">Banner</div>
-        <input type="text" v-model="app.banner" class="fancy">
+        <input type="text" v-model="app.banner" class="fancy" maxlength="255">
+      </div>
+      <div class="field">
+        <div class="h5 mb-5">Short Description (max: 18)</div>
+        <input type="text" v-model="app.short" class="fancy" maxlength="18">
       </div>
       <div class="field">
         <div class="h5 mb-5">Description</div>
-        <textarea rows="8" v-model="app.description" class="fancy"></textarea>
+        <textarea rows="8" v-model="app.description" class="fancy" maxlength="65000"></textarea>
         <!-- <editor @save="saveDescription"/> -->
       </div>
       <div class="field">
         <div class="h5 mb-5">Unsigned</div>
-        <input type="text" v-model="app.unsigned" class="fancy">
+        <input type="text" v-model="app.unsigned" class="fancy" maxlength="255">
       </div>
       <div class="field">
         <div class="h5 mb-5">Signed</div>
-        <input type="text" v-model="app.signed" class="fancy">
+        <input type="text" v-model="app.signed" class="fancy" maxlength="255">
+      </div>
+      <div class="field">
+        <div class="h5 mb-5">Unsigned Premium</div>
+        <input type="text" v-model="app.unsigned_premium" class="fancy" maxlength="255">
+      </div>
+      <div class="field">
+        <div class="h5 mb-5">Signed Premium</div>
+        <input type="text" v-model="app.signed_premium" class="fancy" maxlength="255">
       </div>
       <div class="field">
         <div class="h5 mb-5">Tags</div>
-        <input type="text" v-model="app.tags" class="fancy">
+        <input type="text" v-model="app.tags" class="fancy" maxlength="255">
       </div>
     </div>
 
