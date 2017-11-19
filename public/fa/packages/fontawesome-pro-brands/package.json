@@ -1,0 +1,9 @@
+{
+  "main": "index.js",
+  "module": "index.es.js",
+  "repository": "https://github.com/FortAwesome/Font-Awesome-Pro",
+  "jsnext:main": "index.es.js",
+  "license": "MIT",
+  "version": "0.0.19",
+  "name": "@fortawesome/fontawesome-pro-brands"
+}

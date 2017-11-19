@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Getting Started - Font Awesome 5</title>
+
+    <script defer src="../js/packs/light.min.js"></script>
+    <script defer src="../js/packs/regular.min.js"></script>
+    <script defer src="../js/packs/solid.min.js"></script>
+    <script defer src="../js/packs/brands.min.js"></script>
+    <script defer src="../js/fontawesome.min.js"></script>
+
+    <noscript>
+      <link rel="stylesheet" href="../css/fontawesome-pro-core.css">
+      <link rel="stylesheet" href="../css/fontawesome-pro-solid.css">
+      <link rel="stylesheet" href="../css/fontawesome-pro-regular.css">
+      <link rel="stylesheet" href="../css/fontawesome-pro-light.css">
+      <link rel="stylesheet" href="../css/fontawesome-pro-brands.css">
+    </noscript>
+
+    <!-- font awesome team specific styling. ignore/replace with your own -->
+    <script src="https://use.fortawesome.com/349cfdf6.js"></script>
+    <link rel="stylesheet" href="https://static.fontawesome.com/css/fontawesome-app.css">
+    <link rel="stylesheet" href="https://static.fontawesome.com/css/fontawesome-prism.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.6.0/components/prism-markup.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        _.forEach(document.querySelectorAll('[data-example-container]'), function (example) {
+          var exampleContainer = document.getElementById(example.getAttribute('data-example-container'))
+          var indentLevel = example.innerHTML.indexOf('<')
+          var exampleCode = example.innerHTML.split('\n').map(function (e) { return e.slice(indentLevel - 1) }).join('\n')
+    
+          exampleContainer.innerHTML = '<div class="pa3 pre"><code class="mt0" style="color: #afafaf;">' + Prism.highlight(exampleCode, Prism.languages.markup).trim() + '</code></div>'
+        })
+    
+        _.forEach(document.querySelectorAll('[data-highlight]'), function (element) {
+          var indentLevel = element.innerHTML.indexOf('&lt;')
+          var exampleCode = _.unescape(element.innerHTML.split('\n').map(function (e) { return e.slice(indentLevel - 1) }).join('\n'))
+    
+          element.innerHTML = '<div class="pre"><code class="mt0">' + Prism.highlight(exampleCode, Prism.languages.markup).trim() + '</code></div>'
+        })
+      })
+    </script>
+  </head>
+
+  <body class="no-js min-vh-100 bg-gray1 gray7 ma0">
+    <div class="w-100" id="page-top">
+      <div class="mw9 center overflow-auto relative bg-near-white flex flex-column min-vh-100 shadow-wrap">
+        <div class="w-100 flex-grow-1 flex-shrink-none flex-basis-auto flex flex-column flex-row-ns flex-nowrap-ns">
+          <div class="bg-gray8 ph4 ph6-ns pv6 w-third-ns w-20-l br bw2 b--black-10 relative">
+            <h1 class="mt0 mb6 f4 tc">
+              <a href="https://fontawesome.com/" class="link white dib">
+                <i class="fa5 fa5-2x fa5-logo-o dib v-mid mr2 mr0-ns db-ns mb2-ns hover-blue4 link"></i>
+                <span class="f5 f4-m f5-l f5-xl fw6 sans-serif db-ns">Font Awesome</span>
+              </a>
+            </h1>
+            
+            <nav>
+              <a href="index.html" class="db link blue4 tc-ns f3 mb4 bb bw1 b--white-05 pb4">
+                <span class="dib v-mid db-ns mb2-ns mr2 mr0-ns "><i class="fa5 fa5-flag-r fa5-lg"></i></span>
+                <span class="fw6">Getting Started</span>
+              </a>
+              <a href="../docs/inventory.html" class="db link white o-80 glow tc-ns f3 mb4 bb bw1 b--white-05 pb4">
+                <span class="dib v-mid db-ns mb2-ns mr2 mr0-ns o-40"><i class="fa5 fa5-book-r fa5-lg"></i></span>
+                <span class="fw6">All Icons</span>
+              </a>
+              <a href="../docs/recent.html" class="db link white o-80 glow tc-ns f3 mb4 bb bw1 b--white-05 pb4">
+                <span class="dib v-mid db-ns mb2-ns mr2 mr0-ns o-40"><i class="fa5 fa5-clock-r fa5-lg"></i></span>
+                <span class="fw6">Recently Added</span>
+              </a>
+              <a href="../docs/svg-framework.html" class="db link white o-80 glow tc-ns f3 mb4 bb bw1 b--white-05 pb4">
+                <span class="dib v-mid db-ns mb2-ns mr2 mr0-ns o-40"><i class="fa5 fa5-magic-r fa5-lg"></i></span>
+                <span class="fw6">SVG Framework</span>
+              </a>
+              <a href="../docs/svg-sprite.html" class="db link white o-80 glow tc-ns f3 mb4 bb bw1 b--white-05 pb4">
+                <span class="dib v-mid db-ns mb2-ns mr2 mr0-ns o-40"><i class="fa5 fa5-th-r fa5-lg"></i></span>
+                <span class="fw6">SVG Sprites</span>
+              </a>
+              <a href="../docs/webfont.html" class="db link white o-80 glow tc-ns f3 mb4 bb bw1 b--white-05 pb4">
+                <span class="dib v-mid db-ns mb2-ns mr2 mr0-ns o-40"><i class="fa5 fa5-font-r fa5-lg"></i></span>
+                <span class="fw6">Web Font</span>
+              </a>
+            
+              <a href="https://github.com/FortAwesome/Font-Awesome-Pro/tree/master/packages/fontawesome" target="_blank" class="db link white o-80 glow tc-ns f3 mb4 bb bw1 b--white-05 pb4">
+                <span class="dib fw8 v-mid db-ns mb2-ns mr2 mr0-ns o-40"><i class="fa5 fa5-npm fa5-2x"></i>
+            </span>
+                <span class="fw6">npm Package</span>
+              </a>
+              <a href="https://github.com/FortAwesome/Font-Awesome-Pro" target="_blank" class="db link white o-80 glow tc-ns f3">
+                <span class="dib v-mid db-ns mb2-ns mr2 mr0-ns o-40"><i class="fa5 fa5-github fa5-2x"></i></span>
+                <span class="fw6">GitHub Project</span>
+              </a>
+            </nav>
+            
+            <a href="#page-top" class="dn db-ns link o-20 glow white glow fixed bottom--1 right-1 bg-blue br3 br--top pa3 pb4 z-2">
+                <span data-balloon="Top of the page" data-balloon-pos="left"><i class="fa5 fa5-arrow-to-top-r"></i></span>
+            </a>
+          </div>
+
+          <div class="w-80-l">
+            <div role="alert" class="dt w-100 relative bb bw2 b--warning2 bg-warning1">
+              <div class="dtc v-mid w-1 pv4 pl4 pl6-ns warning5 tc">
+                <i class="fa5 fa5-exclamation-triangle fa5-2x" aria-hidden="true"></i>
+              </div>
+              <div class="dtc v-mid pa4 br--right br2">
+                <p class="mv0 lh-copy"><strong class="fw7">Psst! These demos are for you, an official Supporter. Please don't distribute them to the general public</strong>.</p>
+              </div>
+            </div>
+
+            <div class="ph4 ph6-ns pv6">
+
+              <h1 class="mt0 mb4 b f6">Getting Started with Font Awesome 5</h1>
+
+              <p class="mt0 mb3 mb6-ns lh-copy f4 gray7">Hey, thanks for supporting Font Awesome 5 and downloading a copy of our working project! The files in this folder are meant to serve as demos which show off all of the redesigned icons as well as how to use them.</p>
+
+              <div class="mb4">
+                <h2 class="mt0 mb3 f4 fw6 gray7 vf">How to Use</h2>
+                <p class="lh-copy mv0">From the beginning Font Awesome has always focused on making things easy for you. With version 5 we've completely re-thought how we do things. We're introducing the new JavaScript-based SVG Framework and also including an SVG sprite for each style. Here are all of your options.</p>
+              </div>
+
+              <div class="flex flex-row flex-nowrap items-stretch justify-center nl4 nr4">
+                <div class="bg-white w-third br2 ba b--black-10 pa4 pr5 relative right--1">
+                  <h3 class="mt0 mb2 fw6 f4">
+                    <a class="link blue4 underline-hover hover-blue" href="#webfont">Web Fonts</a>
+                  </h3>
+
+                  <p class="lh-copy mv0 fw6">The same battle-tested and reliable way Font Awesome has worked <a class="link blue4 underline-hover hover-blue" href="https://github.com/FortAwesome/Font-Awesome/commit/16a35a28d380b564c6080512d2e94fc18624c09d">from the beginning</a>.</p>
+
+                  <hr class="bg-transparent bt bl br bw1 b--gray0 pa0 mv3">
+
+                  <ul class="list mv0 ml4 mr0 pa0 lh-copy fa5-ul">
+                    <li class="mb3"><i class="fa5-li fa5 fa5-dot-circle-r gray4"></i>You want to stick with same technique FA 4 uses (and need IE9 support)</li>
+                    <li class="mb3"><i class="fa5-li fa5 fa5-dot-circle-r gray4"></i>You aren't quite ready for SVG icons and don't mind web fonts</li>
+                    <li class="mb3"><i class="fa5-li fa5 fa5-dot-circle-r gray4"></i>You need the most rock-solid low-risk way to use icons</li>
+                    <li class=""><i class="fa5-li fa5 fa5-dot-circle-r gray4"></i>The prospect of using JavaScript doesn't sound appealing</li>
+                  </ul>
+                </div>
+
+                <div class="bg-white shadow-2 w-third br2 ba b--blue4 pa4 z-2 scale3">
+                  <h3 class="mt0 mb2 fw6 f4">
+                    <a class="link blue4 underline-hover hover-blue" href="#svg-framework">SVG Framework</a>
+                  </h3>
+
+                  <p class="lh-copy mv0 fw6">Uses the ridiculously flexible and powerful scalable vector graphics format (SVG).</p>
+
+                  <hr class="bg-transparent bt bl br bw1 b--gray0 pa0 mv3">
+
+                  <ul class="list mv0 ml4 mr0 pa0 lh-copy fa5-ul">
+                    <li class="mb3"><i class="fa5-li fa5 fa5-dot-circle-r gray4"></i>You agree with us: SVG is probably the best way to use icons</li>
+                    <li class="mb3"><i class="fa5-li fa5 fa5-dot-circle-r gray4"></i>Using JavaScript sounds simpler than web fonts</li>
+                    <li class="mb3"><i class="fa5-li fa5 fa5-dot-circle-r gray4"></i>You want the new features</li>
+                    <li class=""><i class="fa5-li fa5 fa5-dot-circle-r gray4"></i>You need the most <a class="link blue4 underline-hover hover-blue" href="#shim">backwards compatibility</a></li>
+                  </ul>
+                </div>
+
+                <div class="bg-white w-third br2 ba b--black-10 pa4 pl5 relative left--1">
+                  <h3 class="mt0 mb2 fw6 f4">
+                    <a class="link blue4 underline-hover hover-blue" href="#svg-sprites">SVG Sprites</a>
+                  </h3>
+
+                  <p class="lh-copy mv0 fw6">Clean, simple, and the perfect foundation for advanced users willing to do some work.</p>
+
+                  <hr class="bg-transparent bt bl br bw1 b--gray0 pa0 mv3">
+
+                  <ul class="list mv0 ml4 mr0 pa0 lh-copy fa5-ul">
+                    <li class="mb3"><i class="fa5-li fa5 fa5-dot-circle-r gray4"></i>You are an advanced user</li>
+                    <li class="mb3"><i class="fa5-li fa5 fa5-dot-circle-r gray4"></i>You are familiar with this technique and prefer it</li>
+                    <li class="mb3"><i class="fa5-li fa5 fa5-dot-circle-r gray4"></i>No dependencies on JavaScript or Web Fonts makes you giddy</li>
+                    <li class=""><i class="fa5-li fa5 fa5-dot-circle-r gray4"></i>You are willing to write your own CSS and <strike>dominate</strike> lovingly control everything</li>
+                  </ul>
+                </div>
+              </div>
+
+              <hr class="bg-transparent ba bw1 b--gray1 pa0 mv4 mv6-ns">
+
+              <section id="svg-framework" class="bt bw2 b--green0 bg-white br2 br--bottom pa4 relative">
+                <h2 class="mt0 mb2 b f5">
+                  Use Icons via SVG Framework
+                </h2>
+
+                <span class="absolute right-1 top--1 f1 b ttu tracked2 pa3 lh0 br4 bg-green6 white">
+                  <span class="sr-only">Level of difficulty to use:</span>
+                  Easy &amp; Recommended!
+                </span>
+
+                <p class="mt0 mb3 lh-copy gray7">
+                  Our SVG Framework lets you reference icons just as you always have with Font Awesome and renders them as SVGs within your UI, complete with all of the supportive styling you know and love. This requires the use of JavaScript. Here's how to try it out:
+                </p>
+
+                <ol class="mt0 mb4 pl3 list-position-outside">
+                  <li class="lh-copy pl1 mb3">
+                    Grab the base Font Awesome loader at <code class="orange4">/js/fontawesome.js</code>.
+                  </li>
+                  <li class="lh-copy pl1 mb3">
+                    Grab one or more of the styles (ex: <code class="orange4">/js/packs/solid.js</code>) in the <code class="orange4">/js/packs</code> directory.
+                  </li>
+                  <li class="lh-copy pl1 mb3">
+                    Place these files in your project static files.
+                  </li>
+                  <li class="lh-copy pl1 mb3">
+                    Include them in the <code class="orange4">&lt;head&gt;</code> of your document.
+                  </li>
+                  <li class="lh-copy pl1">
+                    Reference Font Awesome icons (using <a href="inventory.html" class="link blue4 underline-hover hover-blue">the inventory</a> for easy copying/pasting) in the <code class="orange4">&lt;body&gt;</code> of your document.
+                  </li>
+                </ol>
+
+
+                <h3 class="mt0 mb3 f3 fw6 gray5">Example:</h3>
+                <div data-highlight class="bg-gray7 br2 bl bw3 b--gray6 pa4 mb4 overflow-scroll shadow-inset-6 lh-title">
+                  &lt;head&gt;
+                    &lt;script defer src="/js/packs/solid.js"&gt;&lt;/script&gt;
+                    &lt;script defer src="/js/fontawesome.js"&gt;&lt;/script&gt;
+                  &lt;/head&gt;
+
+                  &lt;body&gt;
+                    &lt;i class="fa fa-user"&gt;&lt;/i&gt;
+                  &lt;/body&gt;
+                </div>
+
+                <h3 class="mt0 mb3 f3 fw6 gray5">Example with multiple styles:</h3>
+                <div data-highlight class="bg-gray7 br2 bl bw3 b--gray6 pa4 mb4 overflow-scroll shadow-inset-6 lh-title">
+                  &lt;head&gt;
+                    &lt;script defer src="/js/packs/light.js"&gt;&lt;/script&gt;
+                    &lt;script defer src="/js/packs/regular.js"&gt;&lt;/script&gt;
+                    &lt;script defer src="/js/fontawesome.js"&gt;&lt;/script&gt;
+                  &lt;/head&gt;
+
+                  &lt;body&gt;
+                    &lt;i class="fal fa-user"&gt;&lt;/i&gt;
+                    &lt;i class="far fa-magic"&gt;&lt;/i&gt;
+                  &lt;/body&gt;
+                </div>
+
+                <div class="mb4">
+                  <p class="mt0 mb3 lh-copy pa4 br2 bg-green0">Need another example? Check out the <a href="svg-framework.html" class="link blue4 underline-hover hover-blue fw6">SVG Framework demo</a>.</p>
+
+                  <p class="mv0 lh-copy pa4 br2 bg-green0">Need Font Awesome 4 icon names that are missing in 5? Learn how to <a href="#shim" class="link blue4 underline-hover hover-blue fw6">shim using the JavaScript version.</a></p>
+                </div>
+
+                <h3 class="mt0 mb2 f3 fw6">Browser Compatibility</h3>
+                <div class="overflow-x-scroll">
+                  <table class="collapse tl mv0 lh-copy dt-fixed overflow-scroll" summary="browser compatibility for SVG Framework method of using Font Awesome 5">
+                    <thead>
+                      <tr class="bb bw2 b--gray1">
+                        <th scope="col" class="pv3 pr4 fw6 gray5 v-bottom">Platform</th>
+                        <th scope="col" class="pv3 pr4 fw6 gray5 v-bottom">Edge</th>
+                        <th scope="col" class="pv3 pr4 fw6 gray5 v-bottom">IE</th>
+                        <th scope="col" class="pv3 pr4 fw6 gray5 v-bottom">Chrome</th>
+                        <th scope="col" class="pv3 pr4 fw6 gray5 v-bottom">Firefox</th>
+                        <th scope="col" class="pv3 pr4 fw6 gray5 v-bottom">Safari</th>
+                        <th scope="col" class="pv3 pr4 fw6 gray5 v-bottom">Opera</th>
+                        <th scope="col" class="pv3 pr4 fw6 gray5 v-bottom">Yandex</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="bb bw1 b--gray1 v-top">
+                        <th scope="row" class="pv3 pr4 gray5">
+                          Desktop
+                        </th>
+                        <td class="pv3 pr4">
+                          last 2 major versions
+                        </td>
+                        <td class="pv3 pr4">
+                          last 2 major versions (11, 10)
+                        </td>
+                        <td class="pv3 pr4">
+                          last 2 major and <a class="link blue4 underline-hover hover-blue" href="https://enterprise.google.com/chrome/chrome-browser">business</a> versions
+                        </td>
+                        <td class="pv3 pr4">
+                          last 2 major and <a class="link blue4 underline-hover hover-blue" href="https://www.mozilla.org/en-US/firefox/organizations">ESR</a> versions
+                        </td>
+                        <td class="pv3 pr4">
+                          last 2 major versions
+                        </td>
+                        <td class="pv3 pr4">
+                          last 2 major versions
+                        </td>
+                        <td class="pv3">
+                          14
+                        </td>
+                      </tr>
+                      <tr class="v-top">
+                        <th scope="row" class="pv3 pr4 gray5">
+                          Mobile
+                        </th>
+                        <td class="pv3 pr4">
+                          <abbr class="gray5" title="Not applicable">N/A</abbr>
+                        </td>
+                        <td class="pv3 pr4">
+                          <abbr class="gray5" title="Not applicable">N/A</abbr>
+                        </td>
+                        <td class="pv3 pr4">
+                          iOS latest <br />
+                          Android 6, 5, 4
+                        </td>
+                        <td class="pv3 pr4">
+                          iOS latest <br />
+                          Android 6, 5, 4
+                        </td>
+                        <td class="pv3 pr4">
+                          iOS 9, 10
+                        </td>
+                        <td class="pv3 pr4">
+                          <abbr class="gray5" title="Not applicable">N/A</abbr>
+                        </td>
+                        <td class="pv3">
+                          <abbr class="gray5" title="Not applicable">N/A</abbr>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+
+              <hr class="bg-transparent ba bw1 b--gray1 pa0 mv4 mv6-ns">
+
+              <section id="webfont" class="bt bw2 b--green0 bg-white br2 br--bottom pa4 relative">
+                <h2 class="mt0 mb2 b f5">Use Icons via Web Font</h2>
+
+                <span class="absolute right-1 top--1 f1 b ttu tracked2 pa3 lh0 br4 bg-green6 white">
+                  <span class="sr-only">Level of difficulty to use:</span>
+                  Easy
+                </span>
+
+                <p class="mt0 mb3 lh-copy gray7">
+                  A Font Awesome traditionalist? We get ya. Font Awesome 5 still lets you load your icons as a custom icon font (using CSS's <code class="orange4">@font-face</code>). Here's how:
+                </p>
+
+                <ol class="mt0 mb4 pl3 list-position-outside">
+                  <li class="lh-copy pl1 mb3">
+                    Grab the base Font Awesome icon font supporting styling at <code class="orange4">/css/fontawesome-pro-core.css</code>
+                  </li>
+                  <li class="lh-copy pl1 mb3">
+                    Grab one or more of the style CSS files (ex. <code class="orange4">/css/fontawesome-pro-light.css</code>) in the <code class="orange4">/css</code> directory.
+                  </li>
+                  <li class="lh-copy pl1 mb3">
+                    Grab the corresponding web font files (ex. <code class="orange4">/webfonts/fontawesome-pro-light-300.woff2</code>) in the <code class="orange4">/webfonts</code> directory.
+                  </li>
+                  <li class="lh-copy pl1 mb3">
+                    Place these files in your project static files.
+                  </li>
+                  <li class="lh-copy pl1 mb3">
+                    Include a reference to the CSS files in the <code class="orange4">&lt;head&gt;</code> of your document.
+                  </li>
+                  <li class="lh-copy pl1">
+                    Reference Font Awesome icons (using <a href="inventory.html" class="link underline color-inherit hover-blue4">the inventory</a> for easy copying/pasting) in the <code class="orange4">&lt;body&gt;</code> of your document.
+                  </li>
+                </ol>
+
+                <h3 class="mt0 mb3 f3 fw6 gray5">Example:</h3>
+                <div data-highlight class="bg-gray7 br2 bl bw3 b--gray6 pa4 mb4 overflow-scroll shadow-inset-6 lh-title">
+                  &lt;head&gt;
+                    &lt;link rel="stylesheet" href="/css/fontawesome-pro-solid.css"&gt;
+                    &lt;link rel="stylesheet" href="/css/fontawesome-pro-core.css"&gt;
+                  &lt;/head&gt;
+
+                  &lt;body&gt;
+                    &lt;i class="fa fa-user"&gt;&lt;/i&gt;
+                  &lt;/body&gt;
+                </div>
+
+                <h3 class="mt0 mb3 f3 fw6 gray5">Example with multiple styles:</h3>
+                <div data-highlight class="bg-gray7 br2 bl bw3 b--gray6 pa4 mb4 overflow-scroll shadow-inset-6 lh-title">
+                  &lt;head&gt;
+                    &lt;link rel="stylesheet" href="/css/fontawesome-pro-light.css"&gt;
+                    &lt;link rel="stylesheet" href="/css/fontawesome-pro-regular.css"&gt;
+                    &lt;link rel="stylesheet" href="/css/fontawesome-pro-core.css"&gt;
+                  &lt;/head&gt;
+
+                  &lt;body&gt;
+                    &lt;i class="fal fa-user"&gt;&lt;/i&gt;
+                    &lt;i class="far fa-magic"&gt;&lt;/i&gt;
+                  &lt;/body&gt;
+                </div>
+
+                <div class="mb4">
+                  <p class="mv0 lh-copy pa4 br2 bg-green0">Need another example? Check out the <a href="webfont.html" class="link blue4 underline-hover hover-blue fw6">Web Font demo</a>.</p>
+                </div>
+
+                <h3 class="mt0 mb2 f3 fw6">Browser Compatibility</h3>
+                <div class="overflow-x-scroll">
+                  <table class="collapse tl mv0 lh-copy dt-fixed overflow-scroll" summary="browser compatibility for Web Font method of using Font Awesome 5">
+                    <thead>
+                      <tr class="bb bw2 b--gray1">
+                        <th scope="col" class="pv3 pr4 fw6 gray5 v-bottom">Platform</th>
+                        <th scope="col" class="pv3 pr4 fw6 gray5 v-bottom">Edge</th>
+                        <th scope="col" class="pv3 pr4 fw6 gray5 v-bottom">IE</th>
+                        <th scope="col" class="pv3 pr4 fw6 gray5 v-bottom">Chrome</th>
+                        <th scope="col" class="pv3 pr4 fw6 gray5 v-bottom">Firefox</th>
+                        <th scope="col" class="pv3 pr4 fw6 gray5 v-bottom">Safari</th>
+                        <th scope="col" class="pv3 pr4 fw6 gray5 v-bottom">Opera</th>
+                        <th scope="col" class="pv3 pr4 fw6 gray5 v-bottom">Yandex</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="bb bw1 b--gray1 v-top">
+                        <th scope="row" class="pv3 pr4 gray5">
+                          Desktop
+                        </th>
+                        <td class="pv3 pr4">
+                          last 2 major versions
+                        </td>
+                        <td class="pv3 pr4">
+                          last 3 major versions (11, 10, 9)
+                        </td>
+                        <td class="pv3 pr4">
+                          last 2 major and <a class="link blue4 underline-hover hover-blue" href="https://enterprise.google.com/chrome/chrome-browser">business</a> versions
+                        </td>
+                        <td class="pv3 pr4">
+                          last 2 major and <a class="link blue4 underline-hover hover-blue" href="https://www.mozilla.org/en-US/firefox/organizations">ESR</a> versions
+                        </td>
+                        <td class="pv3 pr4">
+                          last 2 major versions
+                        </td>
+                        <td class="pv3 pr4">
+                          last 2 major versions
+                        </td>
+                        <td class="pv3">
+                          14
+                        </td>
+                      </tr>
+                      <tr class="v-top">
+                        <th scope="row" class="pv3 pr4 gray5">
+                          Mobile
+                        </th>
+                        <td class="pv3 pr4">
+                          <abbr class="gray5" title="Not applicable">N/A</abbr>
+                        </td>
+                        <td class="pv3 pr4">
+                          <abbr class="gray5" title="Not applicable">N/A</abbr>
+                        </td>
+                        <td class="pv3 pr4">
+                          iOS latest <br />
+                          Android 6, 5, 4
+                        </td>
+                        <td class="pv3 pr4">
+                          iOS latest <br />
+                          Android 6, 5, 4
+                        </td>
+                        <td class="pv3 pr4">
+                          iOS 9, 10
+                        </td>
+                        <td class="pv3 pr4">
+                          <abbr class="gray5" title="Not applicable">N/A</abbr>
+                        </td>
+                        <td class="pv3">
+                          <abbr class="gray5" title="Not applicable">N/A</abbr>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+
+              <hr class="bg-transparent ba bw1 b--gray1 pa0 mv4 mv6-ns">
+
+              <section id="svg-sprites" class="bt bw2 b--red0 bg-white br2 br--bottom pa4 relative">
+                <h2 class="mt0 mb2 b f5">Use Icons via SVG Sprites</h2>
+
+                <span class="absolute right-1 top--1 f1 b ttu tracked2 pa3 lh0 br4 bg-red5 white">
+                  <span class="sr-only">Level of difficulty to use:</span>
+                  Advanced
+                </span>
+
+                <p class="mt0 mb3 lh-copy gray7">
+                  Want to use Font Awesome icons as SVGs in your project but want to do it without JavaScript or manage things more directly? We've prepped all of the icon styles as individual SVG sprites.
+                </p>
+
+                <ol class="mt0 mb4 pl3 list-position-outside">
+                  <li class="lh-copy pl1 mb3">
+                    Grab one of the sprite files (<code class="orange4">/sprites/solid.svg</code>) in the <code class="orange4">/sprites</code> directory.
+                  </li>
+                  <li class="lh-copy pl1 mb3">
+                    Place this file in your project static files.
+                  </li>
+                  <li class="lh-copy pl1">
+                    In the <code class="orange4">&lt;body&gt;</code> of your document call an individual icon like this&hellip;
+                  </li>
+                </ol>
+
+                <h3 class="mt0 mb3 f3 fw6 gray5">Example:</h3>
+                <div data-highlight class="bg-gray7 br2 bl bw3 b--gray6 pa4 mb4 overflow-scroll shadow-inset-6 lh-title">
+                  &lt;body&gt;
+                    &lt;svg&gt;
+                      &lt;use xlink:href="solid.svg#user"&gt;&lt;/use&gt;
+                    &lt;/svg&gt;
+                  &lt;/body&gt;
+                </div>
+
+                <div class="mb4">
+                  <p class="mv0 lh-copy pa4 br2 bg-red0">Need another example? Check out the <a href="svg-sprite.html" class="link blue4 underline-hover hover-blue fw6">SVG Sprites demo</a>.</p>
+                </div>
+
+                <h3 class="mt0 mb2 f3 fw6">Browser Compatibility</h3>
+                <div class="overflow-x-scroll">
+                  <table class="collapse tl mv0 lh-copy dt-fixed overflow-scroll" summary="browser compatibility for SVG Sprites method of using Font Awesome 5">
+                    <thead>
+                      <tr class="bb bw2 b--gray1">
+                        <th scope="col" class="pv3 pr4 fw6 gray5 v-bottom">Platform</th>
+                        <th scope="col" class="pv3 pr4 fw6 gray5 v-bottom">Edge</th>
+                        <th scope="col" class="pv3 pr4 fw6 gray5 v-bottom">IE</th>
+                        <th scope="col" class="pv3 pr4 fw6 gray5 v-bottom">Chrome</th>
+                        <th scope="col" class="pv3 pr4 fw6 gray5 v-bottom">Firefox</th>
+                        <th scope="col" class="pv3 pr4 fw6 gray5 v-bottom">Safari</th>
+                        <th scope="col" class="pv3 pr4 fw6 gray5 v-bottom">Opera</th>
+                        <th scope="col" class="pv3 pr4 fw6 gray5 v-bottom">Yandex</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="bb bw1 b--gray1 v-top">
+                        <th scope="row" class="pv3 pr4 gray5">
+                          Desktop
+                        </th>
+                        <td class="pv3 pr4">
+                          last 2 major versions
+                        </td>
+                        <td class="pv3 pr4 danger6">
+                          No*
+                        </td>
+                        <td class="pv3 pr4">
+                          last 2 major and <a class="link blue4 underline-hover hover-blue" href="https://enterprise.google.com/chrome/chrome-browser">business</a> versions
+                        </td>
+                        <td class="pv3 pr4">
+                          last 2 major and <a class="link blue4 underline-hover hover-blue" href="https://www.mozilla.org/en-US/firefox/organizations">ESR</a> versions
+                        </td>
+                        <td class="pv3 pr4">
+                          last 2 major versions
+                        </td>
+                        <td class="pv3 pr4">
+                          last 2 major versions
+                        </td>
+                        <td class="pv3">
+                          14
+                        </td>
+                      </tr>
+                      <tr class="v-top">
+                        <th scope="row" class="pv3 pr4 gray5">
+                          Mobile
+                        </th>
+                        <td class="pv3 pr4">
+                          <abbr class="gray5" title="Not applicable">N/A</abbr>
+                        </td>
+                        <td class="pv3 pr4">
+                          <abbr class="gray5" title="Not applicable">N/A</abbr>
+                        </td>
+                        <td class="pv3 pr4">
+                          iOS latest <br />
+                          Android 6, 5, 4
+                        </td>
+                        <td class="pv3 pr4">
+                          iOS latest <br />
+                          Android 6, 5, 4
+                        </td>
+                        <td class="pv3 pr4">
+                          iOS 9, 10
+                        </td>
+                        <td class="pv3 pr4">
+                          <abbr class="gray5" title="Not applicable">N/A</abbr>
+                        </td>
+                        <td class="pv3">
+                          <abbr class="gray5" title="Not applicable">N/A</abbr>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                
+                <div class="mv4 f2">
+                  <p class="mv0 lh-copy"><span class="danger6">*</span> IE will not automatically download SVG documents referenced with <code class="blue4">xlink:href</code></p>
+                </div>
+
+                <h3 class="mt0 mb2 f3 fw6">Cross-origin caveat</h3>
+                <p class="mt0 mb3 lh-copy gray7">This requires that you are serving the sprite from the same domain and port as the page.</p>
+
+                <h3 class="mt0 mb2 f3 fw6">Serving locally</h3>
+                <p class="mv0 lh-copy gray7">For this sprite to load you need to be serving it from http or https. If you try to open <code class="orange4">docs/svg-sprite.html</code> from the file system (if your address begins with <code class="orange4">file://</code>) it will fail to load.</p>
+              </section>
+
+              <hr class="bg-transparent ba bw1 b--gray1 pa0 mv4 mv6-ns">
+
+              <section id="desktop" class="bt bw2 b--red0 bg-white br2 br--bottom pa4 relative">
+                <h2 class="mt0 mb2 b f5">Use Icons on the Desktop</h2>
+
+                <span class="absolute right-1 top--1 f1 b ttu tracked2 pa3 lh0 br4 bg-red5 white">
+                  <span class="sr-only">Level of difficulty to use:</span>
+                  Advanced
+                </span>
+
+                <p class="mt0 mb3 lh-copy gray7">
+                  Want to use Font Awesome 5's icons in your favorite Desktop Design tools or on a print-based project? No problem. Here's how to get that started:
+                </p>
+
+                <ol class="mt0 mb4 pl3 list-position-outside">
+                  <li class="lh-copy pl1 mb3">
+                    Grab one or more of the web font files for the icon styles you want to use  (ex. <code class="orange4">/webfonts/fontawesome-pro-light-300.ttf</code>) in the <code class="orange4">/webfonts</code> directory.
+                  </li>
+                  <li class="lh-copy pl1 mb3">
+                    Add them to your Font Management Software (for Macs that often Font Book or Font Explorer X).
+                  </li>
+                  <li class="lh-copy pl1 mb3">
+                    Activate each added font you want to use in your applications.
+                  </li>
+                  <li class="lh-copy pl1 mb3">
+                    Open a file in a design application (ex. Sketch, Adobe Illustrator, etc.) and create a new text layer/area.
+                  </li>
+                  <li class="lh-copy pl1">
+                    Copy and paste the corresponding Font Awesome 5 glyph you want to add from the <a href="webfont.html" class="link underline color-inherit hover-blue4">webfont demo</a> (the little version of the icon next to each icon's unicode value).
+                  </li>
+                </ol>
+
+                <p class="mv0 lh-copy gray7">Or grab one or more of the svg files from any style (ex. <code class="orange4">/svg/solid/user.svg</code>) in the <code class="orange4">/svg</code> directory.</p>
+              </section>
+
+              <hr class="bg-transparent ba bw1 b--gray1 pa0 mv4 mv6-ns">
+
+              <section id="upgrading" class="bg-white br2 pa4 relative">
+                <div class="mb6">
+                  <h2 class="mt0 mb2 b f5">Upgrading from Font Awesome Version 4</h2>
+
+                  <p class="mt0 mb3 lh-copy gray7">
+                    For those that are super-stoked to start using version 5, you can upgrade the version of Font Awesome you're using on a site or project. Below are the basic steps we recommend following:
+                  </p>
+
+                  <ol class="mv0 pl3 list-position-outside">
+                    <li class="lh-copy pl1 mb3">
+                      Remove the files associated with Font Awesome Version 4 from your project - including the <code class="orange4">fontawesome/</code> folder of web fonts and CSS/SCSS/LESS (if you're using <a class="link underline color-inherit hover-blue4" href="https://cdn.fontawesome.com/" target="_blank">Font Awesome's CDN</a>, you can skip this step.)
+                    </li>
+                    <li class="lh-copy pl1 mb3">
+                      <p class="mt0 mb3 lh-copy">Remove the reference to Font Awesome V4's JS or CSS from the <code class="orange4">&lt;head&gt;</code> of your document.</p>
+
+                      <div class="bg-gray7 br2 bl bw3 b--gray6 ph4 pv3 mb2 overflow-scroll shadow-inset-6">
+    <code class="pre gray2 strike" style="text-decoration-color: rgba(255, 216, 168, 0.75);"><span class="orange2">&lt;link</span> <span class="orange4">rel="</span>stylesheet<span class="orange4">"</span> <span class="orange4">href="</span>path/to/font-awesome-v4/css/font-awesome.min.css<span class="orange4">"</span><span class="orange2">&gt;</span></code>
+                      </div>
+
+                      <div class="bg-gray7 br2 bl bw3 b--gray6 ph4 pv3 mb2 overflow-scroll shadow-inset-6">
+                        <code class="pre gray2 strike" style="text-decoration-color: rgba(255, 216, 168, 0.75);"><span class="orange2">&lt;script</span> <span class="orange4">src="</span>https://use.fontawesome.com/your-embed-code.js<span class="orange4">"</span><span class="orange2">&gt;&lt;/script&gt;</span></code>
+                      </div>
+                    </li>
+                    <li class="lh-copy pl1 mb3">
+                      Pick your method of using Font Awesome 5: <a href="#svg-framework" class="link underline color-inherit hover-blue4">SVG Framework</a>, <a href="#webfont" class="link underline color-inherit hover-blue4">Web Font Framework</a>, or <a href="#svg-sprites" class="link underline color-inherit hover-blue4">SVG Sprite</a>.
+                    </li>
+                    <li class="lh-copy pl1 mb3">
+                      Follow the instructions and example code + demos for the method you've chosen.
+                    </li>
+                    <li class="lh-copy pl1 mb3">
+                      Find and replace any icons that have different names between V4 and V5 (with SVG Sprites, you'll need to change the syntax of every icon's reference more drastically + provide your own styling to support how they look).
+                    </li>
+                    <li class="lh-copy pl1 mb3">
+                      Update or remove any custom styling you've added around Font Awesome icons (if applicable).
+                    </li>
+                    <li class="lh-copy pl1">
+                      Click through your project's UI to make sure all icons are rendering as expected (optional, but recommended with pre-releases).
+                    </li>
+                  </ol>
+                </div>
+
+                <h3 id="shim" class="mt0 mb3 f3 b">Heads up about referencing icons</h3>
+
+                <p class="mt0 mb3 lh-copy">Not all icons and aliases from V4 are the same in V5. So what's changed?</p>
+
+                <div role="alert" class="dt w-100 mb6 relative">
+                  <div class="dtc v-top w-1 pv4 ph3 bg-warning5 warning0 br--left br2 tc">
+                    <i class="fa5 fa5-exclamation-triangle fa5-lg animated infinite pulseOpacity animated3" aria-hidden="true"></i>
+                  </div>
+                  <div class="dtc v-top pa3 bg-warning0 br--right br2">
+
+                    <ul class="list ma0 pa0 lh-copy">
+                      <li class="pb2 mb2 bb bw1 b--warning1">We no longer have aliases in version 5, an icon has one official name</li>
+                      <li class="pb2 mb2 bb bw1 b--warning1">Some names have been changed to be more consistent</li>
+                      <li class="pb2 mb2 bb bw1 b--warning1">Any brand icons now have a prefix of <code class="b">fab</code></li>
+                      <li class="">Any icon that ended with <code class="b">-o</code> now has a prefix of <code class="b">far</code> and no <code class="b">-o</code> suffix</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <h3 class="mt0 mb3 f3 b">Need help? Use the shim.</h3>
+
+                <p class="mt0 mb3 lh-copy">We know that these changes can really slow you down in adopting V5. To help out we've created a <a class="link underline color-inherit hover-blue4" href="https://en.wikipedia.org/wiki/Shim_(computing)">shim</a> file if you decide to use the JavaScript method. You can use the old names and aliases and it will automatically convert things for you as your icons get replaced with SVG icons.</p>
+
+                <h3 class="mt0 mb3 f3 fw6 gray5">Example Font Awesome version 4 shim (JavaScript method only):</h3>
+                <div data-highlight class="bg-gray7 br2 bl bw3 b--gray6 pa4 overflow-scroll shadow-inset-6">
+                  &lt;head&gt;
+                    &lt;script defer src="/js/packs/regular.js"&gt;&lt;/script&gt;
+                    &lt;script defer src="/js/packs/brands.js"&gt;&lt;/script&gt;
+                    &lt;script defer src="/js/packs/solid.js"&gt;&lt;/script&gt;
+                    &lt;script defer src="/js/v4-shims.js"&gt;&lt;/script&gt;
+                    &lt;script defer src="/js/fontawesome.js"&gt;&lt;/script&gt;
+                  &lt;/head&gt;
+
+                  &lt;body&gt;
+                    &lt;i class="fa fa-close"&gt;&lt;/i&gt;
+                    &lt;!-- "close" is an alias to "times", V5 is &lt;i class="fa fa-times"&gt;&lt;/i&gt; --&gt;
+                    &lt;i class="fa fa-picture"&gt;&lt;/i&gt;
+                    &lt;!-- Renamed to "image", V5 is &lt;i class="fa fa-image"&gt;&lt;/i&gt; --&gt;
+                    &lt;i class="fa fa-twitter"&gt;&lt;/i&gt;
+                    &lt;!-- Needs the "fab" prefix, V5 &lt;i class="fab fa-twitter"&gt;&lt;/i&gt; --&gt;
+                    &lt;i class="fa fa-circle-o"&gt;&lt;/i&gt;
+                    &lt;!-- "far" prefix, lose the "-o", V5 &lt;i class="far fa-circle"&gt;&lt;/i&gt; --&gt;
+                  &lt;/body&gt;
+                </div>
+              </section>
+
+              <hr class="bg-transparent ba bw1 b--gray1 pa0 mt2 mb4 mv6-ns">
+
+              <section id="feedback">
+                <h2 class="mt0 mb2 b f5">Questions? Comments? Feedback?</h2>
+
+                <p class="mv0 f3 lh-copy gray7">
+                  We're working on a release candidate of Font Awesome 5, so we need your help. Please provide <a href="https://github.com/FortAwesome/Font-Awesome-Pro/issues/789" class="link blue4 underline-hover hover-blue" target="_blank">feedback about this release specifically in our designated thread</a>. Design feedback, bugs and questions are welcome there. For future feature and icon requests, check out <a href="https://github.com/FortAwesome/Font-Awesome-Pro/blob/master/CONTRIBUTING.md" class="link blue4 underline-hover hover-blue" target="_blank">our contributing doc</a>.
+                </p>
+              </section>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

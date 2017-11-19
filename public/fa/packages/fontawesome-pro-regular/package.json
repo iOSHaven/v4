@@ -1,0 +1,9 @@
+{
+  "main": "index.js",
+  "module": "index.es.js",
+  "repository": "https://github.com/FortAwesome/Font-Awesome-Pro",
+  "jsnext:main": "index.es.js",
+  "license": "UNLICENSED",
+  "version": "0.0.16",
+  "name": "@fortawesome/fontawesome-pro-regular"
+}
