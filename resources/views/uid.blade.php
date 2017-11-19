@@ -6,8 +6,8 @@
 @section('content')
 
 <div class="wrapper uidpage">
-  <div class="banner" style="background-image: url({{$app->banner}})">
-    <div class="icon" style="background-image: url({{$app->icon}})"></div>
+  <div class="banner" style="background-image: url(/{{$app->banner}})">
+    <div class="icon" style="background-image: url(/{{$app->icon}})"></div>
     <div class="installs">
         <a class="get fill--white center dark" href="/install/{{$app->uid}}">Install</a>
         <a class="get fill--white center dark" href="/download/{{$app->uid}}">Download</a>

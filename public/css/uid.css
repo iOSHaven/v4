@@ -22,9 +22,9 @@
   left: 1rem;
   z-index: 1;
   border: 1px solid white;
-  border-radius: 1rem;
+  border-radius: 1.45rem;
   background-position: center;
-  background-size: cover;
+  background-size: 5.5rem;
 }
 
 .get {

@@ -42566,7 +42566,7 @@ var render = function() {
       _c("div", {
         ref: "image",
         staticClass: "image",
-        style: { "background-image": "url('" + _vm.data.icon + "')" }
+        style: { "background-image": "url('/" + _vm.data.icon + "')" }
       }),
       _vm._v(" "),
       _c("div", { staticClass: "content" }, [

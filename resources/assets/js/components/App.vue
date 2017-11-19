@@ -1,6 +1,6 @@
 <template lang="html">
   <a class="card flex p-5 app" :href="page">
-    <div ref="image" class="image" :style="{'background-image': `url('${data.icon}')`}"></div>
+    <div ref="image" class="image" :style="{'background-image': `url('/${data.icon}')`}"></div>
     <div class="content">
       <div class="h6 mb-3"><strong>{{data.name}}</strong></div>
       <div class="shadow"></div>
