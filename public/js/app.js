@@ -42577,7 +42577,7 @@ var render = function() {
         _c("div", { staticClass: "shadow" }),
         _vm._v(" "),
         _c("div", { staticClass: "description" }, [
-          _vm._v(_vm._s(_vm.data.description.slice(0, 32)))
+          _vm._v(_vm._s(_vm.data.short.slice(0, 17)))
         ])
       ]),
       _vm._v(" "),

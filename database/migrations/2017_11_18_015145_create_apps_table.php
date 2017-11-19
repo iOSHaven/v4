@@ -17,12 +17,12 @@ class CreateAppsTable extends Migration
             $table->increments('id');
             $table->string('name')->default('No name');
             $table->string('uid')->unique();
-            $table->string('icon')->nullable();
-            $table->string('banner')->nullable();
+            $table->string('icon')->default('defaults/icon.png');
+            $table->string('banner')->default('defaults/banner.png');
             $table->string('unsigned')->nullable();
             $table->string('signed')->nullable();
             $table->string('version')->nullable();
-            $table->string('short', 18)->nullable();
+            $table->string('short', 18)->default('a short snippet');
             $table->text('description');
             $table->string('tags')->nullable();
             $table->bigInteger('views')->default(0);

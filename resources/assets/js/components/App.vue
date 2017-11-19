@@ -4,7 +4,7 @@
     <div class="content">
       <div class="h6 mb-3"><strong>{{data.name}}</strong></div>
       <div class="shadow"></div>
-      <div class="description">{{data.description.slice(0,32)}}</div>
+      <div class="description">{{data.short.slice(0,17)}}</div>
     </div>
 
     <div class="get fill--red center" v-if="auth.isEditing" @click="remove($event)">delete</div>
