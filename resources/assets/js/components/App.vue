@@ -2,7 +2,7 @@
   <a class="card flex p-5 app" :href="page">
     <div ref="image" class="image" :style="{'background-image': `url('/${data.icon}')`}"></div>
     <div class="content">
-      <div class="h6 mb-3"><strong>{{data.name}}</strong></div>
+      <h3 class="mb-3"><strong>{{data.name}}</strong></h3>
       <div class="shadow"></div>
       <div class="description">{{data.short.slice(0,17)}}</div>
     </div>
@@ -40,12 +40,13 @@ export default {
 .content {
   overflow: hidden;
   flex-grow: 1;
-  margin: 0 1rem;
-  padding-top: 1rem;
+  margin-left: 0.5rem;
+  align-self: flex-start;
+  font-size: 0.8rem;
 }
 .get {
-    min-width: 4rem !important;
-    font-size: 0.8rem;
+    min-width: 3.2rem !important;
+    font-size: 0.6rem;
     padding: 0.3rem;
     border-radius: 5rem;
     text-transform: uppercase;

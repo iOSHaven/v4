@@ -42503,7 +42503,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.content[data-v-8142f38c] {\n  overflow: hidden;\n  -webkit-box-flex: 1;\n      -ms-flex-positive: 1;\n          flex-grow: 1;\n  margin: 0 1rem;\n  padding-top: 1rem;\n}\n.get[data-v-8142f38c] {\n  min-width: 4rem !important;\n  font-size: 0.8rem;\n  padding: 0.3rem;\n  border-radius: 5rem;\n  text-transform: uppercase;\n}\n.description[data-v-8142f38c] {\n  font-size: .8rem;\n  height: 2.5rem;\n}\n.shadow[data-v-8142f38c] {\n  -webkit-box-shadow: 0px -5px 11px 12px white;\n          box-shadow: 0px -5px 11px 12px white;\n  position: absolute;\n  width: 100%;\n  left: 5.5rem;\n  top: 100%;\n}\n.image[data-v-8142f38c] {\n  width: 0;\n  height: 0;\n  padding: 2rem;\n  background-position: center;\n  background-size: contain;\n  background-repeat: no-repeat;\n}\n", ""]);
+exports.push([module.i, "\n.content[data-v-8142f38c] {\n  overflow: hidden;\n  -webkit-box-flex: 1;\n      -ms-flex-positive: 1;\n          flex-grow: 1;\n  margin-left: 0.5rem;\n  -ms-flex-item-align: start;\n      align-self: flex-start;\n  font-size: 0.8rem;\n}\n.get[data-v-8142f38c] {\n  min-width: 3.2rem !important;\n  font-size: 0.6rem;\n  padding: 0.3rem;\n  border-radius: 5rem;\n  text-transform: uppercase;\n}\n.description[data-v-8142f38c] {\n  font-size: .8rem;\n  height: 2.5rem;\n}\n.shadow[data-v-8142f38c] {\n  -webkit-box-shadow: 0px -5px 11px 12px white;\n          box-shadow: 0px -5px 11px 12px white;\n  position: absolute;\n  width: 100%;\n  left: 5.5rem;\n  top: 100%;\n}\n.image[data-v-8142f38c] {\n  width: 0;\n  height: 0;\n  padding: 2rem;\n  background-position: center;\n  background-size: contain;\n  background-repeat: no-repeat;\n}\n", ""]);
 
 // exports
 
@@ -42570,7 +42570,7 @@ var render = function() {
       }),
       _vm._v(" "),
       _c("div", { staticClass: "content" }, [
-        _c("div", { staticClass: "h6 mb-3" }, [
+        _c("h3", { staticClass: "mb-3" }, [
           _c("strong", [_vm._v(_vm._s(_vm.data.name))])
         ]),
         _vm._v(" "),

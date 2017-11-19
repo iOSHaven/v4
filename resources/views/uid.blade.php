@@ -9,8 +9,12 @@
   <div class="banner" style="background-image: url(/{{$app->banner}})">
     <div class="icon" style="background-image: url(/{{$app->icon}})"></div>
     <div class="installs">
+        @if($app->signed)
         <a class="get fill--white center dark" href="/install/{{$app->uid}}">Install</a>
+        @endif
+        @if($app->unsigned)
         <a class="get fill--white center dark" href="/download/{{$app->uid}}">Download</a>
+        @endif
     </div>
     <div class="shadow"></div>
   </div>

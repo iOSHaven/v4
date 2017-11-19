@@ -60,4 +60,14 @@ class AppController extends Controller
       }
       else abort(404);
     }
+
+    public function download($uid)
+    {
+      $app = App::findByUid($uid);
+      if ($app->unsigned) {
+        $app->increment('downloads');
+        return redirect($app->unsigned);
+      }
+      else abort(404);
+    }
 }
