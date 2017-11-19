@@ -10,6 +10,7 @@ html {
   -webkit-font-smoothing: antialiased;
   box-sizing: border-box;
   font-weight: 400;
+  background: #f2f2f2;
 }
 
 *, *:before, *:after {
@@ -17,7 +18,7 @@ html {
   margin: 0;
 }
 #app {
-  margin-top: 4rem;
+  margin-top: 3rem;
   padding: 2rem 1rem;
   max-width: 100vw;
   max-height: 100vh;
@@ -42,6 +43,9 @@ html {
   overflow: hidden;
   .field {
     padding: 0.5rem 0rem;
+  }
+  &.no-border {
+    border: none;
   }
 }
 
@@ -69,11 +73,11 @@ h1,h2,h3,h4,h5,h6,
   text-align: center;
 }
 
-@for $i from 1 through 6 {
-  .h#{$i}, h#{$i} {
-    font-size: #{6/$i}rem
-  }
-}
+// @for $i from 1 through 6 {
+//   .h#{$i}, h#{$i} {
+//     font-size: #{6/$i}rem
+//   }
+// }
 
 @for $i from 1 through 10 {
   .p#{$i} {
@@ -269,4 +273,84 @@ button.blue {
     border-left: 0;
   }
 
+}
+
+
+
+
+.markdown {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 300;
+    hr {
+        border: none;
+        border-bottom: 1px solid #CCCC;
+        margin: 1rem;
+    }
+    p, a, li {
+        line-height: 1.5rem;
+    }
+    ul, ol {
+      padding: 0;
+      border: 1px solid #ccc;
+      border-radius: 0.4rem;
+      background: white;
+      margin: 1rem;
+      li {
+        list-style: none;
+        padding: 1rem;
+        border-bottom: 1px solid #ccc;
+        flex-wrap: wrap;
+        &:last-of-type {
+          border: none;
+        }
+      }
+    }
+    blockquote {
+        border-left: 7px solid #03A9F4;
+        background: rgba(0,0,0,0.04);
+        padding: 1rem 2rem;
+        margin: 1rem 0;
+    }
+    code {
+        background: #eee;
+        padding: 0 0.3rem;
+    }
+    pre {
+        background: #eee;
+        border: 1px solid #ccc;
+        border-radius: 0.3rem;
+        padding: 1rem;
+        margin: 1rem 0;
+    }
+    table {
+      margin: 1rem 0;
+      border: 1px solid #ccc;
+      border-spacing: 0;
+      width: 100%;
+      thead {
+        background: #2196F3;
+        color: white;
+      }
+      tr {
+        &:last-of-type td,{
+          border-bottom: none;
+        }
+        th, td {
+          border-bottom: 1px solid;
+          border-right: 1px solid;
+          border-color: #ccc;
+          padding: 0.5rem;
+          &:last-of-type {
+            border-right: none;
+          }
+        }
+
+      }
+    }
+    img {
+      border-style: none;
+      max-height: 300px;
+      margin: 1rem;
+    }
 }

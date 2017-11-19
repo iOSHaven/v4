@@ -9,6 +9,7 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-weight: 400;
+  background: #f2f2f2;
 }
 
 *,
@@ -20,7 +21,7 @@ html {
 }
 
 #app {
-  margin-top: 4rem;
+  margin-top: 3rem;
   padding: 2rem 1rem;
   max-width: 100vw;
   max-height: 100vh;
@@ -53,6 +54,10 @@ html {
 
 .card .field {
   padding: 0.5rem 0rem;
+}
+
+.card.no-border {
+  border: none;
 }
 
 .console {
@@ -90,36 +95,6 @@ h6,
 
 .center {
   text-align: center;
-}
-
-.h1,
-h1 {
-  font-size: 6rem;
-}
-
-.h2,
-h2 {
-  font-size: 3rem;
-}
-
-.h3,
-h3 {
-  font-size: 2rem;
-}
-
-.h4,
-h4 {
-  font-size: 1.5rem;
-}
-
-.h5,
-h5 {
-  font-size: 1.2rem;
-}
-
-.h6,
-h6 {
-  font-size: 1rem;
 }
 
 .p1 {
@@ -1127,5 +1102,101 @@ button.blue:hover {
 
 .tab:last-of-type {
   border-left: 0;
+}
+
+.markdown {
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+.markdown hr {
+  border: none;
+  border-bottom: 1px solid #CCCC;
+  margin: 1rem;
+}
+
+.markdown p,
+.markdown a,
+.markdown li {
+  line-height: 1.5rem;
+}
+
+.markdown ul,
+.markdown ol {
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+  background: white;
+  margin: 1rem;
+}
+
+.markdown ul li,
+.markdown ol li {
+  list-style: none;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.markdown ul li:last-of-type,
+.markdown ol li:last-of-type {
+  border: none;
+}
+
+.markdown blockquote {
+  border-left: 7px solid #03A9F4;
+  background: rgba(0, 0, 0, 0.04);
+  padding: 1rem 2rem;
+  margin: 1rem 0;
+}
+
+.markdown code {
+  background: #eee;
+  padding: 0 0.3rem;
+}
+
+.markdown pre {
+  background: #eee;
+  border: 1px solid #ccc;
+  border-radius: 0.3rem;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.markdown table {
+  margin: 1rem 0;
+  border: 1px solid #ccc;
+  border-spacing: 0;
+  width: 100%;
+}
+
+.markdown table thead {
+  background: #2196F3;
+  color: white;
+}
+
+.markdown table tr:last-of-type td {
+  border-bottom: none;
+}
+
+.markdown table tr th,
+.markdown table tr td {
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  border-color: #ccc;
+  padding: 0.5rem;
+}
+
+.markdown table tr th:last-of-type,
+.markdown table tr td:last-of-type {
+  border-right: none;
+}
+
+.markdown img {
+  border-style: none;
+  max-height: 300px;
+  margin: 1rem;
 }
 

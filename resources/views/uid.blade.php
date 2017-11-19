@@ -17,7 +17,7 @@
 
   <div class="bar card flex">
       <div class="title m-3">
-        <h4>{{$app->name}}</h4>
+        <h3>{{$app->name}}</h3>
       </div>
 
       <div class="info">

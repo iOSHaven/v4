@@ -21,6 +21,8 @@ class CreateAppsTable extends Migration
             $table->string('banner')->default('defaults/banner.png');
             $table->string('unsigned')->nullable();
             $table->string('signed')->nullable();
+            $table->string('unsigned_premium')->nullable();
+            $table->string('signed_premium')->nullable();
             $table->string('version')->nullable();
             $table->string('short', 18)->default('a short snippet');
             $table->text('description');

@@ -5,52 +5,52 @@
     <div class="card" v-if="!!auth.isEditing">
       <div class="field">
         <div class="h5 mb-5">Name</div>
-        <input type="text" v-model="app.name" class="fancy" maxlength="255">
+        <input type="text" v-model="app.name" class="fancy" maxlength="255" placeholder="Clash of clans">
       </div>
       <div class="field">
         <div class="h5 mb-5">Version</div>
-        <input type="text" v-model="app.version" class="fancy" maxlength="7">
+        <input type="text" v-model="app.version" class="fancy" maxlength="12" placeholder="1.0.321">
       </div>
       <div class="field">
         <div class="h5 mb-5">Size (in bytes)</div>
-        <input type="text" v-model.number="app.size" class="fancy" maxlength="20">
+        <input type="text" v-model.number="app.size" class="fancy" maxlength="20" placeholder="6520000 (1 million = 1MB)">
       </div>
       <div class="field">
         <div class="h5 mb-5">Icon</div>
-        <input type="text" v-model="app.icon" class="fancy" maxlength="255">
+        <input type="text" v-model="app.icon" class="fancy" maxlength="255" placeholder="icons/image.png">
       </div>
       <div class="field">
         <div class="h5 mb-5">Banner</div>
-        <input type="text" v-model="app.banner" class="fancy" maxlength="255">
+        <input type="text" v-model="app.banner" class="fancy" maxlength="255" placeholder="banners/image.png">
       </div>
       <div class="field">
         <div class="h5 mb-5">Short Description (max: 18)</div>
-        <input type="text" v-model="app.short" class="fancy" maxlength="18">
+        <input type="text" v-model="app.short" class="fancy" maxlength="18" placeholder="a short snippet">
       </div>
       <div class="field">
-        <div class="h5 mb-5">Description</div>
-        <textarea rows="8" v-model="app.description" class="fancy" maxlength="65000"></textarea>
+        <div class="h5 mb-5">Description <a href="http://commonmark.org/help/">Markdown Guide</a> </div>
+        <textarea rows="8" v-model="app.description" class="fancy" maxlength="65000" placeholder="Use markdown!! No HTML!!"></textarea>
         <!-- <editor @save="saveDescription"/> -->
       </div>
       <div class="field">
         <div class="h5 mb-5">Unsigned</div>
-        <input type="text" v-model="app.unsigned" class="fancy" maxlength="255">
+        <input type="text" v-model="app.unsigned" class="fancy" maxlength="255" placeholder="https://example.com/your/unsigned/app/download">
       </div>
       <div class="field">
         <div class="h5 mb-5">Signed</div>
-        <input type="text" v-model="app.signed" class="fancy" maxlength="255">
+        <input type="text" v-model="app.signed" class="fancy" maxlength="255" placeholder="https://example.com/your/signed/app/download">
       </div>
       <div class="field">
         <div class="h5 mb-5">Unsigned Premium</div>
-        <input type="text" v-model="app.unsigned_premium" class="fancy" maxlength="255">
+        <input type="text" v-model="app.unsigned_premium" class="fancy" maxlength="255" placeholder="https://example.com/premium/unsigned/app/download">
       </div>
       <div class="field">
         <div class="h5 mb-5">Signed Premium</div>
-        <input type="text" v-model="app.signed_premium" class="fancy" maxlength="255">
+        <input type="text" v-model="app.signed_premium" class="fancy" maxlength="255" placeholder="https://example.com/premium/signed/app/download">
       </div>
       <div class="field">
         <div class="h5 mb-5">Tags</div>
-        <input type="text" v-model="app.tags" class="fancy" maxlength="255">
+        <input type="text" v-model="app.tags" class="fancy" maxlength="255" placeholder="game, fun, free, cats">
       </div>
     </div>
 

@@ -82,6 +82,9 @@ export default {
   background: rgba(0, 0, 0, 0.5);
   z-index: 101;
 }
+#links {
+    margin-top: 0.2rem;
+}
 #bar {
     background: #141a1d;
     position: fixed;

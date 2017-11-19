@@ -42043,7 +42043,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.toggle[data-v-28cb1975] {\n  color: inherit;\n  font-size: 0.7rem;\n  line-height: 2rem;\n  text-align: right;\n  padding: 1rem 4rem;\n  position: absolute;\n  top: 0;\n  right: 0;\n  color: inherit;\n  cursor: pointer;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.toggle i[data-v-28cb1975] {\n    font-size: 1.5rem;\n    margin-left: 0.3rem;\n    margin-top: -0.1rem;\n}\n#backdrop[data-v-28cb1975] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0.5);\n  z-index: 101;\n}\n#bar[data-v-28cb1975] {\n  background: #141a1d;\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  padding: 1rem;\n  color: white;\n  font-size: 1.2rem !important;\n  text-decoration: none;\n  z-index: 100;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  height: 4rem;\n}\n#title[data-v-28cb1975] {\n  padding: 0.5rem 0;\n  border-color: transparent;\n  float: left;\n  margin-right: 1rem;\n  color: white;\n  text-decoration: none;\n}\n#title[data-v-28cb1975]:hover {\n    text-decoration: underline;\n}\n.menu[data-v-28cb1975] {\n  position: fixed;\n  top: 0;\n  padding: 4rem 2rem 2rem;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  z-index: 101;\n  color: white;\n  right: -15rem;\n}\n.menu.hidden[data-v-28cb1975] {\n  width: auto;\n  right: 0;\n  padding: 0;\n  background-color: transparent !important;\n}\n.menu.hidden .toggle[data-v-28cb1975] {\n    position: relative;\n    padding: 1rem 2rem;\n}\n.menu.translate[data-v-28cb1975] {\n  bottom: 0;\n  right: -400px;\n  opacity: 0;\n  -webkit-transition: all 0.5s;\n  transition: all 0.5s;\n}\n.menu.visible[data-v-28cb1975] {\n  bottom: 0;\n  width: 400px;\n  right: -3rem;\n  overflow-y: scroll;\n  -webkit-transition: right 0.5s;\n  transition: right 0.5s;\n  opacity: 1;\n}\n@media screen and (max-width: 575px) {\n.menu.visible[data-v-28cb1975] {\n      width: 350px;\n}\n}\n.item[data-v-28cb1975] {\n  padding: 1rem;\n  color: inherit;\n  font-size: 1.2rem;\n  border-bottom: 1px solid;\n  text-transform: uppercase;\n  display: block;\n  text-decoration: none;\n}\n.item[data-v-28cb1975]:last-child {\n  border-bottom: none;\n}\n.item[data-v-28cb1975]:hover {\n  background: rgba(0, 0, 0, 0.2);\n  cursor: pointer;\n}\n.item > svg[data-v-28cb1975], .item > i[data-v-28cb1975] {\n  margin-right: 1rem;\n}\n#links > *[data-v-28cb1975] {\n  display: inline-block;\n}\n", ""]);
+exports.push([module.i, "\n.toggle[data-v-28cb1975] {\n  color: inherit;\n  font-size: 0.7rem;\n  line-height: 2rem;\n  text-align: right;\n  padding: 1rem 4rem;\n  position: absolute;\n  top: 0;\n  right: 0;\n  color: inherit;\n  cursor: pointer;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n}\n.toggle i[data-v-28cb1975] {\n    font-size: 1.5rem;\n    margin-left: 0.3rem;\n    margin-top: -0.1rem;\n}\n#backdrop[data-v-28cb1975] {\n  position: fixed;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background: rgba(0, 0, 0, 0.5);\n  z-index: 101;\n}\n#links[data-v-28cb1975] {\n  margin-top: 0.2rem;\n}\n#bar[data-v-28cb1975] {\n  background: #141a1d;\n  position: fixed;\n  top: 0;\n  left: 0;\n  right: 0;\n  padding: 1rem;\n  color: white;\n  font-size: 1.2rem !important;\n  text-decoration: none;\n  z-index: 100;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: justify;\n      -ms-flex-pack: justify;\n          justify-content: space-between;\n  -ms-flex-wrap: wrap;\n      flex-wrap: wrap;\n  height: 4rem;\n}\n#title[data-v-28cb1975] {\n  padding: 0.5rem 0;\n  border-color: transparent;\n  float: left;\n  margin-right: 1rem;\n  color: white;\n  text-decoration: none;\n}\n#title[data-v-28cb1975]:hover {\n    text-decoration: underline;\n}\n.menu[data-v-28cb1975] {\n  position: fixed;\n  top: 0;\n  padding: 4rem 2rem 2rem;\n  -webkit-box-sizing: border-box;\n          box-sizing: border-box;\n  z-index: 101;\n  color: white;\n  right: -15rem;\n}\n.menu.hidden[data-v-28cb1975] {\n  width: auto;\n  right: 0;\n  padding: 0;\n  background-color: transparent !important;\n}\n.menu.hidden .toggle[data-v-28cb1975] {\n    position: relative;\n    padding: 1rem 2rem;\n}\n.menu.translate[data-v-28cb1975] {\n  bottom: 0;\n  right: -400px;\n  opacity: 0;\n  -webkit-transition: all 0.5s;\n  transition: all 0.5s;\n}\n.menu.visible[data-v-28cb1975] {\n  bottom: 0;\n  width: 400px;\n  right: -3rem;\n  overflow-y: scroll;\n  -webkit-transition: right 0.5s;\n  transition: right 0.5s;\n  opacity: 1;\n}\n@media screen and (max-width: 575px) {\n.menu.visible[data-v-28cb1975] {\n      width: 350px;\n}\n}\n.item[data-v-28cb1975] {\n  padding: 1rem;\n  color: inherit;\n  font-size: 1.2rem;\n  border-bottom: 1px solid;\n  text-transform: uppercase;\n  display: block;\n  text-decoration: none;\n}\n.item[data-v-28cb1975]:last-child {\n  border-bottom: none;\n}\n.item[data-v-28cb1975]:hover {\n  background: rgba(0, 0, 0, 0.2);\n  cursor: pointer;\n}\n.item > svg[data-v-28cb1975], .item > i[data-v-28cb1975] {\n  margin-right: 1rem;\n}\n#links > *[data-v-28cb1975] {\n  display: inline-block;\n}\n", ""]);
 
 // exports
 
@@ -44304,7 +44304,11 @@ var render = function() {
                   }
                 ],
                 staticClass: "fancy",
-                attrs: { type: "text", maxlength: "255" },
+                attrs: {
+                  type: "text",
+                  maxlength: "255",
+                  placeholder: "Clash of clans"
+                },
                 domProps: { value: _vm.app.name },
                 on: {
                   input: function($event) {
@@ -44330,7 +44334,11 @@ var render = function() {
                   }
                 ],
                 staticClass: "fancy",
-                attrs: { type: "text", maxlength: "7" },
+                attrs: {
+                  type: "text",
+                  maxlength: "12",
+                  placeholder: "1.0.321"
+                },
                 domProps: { value: _vm.app.version },
                 on: {
                   input: function($event) {
@@ -44359,7 +44367,11 @@ var render = function() {
                   }
                 ],
                 staticClass: "fancy",
-                attrs: { type: "text", maxlength: "20" },
+                attrs: {
+                  type: "text",
+                  maxlength: "20",
+                  placeholder: "6520000 (1 million = 1MB)"
+                },
                 domProps: { value: _vm.app.size },
                 on: {
                   input: function($event) {
@@ -44388,7 +44400,11 @@ var render = function() {
                   }
                 ],
                 staticClass: "fancy",
-                attrs: { type: "text", maxlength: "255" },
+                attrs: {
+                  type: "text",
+                  maxlength: "255",
+                  placeholder: "icons/image.png"
+                },
                 domProps: { value: _vm.app.icon },
                 on: {
                   input: function($event) {
@@ -44414,7 +44430,11 @@ var render = function() {
                   }
                 ],
                 staticClass: "fancy",
-                attrs: { type: "text", maxlength: "255" },
+                attrs: {
+                  type: "text",
+                  maxlength: "255",
+                  placeholder: "banners/image.png"
+                },
                 domProps: { value: _vm.app.banner },
                 on: {
                   input: function($event) {
@@ -44442,7 +44462,11 @@ var render = function() {
                   }
                 ],
                 staticClass: "fancy",
-                attrs: { type: "text", maxlength: "18" },
+                attrs: {
+                  type: "text",
+                  maxlength: "18",
+                  placeholder: "a short snippet"
+                },
                 domProps: { value: _vm.app.short },
                 on: {
                   input: function($event) {
@@ -44456,7 +44480,7 @@ var render = function() {
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "field" }, [
-              _c("div", { staticClass: "h5 mb-5" }, [_vm._v("Description")]),
+              _vm._m(0, false, false),
               _vm._v(" "),
               _c("textarea", {
                 directives: [
@@ -44468,7 +44492,11 @@ var render = function() {
                   }
                 ],
                 staticClass: "fancy",
-                attrs: { rows: "8", maxlength: "65000" },
+                attrs: {
+                  rows: "8",
+                  maxlength: "65000",
+                  placeholder: "Use markdown!! No HTML!!"
+                },
                 domProps: { value: _vm.app.description },
                 on: {
                   input: function($event) {
@@ -44494,7 +44522,11 @@ var render = function() {
                   }
                 ],
                 staticClass: "fancy",
-                attrs: { type: "text", maxlength: "255" },
+                attrs: {
+                  type: "text",
+                  maxlength: "255",
+                  placeholder: "https://example.com/your/unsigned/app/download"
+                },
                 domProps: { value: _vm.app.unsigned },
                 on: {
                   input: function($event) {
@@ -44520,7 +44552,11 @@ var render = function() {
                   }
                 ],
                 staticClass: "fancy",
-                attrs: { type: "text", maxlength: "255" },
+                attrs: {
+                  type: "text",
+                  maxlength: "255",
+                  placeholder: "https://example.com/your/signed/app/download"
+                },
                 domProps: { value: _vm.app.signed },
                 on: {
                   input: function($event) {
@@ -44548,7 +44584,12 @@ var render = function() {
                   }
                 ],
                 staticClass: "fancy",
-                attrs: { type: "text", maxlength: "255" },
+                attrs: {
+                  type: "text",
+                  maxlength: "255",
+                  placeholder:
+                    "https://example.com/premium/unsigned/app/download"
+                },
                 domProps: { value: _vm.app.unsigned_premium },
                 on: {
                   input: function($event) {
@@ -44574,7 +44615,11 @@ var render = function() {
                   }
                 ],
                 staticClass: "fancy",
-                attrs: { type: "text", maxlength: "255" },
+                attrs: {
+                  type: "text",
+                  maxlength: "255",
+                  placeholder: "https://example.com/premium/signed/app/download"
+                },
                 domProps: { value: _vm.app.signed_premium },
                 on: {
                   input: function($event) {
@@ -44600,7 +44645,11 @@ var render = function() {
                   }
                 ],
                 staticClass: "fancy",
-                attrs: { type: "text", maxlength: "255" },
+                attrs: {
+                  type: "text",
+                  maxlength: "255",
+                  placeholder: "game, fun, free, cats"
+                },
                 domProps: { value: _vm.app.tags },
                 on: {
                   input: function($event) {
@@ -44637,7 +44686,19 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "h5 mb-5" }, [
+      _vm._v("Description "),
+      _c("a", { attrs: { href: "http://commonmark.org/help/" } }, [
+        _vm._v("Markdown Guide")
+      ])
+    ])
+  }
+]
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
