@@ -24,9 +24,9 @@ class CreateAppsTable extends Migration
             $table->string('version')->nullable();
             $table->text('description')->nullable();
             $table->string('tags')->nullable();
-            $table->integer('views')->nullable();
-            $table->integer('downloads')->nullable();
-            $table->integer('size')->nullable();
+            $table->integer('views')->default(0);
+            $table->integer('downloads')->default(0);
+            $table->integer('size')->default(0);
             $table->softDeletes();
             $table->timestamps();
         });
