@@ -44283,7 +44283,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "wrapper uidpage" },
+    { staticClass: "wrapper" },
     [
       !!_vm.auth.isAdmin
         ? _c("app-admin", { attrs: { app: _vm.app } })

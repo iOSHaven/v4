@@ -1,5 +1,5 @@
 <template lang="html">
-  <div class="wrapper uidpage">
+  <div class="wrapper">
     <app-admin v-if="!!auth.isAdmin" :app="app"/>
 
     <div class="card" v-if="!!auth.isEditing">
