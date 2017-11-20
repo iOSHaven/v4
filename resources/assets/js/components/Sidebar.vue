@@ -91,7 +91,7 @@ export default {
     top: 0;
     left: 0;
     right: 0;
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     color: white;
     font-size: 1.2rem !important;
     text-decoration: none;
@@ -100,7 +100,6 @@ export default {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    height: 4rem;
 }
 
 #title {
