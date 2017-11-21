@@ -1,7 +1,7 @@
 <template>
   <section class="container">
     <particles/>
-    <div class="wrapper centeronpage">
+    <div class="wrapper offsetfromtop">
       <div id="logo" class=""></div>
       <h1 class="title">
         iOS Haven
@@ -38,7 +38,7 @@ export default {
   background-image: url('/logo.svg');
   background-repeat: no-repeat;
   background-position: center;
-  padding: 7rem;
+  padding: 5rem;
   @media (max-width: 500px) {
     padding: 4rem;
   }
@@ -63,10 +63,8 @@ export default {
     margin: 1rem 0;
   }
 }
-.centeronpage {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+.offsetfromtop {
+  margin-top: 2rem;
 }
 .subtitle {
   font-weight: 300;

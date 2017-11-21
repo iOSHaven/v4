@@ -26,7 +26,7 @@
     <link rel="manifest" href="/favicons/manifest.json?v=QEMYzE9pb35555">
     <link rel="mask-icon" href="/favicons/safari-pinned-tab.svg?v=QEMYzE9pb35555" color="#e81e1e">
     <link rel="shortcut icon" href="/favicons/favicon.ico?v=QEMYzE9pb35555">
-    
+
     <link href="{{ asset('css/normalize.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <!-- Extend the head -->
@@ -59,7 +59,9 @@
         @yield('content')
     </div>
 
+    @include('layouts.footer')
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+
 </body>
 </html>
