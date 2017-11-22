@@ -15,7 +15,7 @@
     <div class="column">
       <h2>Other Links</h2>
       <a href="/credits" class="item"><i class="fas fa-code"></i>Credits</a>
-      <a href="/donate" class="item"><i class="fab fa-paypal"></i>Donate</a>
+      <a href="/donate" class="item"><i class="fab fa-patreon"></i>Patreon</a>
       <a href="/cydia" class="item"><i class="fas fa-wrench"></i>Cydia Impactor</a>
       <a href="/jailbreaks" class="item"><i class="fas fa-user-secret"></i>Jailbreaks</a>
       <a href="/betas" class="item"><i class="fas fa-flask"></i>Betas</a>

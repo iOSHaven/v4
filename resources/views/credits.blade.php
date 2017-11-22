@@ -5,7 +5,7 @@
       iOS Haven Staff
   </div>
       <ul class="fancy bigger socials">
-        <li>Zane - Founder<a href="https://twitter.com/ZaneDevs" target="_blank"><i class="fab fa-twitter"></i></a></li>
+        <li>Zane - Founder<a href=" http://zane.cf/" target="_blank"><i class="fal fa-globe"></i></a></li>
         <li>Zeb - Developer <span>
           <a href="https://www.reddit.com/user/zebthewizard/" target="_blank"><i class="fab fa-reddit"></i></a>
           <a href="https://twitter.com/gfxrrr" target="_blank"><i class="fab fa-twitter"></i></a>
