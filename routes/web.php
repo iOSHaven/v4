@@ -31,9 +31,7 @@ Route::get('/download/{uid}', 'AppController@download');
 Route::get('/apps/getJson/{uid?}', 'AppController@getJson');
 Route::get('/apps', 'AppController@page')->name('apps');
 
-Route::get('/test', function () {
-  return view('layouts.footer');
-});
+Route::get('/test', 'HomeController@test');
 
 Route::get('/credits', 'StaticPageController@getCreditsPage');
 Route::get('/cydia', 'StaticPageController@getCydiaPage');

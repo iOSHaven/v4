@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
+use App\ReactJS;
 use App\User;
 use Auth;
 
@@ -33,5 +35,14 @@ class HomeController extends Controller
       $user->isEditing = !$user->isEditing;
       $user->save();
       return response()->json($user);
+    }
+
+    public function test () {
+      $rjs = new ReactJS(
+        File::get(base_path('react/comp.jsx')),
+        File::get(base_path('react/comp.jsx'))
+      );
+      $rjs->setComponent('Comp');
+      return view('ssr')->with(['rjs' => $rjs]);
     }
 }
