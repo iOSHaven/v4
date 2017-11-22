@@ -290,12 +290,12 @@ button.blue {
     p, a, li {
         line-height: 1.5rem;
     }
-    ul, ol {
+    ul {
       padding: 0;
       border: 1px solid #ccc;
       border-radius: 0.4rem;
       background: white;
-      margin: 1rem;
+      margin: 1rem 0;
       li {
         list-style: none;
         padding: 1rem;
@@ -387,3 +387,55 @@ footer {
     }
   }
 }
+
+ul.fancy {
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+  background: white;
+  li {
+    list-style: none;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    flex-wrap: wrap;
+    &:last-of-type {
+      border: none;
+    }
+  }
+}
+
+.socials a {
+  margin-left: 1rem;
+  .fa-reddit {color: #ff4500}
+  .fa-twitter {color: #1ca1f2}
+  .fa-globe{color: #797979}
+}
+
+.bigger i{
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.note {
+    font-size: 0.9rem;
+    color: #666;
+    font-weight: 100;
+    padding-left: 1rem;
+    border-left: 5px solid gold;
+    background: cornsilk;
+    padding: 1rem;
+    margin: 1rem auto;
+}
+
+// ol.neat {
+//     list-style-position: inside;
+//     padding: 0;
+//     li {
+//       padding-bottom: 1rem;
+//       &:last-of-type {
+//         padding: none;
+//       }
+//     }
+// }

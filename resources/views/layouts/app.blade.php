@@ -39,22 +39,7 @@
     </div>
     <div id="app">
 
-      <sidebar color="#F44336" is-admin="{{Auth::check() && Auth::user()->isAdmin}}" title="{{ config('app.name', 'Laravel') }}">
-        <a href="/profile" slot="links" class="mr-5">
-          @if(Auth::check())
-          <square-button icon="fas fa-user" class="fill--white dark"/>
-          @else
-          <square-button icon="fas fa-sign-in" class="fill--white dark"/>
-          @endif
-
-        </a>
-        <!-- <a href="/auth" slot="links"><i class="fas fa-user"></i></a> -->
-        <div slot="content">
-          <a href="/" class="item"><i class="fas fa-home"></i>Home</a>
-          <a href="/apps" class="item"><i class="fab fa-app-store"></i>Apps</a>
-          <a href="/credits" class="item"><i class="fas fa-code"></i>Credits</a>
-        </div>
-      </sidebar>
+    @include('layouts.sidebar')
 
         @yield('content')
     </div>

@@ -34,3 +34,8 @@ Route::get('/apps', 'AppController@page')->name('apps');
 Route::get('/test', function () {
   return view('layouts.footer');
 });
+
+Route::get('/credits', 'StaticPageController@getCreditsPage');
+Route::get('/cydia', 'StaticPageController@getCydiaPage');
+Route::get('/betas', 'StaticPageController@getBetasPage');
+Route::get('/jailbreak', 'StaticPageController@getJailbreakPage');

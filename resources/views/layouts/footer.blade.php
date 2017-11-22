@@ -1,4 +1,4 @@
-<footer>
+<footer id="footer">
   <div class="wrapper">
     <div class="column">
       <h2>Social Media</h2>

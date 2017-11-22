@@ -1122,17 +1122,15 @@ button.blue:hover {
   line-height: 1.5rem;
 }
 
-.markdown ul,
-.markdown ol {
+.markdown ul {
   padding: 0;
   border: 1px solid #ccc;
   border-radius: 0.4rem;
   background: white;
-  margin: 1rem;
+  margin: 1rem 0;
 }
 
-.markdown ul li,
-.markdown ol li {
+.markdown ul li {
   list-style: none;
   padding: 1rem;
   border-bottom: 1px solid #ccc;
@@ -1140,8 +1138,7 @@ button.blue:hover {
       flex-wrap: wrap;
 }
 
-.markdown ul li:last-of-type,
-.markdown ol li:last-of-type {
+.markdown ul li:last-of-type {
   border: none;
 }
 
@@ -1244,5 +1241,62 @@ footer .column h3 {
 
 footer .column i {
   margin-right: 1rem;
+}
+
+ul.fancy {
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 0.4rem;
+  background: white;
+}
+
+ul.fancy li {
+  list-style: none;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+ul.fancy li:last-of-type {
+  border: none;
+}
+
+.socials a {
+  margin-left: 1rem;
+}
+
+.socials a .fa-reddit {
+  color: #ff4500;
+}
+
+.socials a .fa-twitter {
+  color: #1ca1f2;
+}
+
+.socials a .fa-globe {
+  color: #797979;
+}
+
+.bigger i {
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+.note {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 100;
+  padding-left: 1rem;
+  border-left: 5px solid gold;
+  background: cornsilk;
+  padding: 1rem;
+  margin: 1rem auto;
 }
 
