@@ -9,9 +9,9 @@
           <a href="https://www.reddit.com/user/zebthewizard/" target="_blank"><i class="fab fa-reddit"></i></a>
           <a href="https://twitter.com/gfxrrr" target="_blank"><i class="fab fa-twitter"></i></a>
         </span></li>
-        <li>Zack - <a href="https://twitter.com/_ZackBz" target="_blank"><i class="fab fa-twitter"></i></a></li>
+        <li>Zack - Junior Developer<a href="https://twitter.com/_ZackBz" target="_blank"><i class="fab fa-twitter"></i></a></li>
         <li>Zane - Founder<a href="https://twitter.com/ZaneDevs" target="_blank"><i class="fab fa-twitter"></i></a></li>
-        <li>Riggy - Discord Server Mod</li>
+        <li>343 - Discord Server Mod</li>
       </ul>
 
     <div class="heading">

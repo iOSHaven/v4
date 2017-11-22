@@ -22,4 +22,8 @@ class StaticPageController extends Controller
     public function getJailbreakPage() {
       return view('jailbreak');
     }
+
+    public function getAboutUsPage() {
+      return view('aboutUs');
+    }
 }

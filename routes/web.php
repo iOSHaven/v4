@@ -39,3 +39,4 @@ Route::get('/credits', 'StaticPageController@getCreditsPage');
 Route::get('/cydia', 'StaticPageController@getCydiaPage');
 Route::get('/betas', 'StaticPageController@getBetasPage');
 Route::get('/jailbreak', 'StaticPageController@getJailbreakPage');
+Route::get('/aboutUs', 'StaticPageController@getAboutUsPage');
