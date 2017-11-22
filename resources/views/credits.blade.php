@@ -5,13 +5,13 @@
       iOS Haven Staff
   </div>
       <ul class="fancy bigger socials">
-        <li>Zeb - Fullstack Developer <span>
+        <li>Zane - Founder<a href="https://twitter.com/ZaneDevs" target="_blank"><i class="fab fa-twitter"></i></a></li>
+        <li>Zeb - Developer <span>
           <a href="https://www.reddit.com/user/zebthewizard/" target="_blank"><i class="fab fa-reddit"></i></a>
           <a href="https://twitter.com/gfxrrr" target="_blank"><i class="fab fa-twitter"></i></a>
         </span></li>
-        <li>Zack - Junior Developer<a href="https://twitter.com/_ZackBz" target="_blank"><i class="fab fa-twitter"></i></a></li>
-        <li>Zane - Founder<a href="https://twitter.com/ZaneDevs" target="_blank"><i class="fab fa-twitter"></i></a></li>
-        <li>343 - Discord Server Mod</li>
+        <li>Zack - Developer<a href="https://twitter.com/_ZackBz" target="_blank"><i class="fab fa-twitter"></i></a></li>
+        <li>343 - Discord Moderator</li>
       </ul>
 
     <div class="heading">
