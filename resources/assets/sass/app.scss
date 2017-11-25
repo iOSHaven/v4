@@ -43,12 +43,15 @@ html {
   .field {
     padding: 0.5rem 0rem;
   }
-  &.no-border {
-    border: none;
-  }
 }
 
+.no-border {
+  border: none !important;
+}
 
+.no-padding {
+  padding: 0 !important;
+}
 .console {
     padding: 0.5rem;
     background: black;
@@ -218,6 +221,9 @@ input.fancy, textarea.fancy {
     background: rgba(0,0,0,0.05);
     width: 100%;
     resize: vertical;
+    &.white{
+      background: white;
+    }
 }
 
 input.big, button.big {
@@ -478,4 +484,14 @@ ul.fancy {
     background-size: contain;
     background-repeat: no-repeat;
   }
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 101;
 }

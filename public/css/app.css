@@ -55,8 +55,12 @@ html {
   padding: 0.5rem 0rem;
 }
 
-.card.no-border {
-  border: none;
+.no-border {
+  border: none !important;
+}
+
+.no-padding {
+  padding: 0 !important;
 }
 
 .console {
@@ -1035,6 +1039,11 @@ textarea.fancy {
   resize: vertical;
 }
 
+input.fancy.white,
+textarea.fancy.white {
+  background: white;
+}
+
 input.big,
 button.big {
   display: block;
@@ -1349,5 +1358,15 @@ ul.fancy li:last-of-type {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 101;
 }
 

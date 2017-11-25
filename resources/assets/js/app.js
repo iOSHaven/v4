@@ -25,6 +25,7 @@ Vue.component('app-admin', require('./components/AppAdmin.vue'));
 Vue.component('app', require('./components/App.vue'))
 Vue.component('alert', require('./components/ui/Alert.vue'))
 Vue.component('search-bar', require('./components/ui/SearchBar.vue'))
+Vue.component('drop-up', require('./components/ui/DropUp.vue'))
 Vue.component('page-uid', require('./components/pages/uid.vue'))
 Vue.component('page-apps', require('./components/pages/apps.vue'))
 Vue.component('page-index', require('./components/pages/index.vue'))
@@ -32,8 +33,14 @@ Vue.component('page-index', require('./components/pages/index.vue'))
 const app = new Vue({
     el: '#app',
     store,
+    data: {
+      filteredApps: false
+    },
     methods: {
-      updateAppSearch: updateAppSearch
+      updateAppSearch (val) {
+        $('.app.server-rendered').remove()
+        this.filteredApps = val
+      }
     }
 });
 

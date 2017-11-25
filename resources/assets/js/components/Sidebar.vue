@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="Sidebar">
-    <div id="backdrop"  v-if="isVisible" v-on:click="toggle"></div>
+    <div class="backdrop"  v-if="isVisible" v-on:click="toggle"></div>
     <div href="/" id="bar">
         <a href="/" id="title">{{title}}</a>
         <div id="links">
