@@ -1300,3 +1300,55 @@ ul.fancy li:last-of-type {
   margin: 1rem auto;
 }
 
+.apps {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-preferred-size: 1;
+      flex-basis: 1;
+}
+
+.apps .content {
+  overflow: hidden;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  margin-left: 0.5rem;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  font-size: 0.8rem;
+}
+
+.apps .get {
+  min-width: 3.2rem !important;
+  font-size: 0.6rem;
+  padding: 0.3rem;
+  border-radius: 5rem;
+  text-transform: uppercase;
+}
+
+.apps .description {
+  font-size: .8rem;
+  height: 2.5rem;
+}
+
+.apps .shadow {
+  -webkit-box-shadow: 0px -5px 11px 12px white;
+          box-shadow: 0px -5px 11px 12px white;
+  position: absolute;
+  width: 100%;
+  left: 5.5rem;
+  top: 100%;
+}
+
+.apps .image {
+  width: 0;
+  height: 0;
+  padding: 2rem;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+

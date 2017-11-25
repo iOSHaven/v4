@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.default')
 @section('head')
 <link rel="stylesheet" href="/css/uid.css">
 @endsection

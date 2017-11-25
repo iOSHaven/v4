@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.default')
 @section('content')
 <div class="wrapper markdown">
     <h1>iOS</h1>

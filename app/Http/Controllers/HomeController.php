@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use App\ReactJS;
 use App\User;
+use App\App;
 use Auth;
 
 class HomeController extends Controller
@@ -38,11 +39,7 @@ class HomeController extends Controller
     }
 
     public function test () {
-      $rjs = new ReactJS(
-        File::get(base_path('react/comp.jsx')),
-        File::get(base_path('react/comp.jsx'))
-      );
-      $rjs->setComponent('Comp');
-      return view('ssr')->with(['rjs' => $rjs]);
+      $apps = App::get();
+      return view('ssr')->with(['apps' => $apps]);
     }
 }

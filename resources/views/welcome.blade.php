@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.default')
 
 @section('head')
 <script src="/particles.min.js" charset="utf-8"></script>

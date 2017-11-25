@@ -4,6 +4,7 @@
 
 <script>
 export default {
+  name: 'search-bar',
   props: ['data', 'options', 'inputclass'],
   data () {
     return {

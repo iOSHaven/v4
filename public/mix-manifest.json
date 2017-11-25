@@ -1,7 +1,5 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/css/uid.css": "/css/uid.css",
-    "/react/react-bundle.js": "/react/react-bundle.js",
-    "/react/comp.js": "/react/comp.js"
+    "/css/uid.css": "/css/uid.css"
 }

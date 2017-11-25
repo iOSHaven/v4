@@ -7,7 +7,7 @@
     </div>
 
 
-    <app v-for="app in filteredApps" :key="app.name" :data="app" class="m-3" @removed="appRemoved"></app>
+    <app v-for="app in filteredApps" v-if="auth.isAdmin" :key="app.name" :data="app" class="m-3" @removed="appRemoved"></app>
 
     <!-- <div class="card m-3 mt2 fill-blue center">Load more apps.</div> -->
   </div>

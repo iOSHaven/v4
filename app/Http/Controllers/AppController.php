@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Thing;
 use App\App;
 use Parsedown;
 
@@ -10,7 +11,12 @@ class AppController extends Controller
 {
     public function page ()
     {
-      return view('apps');
+      // $apps = new Thing('app');
+      // return view('apps')->with(['app' => $app]);
+      // dd($app);
+      return view('apps')->with([
+        'apps' => App::get()
+      ]);
     }
 
     public function create (Request $request)
