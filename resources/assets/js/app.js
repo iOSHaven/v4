@@ -39,7 +39,7 @@ const app = new Vue({
 
 
 
-$('document').ready(function () {
-  $('#loading').hide();
-  $('#app').css('opacity', '1');
-})
+// $('document').ready(function () {
+//   $('#loading').hide();
+//   $('#app').css('opacity', '1');
+// })

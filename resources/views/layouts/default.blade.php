@@ -34,9 +34,9 @@
 
 </head>
 <body>
-    <div id="loading">
+    <!-- <div id="loading">
       Loading...
-    </div>
+    </div> -->
     <div id="app">
 
     @include('layouts.sidebar')
