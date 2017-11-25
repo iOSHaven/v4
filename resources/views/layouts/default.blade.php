@@ -7,6 +7,11 @@
     <meta name="apple-mobile-web-app-title" content="IOS Haven">
     <meta name="application-name" content="IOS Haven">
     <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Get all your iPhone app needs straight from the web.  Including IPAs, signed apps, Apple developer betas, and jailbreaks.">
+    <meta name="keywords" content="iphone,jailbreak,hack,crack,signed,download,ipa,free">
+    <meta name="robots" content="index, follow">
+    <meta name="web_author" content="iOS Development Team">
+    <meta name="language" content="English">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">

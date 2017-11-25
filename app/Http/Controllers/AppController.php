@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Spatie\Sitemap\SitemapGenerator;
 use Illuminate\Http\Request;
 use App\Thing;
 use App\App;
@@ -25,6 +26,8 @@ class AppController extends Controller
       $app->uid = str_random(5);
       $app->description = "No description";
       $app->save();
+
+      // SitemapGenerator::create(Request::url())->writeToFile(base_path('sitemap.xml'));
       return response()->json($app);
     }
 
