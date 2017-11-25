@@ -6,7 +6,7 @@
       <app-admin class="m-3"></app-admin>
     @endadmin
 
-    <div class="card m-3 no-border no-padding">
+    <div class="card ml-3 mr-3 mt1 mb1 no-border no-padding">
       <search-bar :options="{
         alphabetize: 'name',
         property: 'name',

@@ -15,6 +15,6 @@
     <a href="/cydia" class="item"><i class="fas fa-wrench"></i>Cydia Impactor</a>
     <a href="/aboutUs" class="item"><i class="fas fa-cogs"></i>About Us</a>
     <a href="/credits" class="item"><i class="fas fa-code"></i>Credits</a>
-    <a href="#footer" class="item"><i class="fas fa-eye"></i>View More</a>
+    <a href="#footer" class="item" @click="toggleSidebar"><i class="fas fa-eye"></i>View More</a>
   </div>
 </sidebar>

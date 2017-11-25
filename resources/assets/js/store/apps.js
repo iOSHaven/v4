@@ -56,10 +56,10 @@ export const mutations = {
         return app.uid === state.current.uid
       })
     }
-    console.log(i)
+    //console.log(i)
     axios.post('/app/update', i)
     .then(doc => {
-      console.log(i, doc)
+      //console.log(i, doc)
     })
   }
 }

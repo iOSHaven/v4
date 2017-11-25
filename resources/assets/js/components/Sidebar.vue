@@ -19,6 +19,8 @@
       <slot name="content">
         please put content in me.
       </slot>
+      
+
     </div>
   </div>
 </template>

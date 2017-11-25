@@ -1637,10 +1637,17 @@ var app = new Vue({
     updateAppSearch: function updateAppSearch(val) {
       $('.app.server-rendered').remove();
       this.filteredApps = val;
+    },
+    toggleSidebar: function toggleSidebar() {
+      window.dispatchEvent(new Event('toggleSidebar'));
     }
   }
 });
 
+$("a").click(function (event) {
+  event.preventDefault();
+  window.location = $(this).attr("href");
+});
 $('document').ready(function () {
   $('.hide-on-server-render').show();
 });
@@ -40930,7 +40937,7 @@ exports.clearImmediate = clearImmediate;
 
 function updateAppSearch(val) {
   $('.app').hide();
-  console.log('valll', val);
+  //console.log('valll', val);
   val.forEach(function (v) {
     $('.app').each(function () {
       if (v.uid === $(this).data('uid')) $(this).show();
@@ -42028,9 +42035,9 @@ var mutations = {
         return app.uid === state.current.uid;
       });
     }
-    console.log(i);
+    //console.log(i)
     axios.post('/app/update', i).then(function (doc) {
-      console.log(i, doc);
+      //console.log(i, doc)
     });
   }
 };
@@ -42185,6 +42192,8 @@ module.exports = function listToStyles (parentId, list) {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ui_SquareButton_vue__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__ui_SquareButton_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__ui_SquareButton_vue__);
+//
+//
 //
 //
 //
@@ -42622,8 +42631,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['data'],
@@ -42677,20 +42684,7 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm.auth.isEditing
-        ? _c(
-            "div",
-            {
-              staticClass: "get fill--red center",
-              on: {
-                click: function($event) {
-                  _vm.remove($event)
-                }
-              }
-            },
-            [_vm._v("delete")]
-          )
-        : _c("div", { staticClass: "get fill--blue center" }, [_vm._v("get")])
+      _c("div", { staticClass: "get fill--blue center" }, [_vm._v("get")])
     ]
   )
 }
@@ -42888,7 +42882,7 @@ exports = module.exports = __webpack_require__(1)(undefined);
 
 
 // module
-exports.push([module.i, "\n.searchbar[data-v-0cbd3d07] {\n  position: relative;\n}\n.searchbar-button[data-v-0cbd3d07] {\n  position: absolute;\n  right: 1rem;\n  height: 100%;\n  top: 0;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #ccc;\n}\n.searchbar-button[data-v-0cbd3d07]:hover {\n    cursor: pointer;\n    color: #a6a6a6;\n}\n", ""]);
+exports.push([module.i, "\n.searchbar[data-v-0cbd3d07] {\n  position: relative;\n}\n.searchbar-button[data-v-0cbd3d07] {\n  position: absolute;\n  right: 0;\n  height: 100%;\n  border-left: 1px solid #ccc;\n  top: 0;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  color: #ccc;\n  padding: 1rem;\n}\n.searchbar-button[data-v-0cbd3d07]:hover {\n    cursor: pointer;\n    color: #a6a6a6;\n}\n", ""]);
 
 // exports
 
@@ -42934,6 +42928,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   data: function data() {
     return {
       'searchOptions': {},
+      searchData: [],
       showDropUp: false,
       payload: '',
       result: [],
@@ -42945,19 +42940,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   mounted: function mounted() {
     this.searchOptions = this.options;
+    this.searchData = this.data;
     if (this.searchOptions.filterOnMount) this.filter();
   },
 
   methods: {
+    setData: function setData(data) {
+      this.searchData = data;
+    },
     filter: function filter() {
       /**
        * @param {String} alphabetize - the property being alphabetized
        * @param {String} property - the property being searched
       */
-      console.log('filter');
+      //console.log('filter')
       this.result = [];
-      if (this.searchOptions.alphabetize) this.alphabetize(this.data);
-      if (this.searchOptions.property) this.search({ payload: this.payload, data: this.result || this.data });
+      if (this.searchOptions.alphabetize) this.alphabetize(this.searchData);
+      if (this.searchOptions.property) this.search({ payload: this.payload, data: this.result || this.searchData });
       if (this.orderType.type === "up") this.result.reverse();
       this.$emit('update', this.result);
     },
@@ -42976,7 +42975,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
       this.searchOptions.alphabetize = options.alphabetize;
       this.searchOptions.property = options.property;
-      console.log('sdfg', this.searchOptions.property);
+      //console.log('sdfg', this.searchOptions.property);
       $(e.target).find('.icon')[0].className = "icon fal fa-sort-amount-" + this.orderType.type;
       this.filter();
     },
@@ -42992,7 +42991,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
           return data[a][$a] - data[b][$a];
         }
       });
-      console.log(data, alphabetize);
+      //console.log(data, alphabetize);
       alphabetize.forEach(function (index) {
         _this.result.push(data[index]);
       });
@@ -43535,7 +43534,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     axios.get('/apps/getJson/' + this.uid).then(function (_ref) {
       var data = _ref.data;
 
-      console.log(data);
+      //console.log(data);
       _this.$store.commit('app:set', data);
       // let data = this.$store.getters['app:get']
       _this.app = data;
@@ -45458,10 +45457,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   },
   methods: {
     updateSearch: function updateSearch(val) {
-      console.log('asdfasf', val);
+      //console.log('asdfasf',val);
       this.filteredApps = val;
     },
-    appRemoved: function appRemoved() {
+    appRemoved: function appRemoved(uid) {
+      //console.log(uid);
+      var i = this.filteredApps.findIndex(function (el) {
+        return el.uid === uid;
+      });
+      //console.log(i);
+      this.filteredApps.splice(i, 1);
       var search = this.$refs.search;
       search.filter();
       // console.log(search)

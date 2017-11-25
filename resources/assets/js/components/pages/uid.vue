@@ -86,7 +86,7 @@ export default {
     this.$store.commit('auth:set', this.setAuth)
     this.$store.commit('app:uid', this.uid)
     axios.get('/apps/getJson/' + this.uid).then(({data}) => {
-      console.log(data);
+      //console.log(data);
       this.$store.commit('app:set', data)
       // let data = this.$store.getters['app:get']
       this.app = data

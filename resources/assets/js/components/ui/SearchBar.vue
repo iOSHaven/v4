@@ -33,6 +33,7 @@ export default {
   data () {
     return {
       'searchOptions': {},
+      searchData: [],
       showDropUp: false,
       payload: '',
       result: [],
@@ -44,18 +45,22 @@ export default {
   },
   mounted () {
     this.searchOptions = this.options
+    this.searchData = this.data
     if (this.searchOptions.filterOnMount) this.filter()
   },
   methods: {
+    setData (data) {
+      this.searchData = data
+    },
     filter () {
       /**
        * @param {String} alphabetize - the property being alphabetized
        * @param {String} property - the property being searched
       */
-      console.log('filter')
+      //console.log('filter')
       this.result = []
-      if (this.searchOptions.alphabetize) this.alphabetize(this.data)
-      if (this.searchOptions.property) this.search({payload: this.payload, data: this.result || this.data})
+      if (this.searchOptions.alphabetize) this.alphabetize(this.searchData)
+      if (this.searchOptions.property) this.search({payload: this.payload, data: this.result || this.searchData})
       if (this.orderType.type === "up") this.result.reverse()
       this.$emit('update', this.result)
     },
@@ -74,7 +79,7 @@ export default {
       }
       this.searchOptions.alphabetize = options.alphabetize
       this.searchOptions.property = options.property
-      console.log('sdfg', this.searchOptions.property);
+      //console.log('sdfg', this.searchOptions.property);
       $(e.target).find('.icon')[0].className = "icon fal fa-sort-amount-" + this.orderType.type
       this.filter()
     },
@@ -89,7 +94,7 @@ export default {
           return data[a][$a] - data[b][$a]
         }
       })
-      console.log(data, alphabetize);
+      //console.log(data, alphabetize);
       alphabetize.forEach(index => {
         this.result.push(data[index])
       })
@@ -124,12 +129,14 @@ export default {
 }
 .searchbar-button {
   position: absolute;
-  right: 1rem;
+  right: 0;
   height: 100%;
+  border-left: 1px solid #ccc;
   top: 0;
   display: flex;
   align-items: center;
   color: #ccc;
+  padding: 1rem;
   &:hover {
     cursor: pointer;
     color: darken(#ccc, 15%);

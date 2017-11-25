@@ -6,9 +6,7 @@
       <div class="shadow"></div>
       <div class="description">{{data.short}}</div>
     </div>
-
-    <div class="get fill--red center" v-if="auth.isEditing" @click="remove($event)">delete</div>
-    <div class="get fill--blue center" v-else>get</div>
+    <div class="get fill--blue center">get</div>
   </a>
 </template>
 

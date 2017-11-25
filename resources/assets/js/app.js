@@ -40,12 +40,18 @@ const app = new Vue({
       updateAppSearch (val) {
         $('.app.server-rendered').remove()
         this.filteredApps = val
+      },
+      toggleSidebar () {
+        window.dispatchEvent(new Event('toggleSidebar'))
       }
     }
 });
 
 
-
+$("a").click(function (event) {
+  event.preventDefault();
+  window.location = $(this).attr("href");
+})
 $('document').ready(function () {
   $('.hide-on-server-render').show();
 })

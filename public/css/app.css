@@ -20,90 +20,6 @@ html {
   margin: 0;
 }
 
-#app {
-  margin-top: 3rem;
-  padding: 2rem 1rem;
-  max-width: 100vw;
-  min-height: 100vh;
-}
-
-@media (max-width: 500px) {
-  #app {
-    padding: 1.6rem 0;
-  }
-}
-
-.hide-on-server-render {
-  display: none;
-}
-
-.wrapper {
-  max-width: 960px;
-  margin: auto;
-}
-
-.wrapper.mobile {
-  max-width: 400px;
-}
-
-.card {
-  background: white;
-  padding: 0.5rem;
-  width: 100%;
-  border: 1px solid #ccc;
-  margin: 0rem auto 1rem;
-  overflow: hidden;
-}
-
-.card .field {
-  padding: 0.5rem 0rem;
-}
-
-.no-border {
-  border: none !important;
-}
-
-.no-padding {
-  padding: 0 !important;
-}
-
-.console {
-  padding: 0.5rem;
-  background: black;
-  color: white;
-  font-family: monospace;
-  padding-left: 1rem;
-  -webkit-user-select: all;
-     -moz-user-select: all;
-      -ms-user-select: all;
-          user-select: all;
-}
-
-.console:before {
-  content: ">";
-  display: inline-block;
-  margin-right: 1rem;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-  font-weight: 400;
-}
-
-.center {
-  text-align: center;
-}
-
 .p1 {
   padding: 1rem;
 }
@@ -904,6 +820,97 @@ h6,
   margin-bottom: 1rem !important;
 }
 
+#app {
+  margin-top: 3rem;
+  padding: 2rem 1rem;
+  max-width: 100vw;
+  min-height: 100vh;
+}
+
+@media (max-width: 500px) {
+  #app {
+    padding: 1.6rem 0;
+  }
+}
+
+.hide-on-server-render {
+  display: none;
+}
+
+.wrapper {
+  max-width: 960px;
+  margin: auto;
+}
+
+.wrapper.mobile {
+  max-width: 400px;
+}
+
+.card {
+  background: white;
+  padding: 0.5rem;
+  width: 100%;
+  border: 1px solid #ccc;
+  margin: 0rem auto 1rem;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 576px) {
+  .card {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+}
+
+.card .field {
+  padding: 0.5rem 0rem;
+}
+
+.no-border {
+  border: none !important;
+}
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.console {
+  padding: 0.5rem;
+  background: black;
+  color: white;
+  font-family: monospace;
+  padding-left: 1rem;
+  -webkit-user-select: all;
+     -moz-user-select: all;
+      -ms-user-select: all;
+          user-select: all;
+}
+
+.console:before {
+  content: ">";
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  font-weight: 400;
+}
+
+.center {
+  text-align: center;
+}
+
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -995,6 +1002,8 @@ h6,
 @media screen and (max-width: 576px) {
   .app {
     width: 100%;
+    margin: 0;
+    margin-top: -1px;
   }
 }
 

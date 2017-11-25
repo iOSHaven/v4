@@ -56,10 +56,16 @@ export default {
   },
   methods: {
     updateSearch (val) {
-      console.log('asdfasf',val);
+      //console.log('asdfasf',val);
       this.filteredApps = val
     },
-    appRemoved () {
+    appRemoved (uid) {
+      //console.log(uid);
+      let i = this.filteredApps.findIndex(el => {
+        return el.uid === uid
+      })
+      //console.log(i);
+      this.filteredApps.splice(i, 1)
       let search = this.$refs.search
       search.filter()
       // console.log(search)

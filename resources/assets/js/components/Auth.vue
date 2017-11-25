@@ -67,7 +67,7 @@ export default {
       this.form = type
     },
     isValid () {
-      console.log('checkValidity')
+      //console.log('checkValidity')
       if (this.$refs.password.value !== this.$refs.passwordConfirm.value) {
         this.$refs.password.setCustomValidity('passwords do not match')
       } else {
