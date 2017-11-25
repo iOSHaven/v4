@@ -33,7 +33,7 @@ export default {
   data () {
     return {
       'searchOptions': {},
-      showDropUp: true,
+      showDropUp: false,
       payload: '',
       result: [],
       orderType: {

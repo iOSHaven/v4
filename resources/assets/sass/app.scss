@@ -26,6 +26,10 @@ html {
     padding: 1.6rem 0;
   }
 }
+
+.hide-on-server-render {
+  display: none;
+}
 .wrapper {
   max-width: 960px;
   margin: auto;

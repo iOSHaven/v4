@@ -33,6 +33,10 @@ html {
   }
 }
 
+.hide-on-server-render {
+  display: none;
+}
+
 .wrapper {
   max-width: 960px;
   margin: auto;
