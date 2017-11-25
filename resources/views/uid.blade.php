@@ -8,6 +8,7 @@
 <div class="wrapper uidpage">
   <div class="banner" style="background-image: url(/{{$app->banner}})">
     <div class="icon" style="background-image: url(/{{$app->icon}})"></div>
+    <div class="version">Version: {{ $app->version }}</div>
     <div class="installs">
         @if($app->signed)
         <a class="get fill--white center dark" href="/install/{{$app->uid}}">Install</a>
@@ -19,7 +20,7 @@
     <div class="shadow"></div>
   </div>
 
-  <div class="bar card flex">
+  <div class="bar card flex has-shadow">
       <div class="title m-3">
         <h3>{{$app->name}}</h3>
       </div>
@@ -43,13 +44,13 @@
     @admin
     <page-uid uid="{{$app->uid}}" :set-auth="{{Auth::user()->toJson()}}"></page-uid>
     @else
-    <div class="card">
-      <div class="markdown">{!! $app->html !!}</div>
+    <div class="card has-shadow">
+      <div class="markdown-body">{!! $app->html !!}</div>
     </div>
     @if ($app->tags)
-    <div class="card flex tags">
+    <div class="flex tags">
       @foreach (explode(",", $app->tags) as $tag)
-        <div class="tag">{{$tag}}</div>
+        <a href="/apps/{{$tag}}" class="tag">{{$tag}}</a>
       @endforeach
     </div>
     @endif

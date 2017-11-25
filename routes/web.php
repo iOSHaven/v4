@@ -28,7 +28,7 @@ Route::get('/install/{uid}', 'AppController@install');
 Route::get('/download/{uid}', 'AppController@download');
 
 Route::get('/apps/getJson/{uid?}', 'AppController@getJson');
-Route::get('/apps', 'AppController@page')->name('apps');
+Route::get('/apps/{tag?}', 'AppController@page')->name('apps');
 
 Route::get('/test', 'HomeController@test');
 

@@ -50,6 +50,7 @@ const app = new Vue({
 
 $("a").click(function (event) {
   event.preventDefault();
+  console.log('clicked link');
   window.location = $(this).attr("href");
 })
 $('document').ready(function () {

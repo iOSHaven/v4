@@ -106,7 +106,7 @@ html {
   background: white;
   padding: 0.5rem;
   width: 100%;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   margin: 0rem auto 1rem;
   overflow: hidden;
   @media screen and (max-width: 576px) {
@@ -118,12 +118,18 @@ html {
   }
 }
 
+
 .no-border {
   border: none !important;
 }
 
 .no-padding {
   padding: 0 !important;
+}
+
+.has-shadow {
+  box-shadow: 0px 4px 4px -4px rgba(0,0,0,0.5) !important;
+  border: none !important;
 }
 .console {
     padding: 0.5rem;
@@ -169,12 +175,12 @@ $button-colors: 'red' $red, 'green' $green,  'blue' $blue, 'white' $white;
     color: $value !important;
     border: 1px solid $value !important;
     text-decoration: none !important;
-    &:hover {
+    &:hover, &:focus {
       color: white !important;
       background: $value !important;
       cursor: pointer !important;
     }
-    &.dark:hover {
+    &.dark:hover, &:focus {
       color: black !important;
     }
   }
@@ -201,9 +207,8 @@ $button-colors: 'red' $red, 'green' $green,  'blue' $blue, 'white' $white;
   @media screen and (min-width: 768px) {
     width: calc(100% / 3 - (0.3rem * 2));
   }
-  &:hover{
+  &:hover, &:focus{
     cursor: pointer;
-    // border-color: $
     box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.3);
   }
 }
@@ -260,7 +265,7 @@ button.blue {
     border: 2px solid transparent;
     background: $blue;
     color: white;
-    &:hover {
+    &:hover, &:focus {
       background: $blue-hover;
       cursor: pointer;
     }

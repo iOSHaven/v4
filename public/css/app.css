@@ -850,7 +850,7 @@ html {
   background: white;
   padding: 0.5rem;
   width: 100%;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   margin: 0rem auto 1rem;
   overflow: hidden;
 }
@@ -872,6 +872,12 @@ html {
 
 .no-padding {
   padding: 0 !important;
+}
+
+.has-shadow {
+  -webkit-box-shadow: 0px 4px 4px -4px rgba(0, 0, 0, 0.5) !important;
+          box-shadow: 0px 4px 4px -4px rgba(0, 0, 0, 0.5) !important;
+  border: none !important;
 }
 
 .console {
@@ -926,13 +932,15 @@ h6,
   text-decoration: none !important;
 }
 
-.fill--red:hover {
+.fill--red:hover,
+.fill--red:focus {
   color: white !important;
   background: #f44336 !important;
   cursor: pointer !important;
 }
 
-.fill--red.dark:hover {
+.fill--red.dark:hover,
+.fill--red:focus {
   color: black !important;
 }
 
@@ -942,13 +950,15 @@ h6,
   text-decoration: none !important;
 }
 
-.fill--green:hover {
+.fill--green:hover,
+.fill--green:focus {
   color: white !important;
   background: #4caf50 !important;
   cursor: pointer !important;
 }
 
-.fill--green.dark:hover {
+.fill--green.dark:hover,
+.fill--green:focus {
   color: black !important;
 }
 
@@ -958,13 +968,15 @@ h6,
   text-decoration: none !important;
 }
 
-.fill--blue:hover {
+.fill--blue:hover,
+.fill--blue:focus {
   color: white !important;
   background: #2196F3 !important;
   cursor: pointer !important;
 }
 
-.fill--blue.dark:hover {
+.fill--blue.dark:hover,
+.fill--blue:focus {
   color: black !important;
 }
 
@@ -974,13 +986,15 @@ h6,
   text-decoration: none !important;
 }
 
-.fill--white:hover {
+.fill--white:hover,
+.fill--white:focus {
   color: white !important;
   background: #fff !important;
   cursor: pointer !important;
 }
 
-.fill--white.dark:hover {
+.fill--white.dark:hover,
+.fill--white:focus {
   color: black !important;
 }
 
@@ -1019,7 +1033,8 @@ h6,
   }
 }
 
-.app:hover {
+.app:hover,
+.app:focus {
   cursor: pointer;
   -webkit-box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.3);
           box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.3);
@@ -1091,7 +1106,8 @@ button.blue {
   color: white;
 }
 
-button.blue:hover {
+button.blue:hover,
+button.blue:focus {
   background: #0c7cd5;
   cursor: pointer;
 }

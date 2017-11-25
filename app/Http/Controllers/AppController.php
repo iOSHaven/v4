@@ -10,11 +10,13 @@ use Parsedown;
 
 class AppController extends Controller
 {
-    public function page ()
+    public function page ($tag = null)
     {
-      // $apps = new Thing('app');
-      // return view('apps')->with(['app' => $app]);
-      // dd($app);
+      if ($tag) {
+        return view('apps')->with([
+          'apps' => App::where('tags', 'like', '%'.$tag.'%')->get()
+        ]);
+      }
       return view('apps')->with([
         'apps' => App::get()
       ]);
