@@ -16,7 +16,7 @@ class ContactController extends Controller
     public function send (Request $r) {
       $data = [];
       foreach ($r->all() as $key => $value) {
-        if ($key !== '_token' && $key !== 'query_string') {
+        if ($key !== '_token') {
           $data[str_replace("-", " ", $key)] = $value;
         }
       }
