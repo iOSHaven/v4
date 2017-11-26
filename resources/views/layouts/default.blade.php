@@ -122,6 +122,11 @@
 
     <link href="{{ asset('css/normalize.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+
+    <!-- Adsense -->
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
     <!-- Extend the head -->
     @yield('head')
 
@@ -140,6 +145,6 @@
     @include('layouts.footer')
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </body>
 </html>

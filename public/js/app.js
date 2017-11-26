@@ -1651,6 +1651,10 @@ $("a").click(function (event) {
 });
 $('document').ready(function () {
   $('.hide-on-server-render').show();
+  if (!adsbygoogle.loaded) {
+    $('.ad').addClass('blocked');
+    $('.ad').html('<pre class="content">Please consider turning off your ad blocker. Ads help us bring you better content. \n\nThank you, 🙏\n\n- The iOS Haven team</pre>');
+  }
 });
 
 /***/ }),

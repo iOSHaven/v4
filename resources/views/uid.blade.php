@@ -44,6 +44,16 @@
     @admin
     <page-uid uid="{{$app->uid}}" :set-auth="{{Auth::user()->toJson()}}"></page-uid>
     @else
+
+    <div class="card ad">
+      <!-- adsense -->
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-4649450952406116"
+           data-ad-slot="5262456899"
+           data-ad-format="auto"></ins>
+    </div>
+
     <div class="card has-shadow">
       <div class="markdown-body">{!! $app->html !!}</div>
     </div>

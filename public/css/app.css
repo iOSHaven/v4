@@ -1401,3 +1401,17 @@ ul.fancy li:last-of-type {
   z-index: 101;
 }
 
+.card.ad.blocked {
+  background: #fbe1df;
+  border-color: #F44336;
+}
+
+.card.ad.blocked .content {
+  white-space: pre-wrap;
+  font-family: inherit;
+  width: 300px;
+  padding: 1rem;
+  color: black;
+  margin: auto;
+}
+

@@ -514,3 +514,16 @@ ul.fancy {
     background: rgba(0, 0, 0, 0.5);
     z-index: 101;
 }
+
+.card.ad.blocked {
+  background: #fbe1df;
+  border-color: #F44336;
+  .content {
+    white-space: pre-wrap;
+    font-family: inherit;
+    width: 300px;
+    padding: 1rem;
+    color: black;
+    margin: auto;
+  }
+}
