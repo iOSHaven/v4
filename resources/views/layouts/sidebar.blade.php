@@ -13,6 +13,6 @@
     <a href="/jailbreak" class="item"><i class="fas fa-user-secret"></i>Jailbreaks</a>
     <a href="/betas" class="item"><i class="fas fa-flask"></i>Betas</a>
     <a href="/cydia" class="item"><i class="fas fa-wrench"></i>Cydia Impactor</a>
-    <a href="#footer" class="item" @click="toggleSidebar"><i class="fas fa-eye"></i>View More</a>
+    <a href="#footer" class="item" @click="toggleSidebar"><i class="fas fa-link"></i>More links</a>
   </div>
 </sidebar>
