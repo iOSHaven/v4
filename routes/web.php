@@ -30,7 +30,16 @@ Route::get('/download/{uid}', 'AppController@download');
 Route::get('/apps/getJson/{uid?}', 'AppController@getJson');
 Route::get('/apps/{tag?}', 'AppController@page')->name('apps');
 
-Route::get('/test', 'HomeController@test');
+Route::get('/test', function () {
+  // Mail::to('ioshavenco@gmail.com')->send(new App\Mail\ContactSubmission());
+  $data = [
+    'type' => 'test',
+  ];
+  return new App\Mail\ContactSubmission($data);
+});
+
+Route::get('/contact/{type}', 'ContactController@view');
+Route::any('/contact', 'ContactController@send');
 
 Route::get('/credits', 'StaticPageController@getCreditsPage');
 Route::get('/cydia', 'StaticPageController@getCydiaPage');

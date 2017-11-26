@@ -19,7 +19,7 @@ html {
 }
 @for $i from 1 through 10 {
   .p#{$i} {
-    padding: #{$i}rem ;
+    padding: #{$i}rem !important;
   }
   .pl#{$i} {
     padding-left: #{$i}rem !important;
@@ -34,7 +34,7 @@ html {
     padding-bottom: #{$i}rem !important;
   }
   .p-#{$i} {
-    padding: #{$i/10}rem ;
+    padding: #{$i/10}rem !important;
   }
   .pl-#{$i} {
     padding-left: #{$i/10}rem !important;
@@ -52,7 +52,7 @@ html {
 
 @for $i from 1 through 10 {
   .m#{$i} {
-    margin: #{$i}rem ;
+    margin: #{$i}rem !important;
   }
   .ml#{$i} {
     margin-left: #{$i}rem !important;
@@ -67,7 +67,7 @@ html {
     margin-bottom: #{$i}rem !important;
   }
   .m-#{$i} {
-    margin: #{$i/10}rem ;
+    margin: #{$i/10}rem !important;
   }
   .ml-#{$i} {
     margin-left: #{$i/10}rem !important;
@@ -98,6 +98,9 @@ html {
 .wrapper {
   max-width: 960px;
   margin: auto;
+  &.markdown-body {
+    max-width: 36rem;
+  }
   &.mobile {
     max-width: 400px;
   }
@@ -229,7 +232,7 @@ $button-colors: 'red' $red, 'green' $green,  'blue' $blue, 'white' $white;
   }
 }
 
-input.fancy, textarea.fancy {
+.fancy {
     padding: 1rem;
     font-size: 1rem;
     outline: none;

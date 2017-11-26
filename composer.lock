@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "435b2013f338cf998c225b0a826f5ee5",
+    "content-hash": "33961bd06915a81f516de0702ba0679e",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -315,6 +315,61 @@
                 "parser"
             ],
             "time": "2017-11-14T20:44:03+00:00"
+        },
+        {
+            "name": "fedeisas/laravel-mail-css-inliner",
+            "version": "2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fedeisas/laravel-mail-css-inliner.git",
+                "reference": "4370043214deb5cbeb547910db003f4daa100e27"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fedeisas/laravel-mail-css-inliner/zipball/4370043214deb5cbeb547910db003f4daa100e27",
+                "reference": "4370043214deb5cbeb547910db003f4daa100e27",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0",
+                "tijsverkoyen/css-to-inline-styles": "~2.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~5.7",
+                "squizlabs/php_codesniffer": "^2.3",
+                "swiftmailer/swiftmailer": "~5.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Fedeisas\\LaravelMailCssInliner\\LaravelMailCssInlinerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Fedeisas\\LaravelMailCssInliner\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fede Isas",
+                    "email": "fedeisas@hotmail.com"
+                }
+            ],
+            "description": "Inline the CSS of your HTML emails using Laravel",
+            "keywords": [
+                "css",
+                "laravel",
+                "mailer"
+            ],
+            "time": "2017-08-06T19:54:47+00:00"
         },
         {
             "name": "fideloper/proxy",

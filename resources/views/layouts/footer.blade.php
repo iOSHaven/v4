@@ -10,7 +10,9 @@
     <div class="column">
       <h2>Contact</h2>
       <a href="mailto:ioshavenco@gmail.com" class="item"><i class="fas fa-envelope"></i>Email</a>
-      <a href="/contact" class="item"><i class="fas fa-bug"></i>Contact us</a>
+      <a href="/contact/general" class="item"><i class="fas fa-pencil"></i>Write us</a>
+      <a href="/contact/request" class="item"><i class="fas fa-bell"></i>Make a request</a>
+      <a href="/contact/bug" class="item"><i class="fas fa-bug"></i>Found a bug?</a>
     </div>
     <div class="column">
       <h2>Other Links</h2>

@@ -21,7 +21,7 @@ html {
 }
 
 .p1 {
-  padding: 1rem;
+  padding: 1rem !important;
 }
 
 .pl1 {
@@ -41,7 +41,7 @@ html {
 }
 
 .p-1 {
-  padding: 0.1rem;
+  padding: 0.1rem !important;
 }
 
 .pl-1 {
@@ -61,7 +61,7 @@ html {
 }
 
 .p2 {
-  padding: 2rem;
+  padding: 2rem !important;
 }
 
 .pl2 {
@@ -81,7 +81,7 @@ html {
 }
 
 .p-2 {
-  padding: 0.2rem;
+  padding: 0.2rem !important;
 }
 
 .pl-2 {
@@ -101,7 +101,7 @@ html {
 }
 
 .p3 {
-  padding: 3rem;
+  padding: 3rem !important;
 }
 
 .pl3 {
@@ -121,7 +121,7 @@ html {
 }
 
 .p-3 {
-  padding: 0.3rem;
+  padding: 0.3rem !important;
 }
 
 .pl-3 {
@@ -141,7 +141,7 @@ html {
 }
 
 .p4 {
-  padding: 4rem;
+  padding: 4rem !important;
 }
 
 .pl4 {
@@ -161,7 +161,7 @@ html {
 }
 
 .p-4 {
-  padding: 0.4rem;
+  padding: 0.4rem !important;
 }
 
 .pl-4 {
@@ -181,7 +181,7 @@ html {
 }
 
 .p5 {
-  padding: 5rem;
+  padding: 5rem !important;
 }
 
 .pl5 {
@@ -201,7 +201,7 @@ html {
 }
 
 .p-5 {
-  padding: 0.5rem;
+  padding: 0.5rem !important;
 }
 
 .pl-5 {
@@ -221,7 +221,7 @@ html {
 }
 
 .p6 {
-  padding: 6rem;
+  padding: 6rem !important;
 }
 
 .pl6 {
@@ -241,7 +241,7 @@ html {
 }
 
 .p-6 {
-  padding: 0.6rem;
+  padding: 0.6rem !important;
 }
 
 .pl-6 {
@@ -261,7 +261,7 @@ html {
 }
 
 .p7 {
-  padding: 7rem;
+  padding: 7rem !important;
 }
 
 .pl7 {
@@ -281,7 +281,7 @@ html {
 }
 
 .p-7 {
-  padding: 0.7rem;
+  padding: 0.7rem !important;
 }
 
 .pl-7 {
@@ -301,7 +301,7 @@ html {
 }
 
 .p8 {
-  padding: 8rem;
+  padding: 8rem !important;
 }
 
 .pl8 {
@@ -321,7 +321,7 @@ html {
 }
 
 .p-8 {
-  padding: 0.8rem;
+  padding: 0.8rem !important;
 }
 
 .pl-8 {
@@ -341,7 +341,7 @@ html {
 }
 
 .p9 {
-  padding: 9rem;
+  padding: 9rem !important;
 }
 
 .pl9 {
@@ -361,7 +361,7 @@ html {
 }
 
 .p-9 {
-  padding: 0.9rem;
+  padding: 0.9rem !important;
 }
 
 .pl-9 {
@@ -381,7 +381,7 @@ html {
 }
 
 .p10 {
-  padding: 10rem;
+  padding: 10rem !important;
 }
 
 .pl10 {
@@ -401,7 +401,7 @@ html {
 }
 
 .p-10 {
-  padding: 1rem;
+  padding: 1rem !important;
 }
 
 .pl-10 {
@@ -421,7 +421,7 @@ html {
 }
 
 .m1 {
-  margin: 1rem;
+  margin: 1rem !important;
 }
 
 .ml1 {
@@ -441,7 +441,7 @@ html {
 }
 
 .m-1 {
-  margin: 0.1rem;
+  margin: 0.1rem !important;
 }
 
 .ml-1 {
@@ -461,7 +461,7 @@ html {
 }
 
 .m2 {
-  margin: 2rem;
+  margin: 2rem !important;
 }
 
 .ml2 {
@@ -481,7 +481,7 @@ html {
 }
 
 .m-2 {
-  margin: 0.2rem;
+  margin: 0.2rem !important;
 }
 
 .ml-2 {
@@ -501,7 +501,7 @@ html {
 }
 
 .m3 {
-  margin: 3rem;
+  margin: 3rem !important;
 }
 
 .ml3 {
@@ -521,7 +521,7 @@ html {
 }
 
 .m-3 {
-  margin: 0.3rem;
+  margin: 0.3rem !important;
 }
 
 .ml-3 {
@@ -541,7 +541,7 @@ html {
 }
 
 .m4 {
-  margin: 4rem;
+  margin: 4rem !important;
 }
 
 .ml4 {
@@ -561,7 +561,7 @@ html {
 }
 
 .m-4 {
-  margin: 0.4rem;
+  margin: 0.4rem !important;
 }
 
 .ml-4 {
@@ -581,7 +581,7 @@ html {
 }
 
 .m5 {
-  margin: 5rem;
+  margin: 5rem !important;
 }
 
 .ml5 {
@@ -601,7 +601,7 @@ html {
 }
 
 .m-5 {
-  margin: 0.5rem;
+  margin: 0.5rem !important;
 }
 
 .ml-5 {
@@ -621,7 +621,7 @@ html {
 }
 
 .m6 {
-  margin: 6rem;
+  margin: 6rem !important;
 }
 
 .ml6 {
@@ -641,7 +641,7 @@ html {
 }
 
 .m-6 {
-  margin: 0.6rem;
+  margin: 0.6rem !important;
 }
 
 .ml-6 {
@@ -661,7 +661,7 @@ html {
 }
 
 .m7 {
-  margin: 7rem;
+  margin: 7rem !important;
 }
 
 .ml7 {
@@ -681,7 +681,7 @@ html {
 }
 
 .m-7 {
-  margin: 0.7rem;
+  margin: 0.7rem !important;
 }
 
 .ml-7 {
@@ -701,7 +701,7 @@ html {
 }
 
 .m8 {
-  margin: 8rem;
+  margin: 8rem !important;
 }
 
 .ml8 {
@@ -721,7 +721,7 @@ html {
 }
 
 .m-8 {
-  margin: 0.8rem;
+  margin: 0.8rem !important;
 }
 
 .ml-8 {
@@ -741,7 +741,7 @@ html {
 }
 
 .m9 {
-  margin: 9rem;
+  margin: 9rem !important;
 }
 
 .ml9 {
@@ -761,7 +761,7 @@ html {
 }
 
 .m-9 {
-  margin: 0.9rem;
+  margin: 0.9rem !important;
 }
 
 .ml-9 {
@@ -781,7 +781,7 @@ html {
 }
 
 .m10 {
-  margin: 10rem;
+  margin: 10rem !important;
 }
 
 .ml10 {
@@ -801,7 +801,7 @@ html {
 }
 
 .m-10 {
-  margin: 1rem;
+  margin: 1rem !important;
 }
 
 .ml-10 {
@@ -840,6 +840,10 @@ html {
 .wrapper {
   max-width: 960px;
   margin: auto;
+}
+
+.wrapper.markdown-body {
+  max-width: 36rem;
 }
 
 .wrapper.mobile {
@@ -1056,8 +1060,7 @@ h6,
   font-style: italic;
 }
 
-input.fancy,
-textarea.fancy {
+.fancy {
   padding: 1rem;
   font-size: 1rem;
   outline: none;
@@ -1067,8 +1070,7 @@ textarea.fancy {
   resize: vertical;
 }
 
-input.fancy.white,
-textarea.fancy.white {
+.fancy.white {
   background: white;
 }
 

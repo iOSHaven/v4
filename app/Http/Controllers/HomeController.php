@@ -37,9 +37,4 @@ class HomeController extends Controller
       $user->save();
       return response()->json($user);
     }
-
-    public function test () {
-      $apps = App::get();
-      return view('ssr')->with(['apps' => $apps]);
-    }
 }
