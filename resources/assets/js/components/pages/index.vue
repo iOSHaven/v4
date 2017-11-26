@@ -11,7 +11,6 @@
       </h2>
       <div class="links">
         <a href="#menu" class="fill--white p1 pr2 pl2 m-3 dark" @click="launch">Launch</a>
-        <a href="/docs" target="_blank" class="fill--white p1 pr2 pl2 m-3 dark">Docs</a>
       </div>
     </div>
   </section>

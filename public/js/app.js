@@ -45650,7 +45650,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -45839,15 +45838,6 @@ var render = function() {
               on: { click: _vm.launch }
             },
             [_vm._v("Launch")]
-          ),
-          _vm._v(" "),
-          _c(
-            "a",
-            {
-              staticClass: "fill--white p1 pr2 pl2 m-3 dark",
-              attrs: { href: "/docs", target: "_blank" }
-            },
-            [_vm._v("Docs")]
           )
         ])
       ])
