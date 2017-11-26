@@ -8,7 +8,6 @@
 <div class="wrapper uidpage">
   <div class="banner" style="background-image: url(/{{$app->banner}})">
     <div class="icon" style="background-image: url(/{{$app->icon}})"></div>
-    <div class="version">Version: {{ $app->version }}</div>
     <div class="installs">
         @if($app->signed)
         <a class="get fill--white center dark" href="/install/{{$app->uid}}">Install</a>
@@ -37,6 +36,10 @@
         <div class="data card">
           <div class="number">{{format_int($app->size, 'file')}}</div>
           <div class="label">Size</div>
+        </div>
+        <div class="data card">
+          <div class="number">{{ $app->version }}</div>
+          <div class="label">Version</div>
         </div>
       </div>
     </div>

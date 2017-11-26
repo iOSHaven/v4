@@ -1402,8 +1402,8 @@ ul.fancy li:last-of-type {
 }
 
 .card.ad.blocked {
-  background: #fbe1df;
-  border-color: #F44336;
+  background: #fff4f3;
+  border-color: #f9c4c0;
 }
 
 .card.ad.blocked .content {
