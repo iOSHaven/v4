@@ -1,5 +1,5 @@
 <template lang="html">
-  <a class="card flex p-5 app" :href="page">
+  <a class="card flex p-5 app" @click="openApp($event)">
     <div ref="image" class="image" :style="{'background-image': `url('/${data.icon}')`}"></div>
     <div class="content">
       <h3 class="mb-3"><strong>{{data.name}}</strong></h3>
@@ -29,6 +29,10 @@ export default {
         uid: this.data.uid
       })
       this.$emit('removed')
+    },
+    openApp (e) {
+      e.preventDefault();
+      window.location = this.page
     }
   }
 }

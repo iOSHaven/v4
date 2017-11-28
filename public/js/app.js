@@ -42655,6 +42655,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         uid: this.data.uid
       });
       this.$emit('removed');
+    },
+    openApp: function openApp(e) {
+      e.preventDefault();
+      window.location = this.page;
     }
   }
 });
@@ -42669,7 +42673,14 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "a",
-    { staticClass: "card flex p-5 app", attrs: { href: _vm.page } },
+    {
+      staticClass: "card flex p-5 app",
+      on: {
+        click: function($event) {
+          _vm.openApp($event)
+        }
+      }
+    },
     [
       _c("div", {
         ref: "image",
