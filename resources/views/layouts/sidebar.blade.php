@@ -1,4 +1,5 @@
-<sidebar color="#F44336" is-admin="{{Auth::check() && Auth::user()->isAdmin}}" title="{{ config('app.name', 'Laravel') }}">
+<sidebar color="#F44336" is-admin="{{Auth::check() && Auth::user()->isAdmin}}"
+          title="{{ Request::is('/') ? config('app.name', 'Laravel') : 'Back' }}">
   <a href="/profile" slot="links" class="mr-5">
     @if(Auth::check())
     <square-button icon="fas fa-user" class="fill--white dark"/>

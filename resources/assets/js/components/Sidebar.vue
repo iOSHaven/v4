@@ -2,7 +2,9 @@
   <div class="Sidebar">
     <div class="backdrop"  v-if="isVisible" v-on:click="toggle"></div>
     <div href="/" id="bar">
-        <a href="/" id="title">{{title}}</a>
+        <a href="/" @click="clicked($event)" id="title">
+          <i class="fal fa-angle-left" v-if="title == 'Back'"></i>
+          {{title}}</a>
         <div id="links">
           <slot name="links">
             <square-button icon="fas fa-question" class="fill--white dark"/>
@@ -19,7 +21,7 @@
       <slot name="content">
         please put content in me.
       </slot>
-      
+
 
     </div>
   </div>
@@ -41,10 +43,19 @@ export default {
     window.addEventListener('toggleSidebar', () => {
       this.isVisible = !this.isVisible
     }, false)
+    this.isVisible = false;
   },
   methods: {
     toggle () {
       window.dispatchEvent(new Event('toggleSidebar'))
+    },
+    clicked (e) {
+      e.preventDefault()
+      if (this.title == "Back") {
+        this.isVisible = false
+        window.history.go(-1)
+      }
+      else window.location = e.target.href
     }
   },
   watch: {

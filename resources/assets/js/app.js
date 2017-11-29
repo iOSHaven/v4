@@ -47,16 +47,19 @@ const app = new Vue({
     }
 });
 
-
-$("a").click(function (event) {
+$("a").not('.get').not('#title').click(function (event) {
   event.preventDefault();
   console.log('clicked link');
+  console.log($(this).attr('id'));
   window.location = $(this).attr("href");
 })
+
 $('document').ready(function () {
   $('.hide-on-server-render').show();
   if (!adsbygoogle.loaded) {
     $('.ad').addClass('blocked')
     $('.ad').html('<pre class="content">Please consider turning off your ad blocker. Ads help us bring you better content. \n\nThank you, 🙏\n\n- The iOS Haven team</pre>')
   }
+
+
 })
