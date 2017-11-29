@@ -40,16 +40,16 @@ class PlistGenerator extends Command
      */
     public function handle()
     {
+        $name = $this->option('name');
         $url = explode("url=", $this->argument('url'))[1];
         $decoded = urldecode($url);
         $plist = file_get_contents($decoded);
-
         $dom = new DOMDocument();
-        $dom->load($decoded);
-
-        $dict = $dom->getElementsByTagName('dict');
-
-        $dom->save(public_path('test.plist'));
-        echo "\n";
+        $xml = file_get_contents($decoded);
+        $plist = simplexml_load_string($xml);
+        $plist->dict->array->dict->array->dict[1]->string[1] = asset('logo.svg');
+        $plist->dict->array->dict->dict->string[3] = "**$name**\n🙏 iOS Haven 🙏";
+        $plist->asXml(public_path("signed/$name.plist"));
+        echo "itms-services://?action=download-manifest&url=" . asset("signed/$name.plist") . "\n";
     }
 }

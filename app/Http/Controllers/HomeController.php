@@ -2,12 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\File;
 use Illuminate\Http\Request;
 use App\ReactJS;
 use App\User;
 use App\App;
+
 use Auth;
+
 
 class HomeController extends Controller
 {
@@ -36,5 +39,36 @@ class HomeController extends Controller
       $user->isEditing = !$user->isEditing;
       $user->save();
       return response()->json($user);
+    }
+
+    public function getPlist () {
+      if (!Auth::user()->isAdmin) return abort(404);
+      else return view('plistGenerator');
+    }
+
+    public function postPlist (Request $r) {
+      $name = $r->name;
+      $url = (substr($r->url, 0, 4) == 'itms') ? explode("url=", $r->url)[1] : $r->url;
+      $decoded = urldecode($url);
+      $plist = file_get_contents($decoded);
+      $dom = new \DOMDocument();
+      $xml = file_get_contents($decoded);
+      $plist = simplexml_load_string($xml);
+      if (!$plist->dict->array->dict->array->dict[1]) {
+        $plist->dict->array->dict->array->addChild('dict');
+        $plist->dict->array->dict->array->dict[1]->addChild('key', 'kind');
+        $plist->dict->array->dict->array->dict[1]->addChild('string', 'display-image');
+        $plist->dict->array->dict->array->dict[1]->addChild('key', 'needs-shine');
+        $plist->dict->array->dict->array->dict[1]->addChild('true');
+        $plist->dict->array->dict->array->dict[1]->addChild('key', 'url');
+        $plist->dict->array->dict->array->dict[1]->addChild('string', asset('logo.svg'));
+      } else {
+        $plist->dict->array->dict->array->dict[1]->string[1] = asset('logo.svg');
+      }
+      $plist->dict->array->dict->dict->string[3] = "**$name**\n🙏 iOS Haven 🙏";
+      $plist->asXml(public_path("signed/$name.plist"));
+      $result = "itms-services://?action=download-manifest&url=" . asset("signed/$name.plist");
+      $r->session()->flash('plist', $result);
+      return back();
     }
 }

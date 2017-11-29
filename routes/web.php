@@ -30,19 +30,20 @@ Route::get('/download/{uid}', 'AppController@download');
 Route::get('/apps/getJson/{uid?}', 'AppController@getJson');
 Route::get('/apps/{tag?}', 'AppController@page')->name('apps');
 
-Route::get('/test', function () {
-  // Mail::to('ioshavenco@gmail.com')->send(new App\Mail\ContactSubmission());
-  $data = [
-    'type' => 'test',
-  ];
-  return new App\Mail\ContactSubmission($data);
-});
+Route::get('/plist', 'HomeController@getPlist');
+Route::post('/plist', 'HomeController@postPlist');
 
 Route::get('/contact/{type}', 'ContactController@view');
-Route::any('/contact', 'ContactController@send');
+Route::post('/contact', 'ContactController@send');
 
 Route::get('/credits', 'StaticPageController@getCreditsPage');
 Route::get('/cydia', 'StaticPageController@getCydiaPage');
 Route::get('/betas', 'StaticPageController@getBetasPage');
 Route::get('/jailbreak', 'StaticPageController@getJailbreakPage');
 Route::get('/aboutUs', 'StaticPageController@getAboutUsPage');
+
+Route::get('/test', function () {
+  return response(200)->withHeaders([
+    'Location'=> ('itms-services://?action=download-manifest&url=http://homestead.app/signed/testing.plist')
+  ]);
+});
