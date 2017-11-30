@@ -6,7 +6,7 @@
         Cydia Impactor
     </h1>
     <div>
-      <p>Welcome to the Cydia Impactor page. Here you can find downloads to the program, how to install a IPA file, and as well as find solutions to your errors. Cydia Impactor allows you to install unsigned apps on your iDevice and all you need is a computer also all the apps with the blue buttons in our IPA library need to be sideloaded with Cydia Impactor so please keep that in mind. Below you can find all the downloads for Cydia Impactor, please install for your correct OS.</p>
+      <p>Welcome to the Cydia Impactor page. Here you can find downloads to the program, how to install a IPA file, and as well as find solutions to your errors. Cydia Impactor allows you to install unsigned apps on your iDevice and all you need is a computer also all the apps with the "Download .ipa" in our IPA library need to be sideloaded with Cydia Impactor so please keep that in mind. Below you can find all the downloads for Cydia Impactor, please install for your correct OS.</p>
     </div>
 
 
