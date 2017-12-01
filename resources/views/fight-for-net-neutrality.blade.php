@@ -9,7 +9,7 @@
         Fight for net neutrality
     </h1>
 
-    <p>It has come to our attention that quite a few of our users are concerned about the topic of Net Neutrality. We have provided a few links as well as more information of our own to help persuade you to take action. </p>
+    <p>It has come to our attention that many of our users are concerned about the topic of Net Neutrality. We have provided a few links as well as more information of our own to help persuade you to take action. </p>
 
     <h2>What is Net Neutrality? </h2>
 
