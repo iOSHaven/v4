@@ -1366,6 +1366,12 @@ ul.fancy li:last-of-type {
   padding: 0.3rem;
   border-radius: 5rem;
   text-transform: uppercase;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .apps .description {
