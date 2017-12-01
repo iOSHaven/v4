@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Session;
 class StaticPageController extends Controller
 {
     //
@@ -25,5 +25,17 @@ class StaticPageController extends Controller
 
     public function getAboutUsPage() {
       return view('aboutUs');
+    }
+
+    public function getFightForNetNeutrality() {
+      Session::put('fight-for-net-neutrality', true);
+      return view('fight-for-net-neutrality');
+    }
+
+    public function closeAnnouncement () {
+      Session::put('fight-for-net-neutrality', true);
+      return response()->json([
+        'done' => true
+      ]);
     }
 }

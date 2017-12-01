@@ -7,3 +7,8 @@ function format_int(int $number, string $type=null)
   else if ($number > 999) return number_format($number / 1000, 1) . ($type == "file" ? 'kb' : 'k');
   else return $number . ($type == "file" ? 'b' : '');
 }
+
+
+function Settings() {
+  return DB::table('settings')->first();
+}
