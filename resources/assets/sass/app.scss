@@ -483,6 +483,9 @@ ul.fancy {
       padding: 0.3rem;
       border-radius: 5rem;
       text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
   }
   .description{
     font-size: .8rem;

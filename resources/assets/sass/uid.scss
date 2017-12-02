@@ -163,3 +163,7 @@
     background: #f2f2f2;
     padding: 0.3rem 1rem 0.3rem 0.3rem;
 }
+
+.double-spacing *:not(h1):not(h2){
+  line-height: 2 !important;
+}

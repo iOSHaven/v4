@@ -141,8 +141,11 @@
       Loading...
     </div> -->
     <div id="app">
+        @include('layouts.sidebar')
 
-    @include('layouts.sidebar')
+        @if(Settings()->show_announcements && !Session::exists('fight-for-net-neutrality') && !Request::is('/'))
+        <announcement message="Help fight for a neutral net! Click the banner to read more or click the close button and we'll try to never show this message again." link="/fight-for-net-neutrality"></announcement>
+        @endif
 
         @yield('content')
     </div>

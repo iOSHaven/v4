@@ -41,9 +41,12 @@ Route::get('/cydia', 'StaticPageController@getCydiaPage');
 Route::get('/betas', 'StaticPageController@getBetasPage');
 Route::get('/jailbreak', 'StaticPageController@getJailbreakPage');
 Route::get('/aboutUs', 'StaticPageController@getAboutUsPage');
+Route::get('/fight-for-net-neutrality', 'StaticPageController@getFightForNetNeutrality');
+
+Route::post('/close_announcement', 'StaticPageController@closeAnnouncement');
 
 Route::get('/test', function () {
-  return response(200)->withHeaders([
-    'Location'=> ('itms-services://?action=download-manifest&url=http://homestead.app/signed/testing.plist')
-  ]);
+  $s = Session::get('fight-for-net-neutrality');
+  // Session::forget('fight-for-net-neutrality');
+  dd($s);
 });

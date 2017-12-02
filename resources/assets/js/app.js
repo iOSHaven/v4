@@ -25,6 +25,7 @@ Vue.component('app-admin', require('./components/AppAdmin.vue'));
 Vue.component('app', require('./components/App.vue'))
 Vue.component('alert', require('./components/ui/Alert.vue'))
 Vue.component('search-bar', require('./components/ui/SearchBar.vue'))
+Vue.component('announcement', require('./components/ui/Announcement.vue'))
 Vue.component('drop-up', require('./components/ui/DropUp.vue'))
 Vue.component('page-uid', require('./components/pages/uid.vue'))
 Vue.component('page-apps', require('./components/pages/apps.vue'))

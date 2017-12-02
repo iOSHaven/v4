@@ -8,6 +8,7 @@
       <a href="/cydia" class="item"><i class="fas fa-wrench"></i>Cydia Impactor</a>
       <a href="/jailbreak" class="item"><i class="fas fa-user-secret"></i>Jailbreaks</a>
       <a href="/betas" class="item"><i class="fas fa-flask"></i>Betas</a>
+      <a href="/fight-for-net-neutrality" class="item"><i class="fas fa-info-circle"></i>Net Neutrality</a>
     </div>
 
     <div class="column">
