@@ -17,6 +17,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/profile', 'HomeController@index')->name('profile');
+Route::post('/profile/color', 'HomeController@color');
 Route::post('/auth/toggleEditing', 'HomeController@toggleEditing');
 
 Route::post('/app/create', 'AppController@create');

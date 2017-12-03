@@ -1,4 +1,4 @@
-<sidebar color="#F44336" is-admin="{{Auth::check() && Auth::user()->isAdmin}}"
+<sidebar color="#F44336" nav-color="{{ Session::get('color') }}" is-admin="{{Auth::check() && Auth::user()->isAdmin}}"
           title="{{ Request::is('/') ? config('app.name', 'Laravel') : 'Back' }}">
   <a href="/profile" slot="links" class="mr-5">
     @if(Auth::check())

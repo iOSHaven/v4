@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\ReactJS;
 use App\User;
 use App\App;
+use Session;
 
 use Auth;
 
@@ -44,6 +45,11 @@ class HomeController extends Controller
     public function getPlist () {
       if (!Auth::user()->isAdmin) return abort(404);
       else return view('plistGenerator');
+    }
+
+    public function color(Request $request) {
+        Session::put('color', $request->color);
+        return back();
     }
 
     public function postPlist (Request $r) {

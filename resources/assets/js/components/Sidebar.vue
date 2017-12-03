@@ -1,7 +1,7 @@
 <template lang="html">
   <div class="Sidebar">
     <div class="backdrop"  v-if="isVisible" v-on:click="toggle"></div>
-    <div href="/" id="bar">
+    <div href="/" id="bar" :style="{'background-color': navColor || '#141a1d'}">
         <a href="/" @click="clicked($event)" id="title">
           <i class="fal fa-angle-left" v-if="title == 'Back'"></i>
           {{title}}</a>
@@ -30,7 +30,7 @@
 <script>
 import SquareButton from './ui/SquareButton.vue'
 export default {
-  props: ['color', 'title'],
+  props: ['color', 'title', 'navColor'],
   components: {
     SquareButton
   },
@@ -99,7 +99,6 @@ export default {
     margin-top: 0.2rem;
 }
 #bar {
-    background: #141a1d;
     position: fixed;
     top: 0;
     left: 0;
