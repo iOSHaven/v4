@@ -45966,7 +45966,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     window.onload = function () {
-      window.particlesJS.load('particles-js', '/particles-js.json');
+      window.particlesJS.load('particles-js', '/particlesjs-christmas.json');
     };
   }
 });
