@@ -23,6 +23,10 @@ class StaticPageController extends Controller
       return view('jailbreak');
     }
 
+    public function getFaqPage() {
+      return view('faq');
+    }
+
     public function getAboutUsPage() {
       return view('aboutUs');
     }

@@ -38,6 +38,7 @@ Route::get('/contact/{type}', 'ContactController@view');
 Route::post('/contact', 'ContactController@send');
 
 Route::get('/credits', 'StaticPageController@getCreditsPage');
+Route::get('/faq', 'StaticPageController@getFaqPage');
 Route::get('/cydia', 'StaticPageController@getCydiaPage');
 Route::get('/betas', 'StaticPageController@getBetasPage');
 Route::get('/jailbreak', 'StaticPageController@getJailbreakPage');

@@ -10,6 +10,7 @@
   </a>
   <!-- <a href="/auth" slot="links"><i class="fas fa-user"></i></a> -->
   <div slot="content" class="hide-on-server-render">
+    <a href="/" class="item"><i class="fas fa-home"></i>Home</a>
     <a href="/apps" class="item"><i class="fab fa-app-store"></i>Apps</a>
     <a href="/jailbreak" class="item"><i class="fas fa-user-secret"></i>Jailbreaks</a>
     <a href="/betas" class="item"><i class="fas fa-flask"></i>Betas</a>
