@@ -5,7 +5,6 @@
       <h2>Other Links</h2>
       <a href="/aboutUs" class="item"><i class="fas fa-users"></i>About Us!</a>
       <a href="/credits" class="item"><i class="fas fa-code"></i>Credits</a>
-      <a href="/faq" class="item"><i class="fas fa-question"></i>FAQ</a>
       <a href="https://www.patreon.com/ioshaven" class="item"><i class="fab fa-patreon"></i>Patreon</a>
       <a href="/cydia" class="item"><i class="fas fa-wrench"></i>Cydia Impactor</a>
       <a href="/jailbreak" class="item"><i class="fas fa-user-secret"></i>Jailbreaks</a>
