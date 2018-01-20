@@ -8,7 +8,7 @@
 export default {
   mounted () {
     window.onload = function () {
-      window.particlesJS.load('particles-js', '/particlesjs-winter.json')
+      window.particlesJS.load('particles-js', '/particles-js.json')
     }
   }
 }
