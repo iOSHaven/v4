@@ -20,6 +20,7 @@
     },
     "dependencies": {
         "marked": "^0.3.6",
+        "node-sass": "^4.7.2",
         "vuex": "^3.0.1"
     }
 }
