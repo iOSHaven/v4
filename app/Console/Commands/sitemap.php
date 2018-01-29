@@ -38,6 +38,6 @@ class sitemap extends Command
      */
     public function handle()
     {
-        SitemapGenerator::create('http://beta.ioshaven.co')->writeToFile(base_path('sitemap.xml'));
+        SitemapGenerator::create('https://ioshaven.co')->writeToFile(public_path('sitemap.xml'));
     }
 }
