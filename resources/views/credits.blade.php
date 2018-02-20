@@ -30,6 +30,8 @@
       <li>Ivano Bilenchi | iCleaner<a href="https://ib-soft.net/" target="_blank"><i class="fal fa-globe"></i></a></li>
       <li>iDarkmode | iDarkmode<a href="https://twitter.com/idarkmode" target="_blank"><i class="fab fa-twitter"></i></a></li>
       <li>MasonD3V | iTD App<a href="https://twitter.com/MasonD3V" target="_blank"><i class="fab fa-twitter"></i></a></li>
+      <li>AppleAddict | App Drawer<a href="https://twitter.com/AplAddict" target="_blank"><i class="fab fa-twitter"></i></a></li>
+      <li>SwiftlyDesign | App Drawer<a href="https://twitter.com/SwiftlyDesign" target="_blank"><i class="fab fa-twitter"></i></a></li>
     </ul>
 
     <div class="heading">
