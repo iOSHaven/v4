@@ -28,7 +28,7 @@
         <input type="text" v-model="app.short" class="fancy" maxlength="18" placeholder="a short snippet">
       </div>
       <div class="field">
-        <div class="h5 mb-5">Description <a href="http://commonmark.org/help/">Markdown Guide</a> </div>
+        <div class="h5 mb-5">Description <a href="https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf">Markdown Guide</a> </div>
         <textarea rows="8" v-model="app.description" class="fancy" maxlength="65000" placeholder="Use markdown!! No HTML!!"></textarea>
         <!-- <editor @save="saveDescription"/> -->
       </div>

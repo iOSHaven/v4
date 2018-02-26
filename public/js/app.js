@@ -45473,9 +45473,16 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "h5 mb-5" }, [
       _vm._v("Description "),
-      _c("a", { attrs: { href: "http://commonmark.org/help/" } }, [
-        _vm._v("Markdown Guide")
-      ])
+      _c(
+        "a",
+        {
+          attrs: {
+            href:
+              "https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf"
+          }
+        },
+        [_vm._v("Markdown Guide")]
+      )
     ])
   }
 ]
