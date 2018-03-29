@@ -21,7 +21,7 @@
       </search-bar>
     </div>
 
-    <app v-for="app in filteredApps" v-if="filteredApps" :key="app.name" :data="app" class="m-3 hide-on-server-render"></app>
+    <app v-for="app in filteredApps" v-if="filteredApps" :key="app.uid" :data="app" class="m-3 hide-on-server-render"></app>
     <span></span>
     @foreach($apps as $app)
       <a class="card flex m-3 app server-rendered" href="/app/{{$app->uid}}" data-uid="{{$app->uid}}">
