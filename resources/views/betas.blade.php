@@ -4,7 +4,7 @@
     <h1>iOS</h1>
     <ul class="fancy">
       <li >
-        iOS 11 Developer Beta OTA Profile: <a href="http://corneey.com/q8lZOD" target="_blank">Download</a>
+        iOS Betas: <a href="https://iosbetas.me/" target="_blank">GO!</a>
       </li>
     </ul>
 </div>
