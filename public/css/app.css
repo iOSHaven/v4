@@ -1398,6 +1398,7 @@ ul.fancy li:last-of-type {
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;
+  border-radius: 20px;
 }
 
 .backdrop {
