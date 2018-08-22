@@ -113,11 +113,12 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="/fa/css/fontawesome-pro-brands.css">
+    <!-- <link rel="stylesheet" href="/fa/css/fontawesome-pro-brands.css">
     <link rel="stylesheet" href="/fa/css/fontawesome-pro-solid.css">
     <link rel="stylesheet" href="/fa/css/fontawesome-pro-light.css">
     <link rel="stylesheet" href="/fa/css/fontawesome-pro-regular.css">
-    <link rel="stylesheet" href="/fa/css/fontawesome-pro-core.css">
+    <link rel="stylesheet" href="/fa/css/fontawesome-pro-core.css"> -->
+    <script defer src="https://pro.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-yBZ34R8uZDBb7pIwm+whKmsCiRDZXCW1vPPn/3Gz0xm4E95frfRNrOmAUfGbSGqN" crossorigin="anonymous"></script>
     <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png?v=QEMYzE9pb35555" sizes="180x180">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png?v=QEMYzE9pb35555">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png?v=QEMYzE9pb35555">

@@ -48,7 +48,5 @@ Route::get('/fight-for-net-neutrality', 'StaticPageController@getFightForNetNeut
 Route::post('/close_announcement', 'StaticPageController@closeAnnouncement');
 
 Route::get('/test', function () {
-  $s = Session::get('fight-for-net-neutrality');
-  // Session::forget('fight-for-net-neutrality');
-  dd($s);
+  return view('layouts/footer');
 });
