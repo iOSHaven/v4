@@ -128,7 +128,7 @@
 
     <link href="{{ asset('css/normalize.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}?v=0.1" rel="stylesheet">
 
     <!-- Adsense -->
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -156,7 +156,7 @@
 
     @include('layouts.footer')
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/app.js') }}?v=0.1"></script>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </body>
 </html>
