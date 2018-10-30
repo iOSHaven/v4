@@ -14,8 +14,9 @@ class AppController extends Controller
 {
     public function page ($tag = null, Request $r)
     {
-      if ($tag != null) $search = $tag;
-      else $search = $_GET['q'];
+      if ($tag) $search = $tag;
+      else $search = $r->q;
+
       $filteredData = [
         'apps' => App::where('name', '!=', 'No name')
           ->where('name', 'like', "%". $search."%")
@@ -32,7 +33,7 @@ class AppController extends Controller
     }
 
     public function updates ($tag=null, Request $r) {
-      if ($tag != null) $search = $tag;
+      if ($tag) $search = $tag;
       else $search = $r->q;
       $filteredData = [
         'apps' => App::where('name', '!=', 'No name')
@@ -72,6 +73,7 @@ class AppController extends Controller
     {
       $app = App::findByUid($request->uid);
       $app->update($request->all());
+      // dd('asdf');
       $app->edited_at = Carbon::now();
       $app->save();
       return response()->json($app);
