@@ -108,10 +108,11 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta v-pre property="og:title" content="{{ config('app.name', 'Laravel') }}">
-    <meta v-pre property="og:type"  content="article">
-    <meta v-pre property="og:url"   content="{{ $url ?? url('/') }}">
-
+    <meta property="og:title" content="{{ config('app.name', 'Laravel') }}">
+    <meta property="og:type"  content="article">
+    <meta property="og:url"   content="{{ $url ?? url('/') }}">
+    <meta property="og:description"  content="DOWNLOAD IPAS, SIGNED APPS, APPLE DEVELOPER BETAS, AND JAILBREAKS.">
+    <meta property="og:image"  content="/ios-banner.png">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
