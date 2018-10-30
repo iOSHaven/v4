@@ -13,7 +13,7 @@ export default {
   }
 }
 </script>
-<style lang="css" scoped>
+<style lang="scss" scoped>
  #particles-js {
    background-color: #21b7d7;
    position: fixed;

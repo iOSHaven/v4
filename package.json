@@ -9,6 +9,10 @@
         "prod": "npm run production",
         "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
     },
+    "peerDependencies": {
+        "imagemin": "^6.0.0",
+        "ajv": "^6.0.0"
+    },
     "devDependencies": {
         "axios": "^0.17",
         "bootstrap-sass": "^3.3.7",

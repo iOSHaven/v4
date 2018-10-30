@@ -1,4 +1,4 @@
-let mix = require('laravel-mix');
+let mix = require('laravel-mix').mix;
 
 /*
  |--------------------------------------------------------------------------
@@ -10,6 +10,20 @@ let mix = require('laravel-mix');
  | file for the application as well as bundling up all the JS files.
  |
  */
+// mix.webpackConfig({
+//   resolve: {
+//     alias: {}
+//   }
+//   // module: {
+//   //   loaders: [{
+//   //     test: /\.vue$/,
+//   //     loader: 'css-loader!sass-loader'
+//   //     // js: 'babel-loader',
+//   //     // scss: 'style-loader!css-loader!sass-loader'
+//   //   }]
+//   // }
+//
+// })
 
 mix.js('resources/assets/js/app.js', 'public/js')
    // .js('react/react-bundle.js', 'public/react')
