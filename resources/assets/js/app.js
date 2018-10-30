@@ -85,14 +85,29 @@ $('document').ready(function () {
   }
 })
 
-$(document).ready(function() {
+window.toggleHamburger = function() {
+  console.log('clicked navbar burger 2');
+  // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+  $(".navbar-burger").toggleClass("is-active");
+  $(".navbar-menu").toggleClass("is-active");
+}
 
-  // Check for click events on the navbar burger icon
-  $(".navbar-burger").on('click touch', function(e) {
-      e.preventDefault();
-      console.log('clicked navbar burger');
-      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
-      $(".navbar-burger").toggleClass("is-active");
-      $(".navbar-menu").toggleClass("is-active");
-  });
-});
+$(document).on('click', 'a', function (e) {
+  if (!navigator.platform.match(/iPhone|iPod|iPad/)) return
+  e.preventDefault()
+  e.stopPropagation()
+  window.location = $(this).attr('href')
+  return false
+})
+
+// $(document).ready(function() {
+//
+//   // Check for click events on the navbar burger icon
+//   $(".navbar-burger").on('click touch', function(e) {
+//       e.preventDefault();
+//       console.log('clicked navbar burger');
+//       // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+//       $(".navbar-burger").toggleClass("is-active");
+//       $(".navbar-menu").toggleClass("is-active");
+//   });
+// });
