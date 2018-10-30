@@ -22,11 +22,11 @@
 
 <nav class="navbar is-black is-fixed-top" role="navigation" aria-label="main navigation" style="background-color: {{ Session::get('color') }}">
   <div class="navbar-brand">
-    <a role="button" class="navbar-burger burger noturl" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+    <button role="button" class="navbar-burger burger noturl" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample" style="background: transparent">
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
-    </a>
+    </button>
   </div>
 
   <div id="navbarBasicExample" class="navbar-menu">
