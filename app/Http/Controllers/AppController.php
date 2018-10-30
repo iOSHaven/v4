@@ -15,9 +15,7 @@ class AppController extends Controller
     public function page ($tag = null, Request $r)
     {
       if ($tag != null) $search = $tag;
-      else $search = $r->q;
-      dump('ignore, working on website. sorry.');
-      dd($search);
+      else $search = $_GET['q'];
       $filteredData = [
         'apps' => App::where('name', '!=', 'No name')
           ->where('name', 'like', "%". $search."%")
