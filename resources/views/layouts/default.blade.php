@@ -108,6 +108,9 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta v-pre property="og:title" content="{{ config('app.name', 'Laravel') }}">
+    <meta v-pre property="og:type"  content="article">
+    <meta v-pre property="og:url"   content="{{ $url ?? url('/') }}">
 
 
     <title>{{ config('app.name', 'Laravel') }}</title>
