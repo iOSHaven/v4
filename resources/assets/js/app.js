@@ -70,7 +70,7 @@ const app = new Vue({
 
 
 $("a").not('.get').not('#title').not('.noturl').click(function (event) {
-  if (!navigator.platform.match(/iPhone|iPod|iPad/)) return
+  // if (!navigator.platform.match(/iPhone|iPod|iPad/)) return
   event.preventDefault();
   // event.stopPropagation()
   window.location = $(this).attr("href");
