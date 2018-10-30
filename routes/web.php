@@ -30,6 +30,7 @@ Route::get('/download/{uid}', 'AppController@download');
 
 Route::get('/apps/getJson/{uid?}', 'AppController@getJson');
 Route::get('/apps/{tag?}', 'AppController@page')->name('apps');
+Route::get('/updates{tag?}', 'AppController@updates');
 
 Route::get('/plist', 'HomeController@getPlist');
 Route::post('/plist', 'HomeController@postPlist');

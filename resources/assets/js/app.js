@@ -35,12 +35,32 @@ const app = new Vue({
     el: '#app',
     store,
     data: {
-      filteredApps: false
+      filteredApps: false,
+      moreLoadedApps: [],
+      page: 1
     },
     methods: {
       updateAppSearch (val) {
         $('.app.server-rendered').remove()
         this.filteredApps = val
+      },
+      loadMoreApps (page=null) {
+        this.page ++
+        var currentURL = window.location.pathname + window.location.search
+        var params = ['json=true', 'page=' + this.page].join('&')
+        var newURL = window.location.search ? currentURL + '&' + params : currentURL + '?' + params
+        console.log(currentURL, params, newURL);
+        axios.get(newURL).then(res => {
+          var apps = res.data.apps.data
+          var pag = res.data.apps
+          Object.keys(apps).forEach(key => {
+            this.moreLoadedApps.push(apps[key])
+          })
+          if (pag.current_page === pag.last_page) {
+            $('#loadmoreapps').hide()
+          }
+          console.log(res.data.apps.current_page, res.data.apps.last_page,);
+        })
       },
       toggleSidebar () {
         window.dispatchEvent(new Event('toggleSidebar'))
@@ -48,11 +68,13 @@ const app = new Vue({
     }
 });
 
-$("a").not('.get').not('#title').click(function (event) {
+
+$("a").not('.get').not('#title').not('.noturl').click(function (event) {
+  if (!navigator.platform.match(/iPhone|iPod|iPad/)) return
   event.preventDefault();
-  console.log('clicked link');
-  console.log($(this).attr('id'));
+  e.stopPropagation()
   window.location = $(this).attr("href");
+  return false
 })
 
 $('document').ready(function () {
@@ -61,6 +83,14 @@ $('document').ready(function () {
     $('.ad').addClass('blocked')
     $('.ad').html('<pre class="content">Please consider turning off your ad blocker. Ads help us bring you better content. \n\nThank you, 🙏\n\n- The iOS Haven team</pre>')
   }
-
-
 })
+
+$(document).ready(function() {
+
+  // Check for click events on the navbar burger icon
+  $(".navbar-burger").click(function() {
+      // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+      $(".navbar-burger").toggleClass("is-active");
+      $(".navbar-menu").toggleClass("is-active");
+  });
+});

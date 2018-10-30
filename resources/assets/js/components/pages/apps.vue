@@ -44,7 +44,7 @@ export default {
   mounted () {
     this.$store.commit('auth:set', this.json)
     axios.get('/apps/getJson/').then(({data}) => {
-      // console.log(data);
+      console.log(data);
       this.filteredApps = data
       this.$store.commit('app:set', data)
     })

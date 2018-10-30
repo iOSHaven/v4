@@ -83,12 +83,11 @@ html {
   }
 }
 #app {
-  margin-top: 3rem;
-  padding: 2rem 1rem;
+  padding: 0 0 2rem;
   max-width: 100vw;
   min-height: 100vh;
   @media (max-width: 500px) {
-    padding: 1.6rem 0;
+    padding: 0 0 1.6rem;
   }
 }
 
@@ -111,6 +110,7 @@ html {
   width: 100%;
   border: 1px solid #ddd;
   margin: 0rem auto 1rem;
+  box-shadow: none;
   overflow: hidden;
   @media screen and (max-width: 576px) {
     margin-left: 0 !important;
@@ -530,4 +530,37 @@ ul.fancy {
     color: black;
     margin: auto;
   }
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap-reverse;
+  align-items: stretch;
+  width: 100%;
+}
+
+.form-control {
+  position: relative;
+  flex: 1 1 auto;
+  width: 1%;
+  margin-bottom: 0;
+  border: 1px solid #ccc;
+}
+
+.input-group-append {
+  margin-left: -1px;
+  display: flex;
+  .btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
+
+.border-0 {
+  border: none !important;
+}
+
+.border-right-0 {
+  border-right: none !important;
 }

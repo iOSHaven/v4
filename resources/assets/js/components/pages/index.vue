@@ -4,13 +4,13 @@
     <div class="wrapper offsetfromtop">
       <div id="logo" class=""></div>
       <h1 class="title">
-        iOS Haven
+        IOS Haven
       </h1>
       <h2 class="subtitle mt-1">
         DOWNLOAD IPAS, SIGNED APPS, APPLE DEVELOPER BETAS, AND JAILBREAKS.
       </h2>
       <div class="links">
-        <a href="#menu" class="fill--white p1 pr2 pl2 m-3 dark" @click="launch">Launch</a>
+        <a href="/apps" class="fill--white p1 pr2 pl2 m-3 dark" @click="launch">Launch</a>
       </div>
     </div>
   </section>

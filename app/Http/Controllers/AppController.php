@@ -7,19 +7,48 @@ use Illuminate\Http\Request;
 use App\Thing;
 use App\App;
 use Parsedown;
+use Carbon\Carbon;
+use DB;
 
 class AppController extends Controller
 {
-    public function page ($tag = null)
+    public function page ($tag = null, Request $r)
     {
-      if ($tag) {
-        return view('apps')->with([
-          'apps' => App::where('tags', 'like', '%'.$tag.'%')->get()
-        ]);
+      if ($tag) $search = $tag;
+      else $search = $r->q;
+
+      $filteredData = [
+        'apps' => App::where('name', '!=', 'No name')
+          ->where('name', 'like', "%". $search."%")
+          ->orWhere('tags', 'like', "%". strtolower($search)."%")
+          ->orderBy('downloads', 'desc')
+          ->paginate(30),
+        'q' => $search
+      ];
+      if ($r->json) {
+        return  response()->json($filteredData);
+      } else {
+        return view('apps')->with($filteredData);
       }
-      return view('apps')->with([
-        'apps' => App::get()
-      ]);
+    }
+
+    public function updates ($tag=null, Request $r) {
+      if ($tag) $search = $tag;
+      else $search = $r->q;
+      $filteredData = [
+        'apps' => App::where('name', '!=', 'No name')
+          ->where('name', 'like', "%". $search."%")
+          ->orWhere('tags', 'like', "%". $search."%")
+          ->where('edited_at', '>', Carbon::now()->subDays(3))
+          ->orderBy('edited_at', 'desc')
+          ->paginate(30),
+        'q' => $search
+      ];
+      if ($r->json) {
+        return  response()->json($filteredData);
+      } else {
+        return view('apps')->with($filteredData);
+      }
     }
 
     public function create (Request $request)
@@ -44,6 +73,8 @@ class AppController extends Controller
     {
       $app = App::findByUid($request->uid);
       $app->update($request->all());
+      $app->edited_at = Carbon::now();
+      $app->save();
       return response()->json($app);
     }
 
@@ -51,6 +82,7 @@ class AppController extends Controller
     {
       $p = new Parsedown;
       $app = App::findByUid($uid);
+      // dd($app);
       $app->increment('views');
       $app->html = $p->text($app->description);
       return view('uid')->with(['app' => $app]);

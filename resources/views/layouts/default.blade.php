@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ app()->getLocale() }}" class="has-navbar-fixed-top">
 <head>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -127,8 +127,8 @@
     <link rel="shortcut icon" href="/favicons/favicon.ico?v=QEMYzE9pb35555">
 
     <link href="{{ asset('css/normalize.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
 
     <!-- Adsense -->
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>

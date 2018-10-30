@@ -3,7 +3,7 @@
 
 @section('content')
 
-<div class="wrapper mobile">
+<div class="wrapper mobile mt2">
   @if ($errors->any())
     @foreach ($errors->all() as $error)
         <alert type="error" message="{{ $error }}"></alert>

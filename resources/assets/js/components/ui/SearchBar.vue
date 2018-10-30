@@ -1,9 +1,9 @@
 <template lang="html">
   <div class="searchbar">
     <input v-model="payload" @keyup="filter" :placeholder="searchOptions.label" :class="className">
-    <i :class="'searchbar-button ' + searchOptions.button" v-if="searchOptions.button" @click="toggle"></i>
-    <div class="backdrop" v-if="showDropUp" @click="toggle"></div>
-    <drop-up v-show="showDropUp" @close="toggle">
+    <!-- <i :class="'searchbar-button ' + searchOptions.button" v-if="searchOptions.button" @click="toggle"></i> -->
+    <!-- <div class="backdrop" v-if="showDropUp" @click="toggle"></div> -->
+    <!-- <drop-up v-show="showDropUp" @close="toggle">
 
       <div class="item" @click="sort($event, {name:'downloads', alphabetize:'downloads', property:'name'})">
         <i class="icon"></i>Downloads
@@ -21,7 +21,7 @@
         <i class="icon"></i>Views
       </div>
 
-    </drop-up>
+    </drop-up> -->
   </div>
 
 </template>

@@ -7,7 +7,16 @@
     @endadmin
 
     <div class="card ml-3 mr-3 mt1 mb1 no-border no-padding">
-      <search-bar :options="{
+      <form class="" action="/apps" method="get">
+        <div class="input-group">
+          <input name="q" type="text" value="{{ $q }}" class="form-control p1 border-right-0" placeholder="Search apps..." aria-label="Search apps...">
+          <div class="input-group-append">
+            <button class="blue border-0 p1" type="submit">Search</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- <search-bar :options="{
         alphabetize: 'name',
         property: 'name',
         label: 'Search for apps...',
@@ -18,7 +27,7 @@
       class-name="fancy white"
       @update="updateAppSearch"
       ref="search">
-      </search-bar>
+      </search-bar> -->
     </div>
 
     <app v-for="app in filteredApps" v-if="filteredApps" :key="app.uid" :data="app" class="m-3 hide-on-server-render"></app>
@@ -36,6 +45,13 @@
         <div class="get fill--blue center">get</div>
       </a>
     @endforeach
+
+    <app v-for="app in moreLoadedApps" :key="app.uid" :data="app" class="m-3"></app>
+
+    <div id="loadmoreapps" class="has-text-centered m1" style="width: 100%;">
+      <button class="button is-dark" @click="loadMoreApps">Load more apps...</button>
+    </div>
+
   </div>
 
 @endsection
