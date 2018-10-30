@@ -14,9 +14,10 @@ class AppController extends Controller
 {
     public function page ($tag = null, Request $r)
     {
-      if ($tag) $search = $tag;
+      if ($tag != null) $search = $tag;
       else $search = $r->q;
-
+      dump('ignore, working on website. sorry.');
+      dd($search);
       $filteredData = [
         'apps' => App::where('name', '!=', 'No name')
           ->where('name', 'like', "%". $search."%")
@@ -33,7 +34,7 @@ class AppController extends Controller
     }
 
     public function updates ($tag=null, Request $r) {
-      if ($tag) $search = $tag;
+      if ($tag != null) $search = $tag;
       else $search = $r->q;
       $filteredData = [
         'apps' => App::where('name', '!=', 'No name')
