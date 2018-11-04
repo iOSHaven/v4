@@ -20,8 +20,8 @@ Route::get('/profile', 'HomeController@index')->name('profile');
 Route::post('/profile/color', 'HomeController@color');
 Route::post('/auth/toggleEditing', 'HomeController@toggleEditing');
 
-Route::get('/pokego', function () {
-  header('Location: ' . "itms-services://?action=download-manifest&url=" . urlencode(url('/pokego2.plist')));
+Route::get('/plist/{name}', function ($name) {
+  header('Location: ' . "itms-services://?action=download-manifest&url=" . urlencode(url("/$name.plist")));
   exit;
   // exit;
   // return redirect()->to("itms-services://?action=download-manifest&url=" . url('/pokego2.plist'))->send();

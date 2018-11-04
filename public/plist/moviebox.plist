@@ -25,13 +25,13 @@
                         <key>metadata</key>
                         <dict>
                             <key>bundle-identifier</key>
-                            <string>com.ioshaven.MovieBox</string>
+                            <string>co.ioshaven.MovieBox++</string>
                             <key>bundle-version</key>
                             <string>4.0.6</string>
                             <key>kind</key>
                             <string>software</string>
                             <key>title</key>
-                            <string>❤️ MovieBox ❤️</string>
+                            <string>❤️ Movie Box++ ❤️</string>
                         </dict>
                     </dict>
                 </array>
