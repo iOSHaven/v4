@@ -189,13 +189,16 @@ $button-colors: 'red' $red, 'green' $green,  'blue' $blue, 'white' $white;
   }
   .solid--#{$class} {
     background: $value !important;
-    color: black;
+    color: white;
     border: 1px solid darken($value, 7%) !important;
     text-decoration: none !important;
     &:hover, &:focus {
-      color: black !important;
+      color: white !important;
       background: darken($value, 7%) !important;
       cursor: pointer !important;
+    }
+    &.always-dark, &.always-dark:hover, &.dark:hover, &:focus {
+      color: black !important;
     }
   }
 }
@@ -390,38 +393,52 @@ button.blue {
     }
 }
 
+.footer .item {
+  display: block;
+}
 
-footer {
-  background: #141a1d;
-  min-height: 100vh;
-  color: white;
-  padding: 2rem 0;
-  text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  .wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .column {
-    line-height: 2rem;
-    text-align: center;
-    padding: 4rem 1rem;
-    display: inline-block;
-    width: 300px;
-    .item, h1, h2, h3 {
-      width: 200px;
-      float: right;
-      text-align: left;
-      // text-decoration: none;
-      color: white;
-    }
-    i,svg {
-      margin-right: 1rem;
-    }
+.footer .level {
+  align-items: flex-start;
+}
+
+@media only screen and (min-width : 320px) {
+  .is-mobile-64x64 {
+    width: 64px !important;
+    height: 64px !important;
   }
 }
+
+// footer {
+//   background: #141a1d;
+//   min-height: 100vh;
+//   color: white;
+//   padding: 2rem 0;
+//   text-align: center;
+//   display: flex;
+//   flex-wrap: wrap;
+//   .wrapper {
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: center;
+//   }
+//   .column {
+//     line-height: 2rem;
+//     text-align: center;
+//     padding: 4rem 1rem;
+//     display: inline-block;
+//     width: 300px;
+//     .item, h1, h2, h3 {
+//       width: 200px;
+//       float: right;
+//       text-align: left;
+//       // text-decoration: none;
+//       color: white;
+//     }
+//     i,svg {
+//       margin-right: 1rem;
+//     }
+//   }
+// }
 
 ul.fancy {
   padding: 0;

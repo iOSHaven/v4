@@ -6,53 +6,82 @@
 @section('content')
 
 <div class="wrapper uidpage">
-  <div class="banner" style="background-image: url(/{{$app->banner}})">
-    <div class="icon" style="background-image: url(/{{$app->icon}})"></div>
-    <div class="installs">
-        @if($app->signed)
-        <a class="get solid--white center pt-3 pb-3 pl1 pr1 m-2" href="/install/{{$app->uid}}">
-          <i class="fas fa-download mt-2 mb-2 mr-5"></i>Install
-        </a>
-        @endif
-        @if($app->unsigned)
-        <a class="get solid--white center dark pt-3 pb-3 pl1 pr1 m-2" href="/download/{{$app->uid}}">
-          <i class="fas fa-wrench mt-2 mb-2 mr-5"></i>.ipa
-        </a>
-        @endif
+<section class="hero is-medium is-info is-bold" style="background: url(/{{$app->banner}}) center center; background-size: cover">
+  <div class="hero-body"></div>
+</section>
+
+<article class="media has-background-white pt1 pb1">
+  <figure class="media-left ml1">
+    <p class="image is-96x96 is-mobile-64x64">
+      <img src="/{{$app->icon}}">
+    </p>
+  </figure>
+  <div class="media-content">
+    <div class="is-size-1-desktop is-size-3-touch has-text-weight-bold">
+      {{ $app->name }}
     </div>
-    <div class="shadow"></div>
+    <div class="is-hidden-touch">
+      @if($app->signed)
+      <a class="get solid--blue center pt-3 pb-3 pl1 pr1 m-2" href="/install/{{$app->uid}}">
+        <i class="fas fa-download mt-2 mb-2 mr-5"></i>Install Now
+      </a>
+      @endif
+      @if($app->unsigned)
+      <a class="get solid--white always-dark center pt-3 pb-3 pl1 pr1 m-2" href="/download/{{$app->uid}}">
+        <i class="fas fa-wrench mt-2 mb-2 mr-5"></i>Download IPA
+      </a>
+      @endif
+    </div>
   </div>
+</article>
 
-  <div class="bar card flex has-shadow">
-      <div class="title m-3">
-        <h3>{{$app->name}}</h3>
-      </div>
+<div class="is-hidden-desktop pl1 has-background-white">
+  @if($app->signed)
+  <a class="get solid--blue center pt-3 pb-3 pl1 pr1 m-2" href="/install/{{$app->uid}}">
+    <i class="fas fa-download mt-2 mb-2 mr-5"></i>Install Now
+  </a>
+  @endif
+  @if($app->unsigned)
+  <a class="get solid--white always-dark center pt-3 pb-3 pl1 pr1 m-2" href="/download/{{$app->uid}}">
+    <i class="fas fa-wrench mt-2 mb-2 mr-5"></i>Download IPA
+  </a>
+  @endif
+</div>
 
-      <div class="info">
-        <div class="data card">
-          <div class="number">{{format_int($app->downloads)}}</div>
-          <div class="label">Downloads</div>
-        </div>
-        <div class="data card">
-          <div class="number">{{format_int($app->views)}}</div>
-          <div class="label">Views</div>
-        </div>
-        <div class="data card">
-          <div class="number">{{format_int($app->size, 'file')}}</div>
-          <div class="label">Size</div>
-        </div>
-        <div class="data card">
-          <div class="number">{{ $app->version }}</div>
-          <div class="label">Version</div>
-        </div>
-      </div>
+
+<nav class="level is-mobile pt2 pb1 has-background-white">
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Downloads</p>
+      <p class="is-size-4-desktop is-size-6-touch has-text-weight-bold">{{format_int($app->downloads)}}</p>
     </div>
+  </div>
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Views</p>
+      <p class="is-size-4-desktop is-size-6-touch has-text-weight-bold">{{format_int($app->views)}}</p>
+    </div>
+  </div>
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Size</p>
+      <p class="is-size-4-desktop is-size-6-touch has-text-weight-bold">{{format_int($app->size, 'file')}}</p>
+    </div>
+  </div>
+  <div class="level-item has-text-centered">
+    <div>
+      <p class="heading">Version</p>
+      <p class="is-size-4-desktop is-size-6-touch has-text-weight-bold">{{ $app->version }}</p>
+    </div>
+  </div>
+</nav>
+
 
     @admin
     <page-uid uid="{{$app->uid}}" :set-auth="{{Auth::user()->toJson()}}"></page-uid>
     @else
 
-    <div class="card ad">
+    <div class="has-background-white pt1 pb1 ad">
       <!-- adsense -->
       <ins class="adsbygoogle"
            style="display:block"
@@ -61,11 +90,11 @@
            data-ad-format="auto"></ins>
     </div>
 
-    <div class="card has-shadow">
+    <div class="has-background-white pt1 pb1 mt1">
       <div class="markdown-body">{!! $app->html !!}</div>
     </div>
     @if ($app->tags)
-    <div class="flex tags">
+    <div class="flex tags has-background-white pt1 pb1 mt1 mb2">
       @foreach (explode(",", $app->tags) as $tag)
         <a href="/apps/{{$tag}}" class="tag">{{$tag}}</a>
       @endforeach
@@ -73,7 +102,7 @@
     @endif
     @endadmin
 
-</div>
+
 
 
 @endsection

@@ -57,9 +57,11 @@
 
     <app v-for="app in moreLoadedApps" :key="app.uid" :data="app" class="m-3"></app>
 
+    @if($apps->hasMorePages())
     <div id="loadmoreapps" class="has-text-centered m1" style="width: 100%;">
       <button class="button is-dark" @click="loadMoreApps">Load more apps...</button>
     </div>
+    @endif
 
   </div>
 
