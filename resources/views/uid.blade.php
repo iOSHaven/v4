@@ -7,7 +7,7 @@
 
 <div class="wrapper uidpage">
 
-  <div class="card ml-3 mr-3 mt1 mb1 no-border no-padding">
+  <div class="card mt1 mb1 no-border no-padding">
     <form class="" action="/apps" method="get">
       <div class="input-group">
         <input name="q" type="text" class="form-control p1 border-right-0" placeholder="Search apps..." aria-label="Search apps...">
