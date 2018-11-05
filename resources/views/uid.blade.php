@@ -93,13 +93,14 @@
     <page-uid uid="{{$app->uid}}" :set-auth="{{Auth::user()->toJson()}}"></page-uid>
     @else
 
-    <div class="has-background-white pt1 pb1 ad">
+    <div class="card ad">
       <!-- adsense -->
       <ins class="adsbygoogle"
            style="display:block"
            data-ad-client="ca-pub-4649450952406116"
            data-ad-slot="5262456899"
-           data-ad-format="auto"></ins>
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
     </div>
 
     <div class="has-background-white pt1 pb1 mt1">

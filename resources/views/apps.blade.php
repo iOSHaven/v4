@@ -30,13 +30,16 @@
       </search-bar> -->
     </div>
 
+
+
     <div class="card ad">
-      <!-- adsense -->
+      <!-- v4-app-search -->
       <ins class="adsbygoogle"
            style="display:block"
            data-ad-client="ca-pub-4649450952406116"
-           data-ad-slot="5262456899"
-           data-ad-format="auto"></ins>
+           data-ad-slot="8982247650"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
     </div>
 
     <app v-for="app in filteredApps" v-if="filteredApps" :key="app.uid" :data="app" class="m-3 hide-on-server-render"></app>
