@@ -6,6 +6,18 @@
 @section('content')
 
 <div class="wrapper uidpage">
+
+  <div class="card ml-3 mr-3 mt1 mb1 no-border no-padding">
+    <form class="" action="/apps" method="get">
+      <div class="input-group">
+        <input name="q" type="text" class="form-control p1 border-right-0" placeholder="Search apps..." aria-label="Search apps...">
+        <div class="input-group-append">
+          <button class="blue border-0 p1" type="submit">Search</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
 <section class="hero is-medium is-info is-bold" style="background: url(/{{$app->banner}}) center center; background-size: cover">
   <div class="hero-body"></div>
 </section>
