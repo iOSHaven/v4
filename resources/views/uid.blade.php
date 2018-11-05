@@ -10,12 +10,12 @@
     <div class="icon" style="background-image: url(/{{$app->icon}})"></div>
     <div class="installs">
         @if($app->signed)
-        <a class="get fill--white center dark pt-3 pb-3 pl1 pr1 m-2" href="/install/{{$app->uid}}">
+        <a class="get solid--white center pt-3 pb-3 pl1 pr1 m-2" href="/install/{{$app->uid}}">
           <i class="fas fa-download mt-2 mb-2 mr-5"></i>Install
         </a>
         @endif
         @if($app->unsigned)
-        <a class="get fill--white center dark pt-3 pb-3 pl1 pr1 m-2" href="/download/{{$app->uid}}">
+        <a class="get solid--white center dark pt-3 pb-3 pl1 pr1 m-2" href="/download/{{$app->uid}}">
           <i class="fas fa-wrench mt-2 mb-2 mr-5"></i>.ipa
         </a>
         @endif

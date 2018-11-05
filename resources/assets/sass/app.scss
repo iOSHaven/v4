@@ -187,6 +187,17 @@ $button-colors: 'red' $red, 'green' $green,  'blue' $blue, 'white' $white;
       color: black !important;
     }
   }
+  .solid--#{$class} {
+    background: $value !important;
+    color: black;
+    border: 1px solid darken($value, 7%) !important;
+    text-decoration: none !important;
+    &:hover, &:focus {
+      color: black !important;
+      background: darken($value, 7%) !important;
+      cursor: pointer !important;
+    }
+  }
 }
 
 
