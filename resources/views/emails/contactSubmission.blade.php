@@ -1,5 +1,5 @@
 <?php $app = File::get(public_path('css/app.css'));?>
-<?php $uid = File::get(public_path('css/uid.css'));?>
+<?php $bulma = File::get(public_path('css/bulma.css'));?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,24 +7,25 @@
 <title></title>
 <style media="screen">
 {!! $app !!}
-{!! $uid !!}
+{!! $bulma !!}
 </style>
 </head>
 <body class=" wrapper markdown-body medium">
-<h1>{{ $data['type'] }}</h1>
-<p>Please make sure you contact the person back before deleting or archiving the message.</p>
+<div class="is-size-1 has-text-weight-bold mt1">{{ $data['type'] }}</div>
+<div class="is-size-3 mb2">{{ $data['title']}}</div>
+<hr>
 
 @foreach($data as $key => $value)
-@if($key !== 'type')
-<h3>{{ $key }}:</h3>
-<div class="card">
+@if($key !== 'type' && $key !== 'title')
+<div class="is-size-5 has-text-weight-bold mt1">{{ $key }}:</div>
+<div class="has-background-white p1">
   {{ $value }}
 </div>
+<hr>
 @endif
 @endforeach
 
-
-<p>This contact request was sent via the official iOS Haven mail bot. If you feel like this was sent in error, then just delete the message.</p>
+<p class="mt2 has-background-dark has-text-white p1 mb1">This contact request was sent via the official iOS Haven mail bot. If you feel like this was sent in error, then just delete the message.</p>
 
 </body>
 </html>

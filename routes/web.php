@@ -43,11 +43,11 @@ Route::get('/updates{tag?}', 'AppController@updates');
 Route::get('/plist', 'HomeController@getPlist');
 Route::post('/plist', 'HomeController@postPlist');
 
-// Route::get('/contact/{type}', 'ContactController@view');
-// Route::post('/contact', 'ContactController@send');
-Route::get('/contact/{type?}', function () {
-  return abort(500, 'Sorry for the inconvenience, but this page is under maintenance.');
-});
+Route::get('/contact/{type}', 'ContactController@view');
+Route::post('/contact', 'ContactController@send');
+// Route::get('/contact/{type?}', function () {
+//   return abort(500, 'Sorry for the inconvenience, but this page is under maintenance.');
+// });
 
 Route::get('/credits', 'StaticPageController@getCreditsPage');
 Route::get('/faq', 'StaticPageController@getFaqPage');
