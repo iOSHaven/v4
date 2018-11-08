@@ -170,6 +170,11 @@
     @include('layouts.footer')
     <!-- Scripts -->
     <script type="text/javascript" src="{{ asset('js/app.js') }}?v=0.1"></script>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-4649450952406116",
+              enable_page_level_ads: true
+         });
+    </script>
 </body>
 </html>
