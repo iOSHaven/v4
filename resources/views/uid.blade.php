@@ -92,7 +92,13 @@
     @admin
     <page-uid uid="{{$app->uid}}" :set-auth="{{Auth::user()->toJson()}}"></page-uid>
     @else
-
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-4649450952406116"
+         data-ad-slot="7479897052"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+         
     <div class="has-background-white pt1 pb1 mt1">
       <div class="markdown-body">{!! $app->html !!}</div>
     </div>
