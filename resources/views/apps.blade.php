@@ -32,7 +32,7 @@
 
 
 
-    <div class="card ad">
+    <!-- <div class="card ad"> -->
       <!-- v4-search-top -->
       <ins class="adsbygoogle"
            style="display:block"
@@ -40,7 +40,7 @@
            data-ad-slot="8982247650"
            data-ad-format="auto"
            data-full-width-responsive="true"></ins>
-    </div>
+    <!-- </div> -->
 
     <app v-for="app in filteredApps" v-if="filteredApps" :key="app.uid" :data="app" class="m-3 hide-on-server-render"></app>
     <span></span>
