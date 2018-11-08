@@ -33,7 +33,7 @@
 
 
     <div class="card ad">
-      <!-- v4-app-search -->
+      <!-- v4-search-top -->
       <ins class="adsbygoogle"
            style="display:block"
            data-ad-client="ca-pub-4649450952406116"
@@ -57,6 +57,16 @@
         <div class="get fill--blue center">get</div>
       </a>
     @endforeach
+
+    <div class="card ad">
+      <!-- v4-search-bottom -->
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-4649450952406116"
+           data-ad-slot="5262456899"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
 
     <app v-for="app in moreLoadedApps" :key="app.uid" :data="app" class="m-3"></app>
 

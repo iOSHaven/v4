@@ -11,7 +11,7 @@
                                 <key>kind</key>
                                 <string>software-package</string>
                                 <key>url</key>
-                                <string>https://enjoy.ipacdn9.pw/ipa/games/pokemongo.ipa</string>
+                                <string>https://cdn.appvalley.vip/149.com.nianticlabs.pokemongo.ipa</string>
                             </dict>
                             <dict>
                                 <key>kind</key>
@@ -25,9 +25,9 @@
                         <key>metadata</key>
                         <dict>
                             <key>bundle-identifier</key>
-                            <string>com.tweakbox.PokeGo2++(official)</string>
+                            <string>com.ioshaven.PokeGo2++</string>
                             <key>bundle-version</key>
-                            <string>0.33.1</string>
+                            <string>R93b</string>
                             <key>kind</key>
                             <string>software</string>
                             <key>title</key>

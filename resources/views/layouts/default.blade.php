@@ -136,7 +136,16 @@
 
     <!-- Adsense -->
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
+    <!-- Reddit Conversion Pixel -->
+    <script>
+    var now=Date.now();var i=new Image();i.src="https://alb.reddit.com/snoo.gif?q=CAAHAAABAAoACQAAAAmui0GsAA==&s=tmLAxiUDMEJKMclLiZGzuUt9BH8_1Z3ptx3Bh1LlzNs=&ts="+now;
+    </script>
+    <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://alb.reddit.com/snoo.gif?q=CAAHAAABAAoACQAAAAmui0GsAA==&s=tmLAxiUDMEJKMclLiZGzuUt9BH8_1Z3ptx3Bh1LlzNs="/>
+    </noscript>
+    <!-- DO NOT MODIFY -->
+    <!-- End Reddit Conversion Pixel -->
 
     <!-- Extend the head -->
     @yield('head')

@@ -24,7 +24,7 @@
 
 <article class="media has-background-white pt1 pb1">
   <figure class="media-left ml1">
-    <p class="image is-96x96 is-mobile-64x64">
+    <p class="image is-96x96 is-mobile-64x64" style="border-radius: 20px;">
       <img src="/{{$app->icon}}">
     </p>
   </figure>
@@ -92,16 +92,6 @@
     @admin
     <page-uid uid="{{$app->uid}}" :set-auth="{{Auth::user()->toJson()}}"></page-uid>
     @else
-
-    <div class="card ad">
-      <!-- adsense -->
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-4649450952406116"
-           data-ad-slot="5262456899"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-    </div>
 
     <div class="has-background-white pt1 pb1 mt1">
       <div class="markdown-body">{!! $app->html !!}</div>
