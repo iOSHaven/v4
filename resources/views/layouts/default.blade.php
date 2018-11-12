@@ -136,7 +136,16 @@
 
     <!-- Adsense -->
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
+    <!-- Reddit Conversion Pixel -->
+    <script>
+    var now=Date.now();var i=new Image();i.src="https://alb.reddit.com/snoo.gif?q=CAAHAAABAAoACQAAAAmui0GsAA==&s=tmLAxiUDMEJKMclLiZGzuUt9BH8_1Z3ptx3Bh1LlzNs=&ts="+now;
+    </script>
+    <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://alb.reddit.com/snoo.gif?q=CAAHAAABAAoACQAAAAmui0GsAA==&s=tmLAxiUDMEJKMclLiZGzuUt9BH8_1Z3ptx3Bh1LlzNs="/>
+    </noscript>
+    <!-- DO NOT MODIFY -->
+    <!-- End Reddit Conversion Pixel -->
 
     <!-- Extend the head -->
     @yield('head')
@@ -161,6 +170,11 @@
     @include('layouts.footer')
     <!-- Scripts -->
     <script type="text/javascript" src="{{ asset('js/app.js') }}?v=0.1"></script>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-4649450952406116",
+              enable_page_level_ads: true
+         });
+    </script>
 </body>
 </html>

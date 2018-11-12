@@ -32,15 +32,15 @@
 
 
 
-    <div class="card ad">
-      <!-- v4-app-search -->
+    <!-- <div class="card ad"> -->
+      <!-- v4-search-top -->
       <ins class="adsbygoogle"
            style="display:block"
            data-ad-client="ca-pub-4649450952406116"
            data-ad-slot="8982247650"
            data-ad-format="auto"
            data-full-width-responsive="true"></ins>
-    </div>
+    <!-- </div> -->
 
     <app v-for="app in filteredApps" v-if="filteredApps" :key="app.uid" :data="app" class="m-3 hide-on-server-render"></app>
     <span></span>
@@ -58,6 +58,13 @@
       </a>
     @endforeach
 
+    <!-- <div class="card ad"> -->
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- v4-search -->
+
+
+    <!-- </div> -->
+
     <app v-for="app in moreLoadedApps" :key="app.uid" :data="app" class="m-3"></app>
 
     @if($apps->hasMorePages())
@@ -65,6 +72,13 @@
       <button class="button is-dark" @click="loadMoreApps">Load more apps...</button>
     </div>
     @endif
+
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-4649450952406116"
+         data-ad-slot="7479897052"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
 
   </div>
 
