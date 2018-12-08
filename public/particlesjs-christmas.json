@@ -1,7 +1,7 @@
 {
   "particles": {
     "number": {
-      "value": 50,
+      "value": 30,
       "density": {
         "enable": true,
         "value_area": 800
@@ -21,8 +21,8 @@
       },
       "image": {
         "src": "/santa.png",
-        "width": 400,
-        "height": 400
+        "width": 200,
+        "height": 200
       }
     },
     "opacity": {
@@ -41,7 +41,7 @@
       "anim": {
         "enable": false,
         "speed": 20,
-        "size_min": 30,
+        "size_min": 60,
         "sync": false
       }
     },
@@ -59,7 +59,7 @@
       "random": true,
       "straight": false,
       "out_mode": "out",
-      "bounce": false,
+      "bounce": true,
       "attract": {
         "enable": false,
         "rotateX": 600,
