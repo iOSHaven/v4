@@ -8,7 +8,17 @@
 export default {
   mounted () {
     window.onload = function () {
-      window.particlesJS.load('particles-js', '/particles-js.json')
+      var now = new Date();
+      if (now.getMonth() === 11 && now.getDate() === 25) {
+        window.particlesJS.load('particles-js', '/particlesjs-christmas.json')
+      }
+      else if (now.getMonth() === 11) {
+        window.particlesJS.load('particles-js', '/particlesjs-winter.json')
+      }
+      else {
+        window.particlesJS.load('particles-js', '/particles-js.json')
+      }
+
     }
   }
 }
