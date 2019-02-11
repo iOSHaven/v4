@@ -1,0 +1,41 @@
+(function () {
+  var res = ""
+  var redirects = []
+  var links = []
+  $('.link-original.first > div > span').each(el => redirects.push(el.innerHTML))
+  $('.link-original.first > div > a').each(el => links.push(el.href))
+
+  for (var i=0; i<links.length; i++) {
+    res += links[i] + "\t" + redirects[i] + "\n"
+  }
+
+  return res
+})()
+PAGE 21
+
+
+(function () {
+  var page = 0
+  var res = ""
+  var redirects = []
+  var links = []
+  $('.link-original.first > div > span').each(el => redirects.push(el.innerHTML))
+  $('.link-original.first > div > a').each(el => links.push(el.href))
+
+  var breakwhile = false
+  while (!breakwhile) {
+    var pageres = ""
+    for (var i=0; i<links.length; i++) {
+      if (!links[i]) {
+        breakwhile = true
+        break
+      }
+      pageres += links[i] + "\t" + redirects[i] + "\n"
+    }
+    res += pageres.trim()
+    page ++
+    console.log(page, 'li[data-page=' + page + ']')
+    $('li[data-page=' + page +']')[0].click()
+  }
+  return res
+})()

@@ -9,6 +9,7 @@ use App\App;
 use Parsedown;
 use Carbon\Carbon;
 use DB;
+use Response;
 
 class AppController extends Controller
 {
@@ -93,6 +94,23 @@ class AppController extends Controller
     {
       if ($uid) return response()->json(App::findByUid($uid));
       return response()->json(App::get());
+    }
+
+    private function monetize() {
+      //http://pinkhindi.com/UiLId
+    }
+
+    public function itms($id) {
+      // $app = App::find($id);
+      // // dd($app->signed);
+      // $itms = "itms-services://?action=download-manifest&url=";
+      // list(, $url) = explode($itms, $app->signed);
+      // $d = urldecode($url);
+      // $e = urlencode($d);
+      // dump($itms. $e);
+      return Response::make('', 302)->header('Location', "itms-services://?action=download-manifest&url=https://app-valley.vip/app/plists/135/install.plist");
+      // header('Location: ' . "itms-services://?action=download-manifest&url=https%3A%2F%2Fapp.appvalley.vip%2Fplists%2F673%2Finstall.plist");
+      // // exit;
     }
 
     public function install($uid)

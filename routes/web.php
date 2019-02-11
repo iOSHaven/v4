@@ -28,6 +28,9 @@ Route::get('/plist/{name}', function ($name) {
   // return redirect()
 });
 
+Route::get('/itms/{id}', 'AppController@itms');
+
+
 Route::post('/app/create', 'AppController@create');
 Route::get('/app/{uid}', 'AppController@get');
 Route::post('/app/update', 'AppController@update');
