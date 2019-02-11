@@ -28,6 +28,10 @@ Route::get('/plist/{name}', function ($name) {
   // return redirect()
 });
 
+Route::post('putlinks', function (\Request $r) {
+  return response()->json(["hello"]);
+});
+
 Route::get('/itms/{id}', 'AppController@itms');
 
 

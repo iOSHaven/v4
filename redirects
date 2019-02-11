@@ -14,8 +14,7 @@
 PAGE 21
 
 
-(function () {
-  var page = 0
+(function (page=0) {
   var res = ""
   var redirects = []
   var links = []
@@ -35,7 +34,33 @@ PAGE 21
     res += pageres.trim()
     page ++
     console.log(page, 'li[data-page=' + page + ']')
-    $('li[data-page=' + page +']')[0].click()
+    var el = $('li[data-page=' + page +']')[0]
+    if (el) {
+      el.click()
+    } else {
+      breakwhile=true
+    }
   }
   return res
+})()
+
+
+
+
+
+
+(function () {
+  var res = ""
+  var links = []
+  var redirects = []
+  var page = parseInt(window.location.search.split('=')[1]) + 1
+
+  $('.box-solid .input-sm:not(#alias)').each((i,el) => links.push(el.value))
+  $('.box-solid small a:last-of-type').each((i, el) => redirects.push(el.href))
+
+  for (var i=0; i<links.length; i++) {
+    res += links[i] + "\t" + redirects[i] + "\n"
+  }
+  localStorage.setItem('links', (localStorage.getItem('links') || '') + res)
+  window.location.href = window.location.origin + window.location.pathname + "?page=" + page
 })()

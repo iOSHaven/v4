@@ -96,21 +96,17 @@ class AppController extends Controller
       return response()->json(App::get());
     }
 
-    private function monetize() {
-      //http://pinkhindi.com/UiLId
+    private function monetize($url) {
+      return env('MONETIZE') . url($url);
     }
 
     public function itms($id) {
-      // $app = App::find($id);
-      // // dd($app->signed);
-      // $itms = "itms-services://?action=download-manifest&url=";
-      // list(, $url) = explode($itms, $app->signed);
-      // $d = urldecode($url);
-      // $e = urlencode($d);
-      // dump($itms. $e);
-      return Response::make('', 302)->header('Location', "itms-services://?action=download-manifest&url=https://app-valley.vip/app/plists/135/install.plist");
-      // header('Location: ' . "itms-services://?action=download-manifest&url=https%3A%2F%2Fapp.appvalley.vip%2Fplists%2F673%2Finstall.plist");
-      // // exit;
+      $app = App::find($id);
+      $itms = "itms-services://?action=download-manifest&url=";
+      list(, $url) = explode($itms, $app->signed);
+      $d = urldecode($url);
+      $e = urlencode($d);
+      return Response::make('', 302)->header('Location', $d . $e);
     }
 
     public function install($uid)
@@ -118,7 +114,7 @@ class AppController extends Controller
       $app = App::findByUid($uid);
       if ($app->signed) {
         $app->increment('downloads');
-        return redirect($app->signed);
+        return redirect($this->monetize("/itms/" . $app->id));
       }
       else abort(404);
     }
@@ -128,7 +124,7 @@ class AppController extends Controller
       $app = App::findByUid($uid);
       if ($app->unsigned) {
         $app->increment('downloads');
-        return redirect($app->unsigned);
+        return redirect($this->monetize($app->unsigned));
       }
       else abort(404);
     }

@@ -57,24 +57,24 @@ class LinkTransfer extends Command
           $count++;
         }
         $bar = $this->output->createProgressBar($count);
-
         foreach(file('links') as $line) {
           $line = trim($line);
           list($link, $redirect) = explode("\t", $line);
-          $appq = App::where(function ($q) use($link) {
+          $linkclk = str_replace("http://pinkhindi.com", "https://clk.sh", $link);
+          // print_r([$link, $linkclk]);
+          $appq = App::where(function ($q) use($link, $linkclk) {
             $q->where('unsigned', $link)
-              ->orWhere('signed', $link);
+              ->orWhere('signed', $link)
+              ->orWhere('unsigned', $linkclk)
+              ->orWhere('signed', $linkclk);
           });
           if ($appq->exists()) {
             $app = $appq->first();
             $newlink = urldecode($this->trace($redirect));
-            // $length = strlen($newlink);
-            // if ($length > 255) {
-            //   print_r([$newlink, $app->id, $redirect]);
-            // }
-            if ($app->unsigned === $link) {
+            if ($app->unsigned === $link || $app->unsigned === $linkclk) {
               $app->unsigned = $newlink;
-            } else if ($app->signed === $link) {
+            }
+            if ($app->signed === $link || $app->signed === $linkclk) {
               $app->signed = $newlink;
             }
             $app->save();
@@ -82,5 +82,23 @@ class LinkTransfer extends Command
           $bar->advance();
         }
         $bar->finish();
+
+
+        $appq = App::where(function ($q) {
+          $q->where('signed', 'like', '%appvalley%')
+            ->orWhere('unsigned', 'like', '%appvalley%');
+        });
+        $bar2 = $this->output->createProgressBar($appq->count());
+        foreach($appq->get() as $app) {
+          if ($app->unsigned) {
+            $app->unsigned = str_replace("appvalley", "app-valley", $app->unsigned);
+          }
+          if ($app->signed) {
+            $app->signed = str_replace("appvalley", "app-valley", $app->signed);
+          }
+          $app->save();
+          $bar2->advance();
+        }
+        $bar2->finish();
     }
 }
