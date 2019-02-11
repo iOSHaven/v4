@@ -106,7 +106,7 @@ class AppController extends Controller
       list(, $url) = explode($itms, $app->signed);
       $d = urldecode($url);
       $e = urlencode($d);
-      return Response::make('', 302)->header('Location', $d . $e);
+      return Response::make('', 302)->header('Location', $itms . $e);
     }
 
     public function install($uid)
