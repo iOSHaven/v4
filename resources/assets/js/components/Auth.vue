@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="">
     <div class="signedin" v-if="$store.getters.auth.username">
       <form-data action="users/logout" v-if="form == 'signup'" ref="$form">
@@ -51,6 +51,7 @@
 import FormData from '~/components/FormData.vue'
 // import axios from 'axios'
 export default {
+  name: "Auth",
   components: {
     FormData
   },

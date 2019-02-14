@@ -1,13 +1,9 @@
-<template lang="html">
-<div class="card flex">
-
-<!-- P R E V I E W   M O D E -->
-<square-button v-if="!auth.isEditing" label="edit" icon="fas fa-pencil" class="fill--blue" @click.native="edit"/>
-
-<!-- E D I T   M O D E -->
-<square-button v-if="auth.isEditing" label="done" icon="fas fa-check" class="fill--blue" @click.native="done"/>
-<square-button v-if="auth.isEditing" label="add" icon="fas fa-plus" class="fill--blue" @click.native="add"/>
-</div>
+<template>
+  <div class="card flex">
+    <square-button v-if="!auth.isEditing" label="edit" icon="fas fa-pencil" class="fill--blue" @click.native="edit"/>
+    <square-button v-if="auth.isEditing" label="done" icon="fas fa-check" class="fill--blue" @click.native="done"/>
+    <square-button v-if="auth.isEditing" label="add" icon="fas fa-plus" class="fill--blue" @click.native="add"/>
+  </div>
 </template>
 
 <script>

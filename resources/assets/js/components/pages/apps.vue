@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="apps wrapper">
     <app-admin v-if="auth.isAdmin" class="m-3"/>
 
@@ -7,7 +7,10 @@
     </div>
 
 
-    <app v-for="app in filteredApps" v-if="auth.isAdmin" :key="app.name" :data="app" class="m-3" @removed="appRemoved"></app>
+    <div v-if="auth.isAdmin">
+      <app v-for="app in filteredApps" :key="app.name" :data="app" class="m-3" @removed="appRemoved"></app>
+    </div>
+    
 
     <!-- <div class="card m-3 mt2 fill-blue center">Load more apps.</div> -->
   </div>

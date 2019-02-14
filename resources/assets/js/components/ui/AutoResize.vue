@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="w" @mouseleave="defocus">
     <div class="bars" @click="toggleMenu">
       <i class="fal fa-bars" v-show="focused"></i>
@@ -53,6 +53,7 @@ function sleep (ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
 export default {
+  name: "AutoResize",
   props: ['value', 'id', 'classes'],
   data () {
     return {

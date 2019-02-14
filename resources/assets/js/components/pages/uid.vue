@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="wrapper">
     <app-admin v-if="!!auth.isAdmin" :app="app"/>
 

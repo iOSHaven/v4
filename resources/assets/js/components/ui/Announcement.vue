@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <a class="announcement" v-if="show" :href="link || ''">
     {{message}}
     <i class="fal fa-times close" @click.stop.prevent="closebanner"></i>
@@ -7,6 +7,7 @@
 
 <script>
 export default {
+  name: "Announcement",
   props: ['message', 'link', 'session'],
   data () {
     return {

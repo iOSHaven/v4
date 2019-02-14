@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <form class="form-data card" :action="api + action" method="post">
     <slot>
     </slot>
@@ -7,6 +7,7 @@
 
 <script>
 export default {
+  name: "Formdata",
   props: ['action'],
   data () {
     return {

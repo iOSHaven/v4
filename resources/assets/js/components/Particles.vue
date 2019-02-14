@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div>
     <div id="particles-js"></div>
   </div>
@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name: "Particles",
   mounted () {
     window.onload = function () {
       var now = new Date();
@@ -23,6 +24,7 @@ export default {
   }
 }
 </script>
+
 <style lang="scss" scoped>
  #particles-js {
    background-color: #21b7d7;

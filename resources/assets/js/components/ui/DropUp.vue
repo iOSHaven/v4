@@ -1,19 +1,13 @@
-<template lang="html">
-  <!-- <div class=""> -->
-
+<template>
     <div class="DropUp">
-      <slot>
-
-      </slot>
+      <slot></slot>
       <div class="item" @click="$emit('close')"> <i class="fal fa-times"></i>Close</div>
     </div>
-  <!-- </div> -->
-
 </template>
 
 <script>
 export default {
-  name: 'drop-up'
+  name: 'Dropup'
 }
 </script>
 

@@ -1,34 +1,12 @@
-<template lang="html">
+<template>
   <div class="searchbar">
     <input v-model="payload" @keyup="filter" :placeholder="searchOptions.label" :class="className">
-    <!-- <i :class="'searchbar-button ' + searchOptions.button" v-if="searchOptions.button" @click="toggle"></i> -->
-    <!-- <div class="backdrop" v-if="showDropUp" @click="toggle"></div> -->
-    <!-- <drop-up v-show="showDropUp" @close="toggle">
-
-      <div class="item" @click="sort($event, {name:'downloads', alphabetize:'downloads', property:'name'})">
-        <i class="icon"></i>Downloads
-      </div>
-      <div class="item active" @click="sort($event, {name:'name', alphabetize:'name', property:'name'})">
-        <i class="icon fal fa-sort-amount-down"></i>Name
-      </div>
-      <div class="item" @click="sort($event, {name:'size', alphabetize:'size', property:'name'})">
-        <i class="icon"></i>Size
-      </div>
-      <div class="item" @click="sort($event, {name:'tags', alphabetize:'name', property:'tags'})">
-        <i class="icon"></i>Tags
-      </div>
-      <div class="item" @click="sort($event, {name:'views', alphabetize:'views', property:'name'})">
-        <i class="icon"></i>Views
-      </div>
-
-    </drop-up> -->
   </div>
-
 </template>
 
 <script>
 export default {
-  name: 'search-bar',
+  name: 'Searchbar',
   props: ['data', 'options', 'inputclass', 'className'],
   data () {
     return {

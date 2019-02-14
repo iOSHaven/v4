@@ -1,4 +1,4 @@
-let mix = require('laravel-mix').mix;
+let mix = require('laravel-mix');
 
 /*
  |--------------------------------------------------------------------------
@@ -10,26 +10,17 @@ let mix = require('laravel-mix').mix;
  | file for the application as well as bundling up all the JS files.
  |
  */
-// mix.webpackConfig({
-//   resolve: {
-//     alias: {}
-//   }
-//   // module: {
-//   //   loaders: [{
-//   //     test: /\.vue$/,
-//   //     loader: 'css-loader!sass-loader'
-//   //     // js: 'babel-loader',
-//   //     // scss: 'style-loader!css-loader!sass-loader'
-//   //   }]
-//   // }
-//
-// })
+
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   // .js('react/react-bundle.js', 'public/react')
-   // .react('react/comp.jsx', 'public/react')
-   .sass('resources/assets/sass/app.scss', 'public/css')
-   .sass('resources/assets/sass/uid.scss', 'public/css')
-   .minify('public/css/app.css')
-   .minify('public/js/app.js')
-   .minify('public/css/uid.css')
+   .sass('resources/assets/sass/app.scss', 'public/css', {implementation: require("node-sass") })
+   .sass('resources/assets/sass/uid.scss', 'public/css', {implementation: require("node-sass") })
+   .setPublicPath('public/')
+   .setResourceRoot('src/')
+   .options({
+      extractVueStyles: 'public/css/scroped.css'
+   })
+   .disableNotifications()
+   // .minify('public/css/app.css')
+   // .minify('public/js/app.js')
+   // .minify('public/css/uid.css')

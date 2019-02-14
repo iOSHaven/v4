@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="Sidebar">
     <div class="backdrop"  v-if="isVisible" v-on:click="toggle"></div>
     <div href="/" id="bar" :style="{'background-color': navColor || '#141a1d'}">
@@ -30,6 +30,7 @@
 <script>
 import SquareButton from './ui/SquareButton.vue'
 export default {
+  name: "Sidebar",
   props: ['color', 'title', 'navColor'],
   components: {
     SquareButton

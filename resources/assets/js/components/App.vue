@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <a :href="page" class="card flex p-5 app" @click="openApp($event)">
     <div ref="image" class="image" :style="{'background-image': `url('/${data.icon}')`}"></div>
     <div class="content">
@@ -12,6 +12,7 @@
 
 <script>
 export default {
+  name: "App",
   props: ['data'],
   computed: {
     auth () {

@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="action">
     <div class="action-content">
       <i :class="icon" v-if="icon"></i>
@@ -9,6 +9,7 @@
 
 <script>
 export default {
+  name: "SquareButton",
   props: ['label', 'icon']
 }
 </script>

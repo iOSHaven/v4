@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
   <div class="Editor">
     <div class="" @mouseleave="save">
       <auto-resize v-for="(el, index) in els"
@@ -21,6 +21,7 @@ function sleep (ms) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
 export default {
+  name: "Editor",
   components: {
     AutoResize
   },

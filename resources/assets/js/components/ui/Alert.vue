@@ -1,4 +1,4 @@
-<template lang="html">
+<template>
     <div :class="['card', 'alert', type]" ref="alert" v-if="isVisible">
       {{ message }}
       <i class="fas fa-times closeAlert" @click="hide"></i>
@@ -7,6 +7,7 @@
 
 <script>
 export default {
+  name: "Alert",
   props: ['message', 'type'],
   data () {
     return {
