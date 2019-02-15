@@ -1,0 +1,116 @@
+@import "./_vars.scss";
+
+*, * * {
+  font-family: 'Ubuntu', sans-serif;
+  transform: all 0.6s;
+}
+
+body {
+  @include fluid-type(320px, 1200px, 16px, 22px);
+}
+
+.btn {
+  color: white;
+  background-color: #ddd;
+  font-weight: 600;
+  transition: background-color 0.6s;
+  text-align: center;
+  user-select: none;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: map-get($spacing, 3) (map-get($spacing, 3) * 2);
+  &:hover {
+    cursor: pointer;
+  }
+  &:active {
+    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+  }
+}
+
+@each $name, $value in $colors {
+  .bg-#{$name} {
+    background-color: $value;
+  }
+  .text-#{$name} {
+    color: $value;
+  }
+  .btn-#{$name} {
+    background-color: $value;
+    &:hover {
+      background-color: white;
+      color: $value;
+    }
+  }
+}
+
+.btn-white:hover {
+  color: map-get($colors, blue);
+}
+
+section {
+  padding: map-get($spacing, 5) 0px;
+}
+
+
+.container {
+  max-width: 960px;
+  width: 100%;
+  margin: auto;
+  padding: 0px map-get($spacing, 3);
+  @include only-phone{
+    padding: 0px;
+  };
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px (map-get($spacing, 3) * -1);
+  @include only-phone{
+    margin: 0px;
+  };
+}
+
+.col {
+  flex-grow: 1
+}
+
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    flex-basis: $i / 12 * 100%
+  }
+}
+
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+
+nav {
+  padding: (map-get($spacing, 3)) 0px;
+  a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.8em;
+    padding: 0 (map-get($spacing, 2))
+  }
+  i {
+    font-weight: 100;
+  }
+  .brand, .brand a {
+    font-size: 1.2em;
+  }
+}
+
+.landing {
+  background-image: url($landing);
+  background-size: cover;
+  background-repeat: no-repeat;
+}

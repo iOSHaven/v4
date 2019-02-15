@@ -13,12 +13,13 @@ let mix = require('laravel-mix');
 
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .sass('resources/assets/sass/app.scss', 'public/css', {implementation: require("node-sass") })
-   .sass('resources/assets/sass/uid.scss', 'public/css', {implementation: require("node-sass") })
+   .sass('resources/assets/sass/main.scss', 'public/css', {implementation: require("node-sass") })
+   // .sass('resources/assets/sass/app.scss', 'public/css', {implementation: require("node-sass") })
+   // .sass('resources/assets/sass/uid.scss', 'public/css', {implementation: require("node-sass") })
    .setPublicPath('public/')
    .setResourceRoot('src/')
    .options({
-      extractVueStyles: 'public/css/scroped.css'
+      extractVueStyles: 'public/css/scoped.css'
    })
    .disableNotifications()
    // .minify('public/css/app.css')

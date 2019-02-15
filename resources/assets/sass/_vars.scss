@@ -1,0 +1,62 @@
+$landing: "/SVG/waves.svg";
+
+$colors: (
+  red: #FF3334,
+  blue: #3EB5F7,
+  sea: #006E90,
+  green: #44AF69,
+  dark: #31393C,
+  white: #fff,
+  black: #000
+);
+
+$spacing: (
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 1rem,
+  4: 1.5rem,
+  5: 3rem
+);
+
+@mixin only-phone {
+  @media (max-width: 599px) {@content;}
+}
+
+@mixin gt-tablet-portrait {
+  @media (min-width: 600px) {@content;}
+}
+
+@mixin gt-tablet-landscape {
+  @media (min-width: 900px) {@content;}
+}
+
+@mixin gt-desktop {
+  @media (min-width: 1200px) {@content;}
+}
+
+@mixin gt-big-desktop {
+  @media (min-width: 1800px) {@content;}
+}
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+  $u1: unit($min-vw);
+  $u2: unit($max-vw);
+  $u3: unit($min-font-size);
+  $u4: unit($max-font-size);
+
+  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+    & {
+      font-size: $min-font-size;
+      @media screen and (min-width: $min-vw) {
+        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+      }
+      @media screen and (min-width: $max-vw) {
+        font-size: $max-font-size;
+      }
+    }
+  }
+}

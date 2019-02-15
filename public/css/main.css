@@ -1,0 +1,290 @@
+*,
+* * {
+  font-family: 'Ubuntu', sans-serif;
+  -webkit-transform: all 0.6s;
+          transform: all 0.6s;
+}
+
+body {
+  font-size: 16px;
+}
+
+@media screen and (min-width: 320px) {
+  body {
+    font-size: calc(16px + 6 * ((100vw - 320px) / 880));
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    font-size: 22px;
+  }
+}
+
+.btn {
+  color: white;
+  background-color: #ddd;
+  font-weight: 600;
+  transition: background-color 0.6s;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn:active {
+  box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.bg-red {
+  background-color: #FF3334;
+}
+
+.text-red {
+  color: #FF3334;
+}
+
+.btn-red {
+  background-color: #FF3334;
+}
+
+.btn-red:hover {
+  background-color: white;
+  color: #FF3334;
+}
+
+.bg-blue {
+  background-color: #3EB5F7;
+}
+
+.text-blue {
+  color: #3EB5F7;
+}
+
+.btn-blue {
+  background-color: #3EB5F7;
+}
+
+.btn-blue:hover {
+  background-color: white;
+  color: #3EB5F7;
+}
+
+.bg-sea {
+  background-color: #006E90;
+}
+
+.text-sea {
+  color: #006E90;
+}
+
+.btn-sea {
+  background-color: #006E90;
+}
+
+.btn-sea:hover {
+  background-color: white;
+  color: #006E90;
+}
+
+.bg-green {
+  background-color: #44AF69;
+}
+
+.text-green {
+  color: #44AF69;
+}
+
+.btn-green {
+  background-color: #44AF69;
+}
+
+.btn-green:hover {
+  background-color: white;
+  color: #44AF69;
+}
+
+.bg-dark {
+  background-color: #31393C;
+}
+
+.text-dark {
+  color: #31393C;
+}
+
+.btn-dark {
+  background-color: #31393C;
+}
+
+.btn-dark:hover {
+  background-color: white;
+  color: #31393C;
+}
+
+.bg-white {
+  background-color: #fff;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.btn-white {
+  background-color: #fff;
+}
+
+.btn-white:hover {
+  background-color: white;
+  color: #fff;
+}
+
+.bg-black {
+  background-color: #000;
+}
+
+.text-black {
+  color: #000;
+}
+
+.btn-black {
+  background-color: #000;
+}
+
+.btn-black:hover {
+  background-color: white;
+  color: #000;
+}
+
+.btn-white:hover {
+  color: #3EB5F7;
+}
+
+section {
+  padding: 3rem 0px;
+}
+
+.container {
+  max-width: 960px;
+  width: 100%;
+  margin: auto;
+  padding: 0px 1rem;
+}
+
+@media (max-width: 599px) {
+  .container {
+    padding: 0px;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px -1rem;
+}
+
+@media (max-width: 599px) {
+  .row {
+    margin: 0px;
+  }
+}
+
+.col {
+  flex-grow: 1;
+}
+
+.col-1 {
+  flex-basis: 8.33333333%;
+}
+
+.col-2 {
+  flex-basis: 16.66666667%;
+}
+
+.col-3 {
+  flex-basis: 25%;
+}
+
+.col-4 {
+  flex-basis: 33.33333333%;
+}
+
+.col-5 {
+  flex-basis: 41.66666667%;
+}
+
+.col-6 {
+  flex-basis: 50%;
+}
+
+.col-7 {
+  flex-basis: 58.33333333%;
+}
+
+.col-8 {
+  flex-basis: 66.66666667%;
+}
+
+.col-9 {
+  flex-basis: 75%;
+}
+
+.col-10 {
+  flex-basis: 83.33333333%;
+}
+
+.col-11 {
+  flex-basis: 91.66666667%;
+}
+
+.col-12 {
+  flex-basis: 100%;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+nav {
+  padding: 1rem 0px;
+}
+
+nav a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.8em;
+  padding: 0 0.5rem;
+}
+
+nav i {
+  font-weight: 100;
+}
+
+nav .brand,
+nav .brand a {
+  font-size: 1.2em;
+}
+
+.landing {
+  background-image: url("/SVG/waves.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+

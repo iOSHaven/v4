@@ -131,8 +131,10 @@
     <link rel="shortcut icon" href="/favicons/favicon.ico?v=QEMYzE9pb35555">
 
     <link href="{{ asset('css/normalize.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
-    <link href="{{ asset('css/app.css') }}?v=0.1" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css"> -->
+    <!-- <link href="{{ asset('css/app.css') }}?v=0.1" rel="stylesheet"> -->
+    <!-- <link href="{{ asset('css/scoped.css') }}" rel="stylesheet"> -->
+    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
     <!-- Adsense -->
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -152,17 +154,8 @@
 
 </head>
 <body>
-    <!-- <div id="loading">
-      Loading...
-    </div> -->
     <div id="app">
         @include('layouts.sidebar')
-
-        <?php
-        // @if(Settings()->show_announcements && !Session::exists('fight-for-net-neutrality') && !Request::is('/'))
-        // <announcement message="Help fight for a neutral net! Click the banner to read more or click the close button and we'll try to never show this message again." link="/fight-for-net-neutrality"></announcement>
-        // @endif
-        ?>
 
         @yield('content')
     </div>
