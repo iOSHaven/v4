@@ -18,45 +18,81 @@ $spacing: (
   5: 3rem
 );
 
+$devices: ('phone', 'tablet-portrait', 'tablet-landscape', 'desktop', 'big-desktop');
+
 @mixin only-phone {
   @media (max-width: 599px) {@content;}
 }
 
-@mixin gt-tablet-portrait {
-  @media (min-width: 600px) {@content;}
-}
-
-@mixin gt-tablet-landscape {
-  @media (min-width: 900px) {@content;}
-}
-
-@mixin gt-desktop {
-  @media (min-width: 1200px) {@content;}
-}
-
-@mixin gt-big-desktop {
-  @media (min-width: 1800px) {@content;}
-}
 
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
 }
 
-@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
-  $u1: unit($min-vw);
-  $u2: unit($max-vw);
-  $u3: unit($min-font-size);
-  $u4: unit($max-font-size);
-
-  @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
-    & {
-      font-size: $min-font-size;
-      @media screen and (min-width: $min-vw) {
-        font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
-      }
-      @media screen and (min-width: $max-vw) {
-        font-size: $max-font-size;
-      }
-    }
+@mixin gt($device) {
+  @if($device == 'phone') {
+    @media (min-width: 600px) {@content;}
+  } 
+  @if($device == 'tablet-portrait') {
+    @media (min-width: 900px) {@content;}
+  }
+  @if($device == 'tablet-landscape') {
+    @media (min-width: 1200px) {@content;}
+  }
+  @if($device == 'desktop') {
+    @media (min-width: 1800px) {@content;}
   }
 }
+
+@mixin lt($device) {
+  @if($device == 'table-portrait') {
+    @media (max-width: 600px) {@content;}
+  } 
+  @if($device == 'tablet-landscape') {
+    @media (max-width: 900px) {@content;}
+  }
+  @if($device == 'desktop') {
+    @media (max-width: 1200px) {@content;}
+  }
+  @if($device == 'big-desktop') {
+    @media (max-width: 1800px) {@content;}
+  }
+}
+
+@mixin at($device) {
+  @if($device == 'phone') {
+    @media (max-width: 600px) {@content;}
+  } 
+  @if($device == 'tablet-portrait') {
+    @media (max-width: 900px) {@content;}
+  }
+  @if($device == 'tablet-landscape') {
+    @media (max-width: 1200px) {@content;}
+  }
+  @if($device == 'desktop') {
+    @media (max-width: 1800px) {@content;}
+  }
+}
+
+// @mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+//   $u1: unit($min-vw);
+//   $u2: unit($max-vw);
+//   $u3: unit($min-font-size);
+//   $u4: unit($max-font-size);
+//   $min-line-size: $min-font-size + 5px;
+//   $max-line-size: $max-font-size + 15px;
+//   @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+//     & {
+//       font-size: $min-font-size;
+//       line-height: $min-line-size;
+//       @media (min-width: $min-vw) {
+//         font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+//         line-height: calc(#{$min-line-size} + #{strip-unit($max-line-size - $min-line-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+//       }
+//       @media (min-width: $max-vw) {
+//         font-size: $max-font-size;
+//         line-height: calc(#{$min-line-size} + #{strip-unit($max-line-size - $min-line-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+//       }
+//     }
+//   }
+// }
