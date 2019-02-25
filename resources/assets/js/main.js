@@ -46,7 +46,7 @@
       backgroundColor: '#3EB5F7',
       backgroundBlendMode: 'source-over',
       waveBlendMode: 'screen',
-      scale: 1,
+      scale: 0.5,
    }, {
       color: 'yellow',
       amplitude: 30,
