@@ -1,6 +1,5 @@
 <template>
   <section class="container">
-    <!-- <particles/> -->
     <div class="wrapper offsetfromtop">
       <div id="logo" class=""></div>
       <h1 class="title">
