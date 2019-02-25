@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans:900i,700|Martel:400,700" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Merriweather:900i|Amiko:400|Montserrat:600|Lora:400" rel="stylesheet" />
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-6jHF7Z3XI3fF4XZixAuSu0gGKrXwoX/w3uFPxC56OtjChio7wtTGJWRW53Nhx6Ev" crossorigin="anonymous">
-    <link href="./public/css/normalize.css" rel="stylesheet">
-    <link href="./public/css/main.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.7.2/css/all.css?v=0.1" integrity="sha384-6jHF7Z3XI3fF4XZixAuSu0gGKrXwoX/w3uFPxC56OtjChio7wtTGJWRW53Nhx6Ev" crossorigin="anonymous">
+    <link href="/css/normalize.css" rel="stylesheet">
+    <link href="/css/main.css" rel="stylesheet">
   </head>
   <body>
-    
+
 
     <nav class="fixed bg-blue text-white">
         <!-- <div id="read-progress"></div> -->
@@ -45,7 +45,7 @@
 
       <section class="bg-blue">
         <div class="container device-wrapper show-gt-tablet-portrait">
-            <img src="./public/SVG/devices.png" class="device-img" alt="">
+            <img src="/SVG/devices.png" class="device-img" alt="">
         </div>
         <div class="container text-white">
           <h1 class="col-tablet-portrait-7 text-shadow">An IOS Modding Hub</h1>
@@ -72,9 +72,9 @@
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
       crossorigin="anonymous"></script>
-      <script src="./resources/assets/js/waves.js"></script>
+      <script src="/js/waves.js"></script>
       <!-- <script src="./resources/assets/js/query.js"></script> -->
-      <script src="./resources/assets/js/main.js"></script>
+      <script src="/js/main.js"></script>
 
   </body>
 </html>
