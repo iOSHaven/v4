@@ -5,5 +5,5 @@
 @endsection
 
 @section('content')
-<page-index/>
+<page-index></page-index>
 @endsection

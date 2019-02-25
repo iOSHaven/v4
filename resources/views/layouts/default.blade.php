@@ -131,9 +131,9 @@
     <link rel="shortcut icon" href="/favicons/favicon.ico?v=QEMYzE9pb35555">
 
     <link href="{{ asset('css/normalize.css') }}" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css"> -->
-    <!-- <link href="{{ asset('css/app.css') }}?v=0.1" rel="stylesheet"> -->
-    <!-- <link href="{{ asset('css/scoped.css') }}" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <link href="{{ asset('css/app.css') }}?v=0.1" rel="stylesheet">
+    <link href="{{ asset('css/scoped.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
     <!-- Adsense -->

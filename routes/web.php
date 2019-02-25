@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/test/{view}', function ($view) {
-    return view($view);
-});
+// Route::get('/test/{view}', function ($view) {
+//     return view($view);
+// });
 
 Route::get('/', function () {
     return view('welcome');
