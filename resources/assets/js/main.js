@@ -14,10 +14,10 @@
       if (progress) {
          progress.style.width = scrolled + "%";
       }
-
-      if (height2 != height) {
+      console.log(height2, height)
+      // if (height2 != height) {
          document.body.style['margin-top'] = height2 + 'px'
-      }
+      // }
       if (window.pageYOffset > height2) {
           nav.classList.add('bg-white', 'text-dark')
           nav.classList.remove('bg-blue', 'text-white')
@@ -31,15 +31,13 @@
       }
       height = height2
     }
-
+    fn()
     window.addEventListener('scroll', fn)
     window.addEventListener('resize', fn)
-
-    $('')
 })();
 
 (function () {
-
+   if (!window.Waves) return;
    new Waves({
       canvas: 'waves',
       waveCount: 5,

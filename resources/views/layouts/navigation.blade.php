@@ -2,8 +2,8 @@
     <!-- <div id="read-progress"></div> -->
     <div class="container">
       <div class="row">
-        <div class="col flex-lc brand text-shadow display">
-          <a href="#">IOS Haven</a>
+        <div class="col flex-lc text-shadow">
+          <a href="/" class="display brand">IOS Haven</a>
         </div>
         <div class="col flex-cc show-gt-tablet-portrait">
           <a href="/apps" class="text-shadow">Apps</a>

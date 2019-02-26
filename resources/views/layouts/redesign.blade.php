@@ -23,5 +23,7 @@
 @yield('content')
 @include('layouts.footer')
 @yield('footer')
+<script src="/js/main.js"></script>
+
 </body>
 </html>

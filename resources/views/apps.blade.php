@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.redesign')
 @section('content')
 
   <div class="apps wrapper">
@@ -6,15 +6,15 @@
       <app-admin class="m-3"></app-admin>
     @endadmin
 
-    <div class="card ml-3 mr-3 mt1 mb1 no-border no-padding">
+    <!-- <div class="card ml-3 mr-3 mt1 mb1 no-border no-padding">
       <form class="" action="/apps" method="get">
         <div class="input-group">
-          <input name="q" type="text" value="{{ $q }}" class="form-control p1 border-right-0" placeholder="Search apps..." aria-label="Search apps...">
+          <input name="q" type="text" value="{{ $q }}" class="p-3" placeholder="Search apps..." aria-label="Search apps...">
           <div class="input-group-append">
             <button class="blue border-0 p1" type="submit">Search</button>
           </div>
         </div>
-      </form>
+      </form> -->
 
       <!-- <search-bar :options="{
         alphabetize: 'name',
@@ -42,21 +42,39 @@
            data-full-width-responsive="true"></ins>
     <!-- </div> -->
 
-    <app v-for="app in filteredApps" v-if="filteredApps" :key="app.uid" :data="app" class="m-3 hide-on-server-render"></app>
-    <span></span>
-    @foreach($apps as $app)
-      <a class="card flex m-3 app server-rendered" href="/app/{{$app->uid}}" data-uid="{{$app->uid}}">
-        <div ref="image" class="image" style="background-image: url('/{{ $app->icon }}')"></div>
-        <div class="content">
-          <h3 class="mb-3"><strong>{{$app->name}}</strong></h3>
-          <div class="shadow"></div>
-          <div class="description">{{$app->short}}</div>
-        </div>
+    <!-- <app v-for="app in filteredApps" v-if="filteredApps" :key="app.uid" :data="app" class="m-3 hide-on-server-render"></app> -->
+    <!-- <span></span> -->
 
-        <!-- <div class="get fill--red center">delete</div> -->
-        <div class="get fill--blue center">get</div>
-      </a>
-    @endforeach
+    <div class="container">
+      <div class="row">
+        <div class="col-12 mt-3">
+          <form action="/apps" method="get">
+            <input name="q" type="text" value="{{ $q }}" class="p-3" placeholder="Search apps..." aria-label="Search apps...">
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+          @foreach($apps as $app)
+          <div class="col-4 p-1">
+            <a href="/app/{{ $app->uid }}" data-uid="{{ $app->uid }}" class="app p-2">
+              <!-- <div class="border-rounded border-thin-light"> -->
+                <img class="border-rounded" src="{{ $app->icon }}" alt="{{ $app->uid }}-icon" height="60" width="60">
+              <!-- </div> -->
+              
+              <div class="content ml-3">
+                <div class="h6 m-0"><strong>{{ $app->name }}</strong></div>
+                <div class="description mt-2">{{ $app->short }}</div>
+              </div>
+            </a>
+          </div>
+          
+        @endforeach
+      </div>
+    </div>
+    
 
     <!-- <div class="card ad"> -->
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -65,11 +83,11 @@
 
     <!-- </div> -->
 
-    <app v-for="app in moreLoadedApps" :key="app.uid" :data="app" class="m-3"></app>
+    <!-- <app v-for="app in moreLoadedApps" :key="app.uid" :data="app" class="m-3"></app> -->
 
     @if($apps->hasMorePages())
-    <div id="loadmoreapps" class="has-text-centered m1" style="width: 100%;">
-      <button class="button is-dark" @click="loadMoreApps">Load more apps...</button>
+    <div id="loadmoreapps" class="text-center mt-5" style="width: 100%;">
+      <button class="btn btn-dark" @click="loadMoreApps">Load more apps...</button>
     </div>
     @endif
 

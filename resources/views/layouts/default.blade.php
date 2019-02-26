@@ -131,9 +131,9 @@
     <link rel="shortcut icon" href="/favicons/favicon.ico?v=QEMYzE9pb35555">
 
     <link href="{{ asset('css/normalize.css') }}" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css"> -->
-    <!-- <link href="{{ asset('css/app.css') }}?v=0.1" rel="stylesheet"> -->
-    <!-- <link href="{{ asset('css/scoped.css') }}" rel="stylesheet"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <link href="{{ asset('css/app.css') }}?v=0.1" rel="stylesheet">
+    <link href="{{ asset('css/scoped.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
     <!-- Adsense -->
@@ -163,6 +163,7 @@
     @include('layouts.footer')
     <!-- Scripts -->
     <script type="text/javascript" src="{{ asset('js/app.js') }}?v=0.1"></script>
+    <script type="text/javascript" src="{{ asset('js/main.js') }}?v=0.1"></script>
     <script>
          (adsbygoogle = window.adsbygoogle || []).push({
               google_ad_client: "ca-pub-4649450952406116",

@@ -1,6 +1,6 @@
 * {
   box-sizing: border-box;
-  font-family: "Martel";
+  font-family: "Amiko";
 }
 
 html,
@@ -85,7 +85,7 @@ h6,
 p,
 a {
   margin-bottom: 2.6rem;
-  font-family: "Martel";
+  font-family: "Amiko";
   font-size: 1.4em;
   line-height: 2.6rem;
   font-weight: 400;
@@ -168,7 +168,7 @@ a {
   p,
   a {
     margin-bottom: 3.5rem;
-    font-family: "Martel";
+    font-family: "Amiko";
     font-size: 1.6em;
     line-height: 3.5rem;
     font-weight: 700;
@@ -332,6 +332,66 @@ p > a {
 .btn-black:hover {
   background-color: white;
   color: #000;
+}
+
+.p-0 {
+  padding: 0rem;
+}
+
+.pt-0 {
+  padding-top: 0rem;
+}
+
+.pb-0 {
+  padding-bottom: 0rem;
+}
+
+.pr-0 {
+  padding-right: 0rem;
+}
+
+.pl-0 {
+  padding-left: 0rem;
+}
+
+.px-0 {
+  padding-left: 0rem;
+  padding-right: 0rem;
+}
+
+.py-0 {
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+}
+
+.m-0 {
+  margin: 0rem;
+}
+
+.mt-0 {
+  margin-top: 0rem;
+}
+
+.mb-0 {
+  margin-bottom: 0rem;
+}
+
+.mr-0 {
+  margin-right: 0rem;
+}
+
+.ml-0 {
+  margin-left: 0rem;
+}
+
+.mx-0 {
+  margin-left: 0rem;
+  margin-right: 0rem;
+}
+
+.my-0 {
+  margin-top: 0rem;
+  margin-bottom: 0rem;
 }
 
 .p-1 {
@@ -1087,5 +1147,26 @@ nav #navcheck {
 
 .border-rounded {
   border-radius: 32%;
+}
+
+.app {
+  font-size: 0.8em;
+  font-family: "Amiko";
+  display: flex;
+  align-items: center;
+  color: #31393C;
+}
+
+.app .content,
+.app .content * {
+  overflow: hidden;
+  line-height: 1em;
+  flex-grow: 1;
+  font-style: normal;
+}
+
+form,
+input {
+  width: 100%;
 }
 

@@ -435,3 +435,32 @@ nav {
 .border-rounded {
   border-radius: 32%;
 }
+
+.app {
+  font-size: 0.8em;
+  font-family: $bodyFamily;
+  display: flex;
+  align-items: center;
+  color: $dark;
+  
+  .content, .content * {
+    overflow: hidden;
+    line-height: 1em;
+    flex-grow: 1;
+    font-style: normal;
+  }
+
+  // input[type="text"] {
+  //   border: 0;
+  //   outline: 0;
+
+  // }
+  // &:hover, &:focus{
+  //   cursor: pointer;
+  //   box-shadow: 0px 2px 5px -1px rgba(0, 0, 0, 0.3);
+  // }
+}
+
+form, input {
+  width: 100%;
+}
