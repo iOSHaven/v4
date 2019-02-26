@@ -58,23 +58,23 @@
     <div class="container">
       <div class="row">
           @foreach($apps as $app)
-          <div class="col-4 p-1">
+          <div class="col-tablet-portrait-4  p-1">
             <a href="/app/{{ $app->uid }}" data-uid="{{ $app->uid }}" class="app p-2">
               <!-- <div class="border-rounded border-thin-light"> -->
                 <img class="border-rounded" src="{{ $app->icon }}" alt="{{ $app->uid }}-icon" height="60" width="60">
               <!-- </div> -->
-              
+
               <div class="content ml-3">
                 <div class="h6 m-0"><strong>{{ $app->name }}</strong></div>
                 <div class="description mt-2">{{ $app->short }}</div>
               </div>
             </a>
           </div>
-          
+
         @endforeach
       </div>
     </div>
-    
+
 
     <!-- <div class="card ad"> -->
       <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
