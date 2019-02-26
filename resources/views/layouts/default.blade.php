@@ -122,7 +122,7 @@
     <link rel="stylesheet" href="/fa/css/fontawesome-pro-light.css">
     <link rel="stylesheet" href="/fa/css/fontawesome-pro-regular.css">
     <link rel="stylesheet" href="/fa/css/fontawesome-pro-core.css"> -->
-    <!-- <script defer src="https://pro.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-yBZ34R8uZDBb7pIwm+whKmsCiRDZXCW1vPPn/3Gz0xm4E95frfRNrOmAUfGbSGqN" crossorigin="anonymous"></script> -->
+    <script defer src="https://pro.fontawesome.com/releases/v5.2.0/js/all.js" integrity="sha384-yBZ34R8uZDBb7pIwm+whKmsCiRDZXCW1vPPn/3Gz0xm4E95frfRNrOmAUfGbSGqN" crossorigin="anonymous"></script>
     <link rel="apple-touch-icon" href="/favicons/apple-touch-icon.png?v=QEMYzE9pb35555" sizes="180x180">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png?v=QEMYzE9pb35555">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png?v=QEMYzE9pb35555">
@@ -131,9 +131,9 @@
     <link rel="shortcut icon" href="/favicons/favicon.ico?v=QEMYzE9pb35555">
 
     <link href="{{ asset('css/normalize.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
-    <link href="{{ asset('css/app.css') }}?v=0.1" rel="stylesheet">
-    <link href="{{ asset('css/scoped.css') }}" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css"> -->
+    <!-- <link href="{{ asset('css/app.css') }}?v=0.1" rel="stylesheet"> -->
+    <!-- <link href="{{ asset('css/scoped.css') }}" rel="stylesheet"> -->
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
 
     <!-- Adsense -->
@@ -155,7 +155,7 @@
 </head>
 <body>
     <div id="app">
-        @include('layouts.sidebar')
+        @include('layouts.navigation')
 
         @yield('content')
     </div>

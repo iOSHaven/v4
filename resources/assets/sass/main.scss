@@ -1,11 +1,9 @@
 @import "./_vars.scss";
 
-html, body {
-  font-family: 'Ubuntu', sans-serif;
-}
 
 * {
   box-sizing: border-box;
+  font-family: $bodyFamily;
 }
 
 html, body {
@@ -17,12 +15,12 @@ html, body {
 }
 
 .display {
-  font-family: Merriweather;
+  font-family: $headerFamily;
 }
 
-h1 {
+h1, .h1 {
   margin-bottom: 2.6rem;
-  font-family: Merriweather;
+  font-family: $headerFamily;
   font-size: 4.57763671875em;
   line-height: 5.2rem;
   font-weight: 900;
@@ -30,9 +28,9 @@ h1 {
   letter-spacing: 0em;
   }
   
-  h2 {
+  h2, .h2 {
   margin-bottom: 2.6rem;
-  font-family: Merriweather;
+  font-family: $headerFamily;
   font-size: 3.662109375em;
   line-height: 5.2rem;
   font-weight: 900;
@@ -40,9 +38,9 @@ h1 {
   letter-spacing: 0em;
   }
   
-  h3 {
+  h3, .h3 {
   margin-bottom: 2.6rem;
-  font-family: Merriweather;
+  font-family: $headerFamily;
   font-size: 2.9296875em;
   line-height: 5.2rem;
   font-weight: 900;
@@ -50,9 +48,9 @@ h1 {
   letter-spacing: 0em;
   }
   
-  h4 {
+  h4, .h4 {
   margin-bottom: 2.6rem;
-  font-family: Merriweather;
+  font-family: $headerFamily;
   font-size: 2.34375em;
   line-height: 2.6rem;
   font-weight: 900;
@@ -60,9 +58,9 @@ h1 {
   letter-spacing: 0em;
   }
   
-  h5 {
+  h5, .h5 {
   margin-bottom: 2.6rem;
-  font-family: Merriweather;
+  font-family: $headerFamily;
   font-size: 1.875em;
   line-height: 2.6rem;
   font-weight: 900;
@@ -70,9 +68,9 @@ h1 {
   letter-spacing: 0em;
   }
   
-  h6 {
+  h6, .h6 {
   margin-bottom: 2.6rem;
-  font-family: Merriweather;
+  font-family: $headerFamily;
   font-size: 1.5em;
   line-height: 2.6rem;
   font-weight: 900;
@@ -80,10 +78,10 @@ h1 {
   letter-spacing: 0em;
   }
   
-  p {
+  p, a {
   margin-bottom: 2.6rem;
-  font-family: Martel;
-  font-size: 1.2em;
+  font-family: $bodyFamily;
+  font-size: 1.4em;
   line-height: 2.6rem;
   font-weight: 400;
   font-style: normal;
@@ -94,71 +92,83 @@ h1 {
     html, body {
       font-size: 12px;
     }
-  h1 {
+  h1, .h1 {
   margin-bottom: 3.5rem;
-  font-family: Merriweather;
+  font-family: $headerFamily;
   font-size: 4.7775744em;
   line-height: 7rem;
   font-weight: 700;
   font-style: normal;
   letter-spacing: 0em;
   }
-  h2 {
+  h2, .h2 {
   margin-bottom: 3.5rem;
-  font-family: Merriweather;
+  font-family: $headerFamily;
   font-size: 3.981312em;
   line-height: 7rem;
   font-weight: 700;
   font-style: normal;
   letter-spacing: 0em;
   }
-  h3 {
+  h3, .h3 {
   margin-bottom: 3.5rem;
-  font-family: Merriweather;
+  font-family: $headerFamily;
   font-size: 3.31776em;
   line-height: 3.5rem;
   font-weight: 700;
   font-style: normal;
   letter-spacing: 0em;
   }
-  h4 {
+  h4, .h4 {
   margin-bottom: 3.5rem;
-  font-family: Merriweather;
+  font-family: $headerFamily;
   font-size: 2.7648em;
   line-height: 3.5rem;
   font-weight: 700;
   font-style: normal;
   letter-spacing: 0em;
   }
-  h5 {
+  h5, .h5 {
   margin-bottom: 3.5rem;
-  font-family: Merriweather;
+  font-family: $headerFamily;
   font-size: 2.304em;
   line-height: 3.5rem;
   font-weight: 700;
   font-style: normal;
   letter-spacing: 0em;
   }
-  h6 {
+  h6, .h6 {
   margin-bottom: 3.5rem;
-  font-family: Merriweather;
+  font-family: $headerFamily;
   font-size: 1.92em;
   line-height: 3.5rem;
   font-weight: 700;
   font-style: normal;
   letter-spacing: 0em;
   }
-  p {
+  p, a {
   margin-bottom: 3.5rem;
-  font-family: Martel;
+  font-family: $bodyFamily;
   font-size: 1.6em;
   line-height: 3.5rem;
   font-weight: 700;
   font-style: normal;
   letter-spacing: 0em;
   }
+  
   }
   
+a {
+  margin-bottom: 0;
+  text-decoration: none;
+  color: $blue;
+  &:hover {
+    color: darken($blue, 10%);
+  }
+}
+p > a {
+  font-size: 1em;
+}
 
 .btn {
   color: white;
@@ -214,7 +224,7 @@ h1 {
 }
 
 .btn-white:hover {
-  color: map-get($colors, blue);
+  color: $blue;
 }
 
 section {
@@ -297,6 +307,7 @@ nav {
     text-decoration: none;
     &:hover {
       background:rgba(1, 135, 210, 0.45);
+      color: inherit;
       text-shadow: none;
       cursor: pointer;
     }
@@ -410,5 +421,17 @@ nav {
   position: fixed;
   width: 0%;
   height: 3px;
-  background: map-get($colors, blue);
+  background: $blue;
+}
+
+.d-block {
+  display: block;
+}
+
+.border-thin-light {
+  border: 1px solid #eee;
+}
+
+.border-rounded {
+  border-radius: 32%;
 }

@@ -163,7 +163,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Volumes/Storage/Code/v4/resources/assets/js/main.js */"./resources/assets/js/main.js");
+module.exports = __webpack_require__(/*! E:\code\v4\resources\assets\js\main.js */"./resources/assets/js/main.js");
 
 
 /***/ })

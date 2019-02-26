@@ -1,13 +1,24 @@
 $landing: "/SVG/waves.svg";
 
+$red: #FF3334;
+$blue: #3EB5F7;
+$sea: #006E90;
+$green: #44AF69;
+$dark: #31393C;
+$white: #fff;
+$black: #000;
+
+$headerFamily: "Merriweather";
+$bodyFamily: "Martel";
+
 $colors: (
-  red: #FF3334,
-  blue: #3EB5F7,
-  sea: #006E90,
-  green: #44AF69,
-  dark: #31393C,
-  white: #fff,
-  black: #000
+  red: $red,
+  blue: $blue,
+  sea: $sea,
+  green: $green,
+  dark: $dark,
+  white: $white,
+  black: $black
 );
 
 $spacing: (
