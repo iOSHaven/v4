@@ -6,8 +6,23 @@
   font-family: $bodyFamily;
 }
 
+*::selection {
+  background: $red; /* WebKit/Blink Browsers */
+}
+*::-moz-selection {
+  background: $red; /* Gecko Browsers */
+}
+
 html, body {
   font-size: 16px;
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+  font-weight: 400;
 }
 
 .text-shadow {
@@ -162,7 +177,7 @@ a {
   margin-bottom: 0;
   text-decoration: none;
   color: $blue;
-  &:hover {
+  &:not(.disabled):hover {
     color: darken($blue, 10%);
   }
 }
@@ -179,12 +194,13 @@ p > a {
   user-select: none;
   outline: none;
   border: none;
+  font-size: 1rem;
   border-radius: 5px;
   padding: map-get($spacing, 3) (map-get($spacing, 3) * 2);
-  &:hover {
+  &:not(.disabled):hover {
     cursor: pointer;
   }
-  &:active {
+  &:not(.disabled):active {
     box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
   }
 }
@@ -198,7 +214,7 @@ p > a {
   }
   .btn-#{$name} {
     background-color: $value;
-    &:hover {
+    &:not(.disabled):hover {
       background-color: white;
       color: $value;
     }
@@ -206,24 +222,24 @@ p > a {
 }
 
 @each $name, $value in $spacing {
-  .p-#{$name} { padding: $value }
-  .pt-#{$name} { padding-top: $value }
-  .pb-#{$name} { padding-bottom: $value }
-  .pr-#{$name} { padding-right: $value }
-  .pl-#{$name} { padding-left: $value }
-  .px-#{$name} { padding-left: $value; padding-right: $value; }
-  .py-#{$name} { padding-top: $value; padding-bottom: $value; }
+  .p-#{$name} { padding: $value !important }
+  .pt-#{$name} { padding-top: $value !important }
+  .pb-#{$name} { padding-bottom: $value !important }
+  .pr-#{$name} { padding-right: $value !important }
+  .pl-#{$name} { padding-left: $value !important }
+  .px-#{$name} { padding-left: $value !important; padding-right: $value !important; }
+  .py-#{$name} { padding-top: $value !important; padding-bottom: $value !important; }
 
-  .m-#{$name} { margin: $value }
-  .mt-#{$name} { margin-top: $value }
-  .mb-#{$name} { margin-bottom: $value }
-  .mr-#{$name} { margin-right: $value }
-  .ml-#{$name} { margin-left: $value }
-  .mx-#{$name} { margin-left: $value; margin-right: $value; }
-  .my-#{$name} { margin-top: $value; margin-bottom: $value; }
+  .m-#{$name} { margin: $value !important }
+  .mt-#{$name} { margin-top: $value !important }
+  .mb-#{$name} { margin-bottom: $value !important }
+  .mr-#{$name} { margin-right: $value !important }
+  .ml-#{$name} { margin-left: $value !important }
+  .mx-#{$name} { margin-left: $value !important; margin-right: $value !important; }
+  .my-#{$name} { margin-top: $value !important; margin-bottom: $value !important; }
 }
 
-.btn-white:hover {
+.btn-white:not(.disabled):hover {
   color: $blue;
 }
 
@@ -241,6 +257,11 @@ section {
   @include only-phone{
     padding: 0px map-get($spacing, 2);
   };
+}
+
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .row {
@@ -294,7 +315,7 @@ nav {
   transition: background-color 0.6s;
   font-family: Amiko;
   a, label {
-    color: inherit;
+    color: inherit !important;
     font-weight: 600;
     font-size: 1.2em;
     // padding: 0.9rem 0.5rem;
@@ -305,9 +326,9 @@ nav {
     display: inline-flex;
     padding-bottom: 0;
     text-decoration: none;
-    &:hover {
+    &:not(.disabled):hover {
       background:rgba(1, 135, 210, 0.45);
-      color: inherit;
+      color: inherit !important;
       text-shadow: none;
       cursor: pointer;
     }
@@ -328,22 +349,26 @@ nav {
     right: 0;
     z-index: 1;
   }
+  .parent {
+    position: relative;
+  }
   .dropnav {
     display: none;
-    padding: 0 1rem;
+    padding: 0rem;
     text-align: right;
-    height: 52px;
     box-shadow: 0px 8px 10px -2px rgba(0, 0, 0, 0.28);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: max-content;
   }
-  #navcheck {
+  .navcheck {
     position: fixed;
     top: -200%;
     left: -200%;
   }
-  #navcheck:checked + .dropnav {
-    @include lt('tablet-landscape') {
-      display: block;
-    }
+  .navcheck:checked + .dropnav {
+    display: block;
   }
 }
 
@@ -428,16 +453,10 @@ nav {
   display: block;
 }
 
-.border-thin-light {
-  border: 1px solid #eee;
-}
 
-.border-rounded {
-  border-radius: 32%;
-}
 
 .app {
-  font-size: 0.8em;
+  
   font-family: $bodyFamily;
   display: flex;
   align-items: center;
@@ -448,6 +467,7 @@ nav {
     line-height: 1em;
     flex-grow: 1;
     font-style: normal;
+    font-size: 1em;
   }
 
   // input[type="text"] {
@@ -463,4 +483,20 @@ nav {
 
 form, input {
   width: 100%;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.border-thin-light {
+  border: 1px solid #eee;
+}
+
+.border-rounded {
+  border-radius: 32%;
+}
+
+.border-none {
+  border-radius: 0;
 }

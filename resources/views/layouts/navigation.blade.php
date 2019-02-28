@@ -2,28 +2,57 @@
     <!-- <div id="read-progress"></div> -->
     <div class="container">
       <div class="row">
-        <div class="col flex-lc text-shadow">
+        <div class="col flex-lc">
           <a href="/" class="display brand">IOS Haven</a>
         </div>
         <div class="col flex-cc show-gt-tablet-portrait">
-          <a href="/apps" class="text-shadow">Apps</a>
+          <a href="/apps" class="">Apps</a>
           <!-- <a href="/games" class="text-shadow">Games</a> -->
-          <a href="/updates" class="text-shadow">Updates</a>
-          <a href="#" class="text-shadow">More</a>
+          <a href="/updates" class="">Updates</a>
+          <label for="navmore" class=" parent">More
+            <input type="checkbox" class="navcheck" id="navmore">
+            <div class="dropnav dropnav-big">
+            <a href="/aboutUs" class="d-block">About Us!</a>
+            <a href="/credits" class="d-block">Credits</a>
+            <a href="/cydia" class="d-block">Cydia Impactor</a>
+            <a href="/jailbreak" class="d-block">Jailbreaks</a>
+            <a href="/betas" class="d-block">Betas</a>
+            <a href="/fight-for-net-neutrality" class="d-block">Net Neutrality</a>
+            </div>
+          </label>
+          <!-- <a href="#" class="text-shadow">More</a> -->
+          
         </div>
         <div class="col flex-rc">
           <a href="https://discord.gg/mTbwMyQ"><i class="fab fa-discord"></i></a>
           <a href="https://www.reddit.com/r/iOSHaven/"><i class="fab fa-reddit"></i></a>
           <a href="https://twitter.com/ioshavenco"><i class="fab fa-twitter"></i></a>
-          <label for="navcheck" class="show-lt-tablet-landscape"><i class="far fa-bars fa-large"></i></label>
+          @if(Auth::guest())
+            <a href="/login"><i class="far fa-sign-in"></i></a>
+          @else
+            <a href="/profile"><i class="far fa-user"></i></a>
+          @endif
+          <label for="navmenu" class="show-lt-tablet-landscape parent"><i class="far fa-bars fa-large"></i>
+            <input type="checkbox" class="navcheck" id="navmenu">
+            <div class="dropnav dropnav-small">
+              @if(Auth::guest())
+                <a href="/login" class="d-block">Sign In</a>
+              @else
+                <a href="/profile" class="d-block">Profile</a>
+              @endif
+              <a href="/apps" class="d-block">Apps</a>
+              <!-- <a href="/games" class="text-shadow">Games</a> -->
+              <a href="/updates" class="d-block">Updates</a>
+              <a href="/aboutUs" class="d-block">About Us!</a>
+              <a href="/credits" class="d-block">Credits</a>
+              <a href="/cydia" class="d-block">Cydia Impactor</a>
+              <a href="/jailbreak" class="d-block">Jailbreaks</a>
+              <a href="/betas" class="d-block">Betas</a>
+              <a href="/fight-for-net-neutrality" class="d-block">Net Neutrality</a>
+            </div>
+          </label>
         </div>
       </div>
     </div>
-    <input type="checkbox" id="navcheck">
-    <div class="dropnav">
-      <a href="/apps" class="text-shadow">Apps</a>
-      <!-- <a href="/games" class="text-shadow">Games</a> -->
-      <a href="/updates" class="text-shadow">Updates</a>
-      <a href="#" class="text-shadow">More</a>
-    </div>
+    
   </nav>

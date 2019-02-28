@@ -42,6 +42,7 @@ Route::get('/itms/{id}', 'AppController@itms');
 
 Route::post('/app/create', 'AppController@create');
 Route::get('/app/{uid}', 'AppController@get');
+Route::get('/app/edit/{uid}', 'AppController@edit');
 Route::post('/app/update', 'AppController@update');
 Route::post('/app/remove', 'AppController@remove');
 

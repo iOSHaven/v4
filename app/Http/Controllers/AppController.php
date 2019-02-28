@@ -10,6 +10,7 @@ use Parsedown;
 use Carbon\Carbon;
 use DB;
 use Response;
+use Auth;
 
 class AppController extends Controller
 {
@@ -72,12 +73,13 @@ class AppController extends Controller
 
     public function update (Request $request)
     {
+      // dd($request->all());
       $app = App::findByUid($request->uid);
       $app->update($request->all());
-      // dd('asdf');
+      // // dd('asdf');
       $app->edited_at = Carbon::now();
       $app->save();
-      return response()->json($app);
+      return redirect("/app/edit/{$request->uid}");
     }
 
     public function get ($uid)
@@ -88,6 +90,12 @@ class AppController extends Controller
       $app->increment('views');
       $app->html = $p->text($app->description);
       return view('uid')->with(['app' => $app]);
+    }
+
+    public function edit ($uid) {
+      if (Auth::guest() || !Auth::user()->isAdmin) return abort(404);
+      $app = App::findByUid($uid);
+      return view('edit')->with(['app' => $app]);
     }
 
     public function getJson($uid = null)

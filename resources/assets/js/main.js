@@ -2,7 +2,7 @@
 
 (function () {
     var nav = document.querySelector('nav.fixed')
-    var dropnav = document.querySelector('.dropnav')
+    var dropnavs = document.querySelectorAll('.dropnav')
     var height = nav.getBoundingClientRect().height
     var progress = document.getElementById('read-progress')
     var fn = () => {
@@ -21,13 +21,17 @@
       if (window.pageYOffset > height2) {
           nav.classList.add('bg-white', 'text-dark')
           nav.classList.remove('bg-blue', 'text-white')
-          dropnav.classList.remove('bg-white', 'text-dark')
-          dropnav.classList.add('bg-blue', 'text-white')
+          Array.from(dropnavs).forEach(dropnav => {
+            dropnav.classList.remove('bg-white', 'text-dark')
+            dropnav.classList.add('bg-blue', 'text-white')
+          })
       } else {
           nav.classList.remove('bg-white', 'text-dark')
           nav.classList.add('bg-blue', 'text-white')
-          dropnav.classList.add('bg-white', 'text-dark')
-          dropnav.classList.remove('bg-blue', 'text-white')
+          Array.from(dropnavs).forEach(dropnav => {
+            dropnav.classList.add('bg-white', 'text-dark')
+            dropnav.classList.remove('bg-blue', 'text-white')
+          })
       }
       height = height2
     }
