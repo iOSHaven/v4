@@ -24,7 +24,7 @@
           @foreach($apps as $app)
           <div class="col-tablet-portrait-4  p-1">
             <div class="app p-2">
-                <img class="border-rounded" src="{{ $app->icon }}" alt="{{ $app->uid }}-icon" height="60" width="60">
+                <img class="border-rounded" src="{{ url($app->icon) }}" alt="{{ $app->uid }}-icon" height="60" width="60">
                 <a class="content ml-3 text-dark" href="/app/{{ $app->uid }}">
                   <div class="h6 m-0"><strong>{{ $app->name }}</strong></div>
                   <div class="description mt-2">{{ $app->short }}</div>

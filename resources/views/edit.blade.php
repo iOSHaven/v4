@@ -60,7 +60,7 @@
 
       <div class="col-12 mb-3">
         <label for="">Full Description</label>
-        <textarea rows="8" class="p-3 col-12" maxlength="65000" placeholder="Markdown..." name="description"> value="{{ $app->description }}"</textarea>
+        <textarea rows="8" class="p-3 col-12" maxlength="65000" placeholder="Markdown..." name="description"> {{ $app->description }}"</textarea>
       </div>
 
       <div class="col-12 mb-3">
