@@ -93,7 +93,7 @@ h1, .h1 {
   letter-spacing: 0em;
   }
   
-  p, a {
+  p, .text, a {
   margin-bottom: 2.6rem;
   font-family: $bodyFamily;
   font-size: 1.4em;
@@ -101,6 +101,7 @@ h1, .h1 {
   font-weight: 400;
   font-style: normal;
   letter-spacing: 0em;
+  text-align: justify;
   }
   
   @include lt('tablet-landscape') {
@@ -161,14 +162,15 @@ h1, .h1 {
   font-style: normal;
   letter-spacing: 0em;
   }
-  p, a {
+  p, .text, a {
   margin-bottom: 3.5rem;
   font-family: $bodyFamily;
   font-size: 1.6em;
   line-height: 3.5rem;
-  font-weight: 700;
+  font-weight: 400;
   font-style: normal;
   letter-spacing: 0em;
+  text-align: justify;
   }
   
   }
@@ -181,7 +183,7 @@ a {
     color: darken($blue, 10%);
   }
 }
-p > a {
+p  a, .text  a {
   font-size: 1em;
 }
 
@@ -189,7 +191,7 @@ p > a {
   color: white;
   background-color: #ddd;
   font-weight: 600;
-  transition: background-color 0.6s, color 0.6s;
+  transition: background-color 0.2s, color 0.2s;
   text-align: center;
   user-select: none;
   outline: none;
@@ -398,6 +400,9 @@ nav {
   &-rt {display: flex; justify-content: flex-end; align-items: flex-start;}
   &-rc {display: flex; justify-content: flex-end; align-items: center;}
   &-rb {display: flex; justify-content: flex-end; align-items: flex-end;}
+  &-sbt {display: flex; justify-content: space-between; align-items: flex-start;}
+  &-sbc {display: flex; justify-content: space-between; align-items: center;}
+  &-sbb {display: flex; justify-content: space-between; align-items: flex-end;}
 }
 
 

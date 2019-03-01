@@ -7,7 +7,7 @@
         </div>
         <div class="col flex-cc show-gt-tablet-portrait">
           <a href="/apps" class="">Apps</a>
-          <!-- <a href="/games" class="text-shadow">Games</a> -->
+          <a href="/apps?q=game" class="">Games</a>
           <a href="/updates" class="">Updates</a>
           <label for="navmore" class=" parent">More
             <input type="checkbox" class="navcheck" id="navmore">
@@ -15,7 +15,7 @@
             <a href="/aboutUs" class="d-block">About Us!</a>
             <a href="/credits" class="d-block">Credits</a>
             <a href="/cydia" class="d-block">Cydia Impactor</a>
-            <a href="/jailbreak" class="d-block">Jailbreaks</a>
+            <a href="/apps?q=jailbreak" class="d-block">Jailbreaks</a>
             <a href="/betas" class="d-block">Betas</a>
             <a href="/fight-for-net-neutrality" class="d-block">Net Neutrality</a>
             </div>
@@ -41,12 +41,12 @@
                 <a href="/profile" class="d-block">Profile</a>
               @endif
               <a href="/apps" class="d-block">Apps</a>
-              <!-- <a href="/games" class="text-shadow">Games</a> -->
+              <a href="/apps?q=game" class="d-block">Games</a>
               <a href="/updates" class="d-block">Updates</a>
               <a href="/aboutUs" class="d-block">About Us!</a>
               <a href="/credits" class="d-block">Credits</a>
               <a href="/cydia" class="d-block">Cydia Impactor</a>
-              <a href="/jailbreak" class="d-block">Jailbreaks</a>
+              <a href="/apps?q=jailbreak" class="d-block">Jailbreaks</a>
               <a href="/betas" class="d-block">Betas</a>
               <a href="/fight-for-net-neutrality" class="d-block">Net Neutrality</a>
             </div>

@@ -1,6 +1,62 @@
-@extends('layouts.default')
+@extends('layouts.redesign')
 @section('content')
-<div class="wrapper markdown">
+
+<div class="container">
+  <div class="h3">Cydia Impactor</div>
+  <p>If you want to sign your own apps for personal use you can use Cydia Impactor. However, you will be unable to share your application with other people unless you have an enterprise certificate. Some apps also require you to sign the app with a developer certificate because they require different permissions than most apps. Finally, if you use a free certificate then you will have to repeat the process every 7 days.</p>
+  <p>To get started make sure you have Cydia Impactor downloaded. Then find an app that has a "Download IPA" button. Once the download is complete follow the tutorial to get a basic understanding of Cydia Impactor</p>
+  <div class="h3">Downloads</div>
+  <ul class="p-0 m-0">
+    <li class="flex-sbc text">
+      <span><i class="fab fa-apple fa-lg mr-4"></i>Mac OS X</span>
+      <span><a href="https://cydia.saurik.com/api/latest/1">Download</a></span>
+    </li>
+    <li class="flex-sbc text">
+        <span><i class="fab fa-windows fa-lg mr-4"></i>Windows</span>
+        <span><a href="https://cydia.saurik.com/api/latest/2">Download</a></span>
+    </li>
+    <li class="flex-sbc text">
+        <span><i class="fab fa-linux fa-lg mr-4"></i>Linux (32-bit)</span>
+        <span><a href="https://cydia.saurik.com/api/latest/4">Download</a></span>
+    </li>
+    <li class="flex-sbc text">
+        <span><i class="fab fa-linux fa-lg mr-4"></i>Linux (64-bit)</span>
+        <span><a href="https://cydia.saurik.com/api/latest/5">Download</a></span>
+    </li>
+  </ul>
+
+  <div class="h3">How to install IPA File</div>
+  <ol class="p-0 m-0">
+    <li class="text">Make sure you have the lastest version of iTunes installed on your computer.</li>
+    <li class="text">Download the .ipa file of your choice from <a href="/apps">THIS</a> page.</li>
+    <li class="text">Download Cydia Impactor from the links above.</li>
+    <li class="text">Extract the Impactor ZIP file and run the program labeled 'Impactor'.</li>
+    <li class="text">Connect your Apple device to your computer.</li>
+    <li class="text">Open Cydia Impactor and drag the .ipa file you downloaded into the window.</li>
+    <div class="bg-cornsilk p-3">
+      NOTE: Make sure your Apple device is recognized by your computer.
+    </div>
+    <li class="text">Enter your Apple ID email into the field provided and click 'OK'.</li>
+    <li class="text">Enter your Apple ID password into the field provided and click 'OK'.</li>
+
+    
+
+    <li class="text">Wait for Cydia Impactor to sign the .ipa file.</li>
+    <div class="bg-cornsilk p-3">
+      NOTE: Your Apple ID is only used to generate a certificate from Apple and is not saved anywhere.
+    </div>
+    
+    <li class="text">Unlock your device and go to Settings > General > Profiles and Device Management.</li>
+    <div class="bg-cornsilk p-3">
+      NOTE: Wait to proceed until you see the 'Complete' message at the bottom of the program.
+    </div>
+    <li class="text">Open the profile with your Apple ID email on it and click 'Trust' "your@email.com."</li>
+    <li class="text">Go back to your homescreen and lauch the app or game that you downloaded.</li>
+    
+  </ol>
+</div>
+
+<!-- <div class="wrapper markdown">
 
     <h1>
         Cydia Impactor
@@ -29,20 +85,6 @@
         <span><a href="https://cydia.saurik.com/api/latest/5">Download</a></span>
       </li>
     </ul>
-    <!-- <div class="grid center">
-      <a href="https://cydia.saurik.com/api/latest/1">
-          <i class="fab fa-apple fontawesome"></i>Mac OS X
-      </a>
-      <a href="https://cydia.saurik.com/api/latest/2">
-          <i class="fab fa-windows fontawesome"></i>Windows
-      </a>
-      <a href="https://cydia.saurik.com/api/latest/4">
-          <i class="fab fa-linux fontawesome"></i>Linux (32-bit)
-      </a>
-      <a href="https://cydia.saurik.com/api/latest/5">
-          <i class="fab fa-linux fontawesome"></i>Linux (64-bit)
-      </a>
-    </div> -->
 
 
     <h2 class="mt2">Install an .IPA File</h2>
@@ -127,5 +169,5 @@
       </li>
 
     </ul>
-</div>
+</div> -->
 @endsection

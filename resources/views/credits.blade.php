@@ -1,6 +1,113 @@
-@extends('layouts.default')
+@extends('layouts.redesign')
 @section('content')
-<div class="wrapper markdown">
+
+<div class="container">
+  <div class="h3 m-0">Developers</div>
+  <ul class="p-0 m-0">
+    <li class="flex-cc text my-1">
+      <div class="col-8">Zeb - Software Engineer</div>
+      <div class="col-4 text-right">
+        <!-- <a href="https://www.reddit.com/user/zebthewizard/" target="_blank"><i class="fab fa-reddit"></i></a> -->
+        <a href="https://twitter.com/wizardzeb" target="_blank"><i class="fab fa-twitter"></i></a>
+      </div>
+    </li>
+    <li class="flex-cc text my-1">
+      <div class="col-8">Zack - Site Maintainer
+      </div>
+      <div class="col-4 text-right">
+       <a href="https://twitter.com/_ZackBz" target="_blank"><i class="fab fa-twitter"></i></a>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<?php 
+  $app_providers = [
+    [
+      "name" => "Emus4",
+      "links" => [
+        "fal fa-globe" => "https://www.iinstaller.net/"
+      ]
+    ],
+    [
+      "name" => "IraqStore",
+      "links" => [
+        "fal fa-globe" => "https://ir4q.store"
+      ]
+    ],
+    [
+      "name" => "AppValley",
+      "links" => [
+        "fal fa-globe" => "https://appvalley.vip"
+      ]
+    ],
+    [
+      "name" => "Hassan Abdullah",
+      "links" => [
+        "fab fa-twitter" => "https:?/twittter.com/kakaswr22"
+      ]
+    ],
+    [
+      "name" => "TweakBox",
+      "links" => [
+        "fal fa-globe" => "https://tweakboxapp.com"
+      ]
+    ],
+    [
+      "name" => "IOS Gods",
+      "links" => [
+        "fal fa-globe" => "https://iosgods.com"
+      ]
+    ],
+    [
+      "name" => "TweakBox",
+      "links" => [
+        "fal fa-globe" => "https://tweakboxapp.com"
+      ]
+    ],
+  ];
+?>
+
+<div class="container">
+  <div class="h3 mt-4 mb-0">App Providers</div>
+  <ul class="p-0 m-0">
+    @foreach($app_providers as $provider)
+    <li class="flex-cc text my-1">
+      <div class="col-8">{{ $provider["name"] }}</div>
+      <div class="col-4 text-right">
+        @foreach($provider["links"] as $icon => $link)
+          <a href="{{ $link }}" target="_blank"><i class="{{ $icon }}"></i></a>
+        @endforeach
+      </div>
+    </li>
+    @endforeach
+  </ul>
+</div>
+
+
+
+<!-- 
+<li class="flex-cc">
+  <div class="col-8"></div>
+  <div class="col-4">
+    
+  </div>
+</li>
+
+
+
+
+<ul class="fancy bigger socials">
+        <li>Emus4<a href="https://twitter.com/Emus4you" target="_blank"><i class="fab fa-twitter"></i></a></li>
+        <li>IraqStore<a href="https://ir4q.store" target="_blank"><i class="fal fa-globe"></i></a></li>
+        <li>AppValley<a href="https://twitter.com/appvalley_vip" target="_blank"><i class="fab fa-twitter"></i></a></li>
+        <li>Hassan Abdullah<a href="https://twitter.com/kakaswr22" target="_blank"><i class="fab fa-twitter"></i></a></li>
+        <li>TweakBoxApp<a href="https://twitter.com/TweakBoxApp" target="_blank"><i class="fab fa-twitter"></i></a></li>
+        <li>iOSGods<a href="https://iosgods.com/" target="_blank"><i class="fal fa-globe"></i></a></li>
+        <li>CetaceanNation<a href="https://twitter.com/CetaceanNation" target="_blank"><i class="fab fa-twitter"></i></a></li>
+      </ul>
+   -->
+<!-- <div class="wrapper markdown">
   <div class="heading">
       iOS Haven Staff
   </div>
@@ -59,6 +166,6 @@
       </ul>
     </div>
 
-</div>
+</div> -->
 
 @endsection

@@ -7,6 +7,7 @@ $green: #44AF69;
 $dark: #31393C;
 $white: #fff;
 $black: #000;
+$cornsilk: cornsilk;
 
 $headerFamily: "Merriweather";
 $bodyFamily: "Amiko";
@@ -18,7 +19,8 @@ $colors: (
   green: $green,
   dark: $dark,
   white: $white,
-  black: $black
+  black: $black,
+  cornsilk: $cornsilk,
 );
 
 $spacing: (

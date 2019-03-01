@@ -21,7 +21,7 @@
         <a href="https://www.patreon.com/ioshaven" class="text-dark"><i class="fab fa-patreon mx-2 fa-2x"></i></a>
       </div>
       <div class="col-tablet-portrait-3 text-center">
-        <a href="/jailbreak" class="d-block text-dark">Jailbreaks</a>
+        <a href="/apps?q=jailbreak" class="d-block text-dark">Jailbreaks</a>
         <a href="/betas" class="d-block text-dark">Betas</a>
         <a href="/fight-for-net-neutrality" class="d-block text-dark">Net Neutrality</a>
       </div>
