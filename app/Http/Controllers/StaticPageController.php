@@ -12,7 +12,7 @@ class StaticPageController extends Controller
     }
 
     public function getCydiaPage() {
-      return view('cydia');
+      return redirect('/tutorials/Cydia_Impactor.md');
     }
 
     public function getBetasPage() {
@@ -20,7 +20,7 @@ class StaticPageController extends Controller
     }
 
     public function getJailbreakPage() {
-      return view('jailbreak');
+      return redirect('/apps?q=jailbreak');
     }
 
     public function getFaqPage() {

@@ -115,7 +115,7 @@ a {
   font-weight: 400;
   font-style: normal;
   letter-spacing: 0em;
-  text-align: justify;
+  text-align: left;
 }
 
 @media (max-width: 900px) {
@@ -200,7 +200,7 @@ a {
     font-weight: 400;
     font-style: normal;
     letter-spacing: 0em;
-    text-align: justify;
+    text-align: left;
   }
 }
 
@@ -217,6 +217,19 @@ a:not(.disabled):hover {
 p a,
 .text a {
   font-size: 1em;
+}
+
+p img,
+.text img,
+a img {
+  display: block;
+  max-width: 100%;
+}
+
+.markdown ul li:last-of-type,
+.markdown ol li:last-of-type {
+  color: red;
+  display: none;
 }
 
 .btn {

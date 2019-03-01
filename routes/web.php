@@ -11,8 +11,17 @@
 |
 */
 
-Route::get('/test/{view}', function ($view) {
-    return view($view);
+Route::get('/tutorials/{view}', function ($view) {
+  $p = new \Parsedown;
+  try {
+    $contents = File::get(resource_path("tutorials/$view"));
+    $html = $p->setBreaksEnabled(false)->text($contents);
+    return view("tutorial", [
+      "html" => $html
+    ]);
+  } catch (\Throwable $th) {
+    return abort(404);
+  }
 });
 
 Route::get('/', function () {

@@ -101,7 +101,7 @@ h1, .h1 {
   font-weight: 400;
   font-style: normal;
   letter-spacing: 0em;
-  text-align: justify;
+  text-align: left;
   }
   
   @include lt('tablet-landscape') {
@@ -170,7 +170,7 @@ h1, .h1 {
   font-weight: 400;
   font-style: normal;
   letter-spacing: 0em;
-  text-align: justify;
+  text-align: left;
   }
   
   }
@@ -185,6 +185,22 @@ a {
 }
 p  a, .text  a {
   font-size: 1em;
+}
+
+p, .text, a {
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+.markdown {
+  ul, ol {
+    li:last-of-type {
+      color: red;
+      display: none;
+    }
+  }
 }
 
 .btn {
