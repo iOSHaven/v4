@@ -28,11 +28,11 @@
           <a href="https://www.reddit.com/r/iOSHaven/"><i class="fab fa-reddit"></i></a>
           <a href="https://twitter.com/ioshavenco"><i class="fab fa-twitter"></i></a>
           @if(Auth::guest())
-            <a href="/login"><i class="far fa-sign-in"></i></a>
+            <a href="/login" class="show-gt-tablet-portrait"><i class="far fa-sign-in"></i></a>
           @else
-            <a href="/profile"><i class="far fa-user"></i></a>
+            <a href="/profile" class="show-gt-tablet-portrait"><i class="far fa-user"></i></a>
           @endif
-          <label for="navmenu" class="show-lt-tablet-landscape parent"><i class="far fa-bars fa-large"></i>
+          <label for="navmenu" class="show-lt-tablet-landscape parent ml-3"><i class="far fa-bars fa-large"></i>
             <input type="checkbox" class="navcheck" id="navmenu">
             <div class="dropnav dropnav-small">
               @if(Auth::guest())
