@@ -11,6 +11,14 @@
 |
 */
 
+Route::get('/test', function () {
+  return view('test');
+});
+
+Route::get('/tl/{view}', function ($view) {
+  return File::get(resource_path("autosearch/$view.ejs"));
+});
+
 Route::get('/tutorials/{view}', function ($view) {
   $p = new \Parsedown;
   try {
@@ -81,6 +89,3 @@ Route::get('/fight-for-net-neutrality', 'StaticPageController@getFightForNetNeut
 
 Route::post('/close_announcement', 'StaticPageController@closeAnnouncement');
 
-Route::get('/test', function () {
-  return view('layouts/footer');
-});

@@ -1,4 +1,5 @@
 
+import "./autocomplete"
 
 (function () {
     var nav = document.querySelector('nav.fixed')

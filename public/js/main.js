@@ -86,12 +86,88 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./resources/assets/js/autocomplete.js":
+/*!*********************************************!*\
+  !*** ./resources/assets/js/autocomplete.js ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function render(str) {
+  var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var fn = new Function("obj", "\n          var p = [];\n          var print = function () {\n              p.push.apply(p, arguments);\n          };\n          with (obj) {\n              p.push('".concat(str.replace(/[\r\t\n]/g, " ").split("<%").join("\t").replace(/((^|%>)[^\t]*)'/g, "$1\r").replace(/\t=(.*?)%>/g, "',$1,'").split("\t").join("');").split("%>").join("p.push('").split("\r").join("\\'"), "');\n          };\n          return p.join('');\n      "));
+  res = fn(data);
+  console.log(res);
+  return res;
+}
+
+function autocomplete(id) {
+  var cb = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+
+  var getJSON = function getJSON(url, callback) {
+    var type = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'json';
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.responseType = type;
+
+    xhr.onload = function () {
+      var status = xhr.status;
+
+      if (status === 200) {
+        callback(null, xhr.response);
+      } else {
+        callback(status, xhr.response);
+      }
+    };
+
+    xhr.send();
+  };
+
+  var el = document.getElementById(id);
+  var url = el.dataset.fetch;
+  var result = el.dataset.result;
+  var resultEl = document.getElementById(result);
+  var template = el.dataset.template;
+  getJSON(url, function (err, json) {
+    if (err) return; // console.log({json})
+
+    getJSON(template, function (err, tmpl) {
+      if (err) return; // console.log({tmpl})
+
+      if (cb && Array.isArray(json)) {
+        el.addEventListener("keyup", function (e) {
+          if (!el.value || el.value.length < 2) return resultEl.innerHTML = ""; // console.log(json.length)
+
+          var $json = json.slice();
+          modified = cb.call(undefined, e, el, $json) || $json; // console.log(modified.length)
+
+          var res = modified.map(function (item) {
+            return render(tmpl, item);
+          }).join(""); // console.log(res)
+
+          resultEl.innerHTML = res;
+        });
+      }
+    }, 'text');
+  });
+}
+
+window.autocomplete = autocomplete;
+
+/***/ }),
+
 /***/ "./resources/assets/js/main.js":
 /*!*************************************!*\
   !*** ./resources/assets/js/main.js ***!
   \*************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _autocomplete__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./autocomplete */ "./resources/assets/js/autocomplete.js");
+/* harmony import */ var _autocomplete__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_autocomplete__WEBPACK_IMPORTED_MODULE_0__);
+
 
 (function () {
   var nav = document.querySelector('nav.fixed');

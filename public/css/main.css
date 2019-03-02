@@ -22,7 +22,6 @@ html,
 body {
   font-size: 16px;
   font-size: 16px;
-  word-spacing: 1px;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-osx-font-smoothing: grayscale;
@@ -1325,5 +1324,33 @@ textarea {
 
 .border-none {
   border-radius: 0;
+}
+
+.autocomplete {
+  position: relative;
+  width: 100%;
+}
+
+.autocomplete .autocomplete-results {
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+  box-shadow: 0px 0px 2px -1px black;
+}
+
+.autocomplete .autocomplete-results > * {
+  border-width: 0px 1px 1px;
+  border-color: #eee;
+  border-style: solid;
+  background: white;
+}
+
+.autocomplete .autocomplete-results > *:hover {
+  cursor: pointer;
+  background: #f5f5f5;
+}
+
+.autocomplete .autocomplete-results .auto-complete-match {
+  background: #c2e9ff;
 }
 
