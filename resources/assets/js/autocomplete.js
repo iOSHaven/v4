@@ -17,9 +17,7 @@ function render(str, data={}) {
           };
           return p.join('');
       `);
-    res = fn(data)
-    console.log(res)
-    return res
+    return fn(data)
   }
 
 function autocomplete (id, cb=null) {
@@ -46,19 +44,14 @@ function autocomplete (id, cb=null) {
     var template = el.dataset.template;
     getJSON(url, function (err, json) {
         if (err) return;
-        // console.log({json})
         getJSON(template, function (err, tmpl) {
             if (err) return;
-            // console.log({tmpl})
             if (cb && Array.isArray(json)) {
                 el.addEventListener("keyup", function (e) {
                     if (!el.value || el.value.length < 2) return resultEl.innerHTML = ""
-                    // console.log(json.length)
                     var $json = json.slice()
                     modified = cb.call(undefined, e, el, $json) || $json
-                    // console.log(modified.length)
                     var res = modified.map(item => render(tmpl, item)).join("")
-                    // console.log(res)
                     resultEl.innerHTML = res
                 });
                 

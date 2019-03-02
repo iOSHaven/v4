@@ -96,9 +96,7 @@
 function render(str) {
   var data = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   var fn = new Function("obj", "\n          var p = [];\n          var print = function () {\n              p.push.apply(p, arguments);\n          };\n          with (obj) {\n              p.push('".concat(str.replace(/[\r\t\n]/g, " ").split("<%").join("\t").replace(/((^|%>)[^\t]*)'/g, "$1\r").replace(/\t=(.*?)%>/g, "',$1,'").split("\t").join("');").split("%>").join("p.push('").split("\r").join("\\'"), "');\n          };\n          return p.join('');\n      "));
-  res = fn(data);
-  console.log(res);
-  return res;
+  return fn(data);
 }
 
 function autocomplete(id) {
@@ -129,22 +127,18 @@ function autocomplete(id) {
   var resultEl = document.getElementById(result);
   var template = el.dataset.template;
   getJSON(url, function (err, json) {
-    if (err) return; // console.log({json})
-
+    if (err) return;
     getJSON(template, function (err, tmpl) {
-      if (err) return; // console.log({tmpl})
+      if (err) return;
 
       if (cb && Array.isArray(json)) {
         el.addEventListener("keyup", function (e) {
-          if (!el.value || el.value.length < 2) return resultEl.innerHTML = ""; // console.log(json.length)
-
+          if (!el.value || el.value.length < 2) return resultEl.innerHTML = "";
           var $json = json.slice();
-          modified = cb.call(undefined, e, el, $json) || $json; // console.log(modified.length)
-
+          modified = cb.call(undefined, e, el, $json) || $json;
           var res = modified.map(function (item) {
             return render(tmpl, item);
-          }).join(""); // console.log(res)
-
+          }).join("");
           resultEl.innerHTML = res;
         });
       }
