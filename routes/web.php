@@ -16,7 +16,7 @@ Route::get('/test', function () {
 });
 
 Route::get('/tl/{view}', function ($view) {
-  return File::get(resource_path("autosearch/$view.ejs"));
+  return File::get(resource_path("templates/$view.ejs"));
 });
 
 Route::get('/tutorials/{view}', function ($view) {

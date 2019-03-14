@@ -99,28 +99,27 @@ function render(str) {
   return fn(data);
 }
 
-function autocomplete(id) {
-  var cb = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+function getJSON(url, callback) {
+  var type = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'json';
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', url, true);
+  xhr.responseType = type;
 
-  var getJSON = function getJSON(url, callback) {
-    var type = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'json';
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', url, true);
-    xhr.responseType = type;
+  xhr.onload = function () {
+    var status = xhr.status;
 
-    xhr.onload = function () {
-      var status = xhr.status;
-
-      if (status === 200) {
-        callback(null, xhr.response);
-      } else {
-        callback(status, xhr.response);
-      }
-    };
-
-    xhr.send();
+    if (status === 200) {
+      callback(null, xhr.response);
+    } else {
+      callback(status, xhr.response);
+    }
   };
 
+  xhr.send();
+}
+
+function autocomplete(id) {
+  var cb = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
   var el = document.getElementById(id);
   var url = el.dataset.fetch;
   var result = el.dataset.result;
@@ -147,6 +146,8 @@ function autocomplete(id) {
 }
 
 window.autocomplete = autocomplete;
+window.getJSON = getJSON;
+window.render = render;
 
 /***/ }),
 
@@ -228,6 +229,28 @@ __webpack_require__.r(__webpack_exports__);
   });
   $('#waves').parent().css('margin-bottom', '6rem');
 })();
+
+window.loadMoreApps = function (el, page) {
+  console.log(window.location.origin);
+  getJSON(window.location.origin + "/apps?json=true&page=" + page, function (err, json) {
+    if (err) {
+      el.innerHTML = "No apps. Try again?";
+      el.className = "btn btn-red";
+    } else {
+      getJSON(el.dataset.template, function (err, template) {
+        if (err) {
+          el.innerHTML = "Template Error. Try again?";
+          el.className = "btn btn-red";
+        }
+
+        var apps = document.getElementById('apps');
+        apps.innerHTML += json.apps.data.map(function (app) {
+          return render(template, app);
+        }).join("");
+      }, 'text');
+    }
+  });
+};
 
 /***/ }),
 

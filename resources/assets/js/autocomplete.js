@@ -20,23 +20,22 @@ function render(str, data={}) {
     return fn(data)
   }
 
-function autocomplete (id, cb=null) {
-
-    var getJSON = function(url, callback, type='json') {
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', url, true);
-        xhr.responseType = type;
-        xhr.onload = function() {
-          var status = xhr.status;
-          if (status === 200) {
-            callback(null, xhr.response);
-          } else {
-            callback(status, xhr.response);
-          }
-        };
-        xhr.send();
+function getJSON (url, callback, type='json') {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
+    xhr.responseType = type;
+    xhr.onload = function() {
+      var status = xhr.status;
+      if (status === 200) {
+        callback(null, xhr.response);
+      } else {
+        callback(status, xhr.response);
+      }
     };
+    xhr.send();
+}
 
+function autocomplete (id, cb=null) {
     var el = document.getElementById(id);
     var url = el.dataset.fetch;
     var result = el.dataset.result;
@@ -61,3 +60,5 @@ function autocomplete (id, cb=null) {
 }
 
 window.autocomplete = autocomplete
+window.getJSON = getJSON
+window.render = render

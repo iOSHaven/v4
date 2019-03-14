@@ -9,7 +9,7 @@
     <div class="col-12 my-3">
       <form action="/apps" method="get" autocomplete="off">
         <div class="autocomplete">
-            <input name="q" type="text" class="p-3 autocomplete" id="appsearch" placeholder="Search apps..." data-fetch="/apps/getJson" data-template="/tl/app" data-result="result">
+            <input name="q" type="text" class="p-3 autocomplete" id="appsearch" placeholder="Search apps..." data-fetch="/apps/getJson" data-template="/tl/app-search" data-result="result">
             <div class="autocomplete-results" id="result"></div>
         </div>
       </form>

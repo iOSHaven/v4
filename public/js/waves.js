@@ -91,10 +91,7 @@
   !*** ./resources/assets/js/waves.js ***!
   \**************************************/
 /*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
+/***/ (function(module, exports) {
 
 window.Waves = function Waves(config) {
   for (var _len = arguments.length, waveConfigs = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {

@@ -14,7 +14,7 @@
         <div class="col-12 mt-3">
           <form action="/apps" method="get" autocomplete="off">
             <div class="autocomplete">
-                <input name="q" value="{{ $q }}" type="text" class="p-3 autocomplete" id="appsearch" placeholder="Search apps..." data-fetch="/apps/getJson" data-template="/tl/app" data-result="result">
+                <input name="q" value="{{ $q }}" type="text" class="p-3 autocomplete" id="appsearch" placeholder="Search apps..." data-fetch="/apps/getJson" data-template="/tl/app-search" data-result="result">
                 <div class="autocomplete-results" id="result"></div>
             </div>
           </form>
@@ -23,7 +23,7 @@
     </div>
 
     <div class="container">
-      <div class="row">
+      <div class="row" id="apps">
           @foreach($apps as $app)
           <div class="col-tablet-portrait-4  p-1">
             <div class="app p-2">
@@ -46,17 +46,26 @@
 
 
 
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 
-
+    
 
  
 
     @if($apps->hasMorePages())
-    <div id="loadmoreapps" class="text-center mt-5" style="width: 100%;">
-      <button class="btn btn-dark" @click="loadMoreApps">Load more apps...</button>
+    <div id="loadmoreapps" class="text-center mt-5 mb-4" style="width: 100%;">
+      <button class="btn btn-dark" 
+      @admin
+      data-template="/tl/app-edit" 
+      @else
+      data-template="/tl/app" 
+      @endadmin
+      onclick="loadMoreApps(this, {{ $apps->currentPage() + 1 }})">
+      Load more apps...</button>
     </div>
     @endif
+
+  
 
     <ins class="adsbygoogle"
          style="display:block"

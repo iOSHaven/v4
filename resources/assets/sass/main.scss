@@ -187,6 +187,10 @@ p  a, .text  a {
   font-size: 1em;
 }
 
+.display-clear {
+  font-family: $bodyFamily;
+}
+
 p, .text, a {
   img {
     display: block;

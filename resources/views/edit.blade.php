@@ -1,6 +1,19 @@
 @extends('layouts.redesign')
 @section('content')
 
+<div class="container">
+  <div class="row">
+    <div class="col-12 my-3">
+      <form action="/apps" method="get" autocomplete="off">
+        <div class="autocomplete">
+            <input name="q" type="text" class="p-3 autocomplete" id="appsearch" placeholder="Search apps..." data-fetch="/apps/getJson" data-template="/tl/app-search-edit" data-result="result">
+            <div class="autocomplete-results" id="result"></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
 <div class="container pt-4">
   <div class="row mb-4">
     <div class="col-12">
@@ -77,4 +90,28 @@
 
 
 
+@endsection
+
+@section('footer')
+<script>
+    autocomplete('appsearch', function (e, target, json) {
+        var j = []
+        json.forEach(app => {
+            var a = Object.assign({}, app)
+            var match = a.name.toLowerCase().indexOf(target.value.toLowerCase()) !== -1
+            if (match) {
+                a.name = a.name.split(new RegExp(target.value, 'i')).join('<span class="auto-complete-match"> ' + target.value + '</span>')
+                j.push(a)
+            }
+        })
+        j.sort((a,b) => {
+            if (a.name < b.name)
+                return -1;
+            if (a.name > b.name)
+                return 1;
+            return 0;
+        })
+        return j.slice(0,10)
+    })
+</script>
 @endsection

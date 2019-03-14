@@ -218,6 +218,10 @@ p a,
   font-size: 1em;
 }
 
+.display-clear {
+  font-family: "Amiko";
+}
+
 p img,
 .text img,
 a img {

@@ -64,3 +64,23 @@ import "./autocomplete"
    $('#waves').parent().css('margin-bottom', '6rem')
 
 })();
+
+window.loadMoreApps = function(el, page) {
+   console.log(window.location.origin)
+   getJSON(window.location.origin + "/apps?json=true&page=" + page, function (err, json) {
+      if (err) {
+         el.innerHTML = "No apps. Try again?"
+         el.className = "btn btn-red"
+      } else {
+         getJSON(el.dataset.template, function (err, template) {
+            if (err) {
+               el.innerHTML = "Template Error. Try again?"
+               el.className = "btn btn-red"
+            }
+            var apps = document.getElementById('apps')
+            apps.innerHTML += json.apps.data.map(app => render(template, app)).join("")
+         }, 'text')
+         
+      }
+   })
+}
