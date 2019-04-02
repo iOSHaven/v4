@@ -178,9 +178,9 @@ __webpack_require__.r(__webpack_exports__);
 
     if (progress) {
       progress.style.width = scrolled + "%";
-    }
+    } // console.log(height2, height)
+    // if (height2 != height) {
 
-    console.log(height2, height); // if (height2 != height) {
 
     document.body.style['margin-top'] = height2 + 'px'; // }
 
@@ -252,6 +252,18 @@ window.loadMoreApps = function (el, page) {
   });
 };
 
+(function () {
+  var i = setInterval(function () {
+    console.clear();
+    console.log("%cHello!", "color: #3EB5F7; text-shadow: 0px 2px black; -webkit-text-stroke: 1px black; font-size: 60px;font-weight:bold;");
+    console.log("%cDo you want to help develop this website?", "font-size: 20px;");
+    console.log("%cIf you do, then contact @wizardzeb on Twitter.", "font-size: 20px;");
+  }, 1000);
+  setTimeout(function () {
+    clearInterval(i);
+  }, 10000);
+})();
+
 /***/ }),
 
 /***/ 1:
@@ -261,7 +273,7 @@ window.loadMoreApps = function (el, page) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! E:\code\v4\resources\assets\js\main.js */"./resources/assets/js/main.js");
+module.exports = __webpack_require__(/*! /Volumes/Storage/Code/v4/resources/assets/js/main.js */"./resources/assets/js/main.js");
 
 
 /***/ })

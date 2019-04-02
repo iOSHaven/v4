@@ -15,7 +15,7 @@ import "./autocomplete"
       if (progress) {
          progress.style.width = scrolled + "%";
       }
-      console.log(height2, height)
+      // console.log(height2, height)
       // if (height2 != height) {
          document.body.style['margin-top'] = height2 + 'px'
       // }
@@ -80,7 +80,20 @@ window.loadMoreApps = function(el, page) {
             var apps = document.getElementById('apps')
             apps.innerHTML += json.apps.data.map(app => render(template, app)).join("")
          }, 'text')
-         
+
       }
    })
-}
+};
+
+(function (){
+  var i = setInterval(function () {
+    console.clear()
+    console.log("%cHello!", "color: #3EB5F7; text-shadow: 0px 2px black; -webkit-text-stroke: 1px black; font-size: 60px;font-weight:bold;");
+    console.log("%cDo you want to help develop this website?", "font-size: 20px;")
+    console.log("%cIf you do, then contact @wizardzeb on Twitter.", "font-size: 20px;")
+  }, 1000)
+  setTimeout(function () {
+    clearInterval(i)
+  }, 10000)
+
+})();

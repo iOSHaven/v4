@@ -194,7 +194,7 @@ window.Waves = function Waves(config) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! E:\code\v4\resources\assets\js\waves.js */"./resources/assets/js/waves.js");
+module.exports = __webpack_require__(/*! /Volumes/Storage/Code/v4/resources/assets/js/waves.js */"./resources/assets/js/waves.js");
 
 
 /***/ })
