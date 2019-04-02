@@ -59,16 +59,17 @@ class AppController extends Controller
       $app->uid = str_random(5);
       $app->description = "No description";
       $app->save();
-
+      return redirect('/app/edit/' . $app->uid);
       // SitemapGenerator::create(Request::url())->writeToFile(base_path('sitemap.xml'));
-      return response()->json($app);
+      // return response()->json($app);
     }
 
     public function remove(Request $request)
     {
       $app = App::findByUid($request->uid);
       $app->delete();
-      return response()->json(App::get());
+      return redirect('/apps');
+      // return response()->json(App::get());
     }
 
     public function update (Request $request)

@@ -14,6 +14,17 @@
   </div>
 </div>
 
+@admin
+<div class="container mt-3">
+  <div class="row">
+    <form action="/app/create" method="post">
+      {{ csrf_field() }}
+      <button type="submit" class="btn btn-blue">Add App</button>
+    </form>
+  </div>
+</div>
+@endadmin
+
 <div class="container pt-4">
   <div class="row mb-4">
     <div class="col-12">
@@ -25,7 +36,7 @@
     <div class="col-10">
       <img class="col-12" src="{{ url($app->banner) }}" alt="banner">
     </div>
-    
+
   </div>
   <div class="row">
     <form action="/app/update" method="post" class="flex-wrap col-12">
@@ -82,8 +93,14 @@
       </div>
 
       <button type="submit" class="btn btn-blue p-3">Save Changes.</button>
+      <label for="remove" class="btn btn-red p-3 ml-3">Remove App</label>
     </form>
-    
+
+    <form class="" action="/app/remove" method="post">
+      {{ csrf_field() }}
+      <button type="submit" class="btn btn-red p-3" id="remove" style="display: none;" name="uid" value="{{ $app->uid }}"></button>
+    </form>
+
 
   </div>
 </div>

@@ -22,6 +22,17 @@
       </div>
     </div>
 
+    @admin
+    <div class="container mt-3">
+      <div class="row">
+        <form action="/app/create" method="post">
+          {{ csrf_field() }}
+          <button type="submit" class="btn btn-blue">Add App</button>
+        </form>
+      </div>
+    </div>
+    @endadmin
+
     <div class="container">
       <div class="row" id="apps">
           @foreach($apps as $app)
@@ -48,24 +59,24 @@
 
     <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 
-    
 
- 
+
+
 
     @if($apps->hasMorePages())
     <div id="loadmoreapps" class="text-center mt-5 mb-4" style="width: 100%;">
-      <button class="btn btn-dark" 
+      <button class="btn btn-dark"
       @admin
-      data-template="/tl/app-edit" 
+      data-template="/tl/app-edit"
       @else
-      data-template="/tl/app" 
+      data-template="/tl/app"
       @endadmin
       onclick="loadMoreApps(this, {{ $apps->currentPage() + 1 }})">
       Load more apps...</button>
     </div>
     @endif
 
-  
+
 
     <ins class="adsbygoogle"
          style="display:block"
