@@ -13,14 +13,14 @@
             <div class="autocomplete-results" id="result"></div>
         </div>
       </form>
+      <!-- v4-ad-unit -->
+      <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4649450952406116"
+       data-ad-slot="6346387821"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
     </div>
-    <!-- v4-ad-unit -->
-    <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4649450952406116"
-     data-ad-slot="6346387821"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
   </div>
 </div>
 
