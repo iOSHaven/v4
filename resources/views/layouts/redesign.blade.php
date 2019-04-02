@@ -125,17 +125,22 @@
     <!-- === F O N T S === -->
     <link href="https://fonts.googleapis.com/css?family=Merriweather:900i|Amiko:400" rel="stylesheet" />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-6jHF7Z3XI3fF4XZixAuSu0gGKrXwoX/w3uFPxC56OtjChio7wtTGJWRW53Nhx6Ev" crossorigin="anonymous">    <link href="{{ asset('css/normalize.css') }}" rel="stylesheet">
-    
+
     <!-- === S T Y L E S === -->
     <link href="{{ asset('css/normalize.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
     @yield('header')
 
 
-
-    <!-- === A D S === -->
-    <!-- Adsense -->
+    <!-- === A D S E N S E   A D S === -->
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+         (adsbygoogle = window.adsbygoogle || []).push({
+              google_ad_client: "ca-pub-4649450952406116",
+              enable_page_level_ads: true
+         });
+    </script>
+
     <!-- Reddit Conversion Pixel -->
     <script>
     var now=Date.now();var i=new Image();i.src="https://alb.reddit.com/snoo.gif?q=CAAHAAABAAoACQAAAAmui0GsAA==&s=tmLAxiUDMEJKMclLiZGzuUt9BH8_1Z3ptx3Bh1LlzNs=&ts="+now;
