@@ -2,12 +2,13 @@
 @section('content')
 
 
-    <ins class="adsbygoogle"
-          style="display:block"
-          data-ad-client="ca-pub-4649450952406116"
-          data-ad-slot="8982247650"
-          data-ad-format="auto"
-          data-full-width-responsive="true"></ins>
+  <!-- v4-ad-unit -->
+  <ins class="adsbygoogle"
+   style="display:block"
+   data-ad-client="ca-pub-4649450952406116"
+   data-ad-slot="6346387821"
+   data-ad-format="auto"
+   data-full-width-responsive="true"></ins>
 
     <div class="container">
       <div class="row">
@@ -78,12 +79,13 @@
 
 
 
+    <!-- v4-ad-unit -->
     <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-4649450952406116"
-         data-ad-slot="7479897052"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
+     style="display:block"
+     data-ad-client="ca-pub-4649450952406116"
+     data-ad-slot="6346387821"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
 
 
 

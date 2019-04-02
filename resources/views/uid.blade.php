@@ -14,8 +14,17 @@
         </div>
       </form>
     </div>
+    <!-- v4-ad-unit -->
+    <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4649450952406116"
+     data-ad-slot="6346387821"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
   </div>
 </div>
+
+
 
 <div class="container">
   <div class="row">
@@ -31,7 +40,7 @@
       {{ $app->name }}
     </div>
   </div>
-  
+
   <div class="row mb-5">
     <div class="col-3 text-center">
       <strong class="display">Downloads</strong>
@@ -62,18 +71,25 @@
       <a href="/app/edit/{{$app->uid}}" class="btn btn-red ml-3 py-1">Edit</a>
     @endadmin
   </div>
-  
+
   <div class="row">
     <section>
       {!! $app->html !!}
     </section>
   </div>
+  <!-- v4-ad-unit -->
+  <ins class="adsbygoogle"
+   style="display:block"
+   data-ad-client="ca-pub-4649450952406116"
+   data-ad-slot="6346387821"
+   data-ad-format="auto"
+   data-full-width-responsive="true"></ins>
   <div class="row">
       @foreach (explode(",", $app->tags) as $tag)
         <a href="/apps/{{$tag}}" class="btn btn-dark py-0 px-1 mr-1 border-none">{{$tag}}</a>
       @endforeach
   </div>
-  
+
 </div>
 
 

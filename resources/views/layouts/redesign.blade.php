@@ -134,12 +134,13 @@
 
     <!-- === A D S E N S E   A D S === -->
     <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
+    <!-- <script>
          (adsbygoogle = window.adsbygoogle || []).push({
               google_ad_client: "ca-pub-4649450952406116",
               enable_page_level_ads: true
          });
-    </script>
+    </script> -->
+
 
     <!-- Reddit Conversion Pixel -->
     <script>
@@ -158,7 +159,12 @@
 @include('layouts.footer')
 <script src="/js/main.js"></script>
 @yield('footer')
-
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+          google_ad_client: "ca-pub-4649450952406116",
+          enable_page_level_ads: true
+     });
+</script>
 
 </body>
 </html>

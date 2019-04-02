@@ -1,8 +1,15 @@
 <section>
   <div class="container mb-0">
     <hr>
+    <!-- v4-ad-unit -->
+    <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4649450952406116"
+     data-ad-slot="6346387821"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
   </div>
-  
+
   <div class="text-center mt-5 w-100 mb-5">
     <div class="h6 mb-0 display-clear mb-0">Still not finding what you want? </div>
     <p class="text-center mb-2">Then check out our partners.</p>
@@ -20,7 +27,7 @@
         <a href="/credits" class="d-block text-dark">Credits</a>
         <!-- <a href="https://www.patreon.com/ioshaven" class="d-block"><i class="fab fa-patreon mr-5"></i>Patreon</a> -->
         <a href="/cydia" class="d-block text-dark">Cydia Impactor</a>
-        
+
       </div>
       <div class="col-tablet-portrait-6 text-center">
         <a href="https://twitter.com/ioshavenco" class="text-dark"><i class="fab fa-twitter mx-2 fa-2x"></i></a>
