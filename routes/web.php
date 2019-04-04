@@ -50,6 +50,14 @@ Route::get('/plist/{name}', function ($name) {
   // return redirect()
 });
 
+Route::group(['prefix' => 'image'], function () {
+  Route::get('/', 'ImageController@index');
+  // Route::get('all', 'RosterController@all');
+  // Route::get('creators', 'RosterController@creators');
+  // Route::get('streamers', 'RosterController@streamers');
+  // Route::get('team/{team}', 'RosterController@teams');
+});
+
 Route::post('putlinks', function (\Request $r) {
   return response()->json(["hello"]);
 });

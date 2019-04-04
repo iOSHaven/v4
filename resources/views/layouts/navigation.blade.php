@@ -5,7 +5,23 @@
         <div class="col flex-lc">
           <a href="/" class="display brand">IOS Haven</a>
         </div>
-        <div class="col flex-cc show-gt-tablet-portrait">
+        <ul class="navlinks show-gt-tablet-portrait">
+          <li><a href="/apps" class="">Apps</a></li>
+          <li><a href="/apps?q=game" class="">Games</a></li>
+          <li><a href="/updates" class="">Updates</a></li>
+          <li class="flyout">
+            <a href="#" class="">More</a>
+            <ul class="flyout-content navlinks stacked">
+              <li><a href="/aboutUs" class="d-block">About Us!</a></li>
+              <li><a href="/credits" class="d-block">Credits</a></li>
+              <li><a href="/cydia" class="d-block">Cydia Impactor</a></li>
+              <li><a href="/apps?q=jailbreak" class="d-block">Jailbreaks</a></li>
+              <li><a href="/betas" class="d-block">Betas</a></li>
+              <li><a href="/fight-for-net-neutrality" class="d-block">Net Neutrality</a></li>
+            </ul>
+          </li>
+        </ul>
+        <!-- <div class="col flex-cc show-gt-tablet-portrait">
           <a href="/apps" class="">Apps</a>
           <a href="/apps?q=game" class="">Games</a>
           <a href="/updates" class="">Updates</a>
@@ -20,9 +36,8 @@
             <a href="/fight-for-net-neutrality" class="d-block">Net Neutrality</a>
             </div>
           </label>
-          <!-- <a href="#" class="text-shadow">More</a> -->
-          
-        </div>
+
+        </div> -->
         <div class="col flex-rc">
           <a href="https://discord.gg/mTbwMyQ"><i class="fab fa-discord"></i></a>
           <a href="https://www.reddit.com/r/iOSHaven/"><i class="fab fa-reddit"></i></a>
@@ -54,5 +69,5 @@
         </div>
       </div>
     </div>
-    
+
   </nav>

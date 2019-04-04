@@ -42,7 +42,7 @@ h1, .h1 {
   font-style: italic;
   letter-spacing: 0em;
   }
-  
+
   h2, .h2 {
   margin-bottom: 2.6rem;
   font-family: $headerFamily;
@@ -52,7 +52,7 @@ h1, .h1 {
   font-style: italic;
   letter-spacing: 0em;
   }
-  
+
   h3, .h3 {
   margin-bottom: 2.6rem;
   font-family: $headerFamily;
@@ -62,7 +62,7 @@ h1, .h1 {
   font-style: italic;
   letter-spacing: 0em;
   }
-  
+
   h4, .h4 {
   margin-bottom: 2.6rem;
   font-family: $headerFamily;
@@ -72,7 +72,7 @@ h1, .h1 {
   font-style: italic;
   letter-spacing: 0em;
   }
-  
+
   h5, .h5 {
   margin-bottom: 2.6rem;
   font-family: $headerFamily;
@@ -82,7 +82,7 @@ h1, .h1 {
   font-style: italic;
   letter-spacing: 0em;
   }
-  
+
   h6, .h6 {
   margin-bottom: 2.6rem;
   font-family: $headerFamily;
@@ -92,7 +92,7 @@ h1, .h1 {
   font-style: italic;
   letter-spacing: 0em;
   }
-  
+
   p, .text, a {
   margin-bottom: 2.6rem;
   font-family: $bodyFamily;
@@ -103,7 +103,7 @@ h1, .h1 {
   letter-spacing: 0em;
   text-align: left;
   }
-  
+
   @include lt('tablet-landscape') {
     html, body {
       font-size: 12px;
@@ -172,9 +172,9 @@ h1, .h1 {
   letter-spacing: 0em;
   text-align: left;
   }
-  
+
   }
-  
+
 a {
   margin-bottom: 0;
   text-decoration: none;
@@ -481,12 +481,12 @@ nav {
 
 
 .app {
-  
+
   font-family: $bodyFamily;
   display: flex;
   align-items: center;
   color: $dark;
-  
+
   .content, .content * {
     overflow: hidden;
     line-height: 1em;
@@ -536,8 +536,8 @@ textarea {
     z-index: 3;
     box-shadow: 0px 0px 2px -1px black;
     & > * {
-      border-width: 0px 1px 1px; 
-      border-color: #eee; 
+      border-width: 0px 1px 1px;
+      border-color: #eee;
       border-style: solid;
       background: white;
       &:hover {
@@ -550,4 +550,266 @@ textarea {
       background: #c2e9ff;
     }
   }
+}
+
+
+
+table {
+  border-spacing: 1;
+  border-collapse: collapse;
+  background: #262932;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  color: white;
+}
+table * {
+  position: relative;
+}
+table td, table th {
+  padding-left: 8px;
+  padding-right: 8px;
+}
+table thead tr {
+  height: 60px;
+  background: #212329;
+}
+table tbody tr {
+  height: 50px;
+}
+table tbody tr:last-child {
+  border: 0;
+}
+
+tbody tr:nth-child(even) {
+  /* background-color: #f5f5f5; */
+}
+
+tbody tr {
+  font-family: OpenSans-Regular;
+  font-size: 15px;
+  color: white;
+  line-height: 1.2;
+  font-weight: unset;
+}
+
+tbody tr:hover {
+  color: #fff;
+  background-color: #1b1d24;
+  cursor: pointer;
+}
+
+label.btn {
+  display: inline-block;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  flex-direction: column;
+}
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.8);
+}
+.modal-check {
+  position: absolute;
+  left: -200%;
+}
+.modal-check:checked + .modal {
+  display: flex;
+}
+
+.modal-header {
+  z-index: 1;
+  color: black;
+  margin:0;
+}
+
+.modal-body {
+  border: 1px solid #ccc;
+  color: black;
+  z-index: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  max-height: 85%;
+  margin: 0;
+}
+
+.modal-header + .modal-body {
+  border-top: none;
+}
+
+
+
+
+.tgl {
+  display: none;
+}
+.tgl, .tgl:after, .tgl:before, .tgl *, .tgl *:after, .tgl *:before, .tgl + .tgl-btn {
+  box-sizing: border-box;
+}
+.tgl::-moz-selection, .tgl:after::-moz-selection, .tgl:before::-moz-selection, .tgl *::-moz-selection, .tgl *:after::-moz-selection, .tgl *:before::-moz-selection, .tgl + .tgl-btn::-moz-selection {
+  background: none;
+}
+.tgl::selection, .tgl:after::selection, .tgl:before::selection, .tgl *::selection, .tgl *:after::selection, .tgl *:before::selection, .tgl + .tgl-btn::selection {
+  background: none;
+}
+.tgl + .tgl-btn {
+  outline: 0;
+  display: block;
+  width: 4em;
+  height: 2em;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.tgl + .tgl-btn:after, .tgl + .tgl-btn:before {
+  position: relative;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+}
+.tgl + .tgl-btn:after {
+  left: 0;
+}
+.tgl + .tgl-btn:before {
+  display: none;
+}
+.tgl:checked + .tgl-btn:after {
+  left: 50%;
+}
+
+.tgl-ios + .tgl-btn {
+  background: #fbfbfb;
+  border-radius: 2em;
+  padding: 2px;
+  transition: all .4s ease;
+  border: 1px solid #e8eae9;
+}
+.tgl-ios + .tgl-btn:after {
+  border-radius: 2em;
+  background: #fbfbfb;
+  transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding 0.3s ease, margin 0.3s ease;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1), 0 4px 0 rgba(0, 0, 0, 0.08);
+}
+.tgl-ios + .tgl-btn:hover:after {
+  will-change: padding;
+}
+.tgl-ios + .tgl-btn:active {
+  box-shadow: inset 0 0 0 2em #e8eae9;
+}
+.tgl-ios + .tgl-btn:active:after {
+  padding-right: .8em;
+}
+.tgl-ios:checked + .tgl-btn {
+  background: #86d993;
+}
+.tgl-ios:checked + .tgl-btn:active {
+  box-shadow: none;
+}
+.tgl-ios:checked + .tgl-btn:active:after {
+  margin-left: -.8em;
+}
+
+form label {
+  display: block;
+}
+
+
+.navlinks {
+  list-style: none;
+  margin-left: 0;
+  padding: 0;
+}
+
+.navlinks > li,
+.navlinks > li > a {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+
+.stacked > li {
+  display: list-item;
+}
+.stacked > li > a {
+  display: block;
+  white-space: nowrap;
+}
+
+.flyout,
+.flyout-alt {
+  position: relative;
+}
+.flyout-content {
+  position: absolute;
+  top: 0;
+  left: -99999px;
+  height: 0;
+  overflow: hidden;
+}
+.flyout:hover > .flyout-content {
+  left: 0;
+  top: 100%;
+}
+.flyout-alt:hover > .flyout-content {
+  top: 0;
+  left: 100%;
+}
+.flyout:hover > .flyout-content,
+.flyout-alt:hover > .flyout-content {
+  height: auto;
+  overflow: visible;
+  background: rgba(0,0,0,0.9);
+  color: white;
+}
+.flyout-alt > a:after{
+    content:" ▸";
+}
+
+.navlinks a,
+.navlinks label {
+  color: inherit!important;
+  font-weight: 600;
+  font-size: 1.2em;
+  padding: 0 1rem;
+  text-decoration: none;
+}
+
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #3EB5F7;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,0.5);
 }

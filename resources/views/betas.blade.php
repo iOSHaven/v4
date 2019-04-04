@@ -1,14 +1,19 @@
-@extends('layouts.default')
+@extends('layouts.redesign')
 @section('content')
-<div class="wrapper markdown">
-    <h1>iOS</h1>
-    <ul class="fancy">
+
+<section>
+  <div class="container">
+    <div class="h3">Developer Betas</div>
+    <p>Links will be updated when next IOS and MacOS beta are released.</p>
+    <ul class="h6">
       <li >
-        iOS 12: <a href="https://iosbetas.me/" target="_blank">GO!</a>
+        <strike><a href="https://iosbetas.me/" target="_blank">Download IOS 12 Beta</a></strike>
       </li>
       <li >
-        MAC OS Mojave: <a href="http://festyy.com/wH5U36" target="_blank">GO!</a>
+        <strike><a href="http://festyy.com/wH5U36" target="_blank">Download MacOS Mojave</a></strike>
       </li>
     </ul>
-</div>
+  </div>
+</section>
+
 @endsection
