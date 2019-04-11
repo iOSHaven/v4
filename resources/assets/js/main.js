@@ -65,11 +65,13 @@ import "./autocomplete"
 
 })();
 
-window.loadMoreApps = function(el, page) {
-   console.log(window.location.origin)
-   getJSON(window.location.origin + "/apps?json=true&page=" + page, function (err, json) {
+window.loadMoreApps = function(el) {
+   var meta =  document.head.querySelector('meta[name=page][content]')
+   var currentPage = parseInt(meta.content)
+   var nextPage = currentPage + 1
+   getJSON(window.location.origin + "/apps?json=true&page=" + nextPage, function (err, json) {
       if (err) {
-         el.innerHTML = "No apps. Try again?"
+         el.innerHTML = "No more apps. Try again?"
          el.className = "btn btn-red"
       } else {
          getJSON(el.dataset.template, function (err, template) {
@@ -79,6 +81,7 @@ window.loadMoreApps = function(el, page) {
             }
             var apps = document.getElementById('apps')
             apps.innerHTML += json.apps.data.map(app => render(template, app)).join("")
+            meta.setAttribute('content', nextPage.toString())
          }, 'text')
 
       }
@@ -86,14 +89,14 @@ window.loadMoreApps = function(el, page) {
 };
 
 (function (){
-  var i = setInterval(function () {
-    console.clear()
-    console.log("%cHello!", "color: #3EB5F7; text-shadow: 0px 2px black; -webkit-text-stroke: 1px black; font-size: 60px;font-weight:bold;");
-    console.log("%cDo you want to help develop this website?", "font-size: 20px;")
-    console.log("%cIf you do, then contact @wizardzeb on Twitter.", "font-size: 20px;")
-  }, 1000)
-  setTimeout(function () {
-    clearInterval(i)
-  }, 10000)
+  // var i = setInterval(function () {
+  //   console.clear()
+  //   console.log("%cHello!", "color: #3EB5F7; text-shadow: 0px 2px black; -webkit-text-stroke: 1px black; font-size: 60px;font-weight:bold;");
+  //   console.log("%cDo you want to help develop this website?", "font-size: 20px;")
+  //   console.log("%cIf you do, then contact @wizardzeb on Twitter.", "font-size: 20px;")
+  // }, 1000)
+  // setTimeout(function () {
+  //   clearInterval(i)
+  // }, 10000)
 
 })();

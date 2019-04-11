@@ -1,14 +1,21 @@
 @extends('layouts.redesign')
+
+@section('header')
+<meta name="page" content="{{ $apps->currentPage() }}">
+@endsection
+
 @section('content')
 
-
-  <!-- v4-ad-unit -->
+<div class="container">
+  <!-- v4-search-bottom -->
   <ins class="adsbygoogle"
-   style="display:block"
-   data-ad-client="ca-pub-4649450952406116"
-   data-ad-slot="6346387821"
-   data-ad-format="auto"
-   data-full-width-responsive="true"></ins>
+       style="display:block"
+       data-ad-client="ca-pub-4649450952406116"
+       data-ad-slot="5262456899"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
+
 
     <div class="container">
       <div class="row">
@@ -60,7 +67,15 @@
 
     <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 
-
+    <div class="container">
+      <!-- v4-search-bottom -->
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-4649450952406116"
+           data-ad-slot="5262456899"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+    </div>
 
 
 
@@ -72,20 +87,12 @@
       @else
       data-template="/tl/app"
       @endadmin
-      onclick="loadMoreApps(this, {{ $apps->currentPage() + 1 }})">
+      onclick="loadMoreApps(this)">
       Load more apps...</button>
     </div>
     @endif
 
 
-
-    <!-- v4-ad-unit -->
-    <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4649450952406116"
-     data-ad-slot="6346387821"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
 
 
 

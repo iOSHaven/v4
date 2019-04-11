@@ -1,14 +1,13 @@
 <section>
   <div class="container mb-0">
     <hr>
-    <!-- v4-ad-unit -->
+    <!-- v4-search-bottom -->
     <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4649450952406116"
-     data-ad-slot="6346387821"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-  </div>
+         style="display:block"
+         data-ad-client="ca-pub-4649450952406116"
+         data-ad-slot="5262456899"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
 
   <div class="text-center mt-5 w-100 mb-5">
     <div class="h6 mb-0 display-clear mb-0">Still not finding what you want? </div>

@@ -13,7 +13,7 @@
       <a href="/login" class="btn btn-red">Login</a>
       <a href="/register" class="btn btn-white text-dark">Signup</a>
     </div>
-    <canvas id="waves" class="bg-blue"></canvas>
+    <canvas id="waves" class="bg-white"></canvas>
   </section>
 
   @include('layouts.about')
@@ -26,6 +26,3 @@ src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
 crossorigin="anonymous"></script>
 <script src="/js/waves.js"></script>
-@section('footer')
-
-@endsection
