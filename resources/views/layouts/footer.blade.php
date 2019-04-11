@@ -1,6 +1,12 @@
 <section>
   <div class="container mb-0">
     <hr>
+
+
+  <div class="text-center mt-5 w-100 mb-5">
+    <div class="h6 mb-0 display-clear mb-0">Still not finding what you want? </div>
+    <p class="text-center mb-2">Then check out our partners.</p>
+    <a href="https://builds.io?aid=1025548"><img src="/buildstorebanner.png" alt="partner link" class="m-auto"></a>
     <!-- v4-search-bottom -->
     <ins class="adsbygoogle"
          style="display:block"
@@ -8,11 +14,6 @@
          data-ad-slot="5262456899"
          data-ad-format="auto"
          data-full-width-responsive="true"></ins>
-
-  <div class="text-center mt-5 w-100 mb-5">
-    <div class="h6 mb-0 display-clear mb-0">Still not finding what you want? </div>
-    <p class="text-center mb-2">Then check out our partners.</p>
-    <a href="https://builds.io?aid=1025548"><img src="/buildstorebanner.png" alt="partner link" class="m-auto"></a>
   </div>
   <div class="container">
     <hr>
