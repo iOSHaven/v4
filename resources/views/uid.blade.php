@@ -3,6 +3,15 @@
 
 @section('content')
 
+<div class="container">
+  <!-- v4-top-search -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-4649450952406116"
+       data-ad-slot="2079757604"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+</div>
 
 <div class="container">
   <div class="row">
@@ -13,13 +22,6 @@
             <div class="autocomplete-results" id="result"></div>
         </div>
       </form>
-      <!-- v4-search-bottom -->
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-4649450952406116"
-           data-ad-slot="5262456899"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
     </div>
   </div>
 </div>
@@ -77,18 +79,19 @@
       {!! $app->html !!}
     </section>
   </div>
-  <!-- v4-search-bottom -->
-  <ins class="adsbygoogle"
-       style="display:block"
-       data-ad-client="ca-pub-4649450952406116"
-       data-ad-slot="5262456899"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
   <div class="row">
       @foreach (explode(",", $app->tags) as $tag)
         <a href="/apps/{{$tag}}" class="btn btn-dark py-0 px-1 mr-1 border-none">{{$tag}}</a>
       @endforeach
   </div>
+
+  <!-- below-app-description -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-4649450952406116"
+     data-ad-slot="8049311724"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
 
 </div>
 

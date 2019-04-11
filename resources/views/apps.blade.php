@@ -7,11 +7,11 @@
 @section('content')
 
 <div class="container">
-  <!-- v4-search-bottom -->
+  <!-- v4-top-search -->
   <ins class="adsbygoogle"
        style="display:block"
        data-ad-client="ca-pub-4649450952406116"
-       data-ad-slot="5262456899"
+       data-ad-slot="2079757604"
        data-ad-format="auto"
        data-full-width-responsive="true"></ins>
 </div>
