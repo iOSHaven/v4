@@ -19,19 +19,47 @@ class AppController extends Controller
       if ($tag) $search = $tag;
       else $search = $r->q;
 
+      $type = $r->type;
+      if (empty($type)) {
+        if (preg_match("/type:(\S*)([\S ]*)?/i", $search, $match)) {
+          $type = strToLower($match[1]);
+          $search = trim($match[2]);
+        }
+      }
+
+      $apps = App::where('name', '!=', 'No name')
+        ->where('name', 'like', "%". $search."%");
+
+
+      if ($type == "ipa") {
+        $apps = $apps->whereNotNull('unsigned');
+      } else if ($type == "signed" || $type == "install") {
+        $apps = $apps->whereNotNull('signed');
+      }
+
+      $returnSearch = $search;
+      if (!empty($type)) {
+        $returnSearch = "type:$type $search";
+      } else {
+        $apps = $apps->orWhere('tags', 'like', "%". strtolower($search)."%");
+      }
+
       $filteredData = [
-        'apps' => App::where('name', '!=', 'No name')
-          ->where('name', 'like', "%". $search."%")
-          ->orWhere('tags', 'like', "%". strtolower($search)."%")
-          ->orderBy('downloads', 'desc')
+        'apps' => $apps
+          ->orderBy('views', 'downloads')
           ->paginate(30),
-        'q' => $search
+        'q' => $returnSearch
       ];
+
+
+      // dd();
+
       if ($r->json) {
         return  response()->json($filteredData);
       } else {
         return view('apps')->with($filteredData);
       }
+
     }
 
     public function updates ($tag=null, Request $r) {
