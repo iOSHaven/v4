@@ -234,7 +234,14 @@ window.loadMoreApps = function (el) {
   var meta = document.head.querySelector('meta[name=page][content]');
   var currentPage = parseInt(meta.content);
   var nextPage = currentPage + 1;
-  getJSON(window.location.origin + "/apps?json=true&page=" + nextPage, function (err, json) {
+
+  if (window.location.href.includes('?')) {
+    var url = window.location.href + "&json=true&page=" + nextPage;
+  } else {
+    var url = window.location.origin + "/apps?json=true&page=" + nextPage;
+  }
+
+  getJSON(url, function (err, json) {
     if (err) {
       el.innerHTML = "No more apps. Try again?";
       el.className = "btn btn-red";
