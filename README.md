@@ -15,7 +15,7 @@ This version uses PHP's Laravel framework to run this code you first will need t
 - JSON PHP Extension
 
 Or if you don't want to install all of that you can install Laravel Homestead which has all of that built in.
-https://laravel.com/docs/5.6/homestead
+https://laravel.com/docs/5.8/homestead
 
 ## After Installing 
 - Install composer dependicies
@@ -23,7 +23,7 @@ https://laravel.com/docs/5.6/homestead
 - Create environment key
 - Migrate the databases
 - reference https://laracasts.com/series/laravel-from-scratch-2017 for help
-- reference https://laravel.com/docs/5.6 for help
+- reference https://laravel.com/docs/5.8 for help
 
 install composer dependencies
 ```
