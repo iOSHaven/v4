@@ -4,6 +4,10 @@
 <meta name="page" content="{{ $apps->currentPage() }}">
 @endsection
 
+@section('facebook-events')
+fbq('track', 'Search');
+@endsection
+
 @section('content')
 
 <div class="container">
