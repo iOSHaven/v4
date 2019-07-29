@@ -1,70 +1,78 @@
-@extends('layouts.default')
-@section('head')
-<script src='https://www.google.com/recaptcha/api.js'></script>
+@extends('layouts.redesign')
+@section('header')
+<script src="https://www.google.com/recaptcha/api.js?" async="" defer=""></script>
+<style>
+.border-thin-normal {
+  border: 1px solid #ccc;
+}
+.mr--1 {
+  margin-right: -1px;
+}
+.w-100 {
+  width: 100%;
+}
+
+
+.parent {
+  position: relative;
+}
+.input-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+</style>
 @endsection
 @section('content')
-<div class="wrapper">
-  <div class="is-size-1 has-text-weight-bold mt1">Found a bug?</div>
-  <form method="POST" action="/contact" id="contact-form">
-    {{ csrf_field() }}
 
-    <input type="hidden" name="type" value="Bug">
 
-    <div class="field">
-      <label class="label">Title</label>
-      <div class="control has-icons-left has-icons-right">
-        <input value="{{ old('title') }}" class="input" type="text" placeholder="I found a bug..." name="title">
-        <span class="icon is-small is-left">
-          <i class="fas fa-feather-alt"></i>
+<section class="pt-2">
+  <div class="container">
+    <h2 class="text-shadow">Found a bug?</h2>
+    <p>Use this form if there is something with the website.</p>
+    <form action="/contact/bug" method="post" id="contact-form">
+
+      {{ csrf_field() }}
+      <label for="title">Title</label>
+      <div class="flex-cc mb-4 parent">
+        <span class="input-icon p-3">
+          <i class="fas fa-feather"></i>
         </span>
+        <input value="{{ old('title') }}" class="input p-3 pl-5 border-thin-normal" type="text" placeholder="I found a bug..." name="title">
       </div>
-    </div>
 
-    <div class="field">
-      <label class="label">Type of bug</label>
-      <div class="control">
-        <div class="select">
-          <select required name="bug-type">
-            <option disabled="disabled" value="" selected="selected">select type</option>
-            <option value="app" @if (old('bug-type') == "app") {{ 'selected' }} @endif>App</option>
-            <option value="beta" @if (old('bug-type') == "beta") {{ 'selected' }} @endif>Beta</option>
-            <option value="donating" @if (old('bug-type') == "donating") {{ 'selected' }} @endif>Donating</option>
-            <option value="jailbreak" @if (old('bug-type') == "jailbreak") {{ 'selected' }} @endif>Jailbreak</option>
-            <option value="website" @if (old('bug-type') == "website") {{ 'selected' }} @endif>Website</option>
-            <option value="other" @if (old('bug-type') == "other") {{ 'selected' }} @endif>Other</option>
-          </select>
-        </div>
-      </div>
-    </div>
-
-    <div class="field">
-      <label class="label">Email</label>
-      <div class="control has-icons-left has-icons-right">
-        <input value="{{ old('email') }}" class="input" type="email" placeholder="Email" name="email">
-        <span class="icon is-small is-left">
+      <label for="email">Email</label>
+      <div class="flex-cc mb-4 parent">
+        <span class="p-3 input-icon">
           <i class="fas fa-envelope"></i>
         </span>
+        <input value="{{ old('email') }}" class="input p-3 pl-5 border-thin-normal" type="email" placeholder="Email" name="email" id="email">
       </div>
-    </div>
-
-
-    <div class="field">
-      <label class="label">Message</label>
-      <div class="control">
-        <textarea class="textarea" placeholder="What is causing the issue?" name="message">{{ old('message') }}</textarea>
-      </div>
-    </div>
-
-    @if ($errors->has('g-recaptcha-response'))
-        <span class="has-text-danger has-text-weight-bold">
-            {{ $errors->first('g-recaptcha-response') }}
+      
+      <label for="title">Message</label>
+      <div class="flex-cc mb-4 parent">
+        <span class="p-3 input-icon">
+          <i class="fas fa-pencil"></i>
         </span>
-    @endif
+        <textarea rows="5" class="p-3 pl-5 border-thin-normal w-100" placeholder="What is causing the issue?" name="message" id="message" >{{ old('message') }}</textarea>
+      </div>
+      
+      @if ($errors->has('g-recaptcha-response'))
+        <div class="p-3 bg-red text-white mb-3">
+          <strong>Error: </strong>
+          {{ $errors->first('g-recaptcha-response') }}
+        </div>
+      @endif
 
-    {!! NoCaptcha::display() !!}
+      {!! NoCaptcha::display() !!}
 
-    <input type="submit" class="fancy solid--blue mt1" style="background:transparent">
-  </form>
-</div>
+      <button type="submit" class="btn btn-blue mt-3">Submit Bug</button>
+
+    </form>
+  </div>
+</section>
+
+
 
 @endsection

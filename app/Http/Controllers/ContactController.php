@@ -13,7 +13,7 @@ class ContactController extends Controller
       return view("contact.$type");
     }
 
-    public function send (Request $r) {
+    public function send ($type, Request $r) {
       $r->validate([
         'g-recaptcha-response' => 'required|captcha'
       ]);
@@ -23,6 +23,7 @@ class ContactController extends Controller
           $data[str_replace("-", " ", $key)] = $value;
         }
       }
+      dd($data);
       Mail::to('ioshavenco@gmail.com')
           ->send(new ContactSubmission($data));
       // return view('emails.contactSubmission')->with(['data' => $data]);

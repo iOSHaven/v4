@@ -9,6 +9,7 @@
           <li><a href="/apps" class="">Apps</a></li>
           <li><a href="/apps?q=game" class="">Games</a></li>
           <li><a href="/updates" class="">Updates</a></li>
+          {{-- <li><a href="/contact" class="">Contact</a></li> --}}
           <li class="flyout">
             <a href="#" class="">More</a>
             <ul class="flyout-content navlinks stacked">
@@ -58,6 +59,7 @@
               <a href="/apps" class="d-block">Apps</a>
               <a href="/apps?q=game" class="d-block">Games</a>
               <a href="/updates" class="d-block">Updates</a>
+              {{-- <a href="/contact" class="d-block">Contact</a> --}}
               <a href="/aboutUs" class="d-block">About Us!</a>
               <a href="/credits" class="d-block">Credits</a>
               <a href="/cydia" class="d-block">Cydia Impactor</a>
