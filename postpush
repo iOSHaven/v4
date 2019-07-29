@@ -8,7 +8,7 @@ import json
 # print(sys.argv[1])
 
 
-
+#
 # php artisan migrate --force
 # npm run production
 
