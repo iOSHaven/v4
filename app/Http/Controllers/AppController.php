@@ -46,7 +46,7 @@ class AppController extends Controller
 
       $filteredData = [
         'apps' => $apps
-          ->orderBy('views', 'downloads')
+          ->orderBy('views', 'desc')
           ->paginate(30),
         'q' => $returnSearch
       ];
