@@ -3,5 +3,7 @@
     "/css/main.css": "/css/main.css",
     "/css/scoped.css": "/css/scoped.css",
     "/js/main.js": "/js/main.js",
+    "/js/manifest.js": "/js/manifest.js",
+    "/js/vendor.js": "/js/vendor.js",
     "/js/waves.js": "/js/waves.js"
 }

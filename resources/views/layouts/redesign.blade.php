@@ -161,6 +161,8 @@
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+<script src="/js/manifest.js"></script>
+<script src="/js/vendor.js"></script>
 <script src="/js/main.js"></script>
 @yield('footer')
 

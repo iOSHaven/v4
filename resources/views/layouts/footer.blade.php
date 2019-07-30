@@ -48,7 +48,7 @@
     <p class="text-center">
       <strong>IOS Haven</strong> was created by <a href="https://twitter.com/wizardzeb">@wizardzeb</a> & <a href="https://twitter.com/_ZackBz">@_ZackBz</a>
       <br>
-      <i class="fal fa-copyright"></i> 2019
+      <i class="fal fa-copyright"></i> 2019. iOS Haven
     </p>
   </div>
 </section>
