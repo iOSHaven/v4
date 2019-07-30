@@ -5,28 +5,20 @@ import subprocess
 import requests
 import json
 
-# print(sys.argv[1])
-
-
-#
-# php artisan migrate --force
-# npm run production
-
-
 old, new, branch = sys.stdin.read().split()
 proc = subprocess.Popen(["git", "rev-list", "--oneline", "--first-parent", "%s..%s" %(old, new)], stdout=subprocess.PIPE)
 commitMessage = str(proc.stdout.readlines()[0])
 
 DISCORD_WEBHOOK = sys.argv[1]
-MESSAGE = "Changes pushed to https://ioshaven.co\n\n" + commitMessage
+MESSAGE = "Changes pushed to https://ioshaven.co\n" + commitMessage
+
+headers = {
+    "content-type": "application/json"
+}
 payload = {
     "content": MESSAGE,
     "username": "Production Server"
 }
-headers = {
-    "content-type": "application/json"
-}
-print(json.dumps(payload))
-# 
+
+
 requests.post(DISCORD_WEBHOOK, data=json.dumps(payload), headers=headers)
-# curl -H "Content-Type: application/json" -X POST -d "{\"content\": \"$MESSAGE\", \"username\": \"Production Server\"}" $DISCORD_WEBHOOK

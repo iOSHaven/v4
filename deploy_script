@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+cd /code
+composer install --no-interaction --prefer-dist --optimize-autoloader
+php artisan migrate --force
+php artisan make:sitemap
+npm install
+npm run production
