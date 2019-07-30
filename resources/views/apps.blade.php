@@ -57,7 +57,7 @@ fbq('track', 'Search');
                 </a>
                 @admin
                 <a href="/app/edit/{{ $app->uid }}" class="text-dark">
-                  <i class="fas fa-pencil fa-large"></i>
+                  <i class="fas fa-pencil fa-lg"></i>
                 </a>
                 @endadmin
             </div>

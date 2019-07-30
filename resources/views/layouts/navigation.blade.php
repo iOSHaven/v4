@@ -5,11 +5,11 @@
         <div class="col flex-lc">
           <a href="/" class="display brand">IOS Haven</a>
         </div>
-        <ul class="navlinks show-gt-tablet-portrait">
-          <li><a href="/apps" class="">Apps</a></li>
-          <li><a href="/apps?q=game" class="">Games</a></li>
-          <li><a href="/updates" class="">Updates</a></li>
-          <li><a href="/contact/index" class="">Contact</a></li>
+        <ul class="navlinks show-gt-tablet-portrait m-0">
+          <li><a href="/apps" style="display: flex">Apps</a></li>
+          <li><a href="/apps?q=game" style="display: flex">Games</a></li>
+          <li><a href="/updates" style="display: flex">Updates</a></li>
+          <li><a href="/contact/index" style="display: flex">Contact</a></li>
           {{-- <li class="flyout">
             <a href="#" class="">More</a>
             <ul class="flyout-content navlinks stacked">

@@ -11,7 +11,6 @@
 </style>
 </head>
 <body class=" wrapper markdown-body medium">
-<div class="is-size-1 has-text-weight-bold mt1">{{ $data['type'] }}</div>
 <div class="is-size-3 mb2">{{ $data['title']}}</div>
 <hr>
 

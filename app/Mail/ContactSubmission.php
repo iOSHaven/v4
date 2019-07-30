@@ -32,7 +32,7 @@ class ContactSubmission extends Mailable
     public function build()
     {
         return $this->view('emails.contactSubmission')
-        ->subject("[". $this->data['type'] ."] Contact Submission")
+        ->subject("Contact Submission")
         ->with(['data' => $this->data]);
     }
 }
