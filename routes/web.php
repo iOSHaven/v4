@@ -15,6 +15,8 @@ Route::get('/test', function () {
   return view('test');
 });
 
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->middleware("admin");
+
 Route::get('/tl/{view}', function ($view) {
   return File::get(resource_path("templates/$view.ejs"));
 });

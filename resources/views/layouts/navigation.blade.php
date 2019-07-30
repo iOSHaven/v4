@@ -48,7 +48,7 @@
           @else
             <a href="/profile" class="show-gt-tablet-portrait"><i class="far fa-user"></i></a>
           @endif
-          <label for="navmenu" class="show-lt-tablet-landscape parent ml-3"><i class="far fa-bars fa-large"></i>
+          <label for="navmenu" class="show-lt-tablet-landscape parent ml-3"><i class="far fa-bars fa-lg"></i>
             <input type="checkbox" class="navcheck" id="navmenu">
             <div class="dropnav dropnav-small">
               @if(Auth::guest())
