@@ -1,18 +1,17 @@
-@extends('layouts.default')
+@extends('layouts.redesign')
 
 @section('content')
 
-<section class="hero is-info is-fullheight">
-  <div class="hero-body">
+<section>
     <div class="container">
       <h1 class="is-size-1 has-text-weight-bold mt1">
         Thank you!
       </h1>
-      <div class="is-size-5">
-        You're feedback is taken seriously. We will review your submission and get back to you within 3-5 business days. The following information is what we received in our email.
-      </div>
+      <p>
+        You're feedback is taken seriously. If needed, we will send you an email within 3-5 business days. Check out our Discord for more support!
+      </p>
+      <a href="https://discord.gg/mTbwMyQ" target="_blank" class="btn btn-blue">Join Discord</a>
     </div>
-  </div>
 </section>
 
 @endsection

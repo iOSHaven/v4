@@ -9,8 +9,8 @@
           <li><a href="/apps" class="">Apps</a></li>
           <li><a href="/apps?q=game" class="">Games</a></li>
           <li><a href="/updates" class="">Updates</a></li>
-          {{-- <li><a href="/contact" class="">Contact</a></li> --}}
-          <li class="flyout">
+          <li><a href="/contact/index" class="">Contact</a></li>
+          {{-- <li class="flyout">
             <a href="#" class="">More</a>
             <ul class="flyout-content navlinks stacked">
               <li><a href="/aboutUs" class="d-block">About Us!</a></li>
@@ -20,7 +20,7 @@
               <li><a href="/betas" class="d-block">Betas</a></li>
               <li><a href="/fight-for-net-neutrality" class="d-block">Net Neutrality</a></li>
             </ul>
-          </li>
+          </li> --}}
         </ul>
         <!-- <div class="col flex-cc show-gt-tablet-portrait">
           <a href="/apps" class="">Apps</a>
@@ -59,13 +59,13 @@
               <a href="/apps" class="d-block">Apps</a>
               <a href="/apps?q=game" class="d-block">Games</a>
               <a href="/updates" class="d-block">Updates</a>
-              {{-- <a href="/contact" class="d-block">Contact</a> --}}
-              <a href="/aboutUs" class="d-block">About Us!</a>
+              <a href="/contact/index" class="d-block">Contact</a>
+              {{-- <a href="/aboutUs" class="d-block">About Us!</a>
               <a href="/credits" class="d-block">Credits</a>
               <a href="/cydia" class="d-block">Cydia Impactor</a>
               <a href="/apps?q=jailbreak" class="d-block">Jailbreaks</a>
               <a href="/betas" class="d-block">Betas</a>
-              <a href="/fight-for-net-neutrality" class="d-block">Net Neutrality</a>
+              <a href="/fight-for-net-neutrality" class="d-block">Net Neutrality</a> --}}
             </div>
           </label>
         </div>

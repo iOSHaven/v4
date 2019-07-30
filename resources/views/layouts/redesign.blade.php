@@ -124,8 +124,8 @@
 
     <!-- === F O N T S === -->
     <link href="https://fonts.googleapis.com/css?family=Merriweather:900i|Amiko:400" rel="stylesheet" />
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-6jHF7Z3XI3fF4XZixAuSu0gGKrXwoX/w3uFPxC56OtjChio7wtTGJWRW53Nhx6Ev" crossorigin="anonymous">    <link href="{{ asset('css/normalize.css') }}" rel="stylesheet">
-
+    <script src="https://kit.fontawesome.com/c888111707.js"></script>
+    
     <!-- === S T Y L E S === -->
     <link href="{{ asset('css/normalize.css') }}" rel="stylesheet">
     <link href="{{ asset('css/main.css') }}" rel="stylesheet">
