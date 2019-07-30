@@ -17,9 +17,9 @@ class ContactController extends Controller
     }
 
     public function send ($type, Request $r) {
-      // $r->validate([
-      //   'g-recaptcha-response' => 'required|captcha'
-      // ]);
+      $r->validate([
+        'g-recaptcha-response' => 'required|captcha'
+      ]);
       $data = [];
       foreach ($r->all() as $key => $value) {
         if (!in_array($key, ["_token", "query_string", "g-recaptcha-response"])) {
