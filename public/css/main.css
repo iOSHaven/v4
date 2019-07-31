@@ -1036,12 +1036,14 @@ nav label {
   color: inherit !important;
   font-weight: 600;
   font-size: 1.2em;
-  padding: 0 1rem;
+  padding: 0;
   height: 100%;
   align-items: center;
-  display: inline-flex;
+  display: flex;
   padding-bottom: 0;
   text-decoration: none;
+  justify-content: center;
+  align-items: center;
 }
 
 nav a:not(.disabled):hover,

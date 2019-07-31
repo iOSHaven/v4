@@ -15,6 +15,8 @@ Route::get('/test', function () {
   return view('test');
 });
 
+Route::get("/avatar/{value}/{size?}", "AvatarController@api");
+
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->middleware("admin");
 
 Route::get('/tl/{view}', function ($view) {

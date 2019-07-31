@@ -13,6 +13,7 @@
         "fedeisas/laravel-mail-css-inliner": "^2.2",
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.3",
+        "jdenticon/jdenticon": "^0.10.0",
         "laravel/framework": "^5.8.0",
         "laravel/tinker": "^1.0",
         "rap2hpoutre/laravel-log-viewer": "^1.2",

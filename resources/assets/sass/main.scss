@@ -342,12 +342,14 @@ nav {
     font-size: 1.2em;
     // padding: 0.9rem 0.5rem;
     // margin: -1.4rem 0;
-    padding: 0 (map-get($spacing, 3));
+    padding: 0;
     height: 100%;
     align-items: center;
-    display: inline-flex;
+    display: flex;
     padding-bottom: 0;
     text-decoration: none;
+    justify-content: center;
+    align-items: center;
     &:not(.disabled):hover {
       background:rgba(1, 135, 210, 0.45);
       color: inherit !important;

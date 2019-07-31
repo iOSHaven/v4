@@ -40,13 +40,16 @@
 
         </div> -->
         <div class="col flex-rc">
-          <a href="https://discord.gg/mTbwMyQ"><i class="fab fa-discord"></i></a>
-          <a href="https://www.reddit.com/r/iOSHaven/"><i class="fab fa-reddit"></i></a>
-          <a href="https://twitter.com/ioshavenco"><i class="fab fa-twitter"></i></a>
+          <a href="https://discord.gg/mTbwMyQ" style="width: 45px"><i class="fab fa-discord"></i></a>
+          <a href="https://www.reddit.com/r/iOSHaven/" style="width: 45px"><i class="fab fa-reddit"></i></a>
+          <a href="https://twitter.com/ioshavenco" style="width: 45px"><i class="fab fa-twitter"></i></a>
           @if(Auth::guest())
-            <a href="/login" class="show-gt-tablet-portrait"><i class="far fa-sign-in"></i></a>
+            <a href="/login" class="show-gt-tablet-portrait" style="width: 45px"><i class="far fa-sign-in"></i></a>
           @else
-            <a href="/profile" class="show-gt-tablet-portrait"><i class="far fa-user"></i></a>
+            <a href="/profile" class="show-gt-tablet-portrait" style="width: 45px">
+              {{-- <i class="far fa-user"></i> --}}
+              <img src="/avatar/{{ Auth::user()->username }}/25" alt="">
+            </a>
           @endif
           <label for="navmenu" class="show-lt-tablet-landscape parent ml-3"><i class="far fa-bars fa-lg"></i>
             <input type="checkbox" class="navcheck" id="navmenu">
@@ -54,7 +57,10 @@
               @if(Auth::guest())
                 <a href="/login" class="d-block">Sign In</a>
               @else
-                <a href="/profile" class="d-block">Profile</a>
+                <a href="/profile" class="flex-cc">
+                  <img src="/avatar/asdfasf/25" alt="">
+                  <span>Profile</span>
+                </a>
               @endif
               <a href="/apps" class="d-block">Apps</a>
               <a href="/apps?q=game" class="d-block">Games</a>
