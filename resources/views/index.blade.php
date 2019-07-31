@@ -3,7 +3,7 @@
 @section('content')
 
 
-  <section class="bg-blue">
+  <section class="bg-blue" style="margin-top: -3px">
     <div class="container device-wrapper show-gt-tablet-portrait">
         <img src="/SVG/devices.png" class="device-img" alt="">
     </div>

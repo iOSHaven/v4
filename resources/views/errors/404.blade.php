@@ -1,9 +1,5 @@
-@extends("layouts.redesign")
-@section("content")
-<section>
-  <div class="container">
-    <h1>404</h1>
-    <p>Sorry, we could not find this page.</p>
-  </div>
-</section>
-@endsection
+@extends('errors::minimal')
+
+@section('title', __('Not Found'))
+@section('code', '404')
+@section('message', __('Not Found'))

@@ -154,7 +154,7 @@
     @yield('facebook-events')
     </script><noscript><img height="1" width="1" src="https://www.facebook.com/tr?id=362444877957386&ev=PageView&noscript=1"/></noscript><!-- End Facebook Pixel Code -->
 </head>
-<body>
+<body style="margin-top: 57px;">
 @include('layouts.navigation')
 @yield('content')
 @include('layouts.footer')
