@@ -59,12 +59,12 @@
 
       <div class="col-tablet-portrait-6 mb-3">
         <label for="">IPA Link</label>
-        <input type="text" class="p-3" maxlength="255" placeholder="URL..." data-lpignore="true" value="{{ $app->unsigned }}" name="unsigned">
+        <input type="text" class="p-3" maxlength="65000" placeholder="URL..." data-lpignore="true" value="{{ $app->unsigned }}" name="unsigned">
       </div>
 
       <div class="col-tablet-portrait-6 mb-3">
         <label for="">Signed Link</label>
-        <input type="text" class="p-3" maxlength="255" placeholder="ITMS URL..." data-lpignore="true" value="{{ $app->signed }}" name="signed">
+        <input type="text" class="p-3" maxlength="65000" placeholder="ITMS URL..." data-lpignore="true" value="{{ $app->signed }}" name="signed">
       </div>
 
       <div class="col-tablet-portrait-6 mb-3">

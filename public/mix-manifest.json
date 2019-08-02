@@ -1,9 +1,11 @@
 {
-    "/js/app.js": "/js/app.js",
-    "/css/main.css": "/css/main.css",
-    "/css/scoped.css": "/css/scoped.css",
-    "/js/main.js": "/js/main.js",
-    "/js/manifest.js": "/js/manifest.js",
-    "/js/vendor.js": "/js/vendor.js",
-    "/js/waves.js": "/js/waves.js"
+    "/js/main.js": "/js/main.js?id=b1a4055bf79c41c0efe3",
+    "/css/main.css": "/css/main.css?id=b11aea15a47923d60785",
+    "/js/manifest.js": "/js/manifest.js?id=844cdbfe9e6b6b56ae8f",
+    "/js/vendor.js": "/js/vendor.js?id=c7cd4caa8ab3f2ed6df9",
+    "/js/waves.js": "/js/waves.js?id=b0c5759ac8c3fcf8273b",
+    "/css/normalize.min.css": "/css/normalize.min.css?id=8c6eee6b2107ef25dc48",
+    "/css/main.min.css": "/css/main.min.css?id=b11aea15a47923d60785",
+    "/css/waves.min.css": "/css/waves.min.css?id=d41d8cd98f00b204e980",
+    "/css/main.min.js": "/css/main.min.js?id=d41d8cd98f00b204e980"
 }

@@ -141,10 +141,14 @@ class AppController extends Controller
       $app = App::find($id);
       $itms = "itms-services://?action=download-manifest&url=";
       try {
-        list(, $url) = explode($itms, $app->signed);
-        $d = urldecode($url);
-        $e = urlencode($d);
-        return Response::make('', 302)->header('Location', $itms . $e);
+        if (strpos($app->signed, "app.iosgods.com") !== false) {
+          return Response::make('', 302)->header('Location', $app->signed);
+        } else {
+          list(, $url) = explode($itms, $app->signed);
+          $d = urldecode($url);
+          $e = urlencode($d);
+          return Response::make('', 302)->header('Location', $itms . $e);
+        }
       } catch (\Throwable $th) {
         return Response::make('', 302)->header('Location', $app->signed);
       }
