@@ -14,45 +14,66 @@ use Auth;
 
 class AppController extends Controller
 {
+
+    private function parseQuery($query, $expected=[]) {
+      $args = preg_split("~('|\")[^'\"]*('|\")(*SKIP)(*F)|\s+~", urldecode($query));
+      $search = implode(" ",array_filter($args, function ($value) { return !strpos($value, "=");}));
+      $args = array_filter($args, function ($value) { return strpos($value, "=");});
+      parse_str(implode('&', $args), $data);
+      foreach($expected as $key => $value) {
+        if (empty($data[$key])) {
+          $data[$key] = $value;
+        }
+      }
+      foreach ($data as $key => &$value) {
+        $value = trim($value, '"');
+        $value = trim($value, "'");
+      }
+      $data["search"] = $search;
+      return $data;
+    }
+
     public function page ($tag = null, Request $r)
     {
       if ($tag) $search = $tag;
       else $search = $r->q;
+      
+      $args = $this->parseQuery($search, [
+        "type" => $r->type,
+        "by" => $r->signed,
+        "tag" => $r->ipa,
+      ]);
 
-      $type = $r->type;
-      if (empty($type)) {
-        if (preg_match("/type:(\S*)([\S ]*)?/i", $search, $match)) {
-          $type = strToLower($match[1]);
-          $search = trim($match[2]);
-        }
-      }
+      $apps = App::where('name', '!=', 'No name');
 
-      $apps = App::where('name', '!=', 'No name')
-        ->where('name', 'like', "%". $search."%");
-
-
-      if ($type == "ipa") {
-        $apps = $apps->whereNotNull('unsigned');
-      } else if ($type == "signed" || $type == "install") {
-        $apps = $apps->whereNotNull('signed');
-      }
-
-      $returnSearch = $search;
-      if (!empty($type)) {
-        $returnSearch = "type:$type $search";
+      // ================= QUERY COMMANDS ================= //
+      if(empty($args["tag"])) {
+        $apps = $apps->where('name', 'like', "%". $args["search"]."%");
       } else {
-        $apps = $apps->orWhere('tags', 'like', "%". strtolower($search)."%");
+        $apps = $apps->where('tags', 'like', "%". $args["tag"]."%");
+      }
+        
+      if ($args["type"] == "ipa") {
+        $apps = $apps->whereNotNull('unsigned');
+      } else if ($args["type"] == "signed" || $args["type"] == "install") {
+        $apps = $apps->whereNotNull('signed');
+      } 
+
+      if ($args["by"]) {
+        $apps = $apps->where("signed", 'like', "%" . $args["by"] . "%");
       }
 
+      if ($args["search"] && empty($args["tag"])) {
+        $apps = $apps->orWhere('tags', 'like', "%". strtolower($args["search"])."%");
+      }
+      // ================= QUERY COMMANDS ================= //Í
+      
       $filteredData = [
         'apps' => $apps
           ->orderBy('views', 'desc')
           ->paginate(30),
-        'q' => $returnSearch
+        'q' => $search
       ];
-
-
-      // dd();
 
       if ($r->json) {
         return  response()->json($filteredData);
