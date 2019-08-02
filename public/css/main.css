@@ -38,6 +38,7 @@ body {
 
 .display {
   font-family: "Merriweather";
+  font-style: italic;
 }
 
 h1,
@@ -132,7 +133,7 @@ a {
     font-size: 4.7775744em;
     line-height: 7rem;
     font-weight: 700;
-    font-style: normal;
+    font-style: italic;
     letter-spacing: 0em;
   }
 
@@ -143,7 +144,7 @@ a {
     font-size: 3.981312em;
     line-height: 7rem;
     font-weight: 700;
-    font-style: normal;
+    font-style: italic;
     letter-spacing: 0em;
   }
 
@@ -154,7 +155,7 @@ a {
     font-size: 3.31776em;
     line-height: 3.5rem;
     font-weight: 700;
-    font-style: normal;
+    font-style: italic;
     letter-spacing: 0em;
   }
 
@@ -165,7 +166,7 @@ a {
     font-size: 2.7648em;
     line-height: 3.5rem;
     font-weight: 700;
-    font-style: normal;
+    font-style: italic;
     letter-spacing: 0em;
   }
 
@@ -176,7 +177,7 @@ a {
     font-size: 2.304em;
     line-height: 3.5rem;
     font-weight: 700;
-    font-style: normal;
+    font-style: italic;
     letter-spacing: 0em;
   }
 
@@ -187,7 +188,7 @@ a {
     font-size: 1.92em;
     line-height: 3.5rem;
     font-weight: 700;
-    font-style: normal;
+    font-style: italic;
     letter-spacing: 0em;
   }
 

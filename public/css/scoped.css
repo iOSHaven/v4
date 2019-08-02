@@ -18,8 +18,7 @@
   top: 50%;
   left: 0;
   right: 0;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
 }.toggle[data-v-28cb1975] {
   color: inherit;
   font-size: 0.7rem;
@@ -191,31 +190,26 @@
   background: #f44336;
   color: white;
   border-color: #ea1c0d;
-  -webkit-transform: translateY(0%) !important;
-          transform: translateY(0%) !important;
+  transform: translateY(0%) !important;
 }
 @-webkit-keyframes slideup-data-v-6f7a6a98 {
 from {
     opacity: 0;
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
+    transform: translateY(100%);
 }
 to {
     opacity: 1;
-    -webkit-transform: translateY(0%);
-            transform: translateY(0%);
+    transform: translateY(0%);
 }
 }
 @keyframes slideup-data-v-6f7a6a98 {
 from {
     opacity: 0;
-    -webkit-transform: translateY(100%);
-            transform: translateY(100%);
+    transform: translateY(100%);
 }
 to {
     opacity: 1;
-    -webkit-transform: translateY(0%);
-            transform: translateY(0%);
+    transform: translateY(0%);
 }
 }.searchbar[data-v-0cbd3d07] {
   position: relative;
