@@ -120,7 +120,7 @@ a {
   text-align: left;
 }
 
-@media (max-width: 900px) {
+@media only screen and (max-width: 900px) {
   html,
   body {
     font-size: 14px;
@@ -2795,7 +2795,7 @@ ul.nav-vert li > a {
   white-space: pre-line;
 }
 
-@media (max-width: 900px) {
+@media only screen and (max-width: 900px) {
   .nav-top {
     display: none;
   }

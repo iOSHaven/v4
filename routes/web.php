@@ -11,47 +11,34 @@
 |
 */
 
-Route::get('/test', function () {
-  return view('test');
-});
+// Route::get('/test', function () {
+//   return view('test');
+// });
 
 Route::get("/avatar/{value}/{size?}", "AvatarController@api");
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->middleware("admin");
 
-Route::get('/tl/{view}', function ($view) {
-  return File::get(resource_path("templates/$view.ejs"));
-});
+Route::get('/tl/{view}', 'StaticPageController@template');
 
-Route::get('/tutorials/{view}', function ($view) {
-  $p = new \Parsedown;
-  try {
-    $contents = File::get(resource_path("tutorials/$view"));
-    $html = $p->setBreaksEnabled(false)->text($contents);
-    return view("tutorial", [
-      "html" => $html
-    ]);
-  } catch (\Throwable $th) {
-    return abort(404);
-  }
-});
+Route::get('/tutorials/{view}', 'StaticPageController@tutorial');
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'StaticPageController@index');
 
 Auth::routes();
 
-Route::get('/profile', 'HomeController@index')->name('profile');
-Route::post('/profile/color', 'HomeController@color');
-Route::post('/auth/toggleEditing', 'HomeController@toggleEditing');
+// Route::get('/profile', 'HomeController@index')->name('profile');
+// Route::post('/profile/color', 'HomeController@color');
+// Route::post('/auth/toggleEditing', 'HomeController@toggleEditing');
 
-Route::get('/plist/{name}', function ($name) {
-  header('Location: ' . "itms-services://?action=download-manifest&url=" . urlencode(url("/plist/$name.plist")));
-  exit;
-  // exit;
-  // return redirect()->to("itms-services://?action=download-manifest&url=" . url('/pokego2.plist'))->send();
-  // return redirect()
+Route::get('/plist/{name}', "StaticPageController@plist");
+
+
+Route::group(['prefix' => 'user'], function () {
+    Route::get("/settings", "UserController@getSettings");
+    Route::get("/notifications", "UserController@getNotifications");
+    Route::get("/badges", "UserController@getBadges");
+    Route::get("/password", "UserController@getPassword");
 });
 
 Route::group(['prefix' => 'image'], function () {
@@ -62,9 +49,9 @@ Route::group(['prefix' => 'image'], function () {
   // Route::get('team/{team}', 'RosterController@teams');
 });
 
-Route::post('putlinks', function (\Request $r) {
-  return response()->json(["hello"]);
-});
+// Route::post('putlinks', function (\Request $r) {
+//   return response()->json(["hello"]);
+// });
 
 Route::get('/itms/{id}', 'AppController@itms');
 
@@ -92,7 +79,6 @@ Route::post('/contact/{type}', 'ContactController@send');
 //   return abort(500, 'Sorry for the inconvenience, but this page is under maintenance.');
 // });
 
-Route::get('/webapp', 'StaticPageController@getWebApp');
 Route::get('/credits', 'StaticPageController@getCreditsPage');
 Route::get('/faq', 'StaticPageController@getFaqPage');
 Route::get('/cydia', 'StaticPageController@getCydiaPage');
@@ -103,3 +89,11 @@ Route::get('/fight-for-net-neutrality', 'StaticPageController@getFightForNetNeut
 
 Route::post('/close_announcement', 'StaticPageController@closeAnnouncement');
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

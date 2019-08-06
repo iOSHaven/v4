@@ -64,16 +64,16 @@ $devices: ('phone', 'tablet-portrait', 'tablet-landscape', 'desktop', 'big-deskt
 
 @mixin lt($device) {
   @if($device == 'table-portrait') {
-    @media (max-width: 600px) {@content;}
+    @media only screen and (max-width: 600px) {@content;}
   } 
   @if($device == 'tablet-landscape') {
-    @media (max-width: 900px) {@content;}
+    @media only screen and (max-width: 900px) {@content;}
   }
   @if($device == 'desktop') {
-    @media (max-width: 1200px) {@content;}
+    @media only screen and (max-width: 1200px) {@content;}
   }
   @if($device == 'big-desktop') {
-    @media (max-width: 1800px) {@content;}
+    @media only screen and (max-width: 1800px) {@content;}
   }
 }
 
