@@ -10,8 +10,12 @@
     <div class="container text-white">
       <h1 class="col-tablet-portrait-7 text-shadow">An IOS Modding Hub</h1>
       <p class="col-tablet-portrait-7 mb-5">Our goal is to introduce people to the sideload and jailbreak IOS communities. We offer tools to get started, links you should visit, and hundreds of popular apps ready for download.</p>
-      <a href="/login" class="btn btn-red">Login</a>
-      <a href="/register" class="btn btn-white text-dark">Signup</a>
+      @if(Auth::guest())
+        <a href="/login" class="btn btn-red">Login</a>
+        <a href="/register" class="btn btn-white text-dark">Signup</a>
+      @else
+        <a href="/profile" class="btn btn-white text-dark">Dashboard</a>
+      @endif
     </div>
     <canvas id="waves" class="bg-white"></canvas>
   </section>

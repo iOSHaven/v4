@@ -105,3 +105,4 @@ window.loadMoreApps = function(el) {
   // }, 10000)
 
 })();
+

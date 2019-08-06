@@ -1,5 +1,5 @@
 @import "./_vars.scss";
-@import url('https://fonts.googleapis.com/css?family=Merriweather:900i|Amiko:400');
+// @import url('https://fonts.googleapis.com/css?family=Merriweather:900i|Amiko:400');
 
 
 * {
@@ -42,9 +42,9 @@ h1, .h1 {
   font-weight: 900;
   font-style: italic;
   letter-spacing: 0em;
-  }
+}
 
-  h2, .h2 {
+h2, .h2 {
   margin-bottom: 2.6rem;
   font-family: $headerFamily;
   font-size: 3.662109375em;
@@ -52,9 +52,9 @@ h1, .h1 {
   font-weight: 900;
   font-style: italic;
   letter-spacing: 0em;
-  }
+}
 
-  h3, .h3 {
+h3, .h3 {
   margin-bottom: 2.6rem;
   font-family: $headerFamily;
   font-size: 2.9296875em;
@@ -62,9 +62,9 @@ h1, .h1 {
   font-weight: 900;
   font-style: italic;
   letter-spacing: 0em;
-  }
+}
 
-  h4, .h4 {
+h4, .h4 {
   margin-bottom: 2.6rem;
   font-family: $headerFamily;
   font-size: 2.34375em;
@@ -72,9 +72,9 @@ h1, .h1 {
   font-weight: 900;
   font-style: italic;
   letter-spacing: 0em;
-  }
+}
 
-  h5, .h5 {
+h5, .h5 {
   margin-bottom: 2.6rem;
   font-family: $headerFamily;
   font-size: 1.875em;
@@ -82,9 +82,9 @@ h1, .h1 {
   font-weight: 900;
   font-style: italic;
   letter-spacing: 0em;
-  }
+}
 
-  h6, .h6 {
+h6, .h6 {
   margin-bottom: 2.6rem;
   font-family: $headerFamily;
   font-size: 1.5em;
@@ -92,89 +92,88 @@ h1, .h1 {
   font-weight: 900;
   font-style: italic;
   letter-spacing: 0em;
-  }
+}
 
-  p, .text, a {
+p, .text, a {
   margin-bottom: 2.6rem;
   font-family: $bodyFamily;
-  font-size: 1.4em;
+  font-size: 1.2rem;
   line-height: 2.6rem;
   font-weight: 400;
   font-style: normal;
   letter-spacing: 0em;
   text-align: left;
-  }
+}
 
-  @include lt('tablet-landscape') {
-    html, body {
-      font-size: 12px;
-    }
+@include lt('tablet-landscape') {
+  html, body {
+    font-size: 14px;
+  }
   h1, .h1 {
-  margin-bottom: 3.5rem;
-  font-family: $headerFamily;
-  font-size: 4.7775744em;
-  line-height: 7rem;
-  font-weight: 700;
-  font-style: italic;
-  letter-spacing: 0em;
+    margin-bottom: 3.5rem;
+    font-family: $headerFamily;
+    font-size: 4.7775744em;
+    line-height: 7rem;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 0em;
   }
   h2, .h2 {
-  margin-bottom: 3.5rem;
-  font-family: $headerFamily;
-  font-size: 3.981312em;
-  line-height: 7rem;
-  font-weight: 700;
-  font-style: italic;
-  letter-spacing: 0em;
+    margin-bottom: 3.5rem;
+    font-family: $headerFamily;
+    font-size: 3.981312em;
+    line-height: 7rem;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 0em;
   }
   h3, .h3 {
-  margin-bottom: 3.5rem;
-  font-family: $headerFamily;
-  font-size: 3.31776em;
-  line-height: 3.5rem;
-  font-weight: 700;
-  font-style: italic;
-  letter-spacing: 0em;
+    margin-bottom: 3.5rem;
+    font-family: $headerFamily;
+    font-size: 3.31776em;
+    line-height: 3.5rem;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 0em;
   }
   h4, .h4 {
-  margin-bottom: 3.5rem;
-  font-family: $headerFamily;
-  font-size: 2.7648em;
-  line-height: 3.5rem;
-  font-weight: 700;
-  font-style: italic;
-  letter-spacing: 0em;
+    margin-bottom: 3.5rem;
+    font-family: $headerFamily;
+    font-size: 2.7648em;
+    line-height: 3.5rem;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 0em;
   }
   h5, .h5 {
-  margin-bottom: 3.5rem;
-  font-family: $headerFamily;
-  font-size: 2.304em;
-  line-height: 3.5rem;
-  font-weight: 700;
-  font-style: italic;
-  letter-spacing: 0em;
+    margin-bottom: 3.5rem;
+    font-family: $headerFamily;
+    font-size: 2.304em;
+    line-height: 3.5rem;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 0em;
   }
   h6, .h6 {
-  margin-bottom: 3.5rem;
-  font-family: $headerFamily;
-  font-size: 1.92em;
-  line-height: 3.5rem;
-  font-weight: 700;
-  font-style: italic;
-  letter-spacing: 0em;
+    margin-bottom: 3.5rem;
+    font-family: $headerFamily;
+    font-size: 1.92em;
+    line-height: 3.5rem;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 0em;
   }
   p, .text, a {
-  margin-bottom: 3.5rem;
-  font-family: $bodyFamily;
-  font-size: 1.6em;
-  line-height: 3.5rem;
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: 0em;
-  text-align: left;
+    margin-bottom: 2.5rem;
+    font-family: $bodyFamily;
+    font-size: 1.2rem;
+    line-height: 2.5rem;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: 0em;
+    text-align: left;
   }
-
-  }
+}
 
 a {
   margin-bottom: 0;
@@ -190,6 +189,7 @@ p  a, .text  a {
 
 .display-clear {
   font-family: $bodyFamily;
+  font-style: normal;
 }
 
 p, .text, a {
@@ -199,6 +199,9 @@ p, .text, a {
   }
 }
 
+hr {
+  border: none;
+}
 .markdown {
   ul, ol {
     li:last-of-type {
@@ -223,26 +226,52 @@ p, .text, a {
   &:not(.disabled):hover {
     cursor: pointer;
   }
+  
+}
+
+.btn-apple {
+  padding: 0.3rem 1rem;
+  border-radius: 5rem;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  font-weight: 600;
+  font-family: sans-serif;
+  letter-spacing: 0rem;
+  color: $dark-blue;
+  background-color: $light;
+  position: relative;
+  &.invert {
+    color: white;
+    background-color: $dark-blue;
+  }
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: black;
+    opacity: 0;
+    border-radius: 5rem;
+  }
+  &:not(.disabled):hover {
+    cursor: pointer;
+    color: $dark-blue;
+    &:after {
+      opacity: 0.2;
+    }
+  }
+  &.invert:not(.disabled):hover {
+    color:$light;
+  }
   &:not(.disabled):active {
-    box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+    box-shadow: none;
   }
 }
 
-@each $name, $value in $colors {
-  .bg-#{$name} {
-    background-color: $value;
-  }
-  .text-#{$name} {
-    color: $value;
-  }
-  .btn-#{$name} {
-    background-color: $value;
-    &:not(.disabled):hover {
-      background-color: white;
-      color: $value;
-    }
-  }
-}
+
 
 @each $name, $value in $spacing {
   .p-#{$name} { padding: $value !important }
@@ -260,7 +289,63 @@ p, .text, a {
   .ml-#{$name} { margin-left: $value !important }
   .mx-#{$name} { margin-left: $value !important; margin-right: $value !important; }
   .my-#{$name} { margin-top: $value !important; margin-bottom: $value !important; }
+
+  @if $name != "auto" {
+    .b-#{$name} { border-width: 1px * $name; border-style: solid; border-color: black};
+    .b-solid-#{$name} { border-width: 1px * $name; border-style: solid; border-color: black};
+    .b-dashed-#{$name} { border-width: 1px * $name; border-style: dashed; border-color: black};
+    .b-dotted-#{$name} { border-width: 1px * $name; border-style: dotted; border-color: black};
+    .bl-#{$name} { border-width: 1px * $name; border-left-style: solid; border-color: black};
+    .bl-solid-#{$name} { border-width: 1px * $name; border-left-style: solid; border-color: black};
+    .bl-dashed-#{$name} { border-width: 1px * $name; border-left-style: dashed; border-color: black};
+    .bl-dotted-#{$name} { border-width: 1px * $name; border-left-style: dotted; border-color: black};
+    .br-#{$name} { border-width: 1px * $name; border-right-style: solid; border-color: black};
+    .br-solid-#{$name} { border-width: 1px * $name; border-right-style: solid; border-color: black};
+    .br-dashed-#{$name} { border-width: 1px * $name; border-right-style: dashed; border-color: black};
+    .br-dotted-#{$name} { border-width: 1px * $name; border-right-style: dotted; border-color: black};
+    .bt-#{$name} { border-width: 1px * $name; border-top-style: solid; border-color: black};
+    .bt-solid-#{$name} { border-width: 1px * $name; border-top-style: solid; border-color: black};
+    .bt-dashed-#{$name} { border-width: 1px * $name; border-top-style: dashed; border-color: black};
+    .bt-dotted-#{$name} { border-width: 1px * $name; border-top-style: dotted; border-color: black};
+    .bb-#{$name} { border-width: 1px * $name; border-bottom-style: solid; border-color: black};
+    .bb-solid-#{$name} { border-width: 1px * $name; border-bottom-style: solid; border-color: black};
+    .bb-dashed-#{$name} { border-width: 1px * $name; border-bottom-style: dashed; border-color: black};
+    .bb-dotted-#{$name} { border-width: 1px * $name; border-bottom-style: dotted; border-color: black};
+  }
+  
 }
+
+@each $device in $devices {
+  .p-#{$device}{ @include  at($device) { padding: 0px !important;}}
+  .pt-#{$device}{ @include  at($device) { padding-top: 0px !important;}}
+  .pb-#{$device}{ @include  at($device) { padding-bottom: 0px !important;}}
+  .pl-#{$device}{ @include  at($device) { padding-left: 0px !important;}}
+  .pr-#{$device}{ @include  at($device) { padding-right: 0px !important;}}
+  .px-#{$device}{ @include  at($device) { padding-right: 0px !important; padding-left: 0px !important;}}
+  .py-#{$device}{ @include  at($device) { padding-top: 0px !important; padding-bottom: 0px !important;}}
+}
+
+@each $name, $value in $colors {
+  .btn-#{$name} {
+    background-color: $value;
+    &:not(.disabled):hover {
+      background-color: white;
+      color: $value;
+    }
+  }
+}
+@each $name, $value in $colors {
+  .bg-#{$name} {
+    background-color: $value !important;
+  }
+  .text-#{$name} {
+    color: $value !important;
+  }
+  .b-#{$name} {
+    border-color: $value;
+  }
+}
+
 
 .btn-white:not(.disabled):hover {
   color: $blue;
@@ -335,7 +420,7 @@ section {
 
 nav {
   padding:  0px;
-  transition: background-color 0.6s;
+  transition: background-color 0.3s;
   font-family: Amiko;
   a, label {
     color: inherit !important;
@@ -373,6 +458,10 @@ nav {
     left: 0;
     right: 0;
     z-index: 1;
+    &.bottom {
+      bottom: 0;
+      top: unset;
+    }
   }
   .parent {
     position: relative;
@@ -394,6 +483,20 @@ nav {
   }
   .navcheck:checked + .dropnav {
     display: block;
+  }
+}
+
+nav.bottom {
+  a, label {
+    line-height: 1.2rem;
+    display: block;
+    color: $grey !important;
+    font-size: 0.8rem;
+    font-weight: 300;
+    &:focus, &:hover, :active {
+      background: transparent;
+      color: $blue !important;
+    }
   }
 }
 
@@ -454,9 +557,9 @@ nav {
 
 @each $device in $devices {
   .show-lt-#{$device} {
-    display: none;
-    @include lt($device) {
-      display: inherit;
+    display: inherit;
+    @include gt($device) {
+      display: none;
     }
   }
 }
@@ -517,17 +620,19 @@ textarea {
   resize: vertical;
 }
 
-.border-thin-light {
-  border: 1px solid #eee;
-}
 
 
 .border-rounded {
   border-radius: 32%;
 }
 
+.border-circle {
+  border-radius: 50%;
+}
+
 .border-none {
   border-radius: 0;
+  border:none;
 }
 
 .autocomplete {
@@ -815,4 +920,165 @@ form label {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(0,0,0,0.5);
+}
+
+.border-thin-normal {
+  border: 1px solid #ccc;
+}
+.ml--1 {
+  margin-left: -1px;
+}
+.mr--1 {
+  margin-right: -1px;
+}
+.w-100 {
+  width: 100%;
+}
+
+
+.parent {
+  position: relative;
+}
+.input-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.radio-list input {
+  display: none;
+}
+
+.radio-list label {
+  position: relative;
+  flex-grow: 1;
+  color: transparent;
+  cursor: pointer;
+}
+
+.radio-list label::before {
+  content: attr(data-value);
+  color: black;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+}
+.radio-list input:checked + label:before {
+  background-color: transparent;
+}
+
+ul.nav-vert {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+
+  li > a {
+    font-size: 1rem;
+    line-height: 2rem;
+  }
+}
+
+.hexagon-wrapper {
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  position: relative;
+  display: inline-block;
+  transform: rotate(90deg);
+}
+
+.hexagon {
+  height: 100%;
+  width: calc(100% * 0.57735);
+  display: inline-block;
+  background: blue;
+}
+
+.hexagon:before {
+  position: absolute;
+  top: 0;
+  right: calc((100% / 2) - ((100% * 0.57735) / 2));
+  background-color: inherit;
+  height: inherit;
+  width: inherit;
+  content: '';
+  transform: rotateZ(60deg);
+}
+
+.hexagon:after {
+  position: absolute;
+  top: 0;
+  right: calc((100% / 2) - ((100% * 0.57735) / 2));
+  background-color: inherit;
+  height: inherit;
+  width: inherit;
+  content: '';
+  transform: rotateZ(-60deg);
+}
+
+// img {
+//   background-image: "/defaults/banner.png"
+// }
+
+
+.title {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.text-pre {
+  white-space: pre-line;
+}
+
+@include lt('tablet-landscape') {
+  .nav-top {
+    display: none;
+  }
+  .nav-bottom {
+    display: block;
+  }
+  .footer {
+    a {
+      font-size: 1rem;
+    }
+  }
+}
+
+.collapse-check {
+  display: none;
+}
+
+.collapse-label {
+  .show-open {
+    display: none;
+  }
+  .show-closed {
+    display: inherit;
+  }
+}
+
+.collapse {
+  display: none;
+}
+
+.collapse-check:checked {
+  + .collapse-label {
+    .show-open {
+      display: inherit;
+    }
+    .show-closed {
+      display: none;
+    }
+    + .collapse {
+      // background: blue;
+      display: inherit;
+    }
+  }
 }

@@ -10,48 +10,28 @@
           <li><a href="/apps?q=game" style="display: flex">Games</a></li>
           <li><a href="/updates" style="display: flex">Updates</a></li>
           <li><a href="/contact/index" style="display: flex">Contact</a></li>
-          {{-- <li class="flyout">
-            <a href="#" class="">More</a>
-            <ul class="flyout-content navlinks stacked">
-              <li><a href="/aboutUs" class="d-block">About Us!</a></li>
-              <li><a href="/credits" class="d-block">Credits</a></li>
-              <li><a href="/cydia" class="d-block">Cydia Impactor</a></li>
-              <li><a href="/apps?q=jailbreak" class="d-block">Jailbreaks</a></li>
-              <li><a href="/betas" class="d-block">Betas</a></li>
-              <li><a href="/fight-for-net-neutrality" class="d-block">Net Neutrality</a></li>
-            </ul>
-          </li> --}}
         </ul>
-        <!-- <div class="col flex-cc show-gt-tablet-portrait">
-          <a href="/apps" class="">Apps</a>
-          <a href="/apps?q=game" class="">Games</a>
-          <a href="/updates" class="">Updates</a>
-          <label for="navmore" class=" parent">More
-            <input type="checkbox" class="navcheck" id="navmore">
-            <div class="dropnav dropnav-big">
-            <a href="/aboutUs" class="d-block">About Us!</a>
-            <a href="/credits" class="d-block">Credits</a>
-            <a href="/cydia" class="d-block">Cydia Impactor</a>
-            <a href="/apps?q=jailbreak" class="d-block">Jailbreaks</a>
-            <a href="/betas" class="d-block">Betas</a>
-            <a href="/fight-for-net-neutrality" class="d-block">Net Neutrality</a>
-            </div>
-          </label>
-
-        </div> -->
         <div class="col flex-rc">
-          <a href="https://discord.gg/mTbwMyQ" style="width: 45px"><i class="fab fa-discord"></i></a>
-          <a href="https://www.reddit.com/r/iOSHaven/" style="width: 45px"><i class="fab fa-reddit"></i></a>
-          <a href="https://twitter.com/ioshavenco" style="width: 45px"><i class="fab fa-twitter"></i></a>
+          <a href="https://discord.gg/mTbwMyQ" style="width: 45px">
+            <i class="fab fa-discord"></i>
+          </a>
+          <a href="https://www.reddit.com/r/iOSHaven/" style="width: 45px">
+            <i class="fab fa-reddit"></i>
+          </a>
+          <a href="https://twitter.com/ioshavenco" style="width: 45px">
+            <i class="fab fa-twitter"></i>
+          </a>
           @if(Auth::guest())
-            <a href="/login" class="show-gt-tablet-portrait" style="width: 45px"><i class="far fa-sign-in"></i></a>
+            <a href="/login" class="show-gt-tablet-portrait" style="width: 45px">
+              <i class="far fa-sign-in"></i>
+            </a>
           @else
             <a href="/profile" class="show-gt-tablet-portrait" style="width: 45px">
-              {{-- <i class="far fa-user"></i> --}}
               <img src="/avatar/{{ Auth::user()->username }}/25" alt="">
             </a>
           @endif
-          <label for="navmenu" class="show-lt-tablet-landscape parent ml-3"><i class="far fa-bars fa-lg"></i>
+          <label for="navmenu" class="show-lt-tablet-landscape parent ml-3" style="width: 45px">
+            <i class="far fa-bars fa-lg"></i>
             <input type="checkbox" class="navcheck" id="navmenu">
             <div class="dropnav dropnav-small">
               @if(Auth::guest())

@@ -22,7 +22,7 @@
 
   <section>
     <div class="container">
-      <h2 class="text-shadow">New Redesign</h2>
+      <h2 class="text-shadow">Redesign</h2>
       <p>We are trying to redesign IOS Haven. However, both of us are in college so we do not have as much time to work on the website. If you encounter any issues please contact us via Twitter or Discord and we will try to fix it as soon as possible. </p>
     </div>
   </section>

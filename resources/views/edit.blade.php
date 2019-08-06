@@ -1,6 +1,14 @@
-@extends('layouts.redesign')
+@extends('layouts.redesign', ["hide_ads" => true, "hide_footer" => true, "hide_meta" => true])
+
+@section("header")
+  <link rel="stylesheet" href="/css/scoped.css">
+@endsection
+
+
 @section('content')
 
+
+{{-- <app-dashboard uid="{{$app->uid}}"></app-dashboard> --}}
 <div class="container">
   <div class="row">
     <div class="col-12 my-3">
@@ -110,25 +118,5 @@
 @endsection
 
 @section('footer')
-<script>
-    autocomplete('appsearch', function (e, target, json) {
-        var j = []
-        json.forEach(app => {
-            var a = Object.assign({}, app)
-            var match = a.name.toLowerCase().indexOf(target.value.toLowerCase()) !== -1
-            if (match) {
-                a.name = a.name.split(new RegExp(target.value, 'i')).join('<span class="auto-complete-match"> ' + target.value + '</span>')
-                j.push(a)
-            }
-        })
-        j.sort((a,b) => {
-            if (a.name < b.name)
-                return -1;
-            if (a.name > b.name)
-                return 1;
-            return 0;
-        })
-        return j.slice(0,10)
-    })
-</script>
+<script src="{{ asset('/js/app.js') }}"></script>
 @endsection

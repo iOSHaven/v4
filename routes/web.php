@@ -92,6 +92,7 @@ Route::post('/contact/{type}', 'ContactController@send');
 //   return abort(500, 'Sorry for the inconvenience, but this page is under maintenance.');
 // });
 
+Route::get('/webapp', 'StaticPageController@getWebApp');
 Route::get('/credits', 'StaticPageController@getCreditsPage');
 Route::get('/faq', 'StaticPageController@getFaqPage');
 Route::get('/cydia', 'StaticPageController@getCydiaPage');

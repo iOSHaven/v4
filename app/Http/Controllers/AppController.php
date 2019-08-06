@@ -138,7 +138,8 @@ class AppController extends Controller
       $app = App::findByUid($uid);
       // dd($app);
       $app->increment('views');
-      $app->html = $p->text($app->description);
+      // $app->html = $p->text($app->description);
+      $app = (object) $app->toArray();
       return view('uid')->with(['app' => $app]);
     }
 

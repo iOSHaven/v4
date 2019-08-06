@@ -46,7 +46,6 @@
 /******/ 				result = __webpack_require__(__webpack_require__.s = deferredModule[0]);
 /******/ 			}
 /******/ 		}
-/******/
 /******/ 		return result;
 /******/ 	}
 /******/

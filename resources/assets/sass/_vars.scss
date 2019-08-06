@@ -2,12 +2,15 @@ $landing: "/SVG/waves.svg";
 
 $red: #FF3334;
 $blue: #3EB5F7;
+$dark-blue: #007aff;
 $sea: #006E90;
 $green: #44AF69;
 $dark: #31393C;
 $white: #fff;
 $black: #000;
 $cornsilk: cornsilk;
+$light: #eee;
+$grey: #aaa;
 
 $headerFamily: "Merriweather";
 $bodyFamily: "Amiko";
@@ -15,12 +18,12 @@ $bodyFamily: "Amiko";
 $colors: (
   red: $red,
   blue: $blue,
-  sea: $sea,
-  green: $green,
   dark: $dark,
   white: $white,
   black: $black,
-  cornsilk: $cornsilk,
+  light: $light,
+  dark-blue: $dark-blue,
+  grey: $grey
 );
 
 $spacing: (

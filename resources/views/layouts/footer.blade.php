@@ -1,27 +1,44 @@
-<section>
-  <div class="container mb-0">
-    <hr>
+<!-- v4-footer -->
+<ins class="adsbygoogle"
+style="display:block"
+data-ad-client="ca-pub-4649450952406116"
+data-ad-slot="6495367539"
+data-ad-format="auto"
+data-full-width-responsive="true"></ins>
 
 
-  <div class="text-center mt-5 w-100 mb-5">
-    <div class="h6 mb-0 display-clear mb-0">Still not finding what you want? Check out our partners!</div>
+
+<section class="footer bg-dark text-white">
+  {{-- <div class="container mb-0"> --}}
+    {{-- <hr> --}}
+
+
+  {{-- <div class="text-center mt-5 w-100 mb-5"> --}}
+    {{-- <div class="title mb-0">Check out our partners!</div> --}}
     {{-- <p class="text-center mb-2">Then check out our partners.</p> --}}
-    <a href="https://builds.io?aid=1025548"><img src="/buildstorebanner.png" alt="partner link" class="m-auto"></a>
-    <!-- v4-footer -->
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="ca-pub-4649450952406116"
-         data-ad-slot="6495367539"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-  </div>
+    {{-- <a href="https://builds.io?aid=1025548"><img src="/buildstorebanner.png" alt="partner link" class="m-auto"></a> --}}
+    
+  {{-- </div> --}}
   <div class="container">
-    <hr>
-    <div class="h3 text-center text-dark my-5">IOS Haven</div>
+    <div class="h5 text-center text-white m-0 mb-3">IOS Haven</div>
+    <div class="col-tablet-portrait-6 text-center mx-auto">
+      <a href="https://twitter.com/ioshavenco" class="text-white"><i class="fab fa-twitter mx-2 fa-2x"></i></a>
+      <a href="https://www.reddit.com/r/iOSHaven/" class="text-white"><i class="fab fa-reddit mx-2 fa-2x"></i></a>
+      <a href="https://discord.gg/mTbwMyQ" class="text-white"><i class="fab fa-discord mx-2 fa-2x"></i></a>
+      <a href="https://github.com/iOSHaven" class="text-white"><i class="fab fa-github mx-2 fa-2x"></i></a>
+      <a href="https://www.patreon.com/ioshaven" class="text-white"><i class="fab fa-patreon mx-2 fa-2x"></i></a>
+    </div>
+
+    <div class="text-center">
+      Made with <i class="fas fa-heart"></i>
+      by <a href="https://twitter.com/_ZackBz">Zack</a> & <a href="https://twitter.com/wizardzeb">Zeb</a>
+      <br>
+      <i class="fal fa-copyright"></i> 2019. <strong>IOS Haven</strong>
+    </div>
   </div>
-  <div class="container">
+  {{-- <div class="container">
     <div class="row">
-      <div class="col-tablet-portrait-3">
+      <div class="col-6">
         <!-- <div class="h6 text-shadow mb-3">Other Links</div> -->
         <a href="/aboutUs" class="d-block text-dark text-center">About Us!</a>
         <a href="/credits" class="d-block text-dark text-center">Credits</a>
@@ -34,21 +51,16 @@
         <a href="https://www.reddit.com/r/iOSHaven/" class="text-dark"><i class="fab fa-reddit mx-2 fa-2x"></i></a>
         <a href="https://discord.gg/mTbwMyQ" class="text-dark"><i class="fab fa-discord mx-2 fa-2x"></i></a>
         <a href="https://github.com/iOSHaven" class="text-dark"><i class="fab fa-github mx-2 fa-2x"></i></a>
-        <a href="https://www.patreon.com/ioshaven" class="text-dark"><i class="fab fa-patreon mx-2 fa-2x"></i></a>
+        <a href="https://www.patreon.com/ioshaven" class="text-dark"><i class="fab fa-patreon mx-2 fa-2x"></i></a> 
       </div>
-      <div class="col-tablet-portrait-3">
+      <div class="col-6">
         <a href="/apps?q=jailbreak" class="d-block text-dark text-center">Jailbreaks</a>
         <a href="/betas" class="d-block text-dark text-center">Betas</a>
         <a href="/fight-for-net-neutrality" class="d-block text-dark text-center">Net Neutrality</a>
       </div>
     </div>
-  </div>
+  </div> --}}
 
-  <div class="container">
-    <p class="text-center">
-      <strong>IOS Haven</strong> was created by <a href="https://twitter.com/wizardzeb">@wizardzeb</a> & <a href="https://twitter.com/_ZackBz">@_ZackBz</a>
-      <br>
-      <i class="fal fa-copyright"></i> 2019. iOS Haven
-    </p>
-  </div>
+
+    
 </section>
