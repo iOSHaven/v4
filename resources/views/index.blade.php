@@ -14,7 +14,7 @@
         <a href="/login" class="btn btn-red">Login</a>
         <a href="/register" class="btn btn-white text-dark">Signup</a>
       @else
-        <a href="/profile" class="btn btn-white text-dark">Dashboard</a>
+        <a href="/user/settings" class="btn btn-white text-dark">Dashboard</a>
       @endif
     </div>
     <canvas id="waves" class="bg-white"></canvas>

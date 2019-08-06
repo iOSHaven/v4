@@ -36,6 +36,14 @@
               </span>
               <input value="{{ old('username') }}" class="input p-3 pl-5 border-thin-normal" type="text" placeholder="username" name="username">
           </div>
+
+          <label for="title">{{__('Email')}}</label>
+          <div class="flex-cc mb-4 parent">
+              <span class="input-icon p-3">
+                  <i class="fal fa-envelope"></i>
+              </span>
+              <input value="{{ old('email') }}" class="input p-3 pl-5 border-thin-normal" type="email" placeholder="Email" name="email">
+          </div>
   
           <label for="title">{{__('Password')}}</label>
           <div class="flex-cc mb-4 parent">

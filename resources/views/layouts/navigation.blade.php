@@ -26,7 +26,7 @@
               <i class="far fa-sign-in"></i>
             </a>
           @else
-            <a href="/profile" class="show-gt-tablet-portrait" style="width: 45px">
+            <a href="/user/settings" class="show-gt-tablet-portrait" style="width: 45px">
               <img src="/avatar/{{ Auth::user()->username }}/25" alt="">
             </a>
           @endif
@@ -37,7 +37,7 @@
               @if(Auth::guest())
                 <a href="/login" class="d-block">Sign In</a>
               @else
-                <a href="/profile" class="flex-cc">
+                <a href="/user/settings" class="flex-cc">
                   <img src="/avatar/asdfasf/25" alt="">
                   <span>Profile</span>
                 </a>
