@@ -3,7 +3,41 @@
 
 @section('content')
 
-<div class="container pt-3">
+<section>
+  <div class="container">
+      <h3 class="mt-0">Login</h3>
+      <form action="{{ route('login') }}" method="post">
+        {{ csrf_field() }}
+        <label for="title">{{__('Username')}}</label>
+        <div class="flex-cc mb-4 parent">
+            <span class="input-icon p-3">
+                <i class="fal fa-id-card"></i>
+            </span>
+            <input value="{{ old('username') }}" class="input p-3 pl-5 border-thin-normal" type="text" placeholder="username" name="username">
+        </div>
+
+        <label for="title">{{__('Password')}}</label>
+        <div class="flex-cc mb-4 parent">
+            <span class="input-icon p-3">
+                <i class="fal fa-key"></i>
+            </span>
+            <input value="{{ old('password') }}" class="input p-3 pl-5 border-thin-normal" type="password" placeholder="*********" name="password">
+        </div>
+
+        <a href="/password/reset" class="d-block">
+          <small>Forgot password?</small>
+          </a>
+
+          <p>Don't have an account? <a href="/register">Sign up.</a></p>
+
+        <button type="submit" class="btn btn-blue mt-3">
+          <i class="fad fa-sign-in-alt mr-3"></i>
+          Login</button>
+      </form>
+  </div>
+</section>
+
+{{-- <div class="container pt-3">
   <div class="row">
     <div class="col-tablet-portrait-5 mx-auto flex-cc">
       <a class="btn col-tablet-portrait-6 py-1 border-none btn btn-dark disabled">Login</a>
@@ -21,7 +55,7 @@
     </div>
 
   </div>
-</div>
+</div> --}}
 
 
 @endsection
