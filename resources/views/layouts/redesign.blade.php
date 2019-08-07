@@ -12,7 +12,7 @@
 
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">     
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
       <meta name="apple-mobile-web-app-capable" content="yes">
       <meta name="apple-mobile-web-app-status-bar-style" content="default">
 
@@ -24,7 +24,7 @@
       <meta name="web_author" content="IOS Haven Development Team">
       <meta name="language" content="English">
       <!-- CSRF Token -->
-      
+
       <meta property="og:title" content="{{ config('app.name', 'IOS Haven') }}">
       <meta property="og:type"  content="article">
       <meta property="og:url"   content="{{ $url ?? url('/') }}">
@@ -132,10 +132,10 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Merriweather:900i|Amiko:400" rel="stylesheet" />
     {{-- <script src="https://kit.fontawesome.com/c888111707.js"></script> --}}
-    
+
     <!-- === S T Y L E S === -->
-    <link href="{{ asset('css/normalize.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet">
+    <link href="{{ mix('/css/normalize.min.css') }}" rel="stylesheet">
+    <link href="{{ mix('/css/main.min.css') }}" rel="stylesheet">
     @yield('header')
 
 
@@ -157,7 +157,7 @@
        <!-- Facebook Pixel Code -->
        <script>
        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-       fbq('init', '362444877957386'); 
+       fbq('init', '362444877957386');
        fbq('track', 'PageView');
        @yield('facebook-events')
        </script><noscript><img height="1" width="1" src="https://www.facebook.com/tr?id=362444877957386&ev=PageView&noscript=1"/></noscript><!-- End Facebook Pixel Code -->
@@ -178,9 +178,9 @@
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-<script src="/js/manifest.js"></script>
-<script src="/js/vendor.js"></script>
-<script src="/js/main.js"></script>
+<script src="{{ mix('/js/manifest.min.js') }}"></script>
+<script src="{{ mix('/js/vendor.min.js') }}"></script>
+<script src="{{ mix('/js/main.min.js') }}"></script>
 <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
 
 @yield('footer')

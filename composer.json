@@ -10,6 +10,7 @@
     "require": {
         "php": "^7.1.3",
         "anhskohbo/no-captcha": "^3.0",
+        "doctrine/dbal": "^2.9",
         "fedeisas/laravel-mail-css-inliner": "^2.2",
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.3",

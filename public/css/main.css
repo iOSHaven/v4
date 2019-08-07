@@ -2113,7 +2113,6 @@ nav.bottom label :active {
   position: absolute;
   left: 0;
   bottom: 0;
-  -webkit-transform: translateY(55%);
   transform: translateY(55%);
   width: 100%;
   z-index: -1;
@@ -2193,8 +2192,7 @@ nav.bottom label :active {
 
 .device-wrapper {
   position: absolute;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
   left: 50%;
 }
 
@@ -2751,8 +2749,7 @@ ul.nav-vert li > a {
   height: 40px;
   position: relative;
   display: inline-block;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
 .hexagon {
@@ -2770,8 +2767,7 @@ ul.nav-vert li > a {
   height: inherit;
   width: inherit;
   content: '';
-  -webkit-transform: rotateZ(60deg);
-          transform: rotateZ(60deg);
+  transform: rotateZ(60deg);
 }
 
 .hexagon:after {
@@ -2782,8 +2778,7 @@ ul.nav-vert li > a {
   height: inherit;
   width: inherit;
   content: '';
-  -webkit-transform: rotateZ(-60deg);
-          transform: rotateZ(-60deg);
+  transform: rotateZ(-60deg);
 }
 
 .title {

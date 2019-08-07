@@ -196,7 +196,7 @@ window.loadMoreApps = function (el) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/zeb/Documents/v4/resources/assets/js/main.js */"./resources/assets/js/main.js");
+module.exports = __webpack_require__(/*! /Users/zack/code/v4/resources/assets/js/main.js */"./resources/assets/js/main.js");
 
 
 /***/ })

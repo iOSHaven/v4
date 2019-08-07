@@ -24,13 +24,17 @@ mix.js('resources/assets/js/app.js', 'public/js')
    .options({
       extractVueStyles: 'public/css/scoped.css'
    })
-   .version()
+
    .minify("public/css/main.css")
+   .minify("public/css/normalize.css")
    // .minify("public/css/f7app.css")
    .minify("public/css/scoped.css")
    .minify('public/js/app.js')
    .minify('public/js/main.js')
    .minify('public/js/waves.js')
+   .minify("public/js/manifest.js")
+   .minify("public/js/vendor.js")
+   .version()
    // .minify('public/js/f7app.js')
    // .minify('public/js/app.js')
    // .minify('public/css/uid.css')

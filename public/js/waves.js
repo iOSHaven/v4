@@ -108,7 +108,7 @@ window.Waves = function Waves(config) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/zeb/Documents/v4/resources/assets/js/waves.js */"./resources/assets/js/waves.js");
+module.exports = __webpack_require__(/*! /Users/zack/code/v4/resources/assets/js/waves.js */"./resources/assets/js/waves.js");
 
 
 /***/ })
