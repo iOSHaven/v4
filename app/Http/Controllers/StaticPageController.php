@@ -13,7 +13,8 @@ class StaticPageController extends Controller
     }
 
     public function template($view) {
-      return File::get(resource_path("templates/$view.ejs"));
+      // return File::get(resource_path("templates/$view.ejs"));
+      return view("templates.{$view}Template");
     }
 
     public function plist($name) {

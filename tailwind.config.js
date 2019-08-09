@@ -30,7 +30,7 @@ module.exports = {
         light: 'rgb(255, 45, 85)',
         dark: 'rgb(255, 55, 95)',
       },
-      'green': {
+      'purple': {
         light: 'rgb(175, 82, 222)',
         dark: 'rgb(191, 90, 242)',
       },

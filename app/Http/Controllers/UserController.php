@@ -51,4 +51,14 @@ class UserController extends Controller
     public function getPassword () {
         return view('dashboard.password');
     }
+
+    /**
+     * Toggle dark mode for the current session.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function postTheme (Request $r) {
+        session(["theme" => theme() == "dark" ? "light" : "dark"]);
+        return back();
+    }
 }

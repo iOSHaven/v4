@@ -71,7 +71,7 @@ class AppController extends Controller
       $filteredData = [
         'apps' => $apps
           ->orderBy('views', 'desc')
-          ->paginate(30),
+          ->paginate(15),
         'q' => $search
       ];
 
@@ -92,7 +92,7 @@ class AppController extends Controller
           ->orWhere('tags', 'like', "%". $search."%")
           ->where('edited_at', '>', Carbon::now()->subDays(3))
           ->orderBy('edited_at', 'desc')
-          ->paginate(30),
+          ->paginate(15),
         'q' => $search
       ];
       if ($r->json) {

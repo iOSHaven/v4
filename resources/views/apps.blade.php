@@ -21,7 +21,7 @@ fbq('track', 'Search');
 </div>
 
 
-    <div class="container">
+    {{-- <div class="container">
       <div class="row">
         <div class="col-12 mt-3">
           <form action="/apps" method="get" autocomplete="off">
@@ -32,7 +32,7 @@ fbq('track', 'Search');
           </form>
         </div>
       </div>
-    </div>
+    </div> --}}
 
     @admin
     <div class="container mt-3">
@@ -48,7 +48,13 @@ fbq('track', 'Search');
     <div class="container">
       <div class="row" id="apps">
           @foreach($apps as $app)
-          <div class="col-tablet-portrait-4  p-1">
+            @component('components.applayout', [
+              "name" => $app->name,
+              "short" => $app->short,
+              "image" => $app->icon,
+              "uid" => $app->uid
+            ])@endcomponent
+          {{-- <div class="col-tablet-portrait-4  p-1">
             <div class="app p-2">
                 <img class="border-rounded" src="{{ url($app->icon) }}" alt="{{ $app->uid }}-icon" height="60" width="60">
                 <a class="content ml-3 text-dark" href="/app/{{ $app->uid }}">
@@ -61,7 +67,7 @@ fbq('track', 'Search');
                 </a>
                 @endadmin
             </div>
-          </div>
+          </div> --}}
 
         @endforeach
       </div>
@@ -85,13 +91,9 @@ fbq('track', 'Search');
 
     @if($apps->hasMorePages())
     <div id="loadmoreapps" class="text-center mt-5 mb-4" style="width: 100%;">
-      <button class="btn btn-dark"
-      @admin
-      data-template="/tl/app-edit"
-      @else
-      data-template="/tl/app"
-      @endadmin
-      onclick="loadMoreApps(this)">
+      <button class="font-bold text-lg rounded-full text-sm px-5 py-3 {{ theme("bg-black", "text-white") }}"
+      onclick="loadMoreApps(this)"
+      data-template="/tl/app">
       Load more apps...</button>
     </div>
     @endif
@@ -104,7 +106,14 @@ fbq('track', 'Search');
 
 
 @section('footer')
-<script>
+
+{{-- <script id="template-app" text="text/template">
+
+  
+
+</script> --}}
+
+{{-- <script>
     autocomplete('appsearch', function (e, target, json) {
         var j = []
         json.forEach(app => {
@@ -124,5 +133,5 @@ fbq('track', 'Search');
         })
         return j.slice(0,10)
     })
-</script>
+</script> --}}
 @endsection

@@ -43,3 +43,48 @@ aside > ul {
     height: 100vh; /* Fallback for browsers that do not support Custom Properties */
     height: calc(var(--vh, 1vh) * 100);
 }
+
+label.toggle-light,
+label.toggle-dark {
+    @apply relative inline-block select-none border rounded-full;
+    height: 24px;
+    width: 40px;
+    transition: 0.4s ease;
+}
+
+label.toggle-light:before,
+label.toggle-dark:before {
+    @apply absolute block top-0 left-0 rounded-full h-full w-full;
+    content: "";
+    transition: 0.2s all cubic-bezier(0.24, 0, 0.5, 1);
+}
+
+label.toggle-light:after,
+label.toggle-dark:after {
+    @apply absolute block left-0 top-0 rounded-full bg-white-light;
+    content: "";
+    box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 4px 0px 0 hsla(0, 0%, 0%, 0.04), 0 4px 9px hsla(0, 0%, 0%, 0.13), 0 3px 3px hsla(0, 0%, 0%, 0.05);
+    transition: 0.35s all cubic-bezier(0.54, 1.6, 0.5, 1);
+    height: 22px;
+    width: 22px;
+}
+
+.check-toggle:checked + .toggle-light:before,
+.check-toggle:checked + .toggle-dark:before {
+    background: rgb(52, 199, 89);
+    transition: width 0.2s cubic-bezier(0,0,0,0.1);
+}
+
+.check-toggle:checked + .toggle-light:before {
+    @apply bg-green-light;
+}
+
+.check-toggle:checked + .toggle-dark:before {
+    @apply bg-green-dark;
+}
+
+.check-toggle:checked + .toggle-light:after,
+.check-toggle:checked + .toggle-dark:after {
+    left: 100%;
+    transform: translateX(-100%);
+}

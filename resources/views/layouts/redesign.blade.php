@@ -179,6 +179,16 @@
           <div class="leading-none">Admin</div>
         </li>
         <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+          Dark mode
+          <div class="leading-none">
+            <form action="/user/theme" method="POST">
+              @csrf
+              <input class="hidden check-toggle" {{ theme() == "dark" ? "checked" : "" }} type="checkbox" id="toggle-theme" onchange="this.form.submit()">
+              <label for="toggle-theme" class="{{ theme('toggle', 'border-gray-200', 'bg-gray-100') }}"></label>
+            </form>
+          </div>
+        </li>
+        <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
           Settings
           <i class="fal fa-chevron-right"></i>
         </li>
@@ -251,9 +261,9 @@
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-{{-- <script src="{{ mix('/js/manifest.min.js') }}"></script>
+<script src="{{ mix('/js/manifest.min.js') }}"></script>
 <script src="{{ mix('/js/vendor.min.js') }}"></script>
-<script src="{{ mix('/js/main.min.js') }}"></script> --}}
+<script src="{{ mix('/js/main.min.js') }}"></script>
 <script>let vh = window.innerHeight * 0.01;document.documentElement.style.setProperty('--vh', `${vh}px`);window.addEventListener('resize', () => {let vh = window.innerHeight * 0.01;document.documentElement.style.setProperty('--vh', `${vh}px`);});</script>
 <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
 

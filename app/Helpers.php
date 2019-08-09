@@ -16,7 +16,11 @@ function Settings() {
 
 function theme(string ...$classes)
 {
-  return ltrim(collect($classes)->reduce(function($carry, $item) {
-    return $carry . " " . $item . "-" .(empty($_GET["theme"]) ? "light" : $_GET["theme"]);
+  $mode = (session("theme") ?? "light") == "light" ? "light" : "dark";
+  if (empty($classes)) {
+    return $mode;
+  }
+  return ltrim(collect($classes)->reduce(function($carry, $item) use ($mode) {
+    return $carry . " " . $item . "-" . $mode;
   }));
 }

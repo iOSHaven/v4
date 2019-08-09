@@ -1,24 +1,12 @@
 function render(str, data={}) {
-    var fn = new Function("obj", `
-          var p = [];
-          var print = function () {
-              p.push.apply(p, arguments);
-          };
-          with (obj) {
-              p.push('${
-                  str.replace(/[\r\t\n]/g, " ")
-                  .split("<%").join("\t")
-                  .replace(/((^|%>)[^\t]*)'/g, "$1\r")
-                  .replace(/\t=(.*?)%>/g, "',$1,'")
-                  .split("\t").join("');")
-                  .split("%>").join("p.push('")
-                  .split("\r").join("\\'")
-              }');
-          };
-          return p.join('');
-      `);
-    return fn(data)
-  }
+    var newhtml = str
+    Object.keys(data).forEach(key => {
+        var expr = "{%= " + key + " =%}";
+        var re = new RegExp(expr, "g");
+        newhtml = newhtml.replace(re, data[key]);
+    })
+    return newhtml
+}
 
 function getJSON (url, callback, type='json') {
     var xhr = new XMLHttpRequest();

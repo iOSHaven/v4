@@ -14,7 +14,6 @@
 // Route::get('/test', function () {
 //   return view('test');
 // });
-
 Route::get("/avatar/{value}/{size?}", "AvatarController@api");
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->middleware("admin");
@@ -39,6 +38,7 @@ Route::group(['prefix' => 'user'], function () {
     Route::get("/notifications", "UserController@getNotifications");
     Route::get("/badges", "UserController@getBadges");
     Route::get("/password", "UserController@getPassword");
+    Route::post("/theme", "UserController@postTheme");
 });
 
 Route::group(['prefix' => 'image'], function () {

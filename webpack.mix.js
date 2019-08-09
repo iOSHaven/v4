@@ -21,9 +21,12 @@ mix.postCss('resources/assets/postCss/redesign.css', 'public/css/redesign.min.cs
    })
    .js('resources/assets/js/main.js', 'public/js')
    .minify([
+      "public/js/vendor.js",
+      "public/js/manifest.js",
       "public/js/main.js"
    ])
    .version()
+
 
 
 // mix.js('resources/assets/js/app.js', 'public/js')
