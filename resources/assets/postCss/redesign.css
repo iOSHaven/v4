@@ -4,3 +4,42 @@
 
 @tailwind utilities;
 
+aside > ul {
+    width: 250px;
+}
+
+#view {
+    margin-left: -250px;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+#check-sidebar-left:checked ~ #view {
+    margin-left: 0px;
+}
+
+#check-sidebar-right:checked ~ #view {
+    margin-left: -500px;
+}
+
+#check-sidebar-left:checked ~ #view nav.fixed,
+#check-sidebar-right:checked ~ #view nav.fixed {
+    position: absolute;
+}
+
+#check-sidebar-left:checked ~ #view main,
+#check-sidebar-right:checked ~ #view main {
+    overflow: hidden;
+}
+
+#check-sidebar-right:checked ~ #view aside {
+    border-left-width: 1px;
+}
+
+#check-sidebar-left:checked ~ #view aside {
+    border-right-width: 1px;
+}
+
+.h-screen {
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
+}

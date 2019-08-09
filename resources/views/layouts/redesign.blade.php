@@ -165,16 +165,88 @@
     @endif
 
 </head>
-<body class="mt-10 mb-16 md:mt-12 md:mb-0 {{ theme('bg-white', 'text-gray-600') }}">
-@include('layouts.navigation')
-<main id="app" class="px-3">
-    @yield('content')
-</main>
+<body class="overflow-hidden h-full {{ theme('bg-white', 'text-gray-600') }}">
+
+<input type="checkbox" id="check-sidebar-left" checked class="hidden">
+<input type="checkbox" id="check-sidebar-right"  class="hidden">
+<div id='view' class="flex items-start h-screen overflow-hidden">
+
+  <aside class="h-full flex flex-col justify-between {{ theme('bg-white', 'border-gray-200') }}">
+    <ul>
+        <li class="p-3 border-b text-center {{ theme('border-gray-200') }}">
+          <img class="rounded-full border mb-3 mx-auto {{ theme('border-gray-200') }}" src="/avatar/zeb" alt="" width="70">
+          <strong>ZebTheWizard</strong>
+          <div class="leading-none">Admin</div>
+        </li>
+        <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+          Settings
+          <i class="fal fa-chevron-right"></i>
+        </li>
+        <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+          Notifications
+          <i class="fal fa-chevron-right"></i>
+        </li>
+        <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+          Badges
+          <i class="fal fa-chevron-right"></i>
+        </li>
+        <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+          Password
+          <i class="fal fa-chevron-right"></i>
+        </li>
+        
+    </ul>
+    <ul>
+      <li class="p-3 flex font-bold items-center justify-between border-t {{ theme('text-red', 'bg-white', 'border-gray-200') }}">
+        Logout
+        <i class="fas fa-sign-out"></i>
+      </li>
+    </ul>
+  </aside>
+
+  <div class="flex w-screen flex-shrink-0 relative h-full">
+    @include('layouts.navigation')
+    <main id="app" class="w-full px-3 overflow-y-scroll scrolling-touch pt-10 pb-16 md:pt-12 md:pb-0">
+      @yield('content')
+      @if(empty($hide_footer))
+        @include('layouts.footer')
+      @endif
+    </main>
+  </div>
+
+  <aside class="h-full {{ theme('bg-white', 'border-gray-200') }}">
+    <h1 class="border-b text-center py-1 {{ theme('border-gray-200') }}">Other links</h1>
+    <ul class="">
+      <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+        Link 1
+        <i class="fal fa-chevron-right"></i>
+      </li>
+      <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+        Link 2
+        <i class="fal fa-chevron-right"></i>
+      </li>
+      <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+        Link 3
+        <i class="fal fa-chevron-right"></i>
+      </li>
+      <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+        Link 4
+        <i class="fal fa-chevron-right"></i>
+      </li>
+      <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+        Link 5
+        <i class="fal fa-chevron-right"></i>
+      </li>
+      <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+        Link 6
+        <i class="fal fa-chevron-right"></i>
+      </li>
+    </ul>
+  </aside>
+</div>
 
 
-@if(empty($hide_footer))
-       @include('layouts.footer')
-@endif
+
 
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
@@ -182,6 +254,7 @@
 {{-- <script src="{{ mix('/js/manifest.min.js') }}"></script>
 <script src="{{ mix('/js/vendor.min.js') }}"></script>
 <script src="{{ mix('/js/main.min.js') }}"></script> --}}
+<script>let vh = window.innerHeight * 0.01;document.documentElement.style.setProperty('--vh', `${vh}px`);window.addEventListener('resize', () => {let vh = window.innerHeight * 0.01;document.documentElement.style.setProperty('--vh', `${vh}px`);});</script>
 <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
 
 @yield('footer')
