@@ -1,10 +1,42 @@
 @extends('layouts.redesign', ["hide_footer" => true])
+
+
+
 @section('content')
 
-<div class="flex items-center justify-start relative rounded-full {{ theme('bg-gray-100') }}">
+<div class="fixed flex items-center justify-start relative rounded-full {{ theme('bg-gray-100') }}">
     <i class="far fa-search absolute p-3"></i>
     <input type="text" placeholder="Search" class="border-0 w-full pl-10 py-2 bg-transparent">
 </div>
+
+
+<h1 class="mt-3">Search results</h1>
+<ul class="border-t {{ theme('border-gray-200') }}">
+    {{-- Search result --}}
+    <li href="" class="flex items-center justify-between py-2 border-b {{ theme('border-gray-200') }}">
+        <a href="#page" class="flex items-center justify-start">
+            <img class="rounded-lg mr-3" src="https://ioshavenco.s3.us-east-2.amazonaws.com/icons/Zombie+Rollerz.jpg" alt="" height="25" width="25">
+            <span>Some app title</span>
+        </a>
+        <div>
+            <a href="#get" class="rounded-full text-sm px-2 py-1 text-white-light {{ theme('bg-gray-300') }}">IPA</a>
+            <a href="#get" class="rounded-full text-sm px-2 py-1 text-white-light {{ theme('bg-blue') }}">GET</a>
+        </div>
+    </li>
+
+    {{-- Search result --}}
+    <li href="" class="flex items-center justify-between py-2 border-b {{ theme('border-gray-200') }}">
+        <a href="#page" class="flex items-center justify-start">
+            <img class="rounded-lg mr-3" src="https://ioshavenco.s3.us-east-2.amazonaws.com/icons/Zombie+Rollerz.jpg" alt="" height="25" width="25">
+            <span>Some app title</span>
+        </a>
+        <div>
+            <a href="#get" class="rounded-full text-sm px-2 py-1 text-white-light {{ theme('bg-gray-300') }}">IPA</a>
+            <a href="#get" class="rounded-full text-sm px-2 py-1 text-white-light {{ theme('bg-blue') }}">GET</a>
+        </div>
+    </li>
+    
+</ul>
 
 <h1 class="mt-3">Categories</h1>
 <div class="flex">
@@ -63,7 +95,6 @@
                     Hacks
                 </div>
             </div>
-            
         </div>
 </div>
 

@@ -72,7 +72,6 @@
       <a href="#" class="text-center mx-2">
         <i class="far fa-lg fa-ellipsis-v"></i>
       </a>
-      @yield("navigation")
   </nav>
 
   <nav class="fixed w-full left-0 bottom-0 md:bottom-auto md:top-0 flex items-center justify-between px-2 border-t md:border-b {{ theme('bg-white', 'border-gray-200', 'text-gray-600') }}">
@@ -114,3 +113,4 @@
         </a>
     </div>
   </nav>
+

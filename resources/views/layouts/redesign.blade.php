@@ -165,7 +165,7 @@
     @endif
 
 </head>
-<body class="mt-10 md:mt-12 {{ theme('bg-white', 'text-gray-600') }}">
+<body class="mt-10 mb-16 md:mt-12 md:mb-0 {{ theme('bg-white', 'text-gray-600') }}">
 @include('layouts.navigation')
 <main id="app" class="px-3">
     @yield('content')
