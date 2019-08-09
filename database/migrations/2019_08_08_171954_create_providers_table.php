@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMirrorsTable extends Migration
+class CreateProvidersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,12 @@ class CreateMirrorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('mirrors', function (Blueprint $table) {
+        Schema::create('providers', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer("app_id")->unsigned()->index()->nullable();
-            $table->string("provider")->nullable();
-            $table->longText("link")->nullable();
-            $table->string("type")->nullable();
+            $table->string("name");
+            $table->string("twitter");
+            $table->boolean("revoked");
             $table->timestamps();
-
-            $table->foreign("app_id")->references("id")->on("apps");
         });
     }
 
@@ -32,6 +29,6 @@ class CreateMirrorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mirrors');
+        Schema::dropIfExists('providers');
     }
 }

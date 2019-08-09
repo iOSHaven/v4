@@ -37,6 +37,15 @@ class StaticPageController extends Controller
       }
     }
     //
+
+    public function getTestPage() {
+      return view('testComponents');
+    }
+
+    public function getSearchPage() {
+      return view('search');
+    }
+
     public function getCreditsPage() {
       return view('credits');
     }

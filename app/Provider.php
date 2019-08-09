@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Mirror extends Model
+class Provider extends Model
 {
     //
 }

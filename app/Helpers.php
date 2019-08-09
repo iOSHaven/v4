@@ -1,4 +1,5 @@
 <?php
+use phpDocumentor\Reflection\Types\String_;
 
 function format_int(int $number, string $type=null)
 {
@@ -11,4 +12,11 @@ function format_int(int $number, string $type=null)
 
 function Settings() {
   return DB::table('settings')->first();
+}
+
+function theme(string ...$classes)
+{
+  return ltrim(collect($classes)->reduce(function($carry, $item) {
+    return $carry . " " . $item . "-" .(empty($_GET["theme"]) ? "light" : $_GET["theme"]);
+  }));
 }

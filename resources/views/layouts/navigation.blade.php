@@ -1,4 +1,4 @@
-<nav class="fixed bg-blue text-white">
+<?php /*<nav class="fixed bg-blue text-white"> 
     <!-- <div id="read-progress"></div> -->
     <div class="container">
       <div class="row">
@@ -58,4 +58,59 @@
       </div>
     </div>
 
+  </nav>
+  */
+  ?>
+
+
+
+  <nav class="md:hidden flex items-center justify-between fixed w-full bg-blue-500 left-0 top-0 py-1 px-2 border-b z-1 {{ theme('bg-white', 'border-gray-200', 'text-gray-600') }}">
+      <a href="#" class="text-center mx-2">
+        <i class="fas fa-lg fa-user-circle"></i>
+      </a>
+      <h1 class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center -z-1">IOS Haven</h1>
+      <a href="#" class="text-center mx-2">
+        <i class="far fa-lg fa-ellipsis-v"></i>
+      </a>
+      @yield("navigation")
+  </nav>
+
+  <nav class="fixed w-full left-0 bottom-0 md:bottom-auto md:top-0 flex items-center justify-between px-2 border-t md:border-b {{ theme('bg-white', 'border-gray-200', 'text-gray-600') }}">
+    <h1 class="hidden md:block">IOS Haven</h1>
+    <div class="flex items-center justify-between md:justify-center flex-grow px-5 text-white">
+        <a href="#" class="text-center p-2 md:p-0">
+          <i class="md:hidden fas fa-lg fa-layer-group"></i>
+          <div class="md:hidden text-sm leading-none"><small>Apps</small></div>
+          <div class="hidden md:inline-block p-2">Apps</div>
+        </a>
+        <a href="#" class="text-center p-2 md:p-0">
+          <i class="md:hidden fas fa-lg fa-rocket"></i>
+          <div class="md:hidden text-sm leading-none"><small>Games</small></div>
+          <div class="hidden md:inline-block p-2">Games</div>
+        </a>
+        <a href="#" class="text-center p-2 md:p-0">
+          <i class="md:hidden fas fa-lg fa-bell"></i>
+          <div class="md:hidden text-sm leading-none"><small>Updates</small></div>
+          <div class="hidden md:inline-block p-2">Updates</div>
+        </a>
+        <a href="#" class="text-center p-2 md:p-0">
+          <i class="md:hidden fas fa-lg fa-search"></i>
+          <div class="md:hidden text-sm leading-none"><small>Search</small></div>
+          <div class="hidden md:inline-block p-2">Search</div>
+        </a>
+    </div>
+    <div class="hidden md:flex items-center justify-between md:justify-end text-white">
+        <a href="#" class="text-center p-2">
+          <i class="fab fa-lg fa-discord"></i>
+        </a>
+        <a href="#" class="text-center p-2">
+          <i class="fab fa-lg fa-twitter"></i>
+        </a>
+        <a href="#" class="text-center p-2">
+          <i class="fab fa-lg fa-reddit"></i>
+        </a>
+        <a href="#" class="text-center p-2">
+          <i class="fas fa-lg fa-sign-in"></i>
+        </a>
+    </div>
   </nav>

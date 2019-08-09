@@ -134,8 +134,9 @@
     {{-- <script src="https://kit.fontawesome.com/c888111707.js"></script> --}}
 
     <!-- === S T Y L E S === -->
-    <link href="{{ mix('/css/normalize.min.css') }}" rel="stylesheet">
-    <link href="{{ mix('/css/main.min.css') }}" rel="stylesheet">
+    {{-- <link href="{{ mix('/css/normalize.min.css') }}" rel="stylesheet"> --}}
+    {{-- <link href="{{ mix('/css/main.min.css') }}" rel="stylesheet"> --}}
+    <link href="{{ mix('/css/redesign.min.css') }}" rel="stylesheet">
     @yield('header')
 
 
@@ -164,9 +165,9 @@
     @endif
 
 </head>
-<body style="margin-top: 57px;">
+<body class="mt-10 md:mt-12 {{ theme('bg-white', 'text-gray-600') }}">
 @include('layouts.navigation')
-<main id="app">
+<main id="app" class="px-3">
     @yield('content')
 </main>
 
@@ -178,9 +179,9 @@
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
-<script src="{{ mix('/js/manifest.min.js') }}"></script>
+{{-- <script src="{{ mix('/js/manifest.min.js') }}"></script>
 <script src="{{ mix('/js/vendor.min.js') }}"></script>
-<script src="{{ mix('/js/main.min.js') }}"></script>
+<script src="{{ mix('/js/main.min.js') }}"></script> --}}
 <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
 
 @yield('footer')

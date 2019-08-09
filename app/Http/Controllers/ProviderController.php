@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Image;
+use App\Provider;
 use Illuminate\Http\Request;
 
-class ImageController extends Controller
+class ProviderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class ImageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Image  $image
+     * @param  \App\Provider  $provider
      * @return \Illuminate\Http\Response
      */
-    public function show(Image $image)
+    public function show(Provider $provider)
     {
         //
     }
@@ -52,10 +52,10 @@ class ImageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Image  $image
+     * @param  \App\Provider  $provider
      * @return \Illuminate\Http\Response
      */
-    public function edit(Image $image)
+    public function edit(Provider $provider)
     {
         //
     }
@@ -64,10 +64,10 @@ class ImageController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Image  $image
+     * @param  \App\Provider  $provider
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Image $image)
+    public function update(Request $request, Provider $provider)
     {
         //
     }
@@ -75,10 +75,10 @@ class ImageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Image  $image
+     * @param  \App\Provider  $provider
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Image $image)
+    public function destroy(Provider $provider)
     {
         //
     }
