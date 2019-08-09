@@ -14,25 +14,25 @@
 <ul class="border-t {{ theme('border-gray-200') }}">
     {{-- Search result --}}
     <li href="" class="flex items-center justify-between py-2 border-b {{ theme('border-gray-200') }}">
-        <a href="#page" class="flex items-center justify-start">
+        <a href="#page" class="flex items-center justify-start overflow-hidden">
             <img class="rounded-lg mr-3" src="https://ioshavenco.s3.us-east-2.amazonaws.com/icons/Zombie+Rollerz.jpg" alt="" height="25" width="25">
-            <span>Some app title</span>
+            <span class="truncate">Some app title that is longer than most</span>
         </a>
-        <div>
-            <a href="#get" class="rounded-full text-sm px-2 py-1 text-white-light {{ theme('bg-gray-300') }}">IPA</a>
-            <a href="#get" class="rounded-full text-sm px-2 py-1 text-white-light {{ theme('bg-blue') }}">GET</a>
+        <div class="flex flex-grow">
+            @component('components.button', ["href"=> "#", "bg" => "gray-100", "color" => "blue"]) IPA @endcomponent
+            @component('components.button', ["href"=> "#", "bg" => "blue", "color" => "white"]) GET @endcomponent
         </div>
     </li>
 
     {{-- Search result --}}
     <li href="" class="flex items-center justify-between py-2 border-b {{ theme('border-gray-200') }}">
-        <a href="#page" class="flex items-center justify-start">
+        <a href="#page" class="flex items-center justify-start overflow-hidden">
             <img class="rounded-lg mr-3" src="https://ioshavenco.s3.us-east-2.amazonaws.com/icons/Zombie+Rollerz.jpg" alt="" height="25" width="25">
-            <span>Some app title</span>
+            <span class="truncate">Some app title that not quite as long</span>
         </a>
-        <div>
-            <a href="#get" class="rounded-full text-sm px-2 py-1 text-white-light {{ theme('bg-gray-300') }}">IPA</a>
-            <a href="#get" class="rounded-full text-sm px-2 py-1 text-white-light {{ theme('bg-blue') }}">GET</a>
+        <div class="flex flex-grow">
+            @component('components.button', ["href"=> "#", "bg" => "gray-100", "color" => "blue"]) IPA @endcomponent
+            @component('components.button', ["href"=> "#", "bg" => "blue", "color" => "white"]) GET @endcomponent
         </div>
     </li>
     

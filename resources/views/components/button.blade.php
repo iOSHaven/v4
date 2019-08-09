@@ -1,1 +1,1 @@
-<a href="{{ $href }}" class='rounded-full text-sm px-2 py-1 text-white-light {{ theme("bg-$downloadColor") }}'>{{$download}}</a>
+<a href="{{ $href }}" class='font-bold rounded-full text-sm px-5 py-1 {{ theme("bg-$bg", "text-$color") }}'>{{$slot}}</a>

@@ -49,6 +49,10 @@ module.exports = {
         light: 'rgb(255, 255, 255)',
         dark: 'rgb(10, 10, 12)',
       },
+      'black': {
+        light: 'rgb(10, 10, 12)',
+        dark: 'rgb(255, 255, 255)',
+      },
       'gray-100': {
         light: 'rgb(235, 235, 240)',
         dark: 'rgb(36, 36, 38)',
