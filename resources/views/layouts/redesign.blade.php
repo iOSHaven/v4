@@ -32,9 +32,9 @@
       <meta property="og:image"  content="/ios-banner.png">
 
       <!-- Apple specific -->
-      <meta name="apple-mobile-web-app-title" content="iOS Haven">
+      <meta name="apple-mobile-web-app-title" content="IOS Haven">
       <meta name="apple-mobile-web-app-capable" content="yes">
-      <meta name="apple-mobile-web-app-status-bar-style" content="black">
+      <meta name="apple-mobile-web-app-status-bar-style" content="{{ theme() == 'light' ? 'white' : 'black' }}">
 
 
 
@@ -165,11 +165,12 @@
     @endif
 
 </head>
-<body class="overflow-hidden h-full {{ theme('bg-white', 'text-gray-600') }}">
+<body class="h-full overflow-hidden {{ theme('bg-teal', 'text-gray-600') }}">
 
 <input type="checkbox" id="check-sidebar-left" class="hidden">
 <input type="checkbox" id="check-sidebar-right"  class="hidden">
-<div id='view' class="flex items-start h-screen overflow-hidden">
+<div id="ptr-target" class="hidden"></div>
+<div id='view' class="absolute left-0 right-0 top-0 bottom-0 flex items-start h-full bg-green-light">
 
   
   <aside class="h-full flex flex-col justify-between {{ theme('bg-white', 'border-gray-200') }}">
@@ -224,11 +225,14 @@
 
   <div class="flex w-screen flex-shrink-0 relative h-full">
     @include('layouts.navigation')
-    <main id="app" class="w-full px-3 overflow-y-scroll scrolling-touch pt-10 pb-16 md:pt-12 md:pb-0">
-      @yield('content')
-      @if(empty($hide_footer))
-        @include('layouts.footer')
-      @endif
+    <main id="app" class="w-full overflow-y-scroll scrolling-touch bg-yellow-light pt-10 pb-16 md:pt-12 md:pb-0">
+      <div class="px-3">
+          @yield('content')
+          @if(empty($hide_footer))
+            @include('layouts.footer')
+          @endif
+      </div>
+      
     </main>
   </div>
 
@@ -272,7 +276,10 @@
 <script src="{{ mix('/js/manifest.min.js') }}"></script>
 <script src="{{ mix('/js/vendor.min.js') }}"></script>
 <script src="{{ mix('/js/main.min.js') }}"></script>
-<script>let vh = window.innerHeight * 0.01;document.documentElement.style.setProperty('--vh', `${vh}px`);window.addEventListener('resize', () => {let vh = window.innerHeight * 0.01;document.documentElement.style.setProperty('--vh', `${vh}px`);});</script>
+{{-- <script>
+
+
+</script> --}}
 <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
 
 @yield('footer')

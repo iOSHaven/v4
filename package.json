@@ -27,6 +27,7 @@
         "cssnano": "^4.1.10",
         "framework7": "^4.4.10",
         "marked": "^0.7.0",
+        "pulltorefreshjs": "^0.1.18",
         "tailwindcss": "^1.1.0",
         "vue-picture-input": "^2.1.6",
         "vue-simplemde": "^1.0.0",

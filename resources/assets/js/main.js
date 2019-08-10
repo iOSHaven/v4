@@ -1,6 +1,29 @@
 
-import "./autocomplete"
+import "./autocomplete";
+import PullToRefresh from 'pulltorefreshjs';
 
+const ptr = PullToRefresh.init({
+   mainElement: '#ptr-target',
+   onRefresh() {
+      window.location.reload();
+   }
+})
+
+function setvh() {
+   setTimeout(() => {
+      let vh = window.innerHeight;
+      console.log(vh + 'px');
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+   }, 100);
+}
+if (typeof window.onorientationchange !== "undefined") {
+   window.addEventListener('orientationchange', setvh)
+} else {
+   window.addEventListener('resize', setvh)
+}
+
+window.addEventListener('DOMContentLoaded', setvh)
+// window.addEventListener('resize', () => {let vh = window.innerHeight * 0.01;document.documentElement.style.setProperty('--vh', `${vh}px`);});
 // (function () {
 //     var nav = document.querySelector('nav.fixed')
 //     var dropnavs = document.querySelectorAll('.dropnav')

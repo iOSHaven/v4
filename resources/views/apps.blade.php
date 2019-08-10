@@ -10,7 +10,7 @@ fbq('track', 'Search');
 
 @section('content')
 
-<div class="container">
+<div class="bg-red-light z-1">
   <!-- v4-top-search -->
   <ins class="adsbygoogle"
        style="display:block"
@@ -77,7 +77,7 @@ fbq('track', 'Search');
 
     <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 
-    <div class="container">
+    <div class="bg-red-light">
       <!-- v4-search-bottom -->
       <ins class="adsbygoogle"
            style="display:block"

@@ -41,7 +41,7 @@ aside > ul {
 
 .h-screen {
     height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-    height: calc(var(--vh, 1vh) * 100);
+    height: var(--vh, 1px);
 }
 
 label.toggle-light,
@@ -88,3 +88,16 @@ label.toggle-dark:after {
     left: 100%;
     transform: translateX(-100%);
 }
+
+#view .ptr--icon, 
+#view .ptr--text {
+    @apply text-gray-500-light;
+}
+
+/* #view .ptr--ptr {
+    @apply w-screen;
+} */
+
+/* #view .ptr--box {
+    @apply p-0 pb-3 border-b border-gray-500-light mb-2;
+} */
