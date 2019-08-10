@@ -167,23 +167,25 @@
 </head>
 <body class="overflow-hidden h-full {{ theme('bg-white', 'text-gray-600') }}">
 
-<input type="checkbox" id="check-sidebar-left" checked class="hidden">
+<input type="checkbox" id="check-sidebar-left" class="hidden">
 <input type="checkbox" id="check-sidebar-right"  class="hidden">
 <div id='view' class="flex items-start h-screen overflow-hidden">
 
+  
   <aside class="h-full flex flex-col justify-between {{ theme('bg-white', 'border-gray-200') }}">
     <ul>
+      @if(Auth::check())
         <li class="p-3 border-b text-center {{ theme('border-gray-200') }}">
           <img class="rounded-full border mb-3 mx-auto {{ theme('border-gray-200') }}" src="/avatar/zeb" alt="" width="70">
-          <strong>ZebTheWizard</strong>
-          <div class="leading-none">Admin</div>
+          <strong>{{ Auth::user()->username }}</strong>
+          <div class="leading-none">@admin Admin @else Member @endadmin</div>
         </li>
         <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
           Dark mode
           <div class="leading-none">
             <form action="/user/theme" method="POST">
               @csrf
-              <input class="hidden check-toggle" {{ theme() == "dark" ? "checked" : "" }} type="checkbox" id="toggle-theme" onchange="this.form.submit()">
+              <input class="hidden check-toggle" {{ theme() == "dark" ? "checked" : "" }} type="checkbox" id="toggle-theme" onchange="setTimeout(function() {this.form.submit()}.bind(this), 200)">
               <label for="toggle-theme" class="{{ theme('toggle', 'border-gray-200', 'bg-gray-100') }}"></label>
             </form>
           </div>
@@ -204,15 +206,21 @@
           Password
           <i class="fal fa-chevron-right"></i>
         </li>
-        
+      @endif
     </ul>
     <ul>
-      <li class="p-3 flex font-bold items-center justify-between border-t {{ theme('text-red', 'bg-white', 'border-gray-200') }}">
-        Logout
-        <i class="fas fa-sign-out"></i>
-      </li>
+      @if(Auth::check())
+        <form action="/logout" method="post">
+          @csrf
+          <button type="submit" class="w-full p-3 flex font-bold items-center justify-between border-t {{ theme('text-red', 'bg-white', 'border-gray-200') }}">
+            Logout
+            <i class="fas fa-sign-out"></i>
+          </button>
+        </form>
+      @endif
     </ul>
   </aside>
+
 
   <div class="flex w-screen flex-shrink-0 relative h-full">
     @include('layouts.navigation')

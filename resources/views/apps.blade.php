@@ -91,10 +91,10 @@ fbq('track', 'Search');
 
     @if($apps->hasMorePages())
     <div id="loadmoreapps" class="text-center mt-5 mb-4" style="width: 100%;">
-      <button class="font-bold text-lg rounded-full text-sm px-5 py-3 {{ theme("bg-black", "text-white") }}"
+      <button class="font-bold text-lg rounded-full text-sm px-10 py-3 {{ theme("bg-black", "text-white") }}"
       onclick="loadMoreApps(this)"
       data-template="/tl/app">
-      Load more apps...</button>
+      Load more...</button>
     </div>
     @endif
 

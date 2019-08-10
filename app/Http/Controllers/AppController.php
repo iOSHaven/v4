@@ -35,6 +35,7 @@ class AppController extends Controller
 
     public function page ($tag = null, Request $r)
     {
+      session(["tab" => "apps"]);
       if ($tag) $search = $tag;
       else $search = $r->q;
       
@@ -51,6 +52,9 @@ class AppController extends Controller
         $apps = $apps->where('name', 'like', "%". $args["search"]."%");
       } else {
         $apps = $apps->where('tags', 'like', "%". $args["tag"]."%");
+        if ($args["tag"] == "game") {
+          session(["tab" => "games"]);
+        }
       }
         
       if ($args["type"] == "ipa") {
@@ -83,7 +87,13 @@ class AppController extends Controller
 
     }
 
+    public function games (Request $r) {
+      session(["tab" => "games"]);
+      return redirect("/apps?q=tag%3Dgame");
+    }
+
     public function updates ($tag=null, Request $r) {
+      session(["tab" => "updates"]);
       if ($tag) $search = $tag;
       else $search = $r->q;
       $filteredData = [

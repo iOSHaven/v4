@@ -44,6 +44,7 @@ class StaticPageController extends Controller
     }
 
     public function getSearchPage() {
+      session(["tab" => "search"]);
       return view('search');
     }
 

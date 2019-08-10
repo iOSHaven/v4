@@ -24,3 +24,8 @@ function theme(string ...$classes)
     return $carry . " " . $item . "-" . $mode;
   }));
 }
+
+function tab($tab)
+{
+  return session("tab") == $tab ? theme("text-blue") : "";
+}

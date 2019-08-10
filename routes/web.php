@@ -68,6 +68,7 @@ Route::get('/download/{uid}', 'AppController@download');
 Route::get('/apps/getJson/{uid?}', 'AppController@getJson');
 Route::get('/apps/{tag?}', 'AppController@page')->name('apps');
 Route::get('/apps/type/{type}', 'AppController@type');
+Route::get('/games', 'AppController@games');
 Route::get('/updates{tag?}', 'AppController@updates');
 
 Route::get('/plist', 'HomeController@getPlist');
