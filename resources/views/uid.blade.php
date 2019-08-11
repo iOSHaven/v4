@@ -29,7 +29,7 @@
 
           {{-- APPLICATION ICON, TITLE, SHORT, & BUTTONS --}}
           <div class="flex-lt">
-            <img width="60" height="60" src="{{ url($app->icon) }}" alt="">
+            <img class="border-rounded" width="60" height="60" src="{{ url($app->icon) }}" alt="">
             <div class="ml-3 title">
                 {{ $app->name }}
             <div class="pl-1">
@@ -89,7 +89,7 @@
           <div class="text-pre collapse text-grey">Coming soon!</div>
           <hr class="bb-1 b-light">
 
-        
+
           {{-- APPLICATION FEATURES --}}
           <input id="app-modifications-collapse" type="checkbox" class="collapse-check">
           <label for="app-modifications-collapse" class="mt-3 mb-2 collapse-label d-block">
@@ -97,7 +97,7 @@
               <span class="title">Modifications</span>
               <i class="fal fa-plus show-closed"></i>
               <i class="fal fa-minus show-open"></i>
-              
+
             </div>
           </label>
           <div class="text-pre collapse">{{ $app->description }}</div>
@@ -111,7 +111,7 @@
               <span class="title">Mirrors</span>
               <i class="fal fa-plus show-closed"></i>
               <i class="fal fa-minus show-open"></i>
-              
+
             </div>
           </label>
           <div class="text-pre collapse text-grey">Coming soon!</div>
@@ -146,7 +146,7 @@
           <hr class="bb-1 b-light show-lt-tablet-portrait">
           <div class="mb-5 show-gt-tablet-portrait"></div>
 
-          
+
 
         </div>
       </div>
@@ -159,7 +159,7 @@
         <br>
         <br>
         <br>
-        
+
       </div>
     </div>
   </div>
@@ -172,12 +172,12 @@
     </div>
   </div> --}}
 
-    
-    
+
+
     {{-- <div class="col-11 h5 mb-0 pl-3 text">
-      
+
     </div> --}}
-  
+
 
   {{-- <div class="row mb-5">
     <div class="col-3 text-center">
@@ -202,14 +202,14 @@
     @if($app->unsigned)
       <a href="/download/{{$app->uid}}" class="btn btn-dark py-1">Download IPA</a>
     @endif
-    
+
     @admin
       <a href="/app/edit/{{$app->uid}}" class="btn btn-red ml-3 py-1">Edit</a>
     @endadmin
   </div> --}}
 
   {{-- <div class="row">
-    
+
   </div> --}}
   {{-- <div class="row">
       @foreach (explode(",", $app->tags) as $tag)
