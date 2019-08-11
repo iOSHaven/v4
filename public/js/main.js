@@ -152,7 +152,7 @@ window.loadMoreApps = function (el) {
   if (window.location.href.includes('?')) {
     var url = window.location.href + "&json=true&page=" + nextPage;
   } else {
-    var url = window.location.origin + "/apps?json=true&page=" + nextPage;
+    var url = window.location.href + "?json=true&page=" + nextPage;
   }
 
   getJSON(url, function (err, json) {
@@ -167,9 +167,15 @@ window.loadMoreApps = function (el) {
         }
 
         var apps = document.getElementById('apps');
-        apps.innerHTML += json.apps.data.map(function (app) {
+        var newHtml = json.apps.data.map(function (app) {
           return render(template, app);
         }).join("");
+        apps.innerHTML += newHtml;
+
+        if (!newHtml) {
+          el.style.display = "none";
+        }
+
         meta.setAttribute('content', nextPage.toString());
       }, 'text');
     }
