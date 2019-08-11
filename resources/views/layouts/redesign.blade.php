@@ -165,12 +165,11 @@
     @endif
 
 </head>
-<body class="h-full overflow-hidden {{ theme('bg-teal', 'text-gray-600') }}">
+<body class="h-full overflow-hidden  {{ theme('bg-white', 'text-gray-600') }}">
 
 <input type="checkbox" id="check-sidebar-left" class="hidden">
 <input type="checkbox" id="check-sidebar-right"  class="hidden">
-<div id="ptr-target" class="hidden"></div>
-<div id='view' class="absolute left-0 right-0 top-0 bottom-0 flex items-start h-full bg-green-light">
+<div id='view' class="fixed overflow-hidden left-0 right-0 top-0 bottom-0 flex items-start h-full">
 
   
   <aside class="h-full flex flex-col justify-between {{ theme('bg-white', 'border-gray-200') }}">
@@ -225,7 +224,8 @@
 
   <div class="flex w-screen flex-shrink-0 relative h-full">
     @include('layouts.navigation')
-    <main id="app" class="w-full overflow-y-scroll scrolling-touch bg-yellow-light pt-10 pb-16 md:pt-12 md:pb-0">
+    <main id="app" class="w-full h-full scrolling-touch overflow-auto pb-16 md:pt-12 md:pb-0 pull-to-refresh-ios" style="padding-top: 32px;">
+      
       <div class="px-3">
           @yield('content')
           @if(empty($hide_footer))

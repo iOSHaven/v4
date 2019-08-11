@@ -24,10 +24,13 @@
         "vue-template-compiler": "^2.6.6"
     },
     "dependencies": {
+        "body-scroll-lock": "^2.6.4",
         "cssnano": "^4.1.10",
         "framework7": "^4.4.10",
         "marked": "^0.7.0",
+        "mobile-pull-to-refresh": "^0.2.1",
         "pulltorefreshjs": "^0.1.18",
+        "scroll-lock": "^2.1.2",
         "tailwindcss": "^1.1.0",
         "vue-picture-input": "^2.1.6",
         "vue-simplemde": "^1.0.0",

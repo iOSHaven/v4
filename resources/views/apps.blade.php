@@ -10,15 +10,15 @@ fbq('track', 'Search');
 
 @section('content')
 
-<div class="bg-red-light z-1">
+{{-- <div class="bg-red-light z-1">
   <!-- v4-top-search -->
   <ins class="adsbygoogle"
-       style="display:block"
+       style="display:block; touch-action: none"
        data-ad-client="ca-pub-4649450952406116"
        data-ad-slot="2079757604"
        data-ad-format="auto"
        data-full-width-responsive="true"></ins>
-</div>
+</div> --}}
 
 
     {{-- <div class="container">
@@ -54,6 +54,20 @@ fbq('track', 'Search');
               "image" => $app->icon,
               "uid" => $app->uid
             ])@endcomponent
+            @if($loop->iteration == 7)
+              <div class="relative">
+                <div class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center -z-1 {{ theme('bg-gray-100') }}">
+                  Please consider disabling ads.
+                </div>
+                <!-- v4-search-bottom -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-4649450952406116"
+                     data-ad-slot="5262456899"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true"></ins>
+              </div>
+            @endif
           {{-- <div class="col-tablet-portrait-4  p-1">
             <div class="app p-2">
                 <img class="border-rounded" src="{{ url($app->icon) }}" alt="{{ $app->uid }}-icon" height="60" width="60">
@@ -76,16 +90,6 @@ fbq('track', 'Search');
 
 
     <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
-
-    <div class="bg-red-light">
-      <!-- v4-search-bottom -->
-      <ins class="adsbygoogle"
-           style="display:block"
-           data-ad-client="ca-pub-4649450952406116"
-           data-ad-slot="5262456899"
-           data-ad-format="auto"
-           data-full-width-responsive="true"></ins>
-    </div>
 
 
 

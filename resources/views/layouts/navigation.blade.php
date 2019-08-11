@@ -64,7 +64,7 @@
 
 
 
-  <nav class="md:hidden flex items-center justify-between absolute w-full bg-blue-500 left-0 top-0 py-1 px-2 border-b z-2 {{ theme('bg-white', 'border-gray-200', 'text-gray-600') }}">
+  <nav class="prevent-touchmove md:hidden flex items-center justify-between absolute w-full bg-blue-500 left-0 top-0 py-1 px-2 border-b z-2 {{ theme('bg-white', 'border-gray-200', 'text-gray-600') }}">
       
     @if(Auth::check())
       <label for="check-sidebar-left" class="text-center mx-2">
@@ -81,7 +81,7 @@
       </label>
   </nav>
 
-  <nav class="absolute w-full left-0 bottom-0 md:bottom-auto md:top-0 flex items-center justify-between px-2 border-t md:border-b z-2 {{ theme('bg-white', 'border-gray-200', 'text-gray-600') }}">
+  <nav class="prevent-touchmove absolute w-full left-0 bottom-0 md:bottom-auto md:top-0 flex items-center justify-between px-2 border-t md:border-b z-2 {{ theme('bg-white', 'border-gray-200', 'text-gray-600') }}">
     <h1 class="hidden md:block">IOS Haven</h1>
     <div class="flex items-center justify-between md:justify-center flex-grow px-5 text-white">
         <a href="/apps" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('apps') }}">
