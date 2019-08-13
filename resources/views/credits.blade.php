@@ -18,51 +18,46 @@
        <a href="https://twitter.com/_ZackBz" target="_blank"><i class="fab fa-twitter"></i></a>
       </div>
     </li>
+    <li class="flex-cc text my-1">
+      <div class="col-8">Nick - Nerk
+      </div>
+      <div class="col-4 text-right">
+       <a href="https://discord.gg/kK4TJBf" target="_blank"><i class="fab fa-discord"></i></a>
+      </div>
+    </li>
   </ul>
 </div>
 
-<?php 
+<?php
   $app_providers = [
-    [
-      "name" => "Emus4",
-      "links" => [
-        "fal fa-globe" => "https://www.iinstaller.net/"
-      ]
-    ],
-    [
-      "name" => "IraqStore",
-      "links" => [
-        "fal fa-globe" => "https://ir4q.store"
-      ]
-    ],
     [
       "name" => "AppValley",
       "links" => [
-        "fal fa-globe" => "https://appvalley.vip"
-      ]
-    ],
-    [
-      "name" => "Hassan Abdullah",
-      "links" => [
-        "fab fa-twitter" => "https:?/twittter.com/kakaswr22"
+        "fal fa-globe" => "https://app-valley.vip/"
       ]
     ],
     [
       "name" => "TweakBox",
       "links" => [
-        "fal fa-globe" => "https://tweakboxapp.com"
+        "fal fa-globe" => "https://www.tweakboxapp.com/"
       ]
     ],
     [
-      "name" => "IOS Gods",
+      "name" => "SideloadBox",
+      "links" => [
+        "fal fa-globe" => "https://sideload.tweakboxapp.com/"
+      ]
+    ],
+    [
+      "name" => "iOS Gods",
       "links" => [
         "fal fa-globe" => "https://iosgods.com"
       ]
     ],
     [
-      "name" => "TweakBox",
+      "name" => "Ignition",
       "links" => [
-        "fal fa-globe" => "https://tweakboxapp.com"
+        "fal fa-globe" => "https://ignition.fun/"
       ]
     ],
   ];
@@ -86,11 +81,11 @@
 
 
 
-<!-- 
+<!--
 <li class="flex-cc">
   <div class="col-8"></div>
   <div class="col-4">
-    
+
   </div>
 </li>
 

@@ -134,7 +134,7 @@
     {{-- <script src="https://kit.fontawesome.com/c888111707.js"></script> --}}
 
     <!-- === S T Y L E S === -->
-    <link href="{{ mix('/css/normalize.min.css') }}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
     <link href="{{ mix('/css/main.min.css') }}" rel="stylesheet">
     @yield('header')
 
