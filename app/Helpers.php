@@ -1,7 +1,8 @@
 <?php
+
 use phpDocumentor\Reflection\Types\String_;
 
-function format_int(int $number, string $type=null)
+function format_int(int $number, string $type = null)
 {
   if ($number > 999999999) return number_format($number / 1000000000, 1) . ($type == "file" ? 'gb' : 'b');
   else if ($number > 999999) return number_format($number / 1000000, 1) . ($type == "file" ? 'mb' : 'm');
@@ -10,7 +11,8 @@ function format_int(int $number, string $type=null)
 }
 
 
-function Settings() {
+function Settings()
+{
   return DB::table('settings')->first();
 }
 
@@ -20,7 +22,7 @@ function theme(string ...$classes)
   if (empty($classes)) {
     return $mode;
   }
-  return ltrim(collect($classes)->reduce(function($carry, $item) use ($mode) {
+  return ltrim(collect($classes)->reduce(function ($carry, $item) use ($mode) {
     return $carry . " " . $item . "-" . $mode;
   }));
 }

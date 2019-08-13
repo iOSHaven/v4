@@ -1,41 +1,62 @@
 
+import u from 'umbrellajs';
 import "./autocomplete";
-// import PullToRefresh from 'pulltorefreshjs';
-import PullToRefresh from './pullToRefresh';
-import { disablePageScroll, enablePageScroll } from 'scroll-lock';
-// import pullToRefresh from 'mobile-pull-to-refresh';
-// import ptrAnimatesIos from 'mobile-pull-to-refresh/dist/styles/ios/animates';
+import PullToRefresh from 'pulltorefreshjs';
+// import PullToRefresh from './pullToRefresh';
+import { disablePageScroll, enablePageScroll, getScrollState } from 'scroll-lock';
 
-// pullToRefresh({
-//    container: document.querySelector("#app"),
-//    animates: ptrAnimatesIos,
-
-//    refresh() {
-//       return new Promise(resolve => {
-//          alert("reloade")
-//          setTimeout(resolve, 2000)
-//       })
-//    }
+// new PullToRefresh({
+//    scrollTarget: document.getElementById("app"),
+//    el: document.getElementById('ptr')
 // })
 
-// const iNoBounce = require('./iNoBounce')
-// iNoBounce.enable();
-new PullToRefresh({
-   scrollTarget: document.getElementById("app"),
-   el: document.getElementById('ptr')
-})
+function onready(callback){
+   // in case the document is already rendered
+   if (document.readyState!='loading') callback();
+   // modern browsers
+   else if (document.addEventListener) document.addEventListener('DOMContentLoaded', callback);
+   // IE <= 8
+   else document.attachEvent('onreadystatechange', function(){
+       if (document.readyState=='complete') callback();
+   });
+}
 
-// const ptr = PullToRefresh.init({
-//    mainElement: '#ptr-target',
-//    onRefresh() {
-//       window.location.reload();
-//    }
-// })
+// onready(function () {
 
-console.log(document.getElementById('app'))
-disablePageScroll(document.getElementById('app'))
+   console.log("ready")
+   var breakpoint = 768;
+   if (window.innerWidth < breakpoint) {
+      document.body.style.marginTop = document.querySelector("#nav-top-phone").offsetHeight + "px";
+      console.log(document.querySelector("#nav-top-phone"))
+   } else {
+      document.body.style.marginTop = document.querySelector("#nav-top-desktop").offsetHeight + "px";
+      console.log(document.querySelector("#nav-top-desktop"))
+   }
+
+   const ptr = PullToRefresh.init({
+      mainElement: 'body',
+      onRefresh() {
+         window.location.reload();
+      }
+   })
+   
+
+// });
+
+
+// console.log(document.getElementById('app'))
+// disablePageScroll(document.getElementById('app'))
 // enablePageScroll(document.getElementById('app'))
 
+
+u(".scroll-toggler").on('click', function () {
+   console.log("toggle scroll")
+   if (getScrollState()) {
+      disablePageScroll()
+   } else {
+      enablePageScroll()
+   }
+})
 
 window.loadMoreApps = function(el) {
    var meta =  document.head.querySelector('meta[name=page][content]')
@@ -117,20 +138,23 @@ window.loadMoreApps = function(el) {
 //    }
 // })();
 
-function setvh() {
-   setTimeout(() => {
-      let vh = window.innerHeight;
-      console.log(vh + 'px');
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
-   }, 100);
-}
-if (typeof window.onorientationchange !== "undefined") {
-   window.addEventListener('orientationchange', setvh)
-} else {
-   window.addEventListener('resize', setvh)
-}
+// function setvh() {
+//    setTimeout(() => {
+//       let vh = window.innerHeight;
+//       console.log(vh + 'px');
+//       document.documentElement.style.setProperty('--vh', `${vh}px`);
+//    }, 100);
+// }
+// if (typeof window.onorientationchange !== "undefined") {
+//    window.addEventListener('orientationchange', setvh)
+// } else {
+//    window.addEventListener('resize', setvh)
+// }
 
-window.addEventListener('DOMContentLoaded', setvh);
+// window.addEventListener('DOMContentLoaded', function () {
+//    var navs = document.querySelector('#nav-top')
+//    setvh();
+// });
 // window.addEventListener('resize', () => {let vh = window.innerHeight * 0.01;document.documentElement.style.setProperty('--vh', `${vh}px`);});
 // (function () {
 //     var nav = document.querySelector('nav.fixed')
