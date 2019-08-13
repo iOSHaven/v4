@@ -1,4 +1,4 @@
-@extends('layouts.redesign', ["hide_footer" => true])
+@extends('layouts.redesign', ["hide_footer" => true, "title" => "Search"])
 
 
 

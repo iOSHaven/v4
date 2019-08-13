@@ -1,14 +1,14 @@
 <!-- v4-footer -->
-<ins class="adsbygoogle"
+{{-- <ins class="adsbygoogle"
 style="display:block"
 data-ad-client="ca-pub-4649450952406116"
 data-ad-slot="6495367539"
 data-ad-format="auto"
-data-full-width-responsive="true"></ins>
+data-full-width-responsive="true"></ins> --}}
 
 
 
-<section>
+{{-- <section> --}}
   {{-- <div class="container mb-0"> --}}
     {{-- <hr> --}}
 
@@ -19,7 +19,7 @@ data-full-width-responsive="true"></ins>
     {{-- <a href="https://builds.io?aid=1025548"><img src="/buildstorebanner.png" alt="partner link" class="m-auto"></a> --}}
     
   {{-- </div> --}}
-  <div class="container">
+  {{-- <div class="container">
     <div class="text-center m-0 text-2xl font-display">IOS Haven</div>
     <div class="text-center mx-auto my-3">
       <a href="https://twitter.com/ioshavenco" style="color: #1da1f2;"><i class="fab fa-twitter mx-2 fa-2x"></i></a>
@@ -35,7 +35,7 @@ data-full-width-responsive="true"></ins>
       <br>
       <i class="fal fa-copyright"></i> 2019. <strong>IOS Haven</strong>
     </div>
-  </div>
+  </div> --}}
   {{-- <div class="container">
     <div class="row">
       <div class="col-6">
@@ -63,4 +63,4 @@ data-full-width-responsive="true"></ins>
 
 
     
-</section>
+{{-- </section> --}}

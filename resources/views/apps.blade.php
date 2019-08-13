@@ -1,4 +1,4 @@
-@extends('layouts.redesign')
+@extends('layouts.redesign', ["title" => "Apps"])
 
 @section('header')
 <meta name="page" content="{{ $apps->currentPage() }}">

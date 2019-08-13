@@ -1,4 +1,4 @@
-@extends('layouts.redesign')
+@extends('layouts.redesign', ["title" => "Betas"])
 @section('content')
 
 <section>

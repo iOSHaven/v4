@@ -10,7 +10,7 @@
       <i class="fas fa-lg fa-user-circle"></i>
     </a>
     @endif
-    <h1 class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center -z-1">IOS Haven2</h1>
+    <h1 class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center -z-1">{{ $title }}</h1>
     <label for="check-sidebar-right" class="text-center mx-2 scroll-toggler">
       <i class="far fa-lg fa-ellipsis-v"></i>
     </label>

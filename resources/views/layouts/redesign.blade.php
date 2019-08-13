@@ -175,8 +175,13 @@
 
 </head>
 
-<body class="relative mb-16 {{ theme('bg-white', 'text-gray-600') }}" style="margin-top: 33px;">
-  @include('layouts.navigation')
+
+  @if(empty($hide_nav))
+  <body class="relative mb-16 {{ theme('bg-white', 'text-gray-600') }}" style="margin-top: 33px;">
+    @include('layouts.navigation', ["title" => $title ?? "IOS Haven"])
+  @else
+    <body class="relative {{ theme('bg-white', 'text-gray-600') }}">
+  @endif
   <input type="checkbox" id="check-sidebar-left" class="hidden">
 
   <label for="check-sidebar-left" class="fixed z-2 w-full h-full top-0 left-0 scroll-toggler"
@@ -236,33 +241,48 @@
   <input type="checkbox" id="check-sidebar-right" class="hidden">
   <label for="check-sidebar-right" class="fixed z-2 w-full h-full top-0 left-0 scroll-toggler"
     style="background-color: black; opacity: 0.7;"></label>
-  <aside class="z-2 top-0 right-0 fixed h-full {{ theme('bg-white', 'border-gray-200') }}">
-      <h1 class="border-b text-center py-1 {{ theme('border-gray-200') }}">Other links</h1>
-      <ul class="">
-        <a href="/apps?q=jailbreak" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
-          Jailbreaks
-          <i class="fal fa-chevron-right"></i>
-        </a>
-        <a href="/betas" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
-          Betas
-          <i class="fal fa-chevron-right"></i>
-        </a>
-        <a href="/cydia" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
-          Cydia Impactor
-          <i class="fal fa-chevron-right"></i>
-        </a>
-        <a href="/aboutUs" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
-          About Us
-          <i class="fal fa-chevron-right"></i>
-        </a>
-        <a href="/credits" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
-          Credits
-          <i class="fal fa-chevron-right"></i>
-        </a>
+  <aside class="z-2 top-0 right-0 fixed h-full flex flex-col justify-between {{ theme('bg-white', 'border-gray-200') }}">
+      <div>
+          <h1 class="border-b text-center py-1 {{ theme('border-gray-200') }}">Other links</h1>
+          <ul class="">
+            <a href="/apps?q=jailbreak" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+              Jailbreaks
+              <i class="fal fa-chevron-right"></i>
+            </a>
+            <a href="/betas" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+              Betas
+              <i class="fal fa-chevron-right"></i>
+            </a>
+            <a href="/cydia" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+              Cydia Impactor
+              <i class="fal fa-chevron-right"></i>
+            </a>
+            <a href="/aboutUs" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+              About Us
+              <i class="fal fa-chevron-right"></i>
+            </a>
+            <a href="/credits" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+              Credits
+              <i class="fal fa-chevron-right"></i>
+            </a>
+          </ul>
+      </div>
+      
+      <ul>
+        <li class="p-3 flex items-center justify-between border-t {{ theme('border-gray-200') }}">
+            <a href="https://twitter.com/ioshavenco" style="color: #1da1f2;"><i class="fab fa-twitter mx-2 fa-2x"></i></a>
+            <a href="https://www.reddit.com/r/iOSHaven/" style="color: #ff4500;"><i class="fab fa-reddit mx-2 fa-2x"></i></a>
+            <a href="https://discord.gg/mTbwMyQ" style="color: #7289da;"><i class="fab fa-discord mx-2 fa-2x"></i></a>
+            <a href="https://github.com/iOSHaven" style="color: #6cc644;"><i class="fab fa-github mx-2 fa-2x"></i></a>
+            <a href="https://www.patreon.com/ioshaven" style="color: #f96854;"><i class="fab fa-patreon mx-2 fa-2x"></i></a>
+        </li>
       </ul>
     </aside>
 
   <div class="p-3">
+      @if(!empty($hide_nav))
+        <button onclick="history.back()"><i class="fal fa-chevron-left mr-1"></i> Back</button>
+      @endif
       @yield('content')
       @if(empty($hide_footer))
         @include('layouts.footer')
