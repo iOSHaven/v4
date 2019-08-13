@@ -239,30 +239,26 @@
   <aside class="z-2 top-0 right-0 fixed h-full {{ theme('bg-white', 'border-gray-200') }}">
       <h1 class="border-b text-center py-1 {{ theme('border-gray-200') }}">Other links</h1>
       <ul class="">
-        <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
-          Link 1
+        <a href="/apps?q=jailbreak" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+          Jailbreaks
           <i class="fal fa-chevron-right"></i>
-        </li>
-        <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
-          Link 2
+        </a>
+        <a href="/betas" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+          Betas
           <i class="fal fa-chevron-right"></i>
-        </li>
-        <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
-          Link 3
+        </a>
+        <a href="/cydia" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+          Cydia Impactor
           <i class="fal fa-chevron-right"></i>
-        </li>
-        <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
-          Link 4
+        </a>
+        <a href="/aboutUs" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+          About Us
           <i class="fal fa-chevron-right"></i>
-        </li>
-        <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
-          Link 5
+        </a>
+        <a href="/credits" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+          Credits
           <i class="fal fa-chevron-right"></i>
-        </li>
-        <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
-          Link 6
-          <i class="fal fa-chevron-right"></i>
-        </li>
+        </a>
       </ul>
     </aside>
 
@@ -272,7 +268,7 @@
         @include('layouts.footer')
       @endif
   </div>
-  
+
 
 
 
