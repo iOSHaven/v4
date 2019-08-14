@@ -29,5 +29,24 @@ function theme(string ...$classes)
 
 function tab($tab)
 {
-  return session("tab") == $tab ? theme("text-blue") : "";
+  return session("current_tab") == $tab ? theme("text-blue") : "";
+}
+
+
+function parseQuery($query, $expected=[]) {
+  $args = preg_split("~('|\")[^'\"]*('|\")(*SKIP)(*F)|\s+~", urldecode($query));
+  $search = implode(" ",array_filter($args, function ($value) { return !strpos($value, "=");}));
+  $args = array_filter($args, function ($value) { return strpos($value, "=");});
+  parse_str(implode('&', $args), $data);
+  foreach($expected as $key => $value) {
+    if (empty($data[$key])) {
+      $data[$key] = $value;
+    }
+  }
+  foreach ($data as $key => &$value) {
+    $value = trim($value, '"');
+    $value = trim($value, "'");
+  }
+  $data["search"] = $search;
+  return $data;
 }

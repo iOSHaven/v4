@@ -1,4 +1,4 @@
-@extends('layouts.redesign', ["title" => {{ $app->name}}])
+@extends('layouts.redesign', ["title" => $app->name, "hide_nav" => true ])
 
 
 @section('content')

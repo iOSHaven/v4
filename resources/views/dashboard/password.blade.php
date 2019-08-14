@@ -1,34 +1,50 @@
-@extends('layouts.dashboard', ["page" => "Password"])
-
-@section("images")
-_image_("/avatar/{{ Auth::user()->username }}")
-@endsection
+@extends('layouts.redesign', ["title" => "Change Password", "hide_ads" => true, "hide_nav" => true])
 
 @section('content')
 
-<p>Password settings are coming soon!</p>
-{{-- <form action="" class="mt-3">
+<div class="px-24 mb-3">
+    <img src="/SVG/secure.svg" class="w-full" alt="">
+  </div>
+  
+  {{-- <p>Account settings are coming soon!</p> --}}
+  <form action="/user/password" method="POST" class="mt-3">
   
     {{ csrf_field() }}
-    <label for="title">Username</label>
-    <div class="flex-cc mb-4 parent">
-      <span class="input-icon p-3">
-        <i class="fal fa-id-card"></i>
+  
+    <label for="title" class="text-lg">Old Password</label>
+    <div class="flex items-center justify-center mb-2 relative border rounded-full">
+      <span class="absolute top-0 left-0 py-3 pl-5">
+        <i class="fal fa-history"></i>
       </span>
-      <input value="{{ Auth::user()->username ?? old('username') }}" class="input p-3 pl-5 b-1 b-light" type="text" placeholder="Username" name="username">
+      <input class="w-full p-3 pl-12 rounded-full" type="password"
+        placeholder="* * * * * * * * * *" name="password">
     </div>
 
-    <label for="title">Email</label>
-    <div class="flex-cc mb-4 parent">
-      <span class="input-icon p-3">
-        <i class="fal fa-envelope"></i>
+    <label for="title" class="text-lg">New Password</label>
+    <div class="flex items-center justify-center mb-2 relative border rounded-full">
+      <span class="absolute top-0 left-0 py-3 pl-5">
+        <i class="fal fa-lock-alt"></i>
       </span>
-      <input value="{{ Auth::user()->email ?? old('email') }}" class="input p-3 pl-5 b-1 b-light" type="email" placeholder="example@gmail.com" name="email">
+      <input class="w-full p-3 pl-12 rounded-full" type="password"
+      placeholder="* * * * * * * * * *" name="new_password">
     </div>
-
-    <button type="submit" class="btn btn-blue mt-3"><i class="fad fa-save mr-3"></i>Save</button>
-
-</form> --}}
+  
+    <label for="title" class="text-lg">Confirm New Password</label>
+    <div class="flex items-center justify-center mb-2 relative border rounded-full">
+      <span class="absolute top-0 left-0 py-3 pl-5">
+        <i class="fal fa-lock-alt"></i>
+      </span>
+      <input class="w-full p-3 pl-12 rounded-full" type="password"
+      placeholder="* * * * * * * * * *" name="new_password_confirmation">
+    </div>
+  
+    <div class="text-right my-3">
+      <button type="submit"
+        class="font-bold text-lg rounded-full text-sm px-10 py-3 {{ theme("bg-blue", "text-white") }}">
+        <i class="fad fa-save mr-3"></i>
+        Change password</button>
+    </div>
+  </form>
 
 
 @endsection

@@ -39,6 +39,7 @@ Route::group(['prefix' => 'user'], function () {
     Route::get("/notifications", "UserController@getNotifications");
     Route::get("/badges", "UserController@getBadges");
     Route::get("/password", "UserController@getPassword");
+    Route::post("/password", "UserController@postPassword");
     Route::post("/theme", "UserController@postTheme");
 });
 
@@ -66,11 +67,14 @@ Route::post('/app/remove', 'AppController@remove');
 Route::get('/install/{uid}', 'AppController@install');
 Route::get('/download/{uid}', 'AppController@download');
 
-Route::get('/apps/getJson/{uid?}', 'AppController@getJson');
-Route::get('/apps/{tag?}', 'AppController@page')->name('apps');
-Route::get('/apps/type/{type}', 'AppController@type');
-Route::get('/games', 'AppController@games');
-Route::get('/updates{tag?}', 'AppController@updates');
+Route::group(["prefix" => "apps", "middleware" => ["tab:Apps", "back:Apps"]], function () {
+  Route::get('/getJson/{uid?}', 'AppController@getJson');
+  Route::get('/type/{type}', 'AppController@type');
+  Route::get('/{tag?}', 'AppController@page')->name('apps');
+});
+
+Route::get('/games', 'AppController@games')->middleware('tab:Games', 'back:Games');
+Route::get('/updates{tag?}', 'AppController@updates')->middleware('tab:Updates', 'back:Updates');
 
 Route::get('/plist', 'HomeController@getPlist');
 Route::post('/plist', 'HomeController@postPlist');
@@ -82,7 +86,7 @@ Route::post('/contact/{type}', 'ContactController@send');
 // });
 
 Route::get('/test', 'StaticPageController@getTestPage');
-Route::get('/search', 'StaticPageController@getSearchPage');
+Route::get('/search', 'StaticPageController@getSearchPage')->middleware('tab:Search', 'back:Search');
 Route::get('/credits', 'StaticPageController@getCreditsPage');
 Route::get('/faq', 'StaticPageController@getFaqPage');
 Route::get('/cydia', 'StaticPageController@getCydiaPage');

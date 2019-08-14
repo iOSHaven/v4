@@ -206,10 +206,10 @@
           </form>
         </div>
       </li>
-      <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+      <a href="/user/settings" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
         Settings
         <i class="fal fa-chevron-right"></i>
-      </li>
+      </a>
       <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
         Notifications
         <i class="fal fa-chevron-right"></i>
@@ -218,10 +218,10 @@
         Badges
         <i class="fal fa-chevron-right"></i>
       </li>
-      <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+      <a href="/user/password" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
         Password
         <i class="fal fa-chevron-right"></i>
-      </li>
+      </a>
       @endif
     </ul>
     <ul>
@@ -281,17 +281,25 @@
 
   <div class="p-3">
       @if(!empty($hide_nav))
-        <button onclick="history.back()"><i class="fal fa-chevron-left mr-1"></i> Back</button>
+        <button onclick="history.back()">
+          <i class="fal fa-chevron-left mr-1"></i>
+          {{ session('back_button') ?? "Back" }}
+        </button>
       @endif
       @yield('content')
 
       @if($errors->any())
         @foreach($errors->all() as $error)
-          @component('components.alert')
+          @component('components.alert', ["bg" => "red"])
             {{ $error }}
           @endcomponent
         @endforeach
-        
+      @endif
+
+      @if(Session::has("success"))
+        @component('components.alert', ["bg" => "green"])
+          {{ Session::get("success") }}
+        @endcomponent
       @endif
 
       @if(empty($hide_footer))

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Auth;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\MessageBag;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -47,6 +49,7 @@ class UserController extends Controller
         Auth::user()->username = $r->username;
         Auth::user()->email = $r->email;
         Auth::user()->save();
+        $r->session()->flash("success", "Account updated successfully.");
         return view('dashboard.settings');
     }
 
@@ -74,6 +77,26 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function getPassword () {
+        return view('dashboard.password');
+    }
+
+    /**
+     * Update the password for the current user if the old password is correct.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function postPassword (Request $r, MessageBag $mb) {
+        $r->validate([
+            'password' => 'required|string',
+            'new_password' => 'required|string|min:6|confirmed'
+        ]);
+        if (!Hash::check($r->password, Auth::user()->getAuthPassword())) {
+            $mb->add('old password', 'Your old password is incorrect.');
+            return back()->withErrors($mb);
+        }
+        Auth::user()->password = Hash::make($r->new_password);
+        Auth::user()->save();
+        $r->session()->flash("success", "Password updated successfully.");
         return view('dashboard.password');
     }
 

@@ -11,50 +11,31 @@ use Carbon\Carbon;
 use DB;
 use Response;
 use Auth;
+use Illuminate\Database\Eloquent\Builder;
 
 class AppController extends Controller
 {
 
-    private function parseQuery($query, $expected=[]) {
-      $args = preg_split("~('|\")[^'\"]*('|\")(*SKIP)(*F)|\s+~", urldecode($query));
-      $search = implode(" ",array_filter($args, function ($value) { return !strpos($value, "=");}));
-      $args = array_filter($args, function ($value) { return strpos($value, "=");});
-      parse_str(implode('&', $args), $data);
-      foreach($expected as $key => $value) {
-        if (empty($data[$key])) {
-          $data[$key] = $value;
-        }
-      }
-      foreach ($data as $key => &$value) {
-        $value = trim($value, '"');
-        $value = trim($value, "'");
-      }
-      $data["search"] = $search;
-      return $data;
-    }
+    
 
     public function page ($tag = null, Request $r)
     {
-      session(["tab" => "apps"]);
       if ($tag) $search = $tag;
       else $search = $r->q;
       
-      $args = $this->parseQuery($search, [
+      $args = parseQuery($search, [
         "type" => $r->type,
         "by" => $r->signed,
         "tag" => $r->ipa,
       ]);
 
-      $apps = App::where('name', '!=', 'No name');
+      $apps = App::hasName();
 
       // ================= QUERY COMMANDS ================= //
       if(empty($args["tag"])) {
-        $apps = $apps->where('name', 'like', "%". $args["search"]."%");
+        $apps = $apps->name($args["search"]);
       } else {
-        $apps = $apps->where('tags', 'like', "%". $args["tag"]."%");
-        if ($args["tag"] == "game") {
-          session(["tab" => "games"]);
-        }
+        $apps = $apps->tags($args["tag"]);
       }
         
       if ($args["type"] == "ipa") {
@@ -64,17 +45,19 @@ class AppController extends Controller
       } 
 
       if ($args["by"]) {
-        $apps = $apps->where("signed", 'like', "%" . $args["by"] . "%");
+        $apps = $apps->by($args["by"]);
       }
 
       if ($args["search"] && empty($args["tag"])) {
-        $apps = $apps->orWhere('tags', 'like', "%". strtolower($args["search"])."%");
+        $apps = $apps->orWhere(function(Builder $query) use($args) {
+          $query->tags(strtolower($args["search"]));
+        });
       }
       // ================= QUERY COMMANDS ================= //Í
       
       $filteredData = [
         'apps' => $apps
-          ->orderBy('views', 'desc')
+          ->orderBy('downloads', 'desc')
           ->paginate(15),
         'q' => $search
       ];
@@ -88,8 +71,19 @@ class AppController extends Controller
     }
 
     public function games (Request $r) {
-      session(["tab" => "games"]);
-      return redirect("/apps?q=tag%3Dgame");
+      $apps = App::hasName()
+                  ->games()
+                  ->orderBy("downloads", "desc")
+                  ->paginate(15);
+      $data = [
+        "apps" => $apps,
+        "q" => $r->q
+      ];
+      if ($r->json) {
+        return  response()->json($data);
+      } else {
+        return view('apps')->with($data);
+      }
     }
 
     public function updates ($tag=null, Request $r) {

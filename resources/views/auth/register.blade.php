@@ -32,7 +32,7 @@
       <label for="title" class="text-lg">{{__('Password')}}</label>
       <div class="flex items-center justify-center mb-2 relative border rounded-full">
         <span class="absolute top-0 left-0 py-3 pl-5">
-          <i class="fal fa-key"></i>
+          <i class="fal fa-lock-alt"></i>
         </span>
         <input value="{{ old('password') }}" class="w-full p-3 pl-12 rounded-full" type="password"
           placeholder="* * * * * * * * * *" name="password">
@@ -41,7 +41,7 @@
       <label for="title" class="text-lg">{{__('Confirm Password')}}</label>
       <div class="flex items-center justify-center mb-2 relative border rounded-full">
         <span class="absolute top-0 left-0 py-3 pl-5">
-          <i class="fal fa-key"></i>
+          <i class="fal fa-lock-alt"></i>
         </span>
         <input value="{{ old('password_confirmation') }}" class="w-full p-3 pl-12 rounded-full" type="password"
           placeholder="* * * * * * * * * *" name="password_confirmation">

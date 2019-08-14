@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 use App\Mirror;
+use App\Builders\AppBuilder;
 
 class App extends Model
 {
@@ -45,5 +46,10 @@ class App extends Model
   public function mirrors()
   {
     return $this->hasMany(Mirror::class);
+  }
+
+  public function newEloquentBuilder($query)
+  {
+    return new AppBuilder($query);
   }
 }
