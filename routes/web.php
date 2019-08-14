@@ -35,6 +35,7 @@ Route::get('/plist/{name}', "StaticPageController@plist");
 
 Route::group(['prefix' => 'user'], function () {
     Route::get("/settings", "UserController@getSettings");
+    Route::post("/settings", "UserController@postSettings");
     Route::get("/notifications", "UserController@getNotifications");
     Route::get("/badges", "UserController@getBadges");
     Route::get("/password", "UserController@getPassword");

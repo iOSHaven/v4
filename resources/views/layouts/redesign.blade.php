@@ -284,6 +284,16 @@
         <button onclick="history.back()"><i class="fal fa-chevron-left mr-1"></i> Back</button>
       @endif
       @yield('content')
+
+      @if($errors->any())
+        @foreach($errors->all() as $error)
+          @component('components.alert')
+            {{ $error }}
+          @endcomponent
+        @endforeach
+        
+      @endif
+
       @if(empty($hide_footer))
         @include('layouts.footer')
       @endif

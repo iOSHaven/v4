@@ -1,4 +1,4 @@
-@extends('layouts.dashboard', ["page" => "Settings"])
+@extends('layouts.redesign', ["title" => "Settings"])
 
 @section("images")
 _image_("/avatar/{{ Auth::user()->username }}")
@@ -6,29 +6,36 @@ _image_("/avatar/{{ Auth::user()->username }}")
 
 @section('content')
 
-<p>Account settings are coming soon!</p>
-{{-- <form action="" class="mt-3">
+{{-- <p>Account settings are coming soon!</p> --}}
+<form action="/user/settings" method="POST" class="mt-3">
   
     {{ csrf_field() }}
-    <label for="title">Username</label>
-    <div class="flex-cc mb-4 parent">
-      <span class="input-icon p-3">
+    <input type="hidden" name="old_username" value="{{ Auth::user()->username }}">
+    <input type="hidden" name="old_email" value="{{ Auth::user()->email }}">
+    
+    <label for="title" class="text-lg">Username</label>
+    <div class="flex items-center justify-center mb-2 relative border rounded-full">
+      <span class="absolute top-0 left-0 py-3 pl-5">
         <i class="fal fa-id-card"></i>
       </span>
-      <input value="{{ Auth::user()->username ?? old('username') }}" class="input p-3 pl-5 b-1 b-light" type="text" placeholder="Username" name="username">
+      <input value="{{ Auth::user()->username ?? old('username') }}" class="w-full p-3 pl-12 rounded-full" type="text" placeholder="Username" name="username">
     </div>
 
-    <label for="title">Email</label>
-    <div class="flex-cc mb-4 parent">
-      <span class="input-icon p-3">
+    <label for="title" class="text-lg">Email</label>
+    <div class="flex items-center justify-center mb-2 relative border rounded-full">
+      <span class="absolute top-0 left-0 py-3 pl-5">
         <i class="fal fa-envelope"></i>
       </span>
-      <input value="{{ Auth::user()->email ?? old('email') }}" class="input p-3 pl-5 b-1 b-light" type="email" placeholder="example@gmail.com" name="email">
+      <input value="{{ Auth::user()->email ?? old('email') }}" class="w-full p-3 pl-12 rounded-full" type="email" placeholder="example@gmail.com" name="email">
     </div>
 
-    <button type="submit" class="btn btn-blue mt-3"><i class="fad fa-save mr-3"></i>Save</button>
-
-</form> --}}
+    <div class="text-right my-3">
+        <button type="submit"
+          class="font-bold text-lg rounded-full text-sm px-10 py-3 {{ theme("bg-blue", "text-white") }}">
+          <i class="fad fa-save mr-3"></i>
+          Save</button>
+      </div>
+</form>
 
 
 @endsection
