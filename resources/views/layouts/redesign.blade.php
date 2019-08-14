@@ -28,8 +28,8 @@
       <meta property="og:title" content="{{ config('app.name', 'IOS Haven') }}">
       <meta property="og:type"  content="article">
       <meta property="og:url"   content="{{ $url ?? url('/') }}">
-      <meta property="og:description"  content="DOWNLOAD IPAS, SIGNED APPS, APPLE DEVELOPER BETAS, AND JAILBREAKS.">
-      <meta property="og:image"  content="/ios-banner.png">
+      <meta property="og:description"  content="Install Spotify++, Youtube++, Clash of Clans Hack, MovieBox Pro & much more straight to your iDevice.">
+      <meta property="og:image"  content="https://ioshavenco.s3.us-east-2.amazonaws.com/icons/ioshaven.jpg">
 
       <!-- Apple specific -->
       <meta name="apple-mobile-web-app-title" content="iOS Haven">
