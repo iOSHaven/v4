@@ -74,6 +74,7 @@ Route::group(["prefix" => "apps", "middleware" => ["tab:Apps", "back:Apps"]], fu
 });
 
 Route::get('/games', 'AppController@games')->middleware('tab:Games', 'back:Games');
+Route::get('/jailbreaks', 'AppController@jailbreaks')->middleware('tab:Jailbreaks', 'back:Jailbreaks');
 Route::get('/updates{tag?}', 'AppController@updates')->middleware('tab:Updates', 'back:Updates');
 
 Route::get('/plist', 'HomeController@getPlist');

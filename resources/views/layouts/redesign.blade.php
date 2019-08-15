@@ -21,13 +21,12 @@
 
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
+
+ 
 
   <meta name="application-name" content="IOS Haven">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="{{ theme() === 'light' ? '#ffffff' : '#000000' }}">
   <meta name="description"
     content="We introduce people to the sideload and jailbreak IOS communities. We offer tools to get started, links you should visit, and hundreds of popular apps ready for download.">
   <meta name="keywords" content="iphone,jailbreak,sideload,hack,crack,signed,download,ipa,free">
@@ -45,7 +44,8 @@
   <!-- Apple specific -->
   <meta name="apple-mobile-web-app-title" content="IOS Haven">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="{{ theme() == 'light' ? 'white' : 'black' }}">
+  {{-- <meta name="apple-mobile-web-app-status-bar-style" content="{{ theme() === 'light' ? 'default' : 'black' }}"> --}}
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 
 
@@ -186,100 +186,105 @@
 
   <label for="check-sidebar-left" class="fixed z-2 w-full h-full top-0 left-0 scroll-toggler"
     style="background-color: black; opacity: 0.7;"></label>
-  <aside class="z-2 top-0 left-0 fixed h-full flex flex-col justify-between {{ theme('bg-white', 'border-gray-200') }}">
-    <ul>
-      @if(Auth::check())
-      <li class="p-3 border-b text-center {{ theme('border-gray-200') }}">
-        <img class="rounded-full border mb-3 mx-auto {{ theme('border-gray-200') }}" src="/avatar/zeb" alt=""
-          width="70">
-        <strong>{{ Auth::user()->username }}</strong>
-        <div class="leading-none">@admin Admin @else Member @endadmin</div>
-      </li>
-      <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
-        Dark mode
-        <div class="leading-none">
-          <form action="/user/theme" method="POST">
-            @csrf
-            <input class="hidden check-toggle" {{ theme() == "dark" ? "checked" : "" }} type="checkbox"
-              id="toggle-theme" onchange="setTimeout(function() {this.form.submit()}.bind(this), 200)">
-            <label for="toggle-theme" class="{{ theme('toggle', 'border-gray-200', 'bg-gray-100') }}"></label>
-          </form>
-        </div>
-      </li>
-      <a href="/user/settings" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
-        Settings
-        <i class="fal fa-chevron-right"></i>
-      </a>
-      <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
-        Notifications
-        <i class="fal fa-chevron-right"></i>
-      </li>
-      <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
-        Badges
-        <i class="fal fa-chevron-right"></i>
-      </li>
-      <a href="/user/password" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
-        Password
-        <i class="fal fa-chevron-right"></i>
-      </a>
-      @endif
-    </ul>
-    <ul>
-      @if(Auth::check())
-      <form action="/logout" method="post">
-        @csrf
-        <button type="submit"
-          class="w-full p-3 flex font-bold items-center justify-between border-t {{ theme('text-red', 'bg-white', 'border-gray-200') }}">
-          Logout
-          <i class="fas fa-sign-out"></i>
-        </button>
-      </form>
-      @endif
-    </ul>
-  </aside>
 
-  <input type="checkbox" id="check-sidebar-right" class="hidden">
-  <label for="check-sidebar-right" class="fixed z-2 w-full h-full top-0 left-0 scroll-toggler"
-    style="background-color: black; opacity: 0.7;"></label>
-  <aside class="z-2 top-0 right-0 fixed h-full flex flex-col justify-between {{ theme('bg-white', 'border-gray-200') }}">
-      <div>
-          <h1 class="border-b text-center py-1 {{ theme('border-gray-200') }}">Other links</h1>
-          <ul class="">
-            <a href="/apps?q=jailbreak" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
-              Jailbreaks
-              <i class="fal fa-chevron-right"></i>
-            </a>
-            <a href="/betas" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
-              Betas
-              <i class="fal fa-chevron-right"></i>
-            </a>
-            <a href="/cydia" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
-              Cydia Impactor
-              <i class="fal fa-chevron-right"></i>
-            </a>
-            <a href="/aboutUs" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
-              About Us
-              <i class="fal fa-chevron-right"></i>
-            </a>
-            <a href="/credits" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
-              Credits
-              <i class="fal fa-chevron-right"></i>
-            </a>
-          </ul>
-      </div>
-      
+  @if(empty($hide_nav))
+    <aside class="z-2 top-0 left-0 fixed h-full flex flex-col justify-between {{ theme('bg-white', 'border-gray-200') }}">
       <ul>
-        <li class="p-3 flex items-center justify-between border-t {{ theme('border-gray-200') }}">
-            <a href="https://twitter.com/ioshavenco" style="color: #1da1f2;"><i class="fab fa-twitter mx-2 fa-2x"></i></a>
-            <a href="https://www.reddit.com/r/iOSHaven/" style="color: #ff4500;"><i class="fab fa-reddit mx-2 fa-2x"></i></a>
-            <a href="https://discord.gg/mTbwMyQ" style="color: #7289da;"><i class="fab fa-discord mx-2 fa-2x"></i></a>
-            <a href="https://github.com/iOSHaven" style="color: #6cc644;"><i class="fab fa-github mx-2 fa-2x"></i></a>
-            <a href="https://www.patreon.com/ioshaven" style="color: #f96854;"><i class="fab fa-patreon mx-2 fa-2x"></i></a>
+        @if(Auth::check())
+        <li class="p-3 border-b text-center {{ theme('border-gray-200') }}">
+          <img class="rounded-full border mb-3 mx-auto {{ theme('border-gray-200') }}" src="/avatar/zeb" alt=""
+            width="70">
+          <strong>{{ Auth::user()->username }}</strong>
+          <div class="leading-none">@admin Admin @else Member @endadmin</div>
         </li>
+        <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+          Dark mode
+          <div class="leading-none">
+            <form action="/user/theme" method="POST">
+              @csrf
+              <input class="hidden check-toggle" {{ theme() == "dark" ? "checked" : "" }} type="checkbox"
+                id="toggle-theme" onchange="setTimeout(function() {this.form.submit()}.bind(this), 200)">
+              <label for="toggle-theme" class="{{ theme('toggle', 'border-gray-200', 'bg-gray-100') }}"></label>
+            </form>
+          </div>
+        </li>
+        <a href="/user/settings" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+          Settings
+          <i class="fal fa-chevron-right"></i>
+        </a>
+        <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+          Notifications
+          <i class="fal fa-chevron-right"></i>
+        </li>
+        <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+          Badges
+          <i class="fal fa-chevron-right"></i>
+        </li>
+        <a href="/user/password" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+          Password
+          <i class="fal fa-chevron-right"></i>
+        </a>
+        @endif
+      </ul>
+      <ul>
+        @if(Auth::check())
+        <form action="/logout" method="post">
+          @csrf
+          <button type="submit"
+            class="w-full p-3 flex font-bold items-center justify-between border-t {{ theme('text-red', 'bg-white', 'border-gray-200') }}">
+            Logout
+            <i class="fas fa-sign-out"></i>
+          </button>
+        </form>
+        @endif
       </ul>
     </aside>
 
-  <div class="p-3">
+    <input type="checkbox" id="check-sidebar-right" class="hidden">
+    <label for="check-sidebar-right" class="fixed z-2 w-full h-full top-0 left-0 scroll-toggler"
+      style="background-color: black; opacity: 0.7;"></label>
+    <aside class="z-2 top-0 right-0 fixed h-full flex flex-col justify-between {{ theme('bg-white', 'border-gray-200') }}">
+        <div>
+            <h1 class="border-b text-center py-1 {{ theme('border-gray-200') }}">Other links</h1>
+            <ul class="">
+              <a href="/jailbreaks" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+                Jailbreaks
+                <i class="fal fa-chevron-right"></i>
+              </a>
+              <a href="/betas" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+                Betas
+                <i class="fal fa-chevron-right"></i>
+              </a>
+              <a href="/cydia" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+                Cydia Impactor
+                <i class="fal fa-chevron-right"></i>
+              </a>
+              <a href="/aboutUs" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+                About Us
+                <i class="fal fa-chevron-right"></i>
+              </a>
+              <a href="/credits" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+                Credits
+                <i class="fal fa-chevron-right"></i>
+              </a>
+            </ul>
+        </div>
+        
+        <ul>
+          <li class="p-3 flex items-center justify-between border-t {{ theme('border-gray-200') }}">
+              <a href="https://twitter.com/ioshavenco" style="color: #1da1f2;"><i class="fab fa-twitter mx-2 fa-2x"></i></a>
+              <a href="https://www.reddit.com/r/iOSHaven/" style="color: #ff4500;"><i class="fab fa-reddit mx-2 fa-2x"></i></a>
+              <a href="https://discord.gg/mTbwMyQ" style="color: #7289da;"><i class="fab fa-discord mx-2 fa-2x"></i></a>
+              <a href="https://github.com/iOSHaven" style="color: #6cc644;"><i class="fab fa-github mx-2 fa-2x"></i></a>
+              <a href="https://www.patreon.com/ioshaven" style="color: #f96854;"><i class="fab fa-patreon mx-2 fa-2x"></i></a>
+          </li>
+        </ul>
+      </aside>
+    @endif
+
+  
+  
+    <div class="p-3">
       @if(!empty($hide_nav))
         <button onclick="history.back()">
           <i class="fal fa-chevron-left mr-1"></i>

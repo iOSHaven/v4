@@ -85,6 +85,21 @@ class AppController extends Controller
         return view('apps')->with($data);
       }
     }
+    public function jailbreaks (Request $r) {
+      $apps = App::hasName()
+                  ->tags("jailbreak")
+                  ->orderBy("downloads", "desc")
+                  ->paginate(15);
+      $data = [
+        "apps" => $apps,
+        "q" => $r->q
+      ];
+      if ($r->json) {
+        return  response()->json($data);
+      } else {
+        return view('apps')->with($data);
+      }
+    }
 
     public function updates ($tag=null, Request $r) {
       session(["tab" => "updates"]);

@@ -1460,7 +1460,7 @@ window.loadMoreApps = function (el) {
   if (window.location.href.includes('?')) {
     var url = window.location.href + "&json=true&page=" + nextPage;
   } else {
-    var url = window.location.origin + "/apps?json=true&page=" + nextPage;
+    var url = window.location.href + "?json=true&page=" + nextPage;
   }
 
   getJSON(url, function (err, json) {
