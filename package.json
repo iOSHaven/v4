@@ -24,6 +24,7 @@
         "vue-template-compiler": "^2.6.6"
     },
     "dependencies": {
+        "bladejs": "^1.0.3",
         "body-scroll-lock": "^2.6.4",
         "command-line-args": "^5.1.1",
         "cssnano": "^4.1.10",

@@ -35,25 +35,16 @@ fbq('track', 'Search');
     </div> --}}
 
     @admin
-    <div class="container mt-3">
-      <div class="row">
-        <form action="/app/create" method="post">
-          {{ csrf_field() }}
-          <button type="submit" class="btn btn-blue">Add App</button>
-        </form>
-      </div>
-    </div>
+      <form action="/app/create" method="post" class="mb-3">
+        {{ csrf_field() }}
+        <button type="submit" class="font-bold rounded-full text-sm px-5 py-1 {{ theme("bg-blue", "text-white") }}">Add App</button>
+      </form>
     @endadmin
 
     <div class="container">
       <div class="row" id="apps">
           @foreach($apps as $app)
-            @component('components.applayout', [
-              "name" => $app->name,
-              "short" => $app->short,
-              "image" => $app->icon,
-              "uid" => $app->uid
-            ])@endcomponent
+            @component('components.applayout', $app->toArray())@endcomponent
             @if($loop->iteration == 7)
               <div class="relative">
                 <div class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center -z-1 {{ theme('bg-gray-100') }}">

@@ -11,6 +11,7 @@ use Carbon\Carbon;
 use DB;
 use Response;
 use Auth;
+use Illuminate\Support\Facades\View;
 use Illuminate\Database\Eloquent\Builder;
 
 class AppController extends Controller
@@ -62,8 +63,8 @@ class AppController extends Controller
         'q' => $search
       ];
 
-      if ($r->json) {
-        return  response()->json($filteredData);
+      if ($r->html) {
+        return  view('templates.AppTemplate')->with($filteredData);
       } else {
         return view('apps')->with($filteredData);
       }
@@ -79,8 +80,8 @@ class AppController extends Controller
         "apps" => $apps,
         "q" => $r->q
       ];
-      if ($r->json) {
-        return  response()->json($data);
+      if ($r->html) {
+        return  view('templates.AppTemplate')->with($data);
       } else {
         return view('apps')->with($data);
       }
@@ -94,8 +95,8 @@ class AppController extends Controller
         "apps" => $apps,
         "q" => $r->q
       ];
-      if ($r->json) {
-        return  response()->json($data);
+      if ($r->html) {
+        return  view('templates.AppTemplate')->with($data);
       } else {
         return view('apps')->with($data);
       }
@@ -114,8 +115,8 @@ class AppController extends Controller
           ->paginate(15),
         'q' => $search
       ];
-      if ($r->json) {
-        return  response()->json($filteredData);
+      if ($r->html) {
+        return  view('templates.AppTemplate')->with($filteredData);
       } else {
         return view('apps')->with($filteredData);
       }

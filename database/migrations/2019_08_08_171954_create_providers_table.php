@@ -17,7 +17,7 @@ class CreateProvidersTable extends Migration
             $table->bigIncrements('id');
             $table->string("name");
             $table->string("twitter");
-            $table->boolean("revoked");
+            $table->boolean("revoked")->default(false);
             $table->timestamps();
         });
     }

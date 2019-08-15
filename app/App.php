@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
+use Illuminate\Support\Facades\Auth;
 use App\Mirror;
 use App\Builders\AppBuilder;
 
@@ -40,6 +41,12 @@ class App extends Model
     $array["views_str"] = format_int($array["views"]);
     $array["downloads_str"] = format_int($array["downloads"]);
     $array["size_str"] = format_int($array["size"], "file");
+    if(Auth::check()) {
+      $array["isAdmin"] = Auth::user()->isAdmin;
+    } else {
+      $array["isAdmin"] = 0;
+    }
+   
     return $array;
   }
 

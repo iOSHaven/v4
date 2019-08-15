@@ -7,6 +7,10 @@ const options = commandLineArgs([
 
 function main ()
 {
+    if (options.url.includes("itms-services")) {
+        options.url = options.url.split("url=")[1];
+    }
+    console.log(decodeURIComponent(options.url))
     fetch(decodeURIComponent(options.url))
     .then(res => res.text())
     .then(parsePlist)

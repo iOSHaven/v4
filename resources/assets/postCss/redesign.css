@@ -115,3 +115,34 @@ label.toggle-dark:after {
 /* #view .ptr--box {
     @apply p-0 pb-3 border-b border-gray-500-light mb-2;
 } */
+
+
+.collapse-check {
+    display: none;
+}
+  
+.collapse-label .show-closed {
+    display: inherit;
+}
+
+.collapse-label .show-open {
+    display: none;
+}
+  
+.collapse {
+    display: none;
+}
+  
+.collapse-check:checked + .collapse-label .show-open {
+    display: inherit;
+}
+  
+
+.collapse-check:checked + .collapse-label .show-closed {
+    display: none;
+}
+
+.collapse-check:checked + .collapse-label + .collapse {
+    /* background: blue; */
+    display: inherit;
+}
