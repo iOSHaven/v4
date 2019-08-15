@@ -5,7 +5,7 @@ const options = commandLineArgs([
     { name: 'url', alias: 'u', type: String}
 ])
 
-function main () 
+function main ()
 {
     fetch(decodeURIComponent(options.url))
     .then(res => res.text())
@@ -15,21 +15,21 @@ function main ()
 function parsePlist(plistString)
 {
     var plistJSON = plist.parse(plistString);
+    // console.dir(plistJSON, {depth: null, colors: true});
     var {items} = plistJSON
     var metadata = items[0].metadata
     var assets = items[0].assets
-    console.dir(assets, {depth: null, colors: true})
-    console.table(metadata)
-    
+    // console.dir(assets, {depth: null, colors: true})
+    // console.table(metadata)
+
     fetch(`http://itunes.apple.com/lookup?bundleId=${metadata['bundle-identifier']}`)
-    .then(res => res.json())
+    .then(res => res.text())
     .then(handleAppleData)
 }
 
 function handleAppleData(data) {
-    console.dir(data, {depth: null, colors: true})
+    console.log(data.trim())
 }
 
 
 main()
-

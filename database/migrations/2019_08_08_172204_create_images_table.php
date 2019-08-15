@@ -15,7 +15,11 @@ class CreateImagesTable extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->bigInteger("mirror_id")->unsigned()->index();
+            $table->string("type");
+            $table->longText("url");
             $table->timestamps();
+            $table->foreign('mirror_id')->references('id')->on('mirrors')->onDelete('cascade');
         });
     }
 
