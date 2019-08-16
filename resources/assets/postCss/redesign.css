@@ -103,7 +103,7 @@ label.toggle-dark:after {
     transform: translateX(-100%);
 }
 
-#view .ptr--icon, 
+#view .ptr--icon,
 #view .ptr--text {
     @apply text-gray-500-light;
 }
@@ -120,7 +120,7 @@ label.toggle-dark:after {
 .collapse-check {
     display: none;
 }
-  
+
 .collapse-label .show-closed {
     display: inherit;
 }
@@ -128,15 +128,15 @@ label.toggle-dark:after {
 .collapse-label .show-open {
     display: none;
 }
-  
+
 .collapse {
     display: none;
 }
-  
+
 .collapse-check:checked + .collapse-label .show-open {
     display: inherit;
 }
-  
+
 
 .collapse-check:checked + .collapse-label .show-closed {
     display: none;
@@ -159,10 +159,10 @@ label.toggle-dark:after {
 .p-inset-bottom {
     padding-bottom: env(safe-area-inset-bottom);
 }
+.m-inset-top {
+    margin-top: env(safe-area-inset-top);
+}
 
-.p-inset {
-    padding: env(safe-area-inset-top, 20px)
-    env(safe-area-inset-right, 20px)
-    env(safe-area-inset-bottom, 20px)
-    env(safe-area-inset-left, 20px);
+.m-inset-bottom {
+    margin-bottom: env(safe-area-inset-bottom);
 }

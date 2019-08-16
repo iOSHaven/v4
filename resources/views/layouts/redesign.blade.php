@@ -23,7 +23,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
 
- 
+
 
   <meta name="application-name" content="IOS Haven">
   <meta name="theme-color" content="{{ theme() === 'light' ? '#ffffff' : '#000000' }}">
@@ -45,8 +45,8 @@
   <meta name="apple-mobile-web-app-title" content="IOS Haven">
   <meta name="apple-mobile-web-app-capable" content="yes">
   {{-- <meta name="apple-mobile-web-app-status-bar-style" content="black" id="status-bar-style"> --}}
-  <meta name="apple-mobile-web-app-status-bar-style" content="{{ theme() === 'light' ? 'default' : 'black' }}" id="status-bar-style">
-  {{-- <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> --}}
+  {{-- <meta name="apple-mobile-web-app-status-bar-style" content="{{ theme() === 'light' ? 'default' : 'black' }}" id="status-bar-style"> --}}
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 
 
@@ -181,7 +181,7 @@
   <body class="relative mb-16 {{ theme('bg-white', 'text-gray-600') }}" style="margin-top: 33px;">
     @include('layouts.navigation', ["title" => $title ?? null])
   @else
-    <body class="relative {{ theme('bg-white', 'text-gray-600') }}">
+    <body class="m-inset-top relative {{ theme('bg-white', 'text-gray-600') }}">
   @endif
   <input type="checkbox" id="check-sidebar-left" class="hidden">
 
@@ -189,7 +189,7 @@
     style="background-color: black; opacity: 0.7;"></label>
 
   @if(empty($hide_nav))
-    <aside class="p-inset-top z-2 top-0 left-0 fixed h-full flex flex-col justify-between {{ theme('bg-white', 'border-gray-200') }}">
+    <aside class="p-inset-top p-inset-bottom z-2 top-0 left-0 fixed h-full flex flex-col justify-between {{ theme('bg-white', 'border-gray-200') }}">
       <ul>
         @if(Auth::check())
         <li class="p-3 border-b text-center {{ theme('border-gray-200') }}">
@@ -233,7 +233,7 @@
     <input type="checkbox" id="check-sidebar-right" class="hidden">
     <label for="check-sidebar-right" class="fixed z-2 w-full h-full top-0 left-0 scroll-toggler"
       style="background-color: black; opacity: 0.7;"></label>
-    <aside class="p-inset-top z-2 top-0 right-0 fixed h-full flex flex-col justify-between {{ theme('bg-white', 'border-gray-200') }}">
+    <aside class="p-inset-top p-inset-bottom z-2 top-0 right-0 fixed h-full flex flex-col justify-between {{ theme('bg-white', 'border-gray-200') }}">
         <div>
             <h1 class="border-b text-center py-1 {{ theme('border-gray-200') }}">Other links</h1>
             <ul class="">
@@ -263,7 +263,7 @@
               </a>
             </ul>
         </div>
-        
+
         <ul>
           <li class="p-3 flex items-center justify-between border-t {{ theme('border-gray-200') }}">
             Dark mode
@@ -287,11 +287,11 @@
       </aside>
     @endif
 
-  
-  
+
+
     <div class="p-3">
       @if(!empty($hide_nav))
-        <button onclick="history.back()" class="fixed top-0 left-0 p-5">
+        <button onclick="history.back()" class="m-inset-top fixed top-0 left-0 p-5">
           <i class="fal fa-chevron-left mr-1"></i>
           {{ session('back_button') ?? "Back" }}
         </button>
