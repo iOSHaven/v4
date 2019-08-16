@@ -44,7 +44,8 @@
   <!-- Apple specific -->
   <meta name="apple-mobile-web-app-title" content="IOS Haven">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="{{ theme() === 'light' ? 'default' : 'black' }}">
+  {{-- <meta name="apple-mobile-web-app-status-bar-style" content="black" id="status-bar-style"> --}}
+  <meta name="apple-mobile-web-app-status-bar-style" content="{{ theme() === 'light' ? 'default' : 'black' }}" id="status-bar-style">
   {{-- <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> --}}
 
 
@@ -188,7 +189,7 @@
     style="background-color: black; opacity: 0.7;"></label>
 
   @if(empty($hide_nav))
-    <aside class="z-2 top-0 left-0 fixed h-full flex flex-col justify-between {{ theme('bg-white', 'border-gray-200') }}">
+    <aside class="p-inset-top z-2 top-0 left-0 fixed h-full flex flex-col justify-between {{ theme('bg-white', 'border-gray-200') }}">
       <ul>
         @if(Auth::check())
         <li class="p-3 border-b text-center {{ theme('border-gray-200') }}">
@@ -196,17 +197,6 @@
             width="70">
           <strong>{{ Auth::user()->username }}</strong>
           <div class="leading-none">@admin Admin @else Member @endadmin</div>
-        </li>
-        <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
-          Dark mode
-          <div class="leading-none">
-            <form action="/user/theme" method="POST">
-              @csrf
-              <input class="hidden check-toggle" {{ theme() == "dark" ? "checked" : "" }} type="checkbox"
-                id="toggle-theme" onchange="setTimeout(function() {this.form.submit()}.bind(this), 200)">
-              <label for="toggle-theme" class="{{ theme('toggle', 'border-gray-200', 'bg-gray-100') }}"></label>
-            </form>
-          </div>
         </li>
         <a href="/user/settings" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
           Settings
@@ -243,10 +233,14 @@
     <input type="checkbox" id="check-sidebar-right" class="hidden">
     <label for="check-sidebar-right" class="fixed z-2 w-full h-full top-0 left-0 scroll-toggler"
       style="background-color: black; opacity: 0.7;"></label>
-    <aside class="z-2 top-0 right-0 fixed h-full flex flex-col justify-between {{ theme('bg-white', 'border-gray-200') }}">
+    <aside class="p-inset-top z-2 top-0 right-0 fixed h-full flex flex-col justify-between {{ theme('bg-white', 'border-gray-200') }}">
         <div>
             <h1 class="border-b text-center py-1 {{ theme('border-gray-200') }}">Other links</h1>
             <ul class="">
+              <a href="/contact/index" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+                Contact
+                <i class="fal fa-chevron-right"></i>
+              </a>
               <a href="/jailbreaks" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
                 Jailbreaks
                 <i class="fal fa-chevron-right"></i>
@@ -272,6 +266,17 @@
         
         <ul>
           <li class="p-3 flex items-center justify-between border-t {{ theme('border-gray-200') }}">
+            Dark mode
+            <div class="leading-none">
+              <form action="/theme" method="POST">
+                @csrf
+                <input class="hidden check-toggle" {{ theme() == "dark" ? "checked" : "" }} type="checkbox"
+                  id="toggle-theme" onchange="setTimeout(function() {this.form.submit()}.bind(this), 200)">
+                <label for="toggle-theme" class="{{ theme('toggle', 'border-gray-200', 'bg-gray-100') }}"></label>
+              </form>
+            </div>
+          </li>
+          <li class="p-3 flex items-center justify-between border-t {{ theme('border-gray-200') }}">
               <a href="https://twitter.com/ioshavenco" style="color: #1da1f2;"><i class="fab fa-twitter mx-2 fa-2x"></i></a>
               <a href="https://www.reddit.com/r/iOSHaven/" style="color: #ff4500;"><i class="fab fa-reddit mx-2 fa-2x"></i></a>
               <a href="https://discord.gg/mTbwMyQ" style="color: #7289da;"><i class="fab fa-discord mx-2 fa-2x"></i></a>
@@ -286,7 +291,7 @@
   
     <div class="p-3">
       @if(!empty($hide_nav))
-        <button onclick="history.back()">
+        <button onclick="history.back()" class="fixed top-0 left-0 p-5">
           <i class="fal fa-chevron-left mr-1"></i>
           {{ session('back_button') ?? "Back" }}
         </button>

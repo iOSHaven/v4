@@ -1,23 +1,25 @@
   <nav id="nav-top-phone"
-    class="prevent-touchmove md:hidden flex items-center justify-between fixed w-full bg-blue-500 left-0 top-0 py-1 px-2 border-b z-2 {{ theme('bg-white', 'border-gray-200', 'text-gray-600') }}">
-
-    @if(Auth::check())
-    <label for="check-sidebar-left" class="text-center mx-2 scroll-toggler">
-      <i class="fas fa-lg fa-user-circle"></i>
-    </label>
-    @else
-    <a href="/login" class="text-center mx-2">
-      <i class="fas fa-lg fa-user-circle"></i>
-    </a>
-    @endif
-    <h1 class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center -z-1">{{ $title ?? session("current_tab") ?? "IOS Haven" }}</h1>
-    <label for="check-sidebar-right" class="text-center mx-2 scroll-toggler">
-      <i class="far fa-lg fa-ellipsis-v"></i>
-    </label>
+    class="p-inset-top prevent-touchmove md:hidden fixed w-full left-0 top-0 border-b z-2 {{ theme('bg-white', 'border-gray-200', 'text-gray-600') }}">
+    <div class="relative w-full py-1 px-3 flex items-center justify-between">
+        <div class="absolute top-0 left-0 right-0 bottom-0 -z-1 {{ theme('bg-white') }}"></div>
+        @if(Auth::check())
+        <label for="check-sidebar-left" class="text-center mx-2 scroll-toggler">
+          <i class="fas fa-lg fa-user-circle"></i>
+        </label>
+        @else
+        <a href="/login" class="text-center mx-2">
+          <i class="fas fa-lg fa-user-circle"></i>
+        </a>
+        @endif
+        <h1 class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center -z-1">{{ $title ?? session("current_tab") ?? "IOS Haven" }}</h1>
+        <label for="check-sidebar-right" class="text-center mx-2 scroll-toggler">
+          <i class="far fa-lg fa-ellipsis-v"></i>
+        </label>
+    </div>
   </nav>
 
   <nav id="nav-top-desktop"
-    class="prevent-touchmove fixed w-full left-0 bottom-0 md:bottom-auto md:top-0 flex items-center justify-between px-2 border-t md:border-b z-2 {{ theme('bg-white', 'border-gray-200', 'text-gray-600') }}">
+    class="p-inset-bottom prevent-touchmove fixed w-full left-0 bottom-0 md:bottom-auto md:top-0 flex items-center justify-between px-2 border-t md:border-b z-2 {{ theme('bg-white', 'border-gray-200', 'text-gray-600') }}">
     <h1 class="hidden md:block">IOS Haven</h1>
     <div class="flex items-center justify-between md:justify-center flex-grow px-5 text-white">
       <a href="/apps" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Apps') }}">

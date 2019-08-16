@@ -40,7 +40,6 @@ Route::group(['prefix' => 'user'], function () {
     Route::get("/badges", "UserController@getBadges");
     Route::get("/password", "UserController@getPassword");
     Route::post("/password", "UserController@postPassword");
-    Route::post("/theme", "UserController@postTheme");
 });
 
 Route::group(['prefix' => 'image'], function () {
@@ -86,6 +85,7 @@ Route::post('/contact/{type}', 'ContactController@send');
 //   return abort(500, 'Sorry for the inconvenience, but this page is under maintenance.');
 // });
 
+Route::post("/theme", "StaticPageController@postTheme");
 Route::get('/test', 'StaticPageController@getTestPage');
 Route::get('/search', 'StaticPageController@getSearchPage')->middleware('tab:Search', 'back:Search');
 Route::get('/credits', 'StaticPageController@getCreditsPage');

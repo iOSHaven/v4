@@ -48,10 +48,10 @@ module.exports = {
       },
       'white': {
         light: 'rgb(255, 255, 255)',
-        dark: 'rgb(10, 10, 12)',
+        dark: 'rgb(0, 0, 0)',
       },
       'black': {
-        light: 'rgb(10, 10, 12)',
+        light: 'rgb(0, 0, 0)',
         dark: 'rgb(255, 255, 255)',
       },
       'gray-100': {

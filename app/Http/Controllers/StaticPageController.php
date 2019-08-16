@@ -83,4 +83,15 @@ class StaticPageController extends Controller
         'done' => true
       ]);
     }
+
+
+    /**
+     * Toggle dark mode for the current session.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function postTheme (Request $r) {
+      session(["theme" => theme() == "dark" ? "light" : "dark"]);
+      return back();
+  }
 }

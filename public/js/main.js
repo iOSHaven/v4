@@ -1417,7 +1417,7 @@ if (window.innerWidth < breakpoint) {
 var ptr = pulltorefreshjs__WEBPACK_IMPORTED_MODULE_2___default.a.init({
   mainElement: 'body',
   onRefresh: function onRefresh() {
-    window.location.reload();
+    window.location.reload(true);
   }
 });
 umbrellajs__WEBPACK_IMPORTED_MODULE_0___default()(".scroll-toggler").on('click', function () {
@@ -1428,7 +1428,11 @@ umbrellajs__WEBPACK_IMPORTED_MODULE_0___default()(".scroll-toggler").on('click',
   } else {
     Object(scroll_lock__WEBPACK_IMPORTED_MODULE_3__["enablePageScroll"])();
   }
-});
+}); // setTimeout(() => {
+// u('#status-bar-style').attr('content', 'black')
+// var mode = u("#status-bar-style").attr('content');
+// alert(`You're in *${mode}**** mode`);
+// }, 1000)
 
 window.loadMoreApps = function (el) {
   var meta = document.head.querySelector('meta[name=page][content]');

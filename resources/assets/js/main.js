@@ -14,7 +14,7 @@ if (window.innerWidth < breakpoint) {
 const ptr = PullToRefresh.init({
    mainElement: 'body',
    onRefresh() {
-      window.location.reload();
+      window.location.reload(true);
    }
 })
 
@@ -27,6 +27,12 @@ u(".scroll-toggler").on('click', function () {
       enablePageScroll()
    }
 })
+
+// setTimeout(() => {
+   // u('#status-bar-style').attr('content', 'black')
+   // var mode = u("#status-bar-style").attr('content');
+   // alert(`You're in *${mode}**** mode`);
+// }, 1000)
 
 window.loadMoreApps = function(el) {
    var meta =  document.head.querySelector('meta[name=page][content]')

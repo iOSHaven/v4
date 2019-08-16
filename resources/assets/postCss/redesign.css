@@ -151,3 +151,18 @@ label.toggle-dark:after {
 .no-border-on-last:last-of-type {
     border: none;
 }
+
+.p-inset-top {
+    padding-top: env(safe-area-inset-top);
+}
+
+.p-inset-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+}
+
+.p-inset {
+    padding: env(safe-area-inset-top, 20px)
+    env(safe-area-inset-right, 20px)
+    env(safe-area-inset-bottom, 20px)
+    env(safe-area-inset-left, 20px);
+}

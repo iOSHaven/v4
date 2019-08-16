@@ -4,9 +4,9 @@
 
 
 
-<div class="px-24 mb-3">
+{{-- <div class="px-24 mb-3">
   <img src="/SVG/login.svg" class="w-full" alt="">
-</div>
+</div> --}}
 
 
 <section>
@@ -14,31 +14,28 @@
     {{-- <h3 class="mt-0 text-3xl font-display">Login</h3> --}}
     <form action="{{ route('login') }}" method="post">
       {{ csrf_field() }}
-      <label for="title" class="text-lg">{{__('Username')}}</label>
-      <div class="flex items-center justify-center mb-2 relative border rounded-full">
-        <span class="absolute top-0 left-0 py-3 pl-5">
-          <i class="fal fa-id-card"></i>
-        </span>
-        <input value="{{ old('username') }}" class="w-full p-3 pl-12 rounded-full" type="text" placeholder="username"
-          name="username">
-      </div>
 
-      <label for="title" class="text-lg">{{__('Password')}}</label>
-      <div class="flex items-center justify-center mb-4 relative border rounded-full">
-        <span class="absolute top-0 left-0 py-3 pl-5">
-          <i class="fal fa-lock-alt"></i>
-        </span>
-        <input value="{{ old('password') }}" class="w-full p-3 pl-12 rounded-full" type="password"
-          placeholder="* * * * * * * * * *" name="password">
-      </div>
+      @component('components.form.image', [
+        "src" => "/SVG/login.svg",
+      ])@endcomponent
 
+      @component('components.form.input', [
+        "label" => "Username",
+        "name" => "username",
+        "icon" => "fal fa-id-card",
+        "type" => "text",
+      ])@endcomponent
+      @component('components.form.input', [
+        "label" => "Password",
+        "name" => "password",
+        "icon" => "fal fa-lock-alt",
+        "type" => "password",
+      ])@endcomponent
 
-      <div class="text-right my-3">
-        <button type="submit"
-          class="font-bold text-lg rounded-full text-sm px-10 py-3 {{ theme("bg-blue", "text-white") }}">
-          <i class="fad fa-sign-in-alt mr-3"></i>
-          Login</button>
-      </div>
+      @component('components.form.submit', [
+        "icon" => "fas fa-sign-in-alt",
+        "text" => "Login"
+      ])@endcomponent
 
       <a href="/password/reset" class="{{ theme('text-blue') }}">
         Forgot password?

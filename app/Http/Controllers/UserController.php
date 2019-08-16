@@ -99,14 +99,4 @@ class UserController extends Controller
         $r->session()->flash("success", "Password updated successfully.");
         return view('dashboard.password');
     }
-
-    /**
-     * Toggle dark mode for the current session.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function postTheme (Request $r) {
-        session(["theme" => theme() == "dark" ? "light" : "dark"]);
-        return back();
-    }
 }
