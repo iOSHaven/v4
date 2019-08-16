@@ -44,8 +44,8 @@
   <!-- Apple specific -->
   <meta name="apple-mobile-web-app-title" content="IOS Haven">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  {{-- <meta name="apple-mobile-web-app-status-bar-style" content="{{ theme() === 'light' ? 'default' : 'black' }}"> --}}
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-status-bar-style" content="{{ theme() === 'light' ? 'default' : 'black' }}">
+  {{-- <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> --}}
 
 
 
@@ -178,7 +178,7 @@
 
   @if(empty($hide_nav))
   <body class="relative mb-16 {{ theme('bg-white', 'text-gray-600') }}" style="margin-top: 33px;">
-    @include('layouts.navigation', ["title" => $title])
+    @include('layouts.navigation', ["title" => $title ?? null])
   @else
     <body class="relative {{ theme('bg-white', 'text-gray-600') }}">
   @endif

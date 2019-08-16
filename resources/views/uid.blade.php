@@ -25,11 +25,11 @@
 
               <div class="mt-5">
                 @if($app->unsigned)
-                @component('components.button', ["href"=> "/install/$app->uid", "bg" => "gray-100", "color" => "blue"])
+                @component('components.button', ["href"=> "/download/$app->uid", "bg" => "gray-100", "color" => "blue"])
                 IPA @endcomponent
                 @endif
                 @if($app->signed)
-                @component('components.button', ["href"=> "/download/$app->uid", "bg" => "blue", "color" => "white"])
+                @component('components.button', ["href"=> "/install/$app->uid", "bg" => "blue", "color" => "white"])
                 GET @endcomponent
                 @endif
                 @admin

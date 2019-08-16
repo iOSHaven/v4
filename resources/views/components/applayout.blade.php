@@ -7,10 +7,10 @@
         <div class="leading-none text-sm {{ theme('text-gray-500') }}">{{ $short }}</div>
         <div class="pt-4 pointer-events-auto z-1 relative">
             @if($unsigned)
-              @component('components.button', ["href"=> "/install/$uid", "bg" => "gray-100", "color" => "blue"]) IPA @endcomponent
+              @component('components.button', ["href"=> "/download/$uid", "bg" => "gray-100", "color" => "blue"]) IPA @endcomponent
             @endif
             @if($signed)
-              @component('components.button', ["href"=> "/download/$uid", "bg" => "blue", "color" => "white"]) GET @endcomponent
+              @component('components.button', ["href"=> "/install/$uid", "bg" => "blue", "color" => "white"]) GET @endcomponent
             @endif
             @if($isAdmin)
               @component('components.button', ["href"=> "/app/edit/$uid", "bg" => "red", "color" => "white"]) EDIT @endcomponent
