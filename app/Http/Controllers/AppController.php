@@ -26,17 +26,19 @@ class AppController extends Controller
       
       $args = parseQuery($search, [
         "type" => $r->type,
-        "by" => $r->signed,
-        "tag" => $r->ipa,
+        "by" => $r->by,
+        "tags" => $r->tags,
       ]);
 
       $apps = App::hasName();
 
       // ================= QUERY COMMANDS ================= //
-      if(empty($args["tag"])) {
+      if(empty($args["tags"])) {
         $apps = $apps->name($args["search"]);
       } else {
-        $apps = $apps->tags($args["tag"]);
+        foreach(explode(",", $args["tags"]) as $tag) {
+          $apps = $apps->tag($tag);
+        }
       }
         
       if ($args["type"] == "ipa") {
@@ -49,21 +51,36 @@ class AppController extends Controller
         $apps = $apps->by($args["by"]);
       }
 
-      if ($args["search"] && empty($args["tag"])) {
+      if ($args["search"] && empty($args["tags"])) {
         $apps = $apps->orWhere(function(Builder $query) use($args) {
-          $query->tags(strtolower($args["search"]));
+          $query->tag(strtolower($args["search"]));
         });
       }
       // ================= QUERY COMMANDS ================= //Í
       
-      $filteredData = [
-        'apps' => $apps
-          ->orderBy('downloads', 'desc')
-          ->paginate(15),
-        'q' => $search
-      ];
 
-      if ($r->html) {
+      if ($r->limit || !$r->json) {
+        $apps = $apps
+          ->orderBy($r->sort ?? "downloads", $r->order ?? "desc")
+          ->paginate($r->limit);
+      } else {
+        $apps = $apps
+            ->orderBy($r->sort ?? "downloads", $r->order ?? "desc")
+            ->get();
+      }
+      
+      $filteredData = [
+        'count' => $apps->count(),
+        'search' => $search,
+        'pageTitle' => $r->title ?? null,
+        'apps' => $apps,
+      ];
+      
+      
+
+      if ($r ->json) {
+        return response()->json($filteredData);
+      }else if ($r->html) {
         return  view('templates.AppTemplate')->with($filteredData);
       } else {
         return view('apps')->with($filteredData);
@@ -88,7 +105,7 @@ class AppController extends Controller
     }
     public function jailbreaks (Request $r) {
       $apps = App::hasName()
-                  ->tags("jailbreak")
+                  ->tag("jailbreak")
                   ->orderBy("downloads", "desc")
                   ->paginate(15);
       $data = [

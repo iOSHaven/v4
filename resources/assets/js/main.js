@@ -50,3 +50,6 @@ window.loadMoreApps = function(el) {
 
 
 
+window.onSearchInput = function (el) {
+   window.searchinput = el.value.toLowerCase()
+}

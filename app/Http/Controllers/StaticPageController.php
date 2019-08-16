@@ -44,8 +44,8 @@ class StaticPageController extends Controller
     }
 
     public function getSearchPage() {
-      session(["tab" => "search"]);
-      return view('search');
+      $apps = \App\App::orderBy('views', 'desc')->get();
+      return view('search')->with('apps', json_encode($apps->toArray()));
     }
 
     public function getCreditsPage() {

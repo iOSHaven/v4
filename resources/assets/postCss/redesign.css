@@ -146,3 +146,8 @@ label.toggle-dark:after {
     /* background: blue; */
     display: inherit;
 }
+
+
+.no-border-on-last:last-of-type {
+    border: none;
+}

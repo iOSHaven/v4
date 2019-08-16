@@ -18,7 +18,7 @@ class AppBuilder extends Builder
         return $this;
     }
 
-    public function tags($tag)
+    public function tag($tag)
     {
         $this->where('tags', 'like', "%". $tag ."%");
         return $this;
@@ -31,7 +31,7 @@ class AppBuilder extends Builder
 
     public function games()
     {
-        return $this->tags("game");
+        return $this->tag("game");
     }
 
 }

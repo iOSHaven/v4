@@ -178,7 +178,7 @@
 
   @if(empty($hide_nav))
   <body class="relative mb-16 {{ theme('bg-white', 'text-gray-600') }}" style="margin-top: 33px;">
-    @include('layouts.navigation', ["title" => $title ?? "IOS Haven"])
+    @include('layouts.navigation', ["title" => $title])
   @else
     <body class="relative {{ theme('bg-white', 'text-gray-600') }}">
   @endif

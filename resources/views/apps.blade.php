@@ -1,4 +1,4 @@
-@extends('layouts.redesign', ["title" => "Apps"])
+@extends('layouts.redesign', ["title" => $pageTitle ?? null ])
 
 @section('header')
 <meta name="page" content="{{ $apps->currentPage() }}">
@@ -59,22 +59,7 @@ fbq('track', 'Search');
                      data-full-width-responsive="true"></ins>
               </div>
             @endif
-          {{-- <div class="col-tablet-portrait-4  p-1">
-            <div class="app p-2">
-                <img class="border-rounded" src="{{ url($app->icon) }}" alt="{{ $app->uid }}-icon" height="60" width="60">
-                <a class="content ml-3 text-dark" href="/app/{{ $app->uid }}">
-                  <div class="h6 m-0"><strong>{{ $app->name }}</strong></div>
-                  <div class="description mt-2">{{ $app->short }}</div>
-                </a>
-                @admin
-                <a href="/app/edit/{{ $app->uid }}" class="text-dark">
-                  <i class="fas fa-pencil fa-lg"></i>
-                </a>
-                @endadmin
-            </div>
-          </div> --}}
-
-        @endforeach
+          @endforeach
       </div>
     </div>
 

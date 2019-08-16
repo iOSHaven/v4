@@ -1452,6 +1452,10 @@ window.loadMoreApps = function (el) {
   }, "document");
 };
 
+window.onSearchInput = function (el) {
+  window.searchinput = el.value.toLowerCase();
+};
+
 /***/ }),
 
 /***/ "./resources/assets/postCss/redesign.css":
