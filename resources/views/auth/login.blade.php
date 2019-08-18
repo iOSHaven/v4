@@ -6,7 +6,7 @@
 
 {{-- <div class="px-24 mb-3">
   <img src="/SVG/login.svg" class="w-full" alt="">
-</div> --}}
+</div>- --}}
 
 
 <section>

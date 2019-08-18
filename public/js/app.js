@@ -112,6 +112,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["theme", "phpdata"],
   computed: {
@@ -706,6 +707,26 @@ var render = function() {
                             attrs: { href: "/install/" + app.uid }
                           },
                           [_vm._v("GET")]
+                        )
+                      : _vm._e(),
+                    _vm._v(" "),
+                    app.isAdmin
+                      ? _c(
+                          "a",
+                          {
+                            class: [
+                              "font-bold",
+                              "rounded-full",
+                              "text-xs",
+                              "px-3",
+                              "py-1",
+                              _vm.t("bg-red"),
+                              _vm.t("text-white"),
+                              "mr-1"
+                            ],
+                            attrs: { href: "/app/edit/" + app.uid }
+                          },
+                          [_vm._v("EDIT")]
                         )
                       : _vm._e()
                   ]
@@ -12928,7 +12949,7 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/zack/code/v4/resources/assets/js/app.js */"./resources/assets/js/app.js");
+module.exports = __webpack_require__(/*! /Users/zeb/code/v4/resources/assets/js/app.js */"./resources/assets/js/app.js");
 
 
 /***/ })

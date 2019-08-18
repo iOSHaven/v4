@@ -91,7 +91,39 @@ class StaticPageController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function postTheme (Request $r) {
-      session(["theme" => theme() == "dark" ? "light" : "dark"]);
-      return back();
-  }
+      $mode = theme() == "dark" ? "light" : "dark";
+      session(["theme" => $mode]);
+      return redirect(explode("?", url()->previous())[0]."?theme=$mode");
+    }
+
+    /**
+     * Force dark mode for the current session.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function darkTheme (Request $r) {
+      session(["theme" => "dark"]);
+      return redirect("/updates");
+    }
+
+
+    /**
+     * Force light mode for the current session.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function lightTheme (Request $r) {
+      session(["theme" => "light"]);
+      return redirect("/updates");
+    }
+
+
+    /**
+     * Prompt user to install theme.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function chooseInstall (Request $r) {
+      return view('install');
+    }
 }

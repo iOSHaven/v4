@@ -44,9 +44,10 @@
   <!-- Apple specific -->
   <meta name="apple-mobile-web-app-title" content="IOS Haven">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  {{-- <meta name="apple-mobile-web-app-status-bar-style" content="black" id="status-bar-style"> --}}
-  {{-- <meta name="apple-mobile-web-app-status-bar-style" content="{{ theme() === 'light' ? 'default' : 'black' }}" id="status-bar-style"> --}}
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  {{-- <meta name="apple-mobile-web-app-status-bar-style" content="black"> --}}
+  <link rel="manifest" href="/manifest-{{ theme() }}.json">
+  <meta name="apple-mobile-web-app-status-bar-style" content="{{ theme() === 'light' ? 'default' : 'black' }}" id="status-bar-style">
+  {{-- <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"> --}}
 
 
 
@@ -202,11 +203,11 @@
           Settings
           <i class="fal fa-chevron-right"></i>
         </a>
-        <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+        <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200', 'text-gray-200') }}">
           Notifications
           <i class="fal fa-chevron-right"></i>
         </li>
-        <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+        <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200', 'text-gray-200') }}">
           Badges
           <i class="fal fa-chevron-right"></i>
         </li>
@@ -287,15 +288,28 @@
       </aside>
     @endif
 
+      @yield('page')
 
-
-    <div class="p-3">
-      @if(!empty($hide_nav))
+    <div class="p-3 mx-auto" style="max-width: 960px">
+      @if(!empty($hide_nav) && empty($hide_back))
         <button onclick="history.back()" class="m-inset-top fixed top-0 left-0 p-5">
           <i class="fal fa-chevron-left mr-1"></i>
           {{ session('back_button') ?? "Back" }}
         </button>
       @endif
+      @admin
+      <div class="w-full p-3 mb-3 flex items-center justify-start {{ theme('bg-red') }}">
+          <form action="/app/create" method="post">
+            {{ csrf_field() }}
+            <button type="submit" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-blue-light {{ theme("bg-white") }}">Add App</button>
+          </form>
+          <form action="/provider/create" method="post">
+            {{ csrf_field() }}
+            <button type="submit" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-blue-light {{ theme("bg-white") }}">Add Provider</button>
+          </form>
+      </div>
+        
+      @endadmin
       @yield('content')
 
       @if($errors->any())
@@ -341,6 +355,18 @@
         }, !1)
       }
     })(document, window.navigator, "standalone")
+  </script>
+
+  <script>
+  if ('serviceWorker' in navigator) {
+    console.log("Will the service worker register?");
+    navigator.serviceWorker.register('service-worker.js')
+      .then(function(reg){
+        console.log("Yes, it did.");
+      }).catch(function(err) {
+        console.log("No it didn't. This happened:", err)
+    });
+  }
   </script>
 
   @yield('footer')

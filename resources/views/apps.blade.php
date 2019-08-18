@@ -34,12 +34,6 @@ fbq('track', 'Search');
       </div>
     </div> --}}
 
-    @admin
-      <form action="/app/create" method="post" class="mb-3">
-        {{ csrf_field() }}
-        <button type="submit" class="font-bold rounded-full text-sm px-5 py-1 {{ theme("bg-blue", "text-white") }}">Add App</button>
-      </form>
-    @endadmin
 
     <div class="container">
       <div class="row" id="apps">

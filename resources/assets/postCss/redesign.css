@@ -166,3 +166,32 @@ label.toggle-dark:after {
 .m-inset-bottom {
     margin-bottom: env(safe-area-inset-bottom);
 }
+
+.circle {
+    @apply relative w-full h-auto rounded-full;
+    padding-top: 100%;
+}
+
+.circle-image {
+    @apply absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)scale(3.5);
+}
+
+.show-webapp {
+    visibility: hidden;
+}
+.hide-webapp {
+    visibility: visible;
+}
+
+@media all and (display-mode: standalone) {
+    /* Here goes the CSS rules that will only apply if app is running standalone */
+    .show-webapp {
+        visibility: visible;
+    }
+    .hide-webapp {
+        visibility: hidden;
+    }
+}

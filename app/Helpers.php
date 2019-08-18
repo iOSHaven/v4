@@ -18,6 +18,11 @@ function Settings()
 
 function theme(string ...$classes)
 {
+  if (isset($_GET["theme"])) {
+    session([
+      "theme" => ($_GET["theme"] ?? "light") == "light" ? "light" : "dark"
+    ]);
+  }
   $mode = (session("theme") ?? "light") == "light" ? "light" : "dark";
   if (empty($classes)) {
     return $mode;

@@ -8,7 +8,7 @@ import { getField, updateField } from 'vuex-map-fields';
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+// require('./bootstrap');
 window.Vue = require('vue');
 
 Vue.use(Vuex);
@@ -34,7 +34,7 @@ const store = new Vuex.Store({
 })
 
 const app = new Vue({
-  el: '#app',
+  el: '#dashboard',
   store,
 });
 

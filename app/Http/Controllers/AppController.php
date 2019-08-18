@@ -183,7 +183,10 @@ class AppController extends Controller
     public function edit ($uid) {
       if (Auth::guest() || !Auth::user()->isAdmin) return abort(404);
       $app = App::findByUid($uid);
-      return view('edit')->with(['app' => $app]);
+      return view('edit')->with([
+        'app' => $app, 
+        "apps" => json_encode(App::get()->toArray())
+        ]);
     }
 
     public function getJson($uid = null)

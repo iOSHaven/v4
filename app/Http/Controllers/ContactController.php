@@ -11,7 +11,7 @@ use Auth;
 
 class ContactController extends Controller
 {
-    public function view ($type) {
+    public function view ($type="index") {
       // Types include: general, request, bug
       return view("contact.$type");
     }

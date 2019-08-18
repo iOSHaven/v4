@@ -5,7 +5,7 @@
 
 
 <section class="pt-10">
-  <div class="flex flex-wrap -mx-1 mt-16">
+  <div class="flex flex-wrap -mx-1 mt-16 justify-center">
     {{-- <h2>Choose</h2> --}}
     {{-- <p>Did you find a bug? Use this form if there is something with the website.</p> --}}
   {{-- <form action="/contact/bug" method="post" id="contact-form"> --}}
@@ -13,32 +13,32 @@
       {{ csrf_field() }}
       
 
-      <div class="px-1 w-1/2">
+      <a href="/contact/general" class="px-1" style="width: 152px">
         <div class="p-5 rounded-full {{ theme('bg-gray-100') }}">
             <div class="text-center mb-3 {{ theme('text-indigo') }}">General</div>
             <div class="px-3">
                 <img src="/SVG/contact.general.svg" class="w-full" alt="">
             </div>
         </div>
-      </div>
+      </a>
 
-      <div class="px-1 w-1/2">
+      <a href="/contact/bug" class="px-1" style="width: 152px">
         <div class="p-5 rounded-full {{ theme('bg-gray-100') }}">
-            <div class="text-center mb-3 {{ theme('text-indigo') }}">Help</div>
+            <div class="text-center mb-3 {{ theme('text-indigo') }}">Bug</div>
             <div class="px-3">
-                <img src="/SVG/contact.help.svg" class="w-full" alt="">
+                <img src="/SVG/contact.bug.svg" class="w-full" alt="">
             </div>
         </div> 
-      </div>
+      </a>
 
-      <div class="px-1 w-1/2 mx-auto">
+      <a href="/contact/request" class="px-1" style="width: 152px">
         <div class="p-5 rounded-full {{ theme('bg-gray-100') }}">
             <div class="text-center mb-3 {{ theme('text-indigo') }}">Request</div>
             <div class="px-3">
                 <img src="/SVG/contact.request.svg" class="w-full" alt="">
             </div>
         </div> 
-      </div>
+      </a>
       
       
 

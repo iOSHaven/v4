@@ -22,7 +22,7 @@ Route::get('/tl/{view}', 'StaticPageController@template');
 
 Route::get('/tutorials/{view}', 'StaticPageController@tutorial');
 
-Route::get('/', 'StaticPageController@index');
+Route::get('/', 'StaticPageController@index')->middleware('tab:Home', 'back:Home');
 
 Auth::routes();
 
@@ -79,12 +79,17 @@ Route::get('/updates{tag?}', 'AppController@updates')->middleware('tab:Updates',
 Route::get('/plist', 'HomeController@getPlist');
 Route::post('/plist', 'HomeController@postPlist');
 
-Route::get('/contact/{type}', 'ContactController@view');
+Route::get('/contact/index', 'ContactController@view')->middleware('tab:Contact');
+Route::get('/contact/{type}', 'ContactController@view')->middleware('back:Contact');
 Route::post('/contact/{type}', 'ContactController@send');
 // Route::get('/contact/{type?}', function () {
 //   return abort(500, 'Sorry for the inconvenience, but this page is under maintenance.');
 // });
+Route::any('/site.mobileconfig', "MobileConfigController@webapp");
 
+Route::get("/install", "StaticPageController@chooseInstall");
+Route::get("/light", "StaticPageController@lightTheme");
+Route::get("/dark", "StaticPageController@darkTheme");
 Route::post("/theme", "StaticPageController@postTheme");
 Route::get('/test', 'StaticPageController@getTestPage');
 Route::get('/search', 'StaticPageController@getSearchPage')->middleware('tab:Search', 'back:Search');

@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="container">
-  <div class="h3">Cydia Impactor</div>
+  <div class="text-4xl">Cydia Impactor</div>
   <p>If you want to sign your own apps for personal use you can use Cydia Impactor. However, you will be unable to share your application with other people unless you have an enterprise certificate. Some apps also require you to sign the app with a developer certificate because they require different permissions than most apps. Finally, if you use a free certificate then you will have to repeat the process every 7 days.</p>
   <p>To get started make sure you have Cydia Impactor downloaded. Then find an app that has a "Download IPA" button. Once the download is complete follow the tutorial to get a basic understanding of Cydia Impactor</p>
   <div class="h3">Downloads</div>

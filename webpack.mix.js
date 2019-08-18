@@ -19,13 +19,17 @@ mix.postCss('resources/assets/postCss/redesign.css', 'public/css/redesign.min.cs
          tailwindcss('./tailwind.config.js')
       ]
    })
+   .sass("resources/assets/sass/markdown.scss", "public/css")
    .js('resources/assets/js/main.js', 'public/js')
    .js('resources/assets/js/app.js', 'public/js')
+   .js('resources/assets/js/dashboard.js', 'public/js')
    .minify([
+      "public/css/markdown.css",
       "public/js/vendor.js",
       "public/js/manifest.js",
       "public/js/main.js",
-      "public/js/app.js"
+      "public/js/app.js",
+      "public/js/dashboard.js",
    ])
    .version()
 
