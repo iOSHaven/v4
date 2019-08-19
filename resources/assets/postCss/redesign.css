@@ -195,3 +195,7 @@ label.toggle-dark:after {
         visibility: hidden;
     }
 }
+
+.text-pre {
+    white-space: pre-line;
+}

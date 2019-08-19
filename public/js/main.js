@@ -1442,8 +1442,8 @@ window.loadMoreApps = function (el) {
   if (window.location.href.includes('?')) {
     var url = window.location.href + "&html=true&page=" + nextPage;
   } else {
-
     var url = window.location.href + "?html=true&page=" + nextPage;
+  }
 
   getJSON(url, function (err, doc) {
     if (err || typeof doc.body == "undefined") {
