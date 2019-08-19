@@ -1,5 +1,5 @@
 <section id="#about-us">
-    <div class="container">
+    <div class="markdown">
       <h2 class="text-shadow">About Us</h2>
       <p>
         iOS Haven started out as a small website that just listed a few links to popular tweaks and hacks. The orginal creator, Zane, wanted to make the website bigger, but he didn't know where to start. A few months later, two college students stumbled across the website and saw its potential. Those students, Zack and Zeb, helped Zane take the website to the next level.
@@ -21,7 +21,7 @@
   </section>
 
   <section>
-    <div class="container">
+    <div class="markdown">
       <h2 class="text-shadow">Redesign</h2>
       <p>We are trying to redesign IOS Haven. However, both of us are in college so we do not have as much time to work on the website. If you encounter any issues please contact us via Twitter or Discord and we will try to fix it as soon as possible. </p>
     </div>

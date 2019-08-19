@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.default', ["title" => "FAQ"])
 @section('content')
 
 <div class="wrapper markdown">

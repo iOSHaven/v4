@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMirrorsTable extends Migration
+class CreateImagesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreateMirrorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('mirrors', function (Blueprint $table) {
+        Schema::create('images', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer("app_id")->unsigned()->index()->nullable();
-            $table->string("provider")->nullable();
-            $table->longText("link")->nullable();
-            $table->string("type")->nullable();
+            $table->bigInteger("mirror_id")->unsigned()->index();
+            $table->string("type");
+            $table->longText("url");
             $table->timestamps();
-
-            $table->foreign("app_id")->references("id")->on("apps");
+            $table->foreign('mirror_id')->references('id')->on('mirrors')->onDelete('cascade');
         });
     }
 
@@ -32,6 +30,6 @@ class CreateMirrorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mirrors');
+        Schema::dropIfExists('images');
     }
 }

@@ -1,4 +1,4 @@
-@extends('layouts.default')
+@extends('layouts.default', ["title" => "Jailbreaks"])
 @section('content')
 <div class="wrapper markdown">
 

@@ -1,17 +1,23 @@
-@extends('layouts.redesign')
+@extends('layouts.redesign', ["title" => "Betas"])
+
+
 @section('content')
 
 <section>
   <div class="container">
-    <div class="h3">Developer Betas</div>
-    <p>Links will be updated when next IOS and MacOS beta are released.</p>
-    <ul class="h6">
-      <li >
-        <strike><a href="https://iosbetas.me/" target="_blank">Download IOS 12 Beta</a></strike>
-      </li>
-      <li >
-        <strike><a href="http://festyy.com/wH5U36" target="_blank">Download MacOS Mojave</a></strike>
-      </li>
+    <p>As of right now, you can download betas directly from Apple.</p>
+    <ul class="list-disc list-inside">
+      <li><a href="https://beta.apple.com/sp/betaprogram/redemption#macos" class="{{ theme('text-blue') }}">macOS</a></li>
+      <li><a href="https://beta.apple.com/sp/betaprogram/redemption#ios" class="{{ theme('text-blue') }}">iOS</a></li>
+      <li><a href="https://beta.apple.com/sp/betaprogram/redemption#ipados" class="{{ theme('text-blue') }}">iPadOS</a></li>
+      <li><a href="https://beta.apple.com/sp/betaprogram/redemption#tvos" class="{{ theme('text-blue') }}">tvOS</a></li>
+    </ul>
+
+    <p>
+      You can also download specific versions from the following website.
+    </p>
+    <ul class="list-disc list-inside">
+      <li><a href="http://ipsw.me/otas" class="{{ theme('text-blue') }}">IPSW Downloads</a></li>
     </ul>
   </div>
 </section>

@@ -1,14 +1,14 @@
 <!-- v4-footer -->
-<ins class="adsbygoogle"
+{{-- <ins class="adsbygoogle"
 style="display:block"
 data-ad-client="ca-pub-4649450952406116"
 data-ad-slot="6495367539"
 data-ad-format="auto"
-data-full-width-responsive="true"></ins>
+data-full-width-responsive="true"></ins> --}}
 
 
 
-<section class="footer bg-dark text-white">
+{{-- <section> --}}
   {{-- <div class="container mb-0"> --}}
     {{-- <hr> --}}
 
@@ -19,23 +19,23 @@ data-full-width-responsive="true"></ins>
     {{-- <a href="https://builds.io?aid=1025548"><img src="/buildstorebanner.png" alt="partner link" class="m-auto"></a> --}}
     
   {{-- </div> --}}
-  <div class="container">
-    <div class="h5 text-center text-white m-0 mb-3">IOS Haven</div>
-    <div class="col-tablet-portrait-6 text-center mx-auto">
-      <a href="https://twitter.com/ioshavenco" class="text-white"><i class="fab fa-twitter mx-2 fa-2x"></i></a>
-      <a href="https://www.reddit.com/r/iOSHaven/" class="text-white"><i class="fab fa-reddit mx-2 fa-2x"></i></a>
-      <a href="https://discord.gg/mTbwMyQ" class="text-white"><i class="fab fa-discord mx-2 fa-2x"></i></a>
-      <a href="https://github.com/iOSHaven" class="text-white"><i class="fab fa-github mx-2 fa-2x"></i></a>
-      <a href="https://www.patreon.com/ioshaven" class="text-white"><i class="fab fa-patreon mx-2 fa-2x"></i></a>
+  {{-- <div class="container">
+    <div class="text-center m-0 text-2xl font-display">IOS Haven</div>
+    <div class="text-center mx-auto my-3">
+      <a href="https://twitter.com/ioshavenco" style="color: #1da1f2;"><i class="fab fa-twitter mx-2 fa-2x"></i></a>
+      <a href="https://www.reddit.com/r/iOSHaven/" style="color: #ff4500;"><i class="fab fa-reddit mx-2 fa-2x"></i></a>
+      <a href="https://discord.gg/mTbwMyQ" style="color: #7289da;"><i class="fab fa-discord mx-2 fa-2x"></i></a>
+      <a href="https://github.com/iOSHaven" style="color: #6cc644;"><i class="fab fa-github mx-2 fa-2x"></i></a>
+      <a href="https://www.patreon.com/ioshaven" style="color: #f96854;"><i class="fab fa-patreon mx-2 fa-2x"></i></a>
     </div>
 
     <div class="text-center">
-      Made with <i class="fas fa-heart"></i>
+      Made with <i class="fas fa-heart {{ theme('text-red') }}"></i>
       by <a href="https://twitter.com/_ZackBz">Zack</a> & <a href="https://twitter.com/wizardzeb">Zeb</a>
       <br>
       <i class="fal fa-copyright"></i> 2019. <strong>IOS Haven</strong>
     </div>
-  </div>
+  </div> --}}
   {{-- <div class="container">
     <div class="row">
       <div class="col-6">
@@ -63,4 +63,4 @@ data-full-width-responsive="true"></ins>
 
 
     
-</section>
+{{-- </section> --}}

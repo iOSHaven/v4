@@ -14,7 +14,6 @@
 // Route::get('/test', function () {
 //   return view('test');
 // });
-
 Route::get("/avatar/{value}/{size?}", "AvatarController@api");
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->middleware("admin");
@@ -23,7 +22,7 @@ Route::get('/tl/{view}', 'StaticPageController@template');
 
 Route::get('/tutorials/{view}', 'StaticPageController@tutorial');
 
-Route::get('/', 'StaticPageController@index');
+Route::get('/', 'StaticPageController@index')->middleware('tab:Home', 'back:Home');
 
 Auth::routes();
 
@@ -36,9 +35,11 @@ Route::get('/plist/{name}', "StaticPageController@plist");
 
 Route::group(['prefix' => 'user'], function () {
     Route::get("/settings", "UserController@getSettings");
+    Route::post("/settings", "UserController@postSettings");
     Route::get("/notifications", "UserController@getNotifications");
     Route::get("/badges", "UserController@getBadges");
     Route::get("/password", "UserController@getPassword");
+    Route::post("/password", "UserController@postPassword");
 });
 
 Route::group(['prefix' => 'image'], function () {
@@ -65,20 +66,33 @@ Route::post('/app/remove', 'AppController@remove');
 Route::get('/install/{uid}', 'AppController@install');
 Route::get('/download/{uid}', 'AppController@download');
 
-Route::get('/apps/getJson/{uid?}', 'AppController@getJson');
-Route::get('/apps/{tag?}', 'AppController@page')->name('apps');
-Route::get('/apps/type/{type}', 'AppController@type');
-Route::get('/updates{tag?}', 'AppController@updates');
+Route::group(["prefix" => "apps", "middleware" => ["tab:Apps", "back:Apps"]], function () {
+  Route::get('/getJson/{uid?}', 'AppController@getJson');
+  Route::get('/type/{type}', 'AppController@type');
+  Route::get('/{tag?}', 'AppController@page')->name('apps');
+});
+
+Route::get('/games', 'AppController@games')->middleware('tab:Games', 'back:Games');
+Route::get('/jailbreaks', 'AppController@jailbreaks')->middleware('tab:Jailbreaks', 'back:Jailbreaks');
+Route::get('/updates{tag?}', 'AppController@updates')->middleware('tab:Updates', 'back:Updates');
 
 Route::get('/plist', 'HomeController@getPlist');
 Route::post('/plist', 'HomeController@postPlist');
 
-Route::get('/contact/{type}', 'ContactController@view');
+Route::get('/contact/index', 'ContactController@view')->middleware('tab:Contact');
+Route::get('/contact/{type}', 'ContactController@view')->middleware('back:Contact');
 Route::post('/contact/{type}', 'ContactController@send');
 // Route::get('/contact/{type?}', function () {
 //   return abort(500, 'Sorry for the inconvenience, but this page is under maintenance.');
 // });
+Route::any('/site.mobileconfig', "MobileConfigController@webapp");
 
+Route::get("/install", "StaticPageController@chooseInstall");
+Route::get("/light", "StaticPageController@lightTheme");
+Route::get("/dark", "StaticPageController@darkTheme");
+Route::post("/theme", "StaticPageController@postTheme");
+Route::get('/test', 'StaticPageController@getTestPage');
+Route::get('/search', 'StaticPageController@getSearchPage')->middleware('tab:Search', 'back:Search');
 Route::get('/credits', 'StaticPageController@getCreditsPage');
 Route::get('/faq', 'StaticPageController@getFaqPage');
 Route::get('/cydia', 'StaticPageController@getCydiaPage');

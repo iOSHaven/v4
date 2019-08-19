@@ -1,31 +1,9 @@
-@extends('layouts.redesign')
+@extends('layouts.redesign', ['hide_nav' => true])
 @section('header')
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <style>
-    .border-thin-normal {
-      border: 1px solid #ccc;
-    }
-    .ml--1 {
-      margin-left: -1px;
-    }
-    .mr--1 {
-      margin-right: -1px;
-    }
-    .w-100 {
-      width: 100%;
-    }
-    
-    
-    .parent {
-      position: relative;
-    }
-    .input-icon {
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
 
-    .radio-list input {
+   .radio-list input {
       display: none;
     }
 
@@ -34,24 +12,28 @@
       flex-grow: 1;
       color: transparent;
       cursor: pointer;
+      border-radius: 9999px;
     }
 
     .radio-list label::before {
       content: attr(data-value);
-      color: black;
+      color: {{ theme() == "light" ? "#aab6c7" : "#9dabbd"}};
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: white;
+      top: -1px;
+      left: -1px;
+      right: -1px;
+      bottom: -1px;
+      background-color: {{ theme() == "light" ? "#ebebf0" : "#242426"}};
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid #ccc;
+      border: 1px solid {{ theme() == "light" ? "#6c6c70" : "#aeaeb2"}};
+      border-radius: 9999px;
     }
     .radio-list input:checked + label:before {
       background-color: transparent;
+      border-color: transparent;
+      color: black;
     }
     
     </style>
@@ -60,55 +42,49 @@
 
 <section class="pt-2">
     <div class="container">
-      <h2 class="text-shadow">Request Form</h2>
-      <p>Are we missing something? Use this form to suggest new apps or other ideas.</p>
+      {{-- <h2 class="text-shadow">Request Form</h2>
+      <p>Are we missing something? Use this form to suggest new apps or other ideas.</p> --}}
       <form action="/contact/request" method="post" id="contact-form">
   
         {{ csrf_field() }}
-        <label for="title">Title</label>
-        <div class="flex-cc mb-4 parent">
-          <span class="input-icon p-3">
-            <i class="fal fa-feather"></i>
-          </span>
-          <input value="{{ old('title') }}" class="input p-3 pl-5 border-thin-normal" type="text" placeholder="My amazing idea..." name="title">
-        </div>
-  
-        <label for="email">Email</label>
-        <div class="flex-cc mb-4 parent">
-          <span class="p-3 input-icon">
-            <i class="fal fa-envelope"></i>
-          </span>
-          <input value="{{ old('email') }}" class="input p-3 pl-5 border-thin-normal" type="email" placeholder="Email" name="email" id="email">
-        </div>
+        @component('components.form.image', [
+          "src" => "/SVG/contact.request.svg",
+        ])@endcomponent
+        <p class="my-2">Are we missing something? Use this form to suggest new apps or other ideas.</p>
+        @component('components.form.input', [
+          "label" => "Title",
+          "name" => "title",
+          "icon" => "fal fa-feather",
+          "type" => "text",
+        ])@endcomponent
+        @component('components.form.input', [
+          "label" => "Email",
+          "name" => "email",
+          "icon" => "fal fa-envelope",
+          "type" => "email",
+        ])@endcomponent
+
 
         <label for="email">Type</label>
-        <div class="flex-cc mb-4 parent radio-list">
+        <div class="flex items-center justify-center mb-4 relative radio-list rounded-full">
           <input type="radio" name="type" id="type-1" value="App">
-          <label class="p-3 bg-blue" for="type-1" data-value="App">App</label>
+          <label class="p-3 {{ theme('bg-red') }}" for="type-1" data-value="App">App</label>
           <input type="radio" name="type" id="type-2" value="Feature">
-          <label class="p-3 bg-blue ml--1" for="type-2" data-value="Feature">Feature</label>
+          <label class="p-3 mx-1 {{ theme('bg-green') }}" for="type-2" data-value="Feature">Feature</label>
           <input type="radio" name="type" id="type-3" value="Other">
-          <label class="p-3 bg-blue ml--1" for="type-3" data-value="Other">Other</label>
+          <label class="p-3 {{ theme('bg-yellow') }}" for="type-3" data-value="Other">Other</label>
         </div>
-        
-        <label for="title">Message</label>
-        <div class="flex-cc mb-4 parent">
-          <span class="p-3 input-icon">
-            <i class="fal fa-pencil"></i>
-          </span>
-          <textarea rows="5" class="p-3 pl-5 border-thin-normal w-100" placeholder="What is causing the issue?" name="message" id="message" >{{ old('message') }}</textarea>
-        </div>
-        
-        @if ($errors->has('g-recaptcha-response'))
-          <div class="p-3 bg-red text-white mb-3">
-            <strong>Error: </strong>
-            {{ $errors->first('g-recaptcha-response') }}
-          </div>
-        @endif
-  
+
+        @component('components.form.input', [
+          "label" => "Message",
+          "name" => "message",
+          "icon" => "fal fa-pencil",
+          "type" => "textarea",
+        ])@endcomponent
         {!! NoCaptcha::display() !!}
-  
-        <button type="submit" class="btn btn-blue mt-3"><i class="fad fa-paper-plane mr-3"></i>Submit request</button>
+        @component('components.form.submit', [
+          "text" => "Send"
+        ])@endcomponent
   
       </form>
     </div>

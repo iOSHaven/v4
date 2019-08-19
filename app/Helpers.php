@@ -1,6 +1,8 @@
 <?php
 
-function format_int(int $number, string $type=null)
+use phpDocumentor\Reflection\Types\String_;
+
+function format_int(int $number, string $type = null)
 {
   if ($number > 999999999) return number_format($number / 1000000000, 1) . ($type == "file" ? 'gb' : 'b');
   else if ($number > 999999) return number_format($number / 1000000, 1) . ($type == "file" ? 'mb' : 'm');
@@ -9,6 +11,47 @@ function format_int(int $number, string $type=null)
 }
 
 
-function Settings() {
+function Settings()
+{
   return DB::table('settings')->first();
+}
+
+function theme(string ...$classes)
+{
+  if (isset($_GET["theme"])) {
+    session([
+      "theme" => ($_GET["theme"] ?? "light") == "light" ? "light" : "dark"
+    ]);
+  }
+  $mode = (session("theme") ?? "light") == "light" ? "light" : "dark";
+  if (empty($classes)) {
+    return $mode;
+  }
+  return ltrim(collect($classes)->reduce(function ($carry, $item) use ($mode) {
+    return $carry . " " . $item . "-" . $mode;
+  }));
+}
+
+function tab($tab)
+{
+  return session("current_tab") == $tab ? theme("text-blue") : "";
+}
+
+
+function parseQuery($query, $expected=[]) {
+  $args = preg_split("~('|\")[^'\"]*('|\")(*SKIP)(*F)|\s+~", urldecode($query));
+  $search = implode(" ",array_filter($args, function ($value) { return !strpos($value, "=");}));
+  $args = array_filter($args, function ($value) { return strpos($value, "=");});
+  parse_str(implode('&', $args), $data);
+  foreach($expected as $key => $value) {
+    if (empty($data[$key])) {
+      $data[$key] = $value;
+    }
+  }
+  foreach ($data as $key => &$value) {
+    $value = trim($value, '"');
+    $value = trim($value, "'");
+  }
+  $data["search"] = $search;
+  return $data;
 }

@@ -1,9 +1,101 @@
-@extends('layouts.redesign')
+@extends('layouts.redesign', ["hide_nav" => true, "hide_ads" => true, "hide_back" => true])
 
-@section('content')
+@section('header')
+    <link rel="stylesheet" href="{{ mix('/css/markdown.css') }}">
+@endsection
+
+@section('page')
+<section class="text-xl px-3 h-full {{theme('bg-white') }}">
+  
+  <div class="mx-auto w-full text-center" style="max-width: 700px">
+    <h1 class="mb-2 block text-6xl {{ theme('text-black') }}">IOS Haven</h1>
+    <p class="mb-10">The community driven app store.</p>
+    <div class="flex items-center justify-center">
+        <a href="/apps" class='mb-8 flex items-center justify-center mx-1 font-bold rounded-full text-sm px-8 py-5 text-white-light {{ theme("bg-indigo") }}'>
+          <i class="fas fa-rocket mr-3 fa-lg"></i>
+          LAUNCH
+        </a>
+    </div>
+    <div class="flex items-center justify-center">
+        <a href="/install?theme=dark" class='hide-webapp mx-1 mb-16 flex items-center justify-center font-bold rounded-full text-sm px-8 py-5 {{ theme('bg-black', 'text-white') }}'>
+          <i class="fas fa-moon-stars mr-3 fa-lg"></i>
+          INSTALL
+        </a>
+        <a href="/install?theme=light" class='hide-webapp mx-1 mb-16 flex items-center justify-center font-bold rounded-full text-sm px-8 py-5 text-black-light bg-yellow-light'>
+          <i class="fas fa-sun mr-3 fa-lg"></i>
+          INSTALL
+        </a>
+    </div>
+
+    
+    <img src="/img/iphonex.png" class="w-full">
+  </div>
+  
+</section>
+
+<section class="text-xl px-3 h-full {{theme('bg-indigo') }}" style="margin-top: -10%; padding-top: 15%; padding-bottom: 10%">
+  
+  <div class="mx-auto w-full text-center" style="max-width: 700px">
+    <h1 class="mb-5 block text-6xl text-white-light">Features</h1>
+    <div class="flex items-center justify-around">
+
+      <div class="w-1/5"> 
+        <div class="circle {{ theme('bg-pink') }}">
+            <div class="circle-image">
+                <img src="/SVG/digital.svg" class="w-full" alt="">
+            </div>
+        </div>
+      </div>
+
+      <div class="w-1/5"> 
+        <div class="circle {{ theme('bg-pink') }}">
+            <div class="circle-image">
+                <img src="/SVG/dark.svg" class="w-full" alt="">
+            </div>
+        </div>
+      </div>
+
+      <div class="w-1/5"> 
+        <div class="circle {{ theme('bg-pink') }}">
+            <div class="circle-image">
+                <img src="/SVG/free.svg" class="w-full" alt="">
+            </div>
+        </div>
+      </div>
 
 
-  <section class="bg-blue" style="margin-top: -3px">
+    </div>
+
+
+    <div class="flex items-center justify-around text-white-light mt-8">
+
+      <div class="px-1 w-1/5">
+        <p>1000+ Apps</p>
+      </div>
+      
+      <div class="px-1 w-1/5">
+        <p>Dark Mode</p>
+      </div>
+
+      <div class="px-1 w-1/5">
+        <p>100% Free</p>
+      </div>
+
+
+    </div>
+  </div>
+  
+</section>
+
+<section>
+    <div class="mx-auto w-full text-justify px-3" style="max-width: 700px">
+        {{-- <h1 class="mb-5 block text-6xl text-white-light">About Us</h1> --}}
+        @include('layouts.about')
+    </div>
+</section>
+
+
+  {{-- <section class="bg-blue" style="margin-top: -3px">
     <div class="container device-wrapper show-gt-tablet-portrait">
         <img src="/SVG/devices.png" class="device-img" alt="">
     </div>
@@ -20,13 +112,13 @@
     <canvas id="waves" class="bg-white"></canvas>
   </section>
 
-  @include('layouts.about')
+  @include('layouts.about') --}}
 
 @endsection
 
 
-<script
+{{-- <script
 src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
 integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
 crossorigin="anonymous"></script>
-<script src="/js/waves.js"></script>
+<script src="/js/waves.js"></script> --}}

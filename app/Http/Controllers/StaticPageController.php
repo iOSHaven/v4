@@ -13,7 +13,8 @@ class StaticPageController extends Controller
     }
 
     public function template($view) {
-      return File::get(resource_path("templates/$view.ejs"));
+      // return File::get(resource_path("templates/$view.ejs"));
+      // return response()->file(resource_path("views/components/$view"), ["Content-Type", "text/html"]);
     }
 
     public function plist($name) {
@@ -37,6 +38,16 @@ class StaticPageController extends Controller
       }
     }
     //
+
+    public function getTestPage() {
+      return view('testComponents');
+    }
+
+    public function getSearchPage() {
+      $apps = \App\App::orderBy('views', 'desc')->get();
+      return view('search')->with('apps', json_encode($apps->toArray()));
+    }
+
     public function getCreditsPage() {
       return view('credits');
     }
@@ -71,5 +82,48 @@ class StaticPageController extends Controller
       return response()->json([
         'done' => true
       ]);
+    }
+
+
+    /**
+     * Toggle dark mode for the current session.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function postTheme (Request $r) {
+      $mode = theme() == "dark" ? "light" : "dark";
+      session(["theme" => $mode]);
+      return redirect(explode("?", url()->previous())[0]."?theme=$mode");
+    }
+
+    /**
+     * Force dark mode for the current session.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function darkTheme (Request $r) {
+      session(["theme" => "dark"]);
+      return redirect("/updates");
+    }
+
+
+    /**
+     * Force light mode for the current session.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function lightTheme (Request $r) {
+      session(["theme" => "light"]);
+      return redirect("/updates");
+    }
+
+
+    /**
+     * Prompt user to install theme.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function chooseInstall (Request $r) {
+      return view('install');
     }
 }

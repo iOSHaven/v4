@@ -14,7 +14,7 @@ class ImageController extends Controller
      */
     public function index()
     {
-        return view('image');
+        //
     }
 
     /**

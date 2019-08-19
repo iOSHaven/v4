@@ -1,104 +1,53 @@
-@extends('layouts.redesign')
+@extends('layouts.redesign', ["title" => "Password Reset", "hide_nav" => true] )
 
 @section('content')
-{{-- <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('password.update') }}">
-                        @csrf
-
-                        <input type="hidden" name="token" value="{{ $token }}">
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ $email ?? old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Reset Password') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> --}}
+<div class="px-24 mb-3">
+    <img src="/SVG/secure.svg" class="w-full" alt="">
+</div>
 
 <section>
-        <div class="container">
-            <h3 class="mt-0">Password Reset</h3>
-            <form action="{{ route('password.update') }}" method="post">
+    <div class="container">
+        {{-- <h3 class="mt-0">Password Reset</h3> --}}
+        <form action="{{ route('password.update') }}" method="post">
             {{ csrf_field() }}
             <input type="hidden" name="token" value="{{ $token }}">
-    
-            <label for="title">{{__('E-Mail Address')}}</label>
-            <div class="flex-cc mb-4 parent">
-                <span class="input-icon p-3">
+
+            <label for="title" class="text-lg">{{__('E-Mail Address')}}</label>
+            <div class="flex items-center justify-center mb-2 relative border rounded-full">
+                <span class="absolute top-0 left-0 py-3 pl-5">
                     <i class="fal fa-envelope"></i>
                 </span>
-                <input value="{{ $email ?? old('email') }}" class="input p-3 pl-5 border-thin-normal" type="email" placeholder="example@gmail.com" name="email" required autofocus>
+                <input value="{{ $email ?? old('email') }}" class="w-full p-3 pl-12 rounded-full" type="email"
+                    placeholder="example@gmail.com" name="email" required autofocus>
             </div>
 
-            <label for="title">{{__('Password')}}</label>
-            <div class="flex-cc mb-4 parent">
-                <span class="input-icon p-3">
-                    <i class="fal fa-key"></i>
+            <label for="title" class="text-lg">{{__('Password')}}</label>
+            <div class="flex items-center justify-center mb-2 relative border rounded-full">
+                <span class="absolute top-0 left-0 py-3 pl-5">
+                    <i class="fal fa-lock-alt"></i>
                 </span>
-                <input value="{{ old('password') }}" class="input p-3 pl-5 border-thin-normal" type="password" placeholder="*********" name="password" required>
+                <input value="{{ old('password') }}" class="w-full p-3 pl-12 rounded-full" type="password"
+                    placeholder="*********" name="password" required>
             </div>
 
-            <label for="title">{{__('Confirm Password')}}</label>
-            <div class="flex-cc mb-4 parent">
-                <span class="input-icon p-3">
-                    <i class="fal fa-key"></i>
+            <label for="title" class="text-lg">{{__('Confirm Password')}}</label>
+            <div class="flex items-center justify-center mb-2 relative border rounded-full">
+                <span class="absolute top-0 left-0 py-3 pl-5">
+                    <i class="fal fa-lock-alt"></i>
                 </span>
-                <input value="{{ old('password_confirmation') }}" class="input p-3 pl-5 border-thin-normal" type="password" placeholder="*********" name="password_confirmation" required>
+                <input value="{{ old('password_confirmation') }}" class="w-full p-3 pl-12 rounded-full" type="password"
+                    placeholder="* * * * * * * * * *" name="password_confirmation" required>
             </div>
-    
-            <button type="submit" class="btn btn-blue mt-3">
-                <i class="fad fa-key mr-3"></i>
-                Update password</button>
-            </form>
-        </div>
-        
-    </section>
+
+            <div class="text-right my-3">
+                <button type="submit"
+                    class="font-bold text-lg rounded-full text-sm px-10 py-3 {{ theme("bg-blue", "text-white") }}">
+                    <i class="fad fa-key mr-3"></i>
+                    Reset password</button>
+            </div>
+        </form>
+    </div>
+
+</section>
 @endsection

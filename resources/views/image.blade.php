@@ -1,4 +1,4 @@
-@extends('layouts.redesign')
+@extends('layouts.redesign', ["title" => "Image"])
 @section('content')
 
 
