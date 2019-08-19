@@ -76,6 +76,13 @@
             "link" => "/apps?by=tweakbox&title=Apps%20from%20TweakBox",
             "bg" => "green",
         ])@endcomponent
+        @component('components.category', [
+            "title" => "Ignition",
+            "icon" => "fab fa-app-store-ios",
+            "link" => "/apps?by=ignition&title=Apps%20from%20Ignition",
+            "bg" => "green",
+        ])@endcomponent
+
 
 </div>
 

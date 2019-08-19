@@ -103,9 +103,9 @@ label.toggle-dark:after {
     transform: translateX(-100%);
 }
 
-#view .ptr--icon,
-#view .ptr--text {
-    @apply text-gray-500-light;
+.ptr--icon,
+.ptr--text {
+    color: inherit !important;
 }
 
 /* #view .ptr--ptr {

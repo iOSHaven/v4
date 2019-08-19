@@ -5,7 +5,7 @@
 
 
 
-<section class="p-0 mt-2">
+<section class="p-0 mt-12">
   <div class="container">
     <div class="row">
       <div class="col-tablet-portrait-6 px-3 px-tablet-portrait">
@@ -14,7 +14,7 @@
 
           {{-- APPLICATION ICON, TITLE, SHORT, & BUTTONS --}}
           <div class="flex items-start justify-start">
-            <img width="60" height="60" src="{{ url($app->icon) }}" alt="">
+            <img width="60" height="60" src="{{ url($app->icon) }}" alt="" style="border-radius: 1.2rem">
             <div class="ml-3 mt-1 leading-none">
               {{ $app->name }}
               <div class="leading-none">
