@@ -78,6 +78,7 @@
           <hr class="border-0 border-b {{ theme('border-gray-200') }}">
 
 
+
           {{-- APPLICATION FEATURES --}}
           <input id="app-modifications-collapse" type="checkbox" class="collapse-check">
           <label for="app-modifications-collapse" class="my-2 collapse-label block">
