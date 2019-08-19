@@ -50,6 +50,9 @@ window.loadMoreApps = function(el) {
          var apps = document.getElementById('apps')
          apps.innerHTML += doc.body.innerHTML
          meta.setAttribute('content', nextPage.toString())
+         setTimeout(() => {
+            (adsbygoogle = window.adsbygoogle || []).push({})
+         }, 500)
       }
    }, "document")
 };
