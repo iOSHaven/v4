@@ -1,10 +1,15 @@
-<!-- v4-footer -->
-{{-- <ins class="adsbygoogle"
-style="display:block"
-data-ad-client="ca-pub-4649450952406116"
-data-ad-slot="6495367539"
-data-ad-format="auto"
-data-full-width-responsive="true"></ins> --}}
+<div class="relative">
+  <div class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center -z-1 {{ theme('bg-gray-100') }}">
+    
+  </div>
+  <!-- v4-footer -->
+  <ins class="adsbygoogle"
+      style="display:block"
+      data-ad-client="ca-pub-4649450952406116"
+      data-ad-slot="6495367539"
+      data-ad-format="auto"
+      data-full-width-responsive="true"></ins>
+</div>
 
 
 
