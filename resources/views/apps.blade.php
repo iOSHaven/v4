@@ -15,7 +15,7 @@ fbq('track', 'Search');
     <div class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center -z-1 {{ theme('bg-gray-100') }}">
       Please consider disabling ads.
     </div>
-    <!-- v4-search-bottom -->
+    <!-- v4-search-top -->
     <ins class="adsbygoogle"
         style="display:block; touch-action: none"
         data-ad-client="ca-pub-4649450952406116"

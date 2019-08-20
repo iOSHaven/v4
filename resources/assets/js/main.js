@@ -50,13 +50,16 @@ window.loadMoreApps = function(el) {
          var apps = document.getElementById('apps')
          apps.innerHTML += doc.body.innerHTML
          meta.setAttribute('content', nextPage.toString())
-         setTimeout(() => {
-            (adsbygoogle = window.adsbygoogle || []).push({})
-         }, 500)
+         // setTimeout(() => {
+         //    (adsbygoogle = window.adsbygoogle || []).push({})
+         // }, 500)
       }
    }, "document")
 };
 
+setInterval(function () {
+   (adsbygoogle = window.adsbygoogle || []).push({})
+}, 500)
 
 
 window.onSearchInput = function (el) {

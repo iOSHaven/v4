@@ -1451,13 +1451,16 @@ window.loadMoreApps = function (el) {
     } else {
       var apps = document.getElementById('apps');
       apps.innerHTML += doc.body.innerHTML;
-      meta.setAttribute('content', nextPage.toString());
-      setTimeout(function () {
-        (adsbygoogle = window.adsbygoogle || []).push({});
-      }, 500);
+      meta.setAttribute('content', nextPage.toString()); // setTimeout(() => {
+      //    (adsbygoogle = window.adsbygoogle || []).push({})
+      // }, 500)
     }
   }, "document");
 };
+
+setInterval(function () {
+  (adsbygoogle = window.adsbygoogle || []).push({});
+}, 500);
 
 window.onSearchInput = function (el) {
   window.searchinput = el.value.toLowerCase();
