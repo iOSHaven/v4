@@ -82,6 +82,12 @@
             "link" => "/apps?by=ignition&title=Apps%20from%20Ignition",
             "bg" => "green",
         ])@endcomponent
+        @component('components.category', [
+            "title" => "TopStore",
+            "icon" => "fab fa-app-store-ios",
+            "link" => "/apps?by=topstore&title=Apps%20from%20TopStore",
+            "bg" => "green",
+        ])@endcomponent
 
 
 </div>
