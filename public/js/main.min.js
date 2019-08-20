@@ -1459,7 +1459,10 @@ window.loadMoreApps = function (el) {
 };
 
 setInterval(function () {
-  (adsbygoogle = window.adsbygoogle || []).push({});
+  try {
+    (adsbygoogle = window.adsbygoogle || []).push({});
+  } catch (err) {//
+  }
 }, 500);
 
 window.onSearchInput = function (el) {
