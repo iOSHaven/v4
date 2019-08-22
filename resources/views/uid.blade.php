@@ -106,15 +106,28 @@
 
             </div>
           </label>
-          <div class="text-pre collapse">
+          <div class="collapse">
             @foreach ($app->mirrors as $mirror)
-                <div class="flex items-center justify-between">
+                <div class="flex items-center justify-between relative p-3">
+                    @if($mirror->provider->revoked)
+                      <div class="absolute left-0 top-0 right-0 bottom-0 bg-yellow-light -z-1"></div>
+                    @endif
                     <div class="flex items-center justify-between">
-                      <img src="https://avatars.io/twitter/{{ $mirror->provider->twitter }}/20" alt="" width="20">
-                      <div class="font-semibold ml-2">{{ $mirror->provider->name }}</div>
+                      <img class="rounded-full border border-gray-100-light" src="https://avatars.io/twitter/{{ $mirror->provider->twitter }}/30" alt="" width="30">
+                      <div class="font-semibold ml-2">{{ $mirror->provider->name }} 
+                        {{-- @if($mirror->provider->revoked)
+                          (REVOKED)
+                        @endif --}}
+                      </div>
                     </div>
-                    @component('components.button', ["href"=> "/install/mirror/" . $app->uid . "/" . $mirror->provider->id, "bg" => "blue", "color" => "white"])
-                    GET @endcomponent
+                    @if($mirror->provider->revoked)
+                      @component('components.button', ["href"=> "/install/mirror/" . $app->uid . "/" . $mirror->provider->id, "bg" => "red", "color" => "white"])
+                      TRY @endcomponent
+                    @else
+                      @component('components.button', ["href"=> "/install/mirror/" . $app->uid . "/" . $mirror->provider->id, "bg" => "blue", "color" => "white"])
+                      GET @endcomponent
+                    @endif
+                    
                 </div>
             @endforeach
           </div>

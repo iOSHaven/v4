@@ -5,6 +5,11 @@
       <div class="pl-5 w-full">
         <div class="{{ theme('text-black') }}">{{ $name }}</div>
         <div class="leading-none text-sm {{ theme('text-gray-500') }}">{{ $short }}</div>
+        <div class="flex items-center justify-start mt-1">
+            @foreach ($mirrors as $mirror)
+              <img class="rounded-full border border-gray-100-light" style="margin-right: 2px" src="https://avatars.io/twitter/{{ $mirror['provider']['twitter'] }}/20" alt="" width="20">
+            @endforeach
+        </div>
         <div class="pt-4 pointer-events-auto z-1 relative">
             @if($unsigned)
               @component('components.button', ["href"=> "/download/$uid", "bg" => "gray-100", "color" => "blue"]) IPA @endcomponent
