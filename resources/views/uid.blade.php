@@ -22,6 +22,11 @@
                 <br>
                 <small>v{{ $app->version ?? "0.0.1" }}</small>
               </div>
+              <div class="flex items-center justify-start mt-1">
+                  @foreach ($app->mirrors as $mirror)
+                    <img class="rounded-full border border-gray-100-light" style="margin-right: 2px" src="https://avatars.io/twitter/{{ $mirror->provider->twitter }}/20" alt="" width="20">
+                  @endforeach
+              </div>
 
               <div class="mt-5">
                 @if($app->unsigned)
