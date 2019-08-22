@@ -12,6 +12,8 @@ use App\App;
 class Mirror extends Model
 {
 
+  protected $with = ["provider"];
+
   public function images()
   {
     return $this->hasMany(Image::class);

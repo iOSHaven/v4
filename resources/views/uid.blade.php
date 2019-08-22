@@ -98,7 +98,7 @@
 
           {{-- APPLICATION MIRRORS --}}
           <input id="app-mirrors-collapse" type="checkbox" class="collapse-check">
-          <label for="app-mirrors-collapse" class="my-2 collapse-label block {{ theme('text-gray-300') }}">
+          <label for="app-mirrors-collapse" class="my-2 collapse-label block">
             <div class="flex items-center justify-between">
               <span class="title">Mirrors</span>
               <i class="fal fa-plus show-closed"></i>
@@ -106,7 +106,18 @@
 
             </div>
           </label>
-          <div class="text-pre collapse text-grey {{ theme('text-gray-300') }}">Coming soon!</div>
+          <div class="text-pre collapse">
+            @foreach ($app->mirrors as $mirror)
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center justify-between">
+                      <img src="https://avatars.io/twitter/{{ $mirror->provider->twitter }}/20" alt="" width="20">
+                      <div class="font-semibold ml-2">{{ $mirror->provider->name }}</div>
+                    </div>
+                    @component('components.button', ["href"=> "/install/mirror/" . $app->uid . "/" . $mirror->provider->id, "bg" => "blue", "color" => "white"])
+                    GET @endcomponent
+                </div>
+            @endforeach
+          </div>
           <hr class="border-0 border-b {{ theme('border-gray-200') }}">
 
 

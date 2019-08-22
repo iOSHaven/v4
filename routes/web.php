@@ -63,6 +63,7 @@ Route::get('/app/edit/{uid}', 'AppController@edit');
 Route::post('/app/update', 'AppController@update');
 Route::post('/app/remove', 'AppController@remove');
 
+Route::get('/install/mirror/{uid}/{provider}', 'AppController@installMirror');
 Route::get('/install/{uid}', 'AppController@install');
 Route::get('/download/{uid}', 'AppController@download');
 

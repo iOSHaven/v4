@@ -176,7 +176,8 @@ class AppController extends Controller
       // dd($app);
       $app->increment('views');
       // $app->html = $p->text($app->description);
-      $app = (object) $app->toArray();
+      $app = json_decode(json_encode($app->toArray()));
+      // dd($app);
       return view('uid')->with(['app' => $app]);
     }
 
@@ -195,24 +196,24 @@ class AppController extends Controller
       return response()->json(App::get());
     }
 
-    private function monetize($url) {
-      return env('MONETIZE') . url($url);
-    }
+    // private function monetize($url) {
+    //   return env('MONETIZE') . url($url);
+    // }
 
-    public function itms($id) {
-      $app = App::find($id);
+    public function itms($itmsurl) {
+      // $app = App::find($id);
       $itms = "itms-services://?action=download-manifest&url=";
       try {
-        if (strpos($app->signed, "app.iosgods.com") !== false) {
-          return Response::make('', 302)->header('Location', $app->signed);
+        if (strpos($itmsurl, "app.iosgods.com") !== false) {
+          return Response::make('', 302)->header('Location', $itmsurl);
         } else {
-          list(, $url) = explode($itms, $app->signed);
+          list(, $url) = explode($itms, $itmsurl);
           $d = urldecode($url);
           $e = urlencode($d);
           return Response::make('', 302)->header('Location', $itms . $e);
         }
       } catch (\Throwable $th) {
-        return Response::make('', 302)->header('Location', $app->signed);
+        return Response::make('', 302)->header('Location', $itmsurl);
       }
     }
 
@@ -221,7 +222,20 @@ class AppController extends Controller
       $app = App::findByUid($uid);
       if ($app->signed) {
         $app->increment('downloads');
-        return redirect($this->monetize("/itms/" . $app->id));
+        // return redirect($this->monetize("/itms/" . $app->id));
+        return $this->itms($app->signed);
+      }
+      else abort(404);
+    }
+
+    public function installMirror($uid, $provider)
+    {
+      $app = App::findByUid($uid);
+      $mirror = $app->mirrors->where("provider_id", $provider)->first();
+      if ($mirror) {
+        $app->increment('downloads');
+        // return redirect($this->monetize("/itms/" . $app->id));
+        return $this->itms($mirror->install_link);
       }
       else abort(404);
     }

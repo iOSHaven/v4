@@ -30,6 +30,8 @@ class App extends Model
                          'size'];
   protected $hidden = ['id'];
 
+  protected $with = ['mirrors'];
+
   public static function findByUid ($uid) {
     return App::where('uid', $uid)->firstOrFail();
   }
