@@ -199,3 +199,34 @@ label.toggle-dark:after {
 .text-pre {
     white-space: pre-line;
 }
+
+.bg-gradient {
+    background-color: #222233;
+    background-image:
+                repeating-linear-gradient(45deg, black 0%, black 5%, transparent 5%, transparent 10%),
+                repeating-linear-gradient(-45deg, black 0%, black 5%, transparent 5%, transparent 10%),
+                linear-gradient(45deg, black, transparent);
+}
+
+
+#tab1:checked ~ section .tab1,
+#tab2:checked ~ section .tab2,
+#tab3:checked ~ section .tab3
+{
+    display: block;
+}
+
+
+#tab1:checked ~ ul .tab1,
+#tab2:checked ~ ul .tab2,
+#tab3:checked ~ ul .tab3
+{
+    @apply -mb-1;
+}
+
+#tab1:checked ~ ul .tab1 label,
+#tab2:checked ~ ul .tab2 label,
+#tab3:checked ~ ul .tab3 label
+{
+    @apply bg-white-light border-t border-l border-r border-black-light rounded-t border-gray-300-light;
+}

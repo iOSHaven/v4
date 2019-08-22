@@ -73,6 +73,14 @@ Route::group(["prefix" => "apps", "middleware" => ["tab:Apps", "back:Apps"]], fu
   Route::get('/{tag?}', 'AppController@page')->name('apps');
 });
 
+Route::group(["prefix" => "providers", "middleware" => ["tab:Providers", "back:Providers"]], function () {
+  Route::get("/edit", "ProviderController@edit");
+  Route::post("/update", "ProviderController@update");
+  Route::post("/destroy/{provider}", "ProviderController@destroy");
+});
+
+
+
 Route::get('/games', 'AppController@games')->middleware('tab:Games', 'back:Games');
 Route::get('/jailbreaks', 'AppController@jailbreaks')->middleware('tab:Jailbreaks', 'back:Jailbreaks');
 Route::get('/updates{tag?}', 'AppController@updates')->middleware('tab:Updates', 'back:Updates');
@@ -88,6 +96,8 @@ Route::post('/contact/{type}', 'ContactController@send');
 // });
 Route::any('/site.mobileconfig', "MobileConfigController@webapp");
 
+
+Route::get('/dashboard', 'StaticPageController@getDashboard');
 Route::get("/install", "StaticPageController@chooseInstall");
 Route::get("/light", "StaticPageController@lightTheme");
 Route::get("/dark", "StaticPageController@darkTheme");

@@ -24,7 +24,7 @@ class ProviderController extends Controller
      */
     public function create()
     {
-        //
+        // return view('CreateProvider');
     }
 
     /**
@@ -57,7 +57,8 @@ class ProviderController extends Controller
      */
     public function edit(Provider $provider)
     {
-        //
+        $providers = Provider::get();
+        return view("EditProviders")->with('providers', $providers);
     }
 
     /**
@@ -67,9 +68,20 @@ class ProviderController extends Controller
      * @param  \App\Provider  $provider
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Provider $provider)
+    public function update(Request $r)
     {
-        //
+        $count = $r->dynamic_input_count;
+        for ($i=1; $i <= $count; $i++) { 
+            $name = $r->{'name-'.$i};
+            if (!empty($name)) {
+                $p = Provider::firstOrNew(["id" => $i]);
+                $p->name = $name;
+                $p->twitter = $r->{'twitter-'.$i};
+                $p->revoked = !empty($r->{'revoked-'.$i});
+                $p->save();
+            }
+        }
+        return back();
     }
 
     /**
@@ -80,6 +92,7 @@ class ProviderController extends Controller
      */
     public function destroy(Provider $provider)
     {
-        //
+        $provider->delete();
+        return back();
     }
 }

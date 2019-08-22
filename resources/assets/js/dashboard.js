@@ -1,6 +1,6 @@
 
 import Vuex from 'vuex';
-import { getField, updateField } from 'vuex-map-fields';
+import store from './store/store';
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -11,7 +11,7 @@ import { getField, updateField } from 'vuex-map-fields';
 // require('./bootstrap');
 window.Vue = require('vue');
 
-Vue.use(Vuex);
+// Vue.use(Vuex);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -19,22 +19,28 @@ Vue.use(Vuex);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 Vue.component('app-dashboard', require('./pages/AppDashboard.vue').default);
+Vue.component('dashboard-layout', require('./pages/DashboardLayout.vue').default);
 
-const store = new Vuex.Store({
-  strict: true,
-  state: {
-    application: {}
-  },
-  getters: {
-    getField
-  },
-  mutations: {
-    updateField
-  }
-})
+// const store = new Vuex.Store({
+//   strict: true,
+//   state: {
+//     application: {}
+//   },
+//   getters: {
+//     getField
+//   },
+//   mutations: {
+//     updateField
+//   }
+// })
+
 
 const app = new Vue({
   el: '#dashboard',
+  data: {
+    loading: true,
+    routes
+  },
   store,
 });
 

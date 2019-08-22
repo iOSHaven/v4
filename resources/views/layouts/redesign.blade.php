@@ -127,7 +127,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
   {{-- <link href="{{ mix('/css/main.min.css') }}" rel="stylesheet"> --}}
   <link href="{{ mix('/css/redesign.min.css') }}" rel="stylesheet">
-  @yield('header')
+  
 
 
   @if(empty($hide_ads))
@@ -174,7 +174,7 @@
       src="https://www.facebook.com/tr?id=362444877957386&ev=PageView&noscript=1" /></noscript>
   <!-- End Facebook Pixel Code -->
   @endif
-
+  @yield('header')
 </head>
 
 
@@ -199,6 +199,12 @@
           <strong>{{ Auth::user()->username }}</strong>
           <div class="leading-none">@admin Admin @else Member @endadmin</div>
         </li>
+        @admin
+        <a href="/dashboard" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+          Dashboard
+          <i class="fal fa-chevron-right"></i>
+        </a>
+        @endadmin
         <a href="/user/settings" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
           Settings
           <i class="fal fa-chevron-right"></i>
@@ -297,19 +303,17 @@
           {{ session('back_button') ?? "Back" }}
         </button>
       @endif
+        
       @admin
       <div class="w-full p-3 mb-3 flex items-center justify-start {{ theme('bg-red') }}">
           <form action="/app/create" method="post">
             {{ csrf_field() }}
             <button type="submit" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-blue-light {{ theme("bg-white") }}">Add App</button>
           </form>
-          <form action="/provider/create" method="post">
-            {{ csrf_field() }}
-            <button type="submit" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-blue-light {{ theme("bg-white") }}">Add Provider</button>
-          </form>
+          <a href="/providers/edit" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-blue-light {{ theme("bg-white") }}">Manage Providers</a>
       </div>
-        
       @endadmin
+
       @yield('content')
 
       @if($errors->any())

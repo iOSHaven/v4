@@ -1,111 +1,81 @@
-@extends('layouts.redesign')
-<?php $page = $page ?? "" ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Dashboard</title>
 
-@section("images")
-_image_("/avatar/{{ Auth::user()->username }}")
-@endsection
+  <!-- === F O N T S === -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather:900i|Amiko:400" rel="stylesheet" />
 
-@section('content')
-
-<form action="{{ route('logout') }}" method="POST" id="logout-form">
-  {{ csrf_field() }}
-</form>
-
+  <!-- === S T Y L E S === -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+  <link href="{{ mix('/css/redesign.min.css') }}" rel="stylesheet">
 
 
-<section>
-    <div class="container">
-      <div class="row">
-          <div class="col-tablet-portrait-3 px-3">
-            <div class="bg-white show-gt-tablet-portrait">
-                <img class="d-block b-1 b-light" width="80" height="80" src="/avatar/{{ Auth::user()->username }}" alt="" >
-                <br>
-                <strong>{{ Auth::user()->username }}</strong>
-                <br>
-                <span>@admin Admin @else Member @endadmin</span>
-                {{-- <div class="my-3">
-                    <span class="fa-stack fa-1x">
-                      <i class="fas fa-hexagon fa-stack-2x fa-rotate-90"></i>
-                      <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+</head>
+<body class="bg-gray-100-light h-screen">
+  <main id="dashboard">
+    
+    <div id="content" v-show="!loading">
+        <div class="flex items-center justify-center overflow-hidden h-screen">
+            <aside class="bg-black-light h-full overflow-auto text-white-light border-r border-gray-100-dark">
+                <ul style="width: 250px">
+                  <li class="p-3 border-b text-center border-b border-gray-200-dark">
+                    <img class="rounded-full border mb-3 mx-auto border-b border-gray-200-dark" src="/avatar/zeb" alt=""
+                      width="70">
+                    <strong>{{ Auth::user()->username }}</strong>
+                    <div class="leading-none">@admin Admin @else Member @endadmin</div>
+                  </li>
+                  <a href="#apps" class="p-3 flex items-center bg-black-light justify-between border-b border-gray-200-dark">
+                    <span>
+                        <i class="fas fa-info-circle mr-2"></i>
+                        Info
                     </span>
-                    <span class="fa-stack fa-1x">
-                      <i class="fas fa-hexagon fa-stack-2x fa-rotate-90"></i>
-                      <i class="fab fa-discord fa-stack-1x fa-inverse"></i>
+                    <i class="fas fa-circle text-blue-light"></i>
+                  </a>
+                  <a href="#apps" class="p-3 flex items-center bg-black-light justify-between border-b border-gray-200-dark">
+                    <span>
+                        <i class="fas fa-magnet mr-2"></i>
+                        Mirrors
                     </span>
-                </div> --}}
-                {{-- <hr class="my-4 border-thin-light"> --}}
-                <ul class="nav-vert">
-                  <li class="{{$page == 'Settings' ? 'bl-3 b-blue pl-3' : ''}}">
-                    <a href="/user/settings">Settings</a>
-                  </li>
-                  <li class="{{$page == 'Notifications' ? 'bl-3 b-blue pl-3' : ''}}">
-                    <a href="/user/notifications">Notifications</a>
-                  </li>
-                  <li class="{{$page == 'Badges' ? 'bl-3 b-blue pl-3' : ''}}">
-                    <a href="/user/badges">Badges</a>
-                  </li>
-                  <li class="{{$page == 'Password' ? 'bl-3 b-blue pl-3' : ''}}">
-                    <a href="/user/password">Password</a>
-                  </li>
-                  <li class="">
-                    <a href="#" class="text-red" onclick="event.preventDefault();
-                          document.getElementById('logout-form').submit();">Logout</a>
-                  </li>
-                </ul>
-            </div>
-
-            <div class="bg-white show-lt-tablet-portrait flex-lt">
-              <div class="mr-3">
-                  <img class="d-block b-1 b-light" width="80" height="80" src="/avatar/{{ Auth::user()->username }}" alt="" >
-                  <br>
-                  <strong>{{ Auth::user()->username }}</strong>
-                  <br>
-                  <span>@admin Admin @else Member @endadmin</span>
-              </div>
-            
+                  </a>
+              </ul>
+            </aside>
+            <div class="h-full overflow-auto flex-grow text-white-light relative" style="background-color: rgba(255,255,255,0.1)">
+                <nav class="absolute left-0 right-0 flex items-center justify-start bg-white-light text-black-light">
+                    <a href="#apps" class="p-3 flex items-center justify-between border-blue-dark border-b-4 bg-gray-100-light -mb-1">
+                      <span>
+                          <i class="fas fa-layer-group mr-2"></i>
+                          Apps
+                      </span>
+                    </a>
+                    <a href="#apps" class="p-3 flex items-center justify-between border-blue-dark">
+                      <span>
+                          <i class="fab fa-app-store-ios mr-2"></i>
+                          Providers
+                      </span>
+                    </a>
+                </nav>
+                <div class="h-full " style="padding-top: 48px">
+                    <div class="p-3 text-gray-600-light">
+                        @yield('content')
+                    </div>
+                    
+                </div>
                 
-                {{-- <div class="my-3">
-                    <span class="fa-stack fa-1x">
-                      <i class="fas fa-hexagon fa-stack-2x fa-rotate-90"></i>
-                      <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
-                    </span>
-                    <span class="fa-stack fa-1x">
-                      <i class="fas fa-hexagon fa-stack-2x fa-rotate-90"></i>
-                      <i class="fab fa-discord fa-stack-1x fa-inverse"></i>
-                    </span>
-                </div> --}}
-                {{-- <hr class="my-4 border-thin-light"> --}}
-                <ul class="nav-vert col-9 m-0">
-                  <li class="{{$page == 'Settings' ? 'bl-3 b-blue pl-3' : ''}}">
-                    <a href="/user/settings">Settings</a>
-                  </li>
-                  <li class="{{$page == 'Notifications' ? 'bl-3 b-blue pl-3' : ''}}">
-                    <a href="/user/notifications">Notifications</a>
-                  </li>
-                  <li class="{{$page == 'Badges' ? 'bl-3 b-blue pl-3' : ''}}">
-                    <a href="/user/badges">Badges</a>
-                  </li>
-                  <li class="{{$page == 'Password' ? 'bl-3 b-blue pl-3' : ''}}">
-                    <a href="/user/password">Password</a>
-                  </li>
-                  <li class="">
-                    <a href="#" class="text-red" onclick="event.preventDefault();
-                          document.getElementById('logout-form').submit();">Logout</a>
-                  </li>
-                </ul>
             </div>
-          </div>
-          <div class="col-tablet-portrait-9">
-              <div class="p-3 bg-white">
-                <h6 class="m-0">{{ $page }}</h6>
-                @yield("content")
-              </div>
-          </div>
-      </div>
-      
+            
+        </div>
     </div>
-  </section>
+      
+  </main>
+  
 
-
-
-@overwrite
+  {{-- <script src="{{ asset('/js/app.js') }}"></script> --}}
+  {{-- <script src="{{ asset('/js/dashboard.js') }}"></script> --}}
+</body>
+</html>

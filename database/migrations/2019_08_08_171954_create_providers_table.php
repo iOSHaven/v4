@@ -19,6 +19,7 @@ class CreateProvidersTable extends Migration
             $table->string("twitter");
             $table->boolean("revoked")->default(false);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

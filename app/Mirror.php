@@ -11,6 +11,9 @@ use App\App;
 
 class Mirror extends Model
 {
+  protected $fillable = [
+    "provider_id", "app_id"
+  ];
 
   protected $with = ["provider"];
 
@@ -46,19 +49,24 @@ class Mirror extends Model
 
   public function createFromPlistURL($plistURL, Provider $provider, App $app)
   {
-    $plistJSON = $this->getDataFromApple($plistURL)->results[0];
-    $this->description = $plistJSON->description;
-    $this->fileSizeInBytes = $plistJSON->fileSizeBytes;
-    $this->minimumOsVersion = $plistJSON->minimumOsVersion;
-    $this->formattedPrice = $plistJSON->formattedPrice;
-    $this->sellerName = $plistJSON->sellerName;
-    $this->releaseNotes = $plistJSON->releaseNotes;
-    $this->genres = join(', ', $plistJSON->genres);
-    $this->sellerURL = $plistJSON->sellerUrl;
-    $this->iconURL = $plistJSON->artworkUrl60;
-    $this->app()->associate($app)->save();
-    $this->provider()->associate($provider)->save();
+    $data = $this->getDataFromApple($plistURL);
+    $this->install_link = $plistURL;
+    if (!empty($data)) {
+      $plistJSON = $data->results[0];
+      $this->description = $plistJSON->description;
+      $this->fileSizeInBytes = $plistJSON->fileSizeBytes;
+      $this->minimumOsVersion = $plistJSON->minimumOsVersion;
+      $this->formattedPrice = $plistJSON->formattedPrice;
+      $this->sellerName = $plistJSON->sellerName;
+      $this->releaseNotes = $plistJSON->releaseNotes;
+      $this->genres = join(', ', $plistJSON->genres);
+      $this->sellerURL = $plistJSON->sellerUrl;
+      $this->iconURL = $plistJSON->artworkUrl60;
+      $this->app()->associate($app)->save();
+      $this->provider()->associate($provider)->save();
+    }
     $this->save();
+    
 
     // foreach (array_merge($plistJSON->screenshotUrls, $plistJSON->ipadScreenshotUrls) as $screenshot) {
     //   $image = new Image;
@@ -74,7 +82,7 @@ class Mirror extends Model
     //   $this->images()->save($image);
     // }
 
-    dd($this);
+    // dd($this);
     // dd($this->toArray());
   }
 }

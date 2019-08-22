@@ -8,9 +8,10 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 Vue.component('search-results', require('./pages/SearchResults.vue').default);
+Vue.component('dynamic-input', require('./components/DynamicInput.vue').default);
 
 const app = new Vue({
-  el: '#search-results',
+  el: '#vuescope',
   data: {
     searchinput: ""
   }

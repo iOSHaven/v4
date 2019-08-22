@@ -6,6 +6,8 @@ use Spatie\Sitemap\SitemapGenerator;
 use Illuminate\Http\Request;
 use App\Thing;
 use App\App;
+use App\Provider;
+use App\Mirror;
 use Parsedown;
 use Carbon\Carbon;
 use DB;
@@ -160,12 +162,22 @@ class AppController extends Controller
 
     public function update (Request $request)
     {
+
       // dd($request->all());
       $app = App::findByUid($request->uid);
       $app->update($request->all());
       // // dd('asdf');
       $app->edited_at = Carbon::now();
       $app->save();
+
+      $count = Provider::get()->last()->id;
+      for ($i=1; $i <= $count; $i++) { 
+        $signed = $request->{"mirror-" . $i};
+        if(!empty($signed)) {
+          $m = Mirror::firstOrNew(["provider_id" => $i, "app_id" => $app->id]);
+          $m->createFromPlistURL($signed, Provider::find($i), $app);
+        }
+      }
       return redirect("/app/edit/{$request->uid}");
     }
 
@@ -184,9 +196,11 @@ class AppController extends Controller
     public function edit ($uid) {
       if (Auth::guest() || !Auth::user()->isAdmin) return abort(404);
       $app = App::findByUid($uid);
+      $providers = Provider::get();
       return view('edit')->with([
         'app' => $app, 
-        "apps" => json_encode(App::get()->toArray())
+        "apps" => json_encode(App::get()->toArray()),
+        "providers" => $providers
         ]);
     }
 
@@ -204,16 +218,23 @@ class AppController extends Controller
       // $app = App::find($id);
       $itms = "itms-services://?action=download-manifest&url=";
       try {
-        if (strpos($itmsurl, "app.iosgods.com") !== false) {
-          return Response::make('', 302)->header('Location', $itmsurl);
+        if (strpos($app->signed, "app.iosgods.com") !== false) {
+          return Response::make('', 302)
+            ->header('Location', $app->signed)
+            ->header('Cache-Control', 'no-cache, no-store, max-age=0, must-revalidate')
+            ->header('Pragma', 'no-cache');
         } else {
           list(, $url) = explode($itms, $itmsurl);
           $d = urldecode($url);
           $e = urlencode($d);
-          return Response::make('', 302)->header('Location', $itms . $e);
+          return Response::make('', 302)->header('Location', $itms . $e)
+            ->header('Cache-Control', 'no-cache, no-store, max-age=0, must-revalidate')
+            ->header('Pragma', 'no-cache');
         }
       } catch (\Throwable $th) {
-        return Response::make('', 302)->header('Location', $itmsurl);
+        return Response::make('', 302)->header('Location', $app->signed)
+            ->header('Cache-Control', 'no-cache, no-store, max-age=0, must-revalidate')
+            ->header('Pragma', 'no-cache');
       }
     }
 

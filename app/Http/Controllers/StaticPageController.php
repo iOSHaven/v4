@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Session;
 use File;
+use Auth;
 
 class StaticPageController extends Controller
 {
@@ -125,5 +126,16 @@ class StaticPageController extends Controller
      */
     public function chooseInstall (Request $r) {
       return view('install');
+    }
+
+
+    /**
+     * Show the dashboard view for admins online.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function getDashboard (Request $r) {
+      if (Auth::guest() || !Auth::user()->isAdmin) return abort(404);
+      return view('dashboard');
     }
 }
