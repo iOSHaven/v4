@@ -54,7 +54,7 @@ class App extends Model
 
   public function mirrors()
   {
-    return $this->hasMany(Mirror::class);
+    return $this->hasMany(Mirror::class)->whereNotNull("install_link");
   }
 
   public function newEloquentBuilder($query)

@@ -24,7 +24,12 @@
               </div>
               <div class="flex items-center justify-start mt-1">
                   @foreach ($app->mirrors as $mirror)
-                    <img class="rounded-full border border-gray-100-light" style="margin-right: 2px" src="https://avatars.io/twitter/{{ $mirror->provider->twitter }}/20" alt="" width="20">
+                    <div class="relative rounded-full border border-gray-100-light overflow-hidden" style="margin-right: 2px">
+                        <img class="rounded-full" src="https://avatars.io/twitter/{{ $mirror->provider->twitter }}/20" alt="" width="20">
+                        @if($mirror->provider->revoked)
+                          <div class="absolute top-0 left-0 bottom-0 right-0 bg-white-light" style="opacity: 0.95"></div>
+                        @endif
+                    </div>
                   @endforeach
               </div>
 
@@ -33,9 +38,12 @@
                 @component('components.button', ["href"=> "/download/$app->uid", "bg" => "gray-100", "color" => "blue"])
                 IPA @endcomponent
                 @endif
-                @if($app->signed)
-                @component('components.button', ["href"=> "/install/$app->uid", "bg" => "blue", "color" => "white"])
-                GET @endcomponent
+                @if(isset($app->mirrors[0]))
+                  @component('components.button', ["href"=> "/install/mirror/$app->uid/" . $app->mirrors[0]->provider_id, "bg" => "blue", "color" => "white"])
+                  GET @endcomponent
+                @elseif($app->signed)
+                  @component('components.button', ["href"=> "/install/$app->uid", "bg" => "blue", "color" => "white"])
+                  GET @endcomponent
                 @endif
                 @admin
                 @component('components.button', ["href"=> "/app/edit/$app->uid", "bg" => "red", "color" => "white"])

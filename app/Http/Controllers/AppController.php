@@ -173,7 +173,7 @@ class AppController extends Controller
       $count = Provider::get()->last()->id;
       for ($i=1; $i <= $count; $i++) { 
         $signed = $request->{"mirror-" . $i};
-        if(!empty($signed)) {
+        if(Provider::find($i)) {
           $m = Mirror::firstOrNew(["provider_id" => $i, "app_id" => $app->id]);
           $m->createFromPlistURL($signed, Provider::find($i), $app);
         }
@@ -218,9 +218,9 @@ class AppController extends Controller
       // $app = App::find($id);
       $itms = "itms-services://?action=download-manifest&url=";
       try {
-        if (strpos($app->signed, "app.iosgods.com") !== false) {
+        if (strpos($itmsurl, "app.iosgods.com") !== false) {
           return Response::make('', 302)
-            ->header('Location', $app->signed)
+            ->header('Location', $itmsurl)
             ->header('Cache-Control', 'no-cache, no-store, max-age=0, must-revalidate')
             ->header('Pragma', 'no-cache');
         } else {
@@ -232,7 +232,7 @@ class AppController extends Controller
             ->header('Pragma', 'no-cache');
         }
       } catch (\Throwable $th) {
-        return Response::make('', 302)->header('Location', $app->signed)
+        return Response::make('', 302)->header('Location', $itmsurl)
             ->header('Cache-Control', 'no-cache, no-store, max-age=0, must-revalidate')
             ->header('Pragma', 'no-cache');
       }

@@ -42,6 +42,7 @@ class Mirror extends Model
       throw new ProcessFailedException($process);
     }
     $plistJSON = json_decode($process->getOutput());
+    dump($plistJSON);
     return $plistJSON;
   }
 
