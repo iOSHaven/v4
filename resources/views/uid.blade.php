@@ -20,10 +20,10 @@
               <div class="leading-none">
                 <small>{{ $app->short }}</small>
                 <br>
-                <small>v{{ $app->version ?? "0.0.1" }}</small>
+                <small>v{{ $app->firstMirror->version ?? $app->version ?? "????" }}</small>
               </div>
               <div class="flex items-center justify-start mt-1">
-                  @foreach ($app->mirrors as $mirror)
+                  @foreach ($app->availableMirrors as $mirror)
                     <div class="relative rounded-full border border-gray-100-light overflow-hidden" style="margin-right: 2px">
                         <img class="rounded-full" src="https://avatars.io/twitter/{{ $mirror->provider->twitter }}/20" alt="" width="20">
                         @if($mirror->provider->revoked)
@@ -38,8 +38,8 @@
                 @component('components.button', ["href"=> "/download/$app->uid", "bg" => "gray-100", "color" => "blue"])
                 IPA @endcomponent
                 @endif
-                @if(isset($app->mirrors[0]))
-                  @component('components.button', ["href"=> "/install/mirror/$app->uid/" . $app->mirrors[0]->provider_id, "bg" => "blue", "color" => "white"])
+                @if($app->firstMirror)
+                  @component('components.button', ["href"=> "/install/mirror/$app->uid/" . $app->firstMirror->provider_id, "bg" => "blue", "color" => "white"])
                   GET @endcomponent
                 @elseif($app->signed)
                   @component('components.button', ["href"=> "/install/$app->uid", "bg" => "blue", "color" => "white"])
@@ -69,30 +69,66 @@
           </div>
 
           <br>
+
           {{-- APPLICATION PREVIEWS FROM ITUNES --}}
-          <input id="app-previews-collapse" type="checkbox" class="collapse-check">
-          <label for="app-previews-collapse" class="my-2 collapse-label block {{ theme('text-gray-300') }}">
-            <div class="flex items-center justify-between">
-              <span class="title">Previews</span>
-              <i class="fal fa-plus show-closed"></i>
-              <i class="fal fa-minus show-open"></i>
+          @if($app->phonePreviews)
+            <input id="app-previews-collapse" type="checkbox" class="collapse-check">
+            <label for="app-previews-collapse" class="my-2 collapse-label block">
+              <div class="flex items-center justify-between">
+                <span class="title">iPhone Previews</span>
+                <i class="fal fa-plus show-closed"></i>
+                <i class="fal fa-minus show-open"></i>
+              </div>
+            </label>
+            <div class="collapse">
+              <ul class="overflow-scroll flex scrolling-touch">
+                @foreach($app->phonePreviews as $preview)
+                  <li class="flex-grow-0 flex-shrink-0 mr-2 rounded-lg" style="width: 200px">
+                    <img class="w-full rounded-lg" src="{{ $preview->url }}" alt="">
+                  </li>
+                  
+                @endforeach
+              </ul>
             </div>
-          </label>
-          <div class="text-pre collapse {{ theme('text-gray-300') }}">Coming soon!</div>
-          <hr class="border-0 border-b {{ theme('border-gray-200') }}">
+            <hr class="border-0 border-b {{ theme('border-gray-200') }}">
+          @endif
+
+          {{-- APPLICATION PREVIEWS FROM ITUNES --}}
+          @if($app->ipadPreviews)
+            <input id="app-ipadpreviews-collapse" type="checkbox" class="collapse-check">
+            <label for="app-ipadpreviews-collapse" class="my-2 collapse-label block">
+              <div class="flex items-center justify-between">
+                <span class="title">iPad Previews</span>
+                <i class="fal fa-plus show-closed"></i>
+                <i class="fal fa-minus show-open"></i>
+              </div>
+            </label>
+            <div class="collapse">
+              <ul class="overflow-scroll flex scrolling-touch">
+                @foreach($app->ipadPreviews as $preview)
+                  <li class="flex-grow-0 flex-shrink-0 mr-2 rounded-lg" style="width: 200px">
+                    <img class="w-full rounded-lg" src="{{ $preview->url }}" alt="">
+                  </li>
+                  
+                @endforeach
+              </ul>
+            </div>
+            <hr class="border-0 border-b {{ theme('border-gray-200') }}">
+          @endif
 
           {{-- APPLICATION DESCRIPTION FROM ITUNES --}}
+          @if($app->firstMirror)
           <input id="app-description-collapse" type="checkbox" class="collapse-check">
-          <label for="app-description-collapse" class="my-2 collapse-label block {{ theme('text-gray-300') }}">
+          <label for="app-description-collapse" class="my-2 collapse-label block">
             <div class="flex items-center justify-between">
               <span class="title">Description</span>
               <i class="fal fa-plus show-closed"></i>
               <i class="fal fa-minus show-open"></i>
             </div>
           </label>
-          <div class="text-pre collapse {{ theme('text-gray-300') }}">Coming soon!</div>
+          <div class="text-pre collapse">{{ $app->firstMirror->description }}</div>
           <hr class="border-0 border-b {{ theme('border-gray-200') }}">
-
+          @endif
 
 
           {{-- APPLICATION FEATURES --}}
@@ -110,6 +146,7 @@
 
 
           {{-- APPLICATION MIRRORS --}}
+          @if(count($app->mirrors) > 0)
           <input id="app-mirrors-collapse" type="checkbox" class="collapse-check">
           <label for="app-mirrors-collapse" class="my-2 collapse-label block">
             <div class="flex items-center justify-between">
@@ -121,23 +158,24 @@
           </label>
           <div class="collapse">
             @foreach ($app->mirrors as $mirror)
-                <div class="flex items-center justify-between relative p-3">
+                <div class="flex items-center justify-between relative py-3 text-xs">
                     @if($mirror->provider->revoked)
                       <div class="absolute left-0 top-0 right-0 bottom-0 bg-yellow-light -z-1"></div>
                     @endif
                     <div class="flex items-center justify-between">
-                      <img class="rounded-full border border-gray-100-light" src="https://avatars.io/twitter/{{ $mirror->provider->twitter }}/30" alt="" width="30">
-                      <div class="font-semibold ml-2">{{ $mirror->provider->name }} 
+                      <img class="rounded-full border border-gray-100-light" src="https://avatars.io/twitter/{{ $mirror->provider->twitter }}/20" alt="" width="20">
+                      <div class="font-semibold ml-2">{{ $mirror->provider->name }}
+                        <small>(v{{ $mirror->version ?? "????" }})</small>
                         {{-- @if($mirror->provider->revoked)
                           (REVOKED)
                         @endif --}}
                       </div>
                     </div>
                     @if($mirror->provider->revoked)
-                      @component('components.button', ["href"=> "/install/mirror/" . $app->uid . "/" . $mirror->provider->id, "bg" => "red", "color" => "white"])
+                      @component('components.button', ["size" => "xs", "href"=> "/install/mirror/" . $app->uid . "/" . $mirror->provider->id, "bg" => "red", "color" => "white"])
                       TRY @endcomponent
                     @else
-                      @component('components.button', ["href"=> "/install/mirror/" . $app->uid . "/" . $mirror->provider->id, "bg" => "blue", "color" => "white"])
+                      @component('components.button', ["size" => "xs", "href"=> "/install/mirror/" . $app->uid . "/" . $mirror->provider->id, "bg" => "blue", "color" => "white"])
                       GET @endcomponent
                     @endif
                     
@@ -145,6 +183,7 @@
             @endforeach
           </div>
           <hr class="border-0 border-b {{ theme('border-gray-200') }}">
+          @endif
 
 
           {{-- APPLICATON STATS --}}

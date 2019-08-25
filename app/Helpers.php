@@ -37,6 +37,10 @@ function tab($tab)
   return session("current_tab") == $tab ? theme("text-blue") : "";
 }
 
+function user_agent_has($str) {
+  $user_agent =  isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
+  return stripos($user_agent, $str);
+}
 
 function parseQuery($query, $expected=[]) {
   $args = preg_split("~('|\")[^'\"]*('|\")(*SKIP)(*F)|\s+~", urldecode($query));

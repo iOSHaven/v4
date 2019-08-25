@@ -142,7 +142,7 @@
     
           <div class="w-1/2 mb-3">
             <label for="" class="block">Signed Link</label>
-            @if($app->mirrors)
+            @if($app->firstMirror())
             <div class="px-3 py-1 border w-full border-gray-200-light bg-red-light text-white-light">See 'Mirrors' tab</div>
             @else
             <input type="text" class="px-3 py-1 border w-full border-gray-200-light" maxlength="65000" placeholder="ITMS URL..." data-lpignore="true" value="{{ $app->signed }}" name="signed">

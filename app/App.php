@@ -43,6 +43,10 @@ class App extends Model
     $array["views_str"] = format_int($array["views"]);
     $array["downloads_str"] = format_int($array["downloads"]);
     $array["size_str"] = format_int($array["size"], "file");
+    $array["availableMirrors"] = $this->availableMirrors()->get();
+    $array["firstMirror"] = $this->firstMirror();
+    $array["phonePreviews"] = $this->previews("phone");
+    $array["ipadPreviews"] = $this->previews("ipad");
     if(Auth::check()) {
       $array["isAdmin"] = Auth::user()->isAdmin;
     } else {
@@ -54,7 +58,26 @@ class App extends Model
 
   public function mirrors()
   {
-    return $this->hasMany(Mirror::class)->whereNotNull("install_link");
+    return $this->hasMany(Mirror::class)->whereNotNull("install_link")->orderBy("version", "desc");
+  }
+
+  public function availableMirrors() {
+    return $this->mirrors()->whereHas("provider", function ($q) {
+      $q->where("revoked", false);
+    });
+  }
+
+  public function firstMirror() {
+    return $this->availableMirrors()->whereNotNull('description')->first();
+  }
+
+  public function previews ($type) {
+    if($this->firstMirror()) {
+      return $this->firstMirror()->images()->where('type', $type)->get();
+    } else {
+      return collect([]);
+    }
+    
   }
 
   public function newEloquentBuilder($query)

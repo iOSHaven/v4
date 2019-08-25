@@ -26,6 +26,7 @@
     "dependencies": {
         "bladejs": "^1.0.3",
         "body-scroll-lock": "^2.6.4",
+        "child-process-promise": "^2.2.1",
         "command-line-args": "^5.1.1",
         "cssnano": "^4.1.10",
         "framework7": "^4.4.10",

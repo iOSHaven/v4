@@ -6,7 +6,7 @@
         <div class="{{ theme('text-black') }}">{{ $name }}</div>
         <div class="leading-none text-sm {{ theme('text-gray-500') }}">{{ $short }}</div>
         <div class="flex items-center justify-start mt-1">
-            @foreach ($mirrors as $mirror)
+            @foreach ($availableMirrors as $mirror)
               <div class="relative rounded-full border border-gray-100-light overflow-hidden" style="margin-right: 2px">
                   <img class="rounded-full" src="https://avatars.io/twitter/{{ $mirror['provider']['twitter'] }}/20" alt="" width="20">
                   @if($mirror['provider']['revoked'])

@@ -172,10 +172,14 @@ class AppController extends Controller
 
       $count = Provider::get()->last()->id;
       for ($i=1; $i <= $count; $i++) { 
+        $provider = Provider::find($i);
         $signed = $request->{"mirror-" . $i};
-        if(Provider::find($i)) {
+        if($provider) {
           $m = Mirror::firstOrNew(["provider_id" => $i, "app_id" => $app->id]);
-          $m->createFromPlistURL($signed, Provider::find($i), $app);
+          $m->install_link = $signed;
+          $m->app()->associate($app)->save();
+          $m->provider()->associate($provider)->save();
+          $m->save();
         }
       }
       return redirect("/app/edit/{$request->uid}");
