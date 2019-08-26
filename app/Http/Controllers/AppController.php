@@ -91,7 +91,8 @@ class AppController extends Controller
     }
 
     public function games (Request $r) {
-      $apps = App::hasName()
+      $apps = App::with("mirrors.provider")
+                  ->hasName()
                   ->games()
                   ->orderBy("downloads", "desc")
                   ->paginate(15);
@@ -106,7 +107,7 @@ class AppController extends Controller
       }
     }
     public function jailbreaks (Request $r) {
-      $apps = App::hasName()
+      $apps = App::with("mirrors.provider")->hasName()
                   ->tag("jailbreak")
                   ->orderBy("downloads", "desc")
                   ->paginate(15);
@@ -126,7 +127,7 @@ class AppController extends Controller
       if ($tag) $search = $tag;
       else $search = $r->q;
       $filteredData = [
-        'apps' => App::where('name', '!=', 'No name')
+        'apps' => App::with("mirrors.provider")->where('name', '!=', 'No name')
           ->where('name', 'like', "%". $search."%")
           ->orWhere('tags', 'like', "%". $search."%")
           ->where('edited_at', '>', Carbon::now()->subDays(3))
