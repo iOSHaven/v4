@@ -61,16 +61,16 @@ class Mirror extends Model
         $data = $this->getDataFromUrl($data->ipaurl);
       }
       if (!empty($data->description)) {
-        $this->description = $data->description;
-        $this->fileSizeInBytes = $data->fileSizeBytes;
-        $this->minimumOsVersion = $data->minimumOsVersion;
-        $this->formattedPrice = $data->formattedPrice;
-        $this->sellerName = $data->sellerName;
-        $this->releaseNotes = $data->releaseNotes;
-        $this->genres = join(', ', $data->genres);
-        $this->sellerURL = $data->sellerUrl;
-        $this->iconURL = $data->artworkUrl60;
-        $this->version = $data->version;
+        $this->description = $data->description ?? null;
+        $this->fileSizeInBytes = $data->fileSizeBytes ?? null;
+        $this->minimumOsVersion = $data->minimumOsVersion ?? null;
+        $this->formattedPrice = $data->formattedPrice ?? null;
+        $this->sellerName = $data->sellerName ?? null;
+        $this->releaseNotes = $data->releaseNotes ?? null;
+        $this->genres = join(', ', $data->genres ?? []);
+        $this->sellerURL = $data->sellerUrl ?? null;
+        $this->iconURL = $data->artworkUrl60 ?? null;
+        $this->version = $data->version ?? null;
         $this->fetched_at = Carbon::now();
 
         foreach (array_merge($data->screenshotUrls, $data->ipadScreenshotUrls) as $screenshot) {
