@@ -58,7 +58,7 @@ Route::get('/itms/{id}', 'AppController@itms');
 
 
 Route::post('/app/create', 'AppController@create');
-Route::get('/app/{uid}', 'AppController@get');
+Route::get('/app/{uid}', 'AppController@showAppDetailPage');
 Route::get('/app/edit/{uid}', 'AppController@edit');
 Route::post('/app/update', 'AppController@update');
 Route::post('/app/remove', 'AppController@remove');
@@ -68,7 +68,7 @@ Route::get('/install/{uid}', 'AppController@install');
 Route::get('/download/{uid}', 'AppController@download');
 
 Route::group(["prefix" => "apps", "middleware" => ["tab:Apps", "back:Apps"]], function () {
-  Route::get('/getJson/{uid?}', 'AppController@getJson');
+  // Route::get('/getJson/{uid?}', 'AppController@getJson');
   Route::get('/type/{type}', 'AppController@type');
   Route::get('/{tag?}', 'AppController@page')->name('apps');
 });

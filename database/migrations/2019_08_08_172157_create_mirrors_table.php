@@ -28,6 +28,8 @@ class CreateMirrorsTable extends Migration
             $table->longText("releaseNotes")->nullable();
             $table->string("genres")->nullable();
             $table->string("sellerURL")->nullable();
+            $table->string("version")->nullable();
+            $table->timestamp("fetched_at")->nullable();
             $table->timestamps();
         });
     }
