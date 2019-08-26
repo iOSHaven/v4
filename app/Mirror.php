@@ -33,7 +33,7 @@ class Mirror extends Model
     return $this->belongsTo(App::class);
   }
 
-  private function getDataFromUrl($plistURL)
+  public function getDataFromUrl($plistURL)
   {
     if (!empty($plistURL)) {
       dump(['node', base_path('plist.js'), '--url', $plistURL]);
@@ -56,8 +56,10 @@ class Mirror extends Model
     $data = $this->getDataFromUrl($plistURL);
     $this->install_link = $plistURL;
 
-    if (!empty($data) && empty($data->description)) {
-      $data = $this->getDataFromUrl($data->ipaurl);
+    if (!empty($data)) {
+      if (empty($data->description)) {
+        $data = $this->getDataFromUrl($data->ipaurl);
+      }
       if (!empty($data->description)) {
         $this->description = $data->description;
         $this->fileSizeInBytes = $data->fileSizeBytes;
