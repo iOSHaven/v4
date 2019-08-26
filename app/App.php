@@ -58,7 +58,7 @@ class App extends Model
 
   public function mirrors()
   {
-    return $this->hasMany(Mirror::class)->whereNotNull("install_link")->orderBy("version", "desc");
+    return $this->hasMany(Mirror::class)->whereNotNull("install_link")->orderByRaw('INET_ATON(version) desc');
   }
 
   public function availableMirrors() {
