@@ -10,6 +10,7 @@ app/storage/
 public/storage
 public/hot
 storage/*.key
+storage/debugbar/
 .env.*.php
 .env.php
 .env

@@ -16,7 +16,7 @@ class Mirror extends Model
     "provider_id", "app_id"
   ];
 
-  protected $with = ["provider"];
+  // protected $with = ["provider", "images"];
 
   public function images()
   {

@@ -179,6 +179,7 @@ return [
         Fedeisas\LaravelMailCssInliner\LaravelMailCssInlinerServiceProvider::class,
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
+        Barryvdh\Debugbar\ServiceProvider::class,
 
 
     ],

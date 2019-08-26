@@ -30,31 +30,31 @@ class App extends Model
                          'size'];
   protected $hidden = ['id'];
 
-  protected $with = ['mirrors'];
+  // protected $with = ['mirrors'];
 
   public static function findByUid ($uid) {
     return App::where('uid', $uid)->firstOrFail();
   }
 
-  public function toArray() {
-    $array = parent::toArray();
-    $array["icon"] = url($array["icon"]);
-    $array["banner"] = url($array["banner"]);
-    $array["views_str"] = format_int($array["views"]);
-    $array["downloads_str"] = format_int($array["downloads"]);
-    $array["size_str"] = format_int($array["size"], "file");
-    $array["availableMirrors"] = $this->availableMirrors()->get();
-    $array["firstMirror"] = $this->firstMirror();
-    $array["phonePreviews"] = $this->previews("phone");
-    $array["ipadPreviews"] = $this->previews("ipad");
-    if(Auth::check()) {
-      $array["isAdmin"] = Auth::user()->isAdmin;
-    } else {
-      $array["isAdmin"] = 0;
-    }
+  // public function toArray() {
+  //   $array = parent::toArray();
+  //   $array["icon"] = url($array["icon"]);
+  //   $array["banner"] = url($array["banner"]);
+  //   $array["views_str"] = format_int($array["views"]);
+  //   $array["downloads_str"] = format_int($array["downloads"]);
+  //   $array["size_str"] = format_int($array["size"], "file");
+  //   $array["availableMirrors"] = $this->availableMirrors()->get();
+  //   $array["firstMirror"] = $this->firstMirror();
+  //   $array["phonePreviews"] = $this->previews("phone");
+  //   $array["ipadPreviews"] = $this->previews("ipad");
+  //   if(Auth::check()) {
+  //     $array["isAdmin"] = Auth::user()->isAdmin;
+  //   } else {
+  //     $array["isAdmin"] = 0;
+  //   }
    
-    return $array;
-  }
+  //   return $array;
+  // }
 
   public function mirrors()
   {

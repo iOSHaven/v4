@@ -32,7 +32,7 @@ class AppController extends Controller
         "tags" => $r->tags,
       ]);
 
-      $apps = App::hasName();
+      $apps = App::with("mirrors.provider")->hasName();
 
       // ================= QUERY COMMANDS ================= //
       if(empty($args["tags"])) {
@@ -185,15 +185,10 @@ class AppController extends Controller
       return redirect("/app/edit/{$request->uid}");
     }
 
-    public function get ($uid)
+    public function showAppDetailPage ($uid)
     {
-      $p = new Parsedown;
-      $app = App::findByUid($uid);
-      // dd($app);
+      $app = App::with('mirrors.provider', 'mirrors.images')->where('uid', $uid)->firstOrFail();
       $app->increment('views');
-      // $app->html = $p->text($app->description);
-      $app = json_decode(json_encode($app->toArray()));
-      // dd($app);
       return view('uid')->with(['app' => $app]);
     }
 
@@ -203,16 +198,16 @@ class AppController extends Controller
       $providers = Provider::get();
       return view('edit')->with([
         'app' => $app, 
-        "apps" => json_encode(App::get()->toArray()),
+        "apps" => App::get(),
         "providers" => $providers
-        ]);
+      ]);
     }
 
-    public function getJson($uid = null)
-    {
-      if ($uid) return response()->json(App::findByUid($uid));
-      return response()->json(App::get());
-    }
+    // public function getJson($uid = null)
+    // {
+    //   if ($uid) return response()->json(App::findByUid($uid));
+    //   return response()->json(App::get());
+    // }
 
     // private function monetize($url) {
     //   return env('MONETIZE') . url($url);
