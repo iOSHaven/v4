@@ -1,4 +1,4 @@
-@extends('layouts.redesign', ['hide_nav' => true])
+@extends('layouts.redesign', ['hide_nav' => true, "hide_ads" => true])
 @section('header')
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <style>

@@ -1,4 +1,4 @@
-@extends('layouts.redesign', ["title" => "signup", "hide_nav" => true])
+@extends('layouts.redesign', ["title" => "signup", "hide_nav" => true, "hide_ads" => true])
 
 @section('content')
 

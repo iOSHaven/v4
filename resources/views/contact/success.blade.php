@@ -1,4 +1,4 @@
-@extends('layouts.redesign')
+@extends('layouts.redesign', ["hide_ads" => true])
 
 @section('content')
 

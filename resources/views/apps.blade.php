@@ -11,9 +11,8 @@ fbq('track', 'Search');
 @section('content')
 
 
-<div class="relative">
+{{-- <div class="relative">
   <div class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center -z-1 {{ theme('bg-gray-100') }}">
-    {{-- Please consider disabling ads. --}}
   </div>
   <!-- v4-search-top -->
   <ins class="adsbygoogle"
@@ -22,7 +21,7 @@ fbq('track', 'Search');
       data-ad-slot="2079757604"
       data-ad-format="auto"
       data-full-width-responsive="true"></ins>
-</div>
+</div> --}}
 {{-- <div class="bg-red-light z-1">
   <!-- v4-top-search -->
   <ins class="adsbygoogle"
@@ -52,7 +51,7 @@ fbq('track', 'Search');
       <div class="row" id="apps">
           @foreach($apps as $app)
             @component('components.applayout', $app->toArray())@endcomponent
-            @if($loop->iteration == 7)
+            @if($loop->iteration == 3)
               <div class="relative">
                 <div class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center -z-1 {{ theme('bg-gray-100') }}">
                   {{-- Please consider disabling ads. --}}

@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Str;
+
 return [
 
     /*
@@ -114,7 +116,14 @@ return [
 
     'redis' => [
 
-        'client' => 'predis',
+        'client' => env('REDIS_CLIENT', 'predis'),
+
+        'options' => [
+            'cluster' => env('REDIS_CLUSTER', 'predis'),
+            'password' => env('REDIS_PASSWORD', null),
+            'ssl' => ['verify_peer' => true],
+            'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
+        ],
 
         'default' => [
             'scheme' => 'tls',
@@ -131,10 +140,7 @@ return [
             'database' => 1,
         ],
 
-        'options' => [
-            'password' => env('REDIS_PASSWORD', null),
-            'ssl' => ['verify_peer' => false],
-        ]
+        
     ],
 
 ];

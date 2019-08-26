@@ -298,7 +298,7 @@
 
     <div class="p-3 mx-auto" style="max-width: 960px">
       @if(!empty($hide_nav) && empty($hide_back))
-        <button onclick="history.back()" class="m-inset-top fixed top-0 left-0 p-5">
+        <button onclick="history.back()" class="m-inset-top p-5">
           <i class="fal fa-chevron-left mr-1"></i>
           {{ session('back_button') ?? "Back" }}
         </button>
@@ -339,9 +339,11 @@
 
 
 
+  @if(empty($hide_ads))
   <script>
     (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
+  @endif
   <script src="{{ mix('/js/manifest.min.js') }}"></script>
   <script src="{{ mix('/js/vendor.min.js') }}"></script>
   <script src="{{ mix('/js/main.min.js') }}"></script>
