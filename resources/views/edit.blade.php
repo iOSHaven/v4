@@ -31,13 +31,15 @@
   </div>
 </div> --}}
 
-<div id="search-results" class="mt-3">
+{{-- @php dd($apps->toJson()) @endphp --}}
+
+<div id="vuescope" class="mt-3">
   <div class="fixed flex items-center justify-start relative rounded-full bg-white-light ">
       <i class="far fa-search absolute p-3"></i>
       <input type="text" placeholder="Search" class="w-full pl-10 py-2 border border-gray-300-light" v-model="searchinput">
   </div>
   
-  <search-results theme="{{ theme() }}" :phpdata="{{ $apps }}"></search-results>
+  <search-results theme="{{ theme() }}" :phpdata="{{ $apps->toJson() }}" :isadmin="{{ Auth::user()->isAdmin }}"></search-results>
 </div>
 
 
@@ -142,7 +144,7 @@
     
           <div class="w-1/2 mb-3">
             <label for="" class="block">Signed Link</label>
-            @if($app->firstMirror())
+            @if($app->mirrors->isNotEmpty())
             <div class="px-3 py-1 border w-full border-gray-200-light bg-red-light text-white-light">See 'Mirrors' tab</div>
             @else
             <input type="text" class="px-3 py-1 border w-full border-gray-200-light" maxlength="65000" placeholder="ITMS URL..." data-lpignore="true" value="{{ $app->signed }}" name="signed">

@@ -4,13 +4,13 @@
         <h1>Search results</h1>
         <li :key="app.uid" v-for="app in filteredApps" :class="['flex', 'items-center', 'justify-between', t('border-gray-200'), 'border-b', 'no-border-on-last']">
             <a :href="`/app/${app.uid}`" class="flex items-center justify-start overflow-hidden py-3">
-                <img class="rounded-lg mr-3" :src="app.icon" alt="" height="25" width="25">
+                <img class="rounded-lg mr-3" :src="app.abs_icon" alt="" height="25" width="25">
                 <span class="truncate">{{ app.name }}</span>
             </a>
             <div class="flex flex-grow items-center justify-end">
                 <a v-if="app.unsigned" :href="`/download/${app.uid}`" :class="['font-bold', 'rounded-full', 'text-xs', 'px-3', 'py-1', t('bg-gray-100'), t('text-blue'), 'mr-1']">IPA</a>
                 <a v-if="app.signed" :href="`/install/${app.uid}`" :class="['font-bold', 'rounded-full', 'text-xs', 'px-3', 'py-1', t('bg-blue'), t('text-white'), 'mr-1']">GET</a>
-                <a v-if="app.isAdmin" :href="`/app/edit/${app.uid}`" :class="['font-bold', 'rounded-full', 'text-xs', 'px-3', 'py-1', t('bg-red'), t('text-white'), 'mr-1']">EDIT</a>
+                <a v-if="app.is_admin" :href="`/app/edit/${app.uid}`" :class="['font-bold', 'rounded-full', 'text-xs', 'px-3', 'py-1', t('bg-red'), t('text-white'), 'mr-1']">EDIT</a>
             </div>
         </li>
     </ul>
@@ -18,7 +18,7 @@
 
 <script>
 export default {
-    props: ["theme", "phpdata"],
+    props: ["theme", "phpdata", "isadmin"],
     computed: {
         input () {
             return this.$root.$data.searchinput.toLowerCase().trim()

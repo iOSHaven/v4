@@ -39,58 +39,6 @@
 </ul> --}}
 </div>
 
-<h1 class="mt-3">Download Type</h1>
-<div class="flex flex-wrap -mx-1">
-    @component('components.category', [
-        "title" => "Install Now",
-        "icon" => "fas fa-cloud-download-alt",
-        "link" => "/apps?type=signed",
-        "bg" => "blue",
-    ])@endcomponent
-    @component('components.category', [
-        "title" => "IPA Archive",
-        "icon" => "fas fa-file-archive",
-        "link" => "/apps?type=ipa",
-        "bg" => "blue",
-    ])@endcomponent
-</div>
-
-
-<h1 class="mt-3">Providers</h1>
-<div class="flex flex-wrap -mx-1">
-        @component('components.category', [
-            "title" => "App Valley",
-            "icon" => "fab fa-app-store-ios",
-            "link" => "/apps?by=app-valley&title=Apps%20from%20App%20Valley",
-            "bg" => "green",
-        ])@endcomponent
-        @component('components.category', [
-            "title" => "iOSGods",
-            "icon" => "fab fa-app-store-ios",
-            "link" => "/apps?by=iosgods&title=Apps%20from%20iOSGods",
-            "bg" => "green",
-        ])@endcomponent
-        @component('components.category', [
-            "title" => "Tweakbox",
-            "icon" => "fab fa-app-store-ios",
-            "link" => "/apps?by=tweakbox&title=Apps%20from%20TweakBox",
-            "bg" => "green",
-        ])@endcomponent
-        @component('components.category', [
-            "title" => "Ignition",
-            "icon" => "fab fa-app-store-ios",
-            "link" => "/apps?by=ignition&title=Apps%20from%20Ignition",
-            "bg" => "green",
-        ])@endcomponent
-        @component('components.category', [
-            "title" => "TopStore",
-            "icon" => "fab fa-app-store-ios",
-            "link" => "/apps?by=topstore&title=Apps%20from%20TopStore",
-            "bg" => "green",
-        ])@endcomponent
-
-
-</div>
 
 <h1 class="mt-3">Categories</h1>
 <div class="flex flex-wrap -mx-1">
@@ -131,6 +79,63 @@
         "bg" => "red",
     ])@endcomponent
 </div>
+
+
+
+
+<h1 class="mt-3">Providers</h1>
+<div class="flex flex-wrap -mx-1">
+        @component('components.category', [
+            "title" => "App Valley",
+            "icon" => "fab fa-app-store-ios",
+            "link" => "/apps?by=app-valley&title=Apps%20from%20App%20Valley",
+            "bg" => "green",
+        ])@endcomponent
+        @component('components.category', [
+            "title" => "iOSGods",
+            "icon" => "fab fa-app-store-ios",
+            "link" => "/apps?by=iosgods&title=Apps%20from%20iOSGods",
+            "bg" => "green",
+        ])@endcomponent
+        @component('components.category', [
+            "title" => "Tweakbox",
+            "icon" => "fab fa-app-store-ios",
+            "link" => "/apps?by=tweakbox&title=Apps%20from%20TweakBox",
+            "bg" => "green",
+        ])@endcomponent
+        @component('components.category', [
+            "title" => "Ignition",
+            "icon" => "fab fa-app-store-ios",
+            "link" => "/apps?by=ignition&title=Apps%20from%20Ignition",
+            "bg" => "green",
+        ])@endcomponent
+        @component('components.category', [
+            "title" => "TopStore",
+            "icon" => "fab fa-app-store-ios",
+            "link" => "/apps?by=topstore&title=Apps%20from%20TopStore",
+            "bg" => "green",
+        ])@endcomponent
+
+
+</div>
+
+
+<h1 class="mt-3">Download Type</h1>
+<div class="flex flex-wrap -mx-1">
+    @component('components.category', [
+        "title" => "Install Now",
+        "icon" => "fas fa-cloud-download-alt",
+        "link" => "/apps?type=signed",
+        "bg" => "blue",
+    ])@endcomponent
+    @component('components.category', [
+        "title" => "IPA Archive",
+        "icon" => "fas fa-file-archive",
+        "link" => "/apps?type=ipa",
+        "bg" => "blue",
+    ])@endcomponent
+</div>
+
 
 
 

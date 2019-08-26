@@ -176,7 +176,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  props: ["theme", "phpdata"],
+  props: ["theme", "phpdata", "isadmin"],
   computed: {
     input: function input() {
       return this.$root.$data.searchinput.toLowerCase().trim();
@@ -789,7 +789,7 @@ var render = function() {
                     _c("img", {
                       staticClass: "rounded-lg mr-3",
                       attrs: {
-                        src: app.icon,
+                        src: app.abs_icon,
                         alt: "",
                         height: "25",
                         width: "25"
@@ -816,8 +816,8 @@ var render = function() {
                               "text-xs",
                               "px-3",
                               "py-1",
-                              _vm.t("bg-blue"),
-                              _vm.t("text-white"),
+                              _vm.t("bg-gray-100"),
+                              _vm.t("text-blue"),
                               "mr-1"
                             ],
                             attrs: { href: "/download/" + app.uid }
@@ -836,8 +836,8 @@ var render = function() {
                               "text-xs",
                               "px-3",
                               "py-1",
-                              _vm.t("bg-gray-100"),
-                              _vm.t("text-blue"),
+                              _vm.t("bg-blue"),
+                              _vm.t("text-white"),
                               "mr-1"
                             ],
                             attrs: { href: "/install/" + app.uid }
@@ -846,7 +846,7 @@ var render = function() {
                         )
                       : _vm._e(),
                     _vm._v(" "),
-                    app.isAdmin
+                    app.is_admin
                       ? _c(
                           "a",
                           {

@@ -30,11 +30,14 @@ class App extends Model
                          'size'];
   protected $hidden = ['id'];
 
+  protected $appends = ["abs_icon", "is_admin"];
+
   // protected $with = ['mirrors'];
 
   public static function findByUid ($uid) {
     return App::where('uid', $uid)->firstOrFail();
   }
+
 
   // public function toArray() {
   //   $array = parent::toArray();
@@ -61,24 +64,34 @@ class App extends Model
     return $this->hasMany(Mirror::class)->whereNotNull("install_link")->orderByRaw('INET_ATON(version) desc');
   }
 
-  public function availableMirrors() {
-    return $this->mirrors()->whereHas("provider", function ($q) {
-      $q->where("revoked", false);
-    });
+  public function getAbsIconAttribute($value)
+  {
+    return $this->attributes["abs_icon"] = url($this->icon);
   }
 
-  public function firstMirror() {
-    return $this->availableMirrors()->whereNotNull('description')->first();
+  public function getIsAdminAttribute($value)
+  {
+    return $this->attributes["is_admin"] = Auth::check() && Auth::user()->isAdmin;
   }
 
-  public function previews ($type) {
-    if($this->firstMirror()) {
-      return $this->firstMirror()->images()->where('type', $type)->get();
-    } else {
-      return collect([]);
-    }
+  // public function availableMirrors() {
+  //   return $this->mirrors()->whereHas("provider", function ($q) {
+  //     $q->where("revoked", false);
+  //   });
+  // }
+
+  // public function firstMirror() {
+  //   return $this->availableMirrors()->whereNotNull('description')->first();
+  // }
+
+  // public function previews ($type) {
+  //   if($this->firstMirror()) {
+  //     return $this->firstMirror()->images()->where('type', $type)->get();
+  //   } else {
+  //     return collect([]);
+  //   }
     
-  }
+  // }
 
   public function newEloquentBuilder($query)
   {
