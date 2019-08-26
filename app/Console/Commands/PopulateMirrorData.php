@@ -42,9 +42,10 @@ class PopulateMirrorData extends Command
     public function handle()
     {
         $mirrors = Mirror::where(function ($q) {
-                    $q->whereColumn('updated_at', '>', 'fetched_at')
+                        $q
+                        ->whereColumn('updated_at', '>', 'fetched_at')
                         ->orWhereNull('fetched_at')
-                        ->orWhere('updated_at', '<', Carbon::now(7)->subDays(7));
+                        ->orWhere('fetched_at', '<', Carbon::now()->subDays(7));
                     })
                     ->whereNotNull('install_link')
                     ->get();
