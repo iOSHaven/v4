@@ -122,16 +122,18 @@
 
           {{-- APPLICATION DESCRIPTION FROM ITUNES --}}
           @if($app->mirrors->isNotEmpty())
-          <input id="app-description-collapse" type="checkbox" class="collapse-check">
-          <label for="app-description-collapse" class="my-2 collapse-label block">
-            <div class="flex items-center justify-between">
-              <span class="title">Description</span>
-              <i class="fal fa-plus show-closed"></i>
-              <i class="fal fa-minus show-open"></i>
-            </div>
-          </label>
-          <div class="text-pre collapse">{{ $app->mirrors[0]->description }}</div>
-          <hr class="border-0 border-b {{ theme('border-gray-200') }}">
+            @if($app->mirrors[0]->description)
+            <input id="app-description-collapse" type="checkbox" class="collapse-check">
+            <label for="app-description-collapse" class="my-2 collapse-label block">
+              <div class="flex items-center justify-between">
+                <span class="title">Description</span>
+                <i class="fal fa-plus show-closed"></i>
+                <i class="fal fa-minus show-open"></i>
+              </div>
+            </label>
+            <div class="text-pre collapse">{{ $app->mirrors[0]->description }}</div>
+            <hr class="border-0 border-b {{ theme('border-gray-200') }}">
+            @endif
           @endif
 
 
