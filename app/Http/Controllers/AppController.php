@@ -266,7 +266,8 @@ class AppController extends Controller
       $app = App::findByUid($uid);
       if ($app->unsigned) {
         $app->increment('downloads');
-        return redirect($this->monetize($app->unsigned));
+        return redirect(url($app->unsigned));
+        // return redirect($this->monetize($app->unsigned));
       }
       else abort(404);
     }
