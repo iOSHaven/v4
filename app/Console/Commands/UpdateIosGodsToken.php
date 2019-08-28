@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use App\App;
+use App\Mirror;
 
 class UpdateIosGodsToken extends Command
 {
@@ -40,6 +41,7 @@ class UpdateIosGodsToken extends Command
     public function handle()
     {
         $apps = App::where("signed", "like", "%iosgods%")->get();
+        $mirrors = Mirror::where('install_link', 'like', '%iosgods%')->get();
         $progress = $this->output->createProgressBar($apps->count());
         $progress->start();
         foreach ($apps as $app) {
@@ -47,6 +49,15 @@ class UpdateIosGodsToken extends Command
           $app->save();
           $progress->advance();
         }
+        $progress->finish();
+
+        $progress = $this->output->createProgressBar($mirrors->count());
+        $progress->start();
+        foreach ($mirrors as $mirror) {
+            $mirror->install_link = explode("%3Ftoken", $mirror->install_link)[0]."%3Ftoken%3D".$this->argument("token");
+            $mirror->save();
+            $progress->advance();
+          }
         $progress->finish();
         echo "\n";
         dd("tokens changed successfully.");
