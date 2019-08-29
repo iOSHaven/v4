@@ -311,6 +311,10 @@
             <button type="submit" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-blue-light {{ theme("bg-white") }}">Add App</button>
           </form>
           <a href="/providers/edit" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-blue-light {{ theme("bg-white") }}">Manage Providers</a>
+          <form action="/app/token" method="post">
+            {{ csrf_field() }}
+            <button type="submit" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-blue-light {{ theme("bg-white") }}">Update Token</button>
+          </form>
       </div>
       @endadmin
 

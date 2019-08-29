@@ -62,6 +62,7 @@ Route::get('/app/{uid}', 'AppController@showAppDetailPage');
 Route::get('/app/edit/{uid}', 'AppController@edit');
 Route::post('/app/update', 'AppController@update');
 Route::post('/app/remove', 'AppController@remove');
+Route::post('/app/token', 'AppController@token');
 
 Route::get('/install/mirror/{uid}/{provider}', 'AppController@installMirror');
 Route::get('/install/{uid}', 'AppController@install');

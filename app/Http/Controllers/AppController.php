@@ -6,6 +6,7 @@ use Spatie\Sitemap\SitemapGenerator;
 use Illuminate\Http\Request;
 use App\Thing;
 use App\App;
+use App\Jobs\UpdateIosGodsToken;
 use App\Provider;
 use App\Mirror;
 use Parsedown;
@@ -15,6 +16,7 @@ use Response;
 use Auth;
 use Illuminate\Support\Facades\View;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Facades\Artisan;
 
 class AppController extends Controller
 {
@@ -270,5 +272,11 @@ class AppController extends Controller
         // return redirect($this->monetize($app->unsigned));
       }
       else abort(404);
+    }
+
+    public function token() {
+      UpdateIosGodsToken::dispatch();
+      // Artisan::call('update:token', ['token' => 'b']);
+      return back();
     }
 }
