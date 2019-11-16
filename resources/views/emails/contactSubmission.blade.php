@@ -26,14 +26,16 @@
     @endif
   @endforeach
 
-  <div>
-    <div>Username</div>
-    <div>{{ Auth::user()->username }}</div>
-  </div><hr>
-  <div>
-    <div>User Email</div>
-    <div>{{ Auth::user()->email }}</div>
-  </div><hr>
+  @if(Auth::check())
+    <div>
+      <div>Username</div>
+      <div>{{ Auth::user()->username }}</div>
+    </div><hr>
+    <div>
+      <div>User Email</div>
+      <div>{{ Auth::user()->email }}</div>
+    </div><hr>
+  @endif
 
 
 <p class="mt2 has-background-dark has-text-white p1 mb1">This contact request was sent via the official iOS Haven mail bot. If you feel like this was sent in error, then just delete the message.</p>
