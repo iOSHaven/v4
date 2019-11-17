@@ -14,6 +14,15 @@
 // Route::get('/test', function () {
 //   return view('test');
 // });
+
+Route::get("/map.xml", function() {
+        $contents = View::make('sitemap')
+        ->with(["apps" => \App\App::get()]);
+        return response($contents)->withHeaders([
+          'Content-Type' => 'text/xml'
+        ]);
+});
+
 Route::get("/avatar/{value}/{size?}", "AvatarController@api");
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->middleware("admin");
