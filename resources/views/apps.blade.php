@@ -10,43 +10,6 @@ fbq('track', 'Search');
 
 @section('content')
 
-
-{{-- <div class="relative">
-  <div class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center -z-1 {{ theme('bg-gray-100') }}">
-  </div>
-  <!-- v4-search-top -->
-  <ins class="adsbygoogle"
-      style="display:block; touch-action: none"
-      data-ad-client="ca-pub-4649450952406116"
-      data-ad-slot="2079757604"
-      data-ad-format="auto"
-      data-full-width-responsive="true"></ins>
-</div> --}}
-{{-- <div class="bg-red-light z-1">
-  <!-- v4-top-search -->
-  <ins class="adsbygoogle"
-       style="display:block; touch-action: none"
-       data-ad-client="ca-pub-4649450952406116"
-       data-ad-slot="2079757604"
-       data-ad-format="auto"
-       data-full-width-responsive="true"></ins>
-</div> --}}
-
-
-    {{-- <div class="container">
-      <div class="row">
-        <div class="col-12 mt-3">
-          <form action="/apps" method="get" autocomplete="off">
-            <div class="autocomplete">
-                <input name="q" value="{{ $q }}" type="text" class="p-3 autocomplete bg-light b-1 b-grey" id="appsearch" placeholder="Search apps..." data-fetch="/apps/getJson" data-template="/tl/app-search" data-result="result">
-                <div class="autocomplete-results" id="result"></div>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div> --}}
-
-
     <div class="container">
       <div class="row" id="apps">
           @foreach($apps as $app)

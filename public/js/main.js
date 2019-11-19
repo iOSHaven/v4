@@ -1458,12 +1458,7 @@ window.loadMoreApps = function (el) {
   }, "document");
 };
 
-setInterval(function () {
-  try {
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  } catch (err) {//
-  }
-}, 500);
+
 
 window.onSearchInput = function (el) {
   window.searchinput = el.value.toLowerCase();

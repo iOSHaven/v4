@@ -132,7 +132,17 @@
 
   @if(empty($hide_ads))
   <!-- === A D S E N S E   A D S === -->
-  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  {{-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> --}}
+  @if(empty($hide_ads))
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script>
+          (adsbygoogle = window.adsbygoogle || []).push({
+                google_ad_client: "ca-pub-4649450952406116",
+                enable_page_level_ads: true
+          });
+      </script>
+  @endif
+ 
 
 
   <!-- Reddit Conversion Pixel -->
@@ -343,11 +353,7 @@
 
 
 
-  @if(empty($hide_ads))
-  <script>
-    (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-  @endif
+ 
   <script src="{{ mix('/js/manifest.min.js') }}"></script>
   <script src="{{ mix('/js/vendor.min.js') }}"></script>
   <script src="{{ mix('/js/main.min.js') }}"></script>
@@ -379,7 +385,6 @@
   }
   </script>
 
-  @yield('footer')
 
 
 </body>

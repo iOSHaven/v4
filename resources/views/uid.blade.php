@@ -53,19 +53,7 @@
           </div>
 
 
-          <div class="relative my-3">
-              <div class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center -z-1 {{ theme('bg-gray-100') }}">
-                  Please consider disabling ads.
-              </div>
-              <!-- v4-top-search -->
-              <ins class="adsbygoogle"
-                  style="display:block"
-                  data-ad-client="ca-pub-4649450952406116"
-                  data-ad-slot="2079757604"
-                  data-ad-format="auto"
-                  data-full-width-responsive="true">
-              </ins>
-          </div>
+          
 
           <br>
 
@@ -239,67 +227,6 @@
   </div>
 </section>
 
-<div class="container">
-  {{-- <div class="row">
-    <div class="col-12">
-      <img class="col-12" src="{{ url($app->banner) }}" alt="">
-</div>
-</div> --}}
-
-
-
-{{-- <div class="col-11 h5 mb-0 pl-3 text">
-      
-    </div> --}}
-
-
-{{-- <div class="row mb-5">
-    <div class="col-3 text-center">
-      <strong class="display">Downloads</strong>
-      <div class="col-12">{{ format_int($app->downloads) }}</div>
-</div>
-<div class="col-3 text-center">
-  <strong class="display">Views</strong>
-  <div class="col-12">{{ format_int($app->views) }}</div>
-</div>
-<div class="col-3 text-center">
-  <strong class="display">Size</strong>
-  <div class="col-12">{{ format_int($app->size, "file") }}</div>
-</div>
-<div class="col-3 text-center">
-  <strong class="display">Version</strong>
-  <div class="col-12">{{ $app->version }}</div>
-</div>
-</div> --}}
-
-{{-- <div class="row">
-    @if($app->unsigned)
-      <a href="/download/{{$app->uid}}" class="btn btn-dark py-1">Download IPA</a>
-@endif
-
-@admin
-<a href="/app/edit/{{$app->uid}}" class="btn btn-red ml-3 py-1">Edit</a>
-@endadmin
-</div> --}}
-
-{{-- <div class="row">
-    
-  </div> --}}
-{{-- <div class="row">
-      @foreach (explode(",", $app->tags) as $tag)
-        <a href="/apps/{{$tag}}" class="btn btn-dark py-0 px-1 mr-1 border-none">{{$tag}}</a>
-@endforeach
-</div> --}}
-
-<!-- below-app-description -->
-{{-- <ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-4649450952406116"
-     data-ad-slot="8049311724"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins> --}}
-
-</div>
 
 
 
