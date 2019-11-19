@@ -1,5 +1,5 @@
 @extends('layouts.dashboard', [
-  "selected" => ""
+  "selected" => "",
   "links" => [
     [
       "name" => "Info",
