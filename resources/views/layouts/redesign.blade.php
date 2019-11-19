@@ -345,7 +345,7 @@
       @endif
 
       @if(empty($hide_footer))
-        @include('layouts.footer')
+        {{--@include('layouts.footer')--}}
       @endif
   </div>
 
@@ -357,6 +357,8 @@
   <script src="{{ mix('/js/manifest.min.js') }}"></script>
   <script src="{{ mix('/js/vendor.min.js') }}"></script>
   <script src="{{ mix('/js/main.min.js') }}"></script>
+
+  @yield("footer")
 
   <script>
     (function (a, b, c) {
