@@ -1,2 +1,7 @@
-User-agent: *
-Disallow:
+User-Agent: *
+Disallow: 
+Disallow: /install/
+Disallow: /download/
+Disallow: /user/
+
+Sitemap: https://ioshaven.com/map.xml
