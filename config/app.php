@@ -195,6 +195,7 @@ return [
         Anhskohbo\NoCaptcha\NoCaptchaServiceProvider::class,
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
+        Jenssegers\Agent\AgentServiceProvider::class,
 
 
     ],
@@ -248,6 +249,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'NoCaptcha' => Anhskohbo\NoCaptcha\Facades\NoCaptcha::class,
+        'Agent' => Jenssegers\Agent\Facades\Agent::class,
     ],
 
 ];

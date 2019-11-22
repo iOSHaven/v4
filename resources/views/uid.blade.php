@@ -8,7 +8,7 @@
 <section class="p-0 mt-12">
   <div class="container">
     <div class="row">
-      <div class="col-tablet-portrait-6 px-3 px-tablet-portrait">
+      <div class="col-tablet-portrait-6 px-tablet-portrait">
         <div class="bg-white">
 
 
@@ -53,8 +53,8 @@
           </div>
 
 
-          
-
+          <br>
+          @include('layouts.ad')
           <br>
 
           
@@ -212,7 +212,7 @@
 
         </div>
       </div>
-      <div class="col-tablet-portrait-6 px-3 px-tablet-portrait">
+      <div class="col-tablet-portrait-6 px-tablet-portrait">
         <div class="h6 display-clear mb-2">
           <strong>Comments</strong>
         </div>
