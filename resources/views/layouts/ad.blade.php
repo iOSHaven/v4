@@ -1,4 +1,4 @@
-
+{{-- 
 @php
 use Jenssegers\Agent\Agent;
 $agent = new Agent();
@@ -42,4 +42,4 @@ $agent = new Agent();
             
         
         @endif
-</div>
+</div> --}}
