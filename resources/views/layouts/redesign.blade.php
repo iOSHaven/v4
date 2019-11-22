@@ -52,6 +52,18 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
   <link href="{{ mix('/css/redesign.min.css') }}" rel="stylesheet">
 
+  {{-- GOOGLE ANALYTICS --}}
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106909262-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+    gtag('config', 'UA-106909262-1');
+  </script>
+
   {{-- GOOGLE ADSENSE --}}
   @if(empty($hide_ads))
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
