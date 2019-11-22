@@ -64,6 +64,9 @@
     gtag('config', 'UA-106909262-1');
   </script>
 
+  {{-- PROPELLER ADS --}}
+  <meta name="propeller" content="2a3289999d96edaaa0866f35a0487ff5">
+
   {{-- GOOGLE ADSENSE --}}
   @if(empty($hide_ads))
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
