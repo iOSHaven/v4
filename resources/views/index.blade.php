@@ -11,7 +11,7 @@
     <h1 class="mb-2 block text-6xl {{ theme('text-black') }}">iOS Haven</h1>
     <p class="mb-10">The community driven app store.</p>
     <div class="flex items-center justify-center">
-        <a href="/apps" class='mb-8 flex items-center justify-center mx-1 font-bold rounded-full text-sm px-8 py-5 text-white-light {{ theme("bg-indigo") }}'>
+        <a href="/apps" class='btn-da mb-8 flex items-center justify-center mx-1 font-bold rounded-full text-sm px-8 py-5 text-white-light {{ theme("bg-indigo") }}'>
           <i class="fas fa-rocket mr-3 fa-lg"></i>
           LAUNCH
         </a>

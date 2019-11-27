@@ -16,30 +16,8 @@ fbq('track', 'Search');
             @component('components.applayout', $app->toArray())@endcomponent
             @if($loop->iteration == 3)
             
-                @include('layouts.ad')
-                {{-- <div class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center -z-1 {{ theme('bg-gray-100') }}">
-                  <strong>Why did you block ads?</strong>
-                </div>
-              
-                <ins class="adsbygoogle"
-                    style="display:block"
-                    data-ad-format="fluid"
-                    data-ad-layout-key="-gy-17-4m+r+oq"
-                    data-ad-client="ca-pub-4649450952406116"
-                    data-ad-slot="3068136375"></ins> --}}
-
-            
-              {{-- <div class="relative">
-                <div class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center -z-1 {{ theme('bg-gray-100') }}">
-                </div>
-                <!-- v4-search-bottom -->
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-4649450952406116"
-                     data-ad-slot="5262456899"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
-              </div> --}}
+                @component('components.ad')@endcomponent
+                
             @endif
           @endforeach
       </div>
@@ -50,7 +28,6 @@ fbq('track', 'Search');
     <!-- <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> -->
 
 
-    @include('layouts.ad')
 
     @if($apps->hasMorePages())
     <div id="loadmoreapps" class="text-center mt-5 mb-4" style="width: 100%;">

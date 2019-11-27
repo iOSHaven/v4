@@ -54,7 +54,7 @@
 
 
           <br>
-          @include('layouts.ad')
+          @component('components.ad')@endcomponent
           <br>
 
           

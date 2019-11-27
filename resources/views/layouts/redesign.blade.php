@@ -266,7 +266,7 @@
 
       @if(empty($hide_ads))
         <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
+            google_adtest = "on"; (adsbygoogle = window.adsbygoogle || []).push({});
         </script>
       @endif
 
@@ -288,6 +288,8 @@
         })(document, window.navigator, "standalone")
       </script>
 
+{{-- propeller ad --}}
+<div id="ioshaven-popunder"></div>
 
 {{-- ====END INSIDE BODY==== --}}
 </body>
