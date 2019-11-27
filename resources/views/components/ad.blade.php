@@ -11,6 +11,5 @@
      data-ad-client="ca-pub-4649450952406116"
      data-ad-slot="2079757604"
      data-ad-format="auto"
-     data-adtest="on"
      data-full-width-responsive="true"></ins>
 </div>
