@@ -201,7 +201,7 @@
               </div>
               <div class="mr-2 flex items-center justify-start">
                 <i class="fas fa-database mr-2 text-center" style="width: 20px;"></i>
-                <span>{{ format_int($app->views ?? "0b", 'file') }}<span>
+                <span>{{ format_int($app->size ?? "0b", 'file') }}<span>
               </div>
             </div>
           </div>
