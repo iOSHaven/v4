@@ -52,6 +52,9 @@ class StaticPageController extends Controller
     public function getCreditsPage() {
       return view('credits');
     }
+    public function getShortcutsPage() {
+      return view('shortcuts');
+    }
 
     public function getCydiaPage() {
       return redirect('/tutorials/Cydia_Impactor.md');

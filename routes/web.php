@@ -121,6 +121,7 @@ Route::get('/betas', 'StaticPageController@getBetasPage');
 Route::get('/jailbreak', 'StaticPageController@getJailbreakPage');
 Route::get('/aboutUs', 'StaticPageController@getAboutUsPage');
 Route::get('/fight-for-net-neutrality', 'StaticPageController@getFightForNetNeutrality');
+Route::get('/shortcuts', 'StaticPageController@getShortcutsPage');
 
 Route::post('/close_announcement', 'StaticPageController@closeAnnouncement');
 
