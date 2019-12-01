@@ -21,7 +21,7 @@
       <img src="/SVG/yoga.svg" alt="" class="d-block mx-auto mb-10" width="100">
 
       <div>
-            <a href="{{ $url }}" class='hide-webapp mx-1 mb-16 flex items-center justify-center font-bold rounded-full text-sm px-8 py-5 {{ theme('bg-blue', 'text-white') }}'>
+            <a href="{{ $url }}" class='mx-1 mb-16 flex items-center justify-center font-bold rounded-full text-sm px-8 py-5 {{ theme('bg-blue', 'text-white') }}'>
                 <i class="fas fa-download mr-3 fa-lg"></i>
                 INSTALL
                 <i class="fas fa-download ml-3 fa-lg"></i>
