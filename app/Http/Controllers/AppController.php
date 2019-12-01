@@ -14,6 +14,7 @@ use Carbon\Carbon;
 use DB;
 use Response;
 use Auth;
+use App\Ad;
 use Illuminate\Support\Facades\View;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Artisan;
@@ -240,13 +241,37 @@ class AppController extends Controller
       }
     }
 
+    public function itms2($itmsurl) {
+      // $app = App::find($id);
+      $itms = "itms-services://?action=download-manifest&url=";
+      try {
+        if (strpos($itmsurl, "app.iosgods.com") !== false) {
+          return $itmsurl;
+        } else {
+          list(, $url) = explode($itms, $itmsurl);
+          $d = urldecode($url);
+          $e = urlencode($d);
+          return $itms . $e;
+        }
+      } catch (\Throwable $th) {
+        return $itmsurl;
+      }
+    }
+
     public function install($uid)
     {
+      $ad = new Ad();
+      // $ad->get();
+      // dd($ad->get());
       $app = App::findByUid($uid);
       if ($app->signed) {
         $app->increment('downloads');
         // return redirect($this->monetize("/itms/" . $app->id));
-        return $this->itms($app->signed);
+        return view('ad', [
+          "ad" => $ad,
+          "url" => $this->itms2($app->signed),
+          "app" => $app
+        ]);
       }
       else abort(404);
     }
