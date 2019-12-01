@@ -163,6 +163,12 @@
                 Contact
                 <i class="fal fa-chevron-right"></i>
               </a>
+              <a href="/shortcuts" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+                <span>Shortcuts
+                    <strong class="ml-3 text-blue-light">NEW!</strong>
+                </span>
+                <i class="fal fa-chevron-right"></i>
+              </a>
               <a href="/jailbreaks" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
                 Jailbreaks
                 <i class="fal fa-chevron-right"></i>
