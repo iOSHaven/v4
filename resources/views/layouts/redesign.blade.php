@@ -222,7 +222,7 @@
 
         <div class="p-3 mx-auto" style="max-width: 960px">
           @if(!empty($hide_nav) && empty($hide_back))
-            <button onclick="history.back()" class="m-inset-top p-5">
+            <button onclick="{{!empty($back_link) ? "window.location = '$back_link'" : "history.back()"}}" class="m-inset-top p-5">
               <i class="fal fa-chevron-left mr-1"></i>
               {{ session('back_button') ?? "Back" }}
             </button>

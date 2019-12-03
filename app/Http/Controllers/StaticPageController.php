@@ -27,16 +27,9 @@ class StaticPageController extends Controller
     }
 
     public function tutorial($view) {
-      $p = new \Parsedown;
-      try {
-        $contents = File::get(resource_path("tutorials/$view"));
-        $html = $p->setBreaksEnabled(false)->text($contents);
-        return view("tutorial", [
-          "html" => $html
-        ]);
-      } catch (\Throwable $th) {
-        return abort(404);
-      }
+      return view("tutorial", [
+        "html" => markdown($view)
+      ]);
     }
     //
 

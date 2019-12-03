@@ -260,7 +260,7 @@ class AppController extends Controller
 
     public function install($uid)
     {
-      $ad = new Ad();
+      // $ad = new Ad();
       // $ad->get();
       // dd($ad->get());
       $app = App::findByUid($uid);
@@ -268,9 +268,10 @@ class AppController extends Controller
         $app->increment('downloads');
         // return redirect($this->monetize("/itms/" . $app->id));
         return view('ad', [
-          "ad" => $ad,
+          "ad" => new Ad(),
           "url" => $this->itms2($app->signed),
-          "app" => $app
+          "app" => $app,
+          "type" => "itms"
         ]);
       }
       else abort(404);
@@ -293,7 +294,13 @@ class AppController extends Controller
       $app = App::findByUid($uid);
       if ($app->unsigned) {
         $app->increment('downloads');
-        return redirect(url($app->unsigned));
+        return view('ad', [
+          "ad" => new Ad(),
+          "url" => url($app->unsigned),
+          "app" => $app,
+          "type" => "download"
+        ]);
+        // return redirect(url($app->unsigned));
         // return redirect($this->monetize($app->unsigned));
       }
       else abort(404);
