@@ -34,11 +34,12 @@
         "laravel/nova": "~2.0",
         "laravel/tinker": "^1.0",
         "league/flysystem-aws-s3-v3": "^1.0",
+        "moontoast/math": "^1.1",
         "predis/predis": "^1.1",
         "rap2hpoutre/laravel-log-viewer": "^1.2",
         "saumini/count": "^1.0",
         "spatie/laravel-sitemap": "^5.2",
-        "symfony/translation-contracts": "^1.1.6"    
+        "symfony/translation-contracts": "^1.1.6"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",
