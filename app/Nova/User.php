@@ -8,6 +8,7 @@ use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
 use Laravel\Nova\Fields\PasswordConfirmation;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Http\Requests\NovaRequest;
 
 class User extends Resource
 {
@@ -31,7 +32,7 @@ class User extends Resource
         return $this->email;
     }
 
-    public static function indexQuery($request, $query) {
+    public static function indexQuery(NovaRequest $request, $query) {
         if ($request->user()->isAdmin) {
             return $query;
         } else {
