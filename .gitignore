@@ -25,3 +25,4 @@ redirectss
 .DS_Store
 public/signed/*
 !public/signed/.gitignore
+!resources/views/vendor/
