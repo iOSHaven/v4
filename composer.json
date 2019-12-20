@@ -37,7 +37,8 @@
         "predis/predis": "^1.1",
         "rap2hpoutre/laravel-log-viewer": "^1.2",
         "saumini/count": "^1.0",
-        "spatie/laravel-sitemap": "^5.2"    
+        "spatie/laravel-sitemap": "^5.2",
+        "symfony/translation-contracts": "^1.1.6"    
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",
