@@ -46,7 +46,7 @@ class MostDownloadedAppsThisWeek extends Lens
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
-    public function fields($request)
+    public function fields(Request $request)
     {        
         return [
             Text::make('uid'),
