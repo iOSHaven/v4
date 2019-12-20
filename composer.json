@@ -19,6 +19,7 @@
     ],
     "require": {
         "php": "^7.3.13",
+        "ext-bcmath": "*",
         "anhskohbo/no-captcha": "^3.0",
         "david-griffiths/nova-dark-theme": "^1.0",
         "doctrine/dbal": "^2.9",
@@ -35,7 +36,8 @@
         "laravel/tinker": "^1.0",
         "league/flysystem-aws-s3-v3": "^1.0",
         "moontoast/math": "^1.1",
-        "predis/predis": "^1.1",
+        "pda/pheanstalk": "~4.0",
+        "predis/predis": "~1.0",
         "rap2hpoutre/laravel-log-viewer": "^1.2",
         "saumini/count": "^1.0",
         "spatie/laravel-sitemap": "^5.2",
