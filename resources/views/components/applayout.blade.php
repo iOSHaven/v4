@@ -8,9 +8,9 @@
         <div class="flex items-center justify-start mt-1">
             @foreach ($mirrors as $mirror)
               @if(!$mirror['provider']['revoked'])
-                <div class="relative rounded-full border border-gray-100-light overflow-hidden" style="margin-right: 2px">
+                {{-- <div class="relative rounded-full border border-gray-100-light overflow-hidden" style="margin-right: 2px">
                     <img class="rounded-full" src="https://avatars.io/twitter/{{ $mirror['provider']['twitter'] }}/20" alt="" width="20">
-                </div>
+                </div> --}}
               @endif
             @endforeach
         </div>

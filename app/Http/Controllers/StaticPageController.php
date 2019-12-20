@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Session;
 use File;
 use Auth;
+use Carbon\Carbon;
+use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Storage;
 
 class StaticPageController extends Controller
 {
@@ -34,7 +37,49 @@ class StaticPageController extends Controller
     //
 
     public function getTestPage() {
-      return view('testComponents');
+      // $ads = [
+      //   [
+      //     "name" => "Ad unit 1",
+      //     "bid" => 0.4
+      //   ],
+      //   [
+      //     "name" => "Ad unit 2",
+      //     "bid" => 1.2
+      //   ],
+      //   [
+      //     "name" => "High bidding ad unit.",
+      //     "bid" => 10.5
+      //   ],
+      // ];
+      // $acc = 0;
+      // foreach($ads as &$ad) {
+      //   $ad["weight"] = $acc += $ad["bid"];
+      // }
+      // $random = mt_rand(0,$acc);
+      // $selected = collect($ads)->where("weight", ">", $random);
+
+      // dd($selected->first());
+
+
+
+      $client = new Client();
+      $res = $client->get('https://www.icloud.com/shortcuts/api/records/1b4894c938454225a0e159acd823f817');
+      if ($res->getStatusCode() == 200) {
+        $data = json_decode($res->getBody()->getContents());
+        $iconURL = $data->fields->icon->value->downloadURL;
+        $name = $data->fields->name->value;
+        $client = new Client();
+        $res = $client->get($iconURL);
+        $iconBinary = $res->getBody()->getContents();
+        $path = "/icons/shortcuts/".hash("sha256", $name . now());
+        Storage::disk("spaces")->put($path, $iconBinary, ["visibility" => "public"]);
+        $iconPath = env("DO_SPACES_SUBDOMAIN") . "/". $path;
+        dd($iconPath);
+        
+      }
+      
+      dd("not found");
+
     }
 
     public function getSearchPage() {

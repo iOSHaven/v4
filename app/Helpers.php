@@ -70,3 +70,20 @@ function markdown($view) {
     return abort(404);
   }
 }
+
+
+function handleStorage(string $folder, string $icon = "icon") {
+  return function ($request) use ($folder, $icon) {
+      // dd($request);
+      $ext = $request->icon->extension();
+      return [
+          $icon => env("DO_SPACES_SUBDOMAIN") . "/". Storage::disk("spaces")->putFileAs($folder, $request->icon, hash("sha256", $this->name . now()) . ".$ext", ["visibility" => "public"]),
+      ];
+  };
+}
+
+function handleIcon($icon) {
+  return function () use ($icon){
+      return url($icon);
+  };
+}

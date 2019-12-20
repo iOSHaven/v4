@@ -192,7 +192,8 @@ class AppController extends Controller
     public function showAppDetailPage ($uid)
     {
       $app = App::with('mirrors.provider', 'mirrors.images')->where('uid', $uid)->firstOrFail();
-      $app->increment('views');
+      // $app->increment('views');
+      event(new \App\Events\ViewEvent($app));
       return view('uid')->with(['app' => $app]);
     }
 
@@ -260,13 +261,11 @@ class AppController extends Controller
 
     public function install($uid)
     {
-      // $ad = new Ad();
-      // $ad->get();
-      // dd($ad->get());
       $app = App::findByUid($uid);
       if ($app->signed) {
-        $app->increment('downloads');
-        // return redirect($this->monetize("/itms/" . $app->id));
+
+        event(new \App\Events\InstallEvent($app));
+
         return view('ad', [
           "ad" => new Ad(),
           "url" => $this->itms2($app->signed),
@@ -293,15 +292,15 @@ class AppController extends Controller
     {
       $app = App::findByUid($uid);
       if ($app->unsigned) {
-        $app->increment('downloads');
+        
+        event(new \App\Events\DownloadEvent($app));
+
         return view('ad', [
           "ad" => new Ad(),
           "url" => url($app->unsigned),
           "app" => $app,
           "type" => "download"
         ]);
-        // return redirect(url($app->unsigned));
-        // return redirect($this->monetize($app->unsigned));
       }
       else abort(404);
     }

@@ -115,15 +115,15 @@ return [
     */
 
     'redis' => [
-        'driver' => 'redis',
-        'connection' => 'default',
-        'queue' => 'default',
-        'retry_after' => 90,
-        'block_for' => 5,
+        // 'driver' => 'phpredis',
+        // 'connection' => 'default',
+        // 'queue' => 'default',
+        // 'retry_after' => 90,
+        // 'block_for' => 5,
         'client' => env('REDIS_CLIENT', 'predis'),
 
         'options' => [
-            'cluster' => env('REDIS_CLUSTER', 'predis'),
+            'cluster' => env('REDIS_CLUSTER', false),
             'password' => env('REDIS_PASSWORD', null),
             'ssl' => ['verify_peer' => true],
             'prefix' => env('REDIS_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_database_'),
@@ -135,14 +135,43 @@ return [
             'password' => env('REDIS_PASSWORD', null),
             'port' => env('REDIS_PORT', 6379),
             'database' => 0,
+            'read_timeout' => 5,
         ],
 
-        'cache' => [
-            'host' => env('REDIS_HOST', '127.0.0.1'),
-            'password' => env('REDIS_PASSWORD', null),
-            'port' => env('REDIS_PORT', 6379),
-            'database' => 1,
-        ],
+        // 'cache' => [
+        //     'host' => env('REDIS_HOST', '127.0.0.1'),
+        //     'password' => env('REDIS_PASSWORD', null),
+        //     'port' => env('REDIS_PORT', 6379),
+        //     'database' => 1,
+        // ],
+
+
+        // 'client' => env('REDIS_CLIENT', 'phpredis'),
+        // // 'cluster' => env('REDIS_CLUSTER', false),
+        // 'clusters' => [
+        //     'default' => [
+        //         [
+        //             'scheme'    => env('REDIS_SCHEME', 'tls'),
+        //             'host'      => env('REDIS_HOST', 'localhost'),
+        //             'password'  => env('REDIS_PASSWORD', null),
+        //             'port'      => env('REDIS_PORT', 6379),
+        //             'database'  => env('REDIS_DATABASE', 0),
+        //             'read_timeout' => 60
+        //         ],
+        //     ],
+        //     'options' => [
+        //         'cluster' => 'redis',
+        //     ],
+        // ],
+        // 'options' => [
+        //     'parameters' => [
+        //         'password'  => env('REDIS_PASSWORD', null),
+        //         'scheme'    => env('REDIS_SCHEME', 'tls'),
+        //     ],
+        //     'ssl' => [
+        //         'verify_peer' => true,
+        //     ],
+        // ],
 
         
     ],

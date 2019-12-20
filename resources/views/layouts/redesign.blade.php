@@ -114,14 +114,8 @@
           <strong>{{ Auth::user()->username }}</strong>
           <div class="leading-none">@admin Admin @else Member @endadmin</div>
         </li>
-        @admin
-        <a href="/dashboard" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+        <a href="/nova" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
           Dashboard
-          <i class="fal fa-chevron-right"></i>
-        </a>
-        @endadmin
-        <a href="/user/settings" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
-          Settings
           <i class="fal fa-chevron-right"></i>
         </a>
         <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200', 'text-gray-200') }}">
@@ -132,10 +126,6 @@
           Badges
           <i class="fal fa-chevron-right"></i>
         </li>
-        <a href="/user/password" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
-          Password
-          <i class="fal fa-chevron-right"></i>
-        </a>
         @endif
       </ul>
       <ul>

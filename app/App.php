@@ -8,10 +8,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
 use App\Mirror;
 use App\Builders\AppBuilder;
+use Laravel\Nova\Actions\Actionable;
 
 class App extends Model
 {
-  use SoftDeletes;
+  use SoftDeletes, Actionable;
+  
   protected $dates = ['deleted_at'];
   protected $fillable = ['name',
                          'uid',
@@ -96,5 +98,25 @@ class App extends Model
   public function newEloquentBuilder($query)
   {
     return new AppBuilder($query);
+  }
+
+  public function itms() {
+    return $this->belongsToMany(Itms::class);
+  }
+
+  public function ipas() {
+    return $this->belongsToMany(Ipa::class);
+  }
+
+  public function impressions() {
+    return $this->morphMany(View::class, 'trigger');
+  }
+
+  public function downloads() {
+    return $this->morphMany(Download::class, 'trigger');
+  }
+
+  public function installs() {
+    return $this->morphMany(Install::class, 'trigger');
   }
 }

@@ -1,0 +1,44 @@
+:root {
+  --primary: rgb(0, 111, 206);
+  --primary-dark: rgb(12, 76, 133);
+  --primary-70: rgb(14, 2, 197);
+  --primary-50: rgb(197, 220, 255);
+  --primary-30: orange;
+  --primary-10: skyblue;
+  --logo: #1E2F9C;
+  --sidebar-icon: purple;
+}
+
+.bg-grad-sidebar {
+  background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    from(var(--primary)),
+    to(rgb(34, 34, 148))
+  );
+
+  background-image: linear-gradient(
+    0deg,
+    var(--primary),
+    rgb(34, 34, 148)
+  );
+}
+
+@media (max-width: 992px){
+  .content .px-view {
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+  }
+  .h-header.px-view {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .max-h-search {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: auto;
+  }
+}
+
