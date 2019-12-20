@@ -10,7 +10,7 @@ use App\Shortcut;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
-use Ioshaven\V4\DashboardSidebar;
+use ioshaven\v4\DashboardSidebar;
 use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;

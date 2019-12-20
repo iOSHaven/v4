@@ -14,15 +14,7 @@
         },
         {
             "type": "path",
-            "url": "./nova-components/V4"
-        },
-        {
-            "type": "path",
-            "url": "./nova-components/V4"
-        },
-        {
-            "type": "path",
-            "url": "./nova-components/V4"
+            "url": "./nova-components/v4"
         }
     ],
     "require": {
@@ -45,8 +37,7 @@
         "predis/predis": "^1.1",
         "rap2hpoutre/laravel-log-viewer": "^1.2",
         "saumini/count": "^1.0",
-        "spatie/laravel-sitemap": "^5.2",
-        "Ioshaven/V4": "*"
+        "spatie/laravel-sitemap": "^5.2"    
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",

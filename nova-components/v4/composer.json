@@ -11,7 +11,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Ioshaven\\V4\\": "src/"
+            "ioshaven\\v4\\": "src/"
         }
     },
     "extra": {

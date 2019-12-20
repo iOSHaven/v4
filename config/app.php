@@ -197,7 +197,7 @@ return [
         Rap2hpoutre\LaravelLogViewer\LaravelLogViewerServiceProvider::class,
         Barryvdh\Debugbar\ServiceProvider::class,
         Jenssegers\Agent\AgentServiceProvider::class,
-        Ioshaven\V4\ThemeServiceProvider::class,
+        ioshaven\v4\ThemeServiceProvider::class,
 
     ],
 

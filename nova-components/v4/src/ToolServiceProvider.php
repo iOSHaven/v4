@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
-use Ioshaven\V4\Http\Middleware\Authorize;
+use ioshaven\v4\Http\Middleware\Authorize;
 
 class ToolServiceProvider extends ServiceProvider
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Ioshaven\V4\Http\Middleware;
+namespace ioshaven\V4\Http\Middleware;
 
 use Laravel\Nova\Nova;
-use Ioshaven\V4\V4;
+use ioshaven\v4\v4;
 
 class Authorize
 {

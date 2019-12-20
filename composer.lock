@@ -7,7 +7,7 @@
     "content-hash": "68499fd8cace799a9adb3855a7148d6a",
     "packages": [
         {
-            "name": "Ioshaven/V4",
+            "name": "ioshaven/v4",
             "version": "dev-master",
             "dist": {
                 "type": "path",
@@ -21,13 +21,13 @@
             "extra": {
                 "laravel": {
                     "providers": [
-                        "Ioshaven\\V4\\ToolServiceProvider"
+                        "ioshaven\\v4\\ToolServiceProvider"
                     ]
                 }
             },
             "autoload": {
                 "psr-4": {
-                    "Ioshaven\\V4\\": "src/"
+                    "ioshaven\\v4\\": "src/"
                 }
             },
             "license": [
