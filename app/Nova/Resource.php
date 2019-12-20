@@ -60,7 +60,7 @@ abstract class Resource extends NovaResource
         return parent::relatableQuery($request, $query);
     }
 
-    protected static function applyOrderings($query, $orderings)
+    protected static function applyOrderings($query, array $orderings)
     {
         if (empty($orderings)) {
             // This is your default order
