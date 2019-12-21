@@ -264,6 +264,7 @@ class AppController extends Controller
       $app = App::findByUid($uid);
       if ($app->signed) {
 
+        event(new \App\Events\ViewEvent($app));
         event(new \App\Events\InstallEvent($app));
 
         return view('ad', [
@@ -293,6 +294,7 @@ class AppController extends Controller
       $app = App::findByUid($uid);
       if ($app->unsigned) {
         
+        event(new \App\Events\ViewEvent($app));
         event(new \App\Events\DownloadEvent($app));
 
         return view('ad', [
