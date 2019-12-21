@@ -85,7 +85,7 @@ abstract class Resource extends NovaResource
 
     public function handleIcon($icon) {
         return function () use ($icon){
-            return url($icon);
+            return $icon ? url($icon) : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=";
         };
     }
 }

@@ -2,12 +2,16 @@
 
 namespace App\Nova\Actions;
 
+use App\Ipa;
+use App\Itms;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Collection;
 use Laravel\Nova\Actions\Action;
 use Laravel\Nova\Fields\ActionFields;
+use Laravel\Nova\Fields\Boolean;
+use Laravel\Nova\Fields\Heading;
 
 class SignProvider extends Action implements ShouldQueue
 {
@@ -22,9 +26,20 @@ class SignProvider extends Action implements ShouldQueue
      */
     public function handle(ActionFields $fields, Collection $providers)
     {
-        foreach($providers as $provider) {
-            $provider->forceFill(["revoked" => false])->save();
-            $this->markAsFinished($provider);
+        try {
+            foreach($providers as $provider) {
+                $provider->forceFill(["revoked" => $fields->ipas])->save();
+                $ids = $provider->itms->pluck('id');
+                if ($fields->itms) {
+                    Itms::whereIn('id', $ids)->update(['working' => true]);
+                }
+                if ($fields->ipas) {
+                    Ipa::whereIn('id', $ids)->update(['working' => true]);
+                }
+                $this->markAsFinished($provider);
+            }
+        } catch (\Exception $err) {
+           $this->fail($err);
         }
     }
 
@@ -35,6 +50,12 @@ class SignProvider extends Action implements ShouldQueue
      */
     public function fields()
     {
-        return [];
+        return [
+            Heading::make('<p>Optionally check boxes to change the status of the links associated with the provider. All links can be changed back with a click of a button.</p>')->asHtml(),
+            Boolean::make('ITMS', 'itms', function () {
+                return true;
+            })->help('Display all signed (ITMS) links as working.'),
+            Boolean::make('IPA', 'ipas')->help('Display all unsigned (IPA) links as working.'),
+        ];
     }
 }

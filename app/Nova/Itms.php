@@ -2,11 +2,14 @@
 
 namespace App\Nova;
 
+use Barryvdh\Debugbar\Facade as Debug;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Itms extends Resource
 {
@@ -22,12 +25,13 @@ class Itms extends Resource
      *
      * @var string
      */
+
     public function title () {
         return $this->name;
     }
 
     public function subtitle () {
-        return $this->working ? "" : "REVOKED";
+        return $this->provider_name . ($this->working ? "" : " - REVOKED");
     }
 
     /**
@@ -51,10 +55,21 @@ class Itms extends Resource
      */
     public function fields(Request $request)
     {
+        
         return [
             ID::make('id')->sortable(),
             Text::make('name')->sortable(),
             Text::make('url')->onlyOnForms(),
+            
+            Text::make('Provider', 'provider.name')->onlyOnIndex(),
+
+            Avatar::make('', 'provider_avatar')
+                ->thumbnail($this->handleIcon($this->provider_avatar))
+                ->preview($this->handleIcon($this->provider_avatar))
+                ->maxWidth(50)
+                ->onlyOnIndex(),
+
+
             Boolean::make('working')->sortable(),
             BelongsToMany::make('providers')->nullable()->searchable(),
             BelongsToMany::make('apps')->nullable()->searchable(),

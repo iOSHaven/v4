@@ -24,4 +24,9 @@ class Provider extends Model
     public function ipas() {
         return $this->belongsToMany(Ipa::class);
     }
+
+    public static function unknown() {
+        return null;
+        return static::where('name', 'Unknown')->first() ?? null;
+    }
 }

@@ -85,8 +85,8 @@ class App extends Resource
 
             
 
-            BelongsToMany::make('Itms', null, Itms::class)->nullable()->searchable(),
-            BelongsToMany::make('Ipas', null, Ipa::class)->nullable()->searchable(),
+            BelongsToMany::make('Itms', 'itms', Itms::class)->nullable()->searchable()->singularLabel('Signed Link (ITMS)'),
+            BelongsToMany::make('Ipa', 'ipas', Ipa::class)->nullable()->searchable()->singularLabel('Unsigned Link (IPA)'),
 
             Markdown::make('Description'),
 

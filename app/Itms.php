@@ -18,24 +18,22 @@ class Itms extends Model
         return $this->belongsToMany(Provider::class)->limit(1);
     }
 
-    // public function providers() {
-    //     return $this->belongsToMany(Provider::class);
-    // }
-
     public function apps() {
-        return $this->belongsToMany(App::class);
+        return $this->belongsToMany(App::class)->limit(1);
     }
-}
 
-
-class Asset extends Model {
-    public function publisher() {
-        return $this->belongsTo(Publisher::class, 'asset_publisher');
+    public function getProviderAttribute()
+    {
+        return $this->providers->first() ?? Provider::unknown();
     }
-}
 
-class Publisher extends Model {
-    public function assets() {
-        return $this->hasMany(Asset::class, 'asset_publisher');
+    public function getProviderAvatarAttribute()
+    {
+        return $this->provider->avatar ?? null;
+    }
+
+    public function getProviderNameAttribute()
+    {
+        return $this->provider->name ?? null;
     }
 }
