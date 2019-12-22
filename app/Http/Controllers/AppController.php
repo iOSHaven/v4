@@ -118,7 +118,7 @@ class AppController extends Controller
 
     public function showAppDetailPage ($uid)
     {
-      $app = $this->base_query()
+      $app = App::base_query()
         ->where('uid', $uid)
         ->firstOrFail();
 
