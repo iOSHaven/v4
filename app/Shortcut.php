@@ -7,9 +7,13 @@ use GuzzleHttp\Client;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Laravel\Nova\Actions\Actionable;
 
 class Shortcut extends Model
 {
+
+    use Actionable;
+
     public function user() {
         return $this->belongsTo(User::class);
     }

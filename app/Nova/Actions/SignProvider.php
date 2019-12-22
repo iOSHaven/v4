@@ -28,7 +28,7 @@ class SignProvider extends Action implements ShouldQueue
     {
         try {
             foreach($providers as $provider) {
-                $provider->forceFill(["revoked" => $fields->ipas])->save();
+                $provider->forceFill(["revoked" => false])->save();
                 $ids = $provider->itms->pluck('id');
                 if ($fields->itms) {
                     Itms::whereIn('id', $ids)->update(['working' => true]);

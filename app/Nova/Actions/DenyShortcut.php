@@ -7,9 +7,11 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Collection;
 use Laravel\Nova\Actions\Action;
+use Laravel\Nova\Actions\DestructiveAction;
 use Laravel\Nova\Fields\ActionFields;
+use Laravel\Nova\Fields\Text;
 
-class DenyShortcut extends Action
+class DenyShortcut extends DestructiveAction implements ShouldQueue
 {
     use InteractsWithQueue, Queueable;
 
@@ -22,7 +24,12 @@ class DenyShortcut extends Action
      */
     public function handle(ActionFields $fields, Collection $models)
     {
-        //
+        foreach($models as $model) {
+            $model->forceFill([
+                "approval_status" => "denied",
+                "approval_message" => $fields->message,
+            ])->save();
+        }
     }
 
     /**
@@ -32,6 +39,8 @@ class DenyShortcut extends Action
      */
     public function fields()
     {
-        return [];
+        return [
+            Text::make('Message', 'message')->nullable(),
+        ];
     }
 }

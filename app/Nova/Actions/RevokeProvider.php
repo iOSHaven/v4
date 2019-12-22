@@ -33,7 +33,7 @@ class RevokeProvider extends DestructiveAction implements ShouldQueue
     {
         try {
             foreach($providers as $provider) {
-                $provider->forceFill(["revoked" => $fields->ipas])->save();
+                $provider->forceFill(["revoked" => true])->save();
                 $ids = $provider->itms->pluck('id');
                 if ($fields->itms) {
                     Itms::whereIn('id', $ids)->update(['working' => false]);

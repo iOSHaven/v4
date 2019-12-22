@@ -26,30 +26,27 @@ ksort($links);
                 </h3>
 
             @else
-            <router-link exact tag="h3"
-                :to='{
-                    name: @json($link['_type'] ?? "index"),
-                    params: @json($link['_params'] ?? [])
-                }'
-                class="cursor-pointer flex items-center font-normal dim text-white mb-8 text-base no-underline">
-                {!! $link['_icon'] !!}                
-                <span class="text-white sidebar-label">{{ __($name) }}</span>
-            </router-link>
-                {{-- <a href="{{ $link['_url'] }}"
+            @if($link['_params'] ?? false)
+                <router-link exact tag="h3"
+                    :to='{
+                        name: @json($link['_type'] ?? "index"),
+                        params: @json($link['_params'] ?? [])
+                    }'
+                    class="cursor-pointer flex items-center font-normal dim text-white mb-8 text-base no-underline">
+                    {!! $link['_icon'] !!}                
+                    <span class="text-white sidebar-label">{{ __($name) }}</span>
+                </router-link>
+            @else
+                <a href="{{ $link['_url'] }}"
                 class="cursor-pointer flex items-center font-normal dim text-white mb-{{ isset($link['_links']) ? '6' : '8' }} text-base no-underline"
                 target="{{ isset($link['_target']) ? $link['_target'] : '_self' }}">
-                    @if (empty($link['_icon']))
-                        <svg class="sidebar-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path fill="#B3C1D1"
-                                d="M19.48 13.03A4 4 0 0 1 16 19h-4a4 4 0 1 1 0-8h1a1 1 0 0 0 0-2h-1a6 6 0 1 0 0 12h4a6 6 0 0 0 5.21-8.98L21.2 12a1 1 0 1 0-1.72 1.03zM4.52 10.97A4 4 0 0 1 8 5h4a4 4 0 1 1 0 8h-1a1 1 0 0 0 0 2h1a6 6 0 1 0 0-12H8a6 6 0 0 0-5.21 8.98l.01.02a1 1 0 1 0 1.72-1.03z"></path>
-                        </svg>
-                    @else
+
                         {!! $link['_icon'] !!}
-                    @endif
                     <span class="text-white sidebar-label">
                     {{ $name }}
                 </span>
-                </a> --}}
+                </a>
+            @endif
 
             @endif
 
@@ -100,32 +97,9 @@ ksort($links);
 
                 @endif
 
-            {{-- @endif --}}
-
         @endif
     @endif
 
-    {{-- @if (is_array($link))
-
-        @if (count($link))
-
-            <ul class="list-reset mb-8">
-                @foreach ($link as $name => $sublink)
-
-                    <li class="leading-tight mb-4 ml-8 text-sm">
-                        <a href="{{ $sublink }}" class="text-white text-justify no-underline dim">
-                            {{ $name }}
-                        </a>
-                    </li>
-
-                @endforeach
-            </ul>
-
-        @endif
-
-    @else
-
-    @endif  --}}
 
 @endforeach
 

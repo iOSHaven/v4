@@ -13,7 +13,7 @@ fbq('track', 'Search');
     <div class="container">
       <div class="row" id="apps">
           @foreach($apps as $app)
-            @component('components.applayout', $app->toArray())@endcomponent
+            @component('components.applayout', ["app" => $app])@endcomponent
             @if($loop->iteration == 3)
             
                 @component('components.ad')@endcomponent

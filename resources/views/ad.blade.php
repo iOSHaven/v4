@@ -1,5 +1,9 @@
 @extends('layouts.redesign', ["title" => "Installing", "hide_nav" => true, "hide_ads" => true, "back_link" => url("/apps")])
 
+{{-- @php
+dd(url($model->url))
+@endphp --}}
+
 @section('header')
     <title>{{ $app->name }}</title>
     <meta http-equiv="refresh" content="1; url={{ $url }}">
@@ -18,10 +22,15 @@
     <h3 class="mt-0 text-3xl font-display">{{ $app->name }}</h3>
     
 
-      <img src="{{ url($app->icon) }}" width="77" height="77" class="d-block mx-auto mb-10" style="height:77px; border-radius: 1.3rem">
-      {{-- <p>Trying to install {{ $app->name}}. Please remain calm.</p>   --}}
-      {{-- <br> --}}
-      {{-- <img src="/SVG/yoga.svg" alt="" class="d-block mx-auto mb-10" width="50"> --}}
+      <img src="{{ url($app->icon) }}" width="77" height="77" class="d-block mx-auto mb-3" style="height:77px; border-radius: 1.3rem">
+
+      <div class="text-xl mx-auto">Provided By:</div>
+      <div class="inline-block rounded-lg border p-3 mb-8 {{ theme('border-gray-100') }}">
+        <div class="flex items-center">
+          @component('components.tinyProviderIcon', ["provider" => $model->provider, "size" => 40])@endcomponent
+          <div>{{ $model->provider->name }}</div>
+        </div>
+      </div>
 
       <div>
             <a href="{{ $url }}" class='mx-1 mb-16 flex items-center justify-center font-bold rounded-full text-sm px-8 py-5 {{ theme('bg-blue', 'text-white') }}'>
@@ -36,7 +45,6 @@
             </a>
       </div>
       
-      {{-- <br> --}}
       
       @if($type == "itms")
         <h3 class="mt-0 text-2xl font-display">How to install</h4>

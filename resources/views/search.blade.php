@@ -10,33 +10,7 @@
     <input type="text" placeholder="Search" class="border-0 w-full pl-10 py-2 bg-transparent" v-model="searchinput">
 </div>
 
-<search-results theme="{{ theme() }}" :phpdata="{{ $apps }}"></search-results>
-{{-- <ul class="border-t {{ theme('border-gray-200') }}">
-    <!-- Search result -->
-    <li href="" class="flex items-center justify-between py-2 border-b {{ theme('border-gray-200') }}">
-        <a href="#page" class="flex items-center justify-start overflow-hidden">
-            <img class="rounded-lg mr-3" src="https://ioshavenco.s3.us-east-2.amazonaws.com/icons/Zombie+Rollerz.jpg" alt="" height="25" width="25">
-            <span class="truncate">Some app title that is longer than most</span>
-        </a>
-        <div class="flex flex-grow">
-            @component('components.button', ["href"=> "#", "bg" => "gray-100", "color" => "blue"]) IPA @endcomponent
-            @component('components.button', ["href"=> "#", "bg" => "blue", "color" => "white"]) GET @endcomponent
-        </div>
-    </li>
-
-    <!-- Search result -->
-    <li href="" class="flex items-center justify-between py-2 border-b {{ theme('border-gray-200') }}">
-        <a href="#page" class="flex items-center justify-start overflow-hidden">
-            <img class="rounded-lg mr-3" src="https://ioshavenco.s3.us-east-2.amazonaws.com/icons/Zombie+Rollerz.jpg" alt="" height="25" width="25">
-            <span class="truncate">Some app title that not quite as long</span>
-        </a>
-        <div class="flex flex-grow">
-            @component('components.button', ["href"=> "#", "bg" => "gray-100", "color" => "blue"]) IPA @endcomponent
-            @component('components.button', ["href"=> "#", "bg" => "blue", "color" => "white"]) GET @endcomponent
-        </div>
-    </li>
-    
-</ul> --}}
+<search-results theme="{{ theme() }}" :phpdata='@json($apps->toArray())'></search-results>
 </div>
 
 
@@ -85,38 +59,30 @@
 
 <h1 class="mt-3">Providers</h1>
 <div class="flex flex-wrap -mx-1">
-        @component('components.category', [
-            "title" => "App Valley",
-            "icon" => "fab fa-app-store-ios",
-            "link" => "/apps?by=app-valley&title=Apps%20from%20App%20Valley",
-            "bg" => "green",
-        ])@endcomponent
-        @component('components.category', [
-            "title" => "iOSGods",
-            "icon" => "fab fa-app-store-ios",
-            "link" => "/apps?by=iosgods&title=Apps%20from%20iOSGods",
-            "bg" => "green",
-        ])@endcomponent
-        @component('components.category', [
-            "title" => "Tweakbox",
-            "icon" => "fab fa-app-store-ios",
-            "link" => "/apps?by=tweakbox&title=Apps%20from%20TweakBox",
-            "bg" => "green",
-        ])@endcomponent
-        @component('components.category', [
-            "title" => "Ignition",
-            "icon" => "fab fa-app-store-ios",
-            "link" => "/apps?by=ignition&title=Apps%20from%20Ignition",
-            "bg" => "green",
-        ])@endcomponent
-        @component('components.category', [
-            "title" => "TopStore",
-            "icon" => "fab fa-app-store-ios",
-            "link" => "/apps?by=topstore&title=Apps%20from%20TopStore",
-            "bg" => "green",
-        ])@endcomponent
-
-
+    @foreach($providers as $provider)
+        <div class="w-1/2 p-1 ">
+        <a href="/apps?by={{ $provider->name }}&title=Apps by {{ $provider->name }}" class="flex rounded-lg border p-2 {{ theme('border-gray-100', 'bg-gray-100') }}">
+                <div class="flex items-center">
+                    @component('components.tinyProviderIcon', ["provider" => $provider, "size" => 30])@endcomponent
+                    <div class="ml-1 text-sm">
+                        <div>{{ $provider->name }}</div>
+                        @unless($provider->revoked)
+                            <div class="text-green-light font-bold text-sm">
+                                <span class="mr-1">Working</span>
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                        @else
+                            <div class="text-red-light font-bold text-sm">
+                                <span class="mr-1">Revoked</span>
+                                <i class="fas fa-times-octagon"></i>
+                            </div>
+                        @endif
+                    </div>
+                </div>
+            </a>
+            
+        </div>
+    @endforeach
 </div>
 
 
@@ -125,13 +91,13 @@
     @component('components.category', [
         "title" => "Install Now",
         "icon" => "fas fa-cloud-download-alt",
-        "link" => "/apps?type=signed",
+        "link" => "/apps?type=signed&working=true",
         "bg" => "blue",
     ])@endcomponent
     @component('components.category', [
         "title" => "IPA Archive",
         "icon" => "fas fa-file-archive",
-        "link" => "/apps?type=ipa",
+        "link" => "/apps?type=ipa&working=true",
         "bg" => "blue",
     ])@endcomponent
 </div>

@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\DB;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Textarea;
 use Saumini\Count\RelationshipCount;
 
 class App extends Resource
@@ -89,6 +90,7 @@ class App extends Resource
             BelongsToMany::make('Ipa', 'ipas', Ipa::class)->nullable()->searchable()->singularLabel('Unsigned Link (IPA)'),
 
             Markdown::make('Description'),
+            Textarea::make('tags'),
 
             
 

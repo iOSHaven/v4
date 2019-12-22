@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\App;
+use App\Provider;
 use Illuminate\Http\Request;
 use Session;
 use File;
@@ -83,8 +85,12 @@ class StaticPageController extends Controller
     }
 
     public function getSearchPage() {
-      $apps = \App\App::orderBy('views', 'desc')->get();
-      return view('search')->with('apps', json_encode($apps->toArray()));
+      $providers = Provider::orderBy('name')->get();
+      $apps = App::orderBy('views', 'desc')->get();
+      return view('search')->with([
+        "apps" => $apps,
+        "providers" => $providers,
+      ]);
     }
 
     public function getCreditsPage() {

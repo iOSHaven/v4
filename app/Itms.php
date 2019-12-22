@@ -14,14 +14,21 @@ class Itms extends Model
         "name", "url"
     ];
 
+    // protected $touches = ['apps'];
+
     public function providers() {
-        return $this->belongsToMany(Provider::class)->limit(1);
+        return $this->belongsToMany(Provider::class);
     }
 
     public function apps() {
-        return $this->belongsToMany(App::class)->limit(1);
+        return $this->belongsToMany(App::class)->withPivot('id');
     }
 
+    public function getAppAttribute()
+    {
+        return $this->apps->first() ?? null;
+    }
+    
     public function getProviderAttribute()
     {
         return $this->providers->first() ?? Provider::unknown();

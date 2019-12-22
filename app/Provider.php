@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Builders\ProviderBuilder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Mirror;
@@ -12,6 +13,11 @@ class Provider extends Model
     use SoftDeletes, Actionable;
     
     protected $fillable = ["name", "twitter"];
+
+    public function newEloquentBuilder($query)
+    {
+        return new ProviderBuilder($query);
+    }
 
     public function mirrors() {
         return $this->hasMany(Mirror::class);

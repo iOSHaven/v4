@@ -2,158 +2,85 @@
 
 namespace App\Http\Controllers;
 
-use Spatie\Sitemap\SitemapGenerator;
 use Illuminate\Http\Request;
-use App\Thing;
 use App\App;
 use App\Jobs\UpdateIosGodsToken;
 use App\Provider;
 use App\Mirror;
-use Parsedown;
 use Carbon\Carbon;
-use DB;
-use Response;
-use Auth;
 use App\Ad;
-use Illuminate\Support\Facades\View;
+use App\Ipa;
+use App\Itms;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Support\Facades\Artisan;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 
 class AppController extends Controller
 {
+    private function gathered_query(Request $request, $query, $search = null) {
+      return $filteredData = [
+        'count' => $query->count(),
+        'search' => $search ?? $request->q,
+        'pageTitle' => $request->title ?? null,
+        'apps' => $query,
+      ];
+    }
 
+    private function display(Request $request, $data) {
+      if ($request->json == 'true') {
+        return response()->json($data);
+      }else if ($request->html == 'true') {
+        return  view('templates.AppTemplate')->with($data);
+      } else {
+        return view('apps')->with($data);
+      }
+    }
     
 
-    public function page ($tag = null, Request $r)
+    public function page ($tag = null, Request $request)
     {
-      if ($tag) $search = $tag;
-      else $search = $r->q;
-      
-      $args = parseQuery($search, [
-        "type" => $r->type,
-        "by" => $r->by,
-        "tags" => $r->tags,
-      ]);
+      $apps = App::base_query()
+                  ->search($request, $tag);
 
-      $apps = App::with("mirrors.provider")->hasName();
-
-      // ================= QUERY COMMANDS ================= //
-      if(empty($args["tags"])) {
-        $apps = $apps->name($args["search"]);
-      } else {
-        foreach(explode(",", $args["tags"]) as $tag) {
-          $apps = $apps->tag($tag);
-        }
-      }
-        
-      if ($args["type"] == "ipa") {
-        $apps = $apps->whereNotNull('unsigned');
-      } else if ($args["type"] == "signed" || $args["type"] == "install") {
-        $apps = $apps->whereNotNull('signed');
-      } 
-
-      if ($args["by"]) {
-        $apps = $apps->by($args["by"]);
-      }
-
-      if ($args["search"] && empty($args["tags"])) {
-        $apps = $apps->orWhere(function(Builder $query) use($args) {
-          $query->tag(strtolower($args["search"]));
-        });
-      }
-      // ================= QUERY COMMANDS ================= //Í
-      
-
-      if ($r->limit || !$r->json) {
-        $apps = $apps
-          ->orderBy($r->sort ?? "downloads", $r->order ?? "desc")
-          ->paginate($r->limit);
-      } else {
-        $apps = $apps
-            ->orderBy($r->sort ?? "downloads", $r->order ?? "desc")
-            ->get();
-      }
-      
-      $filteredData = [
-        'count' => $apps->count(),
-        'search' => $search,
-        'pageTitle' => $r->title ?? null,
-        'apps' => $apps,
-      ];
-      
-      
-
-      if ($r ->json) {
-        return response()->json($filteredData);
-      }else if ($r->html) {
-        return  view('templates.AppTemplate')->with($filteredData);
-      } else {
-        return view('apps')->with($filteredData);
-      }
-
+      $apps = $this->gathered_query($request, $apps, $tag);
+      return $this->display($request, $apps);
     }
 
-    public function games (Request $r) {
-      $apps = App::with("mirrors.provider")
-                  ->hasName()
+    public function games (Request $request) {
+      $apps = App::base_query()
                   ->games()
-                  ->orderBy("downloads", "desc")
-                  ->paginate(15);
-      $data = [
-        "apps" => $apps,
-        "q" => $r->q
-      ];
-      if ($r->html) {
-        return  view('templates.AppTemplate')->with($data);
-      } else {
-        return view('apps')->with($data);
-      }
-    }
-    public function jailbreaks (Request $r) {
-      $apps = App::with("mirrors.provider")->hasName()
-                  ->tag("jailbreak")
-                  ->orderBy("downloads", "desc")
-                  ->paginate(15);
-      $data = [
-        "apps" => $apps,
-        "q" => $r->q
-      ];
-      if ($r->html) {
-        return  view('templates.AppTemplate')->with($data);
-      } else {
-        return view('apps')->with($data);
-      }
+                  ->search($request);
+
+      $apps = $this->gathered_query($request, $apps);
+      return $this->display($request, $apps);
     }
 
-    public function updates ($tag=null, Request $r) {
-      session(["tab" => "updates"]);
-      if ($tag) $search = $tag;
-      else $search = $r->q;
-      $filteredData = [
-        'apps' => App::with("mirrors.provider")->where('name', '!=', 'No name')
-          ->where('name', 'like', "%". $search."%")
-          ->orWhere('tags', 'like', "%". $search."%")
-          ->where('edited_at', '>', Carbon::now()->subDays(3))
-          ->orderBy('edited_at', 'desc')
-          ->paginate(15),
-        'q' => $search
-      ];
-      if ($r->html) {
-        return  view('templates.AppTemplate')->with($filteredData);
-      } else {
-        return view('apps')->with($filteredData);
-      }
+    public function jailbreaks (Request $request) {
+      $apps = App::base_query()
+                  ->tag("jailbreak")
+                  ->search($request);
+
+      $apps = $this->gathered_query($request, $apps);
+      return $this->display($request, $apps);
+    }
+
+    public function updates ($tag=null, Request $request) {
+      $apps = App::base_query()
+                  ->recently_updated()
+                  ->search($request, $tag);
+
+      $apps = $this->gathered_query($request, $apps);
+      return $this->display($request, $apps);
     }
 
     public function create (Request $request)
     {
       $app = new App;
-      $app->uid = str_random(5);
+      $app->uid = Str::random(5);
       $app->description = "No description";
       $app->save();
       return redirect('/app/edit/' . $app->uid);
-      // SitemapGenerator::create(Request::url())->writeToFile(base_path('sitemap.xml'));
-      // return response()->json($app);
     }
 
     public function remove(Request $request)
@@ -191,9 +118,12 @@ class AppController extends Controller
 
     public function showAppDetailPage ($uid)
     {
-      $app = App::with('mirrors.provider', 'mirrors.images')->where('uid', $uid)->firstOrFail();
-      // $app->increment('views');
+      $app = $this->base_query()
+        ->where('uid', $uid)
+        ->firstOrFail();
+
       event(new \App\Events\ViewEvent($app));
+
       return view('uid')->with(['app' => $app]);
     }
 
@@ -259,52 +189,46 @@ class AppController extends Controller
       }
     }
 
-    public function install($uid)
+    public function install(Itms $itms)
     {
-      $app = App::findByUid($uid);
-      if ($app->signed) {
+      $app = $itms->app;
+      event(new \App\Events\ViewEvent($app));
+      event(new \App\Events\DownloadEvent($app));
 
-        event(new \App\Events\ViewEvent($app));
-        event(new \App\Events\InstallEvent($app));
-
-        return view('ad', [
-          "ad" => new Ad(),
-          "url" => $this->itms2($app->signed),
-          "app" => $app,
-          "type" => "itms"
-        ]);
-      }
-      else abort(404);
+      return view('ad', [
+        "ad" => new Ad(),
+        "model" => $itms,
+        "app" => $app,
+        "url" => $this->itms2($itms->url),
+        "type" => "itms"
+      ]);
     }
 
-    public function installMirror($uid, $provider)
-    {
-      $app = App::findByUid($uid);
-      $mirror = $app->mirrors->where("provider_id", $provider)->first();
-      if ($mirror) {
-        $app->increment('downloads');
-        // return redirect($this->monetize("/itms/" . $app->id));
-        return $this->itms($mirror->install_link);
-      }
-      else abort(404);
-    }
+    // public function installMirror($uid, $provider)
+    // {
+    //   $app = App::findByUid($uid);
+    //   $mirror = $app->mirrors->where("provider_id", $provider)->first();
+    //   if ($mirror) {
+    //     $app->increment('downloads');
+    //     // return redirect($this->monetize("/itms/" . $app->id));
+    //     return $this->itms($mirror->install_link);
+    //   }
+    //   else abort(404);
+    // }
 
-    public function download($uid)
+    public function download(Ipa $ipa)
     {
-      $app = App::findByUid($uid);
-      if ($app->unsigned) {
-        
+        $app = $ipa->app;
         event(new \App\Events\ViewEvent($app));
         event(new \App\Events\DownloadEvent($app));
 
         return view('ad', [
           "ad" => new Ad(),
-          "url" => url($app->unsigned),
+          "model" => $ipa,
           "app" => $app,
+          "url" => url($ipa->url),
           "type" => "download"
         ]);
-      }
-      else abort(404);
     }
 
     public function token() {

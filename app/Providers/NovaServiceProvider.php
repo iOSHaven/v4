@@ -160,6 +160,12 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                             "resourceName" => "users"
                         ]
                     ],
+
+                    'Logs' => [
+                        '_admin_only' => true,
+                        '_icon' => fa('fas fa-database'),
+                        '_url'    => '/logs',
+                    ],
             
                     'Account' => [
                         '_can' => ['view',  Auth::user()],

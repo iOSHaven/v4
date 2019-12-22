@@ -74,11 +74,12 @@ Route::post('/app/remove', 'AppController@remove');
 Route::post('/app/token', 'AppController@token');
 
 Route::get('/install/mirror/{uid}/{provider}', 'AppController@installMirror');
-Route::get('/install/{uid}', 'AppController@install');
-Route::get('/download/{uid}', 'AppController@download');
+Route::get('/install/{itms}', 'AppController@install');
+Route::get('/download/{ipa}', 'AppController@download');
 
 Route::group(["prefix" => "apps", "middleware" => ["tab:Apps", "back:Apps"]], function () {
   // Route::get('/getJson/{uid?}', 'AppController@getJson');
+  Route::redirect('/signednow', '/apps?type=signed&working=true', 301);
   Route::get('/type/{type}', 'AppController@type');
   Route::get('/{tag?}', 'AppController@page')->name('apps');
 });

@@ -78,7 +78,8 @@ class Shortcut extends Resource
 
             Text::make('Name')
                 ->hideWhenCreating()
-                ->hideWhenUpdating(),
+                ->hideWhenUpdating()
+                ->sortable(),
 
             Markdown::make('Description'),
 
@@ -94,7 +95,8 @@ class Shortcut extends Resource
 
             Status::make('Status', 'approval_status')
                 ->loadingWhen(['pending'])
-                ->failedWhen(['denied']),
+                ->failedWhen(['denied'])
+                ->sortable(),
 
 
             Textarea::make('Notes', 'approval_message')
@@ -156,9 +158,21 @@ class Shortcut extends Resource
     public function actions(Request $request)
     {
         return [
-            (new Actions\ApproveShortcut)->canSee(function ($request) {
-                return $request->user()->isAdmin;
-            })
+            (new Actions\ApproveShortcut)
+                ->canSee(function ($request) {
+                    return $request->user()->isAdmin;
+                })
+                ->confirmText('Are you sure you want to approve all shortcuts?')
+                ->confirmButtonText('Approve')
+                ->cancelButtonText('Never mind'),
+
+            (new Actions\DenyShortcut)
+                ->canSee(function ($request) {
+                    return $request->user()->isAdmin;
+                })
+                ->confirmText('Are you sure you want to deny all shortcuts?')
+                ->confirmButtonText('Deny')
+                ->cancelButtonText('Never mind'),
         ];
     }
 }

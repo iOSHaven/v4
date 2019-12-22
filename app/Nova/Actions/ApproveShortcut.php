@@ -8,8 +8,9 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Collection;
 use Laravel\Nova\Actions\Action;
 use Laravel\Nova\Fields\ActionFields;
+use Laravel\Nova\Fields\Text;
 
-class ApproveShortcut extends Action
+class ApproveShortcut extends Action implements ShouldQueue
 {
     use InteractsWithQueue, Queueable;
 
@@ -23,7 +24,10 @@ class ApproveShortcut extends Action
     public function handle(ActionFields $fields, Collection $models)
     {
         foreach($models as $model) {
-            $model->forceFill(["approval_status" => "approved"])->save();
+            $model->forceFill([
+                "approval_status" => "approved",
+                "approval_message" => $fields->message,
+            ])->save();
         }
     }
 
@@ -34,6 +38,8 @@ class ApproveShortcut extends Action
      */
     public function fields()
     {
-        return [];
+        return [
+            Text::make('Message', 'message')->nullable(),
+        ];
     }
 }

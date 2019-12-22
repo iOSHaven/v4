@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Mirror;
 use App\Builders\AppBuilder;
 use Laravel\Nova\Actions\Actionable;
+use Illuminate\Support\Str;
 
 class App extends Model
 {
@@ -34,32 +35,9 @@ class App extends Model
 
   protected $appends = ["abs_icon", "is_admin"];
 
-  // protected $with = ['mirrors'];
-
   public static function findByUid ($uid) {
     return App::where('uid', $uid)->firstOrFail();
   }
-
-
-  // public function toArray() {
-  //   $array = parent::toArray();
-  //   $array["icon"] = url($array["icon"]);
-  //   $array["banner"] = url($array["banner"]);
-  //   $array["views_str"] = format_int($array["views"]);
-  //   $array["downloads_str"] = format_int($array["downloads"]);
-  //   $array["size_str"] = format_int($array["size"], "file");
-  //   $array["availableMirrors"] = $this->availableMirrors()->get();
-  //   $array["firstMirror"] = $this->firstMirror();
-  //   $array["phonePreviews"] = $this->previews("phone");
-  //   $array["ipadPreviews"] = $this->previews("ipad");
-  //   if(Auth::check()) {
-  //     $array["isAdmin"] = Auth::user()->isAdmin;
-  //   } else {
-  //     $array["isAdmin"] = 0;
-  //   }
-   
-  //   return $array;
-  // }
 
   public function mirrors()
   {
@@ -76,36 +54,17 @@ class App extends Model
     return $this->attributes["is_admin"] = Auth::check() && Auth::user()->isAdmin;
   }
 
-  // public function availableMirrors() {
-  //   return $this->mirrors()->whereHas("provider", function ($q) {
-  //     $q->where("revoked", false);
-  //   });
-  // }
-
-  // public function firstMirror() {
-  //   return $this->availableMirrors()->whereNotNull('description')->first();
-  // }
-
-  // public function previews ($type) {
-  //   if($this->firstMirror()) {
-  //     return $this->firstMirror()->images()->where('type', $type)->get();
-  //   } else {
-  //     return collect([]);
-  //   }
-    
-  // }
-
   public function newEloquentBuilder($query)
   {
     return new AppBuilder($query);
   }
 
   public function itms() {
-    return $this->belongsToMany(Itms::class);
+    return $this->belongsToMany(Itms::class)->orderBy('working', 'desc')->using(Link::class);
   }
 
   public function ipas() {
-    return $this->belongsToMany(Ipa::class);
+    return $this->belongsToMany(Ipa::class)->orderBy('working', 'desc')->using(Link::class);
   }
 
   public function impressions() {
@@ -119,4 +78,21 @@ class App extends Model
   public function installs() {
     return $this->morphMany(Install::class, 'trigger');
   }
+
+  public function getProvidersAttribute() {
+    $itms = $this->itms->pluck('providers')->flatten();
+    $ipas = $this->ipas->pluck('providers')->flatten();
+    return $itms->merge($ipas)->unique('id');
+  }
+
+  public static function boot() {
+    parent::boot();
+
+    static::creating(function ($model) {
+      $model->uid = Str::random(5);
+      $model->description = "No description";
+      $model->edited_at = now();
+    });
+
+  } 
 }
