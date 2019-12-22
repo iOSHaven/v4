@@ -14,11 +14,11 @@ class Ipa extends Model
     ];
 
     public function providers() {
-        return $this->belongsToMany(Provider::class);
+        return $this->belongsToMany(Provider::class)->using(Link::class);
     }
 
     public function apps() {
-        return $this->belongsToMany(App::class);
+        return $this->belongsToMany(App::class)->using(Link::class);
     }
 
     public function getAppAttribute()

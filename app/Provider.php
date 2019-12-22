@@ -24,11 +24,11 @@ class Provider extends Model
     }
 
     public function itms() {
-        return $this->belongsToMany(Itms::class);
+        return $this->belongsToMany(Itms::class)->using(Link::class);
     }
 
     public function ipas() {
-        return $this->belongsToMany(Ipa::class);
+        return $this->belongsToMany(Ipa::class)->using(Link::class);
     }
 
     public static function unknown() {

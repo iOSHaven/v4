@@ -17,11 +17,11 @@ class Itms extends Model
     // protected $touches = ['apps'];
 
     public function providers() {
-        return $this->belongsToMany(Provider::class);
+        return $this->belongsToMany(Provider::class)->using(Link::class);
     }
 
     public function apps() {
-        return $this->belongsToMany(App::class)->withPivot('id');
+        return $this->belongsToMany(App::class)->using(Link::class);
     }
 
     public function getAppAttribute()
