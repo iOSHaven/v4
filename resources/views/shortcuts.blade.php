@@ -6,6 +6,12 @@
 
 @section('content')
 
+    <div class="text-4xl">Shortcuts</div>
+    <p class="mb-8">Siri Shortcuts deliver a quick way to get things done with your apps with just a tap or by asking Siri. The
+      Shortcuts app enables
+      you to create personal shortcuts with multiple steps from your favorite apps. Start from hundreds of
+      examples in the Gallery or
+      drag and drop to create your own.</p>
     <div class="container">
       <div class="row" id="shortcuts">
           @foreach($shortcuts as $shortcut)

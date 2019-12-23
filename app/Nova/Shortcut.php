@@ -78,7 +78,6 @@ class Shortcut extends Resource
 
             Text::make('Name')
                 ->hideWhenCreating()
-                ->hideWhenUpdating()
                 ->sortable(),
 
             Markdown::make('Description'),
