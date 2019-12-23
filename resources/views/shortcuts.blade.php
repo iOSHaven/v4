@@ -6,7 +6,14 @@
 
 @section('content')
 
-    <div class="text-4xl">Shortcuts</div>
+    <div class="flex items-center justify-between">
+      <div class="text-4xl">Shortcuts</div>
+      <a href="/nova/resources/shortcuts/new" class='flex items-center font-bold rounded text-sm px-5 py-1 {{ theme("bg-blue", "text-white") }}'>
+        <span class="mr-2">Create</span>
+        <i class="fas fa-plus"></i>
+      </a>
+    </div>
+    
     <p class="mb-8">Siri Shortcuts deliver a quick way to get things done with your apps with just a tap or by asking Siri. The
       Shortcuts app enables
       you to create personal shortcuts with multiple steps from your favorite apps. Start from hundreds of
