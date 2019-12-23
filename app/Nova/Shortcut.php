@@ -111,6 +111,8 @@ class Shortcut extends Resource
                     return $request->user()->isAdmin;
                 })
                 ->hideFromIndex()
+                ->hideWhenCreating()
+                ->nullable()
                 ->searchable(),
 
         ];
@@ -124,7 +126,21 @@ class Shortcut extends Resource
      */
     public function cards(Request $request)
     {
-        return [];
+        return [
+            (new Metrics\ViewsPerDay)
+                ->type("App\Shortcut")
+                ->canSee(function () {
+                    return auth()->user()->isAdmin;
+                }),
+            (new Metrics\ViewsPerDayPerResource)->onlyOnDetail(),
+
+            (new Metrics\InstallsPerDay)
+                ->type("App\Shortcut")
+                ->canSee(function () {
+                    return auth()->user()->isAdmin;
+                }),
+            (new Metrics\InstallsPerDayPerResource)->onlyOnDetail(),
+        ];
     }
 
     /**

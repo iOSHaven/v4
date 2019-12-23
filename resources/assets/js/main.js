@@ -34,7 +34,7 @@ u(".scroll-toggler").on('click', function () {
    // alert(`You're in *${mode}**** mode`);
 // }, 1000)
 
-window.loadMoreApps = function(el) {
+window.loadMoreApps = function(el, id="apps") {
    var meta =  document.head.querySelector('meta[name=page][content]')
    var currentPage = parseInt(meta.content)
    var nextPage = currentPage + 1
@@ -45,14 +45,11 @@ window.loadMoreApps = function(el) {
    }
    getJSON(url, function (err, doc) {
       if (err || typeof doc.body == "undefined") {
-         el.innerHTML = "No more apps. Try again?"
+         el.innerHTML = "No more " + id + ". Try again?"
       } else {
-         var apps = document.getElementById('apps')
+         var apps = document.getElementById(id)
          apps.innerHTML += doc.body.innerHTML
          meta.setAttribute('content', nextPage.toString())
-         // setTimeout(() => {
-         //    (adsbygoogle = window.adsbygoogle || []).push({})
-         // }, 500)
       }
    }, "document")
 };

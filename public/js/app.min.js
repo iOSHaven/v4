@@ -820,7 +820,7 @@ var render = function() {
                               _vm.t("text-blue"),
                               "mr-1"
                             ],
-                            attrs: { href: "/download/" + app.uid }
+                            attrs: { href: "/download/uid/" + app.uid }
                           },
                           [_vm._v("IPA")]
                         )
@@ -840,7 +840,7 @@ var render = function() {
                               _vm.t("text-white"),
                               "mr-1"
                             ],
-                            attrs: { href: "/install/" + app.uid }
+                            attrs: { href: "/install/uid/" + app.uid }
                           },
                           [_vm._v("GET")]
                         )

@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Builders\ShortcutBuilder;
 use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Database\Eloquent\Model;
@@ -14,8 +15,25 @@ class Shortcut extends Model
 
     use Actionable;
 
+    public function newEloquentBuilder($query)
+    {
+      return new ShortcutBuilder($query);
+    }
+
     public function user() {
         return $this->belongsTo(User::class);
+    }
+
+    public function impressions() {
+        return $this->morphMany(View::class, 'trigger');
+    }
+
+    public function downloads() {
+        return $this->morphMany(Download::class, 'trigger');
+    }
+
+    public function installs() {
+        return $this->morphMany(Install::class, 'trigger');
     }
 
     public function getUrlAttribute()

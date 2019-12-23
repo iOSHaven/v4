@@ -6,7 +6,7 @@ use App\Nova\Resource;
 use App\View;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Trend;
-use App\Builders\AppBuilder as Builder;
+// use App\Builders\AppBuilder as Builder;
 
 class ViewsPerDayPerResource extends Trend
 {
@@ -18,7 +18,7 @@ class ViewsPerDayPerResource extends Trend
     private function getData($resource) {
         $type = get_class($resource->resource);
 
-        return View::whereHasMorph('trigger', $type, function (Builder $query) use ($resource) {
+        return View::whereHasMorph('trigger', $type, function ($query) use ($resource) {
             $query->where('id', $resource->id);
         });
     }

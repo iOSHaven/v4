@@ -16,7 +16,7 @@ class InstallsPerDayPerResource extends Trend
     private function getData($resource) {
         $type = get_class($resource->resource);
 
-        return Install::whereHasMorph('trigger', $type, function (Builder $query) use ($resource) {
+        return Install::whereHasMorph('trigger', $type, function ($query) use ($resource) {
             $query->where('id', $resource->id);
         });
     }

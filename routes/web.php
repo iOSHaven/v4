@@ -68,19 +68,26 @@ Route::get('/itms/{id}', 'AppController@itms');
 
 Route::post('/app/create', 'AppController@create');
 Route::get('/app/{uid}', 'AppController@showAppDetailPage');
+Route::get('/shortcut/{itunes_id}', 'ShortcutController@showDetail');
+Route::get('/shortcut/install/{itunes_id}', 'ShortcutController@install');
 Route::get('/app/edit/{uid}', 'AppController@edit');
 Route::post('/app/update', 'AppController@update');
 Route::post('/app/remove', 'AppController@remove');
 Route::post('/app/token', 'AppController@token');
 
-Route::get('/install/mirror/{uid}/{provider}', 'AppController@installMirror');
 Route::get('/install/{itms}', 'AppController@install');
 Route::get('/download/{ipa}', 'AppController@download');
+Route::get('/install/uid/{app}', 'AppController@installUid');
+Route::get('/download/uid/{app}', 'AppController@downloadUid');
+
+
+Route::group(["prefix" => "shortcuts", "middleware" => ["tab:Shortcuts", "back:Shortcuts"]], function () {
+  Route::get('/{tag?}', 'ShortcutController@page')->name('shortcuts');
+});
+
 
 Route::group(["prefix" => "apps", "middleware" => ["tab:Apps", "back:Apps"]], function () {
-  // Route::get('/getJson/{uid?}', 'AppController@getJson');
   Route::redirect('/signednow', '/apps?type=signed&working=true', 301);
-  Route::get('/type/{type}', 'AppController@type');
   Route::get('/{tag?}', 'AppController@page')->name('apps');
 });
 
@@ -122,7 +129,7 @@ Route::get('/betas', 'StaticPageController@getBetasPage');
 Route::get('/jailbreak', 'StaticPageController@getJailbreakPage');
 Route::get('/aboutUs', 'StaticPageController@getAboutUsPage');
 Route::get('/fight-for-net-neutrality', 'StaticPageController@getFightForNetNeutrality');
-Route::get('/shortcuts', 'StaticPageController@getShortcutsPage');
+// Route::get('/shortcuts', 'StaticPageController@getShortcutsPage');
 
 Route::post('/close_announcement', 'StaticPageController@closeAnnouncement');
 

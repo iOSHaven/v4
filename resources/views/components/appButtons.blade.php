@@ -1,6 +1,5 @@
 <div class="flex items-center flex-wrap -mt-2">
-    {{-- <div class="-mt-2 flex items-center flex-wrap"> --}}
-        @if($app->ipas && $ipa = $app->ipas->where('working', true)->first())
+    @if($app->ipas && $ipa = $app->ipas->where('working', true)->first())
         @component('components.ipaOrItmsButton', [
             "model" => $ipa, 
             "class" => "mt-2 mr-2"])
@@ -24,7 +23,6 @@
                 EDIT 
         @endcomponent
     @endadmin
-    {{-- </div> --}}
 </div>
 
 

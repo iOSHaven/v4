@@ -189,20 +189,7 @@ class AppController extends Controller
       }
     }
 
-    public function install(Itms $itms)
-    {
-      $app = $itms->app;
-      event(new \App\Events\ViewEvent($app));
-      event(new \App\Events\DownloadEvent($app));
-
-      return view('ad', [
-        "ad" => new Ad(),
-        "model" => $itms,
-        "app" => $app,
-        "url" => $this->itms2($itms->url),
-        "type" => "itms"
-      ]);
-    }
+    
 
     // public function installMirror($uid, $provider)
     // {
@@ -216,19 +203,49 @@ class AppController extends Controller
     //   else abort(404);
     // }
 
+    private function displayAd(App $app, $model, $url=null) {
+
+      $type = strtolower(class_basename($model));
+      // dd($type);
+
+      if ($type == "itms") {
+        event(new \App\Events\InstallEvent($app));
+      } else {
+        event(new \App\Events\DownloadEvent($app));
+      }
+      event(new \App\Events\ViewEvent($app));
+
+      return view('ad', [
+        "ad" => new Ad(),
+        "model" => $model,
+        "app" => $app,
+        "url" => $url ?? url($model->url),
+        "type" => $type
+      ]);
+    }
+
     public function download(Ipa $ipa)
     {
-        $app = $ipa->app;
-        event(new \App\Events\ViewEvent($app));
-        event(new \App\Events\DownloadEvent($app));
+      $app = $ipa->app;
+      return $this->displayAd($app, $ipa);
+    }
 
-        return view('ad', [
-          "ad" => new Ad(),
-          "model" => $ipa,
-          "app" => $app,
-          "url" => url($ipa->url),
-          "type" => "download"
-        ]);
+    public function install(Itms $itms)
+    {
+      $app = $itms->app;
+      return $this->displayAd($app, $itms, $this->itms2($itms->url));
+    }
+
+    public function downloadUid($uid) {
+      $app = App::findByUid($uid);
+      $ipa = $app->ipas->first();
+      return $this->displayAd($app, $ipa);
+    }
+
+    public function installUid($uid) {
+      $app = App::findByUid($uid);
+      $itms = $app->itms->first();
+      return $this->displayAd($app, $itms, $this->itms2($itms->url));
     }
 
     public function token() {

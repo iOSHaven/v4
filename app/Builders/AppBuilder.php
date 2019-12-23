@@ -45,7 +45,13 @@ class AppBuilder extends Builder
     }
 
     public function base_query() {
-        return $this->with(['itms.providers', 'ipas.providers'])->hasName();
+        return $this->with(['itms.providers', 'ipas.providers'])
+                    ->withCount([
+                        'impressions as impressions',
+                        'installs as installs',
+                        'downloads as downloads'
+                    ])
+                    ->hasName();
     }
 
     public function recently_updated() {
@@ -97,11 +103,11 @@ class AppBuilder extends Builder
   
         if ($r->limit || !$r->json) {
           $query = $query
-            ->orderBy($r->sort ?? "downloads", $r->order ?? "desc")
+            ->orderBy($r->sort ?? "impressions", $r->order ?? "desc")
             ->paginate($r->limit);
         } else {
           $query = $query
-              ->orderBy($r->sort ?? "downloads", $r->order ?? "desc")
+              ->orderBy($r->sort ?? "impressions", $r->order ?? "desc")
               ->get();
         }
   

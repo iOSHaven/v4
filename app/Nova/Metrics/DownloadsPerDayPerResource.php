@@ -17,7 +17,7 @@ class DownloadsPerDayPerResource extends Trend
     private function getData($resource) {
         $type = get_class($resource->resource);
 
-        return Download::whereHasMorph('trigger', $type, function (Builder $query) use ($resource) {
+        return Download::whereHasMorph('trigger', $type, function ($query) use ($resource) {
             $query->where('id', $resource->id);
         });
     }
