@@ -2,6 +2,8 @@
 
 namespace App\Nova;
 
+use App\Download;
+use App\Install;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -12,6 +14,7 @@ use Laravel\Nova\Fields\Markdown;
 use App\Nova\Metrics;
 use App\Nova\Actions;
 use App\Nova\Lenses;
+use App\View;
 use Illuminate\Support\Facades\DB;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\HasMany;
@@ -51,7 +54,7 @@ class App extends Resource
 
 
     public static function indexQuery(NovaRequest $request, $query) {
-        return $query->withCount(["impressions as impressions", "downloads as downloads", "installs as installs"])->orderBy('impressions', 'desc');
+        return $query->base_query()->ownedByUser();
     }
 
     /**
@@ -110,12 +113,15 @@ class App extends Resource
     {
         return [
             // new Metrics\NewApps,
-            (new Metrics\ViewsPerDay)->type("App\App"),
-            (new Metrics\ViewsPerDayPerResource)->onlyOnDetail(),
-            (new Metrics\DownloadsPerDay)->type("App\App"),
-            (new Metrics\DownloadsPerDayPerResource)->onlyOnDetail(),
-            (new Metrics\InstallsPerDay)->type("App\App"),
-            (new Metrics\InstallsPerDayPerResource)->onlyOnDetail(),
+            (new Metrics\PerDay)->model(View::class)->trigger('\App\App'),
+            (new Metrics\PerDay)->model(Download::class)->trigger('\App\App'),
+            (new Metrics\PerDay)->model(Install::class)->trigger('\App\App'),
+            (new Metrics\PerDayPerResource)->model(View::class)->onlyOnDetail(),
+            (new Metrics\PerDayPerResource)->model(Download::class)->onlyOnDetail(),
+            (new Metrics\PerDayPerResource)->model(Install::class)->onlyOnDetail(),
+            // (new Metrics\ViewsPerDayPerResource)->onlyOnDetail(),
+            // (new Metrics\DownloadsPerDayPerResource)->onlyOnDetail(),
+            // (new Metrics\InstallsPerDayPerResource)->onlyOnDetail(),
         ];
     }
 

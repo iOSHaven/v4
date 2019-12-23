@@ -53,6 +53,14 @@ class ShortcutBuilder extends Builder
         ]);
     }
 
+    public function ownedByUser(){
+      if (auth()->user()->isAdmin){
+          return $this;
+      } else {
+          return $this->where('user_id', auth()->user()->id);
+      }
+  }
+
     public function recently_updated() {
         return $this->where('updated_at', '>', now()->subDays(3))->orderBy('updated_at', 'desc');
     }

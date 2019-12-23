@@ -3,6 +3,7 @@
 namespace App\Nova\Metrics;
 
 use App\Download;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Trend;
 
@@ -16,15 +17,22 @@ class DownloadsPerDay extends Trend
         return $this;
     }
 
-    /**
-     * Calculate the value of the metric.
-     *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
-     * @return mixed
-     */
+    public function userRelation($relation) {
+        $this->relation = $relation;
+        return $this;
+    }
+
+
+    private function getData() {
+        $relation = $this->relation;
+        return Download::whereHasMorph('trigger', $this->type, function ($query) use ($relation) {
+            $query->whereIn('id', Auth::user()->{$relation}->pluck('id'));
+        });
+    }
+
     public function calculate(NovaRequest $request)
     {
-        return $this->countByDays($request, Download::whereHasMorph('trigger', [$this->type]))->showLatestValue();
+        return $this->countByDays($request, $this->getData())->showLatestValue();
     }
     /**
      * Get the ranges available for the metric.

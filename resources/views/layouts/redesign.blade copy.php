@@ -257,7 +257,7 @@
         </button>
       @endif
         
-      @admin
+      <!-- @admin
       <div class="w-full p-3 mb-3 flex items-center justify-start {{ theme('bg-red') }}">
           <form action="/app/create" method="post">
             {{ csrf_field() }}
@@ -269,7 +269,7 @@
             <button type="submit" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-blue-light {{ theme("bg-white") }}">Update Token</button>
           </form>
       </div>
-      @endadmin
+      @endadmin -->
 
       @yield('content')
 

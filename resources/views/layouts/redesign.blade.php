@@ -114,7 +114,7 @@
           <strong>{{ Auth::user()->username }}</strong>
           <div class="leading-none">@admin Admin @else Member @endadmin</div>
         </li>
-        <a href="/nova" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+        <a href="/nova/resources/users/{{ Auth::id() }}" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
           Dashboard
           <i class="fal fa-chevron-right"></i>
         </a>

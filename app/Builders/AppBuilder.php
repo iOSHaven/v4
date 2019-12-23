@@ -44,6 +44,14 @@ class AppBuilder extends Builder
         return $this->tag("game");
     }
 
+    public function ownedByUser(){
+        if (auth()->user()->isAdmin){
+            return $this;
+        } else {
+            return $this->where('user_id', auth()->user()->id);
+        }
+    }
+
     public function base_query() {
         return $this->with(['itms.providers', 'ipas.providers'])
                     ->withCount([

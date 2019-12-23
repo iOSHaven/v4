@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Install;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Inspheric\Fields\Url;
@@ -16,6 +17,8 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use App\Nova\Actions;
+use App\View;
+use Saumini\Count\RelationshipCount;
 
 class Shortcut extends Resource
 {
@@ -43,11 +46,7 @@ class Shortcut extends Resource
     ];
 
     public static function indexQuery(NovaRequest $request, $query) {
-        if ($request->user()->isAdmin) {
-            return $query;
-        } else {
-            return $query->where('user_id', $request->user()->id);
-        }
+        return $query->base_query()->ownedByUser();
     }
 
     /**
@@ -97,6 +96,10 @@ class Shortcut extends Resource
                 ->failedWhen(['denied'])
                 ->sortable(),
 
+            RelationshipCount::make('Views', 'impressions')->sortable()->onlyOnIndex(),
+            // RelationshipCount::make('IPA', 'downloads')->sortable()->onlyOnIndex(),
+            RelationshipCount::make('Installs', 'installs')->sortable()->onlyOnIndex(),
+
 
             Textarea::make('Notes', 'approval_message')
                 ->canSee(function ($request) {
@@ -126,19 +129,12 @@ class Shortcut extends Resource
     public function cards(Request $request)
     {
         return [
-            (new Metrics\ViewsPerDay)
-                ->type("App\Shortcut")
-                ->canSee(function () {
-                    return auth()->user()->isAdmin;
-                }),
-            (new Metrics\ViewsPerDayPerResource)->onlyOnDetail(),
-
-            (new Metrics\InstallsPerDay)
-                ->type("App\Shortcut")
-                ->canSee(function () {
-                    return auth()->user()->isAdmin;
-                }),
-            (new Metrics\InstallsPerDayPerResource)->onlyOnDetail(),
+            (new Metrics\PerDay)->model(View::class)->trigger('\App\Shortcut'),
+            // (new Metrics\PerDay)->model(Download::class)->trigger('\App\App'),
+            (new Metrics\PerDay)->model(Install::class)->trigger('\App\Shortcut'),
+            (new Metrics\PerDayPerResource)->model(View::class)->onlyOnDetail(),
+            // (new Metrics\PerDayPerResource)->model(Download::class)->onlyOnDetail(),
+            (new Metrics\PerDayPerResource)->model(Install::class)->onlyOnDetail(),
         ];
     }
 

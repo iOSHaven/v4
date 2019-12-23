@@ -59,6 +59,10 @@ class App extends Model
     return new AppBuilder($query);
   }
 
+  public function user() {
+    return $this->belongsTo(User::class);
+  }
+
   public function itms() {
     return $this->belongsToMany(Itms::class)->orderBy('working', 'desc')->using(Link::class);
   }
@@ -94,5 +98,5 @@ class App extends Model
       $model->edited_at = now();
     });
 
-  } 
+  }
 }

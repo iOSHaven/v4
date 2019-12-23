@@ -5,30 +5,15 @@ namespace App\Nova\Metrics;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Trend;
 use App\View;
+use Illuminate\Support\Facades\Auth;
 
-class ViewsPerDay extends Trend
+class ViewsPerDay extends PerDay
 {
+    protected $model = View::class;
 
-    private $type;
-
-    public function name () {
-        return "Total Views per Day";
-    }
-
-    public function type($type) {
-        $this->type = $type;
-        return $this;
-    }
-
-    /**
-     * Calculate the value of the metric.
-     *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
-     * @return mixed
-     */
     public function calculate(NovaRequest $request)
     {
-        return $this->countByDays($request, View::whereHasMorph('trigger', [$this->type]))->showLatestValue();
+        return $this->countByDays($request, $this->getData())->showLatestValue();
     }
 
     /**

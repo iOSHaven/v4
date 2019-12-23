@@ -31,4 +31,8 @@ class User extends Authenticatable
     public function shortcuts() {
         return $this->hasMany(Shortcut::class);
     }
+
+    public function apps() {
+        return $this->hasMany(App::class);
+    }
 }
