@@ -10,6 +10,7 @@ use App\Shortcut;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
+use Ioshaven\Ads\Ads;
 use ioshaven\v4\DashboardSidebar;
 use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Nova;
@@ -85,6 +86,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function tools()
     {
         return [
+            // (new Ads),
             new DashboardSidebar([
                 'links' => [
             

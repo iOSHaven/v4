@@ -1,0 +1,40 @@
+// Nova Tool CSS
+.StripeElement {
+    box-sizing: border-box;
+  
+    // height: 40px;
+  
+    padding: 7px 0.75rem;
+  
+    // border: 1px solid transparent;
+    // border-radius: 4px;
+    // background-color: white;
+  
+    // box-shadow: 0 1px 3px 0 #e6ebf1;
+    // -webkit-transition: box-shadow 150ms ease;
+    // transition: box-shadow 150ms ease;
+    background-color: var(--white);
+    border-width: 1px;
+    border-color: var(--60);
+    // padding-left: .75rem;
+    // padding-right: .75rem;
+    color: var(--80);
+    border-radius: .5rem;
+  }
+  
+  .StripeElement--focus {
+    // box-shadow: 0 1px 3px 0 #cfd7df;
+    background-color: var(--white);
+    border-radius: .5rem;
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 3px var(--primary-50);
+    box-shadow: 0 0 0 3px var(--primary-50);
+  }
+  
+  .StripeElement--invalid {
+    border-color: #fa755a;
+  }
+  
+  .StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+  }

@@ -4,11 +4,12 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Laravel\Cashier\Billable;
 use Laravel\Nova\Actions\Actionable;
 
 class User extends Authenticatable
 {
-    use Notifiable, Actionable;
+    use Notifiable, Actionable, Billable;
 
     /**
      * The attributes that are mass assignable.

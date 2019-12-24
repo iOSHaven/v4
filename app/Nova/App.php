@@ -54,7 +54,7 @@ class App extends Resource
 
 
     public static function indexQuery(NovaRequest $request, $query) {
-        return $query->base_query()->ownedByUser();
+        return $query->base_query()->ownedByUser()->orderBy('impressions', 'desc');
     }
 
     /**

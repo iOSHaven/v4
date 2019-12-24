@@ -11,7 +11,9 @@
         "build-analytics": "cd nova-components/Analytics && npm run dev",
         "build-analytics-prod": "cd nova-components/Analytics && npm run prod",
         "build-V4": "cd nova-components/V4 && npm run dev",
-        "build-V4-prod": "cd nova-components/V4 && npm run prod"
+        "build-V4-prod": "cd nova-components/V4 && npm run prod",
+        "build-ads": "cd nova-components/Ads && npm run dev",
+        "build-ads-prod": "cd nova-components/Ads && npm run prod"
     },
     "devDependencies": {
         "axios": "^0.18.1",

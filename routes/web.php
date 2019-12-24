@@ -98,6 +98,12 @@ Route::group(["prefix" => "providers", "middleware" => ["tab:Providers", "back:P
 });
 
 
+Route::group(["prefix" => "cashier"], function () {
+  Route::get("/setup", "CashierController@setup");
+});
+
+
+
 
 Route::get('/games', 'AppController@games')->middleware('tab:Games', 'back:Games');
 Route::get('/jailbreaks', 'AppController@jailbreaks')->middleware('tab:Jailbreaks', 'back:Jailbreaks');
