@@ -14,7 +14,7 @@ class Itms extends Model
         "name", "url"
     ];
 
-    // protected $touches = ['apps'];
+    protected $touches = ['apps'];
 
     public function providers() {
         return $this->belongsToMany(Provider::class)->using(Link::class);
