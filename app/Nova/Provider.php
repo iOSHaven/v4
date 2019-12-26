@@ -125,11 +125,6 @@ class Provider extends Resource
                 ->confirmText('Sign all providers?')
                 ->confirmButtonText('Sign')
                 ->cancelButtonText('Never mind'),
-
-            (new Actions\UpdateProviderToken)
-                ->confirmText('Update all tokens?')
-                ->confirmButtonText('Update')
-                ->cancelButtonText('Never mind'),
             
         ];
     }

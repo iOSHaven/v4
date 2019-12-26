@@ -59,7 +59,7 @@ class Itms extends Resource
         return [
             ID::make('id')->sortable(),
             Text::make('name')->sortable(),
-            Text::make('url')->onlyOnForms(),
+            Text::make('url'),
             
             Text::make('Provider', 'provider.name')->onlyOnIndex(),
 
@@ -126,6 +126,11 @@ class Itms extends Resource
             (new Actions\SignItem)
                 ->confirmText('Are you sure you want to sign this item?')
                 ->confirmButtonText('Sign')
+                ->cancelButtonText('Never mind'),
+
+            (new Actions\UpdateProviderToken)
+                ->confirmText('Update all tokens?')
+                ->confirmButtonText('Update')
                 ->cancelButtonText('Never mind'),
         ];
     }

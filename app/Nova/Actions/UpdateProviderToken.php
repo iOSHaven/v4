@@ -38,19 +38,21 @@ class UpdateProviderToken extends Action implements ShouldQueue
         $shouldEncodeUrl = $fields->shouldEncodeUrl;
 
         
-            foreach($models as $model) {
-                $itms = $model->itms;
-                $ids = [];
-                foreach($itms as $link) {
-                    try {
-                        $url = $this->createItmsServicesLink($link, $token, $param, $shouldEncodeUrl);
-                        $link->update(['url' => $url]);
-                        $ids = array_merge($link->apps->pluck('id'));
-                        $this->markAsFinished($model);
-                    } catch (\Exception $err) {
-                        $this->markAsFailed($model, $err);
-                    }
+            // foreach($models as $model) {
+            $ids = collect();
+                // $itms = $model->itms;
+                // $ids = [];
+            foreach($models as $itms) {
+                try {
+                    $url = $this->createItmsServicesLink($itms, $token, $param, $shouldEncodeUrl);
+                    Log::debug($url);
+                    $itms->update(['url' => $url]);
+                    $ids = $ids->merge($itms->apps->pluck('id'));
+                    $this->markAsFinished($itms);
+                } catch (\Exception $err) {
+                    $this->markAsFailed($itms, $err);
                 }
+                // }
                 App::whereIn('id', $ids)->update(['updated_at' => now()]);
             }
         
@@ -67,15 +69,19 @@ class UpdateProviderToken extends Action implements ShouldQueue
             parse_str($protocol, $pquery);
             // return $pquery;
             $url = parse_url($pquery['url']);
-            dump($url);
+            
             parse_str($url['query'], $query);
+            
             $query[$tokenParam] = $token;
+            
             $built_query = urldecode(http_build_query($query));
+            
             if ($shouldEncodeUrl) {
-                $newUrl =  $url['scheme'] ?? 'https' .'://'.$url['host'].$url['path'].'%3F'. urlencode($built_query);
+                $newUrl =  $url['scheme'] .'://'.$url['host'].$url['path'].'%3F'. urlencode($built_query);
             } else {
-                $newUrl =  $url['scheme'] ?? 'https' .'://'.$url['host'].$url['path'].'?'.$built_query;
+                $newUrl =  $url['scheme'] .'://'.$url['host'].$url['path'].'?'.$built_query;
             }
+            // dump($url);
             $pquery['url'] = $newUrl;
             return 'itms-services://' . urldecode(http_build_query($pquery));
         } else {
