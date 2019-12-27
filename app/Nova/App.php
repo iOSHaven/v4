@@ -92,6 +92,7 @@ class App extends Resource
             BelongsToMany::make('Itms', 'itms', Itms::class)->nullable()->searchable()->singularLabel('Signed Link (ITMS)'),
             BelongsToMany::make('Ipa', 'ipas', Ipa::class)->nullable()->searchable()->singularLabel('Unsigned Link (IPA)'),
 
+            Text::make('Short Description', 'short'),
             Markdown::make('Description'),
             Textarea::make('tags'),
 
