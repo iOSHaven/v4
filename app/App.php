@@ -94,7 +94,6 @@ class App extends Model
 
     static::creating(function ($model) {
       $model->uid = Str::random(5);
-      $model->description = "No description";
       $model->edited_at = now();
     });
 
