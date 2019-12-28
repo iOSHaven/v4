@@ -15,8 +15,11 @@ use App\Nova\Metrics;
 use App\Nova\Actions;
 use App\Nova\Lenses;
 use App\View;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\HasMany;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Textarea;
@@ -24,7 +27,8 @@ use Saumini\Count\RelationshipCount;
 
 class App extends Resource
 {
-    public static $orderBy = null;
+
+    public static $with = ['impressions'];
 
     /**
      * The model the resource corresponds to.
@@ -54,7 +58,14 @@ class App extends Resource
 
 
     public static function indexQuery(NovaRequest $request, $query) {
-        return $query->base_query()->ownedByUser()->orderBy('impressions', 'desc');
+
+        $query = $query
+                // ->withStats()
+                // ->base_query()
+                ->ownedByUser()
+                ;
+        // debug($request);
+        return $query;
     }
 
     /**
@@ -83,9 +94,10 @@ class App extends Resource
 
             Text::make("Name")->sortable()->rules('required'),
 
-            RelationshipCount::make('Views', 'impressions')->sortable()->onlyOnIndex(),
-            RelationshipCount::make('IPA', 'downloads')->sortable()->onlyOnIndex(),
-            RelationshipCount::make('ITMS', 'installs')->sortable()->onlyOnIndex(),
+            // Number::make('Views', 'impressions')->sortable()->onlyOnIndex(),
+            // RelationshipCount::make('Impressions', 'impressions')->sortable()->onlyOnIndex(),
+            // RelationshipCount::make('IPA', 'downloads')->sortable()->onlyOnIndex(),
+            // RelationshipCount::make('ITMS', 'installs')->sortable()->onlyOnIndex(),
 
 
             
@@ -97,9 +109,6 @@ class App extends Resource
             Markdown::make('Description')->required(),
             Textarea::make('tags'),
 
-            
-
-            
             
             
         ];
@@ -119,8 +128,8 @@ class App extends Resource
             (new Metrics\PerDay)->model(Download::class)->trigger('\App\App'),
             (new Metrics\PerDay)->model(Install::class)->trigger('\App\App'),
             (new Metrics\PerDayPerResource)->model(View::class)->onlyOnDetail(),
-            (new Metrics\PerDayPerResource)->model(Download::class)->onlyOnDetail(),
-            (new Metrics\PerDayPerResource)->model(Install::class)->onlyOnDetail(),
+            // (new Metrics\PerDayPerResource)->model(Download::class)->onlyOnDetail(),
+            // (new Metrics\PerDayPerResource)->model(Install::class)->onlyOnDetail(),
             // (new Metrics\ViewsPerDayPerResource)->onlyOnDetail(),
             // (new Metrics\DownloadsPerDayPerResource)->onlyOnDetail(),
             // (new Metrics\InstallsPerDayPerResource)->onlyOnDetail(),

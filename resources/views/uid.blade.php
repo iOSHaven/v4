@@ -49,7 +49,7 @@
             <div class="flex items-center justify-start">
               <div class="mr-2 flex items-center justify-start">
                 <i class="fad fa-eye mr-2 text-center" style="width: 20px;"></i>
-                <span>{{ format_int($app->views ?? "0") }}<span>
+                <span>{{ format_int($app->impressions ?? "0") }}<span>
               </div>
               <div class="mr-2 flex items-center justify-start">
                 <i class="fad fa-download mr-2 text-center" style="width: 20px;"></i>

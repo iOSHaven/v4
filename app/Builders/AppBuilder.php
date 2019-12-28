@@ -54,12 +54,16 @@ class AppBuilder extends Builder
 
     public function base_query() {
         return $this->with(['itms.providers', 'ipas.providers'])
-                    ->withCount([
-                        'impressions as impressions',
-                        'installs as installs',
-                        'downloads as downloads'
-                    ])
+                    ->withStats()
                     ->hasName();
+    }
+
+    public function withStats() {
+        return $this->withCount([
+            'impressions as impressions',
+            'installs as installs',
+            'downloads as downloads'
+        ]);
     }
 
     public function recently_updated() {

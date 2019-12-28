@@ -21,7 +21,7 @@ class Itms extends Model
     }
 
     public function apps() {
-        return $this->belongsToMany(App::class)->using(Link::class);
+        return $this->belongsToMany(App::class);
     }
 
     public function getAppAttribute()
