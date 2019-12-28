@@ -87,3 +87,7 @@ function handleIcon($icon) {
       return url($icon);
   };
 }
+
+function fa($class) {
+  return '<i class="sidebar-icon ' . $class . '"></i>';
+}
