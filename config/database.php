@@ -54,6 +54,12 @@ return [
             'prefix' => '',
             'strict' => true,
             'engine' => null,
+            'sslmode' => env('DB_SSLMODE', 'required'),
+            // 'options'   => array(
+            //     PDO::MYSQL_ATTR_SSL_CA      => '/../ca-certificate.crt',
+            //     // PDO::MYSQL_ATTR_SSL_CERT    => '/home/.../cert.pem',
+            //     // PDO::MYSQL_ATTR_SSL_KEY     => '/home/.../key.pem'
+            // ),
             'modes' => [
                 'ONLY_FULL_GROUP_BY',
                 'STRICT_TRANS_TABLES',
