@@ -17,7 +17,10 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use App\Nova\Actions;
+use App\Summary\SummaryInstall;
+use App\Summary\SummaryView;
 use App\View;
+use Laravel\Nova\Fields\Number;
 use Saumini\Count\RelationshipCount;
 
 class Shortcut extends Resource
@@ -46,7 +49,7 @@ class Shortcut extends Resource
     ];
 
     public static function indexQuery(NovaRequest $request, $query) {
-        return $query->base_query()->ownedByUser()->orderBy('impressions', 'desc');
+        return $query->ownedByUser()->orderBy('impressions', 'desc');
     }
 
     /**
@@ -96,9 +99,11 @@ class Shortcut extends Resource
                 ->failedWhen(['denied'])
                 ->sortable(),
 
-            RelationshipCount::make('Views', 'impressions')->sortable()->onlyOnIndex(),
+            Number::make('Views', 'impressions')->sortable()->onlyOnIndex(),
+            Number::make('Installs')->sortable()->onlyOnIndex(),
+            // RelationshipCount::make('Views', 'impressions')->sortable()->onlyOnIndex(),
             // RelationshipCount::make('IPA', 'downloads')->sortable()->onlyOnIndex(),
-            RelationshipCount::make('Installs', 'installs')->sortable()->onlyOnIndex(),
+            // RelationshipCount::make('Installs', 'installs')->sortable()->onlyOnIndex(),
 
 
             Textarea::make('Notes', 'approval_message')
@@ -129,12 +134,27 @@ class Shortcut extends Resource
     public function cards(Request $request)
     {
         return [
-            (new Metrics\PerDay)->model(View::class)->trigger('\App\Shortcut'),
-            // (new Metrics\PerDay)->model(Download::class)->trigger('\App\App'),
-            (new Metrics\PerDay)->model(Install::class)->trigger('\App\Shortcut'),
-            (new Metrics\PerDayPerResource)->model(View::class)->onlyOnDetail(),
-            // (new Metrics\PerDayPerResource)->model(Download::class)->onlyOnDetail(),
-            (new Metrics\PerDayPerResource)->model(Install::class)->onlyOnDetail(),
+            (new Metrics\PerDay)
+                ->model(SummaryView::class)
+                ->trigger('\App\Shortcut')
+                ->setName('Total Views'),
+
+            (new Metrics\PerDay)
+                ->model(SummaryInstall::class)
+                ->trigger('\App\Shortcut')
+                ->setName('Total Installs'),
+
+            (new Metrics\PerDayPerResource)
+                ->model(SummaryView::class)
+                ->trigger('\App\Shortcut')
+                ->setName('Views')
+                ->onlyOnDetail(),
+
+            (new Metrics\PerDayPerResource)
+                ->model(SummaryInstall::class)
+                ->trigger('\App\Shortcut')
+                ->setName('Installs')
+                ->onlyOnDetail(),
         ];
     }
 

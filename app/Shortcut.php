@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Builders\ShortcutBuilder;
+use App\Traits\HasAnalytics;
 use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Database\Eloquent\Model;
@@ -13,7 +14,7 @@ use Laravel\Nova\Actions\Actionable;
 class Shortcut extends Model
 {
 
-    use Actionable;
+    use Actionable, HasAnalytics;
 
     public function newEloquentBuilder($query)
     {
@@ -24,17 +25,17 @@ class Shortcut extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function impressions() {
-        return $this->morphMany(View::class, 'trigger');
-    }
+    // public function impressions() {
+    //     return $this->morphMany(View::class, 'trigger');
+    // }
 
-    public function downloads() {
-        return $this->morphMany(Download::class, 'trigger');
-    }
+    // public function downloads() {
+    //     return $this->morphMany(Download::class, 'trigger');
+    // }
 
-    public function installs() {
-        return $this->morphMany(Install::class, 'trigger');
-    }
+    // public function installs() {
+    //     return $this->morphMany(Install::class, 'trigger');
+    // }
 
     public function getUrlAttribute()
     {

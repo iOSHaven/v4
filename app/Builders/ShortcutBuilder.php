@@ -46,12 +46,12 @@ class ShortcutBuilder extends Builder
     //     return $this->tag("game");
     // }
 
-    public function base_query() {
-        return $this->withCount([
-            'impressions as impressions',
-            'installs as installs'
-        ]);
-    }
+    // public function base_query() {
+    //     return $this->withCount([
+    //         'impressions as impressions',
+    //         'installs as installs'
+    //     ]);
+    // }
 
     public function ownedByUser(){
       if (auth()->user()->isAdmin){
