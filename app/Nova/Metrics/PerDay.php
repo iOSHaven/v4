@@ -99,6 +99,6 @@ class PerDay extends Trend
      */
     public function uriKey()
     {
-        return Str::slug($this->name);
+        return Str::slug($this->name) . '-per-day';
     }
 }
