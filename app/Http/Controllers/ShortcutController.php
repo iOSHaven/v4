@@ -29,8 +29,7 @@ class ShortcutController extends Controller
   
       public function page ($tag = null, Request $request)
       {
-        $shortcuts = Shortcut::base_query()
-                    ->search($request, $tag);
+        $shortcuts = Shortcut::search($request, $tag);
   
         $shortcuts = $this->gathered_query($request, $shortcuts, $tag);
         return $this->display($request, $shortcuts);
@@ -38,9 +37,7 @@ class ShortcutController extends Controller
     
       public function showDetail ($uid)
       {
-        $shortcut = Shortcut::base_query()
-          ->uid($uid)
-          ->firstOrFail();
+        $shortcut = Shortcut::uid($uid)->firstOrFail();
 
         event(new \App\Events\ViewEvent($shortcut));
 
@@ -48,8 +45,7 @@ class ShortcutController extends Controller
       }
 
       public function install($uid) {
-        $shortcut = Shortcut::base_query()
-          ->uid($uid)
+        $shortcut = Shortcut::uid($uid)
           ->firstOrFail();
         
         event(new \App\Events\ViewEvent($shortcut));
