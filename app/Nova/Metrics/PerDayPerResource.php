@@ -90,6 +90,6 @@ class PerDayPerResource extends Trend
      */
     public function uriKey()
     {
-        return Str::slug($this->name) . '-per-resource-per-day';
+        return Str::slug($this->name . ' ' . $this->trigger . ' per resource per day');
     }
 }
