@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Trend;
 use Illuminate\Support\Str;
+use Log;
 
 class PerDayPerResource extends Trend
 {
@@ -18,41 +19,42 @@ class PerDayPerResource extends Trend
 
     public function model($model) {
         $this->model = $this->model ?? $model;
-        $this->name = Str::plural(class_basename($this->model));
+        // $this->setName(Str::plural(class_basename($this->model)));
         return $this;
     }
 
-    // public function trigger($trigger) {
-    //     $this->trigger = $this->trigger ?? $trigger;
-    //     return $this;
-    // }
+    public function trigger($trigger) {
+        $this->trigger = $this->trigger ?? $trigger;
+        return $this;
+    }
 
-    public function setName($name) {
-        $this->name = $name . " Per Day";
+    public function setName($name=null) {
+        $this->name = $name;
         return $this;
     }
     
 
-    protected function getData() {
-        $resource = $this->resource;
-        $type = get_class($resource->resource);
-
-        return $this->model::whereHasMorph('trigger', $type, function ($query) use ($resource) {
-            $query->where('id', $resource->id);
-        });
+    protected function getData($startingDate, $resource) {
+        // $trigger = get_class($resource);
+        return $this->model::whereBetween('created_at', [$startingDate, now()])
+                ->whereHasMorph('trigger', $this->trigger, function ($query) use ($resource) {
+                    $query->where('id', $resource->id);
+                });
         
     }
 
     public function calculate(NovaRequest $request)
     {
-        $this->resource = $request->findResourceOrFail();
+        $resource = $request->findResourceOrFail();
         $startingDate = $this->getAggregateStartingDate($request, self::BY_DAYS);
-        return $this->countByDays($request, $this->getData())
-            ->showLatestValue()
+        return $this->sumByDays($request, $this->getData($startingDate, $resource), 'amount')
+            // ->showLatestValue()
             ->result(
-                $this->getData()
-                ->whereBetween('created_at', [$startingDate, now()])
-                ->count()
+                // 'asdf'
+                $this->getData($startingDate, $resource)
+                ->sum('amount')
+                // ->whereBetween('created_at', [$startingDate, now()])
+                // ->count()
             );
     }
 

@@ -17,7 +17,7 @@ class PerDay extends Trend
 
     public function model($model) {
         $this->model = $this->model ?? $model;
-        $this->name = Str::plural(class_basename($this->model));
+        // $this->name = Str::plural(class_basename($this->model));
         return $this;
     }
 
@@ -27,7 +27,7 @@ class PerDay extends Trend
     }
 
     public function setName($name) {
-        $this->name = $name . " Per Day";
+        $this->name = $name;
         return $this;
     }
     
@@ -40,16 +40,20 @@ class PerDay extends Trend
         return $this->relation ?? strtolower(Str::plural(class_basename($this->trigger)));
     }
 
-    protected function getData() {
+    protected function getData($startingDate) {
         $relation = $this->relation();
 
         if(Auth::user()->isAdmin) {
-            return $this->model::whereHasMorph('trigger', $this->trigger);
+            return $this->model::whereBetween('created_at', [$startingDate, now()])
+                        ->whereHasMorph('trigger', $this->trigger);
         } else {
-            return $this->model::whereHasMorph('trigger', $this->trigger, function ($query) use ($relation) {
-                $query->whereIn('id', Auth::user()->{$relation}->pluck('id'));
-            });
+            return $this->model::whereBetween('created_at', [$startingDate, now()])
+                ->whereHasMorph('trigger', $this->trigger, function ($query) use ($relation) {
+                    $query->whereIn('id', Auth::user()->{$relation}->pluck('id'));
+                });
         }
+
+        
         
     }
 
@@ -57,10 +61,10 @@ class PerDay extends Trend
     {
         // $this->result(10);
         $startingDate = $this->getAggregateStartingDate($request, self::BY_DAYS);
-        return $this->countByDays($request, $this->getData())
+        return $this->sumByDays($request, $this->getData($startingDate), 'amount')
         // ->result($this->sumByDays($request, $this->getData(), ));
 
-        ->result($this->getData()->whereBetween('created_at', [$startingDate, now()])->count());
+        ->result($this->getData($startingDate)->sum('amount'));
     }
 
     /**
@@ -85,7 +89,7 @@ class PerDay extends Trend
      */
     public function cacheFor()
     {
-        // return now()->addMinutes(5);
+        // return now()->addMinutes(30);
     }
 
     /**

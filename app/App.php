@@ -8,12 +8,13 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
 use App\Mirror;
 use App\Builders\AppBuilder;
+use App\Traits\HasAnalytics;
 use Laravel\Nova\Actions\Actionable;
 use Illuminate\Support\Str;
 
 class App extends Model
 {
-  use SoftDeletes, Actionable;
+  use SoftDeletes, Actionable, HasAnalytics;
   
   protected $dates = ['deleted_at'];
   protected $fillable = ['name',
@@ -38,6 +39,7 @@ class App extends Model
   public static function findByUid ($uid) {
     return App::where('uid', $uid)->firstOrFail();
   }
+
 
   public function mirrors()
   {
@@ -71,17 +73,21 @@ class App extends Model
     return $this->belongsToMany(Ipa::class)->orderBy('working', 'desc')->using(Link::class);
   }
 
-  public function impressions() {
-    return $this->morphMany(View::class, 'trigger');
-  }
+  // public function impressions() {
+  //   return $this->morphMany(View::class, 'trigger');
+  // }
 
-  public function downloads() {
-    return $this->morphMany(Download::class, 'trigger');
-  }
+  // public function downloads() {
+  //   return $this->morphMany(Download::class, 'trigger');
+  // }
 
-  public function installs() {
-    return $this->morphMany(Install::class, 'trigger');
-  }
+  // public function installs() {
+  //   return $this->morphMany(Install::class, 'trigger');
+  // }
+
+  // public function units() {
+  //   return $this->morphMany(Promotion::class, 'unit');
+  // }
 
   public function getProvidersAttribute() {
     $itms = $this->itms->pluck('providers')->flatten();

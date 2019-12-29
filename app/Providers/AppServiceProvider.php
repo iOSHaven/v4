@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Blade;
 use Auth;
+use Illuminate\Database\Schema\Blueprint;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -23,6 +24,20 @@ class AppServiceProvider extends ServiceProvider
         });
         Blade::directive('endadmin', function () {
             return "<?php endif; ?>";
+        });
+
+        Blueprint::macro('analytics', function () {
+            $this->bigInteger('impressions')->nullable();
+            $this->bigInteger('downloads')->nullable();
+            $this->bigInteger('installs')->nullable();
+            $this->bigInteger('uses')->nullable();
+        });
+
+        Blueprint::macro('dropAnalytics', function () {
+            $this->dropColumn('impressions');
+            $this->dropColumn('downloads');
+            $this->dropColumn('installs');
+            $this->dropColumn('uses');
         });
     }
 

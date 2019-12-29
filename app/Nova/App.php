@@ -14,6 +14,9 @@ use Laravel\Nova\Fields\Markdown;
 use App\Nova\Metrics;
 use App\Nova\Actions;
 use App\Nova\Lenses;
+use App\Summary\SummaryDownload;
+use App\Summary\SummaryInstall;
+use App\Summary\SummaryView;
 use App\View;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -28,7 +31,7 @@ use Saumini\Count\RelationshipCount;
 class App extends Resource
 {
 
-    public static $with = ['impressions'];
+    // public static $with = ['impressions'];
 
     /**
      * The model the resource corresponds to.
@@ -63,6 +66,7 @@ class App extends Resource
                 // ->withStats()
                 // ->base_query()
                 ->ownedByUser()
+                ->orderBy('impressions', 'desc')
                 ;
         // debug($request);
         return $query;
@@ -94,7 +98,9 @@ class App extends Resource
 
             Text::make("Name")->sortable()->rules('required'),
 
-            // Number::make('Views', 'impressions')->sortable()->onlyOnIndex(),
+            Number::make('Views', 'impressions')->sortable()->onlyOnIndex(),
+            Number::make('Downloads')->sortable()->onlyOnIndex(),
+            Number::make('Installs')->sortable()->onlyOnIndex(),
             // RelationshipCount::make('Impressions', 'impressions')->sortable()->onlyOnIndex(),
             // RelationshipCount::make('IPA', 'downloads')->sortable()->onlyOnIndex(),
             // RelationshipCount::make('ITMS', 'installs')->sortable()->onlyOnIndex(),
@@ -124,15 +130,12 @@ class App extends Resource
     {
         return [
             // new Metrics\NewApps,
-            (new Metrics\PerDay)->model(View::class)->trigger('\App\App'),
-            (new Metrics\PerDay)->model(Download::class)->trigger('\App\App'),
-            (new Metrics\PerDay)->model(Install::class)->trigger('\App\App'),
-            (new Metrics\PerDayPerResource)->model(View::class)->onlyOnDetail(),
-            // (new Metrics\PerDayPerResource)->model(Download::class)->onlyOnDetail(),
-            // (new Metrics\PerDayPerResource)->model(Install::class)->onlyOnDetail(),
-            // (new Metrics\ViewsPerDayPerResource)->onlyOnDetail(),
-            // (new Metrics\DownloadsPerDayPerResource)->onlyOnDetail(),
-            // (new Metrics\InstallsPerDayPerResource)->onlyOnDetail(),
+            (new Metrics\PerDay)->model(SummaryView::class)->trigger('\App\App')->setName('Total Views'),
+            (new Metrics\PerDay)->model(SummaryDownload::class)->trigger('\App\App')->setName('Total Downloads'),
+            (new Metrics\PerDay)->model(SummaryInstall::class)->trigger('\App\App')->setName('Total Installs'),
+            (new Metrics\PerDayPerResource)->model(SummaryView::class)->trigger('\App\App')->setName('Views')->onlyOnDetail(),
+            (new Metrics\PerDayPerResource)->model(SummaryDownload::class)->trigger('\App\App')->setName('Downloads')->onlyOnDetail(),
+            (new Metrics\PerDayPerResource)->model(SummaryInstall::class)->trigger('\App\App')->setName('Installs')->onlyOnDetail(),
         ];
     }
 
@@ -156,9 +159,9 @@ class App extends Resource
     public function lenses(Request $request)
     {
         return [
-            (new Lenses\MostDownloadedAppsThisWeek),
-            (new Lenses\MostInstalledAppsThisWeek()),
-            (new Lenses\MostViewedAppsThisWeek()),
+            // (new Lenses\MostDownloadedAppsThisWeek),
+            // (new Lenses\MostInstalledAppsThisWeek()),
+            // (new Lenses\MostViewedAppsThisWeek()),
         ];
     }
 

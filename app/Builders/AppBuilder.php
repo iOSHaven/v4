@@ -54,17 +54,17 @@ class AppBuilder extends Builder
 
     public function base_query() {
         return $this->with(['itms.providers', 'ipas.providers'])
-                    ->withStats()
+                    // ->withStats()
                     ->hasName();
     }
 
-    public function withStats() {
-        return $this->withCount([
-            'impressions as impressions',
-            'installs as installs',
-            'downloads as downloads'
-        ]);
-    }
+    // public function withStats() {
+    //     return $this->withCount([
+    //         'impressions as impressions',
+    //         'installs as installs',
+    //         'downloads as downloads'
+    //     ]);
+    // }
 
     public function recently_updated() {
         return $this->where('updated_at', '>', now()->subDays(3))->orderBy('updated_at', 'desc');
