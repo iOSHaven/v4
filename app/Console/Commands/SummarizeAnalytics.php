@@ -57,6 +57,10 @@ class SummarizeAnalytics extends Command
                 ->orWhereNull('updated_at');
             })
                 ->whereDate('created_at', $date)->get();
+            $bar = $this->output->createProgressBar($models->count());
+            print("\n[$date] $column - {$models->count()}\n");
+            $bar->start();
+            // print("\n");
             foreach($models as $model) {
                 if ($model->trigger) {
                     DB::table($summary)
@@ -84,7 +88,9 @@ class SummarizeAnalytics extends Command
                         ->update([ $column => $amount]);
                 }
                 $model->touch();
+                $bar->advance();
             }
+            $bar->finish();
         }
     }
 
