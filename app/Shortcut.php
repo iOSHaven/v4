@@ -9,6 +9,7 @@ use GuzzleHttp\Client;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Laravel\Nova\Actions\Actionable;
 
 class Shortcut extends Model
@@ -47,8 +48,12 @@ class Shortcut extends Model
 
         static::creating(function ($model) {
             try {
+                $itunes_id = $model->itunes_id;
+                if (Str::contains($itunes_id, 'icloud.com')) {
+                    $itunes_id = last(explode("/", $itunes_id));
+                }
                 $client = new Client();
-                $res = $client->get("https://www.icloud.com/shortcuts/api/records/$model->itunes_id");
+                $res = $client->get("https://www.icloud.com/shortcuts/api/records/$itunes_id");
                 if ($res->getStatusCode() == 200) {
                     $data = json_decode($res->getBody()->getContents());
                     $iconURL = $data->fields->icon->value->downloadURL;
@@ -61,7 +66,7 @@ class Shortcut extends Model
                     $model->icon = env("DO_SPACES_SUBDOMAIN") . "/". $path;  
                     $model->user_id = Auth::id();              
                 }
-            } catch (\Throwable $th) {
+            } catch (\Exception $e) {
                 throw new Exception("Invalid ID for shortcut.");
             }
         });
