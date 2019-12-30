@@ -61,7 +61,7 @@
 <div class="flex flex-wrap -mx-1">
     @foreach($providers as $provider)
         <div class="w-1/2 p-1 ">
-        <a href="/apps?by={{ $provider->name }}&title=Apps by {{ $provider->name }}" class="flex rounded-lg border p-2 {{ theme('border-gray-100', 'bg-gray-100') }}">
+        <a href="/apps?by={{ $provider->name }}&title=Apps by {{ $provider->name }}" class="flex shadow rounded-lg p-2 {{ theme('bg-white') }}">
                 <div class="flex items-center">
                     @component('components.tinyProviderIcon', ["provider" => $provider, "size" => 30])@endcomponent
                     <div class="ml-1 text-sm">
