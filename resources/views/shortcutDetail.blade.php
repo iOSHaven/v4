@@ -56,6 +56,9 @@
 
         <br>
         @component('components.ad')@endcomponent
+        @if(env('APP_ENV') == 'production')
+          <br>
+        @endif
 
 
 
