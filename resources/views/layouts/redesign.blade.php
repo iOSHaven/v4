@@ -233,7 +233,10 @@
           </div>
           @endadmin --}}
     
-          @yield('content')
+          <main class="m-inset-bottom">
+            @yield('content')
+          </main>
+          
     
           @if($errors->any())
             @foreach($errors->all() as $error)
