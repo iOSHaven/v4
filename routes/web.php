@@ -121,7 +121,7 @@ Route::post('/contact/{type}', 'ContactController@send');
 Route::any('/site.mobileconfig', "MobileConfigController@webapp");
 
 
-Route::get('/dashboard', 'StaticPageController@getDashboard');
+Route::get('/dashboard', 'StaticPageController@getDashboard')->middleware('auth');
 Route::get("/install", "StaticPageController@chooseInstall");
 Route::get("/light", "StaticPageController@lightTheme");
 Route::get("/dark", "StaticPageController@darkTheme");

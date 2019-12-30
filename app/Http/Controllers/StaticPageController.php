@@ -182,7 +182,13 @@ class StaticPageController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function getDashboard (Request $r) {
-      if (Auth::guest() || !Auth::user()->isAdmin) return abort(404);
-      return view('dashboard');
+      if(Auth::user()->isAdmin) {
+        return redirect('/nova/resources/apps');
+      } else {
+        return redirect('/nova/resources/users/' . Auth::id());
+      }
+
+      // if (Auth::guest() || !Auth::user()->isAdmin) return abort(404);
+      // return view('dashboard');
     }
 }
