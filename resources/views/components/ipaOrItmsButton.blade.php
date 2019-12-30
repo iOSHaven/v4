@@ -6,7 +6,7 @@ $title = ($isIPA ? "IPA" : "GET");
 @endphp
 @component('components.button', [
         "href"=> $href, 
-        "bg" => $isIPA ? "gray-100" : "blue", 
+        "bg" => $isIPA ? "white" : "blue", 
         "color" => $isIPA ? "blue" : "white",
         "class" => $class ?? "mr-2"])
         {{ $title }} 

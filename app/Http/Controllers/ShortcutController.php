@@ -41,7 +41,7 @@ class ShortcutController extends Controller
 
         event(new \App\Events\ViewEvent($shortcut));
 
-        return view('shortcut')->with(['shortcut' => $shortcut]);
+        return view('shortcutDetail')->with(['shortcut' => $shortcut]);
       }
 
       public function install($uid) {

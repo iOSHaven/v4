@@ -5,7 +5,7 @@
 
 
 
-<section class="p-0 mt-12">
+<section class="p-0">
   <div class="container">
     <div class="row">
       <div class="col-tablet-portrait-6 px-tablet-portrait">
@@ -39,13 +39,13 @@
 
 
           {{-- APPLICATION FEATURES --}}
-          @component('components.collapse', ["title" => "Modifications", "pre" => true])
+          @component('components.collapse', ["title" => "Description", "pre" => true, "show" => false])
             {{ $app->description }}
           @endcomponent
 
 
           {{-- APPLICATON STATS --}}
-          @component('components.collapse', ["title" => "Stats"])
+          @component('components.collapse', ["title" => "Stats", "show" => true])
             <div class="flex items-center justify-start">
               <div class="mr-2 flex items-center justify-start">
                 <i class="fad fa-eye mr-2 text-center" style="width: 20px;"></i>

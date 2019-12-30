@@ -89,10 +89,10 @@
 
 {{-- CHANGE THE BODY BASED IF NAV SHOULD BE HIDDEN --}}
 @if(empty($hide_nav))
-  <body class="relative mb-16 {{ theme('bg-white', 'text-gray-600') }}" style="margin-top: 33px;">
+  <body class="relative mb-16 {{ theme('bg-gray-100', 'text-gray-600') }}" style="margin-top: 33px;">
   @include('layouts.navigation', ["title" => $title ?? null])
 @else
-  <body class="m-inset-top relative {{ theme('bg-white', 'text-gray-600') }}">
+  <body class="m-inset-top relative {{ theme('bg-gray-100', 'text-gray-600') }}">
 @endif
 
 {{-- ====INSIDE BODY==== --}}
@@ -109,7 +109,7 @@
       <ul>
         @if(Auth::check())
         <li class="p-3 border-b text-center {{ theme('border-gray-200') }}">
-          <img class="rounded-full border mb-3 mx-auto {{ theme('border-gray-200') }}" src="/avatar/zeb" alt=""
+          <img class="rounded-full border mb-3 mx-auto {{ theme('border-gray-200') }}" src="https://api.adorable.io/avatars/70/{{ Auth::user()->username }}" alt=""
             width="70">
           <strong>{{ Auth::user()->username }}</strong>
           <div class="leading-none">@admin Admin @else Member @endadmin</div>
@@ -212,13 +212,13 @@
 
         <div class="p-3 mx-auto" style="max-width: 960px">
           @if(!empty($hide_nav) && empty($hide_back))
-            <button onclick="{{!empty($back_link) ? "window.location = '$back_link'" : "history.back()"}}" class="m-inset-top p-5">
+            <button onclick="{{!empty($back_link) ? "window.location = '$back_link'" : "history.back()"}}" class="m-inset-top py-5">
               <i class="fal fa-chevron-left mr-1"></i>
               {{ session('back_button') ?? "Back" }}
             </button>
           @endif
             
-          @admin
+          {{-- @admin
           <div class="w-full p-3 mb-3 flex items-center justify-start {{ theme('bg-red') }}">
               <form action="/app/create" method="post">
                 {{ csrf_field() }}
@@ -227,11 +227,11 @@
               <a href="/providers/edit" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-blue-light {{ theme("bg-white") }}">Manage Providers</a>
               <form action="/app/token" method="post">
                 {{ csrf_field() }}
-                <button type="submit" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-blue-light {{ theme("bg-white") }}">Update Token</button>
+                <button type="submit" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-blue-light {{ theme("bg-white") }}">Update Token2</button>
               </form>
               <a href="/logs" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-blue-light {{ theme("bg-white") }}">View Logs</a>
           </div>
-          @endadmin
+          @endadmin --}}
     
           @yield('content')
     
