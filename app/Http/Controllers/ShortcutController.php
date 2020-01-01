@@ -4,15 +4,25 @@ namespace App\Http\Controllers;
 
 use App\Shortcut;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class ShortcutController extends Controller
 {
-    private function gathered_query(Request $request, $query, $search = null) {
+    private function paginate(Request $request, $collection, $limit=null) {
+      $limit = $limit ?? $request->limit ?? 15;
+      
+      $page = LengthAwarePaginator::resolveCurrentPage();
+      $results = $collection->slice(($page - 1) * $limit, $limit)->all();
+      return new LengthAwarePaginator($results, count($collection), $limit);
+    }
+
+    private function gathered_query(Request $request, $collection, $search = null) {
+      $collection = $this->paginate($request, $collection);
         return $filteredData = [
-          'count' => $query->count(),
+          'count' => $collection->count(),
           'search' => $search ?? $request->q,
           'pageTitle' => $request->title ?? null,
-          'shortcuts' => $query,
+          'shortcuts' => $collection,
         ];
       }
   
