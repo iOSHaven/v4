@@ -25,7 +25,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('summarize:analytics')
-                 ->everyThirtyMinutes()->withoutOverlapping();
+                 ->cron('0 */2 * * *')->withoutOverlapping();
     }
 
     /**

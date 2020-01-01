@@ -89,7 +89,7 @@ class PerDay extends Trend
      */
     public function cacheFor()
     {
-        return now()->addMinutes(30);
+        return now()->addHours(2);
     }
 
     /**
