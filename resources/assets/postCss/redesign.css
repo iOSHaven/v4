@@ -230,3 +230,10 @@ label.toggle-dark:after {
 {
     @apply bg-white-light border-t border-l border-r border-black-light rounded-t border-gray-300-light;
 }
+
+
+img.listing-icon{
+    height:77px !important;
+    border-radius: 1.3rem !important;
+    width: 77px !important;
+}
