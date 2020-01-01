@@ -5,7 +5,7 @@
       <img src="{{ $shortcut->icon }}" width="77" height="77" style="height:77px; border-radius: 1.3rem">
       <div class="pl-5 w-full relative">
         <div class="{{ theme('text-black') }}">{{ $shortcut->name }}</div>
-        {{-- <div class="leading-none text-sm {{ theme('text-gray-500') }}">{{ $app->short }}</div> --}}
+        <div class="leading-none text-sm {{ theme('text-gray-500')}} ">{{ Str::limit($shortcut->description, 20) }}</div>
         <div class="pt-4 z-1 relative">
           <div class="flex items-center flex-wrap -mt-2">
             @component('components.button', [
@@ -28,7 +28,7 @@
             @endadmin
           </div>
         </div>
-        <hr class="w-full border-b-0 border-l-0 border-r-0 mt-3 absolute {{ theme('border-gray-200') }}">
+        <hr class="left-0 right-0 border-b-0 border-l-0 border-r-0 mt-3 absolute {{ theme('border-gray-200') }}">
       </div>
     </div>
     <div class="-ml-4">
