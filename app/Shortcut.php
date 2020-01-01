@@ -43,6 +43,20 @@ class Shortcut extends Model
         return "https://www.icloud.com/shortcuts/$this->itunes_id";
     }
 
+    public function toArray()
+    {
+        return [
+          "type" => strtolower(class_basename($this)),
+          "id" => $this->id,
+          "uid" => $this->itunes_id,
+          "icon" => $this->icon,
+          "name" => $this->name,
+          "impressions" => $this->impressions,
+          "short" => Str::limit($this->description, 20),
+          "tags" => "",
+        ];
+    }
+
     public static function boot() {
         parent::boot();
 
@@ -52,6 +66,7 @@ class Shortcut extends Model
                 if (Str::contains($itunes_id, 'icloud.com')) {
                     $itunes_id = last(explode("/", $itunes_id));
                 }
+                $model->itunes_id = $itunes_id;
                 $client = new Client();
                 $res = $client->get("https://www.icloud.com/shortcuts/api/records/$itunes_id");
                 if ($res->getStatusCode() == 200) {
@@ -68,6 +83,12 @@ class Shortcut extends Model
                 }
             } catch (\Exception $e) {
                 throw new Exception("Invalid ID for shortcut.");
+            }
+        });
+
+        static::updating(function ($model) {
+            if (Str::contains($model->itunes_id, 'icloud.com')) {
+                $model->itunes_id = last(explode("/", $model->itunes_id));
             }
         });
     }

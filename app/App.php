@@ -95,6 +95,20 @@ class App extends Model
     return $itms->merge($ipas)->unique('id');
   }
 
+  public function toArray()
+  {
+      return [
+        "type" => strtolower(class_basename($this)),
+        "id" => $this->id,
+        "uid" => $this->uid,
+        "icon" => $this->icon,
+        "name" => $this->name,
+        "impressions" => $this->impressions,
+        "short" => $this->short,
+        "tags" => $this->tags,
+      ];
+  }
+
   public static function boot() {
     parent::boot();
 

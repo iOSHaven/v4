@@ -175,6 +175,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ["theme", "phpdata", "isadmin"],
   computed: {
@@ -185,12 +192,22 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       return this.phpdata.filter(function (o) {
+        var name = o.name || "";
+
+        var _short = o["short"] || "";
+
         var tags = o.tags || "";
-        return (o.name.toLowerCase().includes(_this.input) || tags.toLowerCase().includes(_this.input) || o["short"].toLowerCase().includes(_this.input)) && !(o.signed == null && o.unsigned == null);
+        return name.toLowerCase().includes(_this.input) || tags.toLowerCase().includes(_this.input) || _short.toLowerCase().includes(_this.input);
       }).slice(0, 10);
     }
   },
   methods: {
+    highlight: function highlight(item) {
+      if (item) {
+        var exp = new RegExp(this.input, 'gi');
+        return item.replace(exp, '<span class="font-bold ' + this.t('bg-yellow') + ' ' + this.t('text-black') + '">' + this.input + '</span>');
+      }
+    },
     t: function t(classname) {
       return classname + '-' + this.theme;
     }
@@ -782,91 +799,44 @@ var render = function() {
                   "a",
                   {
                     staticClass:
-                      "flex items-center justify-start overflow-hidden py-3",
-                    attrs: { href: "/app/" + app.uid }
+                      "w-full flex items-center justify-start overflow-hidden py-3",
+                    attrs: { href: "/" + app.type + "/" + app.uid }
                   },
                   [
                     _c("img", {
                       staticClass: "rounded-lg mr-3",
                       attrs: {
-                        src: app.abs_icon,
+                        src: app.icon,
                         alt: "",
-                        height: "25",
-                        width: "25"
+                        height: "40",
+                        width: "40"
                       }
                     }),
                     _vm._v(" "),
-                    _c("span", { staticClass: "truncate" }, [
-                      _vm._v(_vm._s(app.name))
+                    _c("div", [
+                      _c("div", {
+                        domProps: { innerHTML: _vm._s(_vm.highlight(app.name)) }
+                      }),
+                      _vm._v(" "),
+                      _c("div", {
+                        domProps: {
+                          innerHTML: _vm._s(_vm.highlight(app.short))
+                        }
+                      })
                     ])
                   ]
                 ),
                 _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "flex flex-grow items-center justify-end" },
-                  [
-                    app.unsigned
-                      ? _c(
-                          "a",
-                          {
-                            class: [
-                              "font-bold",
-                              "rounded-full",
-                              "text-xs",
-                              "px-3",
-                              "py-1",
-                              _vm.t("bg-gray-100"),
-                              _vm.t("text-blue"),
-                              "mr-1"
-                            ],
-                            attrs: { href: "/download/uid/" + app.uid }
-                          },
-                          [_vm._v("IPA")]
-                        )
-                      : _vm._e(),
-                    _vm._v(" "),
-                    app.signed
-                      ? _c(
-                          "a",
-                          {
-                            class: [
-                              "font-bold",
-                              "rounded-full",
-                              "text-xs",
-                              "px-3",
-                              "py-1",
-                              _vm.t("bg-blue"),
-                              _vm.t("text-white"),
-                              "mr-1"
-                            ],
-                            attrs: { href: "/install/uid/" + app.uid }
-                          },
-                          [_vm._v("GET")]
-                        )
-                      : _vm._e(),
-                    _vm._v(" "),
-                    app.is_admin
-                      ? _c(
-                          "a",
-                          {
-                            class: [
-                              "font-bold",
-                              "rounded-full",
-                              "text-xs",
-                              "px-3",
-                              "py-1",
-                              _vm.t("bg-red"),
-                              _vm.t("text-white"),
-                              "mr-1"
-                            ],
-                            attrs: { href: "/app/edit/" + app.uid }
-                          },
-                          [_vm._v("EDIT")]
-                        )
-                      : _vm._e()
-                  ]
-                )
+                _c("div", { staticClass: "-ml-4" }, [
+                  _c("i", {
+                    class: [
+                      "fal",
+                      "fa-chevron-right",
+                      "fa-2x",
+                      _vm.t("text-gray-400")
+                    ]
+                  })
+                ])
               ]
             )
           })

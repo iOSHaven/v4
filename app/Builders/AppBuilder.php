@@ -112,17 +112,10 @@ class AppBuilder extends Builder
           });
         }
 
-  
-        if ($r->limit || !$r->json) {
-          $query = $query
+        $query = $query
             ->orderBy($r->sort ?? "impressions", $r->order ?? "desc")
-            ->paginate($r->limit);
-        } else {
-          $query = $query
-              ->orderBy($r->sort ?? "impressions", $r->order ?? "desc")
-              ->get();
-        }
-  
+            ->get();
+ 
         return $query;
       }
 

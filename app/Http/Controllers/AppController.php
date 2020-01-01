@@ -11,19 +11,22 @@ use Carbon\Carbon;
 use App\Ad;
 use App\Ipa;
 use App\Itms;
+use App\Shortcut;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Http\Response;
+use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class AppController extends Controller
 {
-    private function gathered_query(Request $request, $query, $search = null) {
+    private function gathered_query(Request $request, $collection, $search = null) {
+      $collection = $this->paginate($request, $collection);
       return $filteredData = [
-        'count' => $query->count(),
+        'count' => $collection->count(),
         'search' => $search ?? $request->q,
         'pageTitle' => $request->title ?? null,
-        'apps' => $query,
+        'apps' => $collection,
       ];
     }
 
@@ -35,6 +38,14 @@ class AppController extends Controller
       } else {
         return view('apps')->with($data);
       }
+    }
+
+    private function paginate(Request $request, $collection, $limit=null) {
+      $limit = $limit ?? $request->limit ?? 15;
+      
+      $page = LengthAwarePaginator::resolveCurrentPage();
+      $results = $collection->slice(($page - 1) * $limit, $limit)->all();
+      return new LengthAwarePaginator($results, count($collection), $limit);
     }
     
 
@@ -70,8 +81,28 @@ class AppController extends Controller
                   ->recently_updated()
                   ->search($request, $tag);
 
-      $apps = $this->gathered_query($request, $apps);
+      $shortcuts = Shortcut::recently_updated()
+                  ->search($request, $tag);
+
+      $models = $apps->merge($shortcuts)->sortByDesc('updated_at');
+      if ($request->limit) {
+        $models = $models->take($request->limit);
+      }
+      $apps = $this->gathered_query($request, $models);
       return $this->display($request, $apps);
+    }
+
+    public function getSearchPage() {
+      $providers = Provider::orderBy('name')->get();
+      $apps = collect(App::get()->toArray());
+      $shortcuts = collect(Shortcut::working()->get()->toArray());
+      // dd($apps->all());
+      $models = $apps->merge($shortcuts->toArray())->values()->all();
+      // dd($models->all());
+      return view('search')->with([
+        "models" => $models,
+        "providers" => $providers,
+      ]);
     }
 
     public function create (Request $request)

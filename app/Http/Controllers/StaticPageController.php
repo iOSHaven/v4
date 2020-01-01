@@ -84,14 +84,7 @@ class StaticPageController extends Controller
 
     }
 
-    public function getSearchPage() {
-      $providers = Provider::orderBy('name')->get();
-      $apps = App::base_query()->orderBy('impressions', 'desc')->get();
-      return view('search')->with([
-        "apps" => $apps,
-        "providers" => $providers,
-      ]);
-    }
+    
 
     public function getCreditsPage() {
       return view('credits');

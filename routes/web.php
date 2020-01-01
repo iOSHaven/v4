@@ -127,7 +127,7 @@ Route::get("/light", "StaticPageController@lightTheme");
 Route::get("/dark", "StaticPageController@darkTheme");
 Route::post("/theme", "StaticPageController@postTheme");
 Route::get('/test', 'StaticPageController@getTestPage');
-Route::get('/search', 'StaticPageController@getSearchPage')->middleware('tab:Search', 'back:Search');
+Route::get('/search', 'AppController@getSearchPage')->middleware('tab:Search', 'back:Search');
 Route::get('/credits', 'StaticPageController@getCreditsPage');
 Route::get('/faq', 'StaticPageController@getFaqPage');
 Route::get('/cydia', 'StaticPageController@getCydiaPage');

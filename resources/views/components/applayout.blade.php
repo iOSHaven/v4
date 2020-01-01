@@ -41,5 +41,4 @@
       <i class="fal fa-chevron-right fa-2x {{ theme('text-gray-400') }}"></i>
     </div>
   </div>
-  
 </div>
