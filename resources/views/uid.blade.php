@@ -58,7 +58,7 @@
               </div>
               <div class="mr-2 flex items-center justify-start">
                 <i class="fad fa-download mr-2 text-center" style="width: 20px;"></i>
-                <span>{{ format_int($app->downloads ?? "0") }}<span>
+                <span>{{ format_int($app->downloads + $app->installs ?? "0") }}<span>
               </div>
               <div class="mr-2 flex items-center justify-start">
                 <i class="fas fa-database mr-2 text-center" style="width: 20px;"></i>
