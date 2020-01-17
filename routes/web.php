@@ -25,6 +25,14 @@ Route::get("/map.xml", function() {
         ]);
 });
 
+Route::get("/shop", function() {
+  return redirect("https://memes33.com/collections/ios-haven");
+});
+
+Route::get("/merch", function() {
+  return view('merch');
+});
+
 Route::get("/avatar/{value}/{size?}", "AvatarController@api");
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->middleware("admin");
