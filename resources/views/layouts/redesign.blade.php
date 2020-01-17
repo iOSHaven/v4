@@ -153,7 +153,7 @@
                 Contact
                 <i class="fal fa-chevron-right"></i>
               </a>
-              <a href="/merch" target="_blank" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+              <a href="/shop" target="_blank" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
                 <span>Merch
                     <strong class="ml-3 text-blue-light">NEW!</strong>
                 </span>
