@@ -6,6 +6,7 @@
 <meta name="twitter:description" content="{{ $app->short }}">
 <meta name="og:description" content="{{ $app->short }}">
 <meta name="twitter:title" content="{{ $app->title }}">
+<meta name="twitter:text:title" content="{{ $app->title }}">
 <meta name="og:title" content="{{ $app->title }}">
 <meta name="twitter:image" content="{{ url($app->icon) }}">
 <meta name="og:image" content="{{ url($app->icon) }}">
