@@ -1,10 +1,18 @@
 @extends('layouts.redesign', ["title" => $app->name, "hide_nav" => true ])
 
+@section('header')
+<meta name="twitter:card" content="summary">
+<meta name="og:type" content="summary">
+<meta name="twitter:description" content="{{ $app->short }}">
+<meta name="og:description" content="{{ $app->short }}">
+<meta name="twitter:title" content="{{ $app->title }}">
+<meta name="og:title" content="{{ $app->title }}">
+<meta name="twitter:image" content="{{ url($app->icon) }}">
+<meta name="og:image" content="{{ url($app->icon) }}">
+<meta name="twitter:site:id" content="715729557769166848">
+@endsection
 
 @section('content')
-
-
-
 <section class="p-0">
   <div class="container">
     <div class="row">
