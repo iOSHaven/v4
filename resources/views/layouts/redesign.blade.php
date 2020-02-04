@@ -18,11 +18,17 @@
   <meta name="language" content="English">
 
   {{-- TWITTER OG PROPERTIES --}}
-  <meta property="og:title" content="{{ config('app.name') }}">
-  <meta property="og:type" content="article">
-  <meta property="og:url" content="{{ $url ?? url('/') }}">
-  <meta property="og:description" content="DOWNLOAD IPAS, SIGNED APPS, APPLE DEVELOPER BETAS, AND JAILBREAKS.">
-  <meta property="og:image" content="/ios-banner.png">
+  @if(View::hasSection('twitter'))
+        @yield('twitter')
+  @else
+    <meta property="og:title" content="{{ config('app.name') }}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ $url ?? url('/') }}">
+    <meta property="og:description" content="Its like PornHub for iOS Apps.">
+    <meta property="og:image" content="https://storage.ihvn.dev/icons/apps/ioshaven.jpg">
+    <meta property="twitter:site:id" content="715729557769166848">
+  @endif
+  
 
   {{-- WEB APPLICATION FRIENDLY --}}
   <meta name="application-name" content="{{ config('app.name') }}">

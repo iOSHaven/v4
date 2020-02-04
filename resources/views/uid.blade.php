@@ -1,16 +1,12 @@
 @extends('layouts.redesign', ["title" => $app->name, "hide_nav" => true ])
 
-@section('header')
-<meta property="twitter:card" content="summary">
-<meta property="og:type" content="summary">
-<meta property="twitter:description" content="{{ $app->short }}">
-<meta property="og:description" content="{{ $app->short }}">
-<meta property="twitter:title" content="{{ $app->title }}">
-<meta property="twitter:text:title" content="{{ $app->title }}">
-<meta property="og:title" content="{{ $app->title }}">
-<meta property="twitter:image" content="{{ url($app->icon) }}">
-<meta property="og:image" content="{{ url($app->icon) }}">
-<meta property="twitter:site:id" content="715729557769166848">
+@section('twitter')
+    <meta property="og:title" content="iOS Haven - {{ $app->name }}">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:description" content="{{ $app->short }}">
+    <meta property="og:image" content="{{ url($app->icon) }}">
+    <meta property="twitter:site:id" content="715729557769166848">
 @endsection
 
 @section('content')
