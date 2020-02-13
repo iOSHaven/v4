@@ -78,7 +78,7 @@
 
   {{-- GOOGLE ADSENSE --}}
   @if(empty($hide_ads))
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <script data-ad-client="ca-pub-4649450952406116" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   @endif
 
   {{-- REDDIT CONVERSION PIXEL --}}
