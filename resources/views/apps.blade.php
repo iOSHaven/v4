@@ -14,11 +14,11 @@
             @else
               @component('components.shortcut', ["shortcut" => $model])@endcomponent
             @endif
-            @if($loop->iteration == 3)
+            {{-- @if($loop->iteration == 3)
             
                 @component('components.ad')@endcomponent
                 
-            @endif
+            @endif --}}
           @endforeach
       </div>
     </div>
