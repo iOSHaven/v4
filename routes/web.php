@@ -33,6 +33,10 @@ Route::get("/merch", function() {
   return view('merch');
 });
 
+Route::get("/nordvpn", function () {
+  return response()->json("Verifying NordVPN ownership 02/15/2020. Official email ioshavenco@gmail.com");
+});
+
 Route::get("/avatar/{value}/{size?}", "AvatarController@api");
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->middleware("admin");
