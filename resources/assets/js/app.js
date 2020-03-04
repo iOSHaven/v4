@@ -24,9 +24,9 @@ const btn = document.querySelector('button.share');
 // Must be triggered some kind of "user activation"
 btn.addEventListener('click', async () => {
   const shareData = {
-    title: '5 things',
-    text: 'Story on iOS Haven',
-    url: 'https://ioshaven.com/today/someurl',
+    title: 'MDN',
+    text: 'Learn web development on MDN!',
+    url: 'https://developer.mozilla.org',
   }
   try {
     await navigator.share(shareData)

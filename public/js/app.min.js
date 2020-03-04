@@ -13750,9 +13750,9 @@ _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function 
       switch (_context.prev = _context.next) {
         case 0:
           shareData = {
-            title: '5 things',
-            text: 'Story on iOS Haven',
-            url: 'https://ioshaven.com/today/someurl'
+            title: 'MDN',
+            text: 'Learn web development on MDN!',
+            url: 'https://developer.mozilla.org'
           };
           _context.prev = 1;
           _context.next = 4;
