@@ -13736,45 +13736,46 @@ var app = new Vue({
     searchinput: ""
   }
 });
-var btn = document.querySelector('button.share');
-var shareData = {
-  title: "5 Amazing Things You Don't Know",
-  text: 'Story on iOS Haven',
-  url: 'https://ioshaven.com/today/someurl' // const resultPara = document.querySelector('.result');
-  // Must be triggered some kind of "user activation"
+var btn = document.querySelector('button.share'); // const resultPara = document.querySelector('.result');
+// Must be triggered some kind of "user activation"
 
-};
 btn.addEventListener('click',
 /*#__PURE__*/
 _asyncToGenerator(
 /*#__PURE__*/
 _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+  var shareData;
   return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
-          _context.prev = 0;
-          _context.next = 3;
+          shareData = {
+            title: '5 things',
+            text: 'Story on iOS Haven',
+            url: 'https://ioshaven.com/today/someurl'
+          };
+          _context.prev = 1;
+          _context.next = 4;
           return navigator.share(shareData);
 
-        case 3:
-          _context.next = 8;
+        case 4:
+          _context.next = 9;
           break;
 
-        case 5:
-          _context.prev = 5;
-          _context.t0 = _context["catch"](0);
+        case 6:
+          _context.prev = 6;
+          _context.t0 = _context["catch"](1);
           alert('failed');
 
-        case 8:
+        case 9:
           alert('shared!!');
 
-        case 9:
+        case 10:
         case "end":
           return _context.stop();
       }
     }
-  }, _callee, null, [[0, 5]]);
+  }, _callee, null, [[1, 6]]);
 })));
 
 /***/ }),

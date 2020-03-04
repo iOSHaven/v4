@@ -18,15 +18,16 @@ const app = new Vue({
 });
 
 const btn = document.querySelector('button.share');
-const shareData = {
-  title: "5 Amazing Things You Don't Know",
-  text: 'Story on iOS Haven',
-  url: 'https://ioshaven.com/today/someurl',
-}
+
 // const resultPara = document.querySelector('.result');
 
 // Must be triggered some kind of "user activation"
 btn.addEventListener('click', async () => {
+  const shareData = {
+    title: '5 things',
+    text: 'Story on iOS Haven',
+    url: 'https://ioshaven.com/today/someurl',
+  }
   try {
     await navigator.share(shareData)
   } catch(err) {
