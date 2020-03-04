@@ -20,11 +20,13 @@ mix.postCss('resources/assets/postCss/redesign.css', 'public/css/redesign.min.cs
       ]
    })
    .sass("resources/assets/sass/markdown.scss", "public/css")
+   .sass("resources/assets/sass/f7.scss", "public/css")
    .js('resources/assets/js/main.js', 'public/js')
    .js('resources/assets/js/app.js', 'public/js')
    .js('resources/assets/js/dashboard.js', 'public/js')
    .minify([
       "public/css/markdown.css",
+      "public/css/f7.css",
       "public/js/vendor.js",
       "public/js/manifest.js",
       "public/js/main.js",

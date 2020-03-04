@@ -73,6 +73,14 @@ Route::group(['prefix' => 'image'], function () {
   // Route::get('team/{team}', 'RosterController@teams');
 });
 
+Route::group(['prefix' => 'today',  "middleware" => ["tab:Today", "back:Today"]], function () {
+  Route::get('/', 'ArticleController@index');
+  // Route::get('all', 'RosterController@all');
+  // Route::get('creators', 'RosterController@creators');
+  // Route::get('streamers', 'RosterController@streamers');
+  // Route::get('team/{team}', 'RosterController@teams');
+});
+
 // Route::post('putlinks', function (\Request $r) {
 //   return response()->json(["hello"]);
 // });

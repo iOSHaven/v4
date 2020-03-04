@@ -33,23 +33,28 @@
         @endif
       </div>
       
-      <a href="/apps" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Apps') }}">
-        <i class="md:hidden fas fa-layer-group"></i>
-        <div class="md:hidden text-xs leading-none"><small>Apps</small></div>
-        <div class="hidden md:inline-block p-2 -mt-px">Apps</div>
-      </a>
+      {{-- <a href="/today" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Today') }}">
+        <i class="md:hidden f7-icons text-2xl mt-1">today</i>
+        <div class="md:hidden text-xs leading-none"><small>Today</small></div>
+        <div class="hidden md:inline-block p-2 -mt-px">Today</div>
+      </a> --}}
       <a href="/games" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Games') }}">
-        <i class="md:hidden fas fa-rocket"></i>
+        <i class="md:hidden f7-icons text-2xl mt-1">rocket_fill</i>
         <div class="md:hidden text-xs leading-none"><small>Games</small></div>
         <div class="hidden md:inline-block p-2 -mt-px">Games</div>
       </a>
+      <a href="/apps" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Apps') }}">
+        <i class="md:hidden f7-icons text-2xl mt-1">square_stack_3d_up_fill</i>
+        <div class="md:hidden text-xs leading-none"><small>Apps</small></div>
+        <div class="hidden md:inline-block p-2 -mt-px">Apps</div>
+      </a>
       <a href="/updates" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Updates') }}">
-        <i class="md:hidden fas fa-bell"></i>
+        <i class="md:hidden f7-icons text-2xl mt-1">bell_fill</i>
         <div class="md:hidden text-xs leading-none"><small>Updates</small></div>
         <div class="hidden md:inline-block p-2 -mt-px">Updates</div>
       </a>
       <a href="/search" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Search') }}">
-        <i class="md:hidden fas fa-search"></i>
+        <i class="md:hidden f7-icons text-2xl mt-1">search_fill</i>
         <div class="md:hidden text-xs leading-none"><small>Search</small></div>
         <div class="hidden md:inline-block p-2 -mt-px">Search</div>
       </a>

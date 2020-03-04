@@ -34,6 +34,30 @@ u(".scroll-toggler").on('click', function () {
    // alert(`You're in *${mode}**** mode`);
 // }, 1000)
 
+function insertHTML(id, html) {
+   var elm = document.getElementById(id)
+   elm.innerHTML += html;
+   var scripts = elm.getElementsByTagName("script");
+   // If we don't clone the results then "scripts"
+   // will actually update live as we insert the new
+   // tags, and we'll get caught in an endless loop
+   var scriptsClone = [];
+   for (var i = 0; i < scripts.length; i++) {
+     scriptsClone.push(scripts[i]);
+   }
+   for (var i = 0; i < scriptsClone.length; i++) {
+     var currentScript = scriptsClone[i];
+     var s = document.createElement("script");
+     // Copy all the attributes from the original script
+     for (var j = 0; j < currentScript.attributes.length; j++) {
+       var a = currentScript.attributes[j];
+       s.setAttribute(a.name, a.value);
+     }
+     s.appendChild(document.createTextNode(currentScript.innerHTML));
+     currentScript.parentNode.replaceChild(s, currentScript);
+   }
+ } 
+
 window.loadMoreApps = function(el, id="apps") {
    var meta =  document.head.querySelector('meta[name=page][content]')
    var currentPage = parseInt(meta.content)
@@ -47,8 +71,9 @@ window.loadMoreApps = function(el, id="apps") {
       if (err || typeof doc.body == "undefined") {
          el.innerHTML = "No more " + id + ". Try again?"
       } else {
-         var apps = document.getElementById(id)
-         apps.innerHTML += doc.body.innerHTML
+         insertHTML(id, doc.body.innerHTML)
+         // var apps = document.getElementById(id)
+         // apps.innerHTML += doc.body.innerHTML
          meta.setAttribute('content', nextPage.toString())
       }
    }, "document")
