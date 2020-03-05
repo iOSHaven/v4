@@ -13750,9 +13750,10 @@ _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function 
       switch (_context.prev = _context.next) {
         case 0:
           shareData = {
-            title: 'MDN',
-            text: 'Learn web development on MDN!',
-            url: 'https://developer.mozilla.org'
+            title: 'My Amazing Title',
+            // Does not show
+            text: 'A subtitle',
+            url: 'https://example.com'
           };
           _context.prev = 1;
           _context.next = 4;
@@ -13765,12 +13766,9 @@ _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function 
         case 6:
           _context.prev = 6;
           _context.t0 = _context["catch"](1);
-          alert('failed');
+          alert(JSON.stringify(shareData));
 
         case 9:
-          alert('shared!!');
-
-        case 10:
         case "end":
           return _context.stop();
       }

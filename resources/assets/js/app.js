@@ -24,14 +24,13 @@ const btn = document.querySelector('button.share');
 // Must be triggered some kind of "user activation"
 btn.addEventListener('click', async () => {
   const shareData = {
-    title: 'MDN',
-    text: 'Learn web development on MDN!',
-    url: 'https://developer.mozilla.org',
+    title: 'My Amazing Title', // Does not show
+    text: 'A subtitle',
+    url: 'https://example.com',
   }
   try {
     await navigator.share(shareData)
   } catch(err) {
-    alert('failed')
+    alert(JSON.stringify(shareData))
   }
-  alert('shared!!')
 });
