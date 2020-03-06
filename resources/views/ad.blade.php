@@ -1,4 +1,4 @@
-@extends('layouts.redesign', ["title" => "Installing", "hide_nav" => true, "hide_ads" => true, "back_link" => url("/apps")])
+@extends('layouts.redesign', ["title" => "Installing", "hide_nav" => false, "hide_ads" => true, "back_link" => url("/apps")])
 
 {{-- @php
 dd(url($model->url))
