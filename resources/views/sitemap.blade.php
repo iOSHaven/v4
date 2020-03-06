@@ -107,11 +107,11 @@
         <url>
             <loc>{{ url("/today/$article->slug") }}</loc>
             <lastmod>{{ $article->updated_at }}</lastmod>
-            <changefreq>daily</changefreq>
+            <changefreq>hourly</changefreq>
             <priority>0.61</priority>
         </url>
     @endforeach
-    
+
     @foreach($apps as $app)
         <url>
             <loc>{{ url("/app/$app->uid") }}</loc>
