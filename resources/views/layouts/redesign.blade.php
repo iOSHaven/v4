@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us" prefix="og: http://ogp.me/ns#" xml:lang="en-us" class="m-inset-bottom">
 <head>
   <title>{{ config('app.name', 'IOS Haven') }}</title>
   <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -92,6 +92,17 @@
   </script>
   <noscript><img height="1" width="1"src="https://www.facebook.com/tr?id=362444877957386&ev=PageView&noscript=1" /></noscript>
 
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script src="https://unpkg.com/infinite-scroll@3/dist/infinite-scroll.pkgd.min.js"></script>
 
   {{-- PER VIEW HEADER CODE --}}
   @yield('header')
@@ -165,14 +176,16 @@
                 Contact
                 <i class="fal fa-chevron-right"></i>
               </a>
-              <a href="/shop" target="_blank" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+              {{-- <a href="/shop" target="_blank" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
                 <span>Merch
                     <strong class="ml-3 text-blue-light">NEW!</strong>
                 </span>
                 <i class="fal fa-tshirt"></i>
-              </a>
+              </a> --}}
               <a href="/shortcuts" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
-                Shortcuts
+                <span>Shortcuts
+                  <strong class="ml-3 text-blue-light">NEW!</strong>
+                </span>
                 <i class="fal fa-chevron-right"></i>
               </a>
               <a href="/jailbreaks" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
@@ -226,13 +239,14 @@
         @yield('page')
 
 
+        <div class="relative" id="content">
         <div class="p-3 mx-auto overflow-hidden" style="max-width: 960px">
-          @if(!empty($hide_nav) && empty($hide_back))
+          {{-- @if(!empty($hide_nav) && empty($hide_back))
             <button onclick="{{!empty($back_link) ? "window.location = '$back_link'" : "history.back()"}}" class="m-inset-top py-5">
               <i class="fal fa-chevron-left mr-1"></i>
               {{ session('back_button') ?? "Back" }}
             </button>
-          @endif
+          @endif --}}
             
           {{-- @admin
           <div class="w-full p-3 mb-3 flex items-center justify-start {{ theme('bg-red') }}">
@@ -249,8 +263,9 @@
           </div>
           @endadmin --}}
     
-          <main class="m-inset-bottom">
+          <main class="m-inset-bottom" id="vuescope">
             @yield('content')
+            <modal class="{{theme('bg-gray-100')}}" :src="modal.src" :back="modal.back" :show="modal.show" :title="modal.title" @closed="closeModal" topclass="{{theme('bg-white')}} shadow py-1"></modal>
           </main>
           
     
@@ -271,10 +286,11 @@
           @if(empty($hide_footer))
             {{--@include('layouts.footer')--}}
           @endif
-      </div>
+        </div>
 
       <script src="{{ mix('/js/manifest.min.js') }}"></script>
       <script src="{{ mix('/js/vendor.min.js') }}"></script>
+      <script src="{{ mix('/js/app.min.js') }}"></script>
       <script src="{{ mix('/js/main.min.js') }}"></script>
 
       @if(empty($hide_ads))
@@ -286,7 +302,7 @@
       @yield("footer")
 
       {{-- SCRIPT FOR LINKS IN STANDALONE APP --}}
-      <script>
+      {{-- <script>
         (function (a, b, c) {
           if (c in b && b[c]) {
             var d, e = a.location,
@@ -299,9 +315,12 @@
             }, !1)
           }
         })(document, window.navigator, "standalone")
-      </script>
+      </script> --}}
 
 {{-- propeller ad --}}
+<script>
+  $currentURL = '{{ Request::url() }}'
+</script>
 <div id="ioshaven-popunder"></div>
 
 {{-- ====END INSIDE BODY==== --}}

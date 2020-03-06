@@ -7,8 +7,8 @@
           <img class="rounded-full border inline-block mx-auto {{ theme('border-gray-200') }}" width="24" src="https://api.adorable.io/avatars/10/{{ Auth::user()->username }}" alt="">
         </label>
         @else
-        <a href="/login" class="text-center mx-2">
-          <i class="fas fa-lg fa-user-circle"></i>
+        <a href="/login" data-title="Login" class="internal-link text-center mx-2">
+          <i class="fas fa-lg fa-user-circle pointer-events-none"></i>
         </a>
         @endif
         <h1 class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center -z-1">{{ $title ?? session("current_tab") ?? "IOS Haven" }}</h1>

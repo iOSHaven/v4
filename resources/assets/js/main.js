@@ -1,8 +1,8 @@
 
-import u from 'umbrellajs';
+// import u from 'umbrellajs';
 import "./autocomplete";
-import PullToRefresh from 'pulltorefreshjs';
-import { disablePageScroll, enablePageScroll, getScrollState } from 'scroll-lock';
+// import PullToRefresh from 'pulltorefreshjs';
+// import { disablePageScroll, enablePageScroll, getScrollState } from 'scroll-lock';
 
 var breakpoint = 768;
 if (window.innerWidth < breakpoint) {
@@ -11,22 +11,22 @@ if (window.innerWidth < breakpoint) {
    document.body.style.marginTop = document.querySelector("#nav-top-desktop").offsetHeight + "px";
 }
 
-const ptr = PullToRefresh.init({
-   mainElement: 'body',
-   onRefresh() {
-      window.location.reload(true);
-   }
-})
+// const ptr = PullToRefresh.init({
+//    mainElement: 'body',
+//    onRefresh() {
+//       window.location.reload(true);
+//    }
+// })
 
 
-u(".scroll-toggler").on('click', function () {
-   console.log("toggle scroll")
-   if (getScrollState()) {
-      disablePageScroll()
-   } else {
-      enablePageScroll()
-   }
-})
+// u(".scroll-toggler").on('click', function () {
+//    console.log("toggle scroll")
+//    if (getScrollState()) {
+//       disablePageScroll()
+//    } else {
+//       enablePageScroll()
+//    }
+// })
 
 // setTimeout(() => {
    // u('#status-bar-style').attr('content', 'black')
@@ -91,4 +91,30 @@ window.loadMoreApps = function(el, id="apps") {
 
 window.onSearchInput = function (el) {
    window.searchinput = el.value.toLowerCase()
+}
+
+window.initInfiniteScroll = function (id, current, last) {
+   var $container = $('#' + id).infiniteScroll({
+      path: function () {
+         if (current != last) {
+            if (this.loadCount + current < last) {
+               var params = new URLSearchParams(window.location.search.slice(1))
+               params.set('html', true)
+               params.set('page', this.pageIndex + 1)
+               
+               return window.location.origin + window.location.pathname +  '?' + params.toString();
+            }
+         }
+         
+         return '';
+      },
+      append: false,
+      history: 'push',
+      responseType: 'document',
+      checkLastPage: true,
+    });
+   
+   $container.on('load.infiniteScroll', function( event, response ) {
+      insertHTML(id, response.body.innerHTML)
+    });
 }

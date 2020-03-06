@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div id="vuescope" class="mt-3">
+<div class="mt-3">
 <div class="fixed flex items-center justify-start relative rounded-full {{ theme('bg-white') }}">
     <i class="far fa-search absolute p-3"></i>
     <input type="text" placeholder="Search" class="border-0 w-full pl-10 py-2 bg-transparent" v-model="searchinput">
@@ -107,8 +107,4 @@
 
 
 
-@endsection
-
-@section('footer')
-<script src="{{ mix('/js/app.min.js') }}"></script>
 @endsection

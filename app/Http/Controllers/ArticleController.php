@@ -14,7 +14,10 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        return view('articles');
+        return view('articles')->with([
+            "articles" => Article::get(),
+            'suggestions' => Article::all()->random(min(5, Article::count())),
+        ]);
     }
 
     /**

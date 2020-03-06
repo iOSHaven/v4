@@ -1,0 +1,16 @@
+appleid = 10013312
+sku = com.spotify.client
+hasp12 = 0
+vip = 2
+vipiphonechannel = 在线安装企签_1_z
+vipipadchannel = 在线安装企签_1_z
+
+
+$.getJSON('/api/bindResources', {
+    appleid: 10013312,
+    sku: 'com.spotify.client',
+    channel: '在线安装企签_1_z',
+    deviceid:1,
+    isGetNew:0,
+    time:0.8392633445122895
+}, (data) => {console.log(data)})

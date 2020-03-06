@@ -1,8 +1,5 @@
 @extends('layouts.redesign', ["title" => $pageTitle ?? null ])
 
-@section('header')
-<meta name="page" content="{{ $apps->currentPage() }}">
-@endsection
 
 @section('content')
 
@@ -23,14 +20,21 @@
       </div>
     </div>
 
-    @if($apps->hasMorePages())
+    <div class="text-center text-xl mt-8 block">No more apps</div>
+    {{-- @if($apps->hasMorePages())
     <div id="loadmoreapps" class="text-center mt-5 mb-4" style="width: 100%;">
       <button class="font-bold text-lg rounded-full text-sm px-10 py-3 {{ theme("bg-black", "text-white") }}"
       onclick="loadMoreApps(this)"
       data-template="/tl/app">
       Load more...</button>
     </div>
-    @endif
+    @endif --}}
 
 @endsection
 
+
+@section('footer')
+<script>
+  window.initInfiniteScroll('apps', {{ $apps->currentPage() }}, {{ $apps->lastPage() }})
+</script>
+@endsection

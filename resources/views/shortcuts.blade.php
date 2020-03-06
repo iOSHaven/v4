@@ -1,8 +1,6 @@
 @extends('layouts.redesign', ["title" => $pageTitle ?? null ])
 
-@section('header')
-<meta name="page" content="{{ $shortcuts->currentPage() }}">
-@endsection
+
 
 @section('content')
 
@@ -32,13 +30,20 @@
       </div>
     </div>
 
-    @if($shortcuts->hasMorePages())
+    <div class="text-center text-xl mt-8 block">No more shortcuts</div>
+    {{-- @if($shortcuts->hasMorePages())
     <div id="loadmoreshortcuts" class="text-center mt-5 mb-4" style="width: 100%;">
       <button class="font-bold text-lg rounded-full text-sm px-10 py-3 {{ theme("bg-black", "text-white") }}"
       onclick="loadMoreApps(this, 'shortcuts')"
       data-template="/tl/shortcut">
       Load more...</button>
     </div>
-    @endif
+    @endif --}}
 
+@endsection
+
+@section('footer')
+<script>
+  window.initInfiniteScroll('shortcuts', {{ $shortcuts->currentPage() }}, {{ $shortcuts->lastPage() }})
+</script>
 @endsection

@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\App;
+use App\Article;
 use App\Ipa;
 use App\Itms;
 use App\Provider;
@@ -108,6 +109,15 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                      * ]
                      */
             
+                    'Articles' => [
+                        '_can' => ['viewAny', Article::class],
+                        '_icon' => fa('fas fa-newspaper'),
+                        '_url'    => '/nova/resources/articles',
+                        '_params' => [
+                            "resourceName" => "articles"
+                        ]
+                    ],
+
                     'Apps' => [
                         '_can' => ['viewAny', App::class],
                         '_icon' => fa('fas fa-layer-group'),

@@ -1,6 +1,6 @@
 <div class="relative">
   <div class="flex items-center mb-3">
-    <a href="/shortcut/{{ $shortcut->itunes_id }}" class="absolute top-0 left-0 right-0 bottom-0"></a>
+    <a href="/shortcut/{{ $shortcut->itunes_id }}" data-title="{{ $shortcut->name }}"  class="internal-link absolute top-0 left-0 right-0 bottom-0"></a>
     <div class="flex py-1 pointer-events-none flex-grow">
       <img class="listing-icon" src="{{ $shortcut->icon }}" width="77" height="77">
       <div class="pl-5 w-full relative">

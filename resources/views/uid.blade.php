@@ -1,4 +1,4 @@
-@extends('layouts.redesign', ["title" => $app->name, "hide_nav" => true ])
+@extends('layouts.redesign', ["title" => $app->name, "hide_nav" => false ])
 
 @section('twitter')
     <meta property="og:title" content="iOS Haven - {{ $app->name }}">

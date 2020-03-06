@@ -3,11 +3,13 @@
 namespace App\Providers;
 
 use App\App;
+use App\Article;
 use App\Ipa;
 use App\Itms;
 use App\Provider;
 use App\User;
 use App\Policies\AppPolicy;
+use App\Policies\ArticlePolicy;
 use App\Policies\IpaPolicy;
 use App\Policies\ItmsPolicy;
 use App\Policies\ProviderPolicy;
@@ -25,6 +27,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
+        Article::class => ArticlePolicy::class,
         App::class => AppPolicy::class,
         Ipa::class => IpaPolicy::class,
         Itms::class => ItmsPolicy::class,
