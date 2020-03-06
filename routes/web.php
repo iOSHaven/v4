@@ -75,6 +75,7 @@ Route::group(['prefix' => 'image'], function () {
 
 Route::group(['prefix' => 'today',  "middleware" => ["tab:Today", "back:Today"]], function () {
   Route::get('/', 'ArticleController@index');
+  Route::get('/{article}', 'ArticleController@show');
   // Route::get('all', 'RosterController@all');
   // Route::get('creators', 'RosterController@creators');
   // Route::get('streamers', 'RosterController@streamers');

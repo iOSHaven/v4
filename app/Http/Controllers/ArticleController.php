@@ -15,7 +15,10 @@ class ArticleController extends Controller
     public function index()
     {
         return view('articles')->with([
-            "articles" => Article::get(),
+            "articles" => Article::orderBy('created_at','desc')
+                ->where('created_at', '>', now()->subDays(10))
+                ->orderBy('created_at', 'desc')
+                ->paginate(50),
             'suggestions' => Article::all()->random(min(5, Article::count())),
         ]);
     }
@@ -49,7 +52,9 @@ class ArticleController extends Controller
      */
     public function show(Article $article)
     {
-        //
+        return view('article')->with([
+            "article" => $article
+        ]);
     }
 
     /**

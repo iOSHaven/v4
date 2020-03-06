@@ -13148,10 +13148,11 @@ window.$vueapp = new Vue({
   }
 });
 $(document).on('click', '.internal-link', function (e) {
-  if (e.target == e.currentTarget) {
-    e.preventDefault();
-    e.stopPropagation(); // console.log(e.target)
+  e.preventDefault();
+  e.stopPropagation();
 
+  if (e.target == e.currentTarget) {
+    // console.log(e.target)
     window.history.pushState({}, "", e.target.href);
     window.$vueapp.modalLoad(e);
   }

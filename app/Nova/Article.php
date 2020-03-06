@@ -11,6 +11,7 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Article extends Resource
@@ -48,13 +49,15 @@ class Article extends Resource
     {
         return [
             // ID::make()->sortable(),
-            Slug::make('Slug')
-                ->slugUnique()
-                ->slugModel(\App\Article::class)
-                ->readonly()
-                ->hideFromIndex(),
+            // Slug::make('Slug')
+            //     ->slugUnique()
+            //     ->slugModel(\App\Article::class)
+            //     ->readonly()
+            //     ->hideFromIndex(),
 
-            SluggableText::make('Title')->sortable(),
+            Text::make('Title')->sortable(),
+
+            Text::make('Subtitle')->sortable(),
 
             Avatar::make('icon')
                 ->store($this->handleStorage("/providers", "image"))
@@ -65,7 +68,9 @@ class Article extends Resource
 
             Markdown::make('content')->hideFromIndex(),
 
-            BelongsTo::make('User')->searchable()
+            BelongsTo::make('User')->searchable(),
+
+            Date::make('created_at'),
         ];
     }
 

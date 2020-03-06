@@ -49,7 +49,9 @@
         "riclep/lorem-flickr-faker": "^0.0.3",
         "saumini/count": "^1.0",
         "spatie/laravel-sitemap": "^5.2",
-        "symfony/translation-contracts": "^1.1.6"
+        "symfony/translation-contracts": "^1.1.6",
+        "cviebrock/eloquent-sluggable": "4.8.*",
+        "graham-campbell/markdown": "11.2.*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",

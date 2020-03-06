@@ -63,6 +63,7 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
   <link href="{{ mix('/css/f7.min.css') }}" rel="stylesheet">
   <link href="{{ mix('/css/redesign.min.css') }}" rel="stylesheet">
+  <link href="{{ mix('/css/markdown.min.css') }}" rel="stylesheet">
 
   {{-- GOOGLE ANALYTICS --}}
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-106909262-1"></script>
