@@ -15,11 +15,16 @@
 //   return view('test');
 // });
 
+use App\Article;
 use App\Shortcut;
 
 Route::get("/map.xml", function() {
         $contents = View::make('sitemap')
-        ->with(["apps" => \App\App::get(), "shortcuts" => Shortcut::get()]);
+        ->with([
+          "apps" => \App\App::get(), 
+          "shortcuts" => Shortcut::get(),
+          "articles" => Article::get(),
+          ]);
         return response($contents)->withHeaders([
           'Content-Type' => 'text/xml'
         ]);

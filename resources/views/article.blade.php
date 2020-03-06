@@ -31,7 +31,7 @@
                 </div>
                 <div class="{{theme('text-black')}} text-3xl font-bold mt-1" style="line-height: 1.9rem;letter-spacing: -0.04rem;">{{ $article->title }}</div>
                 <div class="class text-sm mt-1 {{theme('text-gray-600')}}">{{ $article->subtitle }}</div>
-                <div class="mt-8 markdown {{theme('text-gray-600')}}">
+                <div class="mt-8 markdown {{theme('text-black')}}">
                     {!! $article->markdown !!}
                 </div>
             </div>

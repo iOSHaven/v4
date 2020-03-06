@@ -21,7 +21,8 @@
 
 .markdown h1 {
   margin-top: 0;
-  font-size: 1.798rem;
+  font-size: 1.198rem;
+  font-weight: bold;
 }
 
 .markdown img,

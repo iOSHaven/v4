@@ -102,6 +102,16 @@
         <changefreq>monthly</changefreq>
         <priority>0.61</priority>
     </url>
+
+    @foreach($articles as $article)
+        <url>
+            <loc>{{ url("/today/$article->slug") }}</loc>
+            <lastmod>{{ $article->updated_at }}</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.61</priority>
+        </url>
+    @endforeach
+    
     @foreach($apps as $app)
         <url>
             <loc>{{ url("/app/$app->uid") }}</loc>
@@ -111,6 +121,7 @@
         </url>
     @endforeach
 
+
     @foreach($shortcuts as $shortcut)
         <url>
             <loc>{{ url("/shortcut/$shortcut->itunes_id") }}</loc>
@@ -119,4 +130,6 @@
             <priority>0.41</priority>
         </url>
     @endforeach
+
+    
 </urlset>
