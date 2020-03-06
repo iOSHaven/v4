@@ -33,11 +33,11 @@
         @endif
       </div>
       
-      {{-- <a href="/today" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Today') }}">
+      <a href="/today" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Today') }}">
         <i class="md:hidden f7-icons text-2xl mt-1">today</i>
         <div class="md:hidden text-xs leading-none"><small>Today</small></div>
         <div class="hidden md:inline-block p-2 -mt-px">Today</div>
-      </a> --}}
+      </a>
       <a href="/games" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Games') }}">
         <i class="md:hidden f7-icons text-2xl mt-1">rocket_fill</i>
         <div class="md:hidden text-xs leading-none"><small>Games</small></div>
