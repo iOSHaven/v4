@@ -5,6 +5,11 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\App;
 use App\Mirror;
+use App\Provider;
+use Exception;
+use GuzzleHttp\Client;
+use Illuminate\Support\Facades\Storage;
+use Log;
 
 class UpdateIosGodsToken extends Command
 {
@@ -13,8 +18,7 @@ class UpdateIosGodsToken extends Command
      *
      * @var string
      */
-    protected $signature = 'update:token
-                            {token : the token used to make the install links work}';
+    protected $signature = 'update:token';
 
     /**
      * The console command description.
@@ -40,26 +44,58 @@ class UpdateIosGodsToken extends Command
      */
     public function handle()
     {
-        $apps = App::where("signed", "like", "%iosgods%")->get();
-        $mirrors = Mirror::where('install_link', 'like', '%iosgods%')->get();
-        $progress = $this->output->createProgressBar($apps->count());
+      $provider = Provider::where('name', 'iOS Gods')->firstOrFail();
+      $links = $provider->itms;
+
+      
+
+      $client = new Client([
+        'cookies' => true,
+      ]);
+
+      $loginResponse = $client->request('POST', 'https://app.iosgods.com/store/api/loginProcess', [
+          'timeout' => 30,
+          'form_params' => [
+              'email' => env('IOSGODS_USERNAME'),
+              'password' => env('IOSGODS_PASSWORD'),
+          ]
+      ])->getBody()->getContents();
+
+      $json = json_decode($loginResponse);
+      dump($json);
+      
+      if ($json->status == "ok") {
+        $progress = $this->output->createProgressBar($links->count());
         $progress->start();
-        foreach ($apps as $app) {
-          $app->signed = explode("%3Ftoken", $app->signed)[0]."%3Ftoken%3D".$this->argument("token");
-          $app->save();
-          $progress->advance();
+        foreach($links as $itms) {
+          $iosgodsid = explode('-',array_slice(explode("/", $itms->url), -1)[0])[0];
+          // dump($itms->url, $iosgodsid);
+
+          $appDetailsResponse = $client->request('GET', 'https://app.iosgods.com/store/appdetails/'.$iosgodsid, [
+              'timeout' => 30,
+          ])->getBody()->getContents();
+          
+          try {
+            $itmslink = explode('"', explode('data-href="', $appDetailsResponse, 2)[1], 2)[0];
+            $protocol = explode('itms-services://', $itmslink)[1] ?? false;
+            if ($protocol) {
+                parse_str($protocol, $pquery);
+                $plistResponse = $client->request('GET', $pquery['url'], [
+                    'timeout' => 30,
+                ])->getBody()->getContents();
+                Storage::disk('local')->put('/plist/iosgods/'.$iosgodsid,$plistResponse);
+                $itms->update([
+                    'url' => 'itms-services://?action=download-manifest&url=' . url('/plist/iosgods/'.$iosgodsid)
+                ]);
+            }  
+          } catch (Exception $err) {
+            Log::error($err);
+          }
+          $progress->advance();       
         }
         $progress->finish();
-
-        $progress = $this->output->createProgressBar($mirrors->count());
-        $progress->start();
-        foreach ($mirrors as $mirror) {
-            $mirror->install_link = explode("%3Ftoken", $mirror->install_link)[0]."%3Ftoken%3D".$this->argument("token");
-            $mirror->save();
-            $progress->advance();
-          }
-        $progress->finish();
-        echo "\n";
-        dd("tokens changed successfully.");
+      }
+      
+      dump("done");
     }
 }
