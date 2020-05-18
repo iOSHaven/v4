@@ -67,14 +67,15 @@ class UpdateProviderToken extends Action implements ShouldQueue
                     try {
                         $_ = array_slice(explode("/", $itms->url), -1)[0];
                         $iosgodsid = explode('-', $_, 2)[0];
+                        Log::debug(["iosgodsid" => $iosgodsid]);
                         $appDetailsResponse = $client->request('GET', 'https://app.iosgods.com/store/appdetails/'.$iosgodsid, [
                             'timeout' => 30,
                         ])->getBody()->getContents();
-                        Log::debug($appDetailsResponse);
+                        Log::debug(["appsdetails" => $appDetailsResponse]);
                         
                         $itmslink = explode('"', explode('data-href="', $appDetailsResponse, 2)[1], 2)[0];
                         $protocol = explode('itms-services://', $itmslink)[1] ?? false;
-                
+                        Log::debug(["itmslink" => $itmslink]);
                         if ($protocol) {
                             parse_str($protocol, $pquery);
                             $plistResponse = $client->request('GET', $pquery['url'], [
@@ -82,9 +83,15 @@ class UpdateProviderToken extends Action implements ShouldQueue
                             ])->getBody()->getContents();
                             Storage::disk('local')->put('/plist/iosgods/'.$iosgodsid,$plistResponse);
                             Log::debug($plistResponse);
-                        } else {
+                            $itms->update([
+                                'url' => 'itms-services://?action=download-manifest&url=' . url('/plist/iosgods/'.$iosgodsid)
+                            ]);
+                            $ids = $ids->merge($itms->apps->pluck('id'));
+                            App::whereIn('id', $ids)->update(['updated_at' => now()]);
+                            $this->markAsFinished($itms);
+                        } 
                             $this->markAsFailed($itms, new Exception("could not find iosgods itms link"));
-                        }
+                        
 
 
 
@@ -92,17 +99,11 @@ class UpdateProviderToken extends Action implements ShouldQueue
                         // dd("hello");
                         // $url = $this->createItmsServicesLink($itms, $token, $param, $shouldEncodeUrl);
                         // Log::debug();
-                        $itms->update([
-                            'url' => 'itms-services://?action=download-manifest&url=' . url('/plist/iosgods/'.$iosgodsid)
-                        ]);
-                        $ids = $ids->merge($itms->apps->pluck('id'));
-                        App::whereIn('id', $ids)->update(['updated_at' => now()]);
-                        $this->markAsFinished($itms);
+                        
                     } catch (\Exception $err) {
                         $this->markAsFailed($itms, $err);
                     }
-                    // }
-                    ;
+                    
                 }
             //   $id = "0001";
               
@@ -122,9 +123,9 @@ class UpdateProviderToken extends Action implements ShouldQueue
         
     }
 
-    public function failed($err) {
-        Log::error($err);
-    }
+    // public function failed($err) {
+    //     Log::error($err);
+    // }
 
     public function createItmsServicesLink(Itms $itms, $token, $tokenParam='token', $shouldEncodeUrl=true) {
         $protocol = explode('itms-services://', $itms->url)[1] ?? false;
