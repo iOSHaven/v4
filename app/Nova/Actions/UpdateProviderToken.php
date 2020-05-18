@@ -39,14 +39,14 @@ class UpdateProviderToken extends Action implements ShouldQueue
         // $token = $fields->token;
         // $param = $fields->tokenParam;
         // $shouldEncodeUrl = $fields->shouldEncodeUrl;
-        Log::debug(["handle" => "is it getting this far?"]);
+        Log::error(["handle" => "is it getting this far?"]);
         foreach($models as $itms) {
             if (strpos($itms->url, "iosgods") === false) {
                 Log::error($itms);
                 throw new Exception("Not iOS Gods ITMS");
             }            
         }
-        Log::debug(["handle" => "is it getting this far 2?"]);
+        Log::error(["handle" => "is it getting this far 2?"]);
         
             $ids = collect();
             
@@ -68,22 +68,22 @@ class UpdateProviderToken extends Action implements ShouldQueue
                     try {
                         $_ = array_slice(explode("/", $itms->url), -1)[0];
                         $iosgodsid = explode('-', $_, 2)[0];
-                        Log::debug(["iosgodsid" => $iosgodsid]);
+                        Log::error(["iosgodsid" => $iosgodsid]);
                         $appDetailsResponse = $client->request('GET', 'https://app.iosgods.com/store/appdetails/'.$iosgodsid, [
                             'timeout' => 30,
                         ])->getBody()->getContents();
-                        Log::debug(["appsdetails" => $appDetailsResponse]);
+                        Log::error(["appsdetails" => $appDetailsResponse]);
                         
                         $itmslink = explode('"', explode('data-href="', $appDetailsResponse, 2)[1], 2)[0];
                         $protocol = explode('itms-services://', $itmslink)[1] ?? false;
-                        Log::debug(["itmslink" => $itmslink]);
+                        Log::error(["itmslink" => $itmslink]);
                         if ($protocol) {
                             parse_str($protocol, $pquery);
                             $plistResponse = $client->request('GET', $pquery['url'], [
                                 'timeout' => 30,
                             ])->getBody()->getContents();
                             Storage::disk('local')->put('/plist/iosgods/'.$iosgodsid,$plistResponse);
-                            Log::debug($plistResponse);
+                            Log::error($plistResponse);
                             $itms->update([
                                 'url' => 'itms-services://?action=download-manifest&url=' . url('/plist/iosgods/'.$iosgodsid)
                             ]);
