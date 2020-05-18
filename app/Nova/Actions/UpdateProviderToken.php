@@ -39,13 +39,14 @@ class UpdateProviderToken extends Action implements ShouldQueue
         $token = $fields->token;
         $param = $fields->tokenParam;
         $shouldEncodeUrl = $fields->shouldEncodeUrl;
-
+        Log::debug(["handle" => "is it getting this far?"]);
         foreach($models as $itms) {
             if (strpos($itms->url, "iosgods") === false) {
                 Log::error($itms);
                 throw new Exception("Not iOS Gods ITMS");
             }            
         }
+        Log::debug(["handle" => "is it getting this far 2?"]);
         
             $ids = collect();
             
