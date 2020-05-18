@@ -9,6 +9,7 @@ use Session;
 use File;
 use Auth;
 use Carbon\Carbon;
+use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Storage;
 
@@ -24,8 +25,16 @@ class StaticPageController extends Controller
     }
 
     public function plist($name) {
-      header('Location: ' . "itms-services://?action=download-manifest&url=" . urlencode(url("/plist/$name.plist")));
-      exit;
+      try {
+        return response(Storage::disk('local')->get("/plist/$name"))->withHeaders([
+          'Content-Type' => 'text/xml'
+        ]);
+      } catch(Exception $err) {
+        abort(404);
+      }
+      
+      // header('Location: ' . "itms-services://?action=download-manifest&url=" . urlencode(url("/plist/$name.plist")));
+      // exit;
       // exit;
       // return redirect()->to("itms-services://?action=download-manifest&url=" . url('/pokego2.plist'))->send();
       // return redirect()
@@ -39,48 +48,46 @@ class StaticPageController extends Controller
     //
 
     public function getTestPage() {
-      // $ads = [
-      //   [
-      //     "name" => "Ad unit 1",
-      //     "bid" => 0.4
-      //   ],
-      //   [
-      //     "name" => "Ad unit 2",
-      //     "bid" => 1.2
-      //   ],
-      //   [
-      //     "name" => "High bidding ad unit.",
-      //     "bid" => 10.5
-      //   ],
-      // ];
-      // $acc = 0;
-      // foreach($ads as &$ad) {
-      //   $ad["weight"] = $acc += $ad["bid"];
-      // }
-      // $random = mt_rand(0,$acc);
-      // $selected = collect($ads)->where("weight", ">", $random);
-
-      // dd($selected->first());
-
-
-
-      $client = new Client();
-      $res = $client->get('https://www.icloud.com/shortcuts/api/records/1b4894c938454225a0e159acd823f817');
-      if ($res->getStatusCode() == 200) {
-        $data = json_decode($res->getBody()->getContents());
-        $iconURL = $data->fields->icon->value->downloadURL;
-        $name = $data->fields->name->value;
-        $client = new Client();
-        $res = $client->get($iconURL);
-        $iconBinary = $res->getBody()->getContents();
-        $path = "/icons/shortcuts/".hash("sha256", $name . now());
-        Storage::disk("spaces")->put($path, $iconBinary, ["visibility" => "public"]);
-        $iconPath = env("DO_SPACES_SUBDOMAIN") . "/". $path;
-        dd($iconPath);
-        
-      }
       
-      dd("not found");
+      $client = new Client([
+          'cookies' => true,
+      ]);
+
+      $response = $client->request('POST', 'https://app.iosgods.com/store/api/loginProcess', [
+          'timeout' => 30,
+          'form_params' => [
+              'email' => env('IOSGODS_USERNAME'),
+              'password' => env('IOSGODS_PASSWORD'),
+          ]
+      ])->getBody()->getContents();
+
+      $json = json_decode($response);
+      if ($json->status == "ok") {
+        $id = "0001";
+
+        $response = $client->request('GET', 'https://app.iosgods.com/store/appdetails/'.$id, [
+            'timeout' => 30,
+        ])->getBody()->getContents();
+
+        $itms = explode('"', explode('data-href="', $response, 2)[1], 2)[0];
+        $protocol = explode('itms-services://', $itms)[1] ?? false;
+
+        if ($protocol) {
+            parse_str($protocol, $pquery);
+            $response = $client->request('GET', $pquery['url'], [
+                'timeout' => 30,
+            ])->getBody()->getContents();
+            Storage::disk('local')->put('/plist/iosgods/'.$id,$response);
+   
+        }
+
+
+
+      } else {
+        dump('failure');
+      }
+
+      dd([env('IOSGODS_USERNAME'),env('IOSGODS_PASSWORD'), $json]);
 
     }
 

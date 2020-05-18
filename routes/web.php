@@ -53,7 +53,10 @@ Auth::routes();
 // Route::post('/profile/color', 'HomeController@color');
 // Route::post('/auth/toggleEditing', 'HomeController@toggleEditing');
 
-Route::get('/plist/{name}', "StaticPageController@plist");
+Route::group(['prefix' => 'plist'], function () {
+  Route::get('{any}',"StaticPageController@plist")->where('any', '.*');
+});
+// Route::get('/plist/{name}', "StaticPageController@plist");
 
 
 Route::group(['prefix' => 'user'], function () {
