@@ -36,9 +36,9 @@ class UpdateProviderToken extends Action implements ShouldQueue
      */
     public function handle(ActionFields $fields, Collection $models)
     {
-        $token = $fields->token;
-        $param = $fields->tokenParam;
-        $shouldEncodeUrl = $fields->shouldEncodeUrl;
+        // $token = $fields->token;
+        // $param = $fields->tokenParam;
+        // $shouldEncodeUrl = $fields->shouldEncodeUrl;
         Log::debug(["handle" => "is it getting this far?"]);
         foreach($models as $itms) {
             if (strpos($itms->url, "iosgods") === false) {

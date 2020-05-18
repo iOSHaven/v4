@@ -87,7 +87,7 @@ class StaticPageController extends Controller
         dump('failure');
       }
 
-      dd([env('IOSGODS_USERNAME'),env('IOSGODS_PASSWORD'), $json]);
+      dd([$json]);
 
     }
 
