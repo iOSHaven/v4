@@ -71,11 +71,12 @@ class UpdateIosGodsToken extends Command
           $iosgodsid = explode('-',array_slice(explode("/", $itms->url), -1)[0])[0];
           // dump($itms->url, $iosgodsid);
 
-          $appDetailsResponse = $client->request('GET', 'https://app.iosgods.com/store/appdetails/'.$iosgodsid, [
-              'timeout' => 30,
-          ])->getBody()->getContents();
+          
           
           try {
+            $appDetailsResponse = $client->request('GET', 'https://app.iosgods.com/store/appdetails/'.$iosgodsid, [
+              'timeout' => 30,
+            ])->getBody()->getContents();
             $itmslink = explode('"', explode('data-href="', $appDetailsResponse, 2)[1], 2)[0];
             $protocol = explode('itms-services://', $itmslink)[1] ?? false;
             if ($protocol) {
