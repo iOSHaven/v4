@@ -47,7 +47,7 @@ dd(url($model->url))
         </div>
       </div>
       
-      @component('components.banner')@endcomponent
+      {{-- @component('components.banner')@endcomponent --}}
 
       <div>
             <a href="{{ $url }}" class='mx-1 mb-16 flex items-center justify-center font-bold rounded-full text-sm px-8 py-5 {{ theme('bg-blue', 'text-white') }}'>
