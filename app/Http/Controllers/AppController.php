@@ -115,13 +115,12 @@ class AppController extends Controller
         "sourceURL"=> $request->fullUrl(),
         "apps" => $ipas,
         "news" => [[
-          "title"=> "Delta Now Available",
-          "identifier"=> "delta-now-available",
-          "caption"=> "Finally, relive your favorite NES, SNES, GB(C), GBA, and N64 games.",
+          "title"=> "Welcome to IOS Haven Rescue",
+          "identifier"=> "ioshaven-rescue-now-available",
+          "caption"=> "Finally, a no revoke solution for all your favorite games and apps.",
           "tintColor"=> "8A28F7",
-          "imageURL"=> "https://user-images.githubusercontent.com/705880/65604130-c1ec0800-df5b-11e9-8150-7657c474e3c3.png",
-          "appID"=> "com.rileytestut.Delta",
-          "date"=> "2019-09-28",
+          "imageURL"=> "https://storage.ihvn.dev/providers/ed85446169d8767546bac065a1ea1b2d94e134ddf41e7309887f5f9a7e896a87.jpeg",
+          "date"=> "2020-05-30",
           "notify"=> true
         ]],
         "userInfo"=> [
