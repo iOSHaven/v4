@@ -59,22 +59,27 @@ class AppController extends Controller
 
       // $apps = $this->gathered_query($request, $apps, $tag);
       $ipas = $ipas->map(function ($ipa) {
-        return [
-          "name" => $ipa['name'],
-          "bundleIdentifier" => "com.ioshaven." . $ipa->apps[0]['id'],
-          "developerName" => $ipa->providers[0]['id'],
-          "version" => $ipa->apps[0]['version'] ?? "???",
-          "versionDate" => $ipa['updated_at'],
-          "versionDescription" => $ipa->apps[0]['description'],
-          "downloadURL" => $ipa["url"],
-          "localizedDescription" => $ipa->apps[0]['description'],
-          "iconURL" => $ipa->apps[0]['icon'],
-          "tintColor" => "018084",
-          "size" => $ipa->apps[0]['size'] ?? 0,
-          "screenshotURLs" => [],
-          "permissions" => [],
-        ];
-      });
+        $app = $ipa->apps;
+        $provider= $ipa->provider;
+        if ($app && $provider) {
+          return [
+            "name" => $ipa['name'],
+            "bundleIdentifier" => "com.ioshaven." . $ipa->apps[0]['id'],
+            "developerName" => $ipa->providers[0]['id'],
+            "version" => $ipa->apps[0]['version'] ?? "???",
+            "versionDate" => $ipa['updated_at'],
+            "versionDescription" => $ipa->apps[0]['description'],
+            "downloadURL" => $ipa["url"],
+            "localizedDescription" => $ipa->apps[0]['description'],
+            "iconURL" => $ipa->apps[0]['icon'],
+            "tintColor" => "018084",
+            "size" => $ipa->apps[0]['size'] ?? 0,
+            "screenshotURLs" => [],
+            "permissions" => [],
+          ];
+        }
+        
+      })->filter();
       return response()->json([
         "name"=> "iOS Haven",
         "identifier"=> "com.ioshaven.rescue",
