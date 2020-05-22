@@ -83,7 +83,7 @@ class AppController extends Controller
       return response()->json([
         "name"=> "iOS Haven",
         "identifier"=> "com.ioshaven.rescue",
-        "sourceURL"=> "https://ioshaven.com/apps/altstore?json=true",
+        "sourceURL"=> $request->fullUrl(),
         "apps" => $ipas,
         "news" => [
           "title"=> "Delta Now Available",
