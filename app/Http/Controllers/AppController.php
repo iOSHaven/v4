@@ -52,7 +52,7 @@ class AppController extends Controller
     public function showAltstoreJson ($tag = null, Request $request)
     {
       // $ipas = Ipa::();
-      $ipas = Ipa::with(['apps', 'providers'])->where('url', 'like', '%.ipa')->get();
+      $ipas = Ipa::with(['apps', 'providers'])->has('apps')->has('providers')->where('url', 'like', '%.ipa')->get();
       
       // $apps = App::base_query()
       //             ->search($request, $tag);
