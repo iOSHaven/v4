@@ -108,6 +108,11 @@ class AppController extends Controller
       ]);
     }
 
+    public function burrito () {
+      $json = json_decode(file_get_contents(public_path('burrito.json')));
+      return response()->json($json);
+    }
+
     public function page ($tag = null, Request $request)
     {
       $apps = App::base_query()

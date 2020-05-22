@@ -102,6 +102,7 @@ Route::group(["prefix" => "shortcuts", "middleware" => ["tab:Shortcuts", "back:S
   Route::get('/{tag?}', 'ShortcutController@page')->name('shortcuts');
 });
 
+Route::get('/altstore/burrito/apps.json', 'AppController@burrito');
 Route::get('/altstore/apps.json', 'AppController@showAltstoreJson');
 Route::group(["prefix" => "apps", "middleware" => ["tab:Apps", "back:Apps"]], function () {
   Route::redirect('/signednow', '/apps?type=signed&working=true', 301);
