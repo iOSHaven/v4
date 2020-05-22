@@ -104,6 +104,7 @@ Route::group(["prefix" => "shortcuts", "middleware" => ["tab:Shortcuts", "back:S
 
 
 Route::group(["prefix" => "apps", "middleware" => ["tab:Apps", "back:Apps"]], function () {
+  Route::get('/altstore/{tag?}', 'AppController@showAltstoreJson');
   Route::redirect('/signednow', '/apps?type=signed&working=true', 301);
   Route::get('/{tag?}', 'AppController@page')->name('apps');
 });

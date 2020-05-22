@@ -49,6 +49,53 @@ class AppController extends Controller
     }
     
 
+    public function showAltstoreJson ($tag = null, Request $request)
+    {
+      // $ipas = Ipa::();
+      $ipas = Ipa::with(['apps', 'providers'])->where('url', 'like', '%.ipa')->get();
+      
+      // $apps = App::base_query()
+      //             ->search($request, $tag);
+
+      // $apps = $this->gathered_query($request, $apps, $tag);
+      $ipas = $ipas->map(function ($ipa) {
+        return [
+          "name" => $ipa['name'],
+          "bundleIdentifier" => "com.ioshaven." . $ipa->apps[0]['id'],
+          "developerName" => $ipa->providers[0]['id'],
+          "version" => $ipa->apps[0]['version'] ?? "???",
+          "versionDate" => $ipa['updated_at'],
+          "versionDescription" => $ipa->apps[0]['description'],
+          "downloadURL" => $ipa["url"],
+          "localizedDescription" => $ipa->apps[0]['description'],
+          "iconURL" => $ipa->apps[0]['icon'],
+          "tintColor" => "018084",
+          "size" => $ipa->apps[0]['size'] ?? 0,
+          "screenshotURLs" => [],
+          "permissions" => [],
+        ];
+      });
+      return response()->json([
+        "name"=> "iOS Haven",
+        "identifier"=> "com.ioshaven.rescue",
+        "sourceURL"=> "https://ioshaven.com/apps/altstore?json=true",
+        "apps" => $ipas,
+        "news" => [
+          "title"=> "Delta Now Available",
+          "identifier"=> "delta-now-available",
+          "caption"=> "Finally, relive your favorite NES, SNES, GB(C), GBA, and N64 games.",
+          "tintColor"=> "8A28F7",
+          "imageURL"=> "https://user-images.githubusercontent.com/705880/65604130-c1ec0800-df5b-11e9-8150-7657c474e3c3.png",
+          "appID"=> "com.rileytestut.Delta",
+          "date"=> "2019-09-28",
+          "notify"=> true
+        ],
+        "userInfo"=> [
+          "patreonAccessToken"=> "TMcqAvUDhaWs03TqD55lp_Ccs7tyGzaOYhYjt0YMYPg"
+        ]
+      ]);
+    }
+
     public function page ($tag = null, Request $request)
     {
       $apps = App::base_query()
