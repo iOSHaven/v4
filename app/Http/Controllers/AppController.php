@@ -59,8 +59,8 @@ class AppController extends Controller
 
       // $apps = $this->gathered_query($request, $apps, $tag);
       $ipas = $ipas->map(function ($ipa) {
-        $app = $ipa->apps;
-        $provider= $ipa->provider;
+        $app = $ipa->apps[0];
+        $provider= $ipa->providers[0];
         if ($app && $provider) {
           return [
             "name" => $ipa['name'],
