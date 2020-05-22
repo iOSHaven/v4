@@ -64,10 +64,10 @@ class AppController extends Controller
         if ($app && $provider) {
           return [
             "name" => $ipa['name'],
-            "bundleIdentifier" => "com.ioshaven." . $ipa->apps[0]['id'],
-            "developerName" => $ipa->providers[0]['id'],
+            "bundleIdentifier" => "com.ioshaven." . $ipa->apps[0]['uid'],
+            "developerName" => $ipa->providers[0]['name'],
             "version" => $ipa->apps[0]['version'] ?? "???",
-            "versionDate" => $ipa['updated_at'],
+            "versionDate" => $ipa['updated_at']->format('Y-m-d'),
             "versionDescription" => $ipa->apps[0]['description'],
             "downloadURL" => $ipa["url"],
             "localizedDescription" => $ipa->apps[0]['description'],
