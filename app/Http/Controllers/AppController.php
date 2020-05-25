@@ -75,13 +75,13 @@ class AppController extends Controller
             "tintColor" => "018084",
             "size" => $ipa->apps[0]['size'] ?? 0,
             "screenshotURLs" => [
-              "https://user-images.githubusercontent.com/705880/78942028-acf54300-7a6d-11ea-821c-5bb7a9b3e73a.PNG"
+              // "https://user-images.githubusercontent.com/705880/78942028-acf54300-7a6d-11ea-821c-5bb7a9b3e73a.PNG"
             ],
             "permissions" => [
-              [
-                "type" => "background-fetch",
-                "usageDescription" => "AltStore periodically refreshes apps in the background to prevent them from expiring."
-              ],
+              // [
+              //   "type" => "background-fetch",
+              //   "usageDescription" => "AltStore periodically refreshes apps in the background to prevent them from expiring."
+              // ],
             ],
             // "name" => "iNDS",
             // "bundleIdentifier" => "net.nerd.iNDS",
