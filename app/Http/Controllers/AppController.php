@@ -109,11 +109,12 @@ class AppController extends Controller
         }
         
       })->filter();
+      $ipaspot = config('ipaspot');
       return response()->json([
         "name"=> "iOS Haven",
         "identifier"=> "com.ioshaven.rescue",
         "sourceURL"=> $request->fullUrl(),
-        "apps" => $ipas,
+        "apps" => array_merge($ipas->toArray(), $ipaspot),
         "news" => [[
           "title"=> "Welcome to IOS Haven Rescue",
           "identifier"=> "ioshaven-rescue-now-available",
