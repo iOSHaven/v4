@@ -12,7 +12,7 @@ return [
     "localizedDescription" => "It is an ordinary torrent client for iOS with Files app support.",
     "iconURL" => "https://ipaspot.app/img/455.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -27,7 +27,7 @@ return [
     "localizedDescription" => "Detector is a simple Tool created for iOS that can help you determine if your Device has been Jailbroken or not.",
     "iconURL" => "https://ipaspot.app/img/657.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -42,7 +42,7 @@ return [
     "localizedDescription" => "Features: Removed banner ads, Enable dark mode",
     "iconURL" => "https://ipaspot.app/img/592.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -57,7 +57,7 @@ return [
     "localizedDescription" => "A12 & A13 only for now, but all other devices including RootFS remount will be here",
     "iconURL" => "https://ipaspot.app/img/644.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -72,7 +72,7 @@ return [
     "localizedDescription" => "Features: Removed banner ad, Unlocked a few premium features",
     "iconURL" => "https://ipaspot.app/img/594.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -87,7 +87,7 @@ return [
     "localizedDescription" => "Nonce Setter for iOS 12.1.3 -> 12.2 pre-A12",
     "iconURL" => "https://ipaspot.app/img/544.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -102,7 +102,7 @@ return [
     "localizedDescription" => "Cracktool for non jb devices",
     "iconURL" => "https://ipaspot.app/img/453.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -117,7 +117,7 @@ return [
     "localizedDescription" => "Unlocked Pro",
     "iconURL" => "https://ipaspot.app/img/572.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -132,7 +132,7 @@ return [
     "localizedDescription" => "Remove Ads active",
     "iconURL" => "https://ipaspot.app/img/569.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -147,7 +147,7 @@ return [
     "localizedDescription" => "Change resolution, Change bootlogo, Change icons mask etc.",
     "iconURL" => "https://ipaspot.app/img/416.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -162,7 +162,7 @@ return [
     "localizedDescription" => "SHSH Wallet is an application that unifies most iOS signing-related needs for regular end-users.",
     "iconURL" => "https://ipaspot.app/img/549.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -177,7 +177,7 @@ return [
     "localizedDescription" => "Installing packages requires the jailbroken version, but everything else should work on the non-jailbroken version!",
     "iconURL" => "https://ipaspot.app/img/503.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -192,7 +192,7 @@ return [
     "localizedDescription" => "This project provides automatic re-provisioning of iOS and tvOS applications to avoid the 7-day expiration associated with free certificates",
     "iconURL" => "https://ipaspot.app/img/523.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -207,7 +207,7 @@ return [
     "localizedDescription" => "Basic device information, Kernel build, iOS Build, UDID",
     "iconURL" => "https://ipaspot.app/img/480.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -222,7 +222,7 @@ return [
     "localizedDescription" => "This is \"App Manager\" Updated Specifically for use with rootlessJB for iOS 12-12.1.2.",
     "iconURL" => "https://ipaspot.app/img/499.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -237,7 +237,7 @@ return [
     "localizedDescription" => "This version installs patched versions of tweaks;However, future support for unpatched tweaks will be added.",
     "iconURL" => "https://ipaspot.app/img/497.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -252,7 +252,7 @@ return [
     "localizedDescription" => "ile Manager working on A12 devices.",
     "iconURL" => "https://ipaspot.app/img/492.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -267,7 +267,7 @@ return [
     "localizedDescription" => "TheosTips is a brand new iOS application that will teach you tweaks with ease!",
     "iconURL" => "https://ipaspot.app/img/470.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -282,7 +282,7 @@ return [
     "localizedDescription" => "Vidiyu Is Ultimate solution to capturing your screen,device audio or in fact capture input available on your device",
     "iconURL" => "https://ipaspot.app/img/333.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -297,7 +297,7 @@ return [
     "localizedDescription" => "A project to get a Linux shell running on iOS, using usermode x86 emulation and syscall translation.",
     "iconURL" => "https://ipaspot.app/img/454.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -312,7 +312,7 @@ return [
     "localizedDescription" => "At home or on the go, nzbUnity makes it easy for you to manage all of your favorites NZB applications from your iOS device",
     "iconURL" => "https://ipaspot.app/img/417.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -327,7 +327,7 @@ return [
     "localizedDescription" => "FilzaEscaped is an enhanced version of Filza file explorer and works without jailbreak.",
     "iconURL" => "https://ipaspot.app/img/412.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -342,7 +342,7 @@ return [
     "localizedDescription" => "TweetDeck for mobile, access to team accounts, notifications, and more!",
     "iconURL" => "https://ipaspot.app/img/287.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -357,7 +357,7 @@ return [
     "localizedDescription" => "CryptoCurrency miner designed for your iOS device.",
     "iconURL" => "https://ipaspot.app/img/320.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -372,7 +372,7 @@ return [
     "localizedDescription" => "Powerful File Manager for iPhone, iPad, iPod Touch. Flat design, with best performance",
     "iconURL" => "https://ipaspot.app/img/088.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -387,7 +387,7 @@ return [
     "localizedDescription" => "This app is created for generator fake visa card & ccv. Application PIN :Pass:0412",
     "iconURL" => "https://ipaspot.app/img/285.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -402,7 +402,7 @@ return [
     "localizedDescription" => "An app released in the beginning of January to help find your missing Airpods using their bluetooth signals.",
     "iconURL" => "https://ipaspot.app/img/343.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -417,7 +417,7 @@ return [
     "localizedDescription" => "Developed by the same creators of Shou.tv, a screen-recording app",
     "iconURL" => "https://ipaspot.app/img/045.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -432,7 +432,7 @@ return [
     "localizedDescription" => "Arctic is Cydia Alternative made by Antique_Dev",
     "iconURL" => "https://ipaspot.app/img/340.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -447,7 +447,7 @@ return [
     "localizedDescription" => "EveryCord (previously named iRec) is a no-jailbreak screen recorder for iOS, Android, Linux, and more...",
     "iconURL" => "https://ipaspot.app/img/196.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -462,7 +462,7 @@ return [
     "localizedDescription" => "BatteryLife displays you information about your Battery and Device health like Voltage, Capacity or Temperature.",
     "iconURL" => "https://ipaspot.app/img/066.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -477,7 +477,7 @@ return [
     "localizedDescription" => "Amazing app called iFoneOS made by MasonD3V about the iPhone UI. It includes a Cydia and a Xcode concept.",
     "iconURL" => "https://ipaspot.app/img/306.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -492,7 +492,7 @@ return [
     "localizedDescription" => "An iOS app designed to allow you to install other (signed) iOS apps to your device.",
     "iconURL" => "https://ipaspot.app/img/283.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -507,7 +507,7 @@ return [
     "localizedDescription" => "dtathemes is a Epic Resource For Jailbreakers!",
     "iconURL" => "https://ipaspot.app/img/284.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -522,7 +522,7 @@ return [
     "localizedDescription" => "iCleaner cleans extra files that your device does not need in order to get your extra space!",
     "iconURL" => "https://ipaspot.app/img/072.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -537,7 +537,7 @@ return [
     "localizedDescription" => "iOS screen recorder. Works well on iOS 9 and iOS 10!",
     "iconURL" => "https://ipaspot.app/img/211.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -552,7 +552,7 @@ return [
     "localizedDescription" => "iOS Screen Recorder works on iOS 10!",
     "iconURL" => "https://ipaspot.app/img/217.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -567,7 +567,7 @@ return [
     "localizedDescription" => "iOS screen recording app for iOS 9-10",
     "iconURL" => "https://ipaspot.app/img/214.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -582,7 +582,7 @@ return [
     "localizedDescription" => "This app is built on the backbone of AnyScreen. Works fine on iOS 10.",
     "iconURL" => "https://ipaspot.app/img/219.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -597,7 +597,7 @@ return [
     "localizedDescription" => "Minimalistic ios screen recorder with 1 touch record feature, export to camera roll.",
     "iconURL" => "https://ipaspot.app/img/198.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -612,7 +612,7 @@ return [
     "localizedDescription" => "App allows you to use internet connection on your iphone when it is joined in the same WiFi network.",
     "iconURL" => "https://appdb.to/cydia_apps/tethering/icon.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -627,7 +627,7 @@ return [
     "localizedDescription" => "Fast Storage Cleaner ->3 Overwrite Modes ->Safe Overwrite, Memory Analyzer",
     "iconURL" => "https://ipaspot.app/img/056.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -642,7 +642,7 @@ return [
     "localizedDescription" => "Shou.TV is an amazing community for Android and iOS gamers to broadcast, watch and chat.",
     "iconURL" => "https://ipaspot.app/img/012.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -657,7 +657,7 @@ return [
     "localizedDescription" => "Screen Recorder App",
     "iconURL" => "https://ipaspot.app/img/206.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -672,7 +672,7 @@ return [
     "localizedDescription" => "Adjusts the screen color based on the time of the day",
     "iconURL" => "https://ipaspot.app/img/goodnight.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -687,7 +687,7 @@ return [
     "localizedDescription" => "Remotely Control Torrent Clients",
     "iconURL" => "https://ipaspot.app/img/barmagnet.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -702,7 +702,7 @@ return [
     "localizedDescription" => "Use macOS on iOS",
     "iconURL" => "https://ipaspot.app/img/minios.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -717,7 +717,7 @@ return [
     "localizedDescription" => "Media player app",
     "iconURL" => "https://ipaspot.app/img/kodi16.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -732,7 +732,7 @@ return [
     "localizedDescription" => "Media player app",
     "iconURL" => "https://ipaspot.app/img/kodi17.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -747,7 +747,7 @@ return [
     "localizedDescription" => "Media player app",
     "iconURL" => "https://ipaspot.app/img/kodi18.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -762,7 +762,7 @@ return [
     "localizedDescription" => "Media player app",
     "iconURL" => "https://ipaspot.app/img/kodi19.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -777,7 +777,7 @@ return [
     "localizedDescription" => "Enables Dark Mode effect on iOS",
     "iconURL" => "https://ipaspot.app/img/idarkmode.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -792,7 +792,7 @@ return [
     "localizedDescription" => "Download torrent files on your iOS",
     "iconURL" => "https://ipaspot.app/img/itransmission.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -807,7 +807,7 @@ return [
     "localizedDescription" => "F.lux allows you to change your idevices screen temperature without a jailbreak",
     "iconURL" => "https://ipaspot.app/img/flux.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -822,7 +822,7 @@ return [
     "localizedDescription" => "Record Animoji videos with unlimited duration with this standalone app.",
     "iconURL" => "https://ipaspot.app/img/animoji.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -837,7 +837,7 @@ return [
     "localizedDescription" => "Browse the system files on iOS",
     "iconURL" => "https://ipaspot.app/img/filebrowser.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -852,7 +852,7 @@ return [
     "localizedDescription" => "Spoofer for Pokémon GO is an enhanced edition of the Pokémon GO app, which adds features like joystick, teleport, and auto-walking.",
     "iconURL" => "https://ipaspot.app/img/440.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -867,7 +867,7 @@ return [
     "localizedDescription" => "Hack Features: Anti-Cheat, Item Duplication, Free Building, Free Upgrading, Unlock All Items, Loot Boxes Hack! etc.",
     "iconURL" => "https://ipaspot.app/img/294.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -882,7 +882,7 @@ return [
     "localizedDescription" => "New Anti-Ban, Aimbot Optimized, No Recoil, No Shake Camera, CrossHair, No Spread Out, No Grass",
     "iconURL" => "https://ipaspot.app/img/442.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -897,7 +897,7 @@ return [
     "localizedDescription" => "Express your creativity as you customize your Sims’ distinct appearances and unique personalities",
     "iconURL" => "https://ipaspot.app/img/576.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -912,7 +912,7 @@ return [
     "localizedDescription" => "Celebrate the holidays with a gorgeous farmhouse, an adorable pet pug, and more!",
     "iconURL" => "https://ipaspot.app/img/583.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -927,7 +927,7 @@ return [
     "localizedDescription" => "Move to the countryside, and cultivate a new life in this award-winning open-ended farming RPG!",
     "iconURL" => "https://ipaspot.app/img/575.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -942,7 +942,7 @@ return [
     "localizedDescription" => "Hack Features: God Mode, Unlimited Swim",
     "iconURL" => "https://ipaspot.app/img/577.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -957,7 +957,7 @@ return [
     "localizedDescription" => "Radar Hack, No Recoil",
     "iconURL" => "https://ipaspot.app/img/579.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -972,7 +972,7 @@ return [
     "localizedDescription" => "Hack Features: God Mode, Infinite Ammo, Gun and cars spawn at house, Infinite Stamina",
     "iconURL" => "https://ipaspot.app/img/578.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -987,7 +987,7 @@ return [
     "localizedDescription" => "Cracked version, all pro features unlocked without activation",
     "iconURL" => "https://ipaspot.app/img/541.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1002,7 +1002,7 @@ return [
     "localizedDescription" => "You MUST be a donor to enable full features for this app.",
     "iconURL" => "https://ipaspot.app/img/064.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1017,7 +1017,7 @@ return [
     "localizedDescription" => "Hack : 1Mio Gems",
     "iconURL" => "https://ipaspot.app/img/465.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1032,7 +1032,7 @@ return [
     "localizedDescription" => "Tweaked version with many cool features",
     "iconURL" => "https://ipaspot.app/img/431.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1047,7 +1047,7 @@ return [
     "localizedDescription" => "Tweaked version of the app with many features",
     "iconURL" => "https://ipaspot.app/img/432.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1062,7 +1062,7 @@ return [
     "localizedDescription" => "Tweaked version of the app with many features",
     "iconURL" => "https://ipaspot.app/img/433.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1077,7 +1077,7 @@ return [
     "localizedDescription" => "In-App purchases cracked, purchase all episodes then cancel transaction",
     "iconURL" => "https://ipaspot.app/img/505.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1092,7 +1092,7 @@ return [
     "localizedDescription" => "Joystick, Teleporting, GPX Routing, Auto Generate GPX Routes, Extra Coordinate Lists, Hide Gym Mode Button",
     "iconURL" => "https://ipaspot.app/img/411.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1107,7 +1107,7 @@ return [
     "localizedDescription" => "In-app purchases unlocked",
     "iconURL" => "https://ipaspot.app/img/142.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1122,7 +1122,7 @@ return [
     "localizedDescription" => "The most addictive game!",
     "iconURL" => "https://ipaspot.app/img/435.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1137,7 +1137,7 @@ return [
     "localizedDescription" => "Hack : 1 hit kill",
     "iconURL" => "https://ipaspot.app/img/434.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1152,7 +1152,7 @@ return [
     "localizedDescription" => "Extra plus features: Hide Grass, Hide Wheat, Hide Rocks, Hide Trees",
     "iconURL" => "https://ipaspot.app/img/363.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1167,7 +1167,7 @@ return [
     "localizedDescription" => "Extends the guideline length, Skips tutorials, Unlimited guidelines enabled in all game modes",
     "iconURL" => "https://ipaspot.app/img/125.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1182,7 +1182,7 @@ return [
     "localizedDescription" => "This is a modded Clash of Clans server. You have unlimited gems, elixir and gold. Write /help in the Global Chat for comands.",
     "iconURL" => "https://ipaspot.app/img/184.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1197,7 +1197,7 @@ return [
     "localizedDescription" => "Infinite Life, Infinite Booster (Won't subtract when use)",
     "iconURL" => "https://ipaspot.app/img/156.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1212,7 +1212,7 @@ return [
     "localizedDescription" => "You can view ALL heroes in the minimap.",
     "iconURL" => "https://ipaspot.app/img/388.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1227,7 +1227,7 @@ return [
     "localizedDescription" => "The Crack process is now handled automatically which means, the process is GUARANTEED to work.",
     "iconURL" => "https://ipaspot.app/img/384.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1242,7 +1242,7 @@ return [
     "localizedDescription" => "See Name Tags through walls -> Basically WallHack, Radar Hack -> Always See Enemies on the Mini Map",
     "iconURL" => "https://ipaspot.app/img/377.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1257,7 +1257,7 @@ return [
     "localizedDescription" => "Fuel/Gas does not decrease, Unlimited Blueprints for vehicles, Magnet boosts don't decrease, NOS boosts don't decrease etc.",
     "iconURL" => "https://ipaspot.app/img/353.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1272,7 +1272,7 @@ return [
     "localizedDescription" => "Free in-App Purchases",
     "iconURL" => "https://ipaspot.app/img/335.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1287,7 +1287,7 @@ return [
     "localizedDescription" => "High Damage, HP, Defense",
     "iconURL" => "https://ipaspot.app/img/126.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1302,7 +1302,7 @@ return [
     "localizedDescription" => "Freeze Food, Water, Power, Caps, Nukabottle, Medkits, Stimpex etc.",
     "iconURL" => "https://ipaspot.app/img/201.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1317,7 +1317,7 @@ return [
     "localizedDescription" => "Unlimited Coins",
     "iconURL" => "https://ipaspot.app/img/215.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1332,7 +1332,7 @@ return [
     "localizedDescription" => "Unlimited Mana during battle",
     "iconURL" => "https://ipaspot.app/img/205.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1347,7 +1347,7 @@ return [
     "localizedDescription" => "Unlimited Coins, Unlimited Gems",
     "iconURL" => "https://ipaspot.app/img/185.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1362,7 +1362,7 @@ return [
     "localizedDescription" => "All levels unlocked, Infinite time, Infinite bubbles/lives",
     "iconURL" => "https://ipaspot.app/img/188.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1377,7 +1377,7 @@ return [
     "localizedDescription" => "Hack Features: Free iAP",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple113/v4/7c/51/15/7c5115d8-3a98-d4dc-04b7-66c70363812f/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1392,7 +1392,7 @@ return [
     "localizedDescription" => "Hack: Dark Background, BR Mode Zoom Hack, Normal Mode Zoom Hack",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/42/d3/24/42d3249f-cf9a-4a89-4288-73c7a57ca639/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1407,7 +1407,7 @@ return [
     "localizedDescription" => "Hack Features: Infinite Cash, Free Bitizen Purchase (Press Cancle)",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/a8/f6/d9/a8f6d982-4b69-01e7-6ec2-577d63d407b0/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1422,7 +1422,7 @@ return [
     "localizedDescription" => "Hack Features: Enemies Don't Attack, x30 Attack, Instant Level UP",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/94/4d/91/944d9128-4f40-bc6e-0876-8a21aae7d177/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1437,7 +1437,7 @@ return [
     "localizedDescription" => "Hack Features: Multiply Coin and Cash Earned, Infinite Energy",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple113/v4/1d/65/03/1d650316-9a41-8f36-285e-de368258bef7/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1452,7 +1452,7 @@ return [
     "localizedDescription" => "Hack Features: Unlimited Coins, Unlimited Gems, Unlimited Mints",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple114/v4/9b/f7/b6/9bf7b670-bc76-480c-9b15-9fc3c3133917/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1467,7 +1467,7 @@ return [
     "localizedDescription" => "Hack Features: Infinite Coins Only, Infinite Energy, Infinite Ammo / No Reload, No Spread, OHK",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple114/v4/b8/60/d9/b860d9b1-7110-6575-545c-4776e3071bdf/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1482,7 +1482,7 @@ return [
     "localizedDescription" => "Hack Features: Enemy Frozen",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple124/v4/ce/05/26/ce05260d-b0ce-905c-ba5b-6f396c747c25/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1497,7 +1497,7 @@ return [
     "localizedDescription" => "Hack Features: Free Store, Free Skipping",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple113/v4/4a/15/be/4a15beda-f613-566f-ea4c-352e0e44067f/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1512,7 +1512,7 @@ return [
     "localizedDescription" => "Hack Features: God Mode, Cash Increase, Monkey Money Increase, Consume Increase, Unlocked All Heroes, Unlocked All Towers",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/80/13/a7/8013a716-5736-2c63-cf63-4b9096ca9187/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1527,7 +1527,7 @@ return [
     "localizedDescription" => "Hack Features: Unlimited Coins, All Items Unlocked, All Gadget Slots Unlocked",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple124/v4/92/23/f3/9223f3b8-ba6c-747a-e04e-cd80d2929eaf/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1542,7 +1542,7 @@ return [
     "localizedDescription" => "God Mode, Infinite Ammo, Instant Skill, Infinite Coins, Infinite Gems",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple114/v4/28/7c/94/287c9493-c61d-77c7-4ada-6f30858d710f/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1557,7 +1557,7 @@ return [
     "localizedDescription" => "Hack Features: Infinite Moves, Infinite Boosters, Infinite Lives",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/56/d3/b1/56d3b188-3326-7847-7f7f-053a53fb915c/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1572,7 +1572,7 @@ return [
     "localizedDescription" => "Hack Feature: GIFTED CARD UNLOCKING, max send cards",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/6b/1c/44/6b1c4479-c5c7-3d8d-fdbd-2266d6d4db66/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1587,7 +1587,7 @@ return [
     "localizedDescription" => "Hack Features: Unlimited Ammo, Instant Reload, No Recoil, No Sway, No Spread, Unlimited Infrared",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/33/37/44/3337446c-c39c-64ae-66df-b4ea1814e9b2/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1602,7 +1602,7 @@ return [
     "localizedDescription" => "Hack Features: Free Store, God Mode, Infinite boost time",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple114/v4/c5/f0/a9/c5f0a91d-6845-4a07-0f49-4fc24f33571b/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1617,7 +1617,7 @@ return [
     "localizedDescription" => "Hack Features: Inf Gems (Spend)",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/77/b6/19/77b619f3-1114-ff05-ba15-607c565f9136/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1632,7 +1632,7 @@ return [
     "localizedDescription" => "Hack Features: Infinite Golds (Spend some/ Get some), Infinite Bucks (Spend some/ Get some), All Items Owned, No Ads, Premium",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/7c/6b/51/7c6b514f-62d1-9257-db7d-c9c586176a7d/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1647,7 +1647,7 @@ return [
     "localizedDescription" => "Hack Features: Inf Coins (Spend), Inf Chips (Spend)",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/2d/c0/25/2dc025f8-55a2-384c-4375-16067a11e57b/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1662,7 +1662,7 @@ return [
     "localizedDescription" => "Hack Features: Infinite Coins, Infinite Gems, Semi God Mode, Infinite Boost",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple124/v4/15/17/62/1517622f-4bc3-cac4-fdb3-17c016d342ef/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1677,7 +1677,7 @@ return [
     "localizedDescription" => "Hack Features: Inf.Energy, God Mode, Free Crafting, Inf.Durability, Unlimited Gold, Unlimited Research Points etc.",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple113/v4/31/4f/58/314f5849-67a2-dc89-1b27-40c2c47eed37/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1692,7 +1692,7 @@ return [
     "localizedDescription" => "Hack Features: Infinite Coins (Spend some/ Get some)",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple114/v4/30/eb/07/30eb0775-a68e-0e92-92bf-2df1fe64c9e2/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1707,7 +1707,7 @@ return [
     "localizedDescription" => "Hack Features: God Mode, No Hungry, No Thirsty, Level 99 (Visual)",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/ef/c0/3c/efc03cfd-6581-3558-c240-8ca38074377d/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1722,7 +1722,7 @@ return [
     "localizedDescription" => "Hack Features: Infinite Currencies (Spend some/ Get some)",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/28/9e/07/289e07cd-3bd4-bea5-95c9-bcf37b150713/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1737,7 +1737,7 @@ return [
     "localizedDescription" => "Hack Features: Infinite Moves, Infinite Boosters, Infinite Lives",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple114/v4/39/97/19/399719ed-f413-3364-7ac5-26a40022357d/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1752,7 +1752,7 @@ return [
     "localizedDescription" => "Hack Features: God Mode / Never Die / Zombies & Enemies Cannot Kill You",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/ea/e3/c7/eae3c74e-a231-c140-8f96-adbff0a3042a/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1767,7 +1767,7 @@ return [
     "localizedDescription" => "Hack Features: Unlimited Coins, Cash, Gems",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple114/v4/c1/64/b4/c164b4b9-e9ff-5392-8c00-1341b551eae0/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1782,7 +1782,7 @@ return [
     "localizedDescription" => "Hack Features: No Bomb, Infinite Starfruit, Center Fruit, Free iAP, etc.",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple114/v4/de/9e/3a/de9e3a65-73a2-9e0e-e5f3-f768244c4c69/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1797,7 +1797,7 @@ return [
     "localizedDescription" => "Hack Features: All Songs are Free, All Songs Unlocked (Bypassed Level requirement), Free iAP Purchase, No Ads",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/e2/f7/cd/e2f7cd38-b2b9-dbb8-a4ec-32db9ab6414f/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1812,7 +1812,7 @@ return [
     "localizedDescription" => "Hack Features: Free Upgrade, God Mode",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/15/13/8c/15138cc7-fc20-d8fd-5939-7cada919c623/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1827,7 +1827,7 @@ return [
     "localizedDescription" => "Hack Features: OHK, Instant Skill, Infinite MP",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/70/44/ae/7044ae6b-c5d6-dda3-0208-a6e9aabc817f/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1842,7 +1842,7 @@ return [
     "localizedDescription" => "The most advanced Jailbreak tool!",
     "iconURL" => "https://ipaspot.app/img/487.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1857,7 +1857,7 @@ return [
     "localizedDescription" => "Chimera is the first true iOS 12 jailbreak",
     "iconURL" => "https://ipaspot.app/img/542.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1872,7 +1872,7 @@ return [
     "localizedDescription" => "for iOS 12-12.2 - 12.4",
     "iconURL" => "https://ipaspot.app/img/494.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1887,7 +1887,7 @@ return [
     "localizedDescription" => "Jailbreak for iOS 11 to iOS 11.4.1",
     "iconURL" => "https://ipaspot.app/img/486.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1902,7 +1902,7 @@ return [
     "localizedDescription" => "Unc0ver (Multipath version) - The most advanced jailbreak tool.",
     "iconURL" => "https://ipaspot.app/img/447.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1917,7 +1917,7 @@ return [
     "localizedDescription" => "An incomplete iOS 11.2 -> iOS 11.3.1 Jailbreak",
     "iconURL" => "https://ipaspot.app/img/397.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1932,7 +1932,7 @@ return [
     "localizedDescription" => "for iOS 11.2 - 11.3.1",
     "iconURL" => "https://ipaspot.app/img/405.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1947,7 +1947,7 @@ return [
     "localizedDescription" => "for iOS 11.2 - 11.3.1",
     "iconURL" => "https://ipaspot.app/img/406.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1962,7 +1962,7 @@ return [
     "localizedDescription" => "1.0.1 Jailbreak Toolkit for iOS 11.2 - 11.3.1/11.4(b3) by @pwned4ever is alternative to electra.",
     "iconURL" => "https://ipaspot.app/img/420.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1977,7 +1977,7 @@ return [
     "localizedDescription" => "You can now remove electra and Th0r without losing all your data(pictures, messages, contacts, music).",
     "iconURL" => "https://ipaspot.app/img/414.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -1992,7 +1992,7 @@ return [
     "localizedDescription" => "Using this tool will restore the RootFS to its stock state and reset the user data.",
     "iconURL" => "https://ipaspot.app/img/415.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2007,7 +2007,7 @@ return [
     "localizedDescription" => "Houdini for iOS 10.x to iOS 11.2.1 is a jailbreak alternative that allows you to modify your iPhone interface without full jailbreak.",
     "iconURL" => "https://ipaspot.app/img/390.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2022,7 +2022,7 @@ return [
     "localizedDescription" => "Jailbreak for 64-bit 10.x devices.",
     "iconURL" => "https://ipaspot.app/img/357.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2037,7 +2037,7 @@ return [
     "localizedDescription" => "This is an untethered jailbreak for all devices running iOS 8.4.1 32 bit",
     "iconURL" => "https://apps.ipabox.store/ipalibrary/img/ipas/etason.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2052,7 +2052,7 @@ return [
     "localizedDescription" => "for iOS (9.2-9.3.3)",
     "iconURL" => "https://apps.ipabox.store/ipalibrary/img/ipas/pangu.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2067,7 +2067,7 @@ return [
     "localizedDescription" => "Jailbreak for iOS 9.3.5",
     "iconURL" => "https://apps.ipabox.store/ipalibrary/img/ipas/phoenix.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2082,7 +2082,7 @@ return [
     "localizedDescription" => "Jailbreak for iOS 10.2.1",
     "iconURL" => "https://apps.ipabox.store/ipalibrary/img/ipas/saigon-jailbreak.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2097,7 +2097,7 @@ return [
     "localizedDescription" => "this tool is really meant for developers only.",
     "iconURL" => "https://ipaspot.app/img/351.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2112,7 +2112,7 @@ return [
     "localizedDescription" => "jailbreak for iOS 10.3.x | 64-bit | A7-A9",
     "iconURL" => "https://ipaspot.app/img/331.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2127,7 +2127,7 @@ return [
     "localizedDescription" => "Jailbreak for 32-bit 10.x devices. All 32-bit devices supported.",
     "iconURL" => "https://ipaspot.app/img/325.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2142,7 +2142,7 @@ return [
     "localizedDescription" => "Only tweaks that hook springboard will work. postinst script should be fixed (beta 4 new)",
     "iconURL" => "https://ipaspot.app/img/323.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2157,7 +2157,7 @@ return [
     "localizedDescription" => "Jailbreak for iOS 8.4.1 for 32-Bit",
     "iconURL" => "https://ipaspot.app/img/329.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2172,7 +2172,7 @@ return [
     "localizedDescription" => "Jailbreak for iOS 9.1 - 9.3.4 (32-Bit only)",
     "iconURL" => "https://ipaspot.app/img/328.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2187,7 +2187,7 @@ return [
     "localizedDescription" => "Jailbreak for iOS 10.0 - 10.2",
     "iconURL" => "https://ipaspot.app/img/327.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2202,7 +2202,7 @@ return [
     "localizedDescription" => "Jailbreak for iOS 11.x to 11.1.2. All devices supported (including iPhone X, iPhone 8/8 plus...).",
     "iconURL" => "https://ipaspot.app/img/326.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2217,7 +2217,7 @@ return [
     "localizedDescription" => "Echofon is the fastest, most powerful Twitter app",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/08/12/b0/0812b0d9-3fd5-a9dc-e455-94469140033a/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2232,7 +2232,7 @@ return [
     "localizedDescription" => "Take your iPhone photo editing to the next level with Camera+ 2",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/e0/a5/51/e0a5517d-c2af-e801-3493-c94fb4ff9430/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2247,7 +2247,7 @@ return [
     "localizedDescription" => "A Cheaper Way to Navigate Abroad, No Costly Data-Roaming Required",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple111/v4/88/d6/1f/88d61f1b-ab5a-d765-4ae1-ad73c1222f87/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2262,7 +2262,7 @@ return [
     "localizedDescription" => "Halide is an award-winning camera app listed in Macworld's",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/eb/7f/8f/eb7f8f77-6344-dbdd-b614-cfecf150050b/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2277,7 +2277,7 @@ return [
     "localizedDescription" => "Yoink for iPad and iPhone lets you easily and quickly store items you drag, copy, share or download for later use.",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/6d/f7/e4/6df7e452-81b8-ace5-5ef0-54d51225b96a/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2292,7 +2292,7 @@ return [
     "localizedDescription" => "Ignite your video content with Infuse – the beautiful way to watch almost any video format on your iPhone, iPad, and Apple TV.",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/87/c4/02/87c4023b-93dd-8e80-4291-a455f56a6108/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2307,7 +2307,7 @@ return [
     "localizedDescription" => "A star app has never been more beautiful and easy to use.",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/13/ea/88/13ea881f-f979-ce5e-c92c-f1d59754464f/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2322,7 +2322,7 @@ return [
     "localizedDescription" => "Digital note-taking, simplified! Student, working professional, or a bullet journalist, Noteshelf is a perfect note-taking app for you.",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/90/cc/4e/90cc4e3a-7063-f32e-131a-16bf8bc59c87/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2337,7 +2337,7 @@ return [
     "localizedDescription" => "We are @moment and Pro Camera is the app we’ve always wanted.",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/df/e9/96/dfe996e4-f529-cab4-b272-c3bde368d013/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2352,7 +2352,7 @@ return [
     "localizedDescription" => "Transform your iPad into smart digital paper.",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/02/ce/94/02ce9447-7a00-89c0-43d7-0186d8957104/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2367,7 +2367,7 @@ return [
     "localizedDescription" => "Mate is an incredibly powerful translator app which is deeply integrated with iOS.",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple114/v4/86/57/dd/8657ddb2-346b-48a0-9ac0-7c86ee115453/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2382,7 +2382,7 @@ return [
     "localizedDescription" => "MailTime makes email as easy as text messaging.",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple114/v4/2e/23/0a/2e230a8e-2e46-b834-1c4b-193fe4b7d0ae/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2397,7 +2397,7 @@ return [
     "localizedDescription" => "Plane Finder 3D tracks flights live around the world in 3D airspace.",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/25/a9/cb/25a9cb3d-d126-44cb-a1ee-cce2d331e073/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2412,7 +2412,7 @@ return [
     "localizedDescription" => "Support Apple Pencil and iPad Pro, Convert handwriting to text, Best handwriting experience",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/18/d6/a5/18d6a567-779f-9f05-451a-0d5269c234fe/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2427,7 +2427,7 @@ return [
     "localizedDescription" => "\"MindNode - Volume License\" is a legacy paid up-front version of MindNode.",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple114/v4/8b/87/6c/8b876cad-3b80-512c-fda2-da119aa707f2/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2442,7 +2442,7 @@ return [
     "localizedDescription" => "iScanner is a handy scanner app that will turn your iOS device into a powerful mobile scanner.",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/20/cb/de/20cbde0a-08d6-2f17-df1a-c039f80749ed/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2457,7 +2457,7 @@ return [
     "localizedDescription" => "Audiobus, the musical hub that lets you use your compatible music apps together, just like virtual cables.",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/81/ef/a0/81efa000-abe3-8b04-a6ae-e638b3ec12af/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2472,7 +2472,7 @@ return [
     "localizedDescription" => "The most popular mobile video editing app for iOS is now better than ever!",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/3f/50/1c/3f501c44-841a-630f-c873-a9e93ac461bf/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2487,7 +2487,7 @@ return [
     "localizedDescription" => "A news reader for iOS with support for various sync services.",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple113/v4/25/e4/ee/25e4ee6a-db93-9229-15e0-69796658a6a4/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2502,7 +2502,7 @@ return [
     "localizedDescription" => "THE #1 SSH CLIENT FOR iOS — POWERFUL FEATURES, EASY-TO-USE.",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple113/v4/5e/ba/0c/5eba0c8b-48c4-79fa-247d-bcccb50157e1/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2517,7 +2517,7 @@ return [
     "localizedDescription" => "The most accurate and easy-to-use heart rate app",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/db/c6/97/dbc6978a-32b0-5626-34a5-af047d19cfdb/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2532,7 +2532,7 @@ return [
     "localizedDescription" => "Be stronger. Be leaner. Be the best you",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple113/v4/ee/52/31/ee523102-ecfc-a57b-7492-69c2ead02db1/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2547,7 +2547,7 @@ return [
     "localizedDescription" => "Create and save complete multi-track music projects on your iPad, iPhone or iPod Touch.",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple113/v4/51/d6/18/51d618d7-0b57-fac6-74b7-8cc939315805/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2562,7 +2562,7 @@ return [
     "localizedDescription" => "Alook Web Browser aim to be the best browser for iOS.",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/3d/24/a6/3d24a6c0-7549-62d0-5b34-1e0364b1a703/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2577,7 +2577,7 @@ return [
     "localizedDescription" => "This is an old version of djay.",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple113/v4/67/ba/af/67baaf35-7395-9bb4-2fff-448f92708928/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2592,7 +2592,7 @@ return [
     "localizedDescription" => "The Chan is a browser for imageboards. It currently supports 4chan and 2ch.",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple115/v4/a4/6c/68/a46c6836-8377-7160-acab-5d9a25f6f20d/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2607,7 +2607,7 @@ return [
     "localizedDescription" => "It is quite magical to see how simply uMake works.",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/29/fe/d1/29fed187-9f5a-e8cf-ba2c-7abae55e97d5/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2622,7 +2622,7 @@ return [
     "localizedDescription" => "TouchRetouch is an app that offers you all the tools you need to efficiently remove unwanted content from your iPhone photos.",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple124/v4/9e/13/11/9e1311d4-5c03-94b4-9da3-a9dd4c034637/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2637,7 +2637,7 @@ return [
     "localizedDescription" => "djay allows you to mix your favorite music.",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple113/v4/83/d4/90/83d490cd-e44f-b1a9-5ed8-6c70f6e8af95/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2652,7 +2652,7 @@ return [
     "localizedDescription" => "Once users experience the thrilling speed of Puffin, regular Mobile Internet feels like torture.",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple71/v4/ab/da/df/abdadfc4-e332-e869-55ba-2aa78fa9431f/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2667,7 +2667,7 @@ return [
     "localizedDescription" => "Loved by creative professionals and aspiring artists alike, Procreate is the leading creative application made for iPad.",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple114/v4/92/73/fe/9273fe3a-735a-aba6-5455-9a10ce9dcf52/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2682,7 +2682,7 @@ return [
     "localizedDescription" => "Want to push yourself to do 100 push-ups? That’s ambitious, but we’re convinced you can do it!",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple118/v4/cf/b8/c3/cfb8c3c8-e7ad-fc0e-efa6-661b562e89dc/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2697,7 +2697,7 @@ return [
     "localizedDescription" => "The mountains are calling! Explore more mountains than any mountaineer!",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple114/v4/a8/25/f0/a825f027-cdb2-310b-ffb0-b0d62a6e9664/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2712,7 +2712,7 @@ return [
     "localizedDescription" => "Qrafter Pro is a two-dimensional barcode scanner for iPhone, iPad and iPod Touch.",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple113/v4/be/33/13/be331314-b0b7-bd53-25af-3f0af696a3a3/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2727,7 +2727,7 @@ return [
     "localizedDescription" => "Duet turns your iPad or iPhone into the most advanced extra display for your Mac & PC.",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/fc/69/fd/fc69fde9-0190-3808-2432-ecca10e79a9d/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2742,7 +2742,7 @@ return [
     "localizedDescription" => "Audio Spectrum is a real-time FFT spectrum analyzer.",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/da/63/1d/da631da7-9012-9b63-0a97-87b791b5d573/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2757,7 +2757,7 @@ return [
     "localizedDescription" => "Produce tracks on the go with iMASCHINE 2 and share your creations with the world.",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple114/v4/8c/ac/70/8cac7012-135c-0d99-5131-18ce0946485f/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2772,7 +2772,7 @@ return [
     "localizedDescription" => "Agora is a podcast player that allows you to manage your content easily",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple114/v4/05/13/52/051352de-3b3d-6a6c-feba-339597e5d418/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2787,7 +2787,7 @@ return [
     "localizedDescription" => "TV Mirror for Roku is the easy mirror app to share your iPhone or iPad screen",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/08/18/a1/0818a149-29fc-4282-09a9-7b01d916c65e/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2802,7 +2802,7 @@ return [
     "localizedDescription" => "Be up to date at all times with Weather & Radar’s ad-free app, Weather & Radar Pro!",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/0e/41/aa/0e41aade-1df8-92ce-f175-41420293c571/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2817,7 +2817,7 @@ return [
     "localizedDescription" => "WINDY PRO - professional wind, waves, tides forecast for wind sports and outdoor activities.",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple113/v4/67/17/17/67171777-4188-ee72-be67-d5690f404522/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2832,7 +2832,7 @@ return [
     "localizedDescription" => "FTPManager Pro is a fully featured FTP client that allows you to access files on FTP servers.",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/9b/27/76/9b277618-c200-264d-770e-b83c42601f2d/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2847,7 +2847,7 @@ return [
     "localizedDescription" => "The app combines highly accurate weather forecast for your location",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/36/f3/19/36f31997-fd7c-18e9-2dde-7ca3c22597e0/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2862,7 +2862,7 @@ return [
     "localizedDescription" => "Master the art of Night Photography with NeuralCam Pro NightMode.",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/a6/62/b0/a662b078-bb0d-f190-fc83-5f67563536fb/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2877,7 +2877,7 @@ return [
     "localizedDescription" => "Play your music anywhere directly from the cloud.",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/f5/7b/88/f57b88a9-beb9-242a-8f8f-9fb8feeb49ae/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2892,7 +2892,7 @@ return [
     "localizedDescription" => "Find access to Fast & Free Internet with WiFi Map! Find around you free wifis that will help you connect to Internet!",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple113/v4/4d/9e/a7/4d9ea7f2-9c02-d460-fc7c-0846f5a1092e/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2907,7 +2907,7 @@ return [
     "localizedDescription" => "Imagine dropping stunning skies on your photos with this innovative new app.",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/cc/9b/c6/cc9bc6bf-b0b1-5e7f-1a09-4cc7a0fd2bc0/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2922,7 +2922,7 @@ return [
     "localizedDescription" => "The world’s best intelligent & advanced SSH-Telnet Client app to manage and connect remote servers for your iOS devices",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/0b/4e/3c/0b4e3c67-2c67-3416-fa4f-82dd9dbb7c40/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2937,7 +2937,7 @@ return [
     "localizedDescription" => "Discover your personal family history! Genealogy gets a facelift with MobileFamilyTree 9",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/cf/f8/da/cff8da90-d173-e123-7329-b6bd5290f7e6/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2952,7 +2952,7 @@ return [
     "localizedDescription" => "Meet the all-new Things!",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/eb/34/c3/eb34c3f2-926e-482f-915e-0316342d85b5/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2967,7 +2967,7 @@ return [
     "localizedDescription" => "8player Pro is a universal multimedia application for your iPhone, iPad and Apple TV.",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple113/v4/e6/12/73/e612730d-6184-f30b-24ea-97f877789cf7/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2982,7 +2982,7 @@ return [
     "localizedDescription" => "Web development tools for iOS.",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/6c/1e/68/6c1e681c-fc1d-7b25-945d-0db39567e7d2/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -2997,7 +2997,7 @@ return [
     "localizedDescription" => "Meet the all-new Things!",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/8f/2f/dc/8f2fdc95-4fe9-c149-3a8d-cde0e7aa84d4/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3012,7 +3012,7 @@ return [
     "localizedDescription" => "With a drum tuner on your phone, tuning to perfection becomes much faster & easier!",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/fd/23/85/fd23858f-5061-2b6e-e621-c75d3aeaa4b5/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3027,7 +3027,7 @@ return [
     "localizedDescription" => "Metronomics is not only a metronome, but a tool designed to help build a solid sense of time and rhythmic security.",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple124/v4/5f/15/10/5f151014-f614-b58f-7468-cc67a9beb485/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3042,7 +3042,7 @@ return [
     "localizedDescription" => "Introducing Artstudio Pro, the most powerful painting and photo editing app available for both iOS and macOS.",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple114/v4/3a/d7/92/3ad792c3-d449-fc0e-2309-420245ed248e/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3057,7 +3057,7 @@ return [
     "localizedDescription" => "Forest works well, and if your goal is to be more in the moment",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/62/ed/b9/62edb96f-43e8-8a06-d941-b490f441b581/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3072,7 +3072,7 @@ return [
     "localizedDescription" => "Threema is the world’s favorite secure messenger",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/6e/73/76/6e737619-0180-bebb-b345-137e390aad3c/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3087,7 +3087,7 @@ return [
     "localizedDescription" => "WatchChat is the first app that allows you to send and receive WhatsApp messages on your Apple Watch.",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/b8/3b/19/b83b19f5-bf61-9796-b8f8-90dfca69e3dd/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3102,7 +3102,7 @@ return [
     "localizedDescription" => "STREAKS. The to-do list that helps you form good habits.",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple113/v4/85/00/63/85006335-87e0-2ea7-5e32-e4bb8f77b29b/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3117,7 +3117,7 @@ return [
     "localizedDescription" => "FiLMiC Pro v6 is the most advanced cinema video camera for mobile. Ever.",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple113/v4/ac/70/f1/ac70f1a2-b55e-ddb6-b57a-b8e1146b5396/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3132,7 +3132,7 @@ return [
     "localizedDescription" => "Friendly is a fast, simple and secure app to access you Facebook and Instagram accounts.",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple114/v4/e8/31/73/e8317316-a0a0-2971-5fb6-22e58b739680/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3147,7 +3147,7 @@ return [
     "localizedDescription" => "ProCamera is the leading professional camera app on iOS, catering to enthusiasts, creatives, and pros.",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple124/v4/8d/6f/b4/8d6fb486-671b-fb9e-7848-5c69c7c898e5/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3162,7 +3162,7 @@ return [
     "localizedDescription" => "Voice Dream Reader is hailed by many as the best mobile text-to-speech (TTS) app",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple124/v4/dc/b9/90/dcb99024-caa8-cbb2-3aaf-c2f8e3b3c911/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3177,7 +3177,7 @@ return [
     "localizedDescription" => "Soor is a beautiful, premium music player for your iPhone.",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/88/4c/89/884c895c-79d7-80ca-22cf-8b2e68223100/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3192,7 +3192,7 @@ return [
     "localizedDescription" => "It has an extensive feature list including lists, push, geolocation and syncs your timeline with your Mac or iPad!",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple114/v4/38/67/57/38675713-9995-93c2-41d1-e73941ae7cb9/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3207,7 +3207,7 @@ return [
     "localizedDescription" => "Text Case is a simple utility that allows you to convert any text into various different formats.",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple124/v4/24/11/1f/24111faf-bc7b-b322-1c48-c6a21a50f5f2/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3222,7 +3222,7 @@ return [
     "localizedDescription" => "DSLR Camera for iPhone, iPad, Apple Watch and iMessage the complete app for Photo and Video with Manual Controls",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple124/v4/58/95/df/5895dff4-7ca0-92c2-aa01-bb57cd171b74/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3237,7 +3237,7 @@ return [
     "localizedDescription" => "Hey, what song is that? SoundHound makes it simple to identify music playing around you.",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple114/v4/13/c5/4a/13c54a5b-b74a-be14-2cfb-d303f9d01137/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3252,7 +3252,7 @@ return [
     "localizedDescription" => "Mirror your iPhone or iPad screen to any device with a web browser.",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/16/89/de/1689dec8-4464-b3ab-3ac1-62753e3a3f78/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3267,7 +3267,7 @@ return [
     "localizedDescription" => "No. 1 App for ZIP/RAR file management on iPhone/iPad!",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple114/v4/d4/27/b6/d427b642-f5b0-b468-4e17-01e726af8288/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3282,7 +3282,7 @@ return [
     "localizedDescription" => "The incredible, powerful text editor you can take with you.",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple113/v4/90/77/b1/9077b1f9-bf4e-6449-5d25-ecd02251d41b/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3297,7 +3297,7 @@ return [
     "localizedDescription" => "FE File Explorer Pro is a powerful file manager app on your iPhone and iPad.",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple113/v4/39/f6/c1/39f6c1f2-1eae-8ec5-4324-59c292fc9c48/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3312,7 +3312,7 @@ return [
     "localizedDescription" => "Compress single pictures, multiple pictures or entire albums to save storage and much more",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple128/v4/ec/ec/36/ecec364b-ee7d-4c9a-1318-2fe8a38a9644/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3327,7 +3327,7 @@ return [
     "localizedDescription" => "Join the movement of 30 million and see results with just 7 minutes a day.",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/09/0b/80/090b8099-6c2a-7f36-607d-521e032789b8/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3342,7 +3342,7 @@ return [
     "localizedDescription" => "Just with a few taps, create professional grade superimposed or juxtaposed photos on your iPhone!",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/17/d7/8c/17d78cc1-8b7d-7d17-2235-1b93a0fefefa/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3357,7 +3357,7 @@ return [
     "localizedDescription" => "Turn your ideas into magnificent piece of artwork with Superimpose X",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/92/4f/8a/924f8af5-e8d9-f6d2-72aa-af3ff55b98da/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3372,7 +3372,7 @@ return [
     "localizedDescription" => "\"Alloy - launcher and automator\" is the only solution to simplify your life",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/15/a9/c6/15a9c671-3351-591b-a55b-36e1c45729e0/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3387,7 +3387,7 @@ return [
     "localizedDescription" => "Deliveries helps you keep track of all your packages, so you always know when they’re going to arrive.",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/66/39/fc/6639fc99-386f-c1cd-f09b-bf6185ce9db5/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3402,7 +3402,7 @@ return [
     "localizedDescription" => "Spectre is a new iOS camera app that uses AI to create stunning long exposures",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/e3/a4/a8/e3a4a802-d488-a997-6908-186fa6eb730d/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3417,7 +3417,7 @@ return [
     "localizedDescription" => "AnkiMobile is a mobile companion to Anki, a powerful, intelligent flashcard program that is free",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/81/c5/de/81c5de68-4e63-439d-1abb-752994bda70d/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3432,7 +3432,7 @@ return [
     "localizedDescription" => "Blaze is the ultimate complete file manager for different file types for iOS!",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple113/v4/cc/52/86/cc528644-1845-90ce-7db7-25ae34caa210/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3447,7 +3447,7 @@ return [
     "localizedDescription" => "The best application on the market that allows you to enjoy your online IPTV everywhere.",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/a1/90/e3/a190e350-b775-db03-6133-c1658cd0f44d/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3462,7 +3462,7 @@ return [
     "localizedDescription" => "Badoo is the world’s largest dating network, with over 400 million users and counting.",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/88/91/d1/8891d1b2-a5d7-df7b-bed9-ede02926ac6a/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3477,7 +3477,7 @@ return [
     "localizedDescription" => "nPlayer Plus officially supports Dolby Audio codec and Dolby Sound Effect.",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/0a/22/db/0a22db6e-78ae-38f6-0971-00976b11c644/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3492,7 +3492,7 @@ return [
     "localizedDescription" => "Search, sort, and quickly swap between documents from different clouds.",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple113/v4/cc/d6/31/ccd631bf-cec4-090a-c637-e966eccdfbe6/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3507,7 +3507,7 @@ return [
     "localizedDescription" => "iMPC Pro 2 for iPhone fuses innovative song creation with the iconic MPC workflow.",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/9e/6d/e6/9e6de6af-901c-7b43-b00d-2a5b73f629e8/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3522,7 +3522,7 @@ return [
     "localizedDescription" => "A strip of targets shows you what to look for. Tap a target for a hint, and find enough to unlock the next area.",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple128/v4/06/b7/f0/06b7f066-a590-a539-a9ac-6561deb2a05d/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3537,7 +3537,7 @@ return [
     "localizedDescription" => "Just beyond the horizon sits a majestic desert, vast and unexplored.",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/b7/a2/e3/b7a2e362-be12-175e-1944-02a458fc76a5/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3552,7 +3552,7 @@ return [
     "localizedDescription" => "Explore infinite worlds and build everything from the simplest of homes to the grandest of castles.",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/32/f8/e6/32f8e65f-4979-da2a-1f27-0e51ab444ed4/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3567,7 +3567,7 @@ return [
     "localizedDescription" => "Monument Valley is a surreal exploration through fantastical architecture and impossible geometry.",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple113/v4/52/b4/17/52b417d2-bbb1-da12-d056-d2a805732566/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3582,7 +3582,7 @@ return [
     "localizedDescription" => "Move to the countryside, and cultivate a new life in this award-winning open-ended farming RPG!",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple113/v4/10/ab/04/10ab046f-62a9-6124-ed86-e0bd9c045622/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3597,7 +3597,7 @@ return [
     "localizedDescription" => "Five-star tower defense with unrivaled depth and replayability.",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/76/d9/99/76d9998d-609e-153f-f3c5-1c35eff7e358/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3612,7 +3612,7 @@ return [
     "localizedDescription" => "The World of Monster Hunter Stories",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple128/v4/3c/12/63/3c126380-f26e-e8e9-9291-09860c93f149/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3627,7 +3627,7 @@ return [
     "localizedDescription" => "DIG! FIGHT! EXPLORE! BUILD! Join the community of millions of Terrarians!",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/d9/21/72/d921723f-28e7-c0c1-617e-a7dad95ca7ef/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3642,7 +3642,7 @@ return [
     "localizedDescription" => "Smash Hit Tower Defense Game",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/80/13/a7/8013a716-5736-2c63-cf63-4b9096ca9187/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3657,7 +3657,7 @@ return [
     "localizedDescription" => "Worms 3 is, quite frankly, one of the most accomplished multiplayer experiences on mobiles",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple118/v4/90/36/36/903636f7-9141-50a2-b27d-ef52cc484054/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3672,7 +3672,7 @@ return [
     "localizedDescription" => "Nurture a thriving, beautiful world by creating life, developing communities and discovering the quiet mysteries of the valley.",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple124/v4/13/23/8c/13238c1d-f98b-832a-b0f7-86a3f9edfda5/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3687,7 +3687,7 @@ return [
     "localizedDescription" => "Build your own city as the new mayor. Create residential, commercial, and industrial zones.",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple124/v4/20/8c/80/208c8089-9ff1-a124-d401-09886005f498/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3702,7 +3702,7 @@ return [
     "localizedDescription" => "Carl Johnson escaped from the pressures of life in Los Santos, San Andreas, a city tearing itself apart with gang trouble, drugs and corruption.",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/03/88/11/03881119-53b8-9d2d-74f4-84ceb616255d/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3717,7 +3717,7 @@ return [
     "localizedDescription" => "The critically acclaimed blockbuster Grand Theft Auto III comes to mobile devices, bringing to life the dark and seedy underworld of Liberty City.",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/8c/9d/40/8c9d406c-a0e7-c1d1-99bc-561278a7645b/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3732,7 +3732,7 @@ return [
     "localizedDescription" => "From the decade of big hair, excess and pastel suits comes a story of one man's rise to the top of the criminal pile.",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/82/36/f7/8236f740-eb8d-4327-eccd-57532174782b/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3747,7 +3747,7 @@ return [
     "localizedDescription" => "Huang Lee has a simple mission: deliver an ancient sword to his Uncle Kenny to ensure his family retains control of the Triad gangs.",
     "iconURL" => "https://a2.mzstatic.com/us/r30/Purple5/v4/f4/47/84/f4478492-4444-9143-2085-ee66e67d1faf/icon175x175.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3762,7 +3762,7 @@ return [
     "localizedDescription" => "The first mobile game powered by Epic’s cutting-edge Unreal Engine 3 technology, Infinity Blade takes handheld gaming to new height",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple128/v4/a3/3b/83/a33b83e9-a5d9-7d37-17b1-7bf7e5ccbc9f/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3777,7 +3777,7 @@ return [
     "localizedDescription" => "The God King has been defeated, an unlikely hero has emerged and now you must discover the truth behind the secrets of the Infinity Blade.",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple118/v4/17/ac/b0/17acb084-712d-c3d6-4f19-2ebe29c946fe/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3792,7 +3792,7 @@ return [
     "localizedDescription" => "The award-winning Infinity Blade video game trilogy reaches its epic conclusion!",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple118/v4/18/a8/7e/18a87ee0-9886-9630-90c6-168860ceeb11/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3807,7 +3807,7 @@ return [
     "localizedDescription" => "Get a game of SCRABBLE going with just about anyone – or play solo against the computer!",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple124/v4/27/ad/af/27adafb4-9dc9-de66-4893-aecc34b1c2e3/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3822,7 +3822,7 @@ return [
     "localizedDescription" => "Above the placid ivory snow lies a sleepy mountain village, brimming with the promise of adventure.",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple124/v4/59/f8/52/59f85293-ff5e-1d14-c978-ca44a47c900a/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3837,7 +3837,7 @@ return [
     "localizedDescription" => "Buy, sell and scheme your way to riches in MONOPOLY",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/de/fe/6a/defe6adf-e48f-f429-e3fb-9692f3b7def4/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3852,7 +3852,7 @@ return [
     "localizedDescription" => "Stomp your enemies and solve tricky levels in The Knight Watch",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/2b/4c/47/2b4c4704-14ad-7a28-d53a-2fda69260671/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3867,7 +3867,7 @@ return [
     "localizedDescription" => "Immortal Rogue is a brutal, swipe-controlled action roguelike.",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple114/v4/34/b3/65/34b36580-f4fc-228e-2354-6c0cb62a9548/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3882,7 +3882,7 @@ return [
     "localizedDescription" => "The Official Street League Skateboarding Mobile Game.",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/f9/d2/5a/f9d25a35-1e68-a119-52b8-78658625c0ab/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3897,7 +3897,7 @@ return [
     "localizedDescription" => "Play cards, build your deck to get the best combos!",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/9a/b1/90/9ab19012-8f86-8fe1-d6b0-c3e9815e0278/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3912,7 +3912,7 @@ return [
     "localizedDescription" => "Based on simple rules and minimalist features, Traffix will amaze you in no time!",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/a4/f7/15/a4f715bd-5bf8-1ede-3872-81b2f550e2eb/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3927,7 +3927,7 @@ return [
     "localizedDescription" => "One of the best hack-and-slash games of all time now fits in your pocket!",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/7d/3e/af/7d3eaff7-3761-02ce-d7d4-cf093dd08719/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3942,7 +3942,7 @@ return [
     "localizedDescription" => "NecroDancer: AMPLIFIED is a prequel for Crypt of the NecroDancer!",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple113/v4/8b/d8/18/8bd818fe-0f94-1700-a45c-a1884532dc6e/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3957,7 +3957,7 @@ return [
     "localizedDescription" => "From the creators of the award winner, Kingdom Rush saga comes the most extraordinary space odyssey.",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/05/34/39/0534393b-ff1b-975e-fd20-9723111e6d54/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3972,7 +3972,7 @@ return [
     "localizedDescription" => "Race an inch from the ground at speeds over 80 mph in Pro Racing Karts",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/06/34/bf/0634bfa6-f063-87c9-8803-a3774c8523db/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -3987,7 +3987,7 @@ return [
     "localizedDescription" => "Meteorfall is a deck-building roguelike. You'll choose your class from one of four unique adventurers",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/3e/7d/76/3e7d765f-af6a-eadd-a38b-f73bb0673641/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4002,7 +4002,7 @@ return [
     "localizedDescription" => "Evoland 2 manages to seamlessly blend an incredible number of genres into a single, wonderful experience.",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/20/e3/19/20e31922-2a16-253c-0a38-ef2c7b3de02c/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4017,7 +4017,7 @@ return [
     "localizedDescription" => "No Ads, Seeking Enabled, No Forced Shuffle, Unlimited Skips, Extreme Quality stream enabled, Import songs from Music app",
     "iconURL" => "https://ipaspot.app/img/spotify++.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4032,7 +4032,7 @@ return [
     "localizedDescription" => "This tweaked version allows the user to view deleted posts retrieved by pushshift.io. and removes Ads.",
     "iconURL" => "https://ipaspot.app/img/640.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4047,7 +4047,7 @@ return [
     "localizedDescription" => "Enabled Premium Features & Content, Downloading without creating an account.",
     "iconURL" => "https://ipaspot.app/img/574.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4062,7 +4062,7 @@ return [
     "localizedDescription" => "The Best Entertainment App For You And Your Family.",
     "iconURL" => "https://ipaspot.app/img/466.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4077,7 +4077,7 @@ return [
     "localizedDescription" => "Cercube 5 is the best all-in-one video download extension for the YouTube app.",
     "iconURL" => "https://ipaspot.app/img/161.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4092,7 +4092,7 @@ return [
     "localizedDescription" => "Rocket enriches Instagram client with loads of features!",
     "iconURL" => "https://ipaspot.app/img/159.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4107,7 +4107,7 @@ return [
     "localizedDescription" => "Only Audio Mode, Background Playback, No Ads",
     "iconURL" => "https://ipaspot.app/img/114.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4122,7 +4122,7 @@ return [
     "localizedDescription" => "Tweaked version of Twitter with many plus features.",
     "iconURL" => "https://ipaspot.app/img/041.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4137,7 +4137,7 @@ return [
     "localizedDescription" => "Unlocked all premium features",
     "iconURL" => "https://ipaspot.app/img/044.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4152,7 +4152,7 @@ return [
     "localizedDescription" => "Full Premium Features, Unrestricted Country",
     "iconURL" => "https://ipaspot.app/img/097.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4167,7 +4167,7 @@ return [
     "localizedDescription" => "A simple, lightweight Instagram tweak with powerful features",
     "iconURL" => "https://ipaspot.app/img/566.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4182,7 +4182,7 @@ return [
     "localizedDescription" => "With iPogo you get a full set of tools to help you be the best.",
     "iconURL" => "https://ipaspot.app/img/658.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4197,7 +4197,7 @@ return [
     "localizedDescription" => "Enabled Premium Features And VPN.",
     "iconURL" => "https://ipaspot.app/img/651.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4212,7 +4212,7 @@ return [
     "localizedDescription" => "App for Streaming Movies, Series on iPhoneOS, iPadOS devices.",
     "iconURL" => "https://ipaspot.app/img/661.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4227,7 +4227,7 @@ return [
     "localizedDescription" => "Tweaked version of Facebook with many features",
     "iconURL" => "https://ipaspot.app/img/035.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4242,7 +4242,7 @@ return [
     "localizedDescription" => "Unlocked PRO!",
     "iconURL" => "https://ipaspot.app/img/570.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4257,7 +4257,7 @@ return [
     "localizedDescription" => "Bypass VIP!",
     "iconURL" => "https://ipaspot.app/img/623.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4272,7 +4272,7 @@ return [
     "localizedDescription" => "Magical Effects Pack Subscription lifetime.",
     "iconURL" => "https://ipaspot.app/img/532.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4287,7 +4287,7 @@ return [
     "localizedDescription" => "Unlock Full Premium Features for the app.",
     "iconURL" => "https://ipaspot.app/img/554.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4302,7 +4302,7 @@ return [
     "localizedDescription" => "Enables many templates in Unfold",
     "iconURL" => "https://ipaspot.app/img/629.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4317,7 +4317,7 @@ return [
     "localizedDescription" => "Enables many templates in Unfold",
     "iconURL" => "https://ipaspot.app/img/629.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4332,7 +4332,7 @@ return [
     "localizedDescription" => "Watusi is your all-in-one tweak for WhatsApp messenger.",
     "iconURL" => "https://ipaspot.app/img/194.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4347,7 +4347,7 @@ return [
     "localizedDescription" => "No ADS!",
     "iconURL" => "https://ipaspot.app/img/558.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4362,7 +4362,7 @@ return [
     "localizedDescription" => "No Ads, All Episodes unlocked",
     "iconURL" => "https://ipaspot.app/img/656.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4377,7 +4377,7 @@ return [
     "localizedDescription" => "Tweaked version of Instagram with many cool features",
     "iconURL" => "https://ipaspot.app/img/655.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4392,7 +4392,7 @@ return [
     "localizedDescription" => "Enable Channels, Enable Copy & Paste, Enable Save Post Photo, Add New Traveller Feed etc.",
     "iconURL" => "https://ipaspot.app/img/295.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4407,7 +4407,7 @@ return [
     "localizedDescription" => "Watch soccer channels without ads",
     "iconURL" => "https://ipaspot.app/img/652.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4422,7 +4422,7 @@ return [
     "localizedDescription" => "Enabled Premium, No Ads, Faster Servers, Unlimited Downloads.",
     "iconURL" => "https://ipaspot.app/img/650.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4437,7 +4437,7 @@ return [
     "localizedDescription" => "WallCraft PRO for free",
     "iconURL" => "https://ipaspot.app/img/615.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4452,7 +4452,7 @@ return [
     "localizedDescription" => "Enabled Installing of Decrypted IPA.",
     "iconURL" => "https://ipaspot.app/img/580.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4467,7 +4467,7 @@ return [
     "localizedDescription" => "All premium features UNLOCKED",
     "iconURL" => "https://ipaspot.app/img/647.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4482,7 +4482,7 @@ return [
     "localizedDescription" => "VK unites millions of people through the messaging and sharing of news from anywhere around the globe.",
     "iconURL" => "https://ipaspot.app/img/645.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4497,7 +4497,7 @@ return [
     "localizedDescription" => "Stream Japan's most popular anime with Crunchyroll.",
     "iconURL" => "https://ipaspot.app/img/643.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4512,7 +4512,7 @@ return [
     "localizedDescription" => "Offline play, NoAds",
     "iconURL" => "https://ipaspot.app/img/642.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4527,7 +4527,7 @@ return [
     "localizedDescription" => "All Filters, All Themes, No WaterMark",
     "iconURL" => "https://ipaspot.app/img/641.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4542,7 +4542,7 @@ return [
     "localizedDescription" => "Give your friends your very own phone number!",
     "iconURL" => "https://ipaspot.app/img/504.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4557,7 +4557,7 @@ return [
     "localizedDescription" => "Record your snoring or what you say while you sleep",
     "iconURL" => "https://ipaspot.app/img/639.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4572,7 +4572,7 @@ return [
     "localizedDescription" => "Scan & Translate app extracts texts from any printed sources",
     "iconURL" => "https://ipaspot.app/img/350x350bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4587,7 +4587,7 @@ return [
     "localizedDescription" => "Create stunning Video Stories",
     "iconURL" => "https://ipaspot.app/img/636.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4602,7 +4602,7 @@ return [
     "localizedDescription" => "Watusi Optimized for iPad!",
     "iconURL" => "https://ipaspot.app/img/049.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4617,7 +4617,7 @@ return [
     "localizedDescription" => "Unlocked Pro Version",
     "iconURL" => "https://ipaspot.app/img/635.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4632,7 +4632,7 @@ return [
     "localizedDescription" => "Collect coins and receive Instagram Likes, Followers instantly.",
     "iconURL" => "https://ipaspot.app/img/346.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4647,7 +4647,7 @@ return [
     "localizedDescription" => "Tweaked version of NBA App",
     "iconURL" => "https://ipaspot.app/img/043.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4662,7 +4662,7 @@ return [
     "localizedDescription" => "Unlimited Premium Subscription",
     "iconURL" => "https://ipaspot.app/img/207.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4677,7 +4677,7 @@ return [
     "localizedDescription" => "WhatsApp+ : Bringing the most-requested features to WhatsApp.",
     "iconURL" => "https://ipaspot.app/img/203.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4692,7 +4692,7 @@ return [
     "localizedDescription" => "Bypass DRM Protection",
     "iconURL" => "https://ipaspot.app/img/099.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4707,7 +4707,7 @@ return [
     "localizedDescription" => "Download videos from Vine to your camera roll. Turn off autoplay.",
     "iconURL" => "https://ipaspot.app/img/047.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4722,7 +4722,7 @@ return [
     "localizedDescription" => "VKSettings is an application for mobile devices that run on iOS operating systems.",
     "iconURL" => "https://ipaspot.app/img/050.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4737,7 +4737,7 @@ return [
     "localizedDescription" => "Unlocked Pro Features",
     "iconURL" => "https://ipaspot.app/img/605.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4752,7 +4752,7 @@ return [
     "localizedDescription" => "Live the Game with 365Scores - The complete sports experience!",
     "iconURL" => "https://ipaspot.app/img/634.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4767,7 +4767,7 @@ return [
     "localizedDescription" => "Enable Full Premium Features.",
     "iconURL" => "https://ipaspot.app/img/563.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4782,7 +4782,7 @@ return [
     "localizedDescription" => "Video Star makes you and your friends the stars of awesome music videos. There's no other app like it!",
     "iconURL" => "https://ipaspot.app/img/633.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4797,7 +4797,7 @@ return [
     "localizedDescription" => "The fastest and most reliable application for live football games",
     "iconURL" => "https://ipaspot.app/img/628.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4812,7 +4812,7 @@ return [
     "localizedDescription" => "Love music? With Smule, you can sing and make music with friends and fans around the world!",
     "iconURL" => "https://ipaspot.app/img/627.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4827,7 +4827,7 @@ return [
     "localizedDescription" => "WhatsApp++ by Unlimapps : Bringing the most-requested features to WhatsApp.",
     "iconURL" => "https://ipaspot.app/img/046.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4842,7 +4842,7 @@ return [
     "localizedDescription" => "Inject InApp Tweak. so u can Buy the filter for FREE!!",
     "iconURL" => "https://ipaspot.app/img/601.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4857,7 +4857,7 @@ return [
     "localizedDescription" => "Free purchase filter!",
     "iconURL" => "https://ipaspot.app/img/600.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4872,7 +4872,7 @@ return [
     "localizedDescription" => "All Filter Unlocked!",
     "iconURL" => "https://ipaspot.app/img/599.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4887,7 +4887,7 @@ return [
     "localizedDescription" => "Music player with VK support.",
     "iconURL" => "https://ipaspot.app/img/597.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4902,7 +4902,7 @@ return [
     "localizedDescription" => "Tinder Premium, Tinder Select, Unlimited Super Like",
     "iconURL" => "https://ipaspot.app/img/204.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4917,7 +4917,7 @@ return [
     "localizedDescription" => "Enabled Pro",
     "iconURL" => "https://ipaspot.app/img/582.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4932,7 +4932,7 @@ return [
     "localizedDescription" => "KineMaster Subscription Lifetime",
     "iconURL" => "https://ipaspot.app/img/530.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4947,7 +4947,7 @@ return [
     "localizedDescription" => "No Video Ads On Twitch",
     "iconURL" => "https://ipaspot.app/img/232.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4962,7 +4962,7 @@ return [
     "localizedDescription" => "Free Premium Flo Period & Ovulation Tracker",
     "iconURL" => "https://ipaspot.app/img/590.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4977,7 +4977,7 @@ return [
     "localizedDescription" => "No Ads, HiFi enabled, and Airplay your Music to Other Devices.",
     "iconURL" => "https://ipaspot.app/img/568.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -4992,7 +4992,7 @@ return [
     "localizedDescription" => "Enabled Full Premium Features",
     "iconURL" => "https://ipaspot.app/img/624.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5007,7 +5007,7 @@ return [
     "localizedDescription" => "Enabled Full Premium Features",
     "iconURL" => "https://ipaspot.app/img/625.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5022,7 +5022,7 @@ return [
     "localizedDescription" => "Enabled Full Premium Features",
     "iconURL" => "https://ipaspot.app/img/626.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5037,7 +5037,7 @@ return [
     "localizedDescription" => "Filters Unlocked, Templates Unlocked, No Watermark",
     "iconURL" => "https://ipaspot.app/img/622.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5052,7 +5052,7 @@ return [
     "localizedDescription" => "This app allows you to upload photos/videos to snapchat just like infltr",
     "iconURL" => "https://ipaspot.app/img/621.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5067,7 +5067,7 @@ return [
     "localizedDescription" => "Unlock to PRO!",
     "iconURL" => "https://ipaspot.app/img/620.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5082,7 +5082,7 @@ return [
     "localizedDescription" => "Unlock PRO With Localiapstore How to : Open App Buy popup payment > CANCEL Enjoy!",
     "iconURL" => "https://ipaspot.app/img/619.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5097,7 +5097,7 @@ return [
     "localizedDescription" => "Unlock All Items",
     "iconURL" => "https://ipaspot.app/img/618.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5112,7 +5112,7 @@ return [
     "localizedDescription" => "Unlock to PRO version",
     "iconURL" => "https://ipaspot.app/img/617.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5127,7 +5127,7 @@ return [
     "localizedDescription" => "Unlock PRO With Localiapstore! How to : 1.Open App 2.Buy 3.popup payment > CANCEL 4.Enjoy!",
     "iconURL" => "https://ipaspot.app/img/616.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5142,7 +5142,7 @@ return [
     "localizedDescription" => "All Premium features",
     "iconURL" => "https://ipaspot.app/img/614.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5157,7 +5157,7 @@ return [
     "localizedDescription" => "All Premium Features",
     "iconURL" => "https://ipaspot.app/img/613.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5172,7 +5172,7 @@ return [
     "localizedDescription" => "Premium, Remove watermark, Hollywood Filter Pack, Sherlock Filter Pack",
     "iconURL" => "https://ipaspot.app/img/611.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5187,7 +5187,7 @@ return [
     "localizedDescription" => "Unlock Premium Features",
     "iconURL" => "https://ipaspot.app/img/610.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5202,7 +5202,7 @@ return [
     "localizedDescription" => "Unlock Pro Features",
     "iconURL" => "https://ipaspot.app/img/609.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5217,7 +5217,7 @@ return [
     "localizedDescription" => "No ADS!",
     "iconURL" => "https://ipaspot.app/img/604.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5232,7 +5232,7 @@ return [
     "localizedDescription" => "Wake up feeling rested with Sleep Cycle. Track your sleep and get analysis",
     "iconURL" => "https://ipaspot.app/img/476.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5247,7 +5247,7 @@ return [
     "localizedDescription" => "Tweaked verison of PicsArt",
     "iconURL" => "https://ipaspot.app/img/593.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5262,7 +5262,7 @@ return [
     "localizedDescription" => "Lifetime Subscription",
     "iconURL" => "https://ipaspot.app/img/603.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5277,7 +5277,7 @@ return [
     "localizedDescription" => "Inject InApp Tweak. so u can Buy the filter for FREE!!",
     "iconURL" => "https://ipaspot.app/img/602.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5292,7 +5292,7 @@ return [
     "localizedDescription" => "No Ads On AnimeGT",
     "iconURL" => "https://ipaspot.app/img/589.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5307,7 +5307,7 @@ return [
     "localizedDescription" => "Free Platinum AccuWeather: Weather Radar",
     "iconURL" => "https://ipaspot.app/img/588.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5322,7 +5322,7 @@ return [
     "localizedDescription" => "Contains 30 Sticker Steve Jobs",
     "iconURL" => "https://ipaspot.app/img/587.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5337,7 +5337,7 @@ return [
     "localizedDescription" => "Contains 18 Sticker Jailbreak",
     "iconURL" => "https://ipaspot.app/img/586.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5352,7 +5352,7 @@ return [
     "localizedDescription" => "Premium Active!",
     "iconURL" => "https://ipaspot.app/img/584.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5367,7 +5367,7 @@ return [
     "localizedDescription" => "Tweaked version of Youtube with many cool features",
     "iconURL" => "https://ipaspot.app/img/040.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5382,7 +5382,7 @@ return [
     "localizedDescription" => "Added Tools: WhatsAppFix, WAImpactor, wag",
     "iconURL" => "https://ipaspot.app/img/551.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5397,7 +5397,7 @@ return [
     "localizedDescription" => "Tweaked version of WhatsApp with many cool features",
     "iconURL" => "https://ipaspot.app/img/553.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5412,7 +5412,7 @@ return [
     "localizedDescription" => "Enabled Installing on Jailbroken and non-jailbroken Devices.",
     "iconURL" => "https://ipaspot.app/img/581.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5427,7 +5427,7 @@ return [
     "localizedDescription" => "No Ads, No Play or Skip Limits, Max Streaming Quality Enabled",
     "iconURL" => "https://ipaspot.app/img/573.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5442,7 +5442,7 @@ return [
     "localizedDescription" => "Weather Live゜will provide you with current weather conditions and forecast",
     "iconURL" => "https://ipaspot.app/img/475.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5457,7 +5457,7 @@ return [
     "localizedDescription" => "Unlock Full Premium Features for the app.",
     "iconURL" => "https://ipaspot.app/img/555.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5472,7 +5472,7 @@ return [
     "localizedDescription" => "Unlock Full Premium Features for the app.",
     "iconURL" => "https://ipaspot.app/img/562.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5487,7 +5487,7 @@ return [
     "localizedDescription" => "Premium for free",
     "iconURL" => "https://ipaspot.app/img/560.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5502,7 +5502,7 @@ return [
     "localizedDescription" => "Premium for free",
     "iconURL" => "https://ipaspot.app/img/561.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5517,7 +5517,7 @@ return [
     "localizedDescription" => "Premium Unlocked",
     "iconURL" => "https://ipaspot.app/img/559.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5532,7 +5532,7 @@ return [
     "localizedDescription" => "No ADS!",
     "iconURL" => "https://ipaspot.app/img/557.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5547,7 +5547,7 @@ return [
     "localizedDescription" => "Unlock PRO",
     "iconURL" => "https://ipaspot.app/img/556.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5562,7 +5562,7 @@ return [
     "localizedDescription" => "No Ads",
     "iconURL" => "https://ipaspot.app/img/483.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5577,7 +5577,7 @@ return [
     "localizedDescription" => "Premium enabled",
     "iconURL" => "https://ipaspot.app/img/484.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5592,7 +5592,7 @@ return [
     "localizedDescription" => "Apply tiktok with built-in DLEasy tool",
     "iconURL" => "https://ipaspot.app/img/550.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5607,7 +5607,7 @@ return [
     "localizedDescription" => "Spotify with premium features",
     "iconURL" => "https://ipaspot.app/img/540.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5622,7 +5622,7 @@ return [
     "localizedDescription" => "No Login, No Coins Required!",
     "iconURL" => "https://ipaspot.app/img/548.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5637,7 +5637,7 @@ return [
     "localizedDescription" => "Tweaked version",
     "iconURL" => "https://ipaspot.app/img/547.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5652,7 +5652,7 @@ return [
     "localizedDescription" => "Ultimate Tweaks for Twitter",
     "iconURL" => "https://ipaspot.app/img/545.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5667,7 +5667,7 @@ return [
     "localizedDescription" => "An amazing Instagram alternative",
     "iconURL" => "https://ipaspot.app/img/448.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5682,7 +5682,7 @@ return [
     "localizedDescription" => "No ads version of cercube",
     "iconURL" => "https://ipaspot.app/img/341.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5697,7 +5697,7 @@ return [
     "localizedDescription" => "VIP Music, Download songs and listen to them Offline (320kbps) HI-FI, DTS Active, Enjoy Music!",
     "iconURL" => "https://ipaspot.app/img/509.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5712,7 +5712,7 @@ return [
     "localizedDescription" => "Planner for Instagram DUO Subscription.",
     "iconURL" => "https://ipaspot.app/img/531.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5727,7 +5727,7 @@ return [
     "localizedDescription" => "PRO unlocked",
     "iconURL" => "https://ipaspot.app/img/111.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5742,7 +5742,7 @@ return [
     "localizedDescription" => "Photomath Plus lifetime",
     "iconURL" => "https://ipaspot.app/img/529.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5757,7 +5757,7 @@ return [
     "localizedDescription" => "Banner ads are disabled",
     "iconURL" => "https://ipaspot.app/img/477.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5772,7 +5772,7 @@ return [
     "localizedDescription" => "Flipagram Premium Lifetime",
     "iconURL" => "https://ipaspot.app/img/527.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5787,7 +5787,7 @@ return [
     "localizedDescription" => "Free All Filter",
     "iconURL" => "https://ipaspot.app/img/526.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5802,7 +5802,7 @@ return [
     "localizedDescription" => "OfficeSuite Premium Lifetime.",
     "iconURL" => "https://ipaspot.app/img/524.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5817,7 +5817,7 @@ return [
     "localizedDescription" => "Unlocked Pro Version for Life Time",
     "iconURL" => "https://ipaspot.app/img/519.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5832,7 +5832,7 @@ return [
     "localizedDescription" => "Unlock to pro",
     "iconURL" => "https://ipaspot.app/img/522.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5847,7 +5847,7 @@ return [
     "localizedDescription" => "Unlocked pro",
     "iconURL" => "https://ipaspot.app/img/521.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5862,7 +5862,7 @@ return [
     "localizedDescription" => "Pro Unlocked",
     "iconURL" => "https://ipaspot.app/img/520.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5877,7 +5877,7 @@ return [
     "localizedDescription" => "No Ads, High Quality Stream, Downloads, Unlimited Skips, Unrestricted country, No Delay Button Skip, No 180 minutes timeout",
     "iconURL" => "https://ipaspot.app/img/048.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5892,7 +5892,7 @@ return [
     "localizedDescription" => "Download images & videos from social apps easily! Long press to save video and image",
     "iconURL" => "https://ipaspot.app/img/508.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5907,7 +5907,7 @@ return [
     "localizedDescription" => "Free Premium Hotspot Shield.",
     "iconURL" => "https://ipaspot.app/img/101.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5922,7 +5922,7 @@ return [
     "localizedDescription" => "Unlimited Pings, Hide Read Status, Hide Typing, Timed Messages Forever, Confirm Voice Call and Video Call, Hide StatusBar, Disable Ads, Full Screen For iPAD and iPhone X",
     "iconURL" => "https://ipaspot.app/img/339.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5937,7 +5937,7 @@ return [
     "localizedDescription" => "WhatsAll by DzMohaipa : Bringing the most-requested features to WhatsApp.",
     "iconURL" => "https://ipaspot.app/img/456.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5952,7 +5952,7 @@ return [
     "localizedDescription" => "Clean your phone's space, quickly and easily. Tweaked version no ADS!",
     "iconURL" => "https://ipaspot.app/img/481.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5967,7 +5967,7 @@ return [
     "localizedDescription" => "Twitter Labs unlocks a range hidden settings from within the app that you typically couldn’t access on a stock device.",
     "iconURL" => "https://ipaspot.app/img/460.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5982,7 +5982,7 @@ return [
     "localizedDescription" => "Download songs from official SoundCloud app.",
     "iconURL" => "https://ipaspot.app/img/249.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -5997,7 +5997,7 @@ return [
     "localizedDescription" => "Stream Japan's most popular anime with Crunchyroll.",
     "iconURL" => "https://ipaspot.app/img/458.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6012,7 +6012,7 @@ return [
     "localizedDescription" => "Full access unlocked",
     "iconURL" => "https://ipaspot.app/img/115.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6027,7 +6027,7 @@ return [
     "localizedDescription" => "Add save button from DM and also copy link",
     "iconURL" => "https://ipaspot.app/img/451.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6042,7 +6042,7 @@ return [
     "localizedDescription" => "An amazing Twitter alternative",
     "iconURL" => "https://ipaspot.app/img/438.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6057,7 +6057,7 @@ return [
     "localizedDescription" => "Premium, All Chapters Unlocked",
     "iconURL" => "https://ipaspot.app/img/109.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6072,7 +6072,7 @@ return [
     "localizedDescription" => "Features: No Ads",
     "iconURL" => "https://ipaspot.app/img/385.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6087,7 +6087,7 @@ return [
     "localizedDescription" => "DRM bypass",
     "iconURL" => "https://ipaspot.app/img/112.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6102,7 +6102,7 @@ return [
     "localizedDescription" => "Modified version of Kik that makes gallery images seem as if they were taken by the camera.",
     "iconURL" => "https://ipaspot.app/img/401.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6117,7 +6117,7 @@ return [
     "localizedDescription" => "All premium features unlocked (except Offline Sync).",
     "iconURL" => "https://ipaspot.app/img/100.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6132,7 +6132,7 @@ return [
     "localizedDescription" => "Premium unlocked.",
     "iconURL" => "https://ipaspot.app/img/102.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6147,7 +6147,7 @@ return [
     "localizedDescription" => "Tweaked version of Snapchat. Your account may be blocked, **Install at your own risk**",
     "iconURL" => "https://ipaspot.app/img/202.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6162,7 +6162,7 @@ return [
     "localizedDescription" => "Tweaked version with many features",
     "iconURL" => "https://ipaspot.app/img/261.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6177,7 +6177,7 @@ return [
     "localizedDescription" => "Full premium features unlocked",
     "iconURL" => "https://ipaspot.app/img/095.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6192,7 +6192,7 @@ return [
     "localizedDescription" => "Tweaked version of Snapchat. Your account may be blocked, **Install at your own risk**",
     "iconURL" => "https://ipaspot.app/img/074.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6207,7 +6207,7 @@ return [
     "localizedDescription" => "Tweaked version of Snapchat. Your account may be blocked, **Install at your own risk**",
     "iconURL" => "https://ipaspot.app/img/030.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6222,7 +6222,7 @@ return [
     "localizedDescription" => "Ads Removed in the app.",
     "iconURL" => "https://ipaspot.app/img/631.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6237,7 +6237,7 @@ return [
     "localizedDescription" => "Hack Features: PREMIUM. Duolingo, the most popular way to learn languages! It’s free, fun and effective.",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple113/v4/c1/e9/55/c1e95588-101e-0c94-de1c-76ad5a398e4d/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6252,7 +6252,7 @@ return [
     "localizedDescription" => "Download Videos, Download User's Profile Image, LIVE enhancements, Type more than 50 characters in live streams etc.",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple113/v4/cd/b3/cc/cdb3cc85-a7bb-dbe5-b0e8-a9fdef636a12/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6267,7 +6267,7 @@ return [
     "localizedDescription" => "Hack Features: Free Paid App. This app provides more control over the settings of the iPhone’s built-in camera",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/a0/50/0d/a0500dfd-9ba3-467f-94c9-b7fc49f027cc/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6282,7 +6282,7 @@ return [
     "localizedDescription" => "Hack Features: All Cameras Owned. NOMO was designed to help casual photographers to focus on taking pictures",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/15/77/d8/1577d87e-a04a-0151-0831-50f57bcf2ef6/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6297,7 +6297,7 @@ return [
     "localizedDescription" => "Hack Features: PREMIUM. Bazaart will help you make beautiful photo edits, gorgeous photo montages",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple124/v4/60/35/26/603526dd-30e4-8e60-2404-c952084a7ea7/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6312,7 +6312,7 @@ return [
     "localizedDescription" => "Hack Features: PREMIUM. Manly is a powerful photo editor for men",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple114/v4/bb/00/0e/bb000e40-76fa-7310-c679-b796115c09e2/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6327,7 +6327,7 @@ return [
     "localizedDescription" => "Hack Features: PREMIUM. Perfect Video is a really EASY TO USE and Full featured video/slideshow editing app.",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/2e/b0/e4/2eb0e4cd-e5a2-83d9-80de-9aa1a0fac862/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6342,7 +6342,7 @@ return [
     "localizedDescription" => "Hack Features: Remove Sponsored Twitter Post",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/0b/89/a3/0b89a34c-e90a-2469-8872-0e6b3155c40d/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6357,7 +6357,7 @@ return [
     "localizedDescription" => "Hack Features: PREMIUM. Edit your photos to perfection with this fast, powerful, and easy photo editor!",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/e8/e3/77/e8e37725-00b2-a75a-6ff7-8dbe33b6d26f/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6372,7 +6372,7 @@ return [
     "localizedDescription" => "Hack Features: PREMIUM. Coloring has been shown to reduce stress and anxiety.",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/69/0a/f6/690af6a7-cab1-e9e2-001d-4e3e5be50732/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6387,7 +6387,7 @@ return [
     "localizedDescription" => "Hack Features: Free PREMIUM (Press Purchase then cancle)",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/e9/91/73/e99173af-3151-6598-6ae1-943b7044801e/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6402,7 +6402,7 @@ return [
     "localizedDescription" => "Hack Features: PREMIUM. Learn a foreign language with 10 words a day",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple113/v4/1f/b8/48/1fb848f2-711a-c2b1-95dc-d333259ae9e6/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6417,7 +6417,7 @@ return [
     "localizedDescription" => "Hack Features: PREMIUM. Wanna record a blockbuster to amaze your friends? Download Magi+ now!",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple123/v4/f3/0f/4b/f30f4b88-87d9-2474-5a9a-4eb92cb2913e/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6432,7 +6432,7 @@ return [
     "localizedDescription" => "Features: Cracked/FREE IPA. Premium Enabled! Your private math tutor, solves any math problem with steps!",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple123/v4/d1/4c/12/d14c124b-3f39-0919-695f-6d2ce0cbb57f/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6447,7 +6447,7 @@ return [
     "localizedDescription" => "Hack Features: PREMIUM. Learn Spanish, French, Italian, German, English, Chinese and 6 other languages.",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple124/v4/a4/2e/e6/a42ee6af-113f-a7ea-64fd-48f271394c7a/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6462,7 +6462,7 @@ return [
     "localizedDescription" => "Hack Features: PREMIUM. The smart Carly solution accesses your car’s inner secrets and translates complex data into powerful insights about your car.",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple114/v4/9c/d1/33/9cd1333b-cb23-bd77-8d10-1b28a84834bd/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6477,7 +6477,7 @@ return [
     "localizedDescription" => "Hack Features: PREMIUM. Perfect your features with personalized fine-tuning",
     "iconURL" => "https://is5-ssl.mzstatic.com/image/thumb/Purple124/v4/92/cd/5c/92cd5cdd-6b2c-3260-a2e4-c9524db085d3/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6492,7 +6492,7 @@ return [
     "localizedDescription" => "Hack Features: PREMIUM. Learn Japanese, Spanish, French, Korean, German, Mandarin Chinese, Russian or Vietnamese with LingoDeer!",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/32/31/f5/3231f593-f5d9-f61d-2fd6-a38d578089dd/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6507,7 +6507,7 @@ return [
     "localizedDescription" => "Hack Features: PREMIUM. Piano Academy is for anyone who's looking to learn the piano from scratch",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple113/v4/e0/d2/27/e0d2272b-1aae-5c95-3f09-35bdb1ab2467/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6522,7 +6522,7 @@ return [
     "localizedDescription" => "Hack Features: PREMIUM. With Mondly you can learn 33 languages.",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple113/v4/74/eb/31/74eb319c-ec52-8246-7007-a1ca3e9925ae/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6537,7 +6537,7 @@ return [
     "localizedDescription" => "Hack Features: Premium Enabled. The fast, fun way to learn, play and master the piano, guitar, bass or ukulele.",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/f1/8f/00/f18f003f-3634-b63a-a64f-cacdc65c81f3/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6552,7 +6552,7 @@ return [
     "localizedDescription" => "Hack Features: PREMIUM. NOTE: Do not login into your doupai account",
     "iconURL" => "https://is3-ssl.mzstatic.com/image/thumb/Purple113/v4/db/79/59/db7959b4-7007-8e8d-b517-c543a79386b1/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6567,7 +6567,7 @@ return [
     "localizedDescription" => "Hack Features: Remove Sponsored Post",
     "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple124/v4/08/b6/4c/08b64c54-9201-47d6-ae17-e33ca1be5a0f/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6582,7 +6582,7 @@ return [
     "localizedDescription" => "Hack Features: Free No Ads Purchase (Press Cancle)",
     "iconURL" => "https://is2-ssl.mzstatic.com/image/thumb/Purple113/v4/d0/75/2d/d0752d2f-5fbe-33a4-3657-37e17f9ce9ae/source/512x512bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6597,7 +6597,7 @@ return [
     "localizedDescription" => "Hack Features: Free Apollo Pro Purchase (Not Ultra)",
     "iconURL" => "https://is1-ssl.mzstatic.com/image/thumb/Purple123/v4/04/1d/e2/041de250-416f-741e-6b85-10f0d7ef9177/source/100x100bb.jpg",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6612,7 +6612,7 @@ return [
     "localizedDescription" => "Hack Features: PREMIUM + Unlimited Downloads + No Ads + Sync your reading progress",
     "iconURL" => "https://ipaspot.app/img/manga.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6627,7 +6627,7 @@ return [
     "localizedDescription" => "Line 2 for iOS with tweaked features",
     "iconURL" => "https://ipaspot.app/img/line2.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6642,7 +6642,7 @@ return [
     "localizedDescription" => "Tumblr++ for iOS with tweaked features",
     "iconURL" => "https://ipaspot.app/img/tumblr.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6657,7 +6657,7 @@ return [
     "localizedDescription" => "Smax++ for iOS with tweaked features",
     "iconURL" => "https://ipaspot.app/img/smax.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6672,7 +6672,7 @@ return [
     "localizedDescription" => "Reports+ for iOS with tweaked features",
     "iconURL" => "https://ipaspot.app/img/reports+.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6687,7 +6687,7 @@ return [
     "localizedDescription" => "LastPass++ for iOS with tweaked features",
     "iconURL" => "https://ipaspot.app/img/lastpass.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6702,7 +6702,7 @@ return [
     "localizedDescription" => "Enables Install on non-jailbroken Devices.",
     "iconURL" => "https://ipaspot.app/img/quantumultx.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6717,7 +6717,7 @@ return [
     "localizedDescription" => "Enables Install on non-jailbroken Devices.",
     "iconURL" => "https://ipaspot.app/img/quantumultplus.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ],
@@ -6732,7 +6732,7 @@ return [
     "localizedDescription" => "Enabled Full Version.",
     "iconURL" => "https://ipaspot.app/img/unifiedremote.png",
     "tintColor" => "018084",
-    "size" => 4000000000,
+    "size" => 0,
     "screenshotURLs" => [],
     "permissions" => []
   ]

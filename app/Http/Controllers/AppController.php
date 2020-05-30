@@ -74,37 +74,8 @@ class AppController extends Controller
             "iconURL" => $ipa->apps[0]['icon'],
             "tintColor" => "018084",
             "size" => $ipa->apps[0]['size'] ?? 0,
-            "screenshotURLs" => [
-              // "https://user-images.githubusercontent.com/705880/78942028-acf54300-7a6d-11ea-821c-5bb7a9b3e73a.PNG"
-            ],
-            "permissions" => [
-              // [
-              //   "type" => "background-fetch",
-              //   "usageDescription" => "AltStore periodically refreshes apps in the background to prevent them from expiring."
-              // ],
-            ],
-            // "name" => "iNDS",
-            // "bundleIdentifier" => "net.nerd.iNDS",
-            // "developerName" => "Revival of the Nintendo DS emulator for iOS.",
-            // "version" => "1.10.7",
-            // "versionDate" => "2020-02-10",
-            // "versionDescription" => "Version 1.10.7 adds better support for Dark Mode on iOS, thus fixing #129 and #148. Additionally, landscape mode support for modern iPhones (after iPhone X) was improved, fixing #153. Additionally, a bug was fixed in which the status bar would appear in-game and not be dismissable.",
-            // "downloadURL" => "https://github.com/iNDS-Team/iNDS/releases/download/v1.10.7/iNDS.ipa",
-            // "localizedDescription" => "iNDS is a derivation of the previous Nintendo DS apps for iOS, nds4ios and Nitrogen. The iNDS Team release of iNDS is a fork of the original iNDS emulator by William Cobb. iNDS Team aims to create a version that is driven by support from the community, adding trusted contributors to the team over time, so that pull requests and issues do not sit untouched.\n\nCurrently, emulation is powered by the DeSmuME threaded ARM interpreter and runs at nearly full speed on the iPhone 5 and above. Due to the need to mmap the entire ROM into memory, older devices with only 256MB of RAM are not supported. These devices include the iPod Touch 4, iPad 1, iPhone 3GS, and anything below those devices.",
-            // "iconURL" => "https://inds.nerd.net/Resources/required/AppIcon256.png",
-            // "tintColor" => "FC2125",
-            // "size" => 857669,
-            // "screenshotURLs" => [
-            //   "https://static.appdb.to/images/cydia-1900000021-iphone-0.png",
-            //   "https://static.appdb.to/images/cydia-1900000021-iphone-1.png",
-            //   "https://static.appdb.to/images/cydia-1900000021-iphone-2.png"
-            // ],
-            // "permissions" => [
-            //   [
-            //     "type" => "photos",
-            //     "usageDescription" => "Allows iNDS to use images from your Photo Library as game artwork."
-            //   ],
-            // ],
+            "screenshotURLs" => [],
+            "permissions" => [],
           ];
         }
         
