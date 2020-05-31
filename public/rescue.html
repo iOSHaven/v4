@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iOS Haven - Rescue</title>
+    <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+
+    <style>
+        .text-primary {
+            color: #ff8738;
+        }
+
+        .bg-primary {
+            background-color: #ff8738;
+        }
+
+        button {
+            box-shadow: 0px 0px 2px #ff8738;
+        }
+
+        header {
+            /* background-image: url(https://storage.ihvn.dev/IMG/wavy.png); */
+            background-image: url(./wavy.png);
+            background-attachment: fixed;
+            height: 400px;
+            margin-bottom: -54px;
+            text-shadow: 0px 0px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        nav {
+            background-color: rgba(0, 0, 0, 1)
+        }
+
+        @media only screen and (max-width: 768px) {
+            header {
+                background-size: contain;
+            }
+        }
+
+        .container,
+        section {
+            max-width: 700px;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body class="text-lg">
+    <main>
+        <header class="bg-blue-900 text-center py-12 text-white text-2xl">
+            <h1 class="text-6xl mb-1 font-bold">Rescue</h1>
+            <div class="mb-4">A local iOS signing service.</div>
+            <div class="mt-4">
+                <a href="https://storage.ihvn.dev/Rescue%20Server%20Release.zip"
+                    class="px-10 py-3 rounded-full bg-primary inline-block" download>DOWNLOAD</a>
+            </div>
+
+
+            <p class="text-xs mt-3">shasum</p>
+            <div class="mb-3 p-2 rounded-lg bg-gray-600 border border-gray-900 mx-auto" style="max-width: 700px;">
+                <p class="text-lg">39d1d2b6a68560f9822e312bf7f8f543e8ddabf3</p>
+            </div>
+
+        </header>
+        <nav class="sticky top-0 flex items-center justify-center p-4 text-sm mb-8">
+            <a href="#" class="text-white uppercase mx-3 text-center">How it works</a>
+            <a href="#" class="text-white uppercase mx-3 text-center">How to Install</a>
+            <a href="#" class="text-white uppercase mx-3 text-center">More downloads</a>
+        </nav>
+        <section>
+            <h2 class="text-5xl mb-1 font-bold text-center mb-12 mt-16">How does it work?</h2>
+            <div class="flex justify-between flex-wrap">
+                <div class="text-center">
+                    <img class="block" src="https://storage.ihvn.dev/IMG/setup-1.png" alt="" width="200">
+                    <p style="width: 200px;">Run a server on your Apple computer.</p>
+                </div>
+                <div class="text-center">
+                    <img class="block" src="https://storage.ihvn.dev/IMG/setup-2.png" alt="" width="200">
+                    <p style="width: 200px;">The server will talk to your phone.</p>
+                </div>
+                <div class="text-center">
+                    <img class="block" src="https://storage.ihvn.dev/IMG/setup-3.png" alt="" width="200">
+                    <p style="width: 200px;">Use apps that you download.</p>
+                </div>
+
+            </div>
+        </section>
+        <hr class="my-12">
+        <section>
+            <h2 class="text-5xl mb-1 font-bold mt-32 mb-8 text-center">How to Install?</h2>
+
+            <div class="flex items-start">
+                <span class="text-6xl text-primary font-bold mr-4" style="margin-top:-1rem">1</span>
+                <div style="margin-top: 0.3rem">
+                    <div class="font-bold">Launch Rescue Server</div>
+                    <p>Leave Rescue Server running in the background on your computer.</p>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <img src="https://storage.ihvn.dev/IMG/setup-4.png" alt="" class="w-full">
+            </div>
+
+
+            <!-- <div class="flex flex-wrap w-full justify-between"> -->
+            <div class="flex items-start mb-8">
+                <span class="text-6xl text-primary font-bold mr-4" style="margin-top:-1rem">2</span>
+                <div style="margin-top: 0.3rem">
+                    <div class="font-bold">Connect to WiFi</div>
+                    <p>Enable iTunes WiFi Sync and connect to the same WiFi as Rescue Server.</p>
+                </div>
+            </div>
+            <div class="mb-4">
+                <img src="https://storage.ihvn.dev/IMG/setup-5.png" alt="" class="w-full">
+            </div>
+            <div class="flex items-start mb-8">
+                <span class="text-6xl text-primary font-bold mr-4" style="margin-top:-1rem">3</span>
+                <div style="margin-top: 0.3rem">
+                    <div class="font-bold">Download Apps</div>
+                    <p>Browse and download apps directly from Rescue.</p>
+                </div>
+            </div>
+            <div class="mb-4">
+                <img src="https://storage.ihvn.dev/IMG/setup-6.png" alt="" class="w-full">
+            </div>
+            <div class="flex items-start mb-8">
+                <span class="text-6xl text-primary font-bold mr-4" style="margin-top:-1rem">4</span>
+                <div style="margin-top: 0.3rem">
+                    <div class="font-bold">Apps Refresh Automatically</div>
+                    <p>Apps are refreshed in the background when on same WiFi as Rescue Server.</p>
+                </div>
+            </div>
+            <!-- </div> -->
+
+        </section>
+
+        <hr class="my-12">
+        <section>
+            <h2 class="text-5xl mb-1 font-bold mt-32 mb-8 text-center">More Downloads</h2>
+            <p class="text-center mb-4">If you want more downloads, check out our main website. </p>
+            <a href="https://ioshaven.com" class="block">
+                <img class="m-auto block"
+                    src="https://storage.ihvn.dev/providers/ed85446169d8767546bac065a1ea1b2d94e134ddf41e7309887f5f9a7e896a87.jpeg"
+                    alt="" width="200">
+            </a>
+        </section>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    </main>
+
+</body>
+
+</html>
