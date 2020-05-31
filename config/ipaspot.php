@@ -16,6 +16,21 @@ return [
     "screenshotURLs" => [],
     "permissions" => []
   ],
+    [
+    "name" => "Injustice 2 Hack",
+    "bundleIdentifier" => "com.ioshaven.injustice2",
+    "developerName" => "iOS Gods",
+    "version" => "3.6",
+    "versionDate" => "2020-5-31",
+    "versionDescription" => "Hacked Game",
+    "downloadURL" => "https://app.iosgods.com/store/download-ipa/1635-injustice-2-hack",
+    "localizedDescription" => "Hacked Game",
+    "iconURL" => "https://is4-ssl.mzstatic.com/image/thumb/Purple123/v4/f7/6d/c5/f76dc58e-7e37-9c97-626e-4680707cd401/source/512x512bb.jpg",
+    "tintColor" => "018084",
+    "size" => 0,
+    "screenshotURLs" => [],
+    "permissions" => []
+  ],
   [
     "name" => "Detector",
     "bundleIdentifier" => "com.ioshaven.MmFidGFqanhubmthcHp4dTNrOTVudm4",
