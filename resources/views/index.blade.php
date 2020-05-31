@@ -27,6 +27,13 @@
         </a>
     </div>
 
+    <div class="flex items-center justify-center">
+      <a href="/rescue.html" class='hide-webapp mx-1 mb-16 flex items-center justify-center font-bold rounded-full text-sm px-8 py-5 {{ theme('bg-red', 'text-white') }}'>
+        <i class="fas fa-laptop mr-3 fa-lg"></i>
+        RESCUE - ALTSTORE
+      </a>
+  </div>
+
     
     <img src="/img/iphonex.png" class="w-full">
   </div>
