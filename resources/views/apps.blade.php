@@ -9,7 +9,7 @@
     <div class="container">
       <div class="row" id="apps">
 
-        <div class="relative bg-yellow-light rounded-full pl-1 pr-3">
+        {{-- <div class="relative bg-yellow-light rounded-full pl-1 pr-3">
           <div class="flex items-center mb-3">
             <a href="https://twitter.com/iOSHavencom/status/1267646209084317698" class="absolute top-0 left-0 right-0 bottom-0"></a>
             <div class="flex py-1 pointer-events-none flex-grow rounded-full">
@@ -23,7 +23,7 @@
               <i class="fal fa-chevron-right fa-2x {{ theme('text-gray-400') }}"></i>
             </div>
           </div>
-        </div>
+        </div> --}}
 
           @foreach($apps as $model)
             @if(class_basename($model) == 'App')
