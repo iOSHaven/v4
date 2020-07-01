@@ -277,9 +277,9 @@
       <script src="{{ mix('/js/main.min.js') }}"></script>
 
       @if(empty($hide_ads))
-          <script>
+          {{-- <script>
               (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
+          </script> --}}
       @endif
 
       @include('propeller')
