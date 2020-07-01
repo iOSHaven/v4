@@ -6,8 +6,8 @@ dd(url($model->url))
 
 @section('header')
     <title>{{ $app->name }}</title>
-    <meta http-equiv="refresh" content="1; url={{ $url }}">
-    {!! $ad->get("popunder") !!}
+    {{-- <meta http-equiv="refresh" content="1; url={{ $url }}"> --}}
+    {{-- {!! $ad->get("popunder") !!} --}}
 @endsection
 
 @section('content')

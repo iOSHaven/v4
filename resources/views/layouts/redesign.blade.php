@@ -277,10 +277,12 @@
       <script src="{{ mix('/js/main.min.js') }}"></script>
 
       @if(empty($hide_ads))
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+          <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
       @endif
+
+      @include('propeller')
 
       @yield("footer")
 

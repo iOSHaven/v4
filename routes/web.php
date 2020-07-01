@@ -92,8 +92,8 @@ Route::post('/app/update', 'AppController@update');
 Route::post('/app/remove', 'AppController@remove');
 Route::post('/app/token', 'AppController@token');
 
-Route::get('/install/{itms}', 'AppController@install');
-Route::get('/download/{ipa}', 'AppController@download');
+Route::get('/install/{itms}', 'AppController@install')->name('install');
+Route::get('/download/{ipa}', 'AppController@download')->name('download');
 Route::get('/install/uid/{app}', 'AppController@installUid');
 Route::get('/download/uid/{app}', 'AppController@downloadUid');
 
@@ -104,6 +104,7 @@ Route::group(["prefix" => "shortcuts", "middleware" => ["tab:Shortcuts", "back:S
 
 Route::get('/altstore/burrito/apps.json', 'AppController@burrito');
 Route::get('/altstore/apps.json', 'AppController@showAltstoreJson');
+
 Route::group(["prefix" => "apps", "middleware" => ["tab:Apps", "back:Apps"]], function () {
   Route::redirect('/signednow', '/apps?type=signed&working=true', 301);
   Route::get('/{tag?}', 'AppController@page')->name('apps');
@@ -123,9 +124,9 @@ Route::group(["prefix" => "cashier"], function () {
 
 
 
-Route::get('/games', 'AppController@games')->middleware('tab:Games', 'back:Games');
-Route::get('/jailbreaks', 'AppController@jailbreaks')->middleware('tab:Jailbreaks', 'back:Jailbreaks');
-Route::get('/updates{tag?}', 'AppController@updates')->middleware('tab:Updates', 'back:Updates');
+Route::get('/games', 'AppController@games')->middleware('tab:Games', 'back:Games')->name('games');
+Route::get('/jailbreaks', 'AppController@jailbreaks')->middleware('tab:Jailbreaks', 'back:Jailbreaks')->name('jailbreaks');
+Route::get('/updates{tag?}', 'AppController@updates')->middleware('tab:Updates', 'back:Updates')->name('updates');
 
 Route::get('/plist', 'HomeController@getPlist');
 Route::post('/plist', 'HomeController@postPlist');
