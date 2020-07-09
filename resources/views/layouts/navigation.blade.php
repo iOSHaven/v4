@@ -57,7 +57,7 @@
         
         <div class="md:hidden text-xs leading-none"><small>Updates</small></div>
         
-        <div class="hidden md:inline-block p-2 -mt-px">Updatessss</div>
+        <div class="hidden md:inline-block p-2 -mt-px">Updates</div>
       </a>
       <a href="/search" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Search') }}">
         <i class="md:hidden fas fa-search"></i>
