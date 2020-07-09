@@ -3,7 +3,7 @@
 $name = Route::currentRouteName();
 if(!empty($name))
 {
-    $type = config('adLayout')[$name];
+    $type = config('adLayout')[$name] ?? null;
 }
 @endphp
 
