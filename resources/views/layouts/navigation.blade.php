@@ -43,10 +43,21 @@
         <div class="md:hidden text-xs leading-none"><small>Games</small></div>
         <div class="hidden md:inline-block p-2 -mt-px">Games</div>
       </a>
-      <a href="/updates" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Updates') }}">
-        <i class="md:hidden fas fa-bell"></i>
+      <a href="/updates" class="text-center px-2 pb-2 py-1 md:p-0 relative {{ tab('Updates') }}">
+        <div class="relative">
+          <i class="md:hidden fas fa-bell"></i>
+          @if($hasUpdates)
+            <div class="absolute top-0 right-0">
+              <div class="px-1 text-xs rounded-full display-inline {{ theme('bg-red', 'text-white') }}">
+                {{ $updateCount }}
+              </div>
+            </div>
+          @endif
+        </div>
+        
         <div class="md:hidden text-xs leading-none"><small>Updates</small></div>
-        <div class="hidden md:inline-block p-2 -mt-px">Updates</div>
+        
+        <div class="hidden md:inline-block p-2 -mt-px">Updatessss</div>
       </a>
       <a href="/search" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Search') }}">
         <i class="md:hidden fas fa-search"></i>

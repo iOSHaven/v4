@@ -66,8 +66,8 @@ class AppBuilder extends Builder
     //     ]);
     // }
 
-    public function recently_updated() {
-        return $this->where('updated_at', '>', now()->subDays(3))->orderBy('updated_at', 'desc');
+    public function recently_updated($days=3) {
+        return $this->where('updated_at', '>', now()->subDays($days))->orderBy('updated_at', 'desc');
     }
 
     public function search(Request $r, $search=null) {
