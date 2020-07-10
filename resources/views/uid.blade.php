@@ -49,7 +49,7 @@
 
 
           {{-- APPLICATION FEATURES --}}
-          @component('components.collapse', ["title" => "Description", "pre" => true, "show" => false])
+          @component('components.collapse', ["title" => "Description", "pre" => true, "show" => true])
             {{ $app->description }}
           @endcomponent
 
