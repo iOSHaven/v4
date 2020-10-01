@@ -151,13 +151,17 @@ Route::get('/credits', 'StaticPageController@getCreditsPage');
 Route::get('/faq', 'StaticPageController@getFaqPage');
 Route::get('/cydia', 'StaticPageController@getCydiaPage');
 Route::get('/betas', 'StaticPageController@getBetasPage');
+Route::get('/skins', 'StaticPageController@getSkinsPage');
 Route::get('/jailbreak', 'StaticPageController@getJailbreakPage');
 Route::get('/aboutUs', 'StaticPageController@getAboutUsPage');
 Route::get('/fight-for-net-neutrality', 'StaticPageController@getFightForNetNeutrality');
 // Route::get('/shortcuts', 'StaticPageController@getShortcutsPage');
 
 Route::post('/close_announcement', 'StaticPageController@closeAnnouncement');
-
+Route::post('/payment/add-funds/paypal', 'PaymentController@payWithPaypal')->name('paywithpaypal');
+Route::get('/payment/add-funds/paypal/status', 'PaymentController@getPaymentStatus')->name('ppStatus');
+Route::post('/paypal-log', 'PaymentController@logPayment')->middleware('auth');
+Route::get('/skin/{uuid}', 'PaymentController@downloadSkin')->name('skin');
 
 Auth::routes();
 

@@ -7,6 +7,7 @@ use App\Ipa;
 use App\Itms;
 use App\Provider;
 use App\Shortcut;
+use App\Skin;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
@@ -167,6 +168,15 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                         '_admin_only' => true,
                         '_icon' => fa('fas fa-database'),
                         '_url'    => '/logs',
+                    ],
+
+                    'Skins' => [
+                        '_can' => ['viewAny', Skin::class],
+                        '_icon' => fa('fas fa-moon-stars'),
+                        '_url'    => '/nova/resources/skins',
+                        '_params' => [
+                            "resourceName" => "skins"
+                        ]
                     ],
             
                     'Account' => [

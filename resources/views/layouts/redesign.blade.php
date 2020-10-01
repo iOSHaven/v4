@@ -91,6 +91,9 @@
   </script>
   <noscript><img height="1" width="1"src="https://www.facebook.com/tr?id=362444877957386&ev=PageView&noscript=1" /></noscript>
 
+  <script src="https://cdn.jsdelivr.net/npm/intersection-observer@0.7.0/intersection-observer.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.2/dist/lazyload.min.js"></script>
+
 
   {{-- PER VIEW HEADER CODE --}}
   @yield('header')
@@ -271,10 +274,12 @@
             {{--@include('layouts.footer')--}}
           @endif
       </div>
-
+      
+      
       <script src="{{ mix('/js/manifest.min.js') }}"></script>
       <script src="{{ mix('/js/vendor.min.js') }}"></script>
       <script src="{{ mix('/js/main.min.js') }}"></script>
+
 
       @if(empty($hide_ads))
           {{-- <script>
@@ -285,6 +290,23 @@
       @include('propeller')
 
       @yield("footer")
+
+      <script>
+        function executeLazyFunction(element) {
+          var lazyFunctionName = element.getAttribute(
+            "data-lazy-function"
+          );
+          var lazyFunction = window[lazyFunctionName];
+          if (!lazyFunction) return;
+          lazyFunction(element);
+        }
+        var lazyLoadInstance = new LazyLoad({
+          unobserve_entered: true, // <- Avoid executing the function multiple times
+          callback_enter: executeLazyFunction // Assigning the function defined above
+        });
+        lazyLoadInstance.update();
+
+      </script>
 
       {{-- SCRIPT FOR LINKS IN STANDALONE APP --}}
       <script>

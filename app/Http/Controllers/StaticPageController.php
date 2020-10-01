@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\App;
 use App\Provider;
+use App\Skin;
 use Illuminate\Http\Request;
 use Session;
 use File;
@@ -106,6 +107,12 @@ class StaticPageController extends Controller
 
     public function getBetasPage() {
       return view('betas');
+    }
+
+    public function getSkinsPage() {
+      return view('skins', [
+        'skins' => Skin::get(),
+      ]);
     }
 
     public function getJailbreakPage() {

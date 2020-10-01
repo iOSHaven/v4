@@ -36,4 +36,8 @@ class User extends Authenticatable
     public function apps() {
         return $this->hasMany(App::class);
     }
+
+    public function skins() {
+        return $this->belongsToMany(Skin::class);
+    }
 }
