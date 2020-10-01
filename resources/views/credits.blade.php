@@ -24,6 +24,13 @@
       </div>
     </li>
     <li class="flex items-center justify-center my-1">
+      <div class="w-2/3">Matt - Social Media
+      </div>
+      <div class="w-1/3 text-right">
+       <a href="https://twitter.com/mattactular" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
+      </div>
+    </li>
+    <li class="flex items-center justify-center my-1">
       <div class="w-2/3">Nick - Nerk
       </div>
       <div class="w-1/3 text-right">
