@@ -52,7 +52,7 @@
 
             @if(count($skin->covers) > 1)
               <div class="swiper-pagination"></div>
-              <div class="slide-button-prev absolute top-0 left-0 bottom-0 ml-2 flex items-center" style="z-index: 100000">
+              {{-- <div class="slide-button-prev absolute top-0 left-0 bottom-0 ml-2 flex items-center" style="z-index: 100000">
                 <div class="p-3 rounded-full relative {{ theme('bg-white') }}">
                   <i class="fas fa-chevron-left fa-lg absolute left-0 right-0 bottom-0 top-0 flex items-center justify-center {{ theme('text-black') }}" style="margin-left: -3px;"></i>
                 </div>
@@ -62,7 +62,7 @@
                 <div class="p-3 rounded-full relative {{ theme('bg-white') }}">
                   <i class="fas fa-chevron-right fa-lg absolute left-0 right-0 bottom-0 top-0 flex items-center justify-center {{ theme('text-black') }}" style="margin-right: -3px;"></i>
                 </div>
-              </div>
+              </div> --}}
             @endif
         
         </div>
@@ -172,10 +172,10 @@
     },
 
     // Navigation arrows
-    navigation: {
-      nextEl: '.slide-button-next',
-      prevEl: '.slide-button-prev',
-    },
+    // navigation: {
+    //   nextEl: '.slide-button-next',
+    //   prevEl: '.slide-button-prev',
+    // },
   })
 
   paypal.Buttons({
