@@ -25,4 +25,8 @@ class Skin extends Model
     public function getCoversAttribute() {
         return explode("\n", $this->images);
     }
+
+    public function getAmountAttribute() {
+        return $this->onSale ? $this->salePrice : $this->price;
+    }
 }

@@ -21,7 +21,9 @@
     @foreach($skins as $skin)
       <div class="{{ theme('bg-white', 'text-black') }} rounded-lg overflow-hidden mb-3 shadow relative">
         <div class="absolute top-0 right-0 mr-3 mt-3 hidden" id="skintag-{{$skin->uuid}}" style="z-index: 100000">
-          @if($skin->onSale)
+          @if($skin->amount == 0)
+            <span class="bg-green-light uppcase font-bold text-black-light px-3 py-1 rounded-lg">free</span>
+          @elseif($skin->onSale)
             <i class="fas fa-tag fa-2x text-green-dark"></i>
           @endif
         </div>
@@ -59,27 +61,29 @@
         <div class="flex justify-between align-center p-3">
           <div>
             <div class="text-2xl font-bold mr-2">{{ $skin->name }}</div>
-            @if($skin->onSale)
+            @if (!$skin->amount == 0)
+                @if($skin->onSale)
                   <span class="mr-1 font-bold">${{ $skin->salePrice }}</span>
                   <span class="line-through" style="opacity: 0.5">${{ $skin->price }}</span>
                 @else
                   <span class="font-bold">${{ $skin->price }}</span>
                 @endif
+            @endif
           </div>
             
             
           
           <div class="flex items-center">
-            <button class='flex mr-3 items-center font-bold rounded-full pointer-events-auto shadow text-sm {{ theme("bg-white", "text-black") }}' onclick="showDetail('{{ $skin->description }}')"><i class="fas fa-info-circle fa-2x -mb-1"></i></button>
+            <button class='flex mr-3 items-center font-bold rounded-full pointer-events-auto shadow text-sm -mt-1 {{ theme("bg-white", "text-black") }}' onclick="showDetail('{{ $skin->description }}')"><i class="fas fa-info-circle fa-2x -mb-1"></i></button>
             @auth
-              @if(Auth::user()->skins->contains($skin->id))
-              <a href="{{ URL::temporarySignedRoute(
-                'skin', now()->addMinutes(10), ['uuid' => $skin->uuid]
-                ) }}" download class='ppbtn flex items-center font-bold rounded-full pointer-events-auto shadow text-sm px-5 py-1 text-white-light {{ theme("bg-green") }}'>Download</a>
+              @if(Auth::user()->skins->contains($skin->id) || $skin->amount == 0)
+                <a href="{{ URL::temporarySignedRoute(
+                  'skin', now()->addMinutes(10), ['uuid' => $skin->uuid]
+                  ) }}" download class='ppbtn flex items-center font-bold rounded-full pointer-events-auto shadow text-sm px-5 py-1 text-white-light {{ theme("bg-green") }}'>Download</a>
               @else
-              <button class='ppbtn flex items-center font-bold rounded-full pointer-events-auto shadow text-sm px-5 py-1 text-white-light {{ theme("bg-blue") }}' data-ppuuid="{{$skin->uuid}}" data-price="{{ $skin->onSale ? $skin->salePrice : $skin->price }}" onclick="showPP(this)">
-                <span class="mr-1">Buy</span>
-              </button>
+                <button class='ppbtn flex items-center font-bold rounded-full pointer-events-auto shadow text-sm px-5 py-1 text-white-light {{ theme("bg-blue") }}' data-ppuuid="{{$skin->uuid}}" data-price="{{ $skin->amount }}" onclick="showPP(this)">
+                  <span class="mr-1">Buy</span>
+                </button>
               @endif
             @else
                 <a href="/login" class='flex items-center font-bold rounded-full pointer-events-auto shadow text-sm px-5 py-1 text-white-light {{ theme("bg-blue") }}'>Login</a>
