@@ -13,9 +13,17 @@
 
 <section>
   <div class="container">
-    <div class="w-full bg-yellow-light p-3 rounded-lg text-black-light text-center uppercase mb-4">
+    <div class="mb-4 {{ theme('text-black') }}">
+      <div class="text-4xl">Skins</div>
+      <p>Download icon packs to customize your iOS 14 experience. Get <span class="font-bold uppercase underline">free updates</span> on all icon packs! <a href="https://www.macrumors.com/how-to/change-app-icons/" class="text-blue-dark underline">Tutorial</a></p>
+    </div>
+    {{-- <div class="w-full bg-yellow-light p-3 rounded-lg text-black-light text-center uppercase mb-4">
       iOS 14 Required
     </div>
+
+    <div class="w-full bg-green-light p-3 rounded-lg text-black-light text-center uppercase mb-4">
+      Unlimited Free Updates
+    </div> --}}
 
 
     @foreach($skins as $skin)
