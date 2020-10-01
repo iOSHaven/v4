@@ -37,13 +37,6 @@
        <a href="https://discord.gg/kK4TJBf" target="_blank"><i class="fab fa-discord fa-lg"></i></a>
       </div>
     </li>
-    <li class="flex-cc text my-1">
-      <div class="col-8">Nick - Nerk
-      </div>
-      <div class="col-4 text-right">
-       <a href="https://discord.gg/kK4TJBf" target="_blank"><i class="fab fa-discord"></i></a>
-      </div>
-    </li>
   </ul>
 </div>
 
