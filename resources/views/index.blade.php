@@ -9,30 +9,39 @@
   
   <div class="mx-auto w-full text-center" style="max-width: 700px">
     <h1 class="mb-2 block text-6xl {{ theme('text-black') }}">iOS Haven</h1>
-    <p class="mb-10">The community driven app store.</p>
+    <p class="mb-6">The community driven app store.</p>
     <div class="flex items-center justify-center">
-        <a href="/apps" class='btn-da mb-8 flex items-center justify-center mx-1 font-bold rounded-full text-sm px-8 py-5 text-white-light {{ theme("bg-indigo") }}'>
+        <a href="/apps" class='btn-da mb-4 flex items-center justify-center mx-1 font-bold rounded-full text-sm px-5 py-2 text-white-light {{ theme("bg-indigo") }}'>
           <i class="fas fa-rocket mr-3 fa-lg"></i>
           LAUNCH
         </a>
     </div>
-    <div class="flex items-center justify-center">
-        <a href="/install?theme=dark" class='hide-webapp mx-1 mb-16 flex items-center justify-center font-bold rounded-full text-sm px-8 py-5 {{ theme('bg-black', 'text-white') }}'>
+    <div class="flex items-center justify-center mb-4">
+        <a href="/install?theme=dark" class='hide-webapp mx-1 flex items-center justify-center font-bold rounded-full text-sm px-5 py-2 {{ theme('bg-black', 'text-white') }}'>
           <i class="fas fa-moon-stars mr-3 fa-lg"></i>
           INSTALL
         </a>
-        <a href="/install?theme=light" class='hide-webapp mx-1 mb-16 flex items-center justify-center font-bold rounded-full text-sm px-8 py-5 text-black-light bg-yellow-light'>
+        <a href="/install?theme=light" class='hide-webapp mx-1 flex items-center justify-center font-bold rounded-full text-sm px-5 py-2 text-black-light bg-yellow-light'>
           <i class="fas fa-sun mr-3 fa-lg"></i>
           INSTALL
         </a>
     </div>
 
     <div class="flex items-center justify-center">
-      <a href="/rescue.html" class='hide-webapp mx-1 mb-16 flex items-center justify-center font-bold rounded-full text-sm px-8 py-5 {{ theme('bg-red', 'text-white') }}'>
-        <i class="fas fa-laptop mr-3 fa-lg"></i>
-        RESCUE - ALTSTORE
+      <a href="{{ url('/skins')}}" class='hide-webapp mx-1 mb-12 flex items-center justify-center font-bold rounded-full text-sm px-5 py-2 {{ theme('bg-green', 'text-black') }}'>
+        <i class="fab fa-apple mr-3 fa-lg"></i>
+        iOS 14 Themes
       </a>
-  </div>
+    </div>
+
+    <div class="flex items-center justify-center">
+      <a href="altstore://source?url={{ url('/altstore/apps.json')}}" class='hide-webapp mx-1 mb-16 flex items-center justify-center font-bold rounded-full text-sm px-5 py-2 {{ theme('bg-pink', 'text-white') }}'>
+        <i class="fas fa-mobile-alt mr-3 fa-lg"></i>
+        Open in ALTSTORE
+      </a>
+    </div>
+
+    
 
     
     <img src="/img/iphonex.png" class="w-full">
