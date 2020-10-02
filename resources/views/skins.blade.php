@@ -28,7 +28,7 @@
 
     @foreach($skins as $skin)
       <div class="{{ theme('bg-white', 'text-black') }} rounded-lg overflow-hidden mb-3 shadow relative">
-        <div class="absolute top-0 right-0 mr-3 mt-3 hidden" id="skintag-{{$skin->uuid}}" style="z-index: 2">
+        <div class="absolute top-0 right-0 mr-3 mt-3 hidden" id="skintag-{{$skin->uuid}}" style="z-index: 1">
           @if($skin->amount == 0)
             <span class="bg-green-light uppcase font-bold text-black-light px-3 py-1 rounded-lg">free</span>
           @elseif($skin->onSale)
@@ -41,7 +41,7 @@
                 <!-- Slides -->
                 @foreach($skin->covers as $cover)
                   <div class="swiper-slide">
-                    <img data-src="{{ $cover }}" 
+                    <img src="{{ $cover }}" 
                       alt="image preview"
                       data-tag-id="skintag-{{$skin->uuid}}"
                       onload="showTag(this)"
