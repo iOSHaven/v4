@@ -28,7 +28,7 @@
 
     @foreach($skins as $skin)
       <div class="{{ theme('bg-white', 'text-black') }} rounded-lg overflow-hidden mb-3 shadow relative">
-        <div class="absolute top-0 right-0 mr-3 mt-3 hidden" id="skintag-{{$skin->uuid}}" style="z-index: 100000">
+        <div class="absolute top-0 right-0 mr-3 mt-3 hidden" id="skintag-{{$skin->uuid}}" style="z-index: 2">
           @if($skin->amount == 0)
             <span class="bg-green-light uppcase font-bold text-black-light px-3 py-1 rounded-lg">free</span>
           @elseif($skin->onSale)
@@ -101,6 +101,10 @@
         
       </div>
     @endforeach
+
+    <div class="mt-4">
+      Contact us on <a class="underline text-blue-dark" href="https://twitter.com/ioshavencom">Twitter</a> for more skins.
+    </div>
 
 
     <div class="fixed items-center justify-center top-0 left-0 right-0 bottom-0 overflow-scroll scrolling-touch hidden" style="z-index: 10000; background-color: rgba(0,0,0,0.8)" id="paypal-modal" onclick="showPP()">
