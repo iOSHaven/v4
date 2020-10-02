@@ -44,7 +44,6 @@
                     <img src="{{ $cover }}" 
                       alt="image preview"
                       data-tag-id="skintag-{{$skin->uuid}}"
-                      onload="showTag(this)"
                       class="lazy">
                   </div>
                 @endforeach
@@ -207,6 +206,8 @@
         return axios.post('/paypal-log', {details:details, uuid:window.ppuuid})
       }).then(function (res) {
         location.reload();
+      }).catch(function (err) {
+        console.error(err)
       });
     }
   }).render('#paypal-button-container');

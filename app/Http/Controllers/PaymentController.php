@@ -40,6 +40,7 @@ class PaymentController extends Controller
 
     public function logPayment(Request $request){
         try {
+            // dd("download");
             $user = Auth::user();
             $skin = Skin::where('uuid', $request->uuid)->first();
             $user->skins()->attach($skin->id);
@@ -56,7 +57,13 @@ class PaymentController extends Controller
         if (! $request->hasValidSignature()) {
             abort(401);
         }
+        
         $skin = Skin::where('uuid', $request->uuid)->first();
+        $attachedIds = Auth::user()->skins->pluck('id')->toArray();
+        $newIds = array_diff([$skin->id], $attachedIds);
+        Auth::user()->skins()->attach($newIds);
+        // dd($skin, $attachedIds, $newIds);
+
         return redirect($skin->download);
     }
 
