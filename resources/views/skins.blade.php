@@ -1,5 +1,23 @@
-@extends('layouts.redesign', ["title" => "Skins"])
+@extends('layouts.redesign', ["title" => "Themes", "hide_nav" => true, "hide_ads" => true, "hide_back" => true])
 
+
+@section('search-engine')
+  <meta name="description"
+  content="The best iOS 14 themes on the internet. Hard to find themes.">
+  <meta name="keywords" content="ios,ios 14,ios 14 themes,ios 14 skins,ios skins,ios themes">
+  <meta name="robots" content="index, follow">
+  <meta name="web_author" content="IOS Haven Development Team">
+  <meta name="language" content="English">
+@endsection
+
+@section('twitter-og')
+<meta property="og:title" content="iOS 14 Themes">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{{ url('/themes') }}">
+<meta property="og:description" content="Premium hard to find themes.">
+<meta property="og:image" content="https://storage.ihvn.dev/icons/apps/ioshaven-invert.jpg">
+<meta property="twitter:site:id" content="715729557769166848">
+@endsection
 
 @section('header')
 {{-- <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css"> --}}
@@ -102,7 +120,7 @@
     @endforeach
 
     <div class="mt-4">
-      Contact us on <a class="underline text-blue-dark" href="https://twitter.com/ioshavencom">Twitter</a> for more skins.
+      Contact us on <a class="underline text-blue-dark" href="https://twitter.com/ioshavencom">Twitter</a> for more skins and check out the <a class="underline text-blue-dark" href="/apps">apps</a> on our <a class="underline text-blue-dark" href="/">main website</a>.
     </div>
 
 

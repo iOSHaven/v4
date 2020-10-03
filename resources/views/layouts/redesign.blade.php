@@ -9,30 +9,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
 
-  {{-- SEARCH ENGINE FRIENDLY --}}
-  <meta name="description"
-      content="Discover hacked games, tweaked apps, jailbreaks and more. We offer tools to get started, links you should visit, and thousands of popular apps ready for download. A search engine for hacked iOS apps.">
-  <meta name="keywords" content="iphone,jailbreak,sideload,hack,crack,signed,download,ipa,free">
-  <meta name="robots" content="index, follow">
-  <meta name="web_author" content="IOS Haven Development Team">
-  <meta name="language" content="English">
+  @yield('search-engine', View::make('seo.search-engine'))
+  @yield('twitter-og', View::make('seo.twitter-og'))
 
-  {{-- TWITTER OG PROPERTIES --}}
-  @if(View::hasSection('twitter'))
-        @yield('twitter')
-  @else
-    @php 
-      $pagename = $title ?? session("current_tab") ?? "IOS Haven";
-      $text = config('app.name');
-      $titletext = $pagename ? $text . " - $pagename" : $text;
-    @endphp
-    <meta property="og:title" content="{{ $titletext }}">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="{{ $url ?? url('/') }}">
-    <meta property="og:description" content="Search for the best hacked iOS Apps.">
-    <meta property="og:image" content="https://storage.ihvn.dev/icons/apps/ioshaven.jpg">
-    <meta property="twitter:site:id" content="715729557769166848">
-  @endif
+
   
 
   {{-- WEB APPLICATION FRIENDLY --}}

@@ -59,10 +59,10 @@
         
         <div class="hidden md:inline-block p-2 -mt-px">Updates</div>
       </a>
-      <a href="/skins" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Skins') }}">
-        <i class="md:hidden fas fa-moon-stars"></i>
-        <div class="md:hidden text-xs leading-none"><small>Skins</small></div>
-        <div class="hidden md:inline-block p-2 -mt-px">Skins</div>
+      <a href="/themes" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Themes') }}">
+        <i class="md:hidden fas fa-palette"></i>
+        <div class="md:hidden text-xs leading-none"><small>Themes</small></div>
+        <div class="hidden md:inline-block p-2 -mt-px">Themes</div>
       </a>
       <a href="/search" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Search') }}">
         <i class="md:hidden fas fa-search"></i>

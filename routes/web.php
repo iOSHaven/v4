@@ -152,6 +152,7 @@ Route::get('/faq', 'StaticPageController@getFaqPage');
 Route::get('/cydia', 'StaticPageController@getCydiaPage');
 Route::get('/betas', 'StaticPageController@getBetasPage');
 Route::get('/skins', 'StaticPageController@getSkinsPage');
+Route::get('/themes', 'StaticPageController@getSkinsPage');
 Route::get('/jailbreak', 'StaticPageController@getJailbreakPage');
 Route::get('/aboutUs', 'StaticPageController@getAboutUsPage');
 Route::get('/fight-for-net-neutrality', 'StaticPageController@getFightForNetNeutrality');

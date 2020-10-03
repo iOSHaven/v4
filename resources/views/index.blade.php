@@ -28,8 +28,8 @@
     </div>
 
     <div class="flex items-center justify-center">
-      <a href="{{ url('/skins')}}" class='hide-webapp mx-1 mb-12 flex items-center justify-center font-bold rounded-full text-sm px-5 py-2 {{ theme('bg-green', 'text-black') }}'>
-        <i class="fab fa-apple mr-3 fa-lg"></i>
+      <a href="{{ url('/themes')}}" class='hide-webapp mx-1 mb-12 flex items-center justify-center font-bold rounded-full text-sm px-5 py-2 {{ theme('bg-green', 'text-black') }}'>
+        <i class="fas fa-palette mr-3 fa-lg"></i>
         iOS 14 Themes
       </a>
     </div>
