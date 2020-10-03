@@ -101,14 +101,14 @@
           <div class="flex items-center">
             <button class='flex mr-3 items-center font-bold rounded-full pointer-events-auto shadow text-sm -mt-1 {{ theme("bg-white", "text-black") }}' onclick="showDetail('{{ $skin->description }}')"><i class="fas fa-info-circle fa-2x -mb-1"></i></button>
             @auth
-              @if(Auth::user()->skins->contains($skin->id) || $skin->amount == 0)
-                <a href="{{ URL::temporarySignedRoute(
-                  'skin', now()->addMinutes(10), ['uuid' => $skin->uuid]
-                  ) }}" download class='ppbtn flex items-center font-bold rounded-full pointer-events-auto shadow text-sm px-5 py-1 text-white-light {{ theme("bg-green") }}'>Download</a>
-              @elseif($skin->affiliate)
+              @if($skin->affiliate)
               <a href="{{ URL::temporarySignedRoute(
                 'skin.ref', now()->addMinutes(10), ['uuid' => $skin->uuid]
                 ) }}" target="_blank" class='ppbtn flex items-center font-bold rounded-full pointer-events-auto shadow text-sm px-5 py-1 text-white-light {{ theme("bg-blue") }}'>Buy</a>
+              @elseif(Auth::user()->skins->contains($skin->id) || $skin->amount == 0)
+                <a href="{{ URL::temporarySignedRoute(
+                  'skin', now()->addMinutes(10), ['uuid' => $skin->uuid]
+                  ) }}" download class='ppbtn flex items-center font-bold rounded-full pointer-events-auto shadow text-sm px-5 py-1 text-white-light {{ theme("bg-green") }}'>Download</a>
               @else
                 <button class='ppbtn flex items-center font-bold rounded-full pointer-events-auto shadow text-sm px-5 py-1 text-white-light {{ theme("bg-blue") }}' data-ppuuid="{{$skin->uuid}}" data-price="{{ $skin->amount }}" onclick="showPP(this)">
                   <span class="mr-1">Buy</span>
