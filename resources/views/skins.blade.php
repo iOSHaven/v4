@@ -32,7 +32,7 @@
 <section>
   <div class="container">
     <div class="mb-4 {{ theme('text-black') }}">
-      <div class="text-4xl">Skins</div>
+      <h1 class="text-4xl">iOS 14 Themes</h1>
       <p>Download icon packs to customize your iOS 14 experience. Get <span class="font-bold uppercase underline">free updates</span> on all icon packs! <a href="https://www.macrumors.com/how-to/change-app-icons/" class="text-blue-dark underline">Tutorial</a></p>
     </div>
     {{-- <div class="w-full bg-yellow-light p-3 rounded-lg text-black-light text-center uppercase mb-4">
