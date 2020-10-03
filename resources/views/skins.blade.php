@@ -105,6 +105,10 @@
                 <a href="{{ URL::temporarySignedRoute(
                   'skin', now()->addMinutes(10), ['uuid' => $skin->uuid]
                   ) }}" download class='ppbtn flex items-center font-bold rounded-full pointer-events-auto shadow text-sm px-5 py-1 text-white-light {{ theme("bg-green") }}'>Download</a>
+              @elseif($skin->affiliate)
+              <a href="{{ URL::temporarySignedRoute(
+                'skin.ref', now()->addMinutes(10), ['uuid' => $skin->uuid]
+                ) }}" target="_blank" class='ppbtn flex items-center font-bold rounded-full pointer-events-auto shadow text-sm px-5 py-1 text-white-light {{ theme("bg-blue") }}'>Buy</a>
               @else
                 <button class='ppbtn flex items-center font-bold rounded-full pointer-events-auto shadow text-sm px-5 py-1 text-white-light {{ theme("bg-blue") }}' data-ppuuid="{{$skin->uuid}}" data-price="{{ $skin->amount }}" onclick="showPP(this)">
                   <span class="mr-1">Buy</span>

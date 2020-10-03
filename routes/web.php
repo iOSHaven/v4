@@ -163,6 +163,7 @@ Route::post('/payment/add-funds/paypal', 'PaymentController@payWithPaypal')->nam
 Route::get('/payment/add-funds/paypal/status', 'PaymentController@getPaymentStatus')->name('ppStatus');
 Route::post('/paypal-log', 'PaymentController@logPayment')->middleware('auth');
 Route::get('/skin/{uuid}', 'PaymentController@downloadSkin')->name('skin');
+Route::get('/skin/affiliate/{uuid}', 'PaymentController@affiliateSkin')->name('skin.ref');
 
 Auth::routes();
 

@@ -55,7 +55,8 @@ class Skin extends Resource
             Textarea::make('images')->help('put image links on seperate lines'),
             Number::make('sale price', 'salePrice')->min(0)->max(50)->step(1)->help('full dollar ammount. no cents'),
             Number::make('price')->min(0)->max(50)->step(1)->help('full dollar ammount. no cents'),
-            Boolean::make('onSale'),
+            Boolean::make('on sale', 'onSale'),
+            Text::make('affiliate link', 'affiliate'),
             Textarea::make('download')->resolveUsing(function ($value) {
                 return trim($value);
             }),

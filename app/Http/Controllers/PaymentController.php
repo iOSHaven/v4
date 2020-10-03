@@ -67,6 +67,15 @@ class PaymentController extends Controller
         return redirect($skin->download);
     }
 
+    public function affiliateSkin(Request $request) {
+        if (! $request->hasValidSignature()) {
+            abort(401);
+        }
+        
+        $skin = Skin::where('uuid', $request->uuid)->first();
+        return redirect($skin->affiliate);
+    }
+
 
     private function createItem($name, $amount)
     {
