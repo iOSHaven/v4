@@ -28,6 +28,15 @@ class LoginController extends Controller
      */
     protected $redirectTo = '/apps';
 
+    // protected function authenticated ( Request $request, $user) {
+    //     dd($request->all());
+    //     if ($request->has('redirect')) {
+    //         return redirect($request->get('redirect'));
+    //     }
+
+    //     return redirect('/apps');
+    // }
+
     /**
      * Create a new controller instance.
      *

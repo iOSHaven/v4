@@ -41,9 +41,13 @@ class PaymentController extends Controller
     public function logPayment(Request $request){
         try {
             // dd("download");
-            $user = Auth::user();
+            
             $skin = Skin::where('uuid', $request->uuid)->first();
-            $user->skins()->attach($skin->id);
+            if (Auth::check()) {
+                $user = Auth::user();
+                $user->skins()->attach($skin->id);
+            }
+            
             return response()->json([
                 "email" => $request->details['payer']['email_address'],
                 "download" => $skin->download

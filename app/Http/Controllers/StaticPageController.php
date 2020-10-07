@@ -115,6 +115,12 @@ class StaticPageController extends Controller
       ]);
     }
 
+    public function getThemesPage() {
+      return view('themes', [
+        'skins' => Skin::get(),
+      ]);
+    }
+
     public function getJailbreakPage() {
       return redirect('/apps?q=jailbreak');
     }

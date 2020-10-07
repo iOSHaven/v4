@@ -11,11 +11,21 @@
 |
 */
 
-// Route::get('/test', function () {
-//   return view('test');
-// });
+Route::domain('themes.'.env('ROOT_DOMAIN'))->group(function () {
+  Route::get('/', 'StaticPageController@getThemesPage');
+});
+
+Route::get('/themetest', 'StaticPageController@getThemesPage');
+
+
+
+
+Route::get('/test', function () {
+  return view('test');
+});
 
 use App\Shortcut;
+use Illuminate\Http\Request;
 
 Route::get("/map.xml", function() {
         $contents = View::make('sitemap')
@@ -24,6 +34,14 @@ Route::get("/map.xml", function() {
           'Content-Type' => 'text/xml'
         ]);
 });
+
+Route::get('/generate/manifest', function (Request $request) {
+  return response()->json($request->all());
+})->name('manifest.generate');
+
+Route::get('/generate/protocol', function (Request $request) {
+  return Redirect::away($request->get('protocol') . "://");
+})->name('protocol.generate');
 
 Route::get("/shop", function() {
   return redirect("https://memes33.com/collections/ios-haven");
@@ -145,7 +163,7 @@ Route::get("/install", "StaticPageController@chooseInstall");
 Route::get("/light", "StaticPageController@lightTheme");
 Route::get("/dark", "StaticPageController@darkTheme");
 Route::post("/theme", "StaticPageController@postTheme");
-Route::get('/test', 'StaticPageController@getTestPage');
+// Route::get('/test', 'StaticPageController@getTestPage');
 Route::get('/search', 'AppController@getSearchPage')->middleware('tab:Search', 'back:Search');
 Route::get('/credits', 'StaticPageController@getCreditsPage');
 Route::get('/faq', 'StaticPageController@getFaqPage');
@@ -161,7 +179,7 @@ Route::get('/fight-for-net-neutrality', 'StaticPageController@getFightForNetNeut
 Route::post('/close_announcement', 'StaticPageController@closeAnnouncement');
 Route::post('/payment/add-funds/paypal', 'PaymentController@payWithPaypal')->name('paywithpaypal');
 Route::get('/payment/add-funds/paypal/status', 'PaymentController@getPaymentStatus')->name('ppStatus');
-Route::post('/paypal-log', 'PaymentController@logPayment')->middleware('auth');
+Route::post('/paypal-log', 'PaymentController@logPayment');
 Route::get('/skin/{uuid}', 'PaymentController@downloadSkin')->name('skin');
 Route::get('/skin/affiliate/{uuid}', 'PaymentController@affiliateSkin')->name('skin.ref');
 

@@ -17,7 +17,11 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
+        // dd($request->all());
         if (Auth::guard($guard)->check()) {
+            if ($request->has('redirect')) {
+                return redirect()->intended($request->get('redirect'));
+            }
             return redirect()->intended('/apps');
         }
 
