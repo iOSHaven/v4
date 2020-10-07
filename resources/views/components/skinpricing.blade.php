@@ -1,5 +1,14 @@
-<h5 class="regular-price">Regular Price: <span style="text-decoration: line-through;">${{ $skin->price }}</span></h5>
-<h4 class="sale-price">Sale Price: ${{ $skin->salePrice }}</h4>
+
+@if ($skin->amount == 0)
+    <h4 class="sale-price">FREE</h4>
+@else
+    @if($skin->onSale)
+        <h5 class="regular-price">Regular Price: <span style="text-decoration: line-through;">${{ $skin->price }}</span></h5>
+        <h4 class="sale-price">Sale: ${{ $skin->salePrice }}</h4>
+    @else
+        <h5 class="regular-price">Price: <span>${{ $skin->price }}</span></h5>
+    @endif
+@endif
 @auth
     @if($skin->affiliate)
         <a href="{{ URL::temporarySignedRoute(

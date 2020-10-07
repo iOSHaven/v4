@@ -38,7 +38,7 @@
 				$phone_lg = "https://storage.ihvn.dev/theme-backgrounds/".$s."_phone_lg.webp";
 				$phone_sm = "https://storage.ihvn.dev/theme-backgrounds/".$s."_phone_sm.webp";
 			@endphp
-			<section class="lazy img-section" id="{{$skin->uuid}}" data-bg="{{ $bg_lg }}" style="background-image: url('{{ $bg_sm }}'); height: 100vh;">
+			<section class="lazy img-section" id="{{$skin->uuid}}" data-bg="{{ $bg_lg }}" style="background-image: url('{{ $bg_sm }}'); height: 100%;">
 				<div class="product-details">
 					<div class="col-md-6 product-text">
 						<div>
