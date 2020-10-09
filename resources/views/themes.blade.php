@@ -38,7 +38,7 @@
 				$phone_lg = "https://storage.ihvn.dev/theme-backgrounds/".$s."_phone_lg.webp";
 				$phone_sm = "https://storage.ihvn.dev/theme-backgrounds/".$s."_phone_sm.webp";
 			@endphp
-			<section class="lazy img-section" id="{{$skin->uuid}}" data-bg="{{ $bg_lg }}" style="background-image: url('{{ $bg_sm }}'); height: 100%;">
+			<section class="lazy img-section" id="{{$s}}" data-bg="{{ $bg_lg }}" style="background-image: url('{{ $bg_sm }}'); height: 100%;">
 				<div class="product-details">
 					<div class="col-md-6 product-text">
 						<div>
@@ -153,12 +153,33 @@
 </script>
 
 	<script>
+
+		var hashtable = {
+			@foreach($skins as $skin)
+				@php
+					$s = strtolower(implode("",explode(" ", $skin->name)));
+				@endphp
+		'#{{ $s }}': {{$loop->index + 1}},
+			@endforeach
+		}
+
+		function goToHash(hash) {
+			console.log(hash, hashtable[hash], hashtable[hash] || 1)
+			$(".main").moveTo(hashtable[hash] || 1)
+		}
+
+		function afterMove(index) {
+			var hash = Array.from(document.querySelectorAll('.img-section'))[index-1].getAttribute('id')
+			history.pushState({index: index}, hash, '#' + hash)
+		}
+
 		$(".main").onepage_scroll({
 			sectionContainer: "section",
 			easing: "ease",
-			animationTime: 700, 
-			updateURL: true,
+			animationTime: 400, 
+			updateURL: false,
 			pagination: false,
+			afterMove: afterMove,
 			responsiveFallback: 0, // You can fallback to normal page scroll by defining the width of the browser in which
 										// you want the responsive fallback to be triggered. For example, set this to 600 and whenever
 										// the browser's width is less than 600, the fallback will kick in.
@@ -177,6 +198,15 @@
 				el: '.swiper-pagination',
 			},
 		})
+
+		window.addEventListener('hashchange', function () {
+			goToHash(location.hash)
+		})
+		$(document).ready(function (){
+			goToHash(location.hash)
+		})
+		
+		// afterMove();
 		
 	</script>
 
