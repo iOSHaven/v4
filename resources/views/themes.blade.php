@@ -177,9 +177,9 @@
 			sectionContainer: "section",
 			easing: "ease",
 			animationTime: 400, 
-			updateURL: false,
+			updateURL: true,
 			pagination: false,
-			afterMove: afterMove,
+			// afterMove: afterMove,
 			responsiveFallback: 0, // You can fallback to normal page scroll by defining the width of the browser in which
 										// you want the responsive fallback to be triggered. For example, set this to 600 and whenever
 										// the browser's width is less than 600, the fallback will kick in.
@@ -199,12 +199,12 @@
 			},
 		})
 
-		window.addEventListener('hashchange', function () {
-			goToHash(location.hash)
-		})
-		$(document).ready(function (){
-			goToHash(location.hash)
-		})
+		// window.addEventListener('hashchange', function () {
+		// 	goToHash(location.hash)
+		// })
+		// $(document).ready(function (){
+		// 	goToHash(location.hash)
+		// })
 		
 		// afterMove();
 		
