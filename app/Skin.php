@@ -35,7 +35,7 @@ class Skin extends Model
     }
 
     public function getPurchaseCountAttribute() {
-        if ($this->amount == 0 || $this->affliate) {
+        if ($this->amount == 0 || $this->affiliate) {
             return 0;
         } else {
             return $this->users()->get()->count(); 
@@ -43,7 +43,7 @@ class Skin extends Model
     }
 
     public function getDownloadAmountAttribute() {
-        if ($this->affliate) {
+        if ($this->affiliate) {
             return 0;
         } else {
             return $this->users()->get()->count() + $this->downloadCount; 
@@ -51,7 +51,7 @@ class Skin extends Model
     }
 
     public function getClickAmountAttribute() {
-        if ($this->affliate) {
+        if ($this->affiliate) {
             return $this->users()->get()->count() + $this->downloadCount; 
         } else {
             return 0;
