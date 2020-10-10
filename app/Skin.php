@@ -29,4 +29,20 @@ class Skin extends Model
     public function getAmountAttribute() {
         return $this->onSale ? $this->salePrice : $this->price;
     }
+
+    public function users() {
+        return $this->belongsToMany(User::class);
+    }
+
+    public function getPurchaseCountAttribute() {
+        return $this->users()->get()->count();
+    }
+
+    public function getDownloadAmountAttribute() {
+        return $this->affiliate ? 0 : $this->downloadCount;
+    }
+
+    public function getClickAmountAttribute() {
+        return $this->affiliate ? $this->downloadCount : 0;
+    }
 }

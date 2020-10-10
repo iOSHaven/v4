@@ -38,6 +38,14 @@ class Skin extends Resource
         'name'
     ];
 
+
+    public static function indexQuery(NovaRequest $request, $query) {
+
+        $query = $query->orderBy('order', 'asc')
+                ;
+        return $query;
+    }
+
     /**
      * Get the fields displayed by the resource.
      *
@@ -48,6 +56,7 @@ class Skin extends Resource
     {
         return [
             ID::make()->hideFromIndex(),
+            Number::make('Ordering Number', 'order'),
             Text::make('uuid')->readonly()->onlyOnDetail(),
             Text::make('name')
                 ->sortable(),
@@ -56,10 +65,15 @@ class Skin extends Resource
             Number::make('sale price', 'salePrice')->min(0)->max(50)->step(1)->help('full dollar ammount. no cents'),
             Number::make('price')->min(0)->max(50)->step(1)->help('full dollar ammount. no cents'),
             Boolean::make('on sale', 'onSale'),
+            Number::make('Downloads', 'downloadAmount')->readonly(),
+            Number::make('Clicks', 'clickAmount')->readonly(),
+            Number::make('Purchases', 'purchaseCount')->readonly(),
+            
             Text::make('affiliate link', 'affiliate'),
             Textarea::make('download')->resolveUsing(function ($value) {
                 return trim($value);
             }),
+            
             // $table->string('name');
             // $table->longText('description');
             // $table->longText('images');

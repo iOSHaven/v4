@@ -37,6 +37,10 @@ class PaymentController extends Controller
         $this->_api_context->setConfig($paypal_conf['settings']);
     }
 
+    private function countDownload($skin) {
+        $skin->increment('downloadCount');
+        $skin->save();
+    }
 
     public function logPayment(Request $request){
         try {
@@ -47,6 +51,8 @@ class PaymentController extends Controller
                 $user = Auth::user();
                 $user->skins()->attach($skin->id);
             }
+
+            $this->countDownload($skin);
             
             return response()->json([
                 "email" => $request->details['payer']['email_address'],
@@ -66,6 +72,9 @@ class PaymentController extends Controller
         $attachedIds = Auth::user()->skins->pluck('id')->toArray();
         $newIds = array_diff([$skin->id], $attachedIds);
         Auth::user()->skins()->attach($newIds);
+        
+        $this->countDownload($skin);
+
         // dd($skin, $attachedIds, $newIds);
 
         return redirect($skin->download);
@@ -77,6 +86,7 @@ class PaymentController extends Controller
         }
         
         $skin = Skin::where('uuid', $request->uuid)->first();
+        $this->countDownload($skin);
         return redirect($skin->affiliate);
     }
 

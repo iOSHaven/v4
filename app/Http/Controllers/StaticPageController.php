@@ -111,13 +111,13 @@ class StaticPageController extends Controller
 
     public function getSkinsPage() {
       return view('skins', [
-        'skins' => Skin::get(),
+        'skins' => Skin::orderBy('order', 'asc')->get(),
       ]);
     }
 
     public function getThemesPage() {
       return view('themes', [
-        'skins' => Skin::get(),
+        'skins' => Skin::orderBy('order', 'asc')->get(),
       ]);
     }
 
