@@ -35,14 +35,26 @@ class Skin extends Model
     }
 
     public function getPurchaseCountAttribute() {
-        return $this->users()->get()->count();
+        if ($this->amount == 0 || $this->affliate) {
+            return 0;
+        } else {
+            return $this->users()->get()->count(); 
+        }
     }
 
     public function getDownloadAmountAttribute() {
-        return $this->affiliate ? 0 : $this->downloadCount;
+        if ($this->affliate) {
+            return 0;
+        } else {
+            return $this->users()->get()->count() + $this->downloadCount; 
+        }
     }
 
     public function getClickAmountAttribute() {
-        return $this->affiliate ? $this->downloadCount : 0;
+        if ($this->affliate) {
+            return $this->users()->get()->count() + $this->downloadCount; 
+        } else {
+            return 0;
+        }
     }
 }
