@@ -18,7 +18,10 @@
 	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous">
+  
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 	
@@ -38,6 +41,30 @@
   <body>
   	<div class="main">
 		  <!-- First Theme Section Starts Here -->
+
+		<section style="height: 100vh; max-height: 100%; background-color: #020202; text-align: center; padding: 2rem; display: flex; flex-direction: column; justify-content: space-between;">
+			<div style="flex-grow: 1">
+				<h1 style="font-weight: bold">Themes</h1>
+				<p style="margin-top: -1rem">By iOS Haven</p>
+				<br>
+				<h5>A vast collection of free and premium iOS 14 icons</h5>
+				<br>
+				<a href="https://www.producthunt.com/posts/ios-haven-themes?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-ios-haven-themes" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=270477&theme=dark" alt="iOS Haven Themes - iOS 14 themes in one place | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+				<br>
+				<div style="margin-top: 3rem; color: black;">
+					<a href="/" style="padding: 0.25rem 1rem; border-radius: 10rem; background-color: #fff; color: black;">
+						<i class="fas fa-home" style="margin-right: 0.5rem"></i>
+						Main site
+					  </a>
+				</div>
+				
+			
+			</div>
+			<div class="animate__animated animate__bounce animate__delay-1s animate__repeat-3">
+				<i class="fal fa-arrow-down fa-2x"></i>
+			</div>
+		</section>
+
 		@foreach($skins as $skin)
 			@php
 				$s = strtolower(implode("",explode(" ", $skin->name)));
