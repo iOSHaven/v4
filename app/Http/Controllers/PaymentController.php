@@ -69,9 +69,11 @@ class PaymentController extends Controller
         }
         
         $skin = Skin::where('uuid', $request->uuid)->first();
-        $attachedIds = Auth::user()->skins->pluck('id')->toArray();
-        $newIds = array_diff([$skin->id], $attachedIds);
-        Auth::user()->skins()->attach($newIds);
+        if (Auth::check() || $skin->amount > 0) {
+            $attachedIds = Auth::user()->skins->pluck('id')->toArray();
+            $newIds = array_diff([$skin->id], $attachedIds);
+            Auth::user()->skins()->attach($newIds);
+        }
         
         $this->countDownload($skin);
 

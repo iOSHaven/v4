@@ -30,6 +30,11 @@
         <a href="{{ URL::temporarySignedRoute(
         'skin.ref', now()->addMinutes(10), ['uuid' => $skin->uuid]
         ) }}" target="_blank" class='purchase-btn'>Get</a>
+    @elseif(Auth::guest() && $skin->amount == 0)
+    <a href="/login?redirect=/themes#{{$skin->uuid}}" style="margin-bottom: 0.5rem; color: white; font-size: 0.8em; text-decoration: underline;">Login for unlimited downloads</a>
+        <a class="purchase-btn" style="display: block;" href="{{ URL::temporarySignedRoute(
+            'skin', now()->addMinutes(10), ['uuid' => $skin->uuid]
+            ) }}">Download</a>
     @else
         <a href="/login?redirect=/themes#{{$skin->uuid}}" style="margin-bottom: 0.5rem; color: white; font-size: 0.8em; text-decoration: underline;">Login for unlimited downloads</a>
         <button class="purchase-btn" style="display: block;" data-ppuuid="{{$skin->uuid}}" data-price="{{ $skin->amount }}" onclick="showPP(this)">Purchase Now</button>
