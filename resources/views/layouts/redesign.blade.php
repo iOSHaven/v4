@@ -10,7 +10,12 @@
   })(window,document,'script','dataLayer','GTM-PVKPPPZ');</script>
   {{-- End Google Tag Manager --}}
 
+  @if(!empty($title))
+  <title>{{ config('app.name', 'IOS Haven') }} | {{ $title}}</title>
+  @else
   <title>{{ config('app.name', 'IOS Haven') }}</title>
+  @endif
+  
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
   {{-- MOBILE FRIENDLY --}}

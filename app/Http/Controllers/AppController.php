@@ -30,7 +30,8 @@ class AppController extends Controller
       ];
     }
 
-    private function display(Request $request, $data) {
+    private function display(Request $request, $data, $pageTitle=null) {
+      $data["pageTitle"] = $request->get('title', $pageTitle);
       if ($request->json == 'true') {
         return response()->json($data);
       }else if ($request->html == 'true') {
@@ -112,7 +113,7 @@ class AppController extends Controller
                   ->search($request, $tag);
 
       $apps = $this->gathered_query($request, $apps, $tag);
-      return $this->display($request, $apps);
+      return $this->display($request, $apps, "Apps");
     }
 
     public function games (Request $request) {
@@ -121,7 +122,7 @@ class AppController extends Controller
                   ->search($request);
 
       $apps = $this->gathered_query($request, $apps);
-      return $this->display($request, $apps);
+      return $this->display($request, $apps, "Games");
     }
 
     public function jailbreaks (Request $request) {
@@ -130,7 +131,7 @@ class AppController extends Controller
                   ->search($request);
 
       $apps = $this->gathered_query($request, $apps);
-      return $this->display($request, $apps);
+      return $this->display($request, $apps, "Jailbreaks");
     }
 
     public function updates ($tag=null, Request $request) {
@@ -146,7 +147,7 @@ class AppController extends Controller
         $models = $models->take($request->limit);
       }
       $apps = $this->gathered_query($request, $models);
-      return $this->display($request, $apps);
+      return $this->display($request, $apps, "Updates");
     }
 
     public function getSearchPage() {
@@ -159,6 +160,7 @@ class AppController extends Controller
       return view('search')->with([
         "models" => $models,
         "providers" => $providers,
+        "pageTitle" => "Search"
       ]);
     }
 

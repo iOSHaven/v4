@@ -31,7 +31,7 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
     <link rel="stylesheet" type="text/css" href="/css/media.css">
 
-	<title>iOS Skin Themes</title>
+	<title>iOS Haven Themes</title>
 	
 	<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.2/dist/lazyload.min.js"></script>
 	
