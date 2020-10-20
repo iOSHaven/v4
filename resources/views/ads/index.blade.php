@@ -8,5 +8,5 @@ if(!empty($name))
 @endphp
 
 @if(!empty($type))
-@include($type)
+@include("ads.$type")
 @endif

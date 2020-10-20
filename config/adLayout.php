@@ -1,7 +1,7 @@
 <?php
 
 return [
-    "apps" => "native-banner",
+    "apps" => "social-bar",
     "games" => "native-banner",
     "updates" => "push-notification",
     "download" => "native-banner",

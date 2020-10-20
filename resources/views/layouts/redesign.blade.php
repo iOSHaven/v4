@@ -281,7 +281,7 @@
           </script> --}}
       @endif
 
-      @include('propeller')
+      @include('ads.index')
 
       @yield("footer")
 
