@@ -2,8 +2,10 @@
 
 return [
     "apps" => "social-bar",
-    "games" => "native-banner",
-    "updates" => "push-notification",
-    "download" => "native-banner",
-    "install" => "native-banner"
+    "games" => "social-bar",
+    "updates" => "social-bar",
+    "download" => "adsterra-pop-under",
+    "install" => "adsterra-pop-under",
+    "search" => "native-banner",
+    "detail" => "native-banner",
 ];

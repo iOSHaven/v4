@@ -105,7 +105,7 @@ Route::get('/itms/{id}', 'AppController@itms');
 
 
 Route::post('/app/create', 'AppController@create');
-Route::get('/app/{uid}', 'AppController@showAppDetailPage');
+Route::get('/app/{uid}', 'AppController@showAppDetailPage')->name('detail');
 Route::get('/shortcut/{itunes_id}', 'ShortcutController@showDetail');
 Route::get('/shortcut/install/{itunes_id}', 'ShortcutController@install');
 Route::get('/app/edit/{uid}', 'AppController@edit');
@@ -167,7 +167,7 @@ Route::get("/light", "StaticPageController@lightTheme");
 Route::get("/dark", "StaticPageController@darkTheme");
 Route::post("/theme", "StaticPageController@postTheme");
 // Route::get('/test', 'StaticPageController@getTestPage');
-Route::get('/search', 'AppController@getSearchPage')->middleware('tab:Search', 'back:Search');
+Route::get('/search', 'AppController@getSearchPage')->middleware('tab:Search', 'back:Search')->name('search');
 Route::get('/credits', 'StaticPageController@getCreditsPage');
 Route::get('/faq', 'StaticPageController@getFaqPage');
 Route::get('/cydia', 'StaticPageController@getCydiaPage');
