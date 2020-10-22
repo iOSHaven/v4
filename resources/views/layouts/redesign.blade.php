@@ -91,6 +91,7 @@
 
   {{-- PER VIEW HEADER CODE --}}
   @yield('header')
+  @include('ads.index')
 
 </head>
 
@@ -281,7 +282,7 @@
           </script> --}}
       @endif
 
-      @include('ads.index')
+      
 
       @yield("footer")
 
