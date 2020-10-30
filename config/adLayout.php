@@ -1,9 +1,9 @@
 <?php
 
 return [
-    "apps" => "push-notification",
-    "games" => "push-notification",
-    "updates" => "push-notification",
+    "apps" => "native-banner",
+    "games" => "native-banner",
+    "updates" => "native-banner",
     "download" => "native-banner",
     "install" => "native-banner",
     "search" => "native-banner",
