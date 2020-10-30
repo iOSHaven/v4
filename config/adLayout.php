@@ -1,11 +1,11 @@
 <?php
 
 return [
-    "apps" => "social-bar",
-    "games" => "social-bar",
-    "updates" => "social-bar",
-    "download" => "adsterra-pop-under",
-    "install" => "adsterra-pop-under",
+    "apps" => "push-notification",
+    "games" => "push-notification",
+    "updates" => "push-notification",
+    "download" => "native-banner",
+    "install" => "native-banner",
     "search" => "native-banner",
     "detail" => "native-banner",
 ];
