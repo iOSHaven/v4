@@ -49,8 +49,19 @@ dd(url($model->url))
       
       {{-- @component('components.banner')@endcomponent --}}
 
+
       <div>
-            <a href="{{ $url }}" class='mx-1 mb-16 flex items-center justify-center font-bold rounded-full text-sm px-8 py-5 {{ theme('bg-blue', 'text-white') }}'>
+        <a href="https://twitter.com/intent/tweet?text={{ urlencode("I just installed $app->name from @ioshavencom and ". $model->provider->name . " and it is working!") }}" 
+            class='mx-1 mb-16 flex items-center justify-center font-bold rounded-full text-sm px-8 py-5 {{ theme('bg-blue', 'text-white') }}'>
+            <i class="fab fa-twitter mr-3 fa-lg"></i>
+            TWEET
+            <i class="fab fa-twitter ml-3 fa-lg"></i>
+
+        </a>
+  </div>
+
+      <div>
+            <a href="{{ $url }}" class='mx-1 mb-16 flex items-center justify-center font-bold rounded-full text-sm px-8 py-5 {{ theme('bg-green', 'text-white') }}'>
                 <i class="fas fa-download mr-3 fa-lg"></i>
                 @if($type == "itms")
                 INSTALL
