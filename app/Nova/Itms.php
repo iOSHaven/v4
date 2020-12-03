@@ -71,7 +71,7 @@ class Itms extends Resource
 
 
             Boolean::make('working')->sortable(),
-            BelongsToMany::make('providers')->nullable()->searchable(),
+            BelongsToMany::make('providers')->nullable(),
             BelongsToMany::make('apps')->nullable()->searchable(),
         ];
     }
