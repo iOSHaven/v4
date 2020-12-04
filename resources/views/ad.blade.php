@@ -26,7 +26,7 @@ dd(url($model->url))
 
       <div class="text-xl mx-auto">Provided By:</div>
       
-      <div class="inline-block rounded-lg border py-3 pl-3 pr-8 mb-8 {{ theme('border-gray-100') }}">
+      <div class="inline-block rounded-lg border py-3 pl-3 pr-8 mb-3 {{ theme('border-gray-100') }}">
         <div class="flex items-center">
           @component('components.tinyProviderIcon', ["provider" => $model->provider, "size" => 40])@endcomponent
           <div>
@@ -49,6 +49,18 @@ dd(url($model->url))
       
       {{-- @component('components.banner')@endcomponent --}}
 
+      <div class="w-full mb-8">
+        <!-- Baseline Reactions -->
+      <div class="baseline__reactions" 
+      data-team="29a12e05-29fe-41f6-8293-86cac4712b8d" 
+      data-tag="{{ $model->provider->name }}" 
+      data-url="http://baseline.smeltlab.com">
+      <div class="baseline__mood">👍️</div>
+      <div class="baseline__mood">😡</div>
+      </div><script async src="http://baseline.smeltlab.com/js/embed.js" charset="utf-8"></script>
+      <!-- End of Baseline Reactions -->
+      </div>
+      
 
       <div>
         <a href="https://twitter.com/intent/tweet?text={{ urlencode("I just installed $app->name from @ioshavencom and ". $model->provider->name . " and it is working!") }}" 
@@ -58,6 +70,8 @@ dd(url($model->url))
             <i class="fab fa-twitter ml-3 fa-lg"></i>
 
         </a>
+
+        
   </div>
 
       <div>
