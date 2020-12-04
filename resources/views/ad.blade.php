@@ -54,7 +54,7 @@ dd(url($model->url))
       <div class="baseline__reactions" 
       data-team="29a12e05-29fe-41f6-8293-86cac4712b8d" 
       data-tag="{{ $model->provider->name }}" 
-      data-url="http://baseline.smeltlab.com">
+      data-url="https://baseline.smeltlab.com">
       <div class="baseline__mood">👍️</div>
       <div class="baseline__mood">😡</div>
       </div><script async src="https://baseline.smeltlab.com/js/embed.js" charset="utf-8"></script>
