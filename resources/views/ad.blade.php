@@ -49,21 +49,30 @@ dd(url($model->url))
       
       {{-- @component('components.banner')@endcomponent --}}
 
+
+      @php
+      function twitterGood($app, $model) {
+        return urlencode("I just installed $app->name from @ioshavencom and ". $model->provider->name . " and it is working!");
+      }
+
+      function twitterBad($app, $model) {
+        return urlencode("$app->name from @ioshavencom and ". $model->provider->name . " is broken!");
+      }
+      @endphp
+
       <div class="w-full mb-8">
         <!-- Baseline Reactions -->
-      <div class="baseline__reactions" 
+      <div class="baseline__reactions"
+      data-cb="if (window.$baseline.weight > 0) {document.getElementById('twitter-button').href='https://twitter.com/intent/tweet?text={{ twitterGood($app, $model) }}';}else{document.getElementById('twitter-button').href='https://twitter.com/intent/tweet?text={{ twitterBad($app, $model) }}';}"
       data-team="29a12e05-29fe-41f6-8293-86cac4712b8d" 
-      data-tag="{{ $model->provider->name }}" 
-      data-url="https://baseline.smeltlab.com">
-      <div class="baseline__mood">👍️</div>
-      <div class="baseline__mood">😡</div>
+      data-tag="{{ $model->provider->name }}" >
       </div><script async src="https://baseline.smeltlab.com/js/embed.js" charset="utf-8"></script>
       <!-- End of Baseline Reactions -->
       </div>
       
 
       <div>
-        <a href="https://twitter.com/intent/tweet?text={{ urlencode("I just installed $app->name from @ioshavencom and ". $model->provider->name . " and it is working!") }}" 
+        <a id="twitter-button" href="https://twitter.com/intent/tweet?text={{ urlencode("I just installed $app->name from @ioshavencom and ". $model->provider->name . " and it is working!") }}" 
             class='mx-1 mb-16 flex items-center justify-center font-bold rounded-full text-sm px-8 py-5 {{ theme('bg-blue', 'text-white') }}'>
             <i class="fab fa-twitter mr-3 fa-lg"></i>
             TWEET
