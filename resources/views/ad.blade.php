@@ -58,6 +58,10 @@ dd(url($model->url))
       function twitterBad($app, $model) {
         return urlencode("$app->name from @ioshavencom and ". $model->provider->name . " is broken!");
       }
+
+      function twitterNeutral($app, $model) {
+        return urlencode(".@ioshavencom has $app->name from ". $model->provider->name . "!");
+      }
       @endphp
 
       <div class="w-full mb-8">
@@ -72,7 +76,7 @@ dd(url($model->url))
       
 
       <div>
-        <a id="twitter-button" href="https://twitter.com/intent/tweet?text={{ urlencode("I just installed $app->name from @ioshavencom and ". $model->provider->name . " and it is working!") }}" 
+        <a id="twitter-button" href="https://twitter.com/intent/tweet?text={{ twitterNeutral($app, $model) }}" 
             class='mx-1 mb-16 flex items-center justify-center font-bold rounded-full text-sm px-8 py-5 {{ theme('bg-blue', 'text-white') }}'>
             <i class="fab fa-twitter mr-3 fa-lg"></i>
             TWEET
