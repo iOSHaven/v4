@@ -52,7 +52,7 @@ dd(url($model->url))
 
       @php
       function twitterGood($app, $model) {
-        return urlencode("I just installed $app->name from @ioshavencom and ". $model->provider->name . " and it is working!");
+        return urlencode("I just installed $app->name from @ioshavencom and ". $model->provider->name . " and it is working! " . url("/app/".$app->uid));
       }
 
       function twitterBad($app, $model) {
@@ -60,7 +60,7 @@ dd(url($model->url))
       }
 
       function twitterNeutral($app, $model) {
-        return urlencode(".@ioshavencom has $app->name from ". $model->provider->name . "!");
+        return urlencode(".@ioshavencom has $app->name from ". $model->provider->name . "! " . url("/app/".$app->uid));
       }
       @endphp
 
