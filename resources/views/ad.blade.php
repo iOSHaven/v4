@@ -76,7 +76,7 @@ dd(url($model->url))
       
 
       <div>
-        <a id="twitter-button" href="https://twitter.com/intent/tweet?text={{ twitterNeutral($app, $model) }}" 
+        <a id="twitter-button" target="_blank" href="https://twitter.com/intent/tweet?text={{ twitterNeutral($app, $model) }}" 
             class='mx-1 mb-16 flex items-center justify-center font-bold rounded-full text-sm px-8 py-5 {{ theme('bg-blue', 'text-white') }}'>
             <i class="fab fa-twitter mr-3 fa-lg"></i>
             TWEET
