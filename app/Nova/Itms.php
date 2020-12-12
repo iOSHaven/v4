@@ -10,6 +10,7 @@ use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use ioshaven\plist\Plist;
 
 class Itms extends Resource
 {
@@ -62,6 +63,8 @@ class Itms extends Resource
             Text::make('url'),
             
             Text::make('Provider', 'provider.name')->onlyOnIndex(),
+
+            Plist::make('plist'),
 
             Avatar::make('', 'provider_avatar')
                 ->thumbnail($this->handleIcon($this->provider_avatar))

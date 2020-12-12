@@ -13,7 +13,9 @@
         "build-V4": "cd nova-components/V4 && npm run dev",
         "build-V4-prod": "cd nova-components/V4 && npm run prod",
         "build-ads": "cd nova-components/Ads && npm run dev",
-        "build-ads-prod": "cd nova-components/Ads && npm run prod"
+        "build-ads-prod": "cd nova-components/Ads && npm run prod",
+        "build-plist": "cd nova-components/Plist && npm run dev",
+        "build-plist-prod": "cd nova-components/Plist && npm run prod"
     },
     "devDependencies": {
         "axios": "^0.18.1",

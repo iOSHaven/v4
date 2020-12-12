@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "052f542aa8b2f96c4c0185db53bf3ed9",
+    "content-hash": "fbf386f7d1f8196aa25bf6b43bc84054",
     "packages": [
         {
             "name": "anhskohbo/no-captcha",
@@ -1387,6 +1387,42 @@
                 "laravel",
                 "nova"
             ]
+        },
+        {
+            "name": "ioshaven/plist",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "./nova-components/Plist",
+                "reference": "fca3f764d9f191c283c42f28084f86a73ebcf968"
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "ioshaven\\plist\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ioshaven\\plist\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "ioshaven/v4",

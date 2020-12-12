@@ -19,6 +19,10 @@
         {
             "type": "path",
             "url": "./nova-components/Ads"
+        },
+        {
+            "type": "path",
+            "url": "./nova-components/Plist"
         }
     ],
     "require": {
@@ -48,7 +52,8 @@
         "rap2hpoutre/laravel-log-viewer": "^1.2",
         "saumini/count": "^1.0",
         "spatie/laravel-sitemap": "^5.2",
-        "symfony/translation-contracts": "^1.1.6"
+        "symfony/translation-contracts": "^1.1.6",
+        "ioshaven/plist": "*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.2",
