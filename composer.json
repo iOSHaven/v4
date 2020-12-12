@@ -37,7 +37,7 @@
         "jdenticon/jdenticon": "^0.10.0",
         "jenssegers/agent": "^2.6",
         "laravel/cashier": "^10.5",
-        "laravel/framework": "^5.8.0",
+        "laravel/framework": "5.8.*",
         "laravel/nova": "~2.0",
         "laravel/tinker": "^1.0",
         "league/flysystem-aws-s3-v3": "^1.0",
