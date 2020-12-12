@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9bfd63e0994713146c8d302a6ec1a1a1",
+    "content-hash": "da5af9349bbb202d05b0e2868d2ea753",
     "packages": [
         {
             "name": "anhskohbo/no-captcha",
@@ -1449,7 +1449,7 @@
             "version": "dev-master",
             "dist": {
                 "type": "path",
-                "url": "./nova-components/Plist",
+                "url": "./nova-components/plist",
                 "reference": "fca3f764d9f191c283c42f28084f86a73ebcf968"
             },
             "require": {
