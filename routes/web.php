@@ -184,6 +184,9 @@ Route::post('/paypal-log', 'PaymentController@logPayment');
 Route::get('/skin/{uuid}', 'PaymentController@downloadSkin')->name('skin');
 Route::get('/skin/affiliate/{uuid}', 'PaymentController@affiliateSkin')->name('skin.ref');
 
+
+Route::post('/add/iosgods/plist', 'StaticPageController@addIGPlist');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

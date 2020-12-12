@@ -447,7 +447,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          * Set the initial, internal value for the field.
          */
         setInitialValue: function setInitialValue() {
-            this.value = this.field.value || '';
+            // this.value = this.field.value || ''
         },
 
 
@@ -455,7 +455,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          * Fill the given FormData object with the field's internal value.
          */
         fill: function fill(formData) {
-            formData.append(this.field.attribute, this.value || '');
+            // formData.append(this.field.attribute, this.value || '')
         },
 
 
@@ -463,6 +463,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
          * Update the field's internal value.
          */
         handleChange: function handleChange(e) {
+            var _this = this;
+
             // this.value = value
             console.log(this.value);
             // this.urlComponent.$data.value = "injected"
@@ -476,7 +478,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             });
             console.log(_axios.defaults.headers.common);
             _axios.get(url).then(function (res) {
-                return console.log(res.data);
+                var plist = res.data;
+                if (plist.startsWith("<?xml")) {
+                    axios.post('/add/iosgods/plist', { plist: plist }).then(function (res2) {
+                        _this.urlComponent.$data.value = res2.data;
+                    });
+                }
             });
         }
     }

@@ -34,14 +34,14 @@ export default {
          * Set the initial, internal value for the field.
          */
         setInitialValue() {
-            this.value = this.field.value || ''
+            // this.value = this.field.value || ''
         },
 
         /**
          * Fill the given FormData object with the field's internal value.
          */
         fill(formData) {
-            formData.append(this.field.attribute, this.value || '')
+            // formData.append(this.field.attribute, this.value || '')
         },
 
         /**
@@ -60,7 +60,14 @@ export default {
                 delete _axios.defaults.headers.common[key]
             })
             console.log(_axios.defaults.headers.common)
-            _axios.get(url).then(res => console.log(res.data))
+            _axios.get(url).then(res => {
+                var plist = res.data
+                if (plist.startsWith("<?xml")) {
+                    axios.post('/add/iosgods/plist', {plist}).then(res2 => {
+                        this.urlComponent.$data.value = res2.data
+                    })
+                }
+            })
         },
     },
 }

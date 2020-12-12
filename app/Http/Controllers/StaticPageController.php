@@ -13,6 +13,7 @@ use Carbon\Carbon;
 use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Storage;
+use Str;
 
 class StaticPageController extends Controller
 {
@@ -143,6 +144,12 @@ class StaticPageController extends Controller
       return response()->json([
         'done' => true
       ]);
+    }
+
+    public function addIGPlist(Request $request) {
+      $randomid = Str::uuid();
+      Storage::disk('local')->put('/plist/iosgods/'.$randomid,$request->plist);
+      return response()->json('itms-services://?action=download-manifest&url=' . url('/plist/iosgods/'.$randomid));
     }
 
 
