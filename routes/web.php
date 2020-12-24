@@ -17,6 +17,7 @@ Route::domain('themes.'.env('ROOT_DOMAIN'))->group(function () use ($themesPage)
 });
 Route::get('/skins', $themesPage);
 Route::get('/themes', $themesPage);
+Route::view('/giveaway', 'giveaway');
 
 // Route::get('/themetest', 'StaticPageController@getThemesPage');
 
