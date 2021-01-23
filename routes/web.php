@@ -12,7 +12,7 @@
 */
 
 $themesPage = 'StaticPageController@getThemesPage';
-Route::domain('themes.'.env('ROOT_DOMAIN'))->group(function () use ($themesPage) {
+Route::domain('themes.' . env('ROOT_DOMAIN'))->group(function () use ($themesPage) {
   Route::get('/', $themesPage);
 });
 Route::get('/skins', $themesPage);
@@ -31,12 +31,12 @@ Route::get('/test', function () {
 use App\Shortcut;
 use Illuminate\Http\Request;
 
-Route::get("/map.xml", function() {
-        $contents = View::make('sitemap')
-        ->with(["apps" => \App\App::get(), "shortcuts" => Shortcut::get()]);
-        return response($contents)->withHeaders([
-          'Content-Type' => 'text/xml'
-        ]);
+Route::get("/map.xml", function () {
+  $contents = View::make('sitemap')
+    ->with(["apps" => \App\App::get(), "shortcuts" => Shortcut::get()]);
+  return response($contents)->withHeaders([
+    'Content-Type' => 'text/xml'
+  ]);
 });
 
 Route::get('/generate/manifest', function (Request $request) {
@@ -47,11 +47,11 @@ Route::get('/generate/protocol', function (Request $request) {
   return Redirect::away($request->get('protocol') . "://");
 })->name('protocol.generate');
 
-Route::get("/shop", function() {
+Route::get("/shop", function () {
   return redirect("https://memes33.com/collections/ios-haven");
 });
 
-Route::get("/merch", function() {
+Route::get("/merch", function () {
   return view('merch');
 });
 
@@ -76,18 +76,18 @@ Auth::routes();
 // Route::post('/auth/toggleEditing', 'HomeController@toggleEditing');
 
 Route::group(['prefix' => 'plist'], function () {
-  Route::get('{any}',"StaticPageController@plist")->where('any', '.*');
+  Route::get('{any}', "StaticPageController@plist")->where('any', '.*');
 });
 // Route::get('/plist/{name}', "StaticPageController@plist");
 
 
 Route::group(['prefix' => 'user'], function () {
-    Route::get("/settings", "UserController@getSettings");
-    Route::post("/settings", "UserController@postSettings");
-    Route::get("/notifications", "UserController@getNotifications");
-    Route::get("/badges", "UserController@getBadges");
-    Route::get("/password", "UserController@getPassword");
-    Route::post("/password", "UserController@postPassword");
+  Route::get("/settings", "UserController@getSettings");
+  Route::post("/settings", "UserController@postSettings");
+  Route::get("/notifications", "UserController@getNotifications");
+  Route::get("/badges", "UserController@getBadges");
+  Route::get("/password", "UserController@getPassword");
+  Route::post("/password", "UserController@postPassword");
 });
 
 Route::group(['prefix' => 'image'], function () {
@@ -119,6 +119,7 @@ Route::get('/download/{ipa}', 'AppController@download')->name('download');
 Route::get('/install/uid/{app}', 'AppController@installUid');
 Route::get('/download/uid/{app}', 'AppController@downloadUid');
 
+Route::get('/tutubox/cert', 'StaticPageController@tutubox');
 
 Route::group(["prefix" => "shortcuts", "middleware" => ["tab:Shortcuts", "back:Shortcuts"]], function () {
   Route::get('/{tag?}', 'ShortcutController@page')->name('shortcuts');
