@@ -106,13 +106,17 @@ Route::get('/itms/{id}', 'AppController@itms');
 
 
 Route::post('/app/create', 'AppController@create');
+
+// app security starts here
 Route::get('/app/{uid}', 'AppController@showAppDetailPage')->name('detail');
-Route::get('/shortcut/{itunes_id}', 'ShortcutController@showDetail');
-Route::get('/shortcut/install/{itunes_id}', 'ShortcutController@install');
 Route::get('/app/edit/{uid}', 'AppController@edit');
 Route::post('/app/update', 'AppController@update');
 Route::post('/app/remove', 'AppController@remove');
 Route::post('/app/token', 'AppController@token');
+
+Route::get('/shortcut/{itunes_id}', 'ShortcutController@showDetail');
+Route::get('/shortcut/install/{itunes_id}', 'ShortcutController@install');
+
 
 Route::get('/install/{itms}', 'AppController@install')->name('install');
 Route::get('/download/{ipa}', 'AppController@download')->name('download');

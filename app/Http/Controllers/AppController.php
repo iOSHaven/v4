@@ -213,11 +213,30 @@ class AppController extends Controller
     return redirect("/app/edit/{$request->uid}");
   }
 
+  private function addAppSecurityTimeoutToSession($uid)
+  {
+    session()->put($uid, now()->addMinutes(10));
+  }
+
+  private function verifyAppSecurity($uid)
+  {
+    if (session()->has($uid)) {
+      $time = session()->get($uid, now()->subCenturies(5));
+      if (now()->lt($time)) {
+        return true;
+      }
+    }
+    abort(401);
+    return false;
+  }
+
   public function showAppDetailPage($uid)
   {
     $app = App::base_query()
       ->where('uid', $uid)
       ->firstOrFail();
+
+    $this->addAppSecurityTimeoutToSession($uid);
 
     event(new \App\Events\ViewEvent($app));
 
@@ -305,6 +324,8 @@ class AppController extends Controller
 
   private function displayAd(App $app, $model, $url = null)
   {
+
+    $this->verifyAppSecurity($app->uid);
 
     $type = strtolower(class_basename($model));
     // dd($type);
