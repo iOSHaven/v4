@@ -16,7 +16,9 @@ class ViewListener
 
     public function handle(ViewEvent $event)
     {
-        $view = new View;
-        $view->trigger()->associate($event->model)->save();
+        if (config('app-analytics.views')) {
+            $view = new View;
+            $view->trigger()->associate($event->model)->save();
+        }
     }
 }

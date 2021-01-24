@@ -60,14 +60,14 @@ class App extends Resource
     ];
 
 
-    public static function indexQuery(NovaRequest $request, $query) {
+    public static function indexQuery(NovaRequest $request, $query)
+    {
 
         $query = $query
-                // ->withStats()
-                // ->base_query()
-                ->ownedByUser()
-                ->orderBy('impressions', 'desc')
-                ;
+            // ->withStats()
+            // ->base_query()
+            ->ownedByUser()
+            ->orderBy('impressions', 'desc');
         // debug($request);
         return $query;
     }
@@ -106,7 +106,7 @@ class App extends Resource
             // RelationshipCount::make('ITMS', 'installs')->sortable()->onlyOnIndex(),
 
 
-            
+
 
             BelongsToMany::make('Itms', 'itms', Itms::class)->nullable()->searchable()->singularLabel('Signed Link (ITMS)'),
             BelongsToMany::make('Ipa', 'ipas', Ipa::class)->nullable()->searchable()->singularLabel('Unsigned Link (IPA)'),
@@ -115,8 +115,8 @@ class App extends Resource
             Markdown::make('Description')->required(),
             Textarea::make('tags'),
 
-            
-            
+
+
         ];
     }
 
@@ -128,15 +128,35 @@ class App extends Resource
      */
     public function cards(Request $request)
     {
-        return [
-            // new Metrics\NewApps,
-            (new Metrics\PerDay)->model(SummaryView::class)->trigger('\App\App')->setName('Total Views'),
-            (new Metrics\PerDay)->model(SummaryDownload::class)->trigger('\App\App')->setName('Total Downloads'),
-            (new Metrics\PerDay)->model(SummaryInstall::class)->trigger('\App\App')->setName('Total Installs'),
-            (new Metrics\PerDayPerResource)->model(SummaryView::class)->trigger('\App\App')->setName('Views')->onlyOnDetail(),
-            (new Metrics\PerDayPerResource)->model(SummaryDownload::class)->trigger('\App\App')->setName('Downloads')->onlyOnDetail(),
-            (new Metrics\PerDayPerResource)->model(SummaryInstall::class)->trigger('\App\App')->setName('Installs')->onlyOnDetail(),
-        ];
+        $views = [];
+        $downloads = [];
+        $installs = [];
+
+        if (config('app-analytics.views')) {
+            $views = [
+                (new Metrics\PerDay)->model(SummaryView::class)->trigger('\App\App')->setName('Total Views'),
+                (new Metrics\PerDayPerResource)->model(SummaryView::class)->trigger('\App\App')->setName('Views')->onlyOnDetail(),
+            ];
+        }
+
+        if (config('app-analytics.downloads')) {
+            $downloads = [
+                (new Metrics\PerDay)->model(SummaryDownload::class)->trigger('\App\App')->setName('Total Downloads'),
+                (new Metrics\PerDayPerResource)->model(SummaryDownload::class)->trigger('\App\App')->setName('Downloads')->onlyOnDetail(),
+            ];
+        }
+
+        if (config('app-analytics.installs')) {
+            $installs = [
+                (new Metrics\PerDay)->model(SummaryInstall::class)->trigger('\App\App')->setName('Total Installs'),
+                (new Metrics\PerDayPerResource)->model(SummaryInstall::class)->trigger('\App\App')->setName('Installs')->onlyOnDetail(),
+            ];
+        }
+
+        $res = array_merge($views, $downloads, $installs);
+
+
+        return $res;
     }
 
     /**
@@ -180,6 +200,4 @@ class App extends Resource
                 ->cancelButtonText('Never mind'),
         ];
     }
-
-    
 }

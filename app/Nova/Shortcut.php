@@ -48,7 +48,8 @@ class Shortcut extends Resource
         'id', 'name'
     ];
 
-    public static function indexQuery(NovaRequest $request, $query) {
+    public static function indexQuery(NovaRequest $request, $query)
+    {
         return $query->ownedByUser()->orderBy('impressions', 'desc');
     }
 
@@ -84,7 +85,7 @@ class Shortcut extends Resource
 
             Markdown::make('Description'),
 
-            
+
             Url::make('Itunes Url', 'url')
                 ->label('Install')
                 ->alwaysClickable()
@@ -133,29 +134,44 @@ class Shortcut extends Resource
      */
     public function cards(Request $request)
     {
-        return [
-            (new Metrics\PerDay)
-                ->model(SummaryView::class)
-                ->trigger('\App\Shortcut')
-                ->setName('Total Views'),
 
-            (new Metrics\PerDay)
-                ->model(SummaryInstall::class)
-                ->trigger('\App\Shortcut')
-                ->setName('Total Installs'),
+        $views = [];
+        $installs = [];
 
-            (new Metrics\PerDayPerResource)
-                ->model(SummaryView::class)
-                ->trigger('\App\Shortcut')
-                ->setName('Views')
-                ->onlyOnDetail(),
+        if (config('app-analytics.views')) {
+            $views = [
+                (new Metrics\PerDay)
+                    ->model(SummaryView::class)
+                    ->trigger('\App\Shortcut')
+                    ->setName('Total Views'),
 
-            (new Metrics\PerDayPerResource)
-                ->model(SummaryInstall::class)
-                ->trigger('\App\Shortcut')
-                ->setName('Installs')
-                ->onlyOnDetail(),
-        ];
+                (new Metrics\PerDayPerResource)
+                    ->model(SummaryView::class)
+                    ->trigger('\App\Shortcut')
+                    ->setName('Views')
+                    ->onlyOnDetail(),
+            ];
+        }
+
+
+        if (config('app-analytics.installs')) {
+            $installs = [
+                (new Metrics\PerDay)
+                    ->model(SummaryInstall::class)
+                    ->trigger('\App\Shortcut')
+                    ->setName('Total Installs'),
+
+                (new Metrics\PerDayPerResource)
+                    ->model(SummaryInstall::class)
+                    ->trigger('\App\Shortcut')
+                    ->setName('Installs')
+                    ->onlyOnDetail(),
+            ];
+        }
+
+        $res = array_merge($views, $installs);
+
+        return $res;
     }
 
     /**

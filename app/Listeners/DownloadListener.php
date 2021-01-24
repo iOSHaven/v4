@@ -15,7 +15,9 @@ class DownloadListener
 
     public function handle($event)
     {
-        $download = new Download;
-        $download->trigger()->associate($event->model)->save();
+        if (config('app-analytics.downloads')) {
+            $download = new Download;
+            $download->trigger()->associate($event->model)->save();
+        }
     }
 }

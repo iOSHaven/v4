@@ -1,12 +1,12 @@
 @extends('layouts.redesign', ["title" => $app->name, "hide_nav" => true ])
 
 @section('twitter')
-    <meta property="og:title" content="iOS Haven - {{ $app->name }}">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:description" content="{{ $app->short }}">
-    <meta property="og:image" content="{{ url($app->icon) }}">
-    <meta property="twitter:site:id" content="715729557769166848">
+<meta property="og:title" content="iOS Haven - {{ $app->name }}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{{ url()->current() }}">
+<meta property="og:description" content="{{ $app->short }}">
+<meta property="og:image" content="{{ url($app->icon) }}">
+<meta property="twitter:site:id" content="715729557769166848">
 @endsection
 
 @section('content')
@@ -27,19 +27,17 @@
               </div>
               <div class="flex items-center justify-start mt-1">
                 @foreach($app->providers as $provider)
-                  @component('components.tinyProviderIcon', ["provider" => $provider])@endcomponent
+                @component('components.tinyProviderIcon', ["provider" => $provider])@endcomponent
                 @endforeach
               </div>
 
               <div class="mt-5">
                 @component('components.appButtons', ["app" => $app])@endcomponent
                 <div class="mt-4">
-                  <a class="twitter-share-button"
-                  data-size="large"
-                href="https://twitter.com/intent/tweet?text={{ urlencode("I just installed $app->name from @ioshavencom and it is working!") }}">
-                Tweet</a>
+                  <a class="twitter-share-button" data-size="large" href="https://twitter.com/intent/tweet?text={{ urlencode("I just installed $app->name from @ioshavencom and it is working!") }}">
+                    Tweet</a>
                 </div>
-                
+
               </div>
             </div>
           </div>
@@ -57,47 +55,57 @@
 
           {{-- APPLICATION FEATURES --}}
           @component('components.collapse', ["title" => "Description", "pre" => true, "show" => true])
-            {{ $app->description }}
+          {{ $app->description }}
           @endcomponent
 
 
           {{-- APPLICATON STATS --}}
+          @if(config('app-analytics.enabled'))
           @component('components.collapse', ["title" => "Stats", "show" => true])
-            <div class="flex items-center justify-start">
-              <div class="mr-2 flex items-center justify-start">
-                <i class="fad fa-eye mr-2 text-center" style="width: 20px;"></i>
-                <span>{{ format_int($app->impressions ?? "0") }}<span>
-              </div>
-              <div class="mr-2 flex items-center justify-start">
-                <i class="fad fa-download mr-2 text-center" style="width: 20px;"></i>
-                <span>{{ format_int($app->downloads + $app->installs ?? "0") }}<span>
-              </div>
-              <div class="mr-2 flex items-center justify-start">
-                <i class="fas fa-database mr-2 text-center" style="width: 20px;"></i>
-                <span>{{ format_int($app->size ?? "0b", 'file') }}<span>
-              </div>
+          <div class="flex items-center justify-start">
+            @if(config('app-analytics.views'))
+            <div class="mr-2 flex items-center justify-start">
+              <i class="fad fa-eye mr-2 text-center" style="width: 20px;"></i>
+              <span>{{ format_int($app->impressions ?? "0") }}<span>
             </div>
+            @endif
+
+            @if(config('app-analytics.downloads') || config('app-analytics.installs') )
+            <div class="mr-2 flex items-center justify-start">
+              <i class="fad fa-download mr-2 text-center" style="width: 20px;"></i>
+              <span>{{ format_int($app->downloads + $app->installs ?? "0") }}<span>
+            </div>
+            @endif
+
+            @if(config('app-analytics.sizes'))
+            <div class="mr-2 flex items-center justify-start">
+              <i class="fas fa-database mr-2 text-center" style="width: 20px;"></i>
+              <span>{{ format_int($app->size ?? "0b", 'file') }}<span>
+            </div>
+            @endif
+          </div>
           @endcomponent
+          @endif
 
 
           {{-- APPLICATION ITMS --}}
           @component('components.collapse', ["title" => "Signed Links", "show" => true])
-              @foreach($app->itms as $itms)
-                @component('components.providerListing', [
-                  "model" => $itms, 
-                  "showLine" => !$loop->last])
-                @endcomponent
-              @endforeach
+          @foreach($app->itms as $itms)
+          @component('components.providerListing', [
+          "model" => $itms,
+          "showLine" => !$loop->last])
+          @endcomponent
+          @endforeach
           @endcomponent
 
           {{-- APPLICATION IPAs --}}
           @component('components.collapse', ["title" => "IPA Links", "show" => true])
-              @foreach($app->ipas as $ipas)
-                @component('components.providerListing', [
-                  "model" => $ipas, 
-                  "showLine" => !$loop->last])
-                @endcomponent
-              @endforeach
+          @foreach($app->ipas as $ipas)
+          @component('components.providerListing', [
+          "model" => $ipas,
+          "showLine" => !$loop->last])
+          @endcomponent
+          @endforeach
           @endcomponent
 
           <div class="mb-5 show-gt-tablet-portrait"></div>
@@ -132,7 +140,7 @@
 
 @section('footer')
 <script>
-  autocomplete('appsearch', function (e, target, json) {
+  autocomplete('appsearch', function(e, target, json) {
     var j = []
     json.forEach(app => {
       var a = Object.assign({}, app)
@@ -154,20 +162,22 @@
   })
 </script>
 
-<script>window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  fjs.parentNode.insertBefore(js, fjs);
+<script>
+  window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
 
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
 
-  return t;
-}(document, "script", "twitter-wjs"));</script>
+    return t;
+  }(document, "script", "twitter-wjs"));
+</script>
 @endsection

@@ -29,23 +29,23 @@
             <div class="mt-5">
               <div class="flex items-center flex-wrap -mt-2">
                 @component('components.button', [
-                    "href"=> $shortcut->url,
-                    "bg" => "blue",
-                    "color" => "white",
-                    "class" => "mt-2 mr-2"
-                  ])
-                  GET
+                "href"=> $shortcut->url,
+                "bg" => "blue",
+                "color" => "white",
+                "class" => "mt-2 mr-2"
+                ])
+                GET
                 @endcomponent
 
                 @can('update', $shortcut)
-                  @component('components.button', [
-                    "href"=> "/nova/resources/shortcuts/$shortcut->id",
-                    "bg" => "red",
-                    "color" => "white",
-                    "class" => "mt-2"
-                  ])
-                  EDIT
-                  @endcomponent
+                @component('components.button', [
+                "href"=> "/nova/resources/shortcuts/$shortcut->id",
+                "bg" => "red",
+                "color" => "white",
+                "class" => "mt-2"
+                ])
+                EDIT
+                @endcomponent
                 @endcan
 
               </div>
@@ -57,7 +57,7 @@
         <br>
         @component('components.ad')@endcomponent
         @if(env('APP_ENV') == 'production')
-          <br>
+        <br>
         @endif
 
 
@@ -70,18 +70,26 @@
 
 
         {{-- APPLICATON STATS --}}
+        @if(config('app-analytics.enabled'))
         @component('components.collapse', ["title" => "Stats", "show" => true])
         <div class="flex items-center justify-start">
+
+          @if(config('app-analytics.views'))
           <div class="mr-2 flex items-center justify-start">
             <i class="fad fa-eye mr-2 text-center" style="width: 20px;"></i>
             <span>{{ format_int($shortcut->impressions ?? "0") }}<span>
           </div>
+          @endif
+
+          @if(config('app-analytics.downloads'))
           <div class="mr-2 flex items-center justify-start">
             <i class="fad fa-download mr-2 text-center" style="width: 20px;"></i>
             <span>{{ format_int($shortcut->downloads ?? "0") }}<span>
           </div>
+          @endif
         </div>
         @endcomponent
+        @endif
 
 
         {{-- APPLICATION ITMS --}}
@@ -136,7 +144,7 @@
 
 @section('footer')
 <script>
-  autocomplete('appsearch', function (e, target, json) {
+  autocomplete('appsearch', function(e, target, json) {
     var j = []
     json.forEach(app => {
       var a = Object.assign({}, app)
