@@ -32,6 +32,7 @@ class StaticPageController extends Controller
 
   public function plist($name)
   {
+    verifyAppSecurity("plist");
     try {
       return response(Storage::disk('local')->get("/plist/$name"))->withHeaders([
         'Content-Type' => 'text/xml'
