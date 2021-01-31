@@ -109,12 +109,14 @@ function addAppSecurityTimeoutToSession($key, $minutes = 10)
 
 function verifyAppSecurity($key)
 {
-  if (session()->has($key)) {
-    $time = session()->get($key, now()->subCenturies(5));
-    if (now()->lt($time)) {
-      return true;
+  if (config("app.prevent_scraping")) {
+    if (session()->has($key)) {
+      $time = session()->get($key, now()->subCenturies(5));
+      if (now()->lt($time)) {
+        return true;
+      }
     }
+    abort(401);
+    return false;
   }
-  abort(401);
-  return false;
 }
