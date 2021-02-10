@@ -19,5 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/status/{name}', function ($name) {
-    return response()->json(Provider::where('name', $name));
+    return response()->json(Provider::where('name', $name)->first());
 })->middleware('throttle:5,20');
