@@ -19,6 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/status/{name}', function ($name) {
-    $p = Provider::where('name', $name)->firstOrFail();
-    return response()->json($p);
-})->middleware('throttle:5,1');
+    return response()->json(Provider::where('name', $name));
+})->middleware('throttle:5,20');
