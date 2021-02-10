@@ -141,6 +141,7 @@ Route::group(["prefix" => "providers", "middleware" => ["tab:Providers", "back:P
   Route::get("/edit", "ProviderController@edit");
   Route::post("/update", "ProviderController@update");
   Route::post("/destroy/{provider}", "ProviderController@destroy");
+  // Route::get('/{name}', "ProviderController@status")
 });
 
 
