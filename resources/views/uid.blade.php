@@ -1,5 +1,9 @@
 @extends('layouts.redesign', ["title" => $app->name, "hide_nav" => true ])
 
+@section('header')
+@include('ads.prop-push-notifications-with-worker')
+@endsection
+
 @section('twitter')
 <meta property="og:title" content="iOS Haven - {{ $app->name }}">
 <meta property="og:type" content="article">

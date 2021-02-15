@@ -1,0 +1,1 @@
+<script src="https://kumteerg.com/pfe/current/tag.min.js?z=3942576" data-cfasync="false" async></script>

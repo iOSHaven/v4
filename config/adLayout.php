@@ -6,6 +6,8 @@ return [
     "updates" => "social-bar",
     "download" => "adsterra-pop-under",
     "install" => "adsterra-pop-under",
-    "search" => "native-banner",
-    "detail" => "native-banner",
+
+    // contains additional code on blade templates.
+    "search" => "prop-push-notifications",
+    "detail" => "prop-push-notifications",
 ];
