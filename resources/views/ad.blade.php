@@ -52,11 +52,11 @@ dd(url($model->url))
 
       @php
       function twitterGood($app, $model) {
-        return urlencode("I just installed $app->name from ". $model->provider->name . " and it is working! " . url("/app/".$app->uid) . " #ihvn-working");
+        return urlencode("I just installed $app->name from ". $model->provider->name . " and it is working! " . url("/app/".$app->uid) . " #ihvn_working");
       }
 
       function twitterBad($app, $model) {
-        return urlencode("$app->name from ". $model->provider->name . " is broken! #ihvn-broken");
+        return urlencode("$app->name from ". $model->provider->name . " is broken! #ihvn_broken");
       }
 
       function twitterNeutral($app, $model) {
