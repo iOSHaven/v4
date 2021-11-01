@@ -335,6 +335,9 @@
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVKPPPZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     {{-- End Google Tag Manager (noscript) --}}
     {{-- ====END INSIDE BODY==== --}}
+
+    {{-- ==== PROPELLER ADVERTISING TRACKING ==== --}}
+    <script type='text/javascript' src='https://propeller-tracking.com/fv.js?t=99810'></script>
   </body>
 
 </html>
