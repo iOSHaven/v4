@@ -55,7 +55,9 @@
         </div>
 
         <br>
-        @component('components.ad')@endcomponent
+
+        @component('ads.google-header')@endcomponent
+
         @if(env('APP_ENV') == 'production')
         <br>
         @endif

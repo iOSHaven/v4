@@ -1,8 +1,5 @@
 @extends('layouts.redesign', ["title" => $app->name, "hide_nav" => true ])
 
-@section('header')
-@include('ads.prop-push-notifications-with-worker')
-@endsection
 
 @section('twitter')
 <meta property="og:title" content="iOS Haven - {{ $app->name }}">
@@ -48,7 +45,7 @@
 
           <br>
 
-          @component('components.ad')@endcomponent
+          @component('ads.google-header')@endcomponent
 
           @if(env('APP_ENV') == 'production')
           <br>

@@ -329,7 +329,7 @@
     </script>
 
     {{-- propeller ad --}}
-    <div id="ioshaven-popunder"></div>
+    <!-- <div id="ioshaven-popunder"></div> -->
 
     {{-- Google Tag Manager (noscript) --}}
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVKPPPZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -337,7 +337,7 @@
     {{-- ====END INSIDE BODY==== --}}
 
     {{-- ==== PROPELLER ADVERTISING TRACKING ==== --}}
-    <script type='text/javascript' src='https://propeller-tracking.com/fv.js?t=99810'></script>
+    <!-- <script type='text/javascript' src='https://propeller-tracking.com/fv.js?t=99810'></script> -->
   </body>
 
 </html>

@@ -31,11 +31,11 @@
     @else
     @component('components.shortcut', ["shortcut" => $model])@endcomponent
     @endif
-    {{-- @if($loop->iteration == 3)
-            
-                @component('components.ad')@endcomponent
-                
-            @endif --}}
+
+    @if($loop->iteration == 3)
+    @component('ads.google-in-feed')@endcomponent
+    @endif
+
     @endforeach
   </div>
 </div>
