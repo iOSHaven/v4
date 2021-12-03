@@ -32,11 +32,11 @@
     @component('components.shortcut', ["shortcut" => $model])@endcomponent
     @endif
 
-    @if($loop->iteration == 3)
-    @component('ads.google-in-feed')@endcomponent
-    @endif
+    @if($apps->currentPage() <= 3 && $loop->iteration == 3)
+      @component('ads.google-in-feed') @endcomponent
+      @endif
 
-    @endforeach
+      @endforeach
   </div>
 </div>
 
