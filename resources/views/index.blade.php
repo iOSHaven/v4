@@ -18,6 +18,8 @@
       </script>
     </div>
 
+    @component('ads.google-home-page')@endcomponent
+
     <div class="flex items-center justify-center">
       <a href="/apps" class='btn-da mb-4 flex items-center justify-center mx-1 font-bold rounded-full text-sm px-5 py-2 text-white-light {{ theme("bg-indigo") }}'>
         <i class="fas fa-rocket mr-3 fa-lg"></i>
