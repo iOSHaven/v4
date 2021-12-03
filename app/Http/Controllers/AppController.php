@@ -17,6 +17,7 @@ use Illuminate\Http\Response;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Jenssegers\Agent\Agent;
 
 class AppController extends Controller
 {
@@ -34,6 +35,7 @@ class AppController extends Controller
   private function display(Request $request, $data, $pageTitle = null)
   {
     $data["pageTitle"] = $request->get('title', $pageTitle);
+    $data["agent"] = new Agent();
     if ($request->json == 'true') {
       return response()->json($data);
     } else if ($request->html == 'true') {
