@@ -28,12 +28,19 @@ Route::get('/test', function () {
   return view('test');
 });
 
+use App\Ipa;
+use App\Itms;
 use App\Shortcut;
 use Illuminate\Http\Request;
 
 Route::get("/map.xml", function () {
   $contents = View::make('sitemap')
-    ->with(["apps" => \App\App::get(), "shortcuts" => Shortcut::get()]);
+    ->with([
+      "apps" => \App\App::with(["itms", "ipas"])->get(),
+      "shortcuts" => Shortcut::get(),
+      // "itms" => Itms::get(),
+      // "ipas" => Ipa::get()
+    ]);
   return response($contents)->withHeaders([
     'Content-Type' => 'text/xml'
   ]);
