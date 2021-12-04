@@ -40,7 +40,7 @@
 
 
     @if($apps->currentPage() <= 3) @if($agent->isMobile())
-      @if ($loop->iteration == 7)
+      @if ($loop->iteration == 4)
       @component('ads.google-in-feed') @endcomponent
       @endif
       @elseif($loop->iteration == 3)
