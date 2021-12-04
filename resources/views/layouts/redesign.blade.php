@@ -40,7 +40,7 @@
 
   @yield('description', View::make('seo.description'))
   @yield('search-engine', View::make('seo.search-engine'))
-  @yield('twitter-og', View::make('seo.twitter-og'))
+  @yield('twitter', View::make('seo.twitter-og'))
 
 
 
