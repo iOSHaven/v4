@@ -1,0 +1,2 @@
+  {{-- SEARCH ENGINE FRIENDLY --}}
+  <meta name="description" content="Discover hacked games, tweaked apps, jailbreaks and more. We offer tools to get started, links you should visit, and thousands of popular apps ready for download. A search engine for hacked iOS apps.">

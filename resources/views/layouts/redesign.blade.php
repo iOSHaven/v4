@@ -38,6 +38,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, viewport-fit=cover">
 
+  @yield('description', View::make('seo.description'))
   @yield('search-engine', View::make('seo.search-engine'))
   @yield('twitter-og', View::make('seo.twitter-og'))
 

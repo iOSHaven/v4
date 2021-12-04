@@ -11,6 +11,10 @@
 <meta property="twitter:site:id" content="715729557769166848">
 @endsection
 
+@section('description')
+<meta name="description" content="Download {{ $app->name}} now! This app is a {{ $app->short }} and includes the following features: {{$app->description}}">
+@endsection
+
 @section('content')
 <section class="p-0">
   <div class="container">
