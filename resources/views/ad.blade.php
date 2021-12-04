@@ -1,12 +1,20 @@
-@extends('layouts.redesign', ["title" => "Installing", "hide_nav" => true, "hide_ads" => true, "back_link" => url("/apps")])
+@extends('layouts.redesign', ["title" => "Downloading $app->name ...", "hide_nav" => true, "hide_ads" => true, "back_link" => url("/apps")])
 
 {{-- @php
 dd(url($model->url))
 @endphp --}}
 
 @section('header')
-<title>{{ $app->name }}</title>
 <meta http-equiv="refresh" content="2; url={{ $url }}">
+@endsection
+
+@section('twitter')
+<meta property="og:title" content="iOS Haven - Downloading {{ $app->name }}...">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{{ url()->current() }}">
+<meta property="og:description" content="Installing {{ $app->name}} now! This app will complete downloading soon. Ensure that you use tutorials or contact us for help installing.">
+<meta property="og:image" content="{{ url($app->icon) }}">
+<meta property="twitter:site:id" content="715729557769166848">
 @endsection
 
 @section('content')

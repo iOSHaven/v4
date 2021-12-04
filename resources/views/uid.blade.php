@@ -1,11 +1,12 @@
 @extends('layouts.redesign', ["title" => $app->name, "hide_nav" => true ])
 
 
+
 @section('twitter')
 <meta property="og:title" content="iOS Haven - {{ $app->name }}">
 <meta property="og:type" content="article">
 <meta property="og:url" content="{{ url()->current() }}">
-<meta property="og:description" content="{{ $app->short }}">
+<meta property="og:description" content="Download {{ $app->name}} now! This app is a {{ $app->short }} and includes the following features: {{$app->description}}">
 <meta property="og:image" content="{{ url($app->icon) }}">
 <meta property="twitter:site:id" content="715729557769166848">
 @endsection
