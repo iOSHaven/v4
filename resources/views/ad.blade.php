@@ -99,8 +99,8 @@ dd(url($model->url))
     </div>
 
 
-    @if($type == "itms")
-    <h3 class="mt-0 text-2xl font-display">How to install</h4>
+    <!-- @if($type == "itms")
+    <h3 class="mt-0 text-2xl font-display">How to install</h3>
       <i class="fas fa-arrow-down fa-2x"></i>
       <img class="d-block mx-auto" src="/tutorial-images/UsingSignedAppStep1.png" alt="" width="200">
       <img class="d-block mx-auto" src="/tutorial-images/UsingSignedAppStep2.png" alt="" width="200">
@@ -108,7 +108,37 @@ dd(url($model->url))
       <h3 class="font-display">Settings > General > Profiles & Device Management > [ Select Certificate ]</h3>
       <img class="d-block mx-auto mb-3" src="/tutorial-images/UsingSignedAppStep4.png" alt="" width="200">
       <img class="d-block mx-auto" src="/tutorial-images/UsingSignedAppStep5.png" alt="" width="200">
-      @endif
+    @endif -->
+
+    <div class="text-left text-leading text-xl">
+      <h1 class="text-4xl font-display mt-4">Are you unable to install an app?</h1>
+      <p class="my-3">Read more! This quick tutorial will help you get the most out of games, apps, shortcuts, and other iOS features. This tutorial is insurance that you can buy into.</p>
+      <h2 class="text-2xl font-display mt-4">Decide between install or download</h2>
+      <p class="my-3">What is the difference between installing and downloading apps?</p>
+      <p class="my-3">Apps are entirely user submitted which means some apps can be directly installed to your iOS device (ITMS) while other apps require a computer (IPA).</p>
+      <h3 class="text-xl font-display mt-4">ITMS</h3>
+      <p class="my-3">ITMS apps require a trusted enterprise certificate. When a trusted certificate cannot be located, apps are considered to be "unsigned" or "revoked".</p>
+      <p class="my-3">"Unsigned" apps are apps that are waiting to be signed by a certificate. Any certificate will work for personal apps but public apps must be enterprise.</p>
+      <p class="my-3">"Revoked" apps are apps that were signed but the certificate is no longer trusted. This means you must find another certificate.</p>
+      <h3 class="text-xl font-display mt-4">IPA</h3>
+      <p class="my-3">IPA apps are "unsigned" meaning they can be used freely. However, you will need a computer or a server to sign IPA files.</p>
+      <p class="my-3">Our fiends AppValley, iOS Gods, TutuBox, AltStore, and Scarlet all provide ways to sign IPA files. However, nobody has search capabilities and support like we do. We are here to help you find what you need.</p>
+      <h2 class="text-2xl font-display mt-4">Direct Installation</h2>
+      <p class="my-3">Sometimes signed apps will ask you to open in "iTunes". This is a bug, so tap "Open" to continue.</p>
+      <img class="d-block mx-auto" src="/tutorial-images/UsingSignedAppStep1.png" alt="" width="200">
+      <p class="my-3">Next, a popup will ask to install the app you selected. Press "Install".</p>
+      <img class="d-block mx-auto" src="/tutorial-images/UsingSignedAppStep2.png" alt="" width="200">
+      <p class="my-3">Once downloaded, locate the app on you phone. If it works, there is nothing else to do. Otherwise, you may see a message like the following.</p>
+      <img class="d-block mx-auto mb-3" src="/tutorial-images/UsingSignedAppStep3.png" alt="" width="200">
+      <h3 class="text-xl font-display mt-4">How do I trust a certificate?</h3>
+      <p class="my-3">If you see the previous message, you need to trust the certificate in your settings. Navigate to <strong>SETTINGS > GENERAL > PROFILES & DEVICE MANAGEMENT</strong>. Selected a certificate and you should see a screen like the following.</p>
+      <img class="d-block mx-auto mb-3" src="/tutorial-images/UsingSignedAppStep4.png" alt="" width="200">
+      <p class="my-3">Verify the certificate is for the app you just downloaded. Then press "Trust". Now you can open your app, congratulations!!</p>
+      <img class="d-block mx-auto" src="/tutorial-images/UsingSignedAppStep5.png" alt="" width="200">
+      <h2 class="text-2xl font-display mt-4">Side-loading</h2>
+      <p class="my-3">The techniques for side-loading change occasionally. Use AltStore, Cydia Impactor, or Scarlet first. If the problem persists, contact us on Twitter @ioshavencom.</p>
+    </div>
+
   </div>
 </section>
 
