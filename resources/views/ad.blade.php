@@ -124,18 +124,18 @@ dd(url($model->url))
     <div class="text-left text-leading text-xl">
       <h1 class="text-4xl font-display mt-4">Are you unable to install an app?</h1>
       <p class="my-3">Read more! This quick tutorial will help you get the most out of games, apps, shortcuts, and other iOS features. This tutorial is insurance that you can buy into.</p>
-      <h2 class="text-2xl font-display mt-4">Decide between install or download</h2>
+      <h2 class="text-2xl font-display mt-4">How to decide between installation or download?</h2>
       <p class="my-3">What is the difference between installing and downloading apps?</p>
-      <p class="my-3">Apps are entirely user submitted which means some apps can be directly installed to your iOS device (ITMS) while other apps require a computer (IPA).</p>
+      <p class="my-3">Apps are entirely user submitted which means some apps are directly installed to your iOS device (ITMS) while other apps require a computer (IPA) such as a Apple MacBook Pro.</p>
       <h3 class="text-xl font-display mt-4">ITMS</h3>
       <p class="my-3">ITMS apps require a trusted enterprise certificate. When a trusted certificate cannot be located, apps are considered to be "unsigned" or "revoked".</p>
-      <p class="my-3">"Unsigned" apps are apps that are waiting to be signed by a certificate. Any certificate will work for personal apps but public apps must be enterprise.</p>
-      <p class="my-3">"Revoked" apps are apps that were signed but the certificate is no longer trusted. This means you must find another certificate.</p>
+      <p class="my-3">"Unsigned" apps are apps that are waiting for a newly purchased certificate. Any certificate will work for personal apps but public apps must be enterprise.</p>
+      <p class="my-3">"Revoked" apps are no longer signed and the certificate is no longer trusted. This means you must find another certificate or buy your own. We suggest traveling around provider sites because they can cost as much as a car!</p>
       <h3 class="text-xl font-display mt-4">IPA</h3>
-      <p class="my-3">IPA apps are "unsigned" meaning they can be used freely. However, you will need a computer or a server to sign IPA files.</p>
+      <p class="my-3">IPA apps are "unsigned" meaning they can be used freely. However, you will need a high-quality computer or a virtual private server to sign IPA files.</p>
       <p class="my-3">Our fiends AppValley, iOS Gods, TutuBox, AltStore, and Scarlet all provide ways to sign IPA files. However, nobody has search capabilities and support like we do. We are here to help you find what you need.</p>
       <h2 class="text-2xl font-display mt-4">Direct Installation</h2>
-      <p class="my-3">Sometimes signed apps will ask you to open in "iTunes". This is a bug, so tap "Open" to continue.</p>
+      <p class="my-3">Sometimes apps will prompt for "iTunes". This is a bug, so tap "Open" to continue.</p>
       <img class="d-block mx-auto" src="/tutorial-images/UsingSignedAppStep1.png" alt="" width="200">
       <p class="my-3">Next, a popup will ask to install the app you selected. Press "Install".</p>
       <img class="d-block mx-auto" src="/tutorial-images/UsingSignedAppStep2.png" alt="" width="200">
@@ -148,6 +148,7 @@ dd(url($model->url))
       <img class="d-block mx-auto" src="/tutorial-images/UsingSignedAppStep5.png" alt="" width="200">
       <h2 class="text-2xl font-display mt-4">Side-loading</h2>
       <p class="my-3">The techniques for side-loading change occasionally. Use AltStore, Cydia Impactor, or Scarlet first. If the problem persists, contact us on Twitter @ioshavencom.</p>
+      <p>If you made it this far, you are a genius! You are on your way to putting more money into the bank! Keep up the good work!</p>
     </div>
 
   </div>
