@@ -15,9 +15,14 @@
 <meta name="description" content="Download {{ $app->name}} now! This app is a {{ $app->short }} and includes the following features: {{$app->description}}">
 @endsection
 
-@section('content')
+
+@section('topbody')
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0" nonce="IpjA0plZ"></script>
+@endsection
+
+@section('content')
+
 <section class="p-0">
   <div class="container">
     <div class="row">
@@ -127,7 +132,7 @@
           <strong>Comments</strong>
         </div>
 
-        <div class="fb-comments" data-href="{{ url()->current() }}" data-width="" data-numposts="5"></div>
+        <div class="fb-comments" data-width="100%" data-numposts="10" data-lazy="true"></div>
 
       </div>
     </div>

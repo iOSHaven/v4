@@ -123,6 +123,8 @@
 
     {{-- ====INSIDE BODY==== --}}
 
+    @yield('topbody')
+
     <input type="checkbox" id="check-sidebar-left" class="hidden">
     <label for="check-sidebar-left" class="fixed z-2 w-full h-full top-0 left-0 scroll-toggler" style="background-color: black; opacity: 0.7;"></label>
 
