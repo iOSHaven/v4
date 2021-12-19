@@ -16,6 +16,8 @@
 @endsection
 
 @section('content')
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0" nonce="IpjA0plZ"></script>
 <section class="p-0">
   <div class="container">
     <div class="row">
@@ -124,11 +126,8 @@
         <div class="h6 display-clear mb-2">
           <strong>Comments</strong>
         </div>
-        Comments are comming soon. <br>
-        <br>
-        <br>
-        <br>
-        <br>
+
+        <div class="fb-comments" data-href="{{ url()->current() }}" data-width="" data-numposts="5"></div>
 
       </div>
     </div>
