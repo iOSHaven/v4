@@ -128,7 +128,7 @@ function verifyAppSecurity($key)
  */
 function imgixUrl($url, $settings=[]) {
     $parsed = parse_url($url);
-    $path = urlencode($parsed["scheme"] . "://" . $parsed["host"] . $parsed["path"]);
+    $path = urlencode($parsed["scheme"] . "://" . $parsed["host"] . ($parsed["path"] ?? ""));
     $query = [];
     $parsed["query"] = $parsed["query"] ?? "";
     parse_str($parsed["query"], $query);

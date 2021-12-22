@@ -7,6 +7,10 @@
 
 @section('content')
 
+    <img class="inset-0 bg-red-500 w-full object-cover -mt-8 mb-12"
+         srcset="{{ $post->getBannerSrcsetAttribute() }}"
+         src="{{ $post->banner }}"/>
+
     <section class="markdown max-w-prose mx-auto">
         {!! $post->html !!}
     </section>

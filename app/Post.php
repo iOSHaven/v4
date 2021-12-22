@@ -13,12 +13,20 @@ class Post extends Model
 {
     use SoftDeletes;
 
-    private $imgixSettings = [
+    private $cardImageSettings = [
         "h" => 200,
         "w" => 200 * 3.2361/2,
         "fit" => "crop",
         "crop" => "focalpoint",
-        "auto" => "compress,enhance"
+        "auto" => "format,compress,enhance"
+    ];
+
+    private $bannerImageSettings = [
+        "h" => 200,
+        "w" => 200 * 30/9,
+        "fit" => "crop",
+        "crop" => "focalpoint",
+        "auto" => "format,compress,enhance"
     ];
 
     public static function boot() {
@@ -57,12 +65,12 @@ class Post extends Model
     }
 
     public function getPictureAttribute () {
-        return imgixUrl($this->image, $this->imgixSettings);
+        return imgixUrl($this->image, $this->cardImageSettings);
     }
 
     public function getScaledPicture($dpr) {
         return imgixUrl($this->image, array_merge(
-            $this->imgixSettings,
+            $this->cardImageSettings,
             ["dpr" => $dpr]
         ));
     }
@@ -71,6 +79,25 @@ class Post extends Model
         $srcset = [];
         for ($i = 1; $i <= $amount; $i++) {
             $srcset[] = $this->getScaledPicture($i) . " " . $i . "x";
+        }
+        return implode(",", $srcset);
+    }
+
+    public function getBannerAttribute () {
+        return imgixUrl($this->image, $this->bannerImageSettings);
+    }
+
+    public function getScaledBanner($dpr) {
+        return imgixUrl($this->image, array_merge(
+            $this->bannerImageSettings,
+            ["dpr" => $dpr]
+        ));
+    }
+
+    public function getBannerSrcsetAttribute($amount=3) {
+        $srcset = [];
+        for ($i = 1; $i <= $amount; $i++) {
+            $srcset[] = $this->getScaledBanner($i) . " " . $i . "x";
         }
         return implode(",", $srcset);
     }
