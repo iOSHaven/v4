@@ -18,7 +18,9 @@ module.exports = {
     },
     extend: {
       colors: {
-        'transparent': 'transparent'
+        'transparent': 'transparent',
+        'white-light': 'white',
+        'black-light': 'black'
       }
     }
   },

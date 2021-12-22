@@ -8,7 +8,7 @@
     <!-- Stripe Elements Placeholder -->
     <div id="card-element" class="p-3 my-3"></div>
 
-    <button id="card-button" class="p-3 bg-blue-500 text-white-light" data-secret="{{ $intent->client_secret }}">
+    <button id="card-button" class="p-3 bg-blue-500 text-white dark:text-black" data-secret="{{ $intent->client_secret }}">
         Update Payment Method
     </button>
 </div>

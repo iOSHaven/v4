@@ -5,7 +5,7 @@
 @endsection
 
 @section('page')
-<section class="text-xl px-3 h-full bg-white">
+<section class="text-xl px-3 h-full bg-white dark:bg-black">
 
   <div class="mx-auto w-full text-center" style="max-width: 700px">
     <h1 class="mb-1 block text-6xl text-black dark:text-white">iOS Haven</h1>

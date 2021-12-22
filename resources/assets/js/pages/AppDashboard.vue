@@ -5,7 +5,7 @@
     <div class="container">
       <div class="flex flex-wrap">
           <div class="w-1/4 px-3">
-            <div class="bg-white-light">
+            <div class="bg-white dark:bg-black">
                 <image-input
                   :width="80"
                   :height="80"
@@ -58,7 +58,7 @@
               <div class="p-3 bg-white">
                 <div class="flex items-center justify-between mb-3">
                   <h6 class="font-display">{{ page }}</h6>
-                  <button class="py-1 px-3 bg-blue-500 text-white-light rounded-full flex items-center justify-center">
+                  <button class="py-1 px-3 bg-blue-500 text-white dark:text-black rounded-full flex items-center justify-center">
                     <small>
                       <i class="fad fa-save mr-2"></i>
                       Save app
