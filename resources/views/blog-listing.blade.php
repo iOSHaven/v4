@@ -12,7 +12,9 @@
                     <a href="{{ $post->url }}" class="absolute inset-0 cursor-default"></a>
                     <div class="pointer-events-none">
                         <div class="aspect-w-gw aspect-h-gh">
-                            <img class="inset-0 bg-red-500 w-full object-cover" src="{{ $post->image }}"/>
+                            <img class="inset-0 bg-red-500 w-full object-cover"
+                                 srcset="{{ $post->getPictureSrcsetAttribute() }}"
+                                 src="{{ $post->picture }}"/>
                         </div>
 
                         <div class="w-full p-3">

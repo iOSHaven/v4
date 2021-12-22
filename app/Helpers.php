@@ -120,3 +120,22 @@ function verifyAppSecurity($key)
     return false;
   }
 }
+
+/**
+ * @param $url - an existing image url
+ * @param $settings - array of settings to turn into query string
+ * @return string
+ */
+function imgixUrl($url, $settings=[]) {
+    $parsed = parse_url($url);
+    $path = urlencode($parsed["scheme"] . "://" . $parsed["host"] . $parsed["path"]);
+    $query = [];
+    $parsed["query"] = $parsed["query"] ?? "";
+    parse_str($parsed["query"], $query);
+    $query = array_merge($query, $settings);
+    $queryString = !empty($query) ? "?" . http_build_query($query) : "";
+    $signature_base = config('imgix.token') . "/" . $path . $queryString;
+    $query["s"] = md5($signature_base);
+    $queryString = !empty($query) ? "?" . http_build_query($query) : "";
+    return config("imgix.domain") . "/" . $path . $queryString;
+}

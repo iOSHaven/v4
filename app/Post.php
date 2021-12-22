@@ -13,6 +13,14 @@ class Post extends Model
 {
     use SoftDeletes;
 
+    private $imgixSettings = [
+        "h" => 200,
+        "w" => 200 * 3.2361/2,
+        "fit" => "crop",
+        "crop" => "focalpoint",
+        "auto" => "compress,enhance"
+    ];
+
     public static function boot() {
         parent::boot();
 
@@ -46,5 +54,24 @@ class Post extends Model
 
     public function getUrlAttribute() {
         return url("/blog/" . $this->uid . "/" . $this->slug);
+    }
+
+    public function getPictureAttribute () {
+        return imgixUrl($this->image, $this->imgixSettings);
+    }
+
+    public function getScaledPicture($dpr) {
+        return imgixUrl($this->image, array_merge(
+            $this->imgixSettings,
+            ["dpr" => $dpr]
+        ));
+    }
+
+    public function getPictureSrcsetAttribute($amount=3) {
+        $srcset = [];
+        for ($i = 1; $i <= $amount; $i++) {
+            $srcset[] = $this->getScaledPicture($i) . " " . $i . "x";
+        }
+        return implode(",", $srcset);
     }
 }
