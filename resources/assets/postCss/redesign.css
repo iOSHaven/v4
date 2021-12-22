@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Archivo+Black|Roboto&display=swap');
 
-@tailwind base;
-
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 aside > ul {
     width: 300px;
@@ -236,4 +236,8 @@ img.listing-icon{
     height:77px !important;
     border-radius: 1.3rem !important;
     width: 77px !important;
+}
+
+.markdown a, .link {
+    @apply font-bold underline decoration-blue-500 text-blue-500;
 }

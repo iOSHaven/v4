@@ -76,9 +76,10 @@ abstract class Resource extends NovaResource
 
     public function handleStorage(string $folder, string $icon = "icon") {
         return function ($request) use ($folder, $icon) {
-            $ext = $request->icon->extension();
+            $file = $request->$icon;
+            $ext = $file->extension();
             return [
-                $icon => env("DO_SPACES_SUBDOMAIN") . "/". Storage::disk("spaces")->putFileAs($folder, $request->icon, hash("sha256", $this->name . now()) . ".$ext", ["visibility" => "public"]),
+                $icon => env("DO_SPACES_SUBDOMAIN") . "/". Storage::disk("spaces")->putFileAs($folder, $file, hash("sha256", $this->name . now()) . ".$ext", ["visibility" => "public"]),
             ];
         };
     }

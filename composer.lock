@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "da5af9349bbb202d05b0e2868d2ea753",
+    "content-hash": "864e78e776dd6b6d1ff182f8b2339381",
     "packages": [
         {
             "name": "anhskohbo/no-captcha",
@@ -1417,7 +1417,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/Ads",
-                "reference": "6bf63fa4d5adcfabc4c791d65eaed766f373df54"
+                "reference": "829b3934c9e23577889835e3542fd11f7c0e7333"
             },
             "require": {
                 "php": ">=7.1.0"
@@ -1442,7 +1442,10 @@
             "keywords": [
                 "laravel",
                 "nova"
-            ]
+            ],
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "ioshaven/plist",
@@ -1486,7 +1489,7 @@
             "dist": {
                 "type": "path",
                 "url": "./nova-components/v4",
-                "reference": "0a1677e282078d626c26f6485779f6f55997b41d"
+                "reference": "6118cb70afc88154d1a0fed4f3dc6579cb1a5003"
             },
             "require": {
                 "php": ">=7.1.0"
@@ -1511,7 +1514,10 @@
             "keywords": [
                 "laravel",
                 "nova"
-            ]
+            ],
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -7831,6 +7837,165 @@
             "time": "2019-11-06T16:40:04+00:00"
         },
         {
+            "name": "davidbadura/faker-markdown-generator",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DavidBadura/FakerMarkdownGenerator.git",
+                "reference": "6fe32b77c3abe3cdf31445ba0b753a2d2f170476"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DavidBadura/FakerMarkdownGenerator/zipball/6fe32b77c3abe3cdf31445ba0b753a2d2f170476",
+                "reference": "6fe32b77c3abe3cdf31445ba0b753a2d2f170476",
+                "shasum": ""
+            },
+            "require": {
+                "davidbadura/markdown-builder": "^1.0.4",
+                "fakerphp/faker": "^1.6",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DavidBadura\\FakerMarkdownGenerator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Badura",
+                    "email": "david.badura@patchlevel.de"
+                }
+            ],
+            "description": "Faker Markdown Generator",
+            "keywords": [
+                "faker",
+                "generator",
+                "markdown"
+            ],
+            "support": {
+                "issues": "https://github.com/DavidBadura/FakerMarkdownGenerator/issues",
+                "source": "https://github.com/DavidBadura/FakerMarkdownGenerator/tree/1.1.1"
+            },
+            "time": "2021-10-22T15:04:49+00:00"
+        },
+        {
+            "name": "davidbadura/markdown-builder",
+            "version": "1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DavidBadura/markdown-builder.git",
+                "reference": "cdc1a29eb14f3202efb0e59ac80c2acb6f883af0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DavidBadura/markdown-builder/zipball/cdc1a29eb14f3202efb0e59ac80c2acb6f883af0",
+                "reference": "cdc1a29eb14f3202efb0e59ac80c2acb6f883af0",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "infection/infection": "^0.22.1",
+                "patchlevel/coding-standard": "^1.0.0",
+                "phpstan/phpstan": "^0.12.85",
+                "phpunit/phpunit": "^9.5.4",
+                "symfony/var-dumper": "^5.2.3",
+                "vimeo/psalm": "^4.7.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DavidBadura\\MarkdownBuilder\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "DavidBadura",
+                    "email": "d.badura@gmx.de"
+                }
+            ],
+            "description": "Markdown Builder",
+            "keywords": [
+                "builder",
+                "markdown",
+                "render",
+                "writer"
+            ],
+            "support": {
+                "issues": "https://github.com/DavidBadura/markdown-builder/issues",
+                "source": "https://github.com/DavidBadura/markdown-builder/tree/1.1.1"
+            },
+            "time": "2021-10-23T09:22:02+00:00"
+        },
+        {
+            "name": "fakerphp/faker",
+            "version": "v1.9.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FakerPHP/Faker.git",
+                "reference": "84220cf137a9344acffb10374e781fed785ff307"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FakerPHP/Faker/zipball/84220cf137a9344acffb10374e781fed785ff307",
+                "reference": "84220cf137a9344acffb10374e781fed785ff307",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.3 || ^7.0"
+            },
+            "conflict": {
+                "ergebnis/faker": "!=1.9.2",
+                "fzaninotto/faker": "!=1.9.2"
+            },
+            "replace": {
+                "ergebnis/faker": "1.9.2",
+                "fzaninotto/faker": "1.9.2"
+            },
+            "require-dev": {
+                "ext-intl": "*",
+                "phpunit/phpunit": "^4.8.35 || ^5.7",
+                "squizlabs/php_codesniffer": "^2.9.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Faker\\": "src/Faker/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Zaninotto"
+                }
+            ],
+            "description": "Faker is a PHP library that generates fake data for you.",
+            "keywords": [
+                "data",
+                "faker",
+                "fixtures"
+            ],
+            "support": {
+                "issues": "https://github.com/FakerPHP/Faker/issues",
+                "source": "https://github.com/FakerPHP/Faker/tree/v1.9.2"
+            },
+            "time": "2020-12-11T14:32:13+00:00"
+        },
+        {
             "name": "filp/whoops",
             "version": "2.5.1",
             "source": {
@@ -7890,56 +8055,6 @@
                 "whoops"
             ],
             "time": "2019-12-21T10:00:00+00:00"
-        },
-        {
-            "name": "fzaninotto/faker",
-            "version": "v1.9.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/fc10d778e4b84d5bd315dad194661e091d307c6f",
-                "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3.3 || ^7.0"
-            },
-            "require-dev": {
-                "ext-intl": "*",
-                "phpunit/phpunit": "^4.8.35 || ^5.7",
-                "squizlabs/php_codesniffer": "^2.9.2"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.9-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Faker\\": "src/Faker/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "François Zaninotto"
-                }
-            ],
-            "description": "Faker is a PHP library that generates fake data for you.",
-            "keywords": [
-                "data",
-                "faker",
-                "fixtures"
-            ],
-            "time": "2019-12-12T13:22:17+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -8400,5 +8515,5 @@
         "ext-bcmath": "*"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }

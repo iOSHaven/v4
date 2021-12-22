@@ -22,8 +22,6 @@ Route::view('/giveaway', 'giveaway');
 // Route::get('/themetest', 'StaticPageController@getThemesPage');
 
 
-
-
 Route::get('/test', function () {
   return view('test');
 });
@@ -81,6 +79,12 @@ Auth::routes();
 // Route::get('/profile', 'HomeController@index')->name('profile');
 // Route::post('/profile/color', 'HomeController@color');
 // Route::post('/auth/toggleEditing', 'HomeController@toggleEditing');
+
+
+Route::group(['prefix' => 'blog'], function () {
+    Route::get('/', "PostsController@index");
+    Route::get('/{post}/{slug}', "PostsController@show");
+});
 
 Route::group(['prefix' => 'plist'], function () {
   Route::get('{any}', "StaticPageController@plist")->where('any', '.*');

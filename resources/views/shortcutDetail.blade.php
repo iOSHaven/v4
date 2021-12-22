@@ -9,7 +9,7 @@
   <div class="container">
     <div class="row">
       <div class="col-tablet-portrait-6 px-tablet-portrait">
-        <div class="bg-gray-100">
+        <div class="bg-gray-100 dark:bg-gray-900">
 
 
           {{-- APPLICATION ICON, TITLE, SHORT, & BUTTONS --}}

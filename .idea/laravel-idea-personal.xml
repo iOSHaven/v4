@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LaravelIdeaPersonalSettings">
+    <option name="generationStringOptionValues">
+      <map>
+        <entry key="createModel.createController" value="1" />
+        <entry key="createModel.createMigration" value="1" />
+        <entry key="createModel.createPolicy" value="1" />
+        <entry key="createModel.createSeeder" value="1" />
+      </map>
+    </option>
+  </component>
+</project>

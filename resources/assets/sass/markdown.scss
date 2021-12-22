@@ -1,3 +1,22 @@
+html {
+  font-size: 20px !important;
+}
+@media screen and (min-width: 32rem) and (max-width: 48rem) {
+  html {
+    font-size: 16px !important;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  html {
+    font-size: 18px !important;
+  }
+}
+
+body {
+  line-height: 1.85 !important;
+}
+
 .markdown {
   @media print {
     *,
@@ -59,25 +78,7 @@
     }
   }
   
-  html {
-    font-size: 12px;
-  }
-  
-  @media screen and (min-width: 32rem) and (max-width: 48rem) {
-    html {
-      font-size: 15px;
-    }
-  }
-  
-  @media screen and (min-width: 48rem) {
-    html {
-      font-size: 16px;
-    }
-  }
-  
-  body {
-    line-height: 1.85;
-  }
+
   
   p {
     font-size: 1rem;
@@ -95,15 +96,17 @@
   
   h1 {
     margin-top: 0;
-    font-size: 3.998rem;
+    font-size: 2.998rem;
+    font-weight: bold;
   }
   
   h2 {
-    font-size: 2.827rem;
+    font-size: 2.027rem;
+    font-weight: bold;
   }
   
   h3 {
-    font-size: 1.999rem;
+    font-size: 1.799rem;
   }
   
   h4 {
@@ -145,16 +148,16 @@
     text-align: center;
   }
   
-  a,
-  a:visited {
-    color: #3498db;
-  }
-  
-  a:hover,
-  a:focus,
-  a:active {
-    color: #2980b9;
-  }
+  //a,
+  //a:visited {
+  //  color: #3498db;
+  //}
+  //
+  //a:hover,
+  //a:focus,
+  //a:active {
+  //  color: #2980b9;
+  //}
   
   pre {
     background-color: #fafafa;
@@ -177,6 +180,11 @@
   }
   
   p {
-    color: #777;
+    color: #08090a;
+  }
+  @media(prefers-color-scheme: dark) {
+    p {
+      color: #eee;
+    }
   }
 }
