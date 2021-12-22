@@ -132,7 +132,7 @@
           <strong>Comments</strong>
         </div>
 
-        <div class="fb-comments" data-width="100%" data-numposts="10" data-lazy="true"></div>
+        <div class="fb-comments" data-href="{{ url()->current() }}" data-width="100%" data-numposts="10" data-lazy="true"></div>
 
       </div>
     </div>

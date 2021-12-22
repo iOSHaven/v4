@@ -6,8 +6,11 @@
 @endsection
 
 @section('content')
+
     <section class="markdown max-w-prose mx-auto">
         {!! $post->html !!}
     </section>
+
+    <div class="fb-comments" data-href="/blog/{{ $post->uid }}/comments" data-width="100%" data-numposts="10" data-lazy="true"></div>
 
 @endsection

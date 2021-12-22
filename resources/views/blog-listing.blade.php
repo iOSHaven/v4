@@ -16,7 +16,7 @@
                         </div>
 
                         <div class="w-full p-3">
-                            <p class="text-2xl font-bold font-mono">{{ $post->title }} {{$loop->index}}</p>
+                            <p class="text-2xl font-bold font-mono">{{ $post->title }}</p>
                             <p>{{ $post->description }}</p>
                         </div>
                     </div>
