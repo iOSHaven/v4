@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="bg-stone-200 dark:bg-stone-700 dark:text-stone-200">
 
 
 <head>
@@ -26,7 +26,7 @@
   @include('ads.index')
 
 </head>
-  <body class="antialiased bg-stone-200 dark:bg-stone-700 dark:text-stone-200">
+  <body class="antialiased ">
 
   <div id="fb-root"></div>
   <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0" nonce="IpjA0plZ"></script>
