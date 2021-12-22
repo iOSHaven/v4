@@ -20,7 +20,7 @@
 
   <nav id="nav-top-desktop"
     class="p-inset-bottom prevent-touchmove fixed w-full left-0 bottom-0 md:bottom-auto md:top-0 flex items-center justify-between px-2 border-t md:border-b z-2 bg-white dark:bg-black border-gray-200 dark:border-gray-800 text-gray-600 dark:text-gray-300">
-    <div class="flex items-center justify-between md:justify-start flex-grow px-3 text-white">
+    <div class="flex items-center justify-between md:justify-start flex-grow px-3 text-black dark:text-white">
       <div class="hidden md:block">
           @if(Auth::check())
           <label for="check-sidebar-left" class="text-center px-2 scroll-toggler">
