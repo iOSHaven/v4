@@ -6,9 +6,9 @@ import { disablePageScroll, enablePageScroll, getScrollState } from 'scroll-lock
 
 var breakpoint = 768;
 if (window.innerWidth < breakpoint) {
-   document.body.style.marginTop = document.querySelector("#nav-top-phone").offsetHeight + "px";
+   (document.body.style.marginTop = document.querySelector("#nav-top-phone")?.offsetHeight || 0) + "px";
 } else {
-   document.body.style.marginTop = document.querySelector("#nav-top-desktop").offsetHeight + "px";
+   (document.body.style.marginTop = document.querySelector("#nav-top-desktop")?.offsetHeight || 0) + "px";
 }
 
 const ptr = PullToRefresh.init({

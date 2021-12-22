@@ -13,12 +13,12 @@ $type = strtolower(class_basename($model));
             <div class="">
                 <div>{{ $provider->name }}</div>
                 @if($model->working)
-                <div class="text-green-light font-bold text-sm">
+                <div class="text-emerald-500 font-bold text-sm">
                     <span class="mr-1">Working</span>
                     <i class="fas fa-check-circle"></i>
                 </div>
                 @else
-                <div class="text-red-light font-bold text-sm">
+                <div class="text-red-500 font-bold text-sm">
                     <span class="mr-1">Revoked</span>
                     <i class="fas fa-times-octagon"></i>
                 </div>
@@ -34,7 +34,7 @@ $type = strtolower(class_basename($model));
             @admin
                 @component('components.button', [
                     "href"=> "/nova/resources/$type/$model->id/edit", 
-                    "bg" => "red", 
+                    "bg" => "red-500",
                     "color" => "white", 
                     "class" => "ml-2"])
                      EDIT 
@@ -44,7 +44,7 @@ $type = strtolower(class_basename($model));
         
     </div>
     @if($showLine ?? true)
-        <hr class="border-0 border-b mb-0 {{ theme('border-gray-200') }}">
+        <hr class="border-0 border-b mb-0 border-gray-200 dark:border-gray-800">
     @endif
     </div>
 </div>

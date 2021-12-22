@@ -11,8 +11,10 @@ let tailwindcss = require('tailwindcss')
  |
  */
 mix.postCss('resources/assets/postCss/redesign.css', 'public/css/redesign.min.css', [
+      require('postcss-import'),
       require('tailwindcss'),
       require('cssnano'),
+      require('autoprefixer')
    ])
    .options({
       postCss: [
@@ -31,6 +33,7 @@ mix.postCss('resources/assets/postCss/redesign.css', 'public/css/redesign.min.cs
       "public/js/app.js",
       "public/js/dashboard.js",
    ])
+    .vue({ version: 2 })
    .version()
 
 

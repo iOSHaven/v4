@@ -6,8 +6,8 @@ $title = ($isIPA ? "IPA" : "GET");
 @endphp
 @component('components.button', [
         "href"=> $href, 
-        "bg" => $isIPA ? "white" : "blue", 
-        "color" => $isIPA ? "blue" : "white",
+        "bg" => $isIPA ? "white" : "blue-500",
+        "color" => $isIPA ? "blue-500" : "white",
         "class" => $class ?? "mr-2"])
         {{ $title }} 
         @if($image ?? true)

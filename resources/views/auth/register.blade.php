@@ -37,7 +37,7 @@
         "type" => "password",
       ])@endcomponent
 
-      <p>Already have an account? <a href="/login" class="{{ theme('text-blue') }}">Login.</a></p>
+      <p>Already have an account? <a href="/login" class="text-blue-500">Login.</a></p>
 
       @component('components.form.submit', [
         "icon" => "fas fa-sign-in-alt",

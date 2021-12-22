@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="/css/media.css">
 
 	<title>iOS Haven Themes</title>
-	
+
 	<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.2/dist/lazyload.min.js"></script>
 	
 	
@@ -120,6 +120,23 @@
 	<script src="js/script.js"></script>
 	<script src="https://www.paypal.com/sdk/js?client-id={{ config('paypal.client_id') }}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg==" crossorigin="anonymous"></script>
+
+
+	<script>
+		function executeLazyFunction(element) {
+			var lazyFunctionName = element.getAttribute(
+					"data-lazy-function"
+			);
+			var lazyFunction = window[lazyFunctionName];
+			if (!lazyFunction) return;
+			lazyFunction(element);
+		}
+		var lazyLoadInstance = new LazyLoad({
+			unobserve_entered: true, // <- Avoid executing the function multiple times
+			callback_enter: executeLazyFunction // Assigning the function defined above
+		});
+		lazyLoadInstance.update();
+	</script>
 
 <script>
   window.trypp = function () {

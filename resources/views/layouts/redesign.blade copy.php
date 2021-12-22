@@ -130,7 +130,7 @@
 
   {{-- CHANGE THE BODY BASED IF NAV SHOULD BE HIDDEN --}}
   @if(empty($hide_nav))
-      <body class="relative mb-16 {{ theme('bg-white', 'text-gray-600') }}" style="margin-top: 33px;">
+      <body class="relative mb-16 bg-white dark:bg-black text-gray-600 dark:text-gray-300" style="margin-top: 33px;">
         @include('layouts.navigation', ["title" => $title ?? null])
   @else
       <body class="m-inset-top relative {{ theme('bg-white', 'text-gray-600') }}">
@@ -261,12 +261,12 @@
       <div class="w-full p-3 mb-3 flex items-center justify-start {{ theme('bg-red') }}">
           <form action="/app/create" method="post">
             {{ csrf_field() }}
-            <button type="submit" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-blue-light {{ theme("bg-white") }}">Add App</button>
+            <button type="submit" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-blue-500 {{ theme("bg-white") }}">Add App</button>
           </form>
-          <a href="/providers/edit" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-blue-light {{ theme("bg-white") }}">Manage Providers</a>
+          <a href="/providers/edit" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-blue-500 {{ theme("bg-white") }}">Manage Providers</a>
           <form action="/app/token" method="post">
             {{ csrf_field() }}
-            <button type="submit" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-blue-light {{ theme("bg-white") }}">Update Token</button>
+            <button type="submit" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-blue-500 {{ theme("bg-white") }}">Update Token</button>
           </form>
       </div>
       @endadmin -->

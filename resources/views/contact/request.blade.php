@@ -68,11 +68,11 @@
         <label for="email">Type</label>
         <div class="flex items-center justify-center mb-4 relative radio-list rounded-full">
           <input type="radio" name="type" id="type-1" value="App">
-          <label class="p-3 {{ theme('bg-red') }}" for="type-1" data-value="App">App</label>
+          <label class="p-3 bg-red-500" for="type-1" data-value="App">App</label>
           <input type="radio" name="type" id="type-2" value="Feature">
-          <label class="p-3 mx-1 {{ theme('bg-green') }}" for="type-2" data-value="Feature">Feature</label>
+          <label class="p-3 mx-1 bg-green-500" for="type-2" data-value="Feature">Feature</label>
           <input type="radio" name="type" id="type-3" value="Other">
-          <label class="p-3 {{ theme('bg-yellow') }}" for="type-3" data-value="Other">Other</label>
+          <label class="p-3 bg-yellow-500" for="type-3" data-value="Other">Other</label>
         </div>
 
         @component('components.form.input', [

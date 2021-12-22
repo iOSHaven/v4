@@ -66,13 +66,13 @@
       <label for="type">Type</label>
       <div class="flex items-center justify-center mb-4 relative radio-list">
         <input type="radio" name="type" id="type-1" value="App">
-        <label class="p-3 {{ theme('bg-red') }}" for="type-1" data-value="App">App</label>
+        <label class="p-3  bg-red-500" for="type-1" data-value="App">App</label>
         <input type="radio" name="type" id="type-2" value="Page">
-        <label class="p-3 ml-1 {{ theme('bg-green') }}" for="type-2" data-value="Page">Page</label>
+        <label class="p-3 ml-1  bg-green-500" for="type-2" data-value="Page">Page</label>
         <input type="radio" name="type" id="type-3" value="Style">
-        <label class="p-3 ml-1 {{ theme('bg-blue') }}" for="type-3" data-value="Style">Style</label>
+        <label class="p-3 ml-1  bg-blue-500" for="type-3" data-value="Style">Style</label>
         <input type="radio" name="type" id="type-4" value="Other">
-        <label class="p-3 ml-1{{ theme('bg-yellow') }}" for="type-4" data-value="Other">Other</label>
+        <label class="p-3 ml-1 bg-yellow-500" for="type-4" data-value="Other">Other</label>
       </div>
       @component('components.form.input', [
         "label" => "Message",

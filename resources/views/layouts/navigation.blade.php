@@ -1,10 +1,10 @@
   <nav id="nav-top-phone"
-    class="p-inset-top prevent-touchmove md:hidden fixed w-full left-0 top-0 border-b z-2 {{ theme('bg-white', 'border-gray-200', 'text-gray-600') }}">
+    class="p-inset-top prevent-touchmove md:hidden fixed w-full left-0 top-0 border-b z-2 bg-white dark:bg-black border-gray-200 dark:border-gray-800 text-gray-600 dark:text-gray-300 ">
     <div class="relative w-full py-1 px-3 flex items-center justify-between">
-        <div class="absolute top-0 left-0 right-0 bottom-0 -z-1 {{ theme('bg-white') }}"></div>
+        <div class="absolute top-0 left-0 right-0 bottom-0 -z-1 bg-white dark:bg-black"></div>
         @if(Auth::check())
         <label for="check-sidebar-left" class="text-center mx-2 scroll-toggler">
-          <img class="rounded-full border inline-block mx-auto {{ theme('border-gray-200') }}" width="24" src="https://api.adorable.io/avatars/10/{{ Auth::user()->username }}" alt="">
+          <img class="rounded-full border inline-block mx-auto border-gray-200 dark:border-gray-800" width="24" src="https://api.adorable.io/avatars/10/{{ Auth::user()->username }}" alt="">
         </label>
         @else
         <a href="/login" class="text-center mx-2">
@@ -19,12 +19,12 @@
   </nav>
 
   <nav id="nav-top-desktop"
-    class="p-inset-bottom prevent-touchmove fixed w-full left-0 bottom-0 md:bottom-auto md:top-0 flex items-center justify-between px-2 border-t md:border-b z-2 {{ theme('bg-white', 'border-gray-200', 'text-gray-600') }}">
+    class="p-inset-bottom prevent-touchmove fixed w-full left-0 bottom-0 md:bottom-auto md:top-0 flex items-center justify-between px-2 border-t md:border-b z-2 bg-white dark:bg-black border-gray-200 dark:border-gray-800 text-gray-600 dark:text-gray-300">
     <div class="flex items-center justify-between md:justify-start flex-grow px-3 text-white">
       <div class="hidden md:block">
           @if(Auth::check())
           <label for="check-sidebar-left" class="text-center px-2 scroll-toggler">
-            <img class="rounded-full border inline-block mx-auto {{ theme('border-gray-200') }}" width="24" src="https://api.adorable.io/avatars/10/{{ Auth::user()->username }}" alt="">
+            <img class="rounded-full border inline-block mx-auto border-gray-200 dark:border-gray-800" width="24" src="https://api.adorable.io/avatars/10/{{ Auth::user()->username }}" alt="">
           </label>
         @else
           <a href="/login" class="text-center px-2">
@@ -48,7 +48,7 @@
           <i class="md:hidden fas fa-bell"></i>
           @if($hasUpdates)
             <div class="absolute top-0 right-0">
-              <div class="px-1 text-xs rounded-full display-inline {{ theme('bg-red', 'text-white') }}">
+              <div class="px-1 text-xs rounded-full display-inline bg-red-500 text-white dark:text-black">
                 {{ $updateCount }}
               </div>
             </div>

@@ -9,7 +9,7 @@
   <div class="container">
     <div class="row">
       <div class="col-tablet-portrait-6 px-tablet-portrait">
-        <div class="bg-gray-100-light">
+        <div class="bg-gray-100">
 
 
           {{-- APPLICATION ICON, TITLE, SHORT, & BUTTONS --}}
@@ -30,7 +30,7 @@
               <div class="flex items-center flex-wrap -mt-2">
                 @component('components.button', [
                 "href"=> $shortcut->url,
-                "bg" => "blue",
+                "bg" => "blue-500",
                 "color" => "white",
                 "class" => "mt-2 mr-2"
                 ])
@@ -40,7 +40,7 @@
                 @can('update', $shortcut)
                 @component('components.button', [
                 "href"=> "/nova/resources/shortcuts/$shortcut->id",
-                "bg" => "red",
+                "bg" => "red-500",
                 "color" => "white",
                 "class" => "mt-2"
                 ])

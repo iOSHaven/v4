@@ -114,11 +114,11 @@
 {{-- CHANGE THE BODY BASED IF NAV SHOULD BE HIDDEN --}}
 @if(empty($hide_nav))
 
-<body class="relative mb-16 {{ theme('bg-gray-100', 'text-gray-600') }}" style="margin-top: 33px;">
+<body class="relative mb-16 bg-gray-100 dark:bg-gray-900 text-gray-600 dark:text-gray-300" style="margin-top: 33px;">
   @include('layouts.navigation', ["title" => $title ?? null])
   @else
 
-  <body class="m-inset-top relative {{ theme('bg-gray-100', 'text-gray-600') }}">
+  <body class="m-inset-top relative bg-gray-100 dark:bg-gray-900 text-gray-600 dark:text-gray-300">
     @endif
 
     {{-- ====INSIDE BODY==== --}}
@@ -132,23 +132,23 @@
     {{-- NAVIGATION --}}
     @if(empty($hide_nav))
 
-    <aside class="p-inset-top p-inset-bottom z-2 top-0 left-0 fixed h-full flex flex-col justify-between {{ theme('bg-white', 'border-gray-200') }}">
+    <aside class="p-inset-top p-inset-bottom z-2 top-0 left-0 fixed h-full flex flex-col justify-between bg-white dark:bg-black border-gray-200 dark:border-gray-800">
       <ul>
         @if(Auth::check())
-        <li class="p-3 border-b text-center {{ theme('border-gray-200') }}">
-          <img class="rounded-full border mb-3 mx-auto {{ theme('border-gray-200') }}" src="https://api.adorable.io/avatars/70/{{ Auth::user()->username }}" alt="" width="70">
+        <li class="p-3 border-b text-center border-gray-200 dark:border-gray-800">
+          <img class="rounded-full border mb-3 mx-auto border-gray-200 dark:border-gray-800" src="https://api.adorable.io/avatars/70/{{ Auth::user()->username }}" alt="" width="70">
           <strong>{{ Auth::user()->username }}</strong>
           <div class="leading-none">@admin Admin @else Member @endadmin</div>
         </li>
-        <a href="/dashboard" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+        <a href="/dashboard" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
           Dashboard
           <i class="fal fa-chevron-right"></i>
         </a>
-        <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200', 'text-gray-200') }}">
+        <li class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800 text-gray-200 dark:text-gray-800">
           Notifications
           <i class="fal fa-chevron-right"></i>
         </li>
-        <li class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200', 'text-gray-200') }}">
+        <li class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800 text-gray-200 dark:text-gray-800">
           Badges
           <i class="fal fa-chevron-right"></i>
         </li>
@@ -158,7 +158,7 @@
         @if(Auth::check())
         <form action="/logout" method="post">
           @csrf
-          <button type="submit" class="w-full p-3 flex font-bold items-center justify-between border-t {{ theme('text-red', 'bg-white', 'border-gray-200') }}">
+          <button type="submit" class="w-full p-3 flex font-bold items-center justify-between border-t text-red-500 bg-white dark:bg-black border-gray-200 dark:border-gray-800">
             Logout
             <i class="fas fa-sign-out"></i>
           </button>
@@ -169,41 +169,41 @@
 
     <input type="checkbox" id="check-sidebar-right" class="hidden">
     <label for="check-sidebar-right" class="fixed z-2 w-full h-full top-0 left-0 scroll-toggler" style="background-color: black; opacity: 0.7;"></label>
-    <aside class="p-inset-top p-inset-bottom z-2 top-0 right-0 fixed h-full flex flex-col justify-between {{ theme('bg-white', 'border-gray-200') }}">
+    <aside class="p-inset-top p-inset-bottom z-2 top-0 right-0 fixed h-full flex flex-col justify-between bg-white dark:bg-black border-gray-200 dark:border-gray-800">
       <div>
-        <h1 class="border-b text-center py-1 {{ theme('border-gray-200') }}">Other links</h1>
+        <h1 class="border-b text-center py-1 border-gray-200 dark:border-gray-800">Other links</h1>
         <ul class="">
-          {{-- <a href="/contact/index" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+          {{-- <a href="/contact/index" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
           Contact
           <i class="fal fa-chevron-right"></i>
           </a> --}}
-          {{-- <a href="/shop" target="_blank" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+          {{-- <a href="/shop" target="_blank" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
           <span>Merch
-            <strong class="ml-3 text-blue-light">NEW!</strong>
+            <strong class="ml-3 text-blue-500">NEW!</strong>
           </span>
           <i class="fal fa-tshirt"></i>
           </a> --}}
-          <a href="/shortcuts" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+          <a href="/shortcuts" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
             Shortcuts
             <i class="fal fa-chevron-right"></i>
           </a>
-          <a href="/jailbreaks" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+          <a href="/jailbreaks" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
             Jailbreaks
             <i class="fal fa-chevron-right"></i>
           </a>
-          <a href="/betas" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+          <a href="/betas" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
             Betas
             <i class="fal fa-chevron-right"></i>
           </a>
-          <a href="/cydia" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+          <a href="/cydia" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
             Cydia Impactor
             <i class="fal fa-chevron-right"></i>
           </a>
-          <a href="/aboutUs" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+          <a href="/aboutUs" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
             About Us
             <i class="fal fa-chevron-right"></i>
           </a>
-          <a href="/credits" class="p-3 flex items-center justify-between border-b {{ theme('border-gray-200') }}">
+          <a href="/credits" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
             Credits
             <i class="fal fa-chevron-right"></i>
           </a>
@@ -211,17 +211,17 @@
       </div>
 
       <ul>
-        <li class="p-3 flex items-center justify-between border-t {{ theme('border-gray-200') }}">
-          Dark mode
-          <div class="leading-none">
-            <form action="/theme" method="POST">
-              @csrf
-              <input class="hidden check-toggle" {{ theme() == "dark" ? "checked" : "" }} type="checkbox" id="toggle-theme" onchange="setTimeout(function() {this.form.submit()}.bind(this), 200)">
-              <label for="toggle-theme" class="{{ theme('toggle', 'border-gray-200', 'bg-gray-100') }}"></label>
-            </form>
-          </div>
-        </li>
-        <li class="p-3 flex items-center justify-between border-t {{ theme('border-gray-200') }}">
+{{--        <li class="p-3 flex items-center justify-between border-t border-gray-200 dark:border-gray-800">--}}
+{{--          Dark mode--}}
+{{--          <div class="leading-none">--}}
+{{--            <form action="/theme" method="POST">--}}
+{{--              @csrf--}}
+{{--              <input class="hidden check-toggle" {{ theme() == "dark" ? "checked" : "" }} type="checkbox" id="toggle-theme" onchange="setTimeout(function() {this.form.submit()}.bind(this), 200)">--}}
+{{--              <label for="toggle-theme" class="border-gray-200 dark:border-gray-800 bg-gray-100 dark:bg-gray-900 {{ theme('toggle') }}"></label>--}}
+{{--            </form>--}}
+{{--          </div>--}}
+{{--        </li>--}}
+        <li class="p-3 flex items-center justify-between border-t border-gray-200 dark:border-gray-800">
           <a href="https://twitter.com/ioshavencom" style="color: #1da1f2;"><i class="fab fa-twitter mx-2 fa-2x"></i></a>
           <a href="https://www.reddit.com/r/iOSHaven/" style="color: #ff4500;"><i class="fab fa-reddit mx-2 fa-2x"></i></a>
           <a href="https://discord.gg/mTbwMyQ" style="color: #7289da;"><i class="fab fa-discord mx-2 fa-2x"></i></a>
@@ -249,14 +249,14 @@
           <div class="w-full p-3 mb-3 flex items-center justify-start {{ theme('bg-red') }}">
       <form action="/app/create" method="post">
         {{ csrf_field() }}
-        <button type="submit" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-blue-light {{ theme("bg-white") }}">Add App</button>
+        <button type="submit" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-blue-500 {{ theme("bg-white") }}">Add App</button>
       </form>
-      <a href="/providers/edit" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-blue-light {{ theme("bg-white") }}">Manage Providers</a>
+      <a href="/providers/edit" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-blue-500 {{ theme("bg-white") }}">Manage Providers</a>
       <form action="/app/token" method="post">
         {{ csrf_field() }}
-        <button type="submit" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-blue-light {{ theme("bg-white") }}">Update Token2</button>
+        <button type="submit" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-blue-500 {{ theme("bg-white") }}">Update Token2</button>
       </form>
-      <a href="/logs" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-blue-light {{ theme("bg-white") }}">View Logs</a>
+      <a href="/logs" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-blue-500 {{ theme("bg-white") }}">View Logs</a>
     </div>
     @endadmin --}}
 
@@ -267,14 +267,14 @@
 
     @if($errors->any())
     @foreach($errors->all() as $error)
-    @component('components.alert', ["bg" => "red"])
+    @component('components.alert', ["bg" => "red-500"])
     {{ $error }}
     @endcomponent
     @endforeach
     @endif
 
     @if(Session::has("success"))
-    @component('components.alert', ["bg" => "green"])
+    @component('components.alert', ["bg" => "green-500"])
     {{ Session::get("success") }}
     @endcomponent
     @endif
@@ -300,21 +300,7 @@
 
     @yield("footer")
 
-    <script>
-      function executeLazyFunction(element) {
-        var lazyFunctionName = element.getAttribute(
-          "data-lazy-function"
-        );
-        var lazyFunction = window[lazyFunctionName];
-        if (!lazyFunction) return;
-        lazyFunction(element);
-      }
-      var lazyLoadInstance = new LazyLoad({
-        unobserve_entered: true, // <- Avoid executing the function multiple times
-        callback_enter: executeLazyFunction // Assigning the function defined above
-      });
-      lazyLoadInstance.update();
-    </script>
+
 
     {{-- SCRIPT FOR LINKS IN STANDALONE APP --}}
     <script>

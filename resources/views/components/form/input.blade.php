@@ -4,14 +4,14 @@
         <i class="{{ $icon }}"></i>
     </span>
     @if($type == "textarea")
-        <textarea rows="5" class="w-full p-3 pl-12 rounded-lg {{ theme('bg-gray-100') }}" placeholder="{{ __($placeholder ?? $label) }}" name="{{ $name }}" id="{{ $name }}" >{{ old($name) }}</textarea>
+        <textarea rows="5" class="w-full p-3 pl-12 rounded-lg bg-gray-100 dark:bg-gray-900" placeholder="{{ __($placeholder ?? $label) }}" name="{{ $name }}" id="{{ $name }}" >{{ old($name) }}</textarea>
     @else
         <input  @if($type == "password")
                     value=""  
                 @else
                     value="{{ $value ?? old($name)}}" 
                 @endif
-                class="w-full p-3 pl-12 rounded-full {{ theme('bg-gray-100') }}" 
+                class="w-full p-3 pl-12 rounded-full bg-gray-100 dark:bg-gray-900"
                 type="{{ $type }}"
                 @if($type == "password")
                     placeholder="* * * * * * * *" 

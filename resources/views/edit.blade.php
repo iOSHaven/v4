@@ -36,7 +36,7 @@
 <div id="vuescope" class="mt-3">
   <div class="fixed flex items-center justify-start relative rounded-full bg-white-light ">
       <i class="far fa-search absolute p-3"></i>
-      <input type="text" placeholder="Search" class="w-full pl-10 py-2 border border-gray-300-light" v-model="searchinput">
+      <input type="text" placeholder="Search" class="w-full pl-10 py-2 border border-gray-300" v-model="searchinput">
   </div>
   
   <search-results theme="{{ theme() }}" :phpdata="{{ $apps->toJson() }}" :isadmin="{{ Auth::user()->isAdmin }}"></search-results>
@@ -53,9 +53,9 @@
         <div class="h3"><a href="/app/{{ $app->uid }}" class="font-semibold">{{ $app->name }}</a></div>
       </div>
       {{-- <img class="w-full" src="{{ url($app->banner) }}" alt="banner"> --}}
-      {{-- <label for="mirrors" class="py-1 px-3 bg-blue-light text-white-light rounded-full   inline-block">Save Changes</label> --}}
-      <label for="save" class="py-1 px-3 bg-blue-light text-white-light rounded-full   inline-block">Save Changes</label>
-      <label for="remove" class="py-1 px-3 bg-red-light text-white-light rounded-full   inline-block">Remove App</label>
+      {{-- <label for="mirrors" class="py-1 px-3 bg-blue-500 text-white-light rounded-full   inline-block">Save Changes</label> --}}
+      <label for="save" class="py-1 px-3 bg-blue-500 text-white-light rounded-full   inline-block">Save Changes</label>
+      <label for="remove" class="py-1 px-3 bg-red-500 text-white-light rounded-full   inline-block">Remove App</label>
     </div>
 
   </div>
@@ -64,21 +64,21 @@
 <input class="hidden" type="radio" name="_tab" id="tab2">
 <input class="hidden" type="radio" name="_tab" id="tab3" checked>
 
-<ul class="flex border-b bg-gray-100-light mt-3 border-gray-300-light">
+<ul class="flex border-b bg-gray-100 mt-3 border-gray-300">
   <li class="mr-1 tab1">
-    <label for="tab1" class="bg-gray-100-light inline-block py-2 px-4 text-gray-600 hover:text-blue-light font-semibold" href="#">Information</label>
+    <label for="tab1" class="bg-gray-100 inline-block py-2 px-4 text-gray-600 hover:text-blue-500 font-semibold" href="#">Information</label>
   </li>
   <li class="mr-1 tab2">
-    <label for="tab2" class="bg-gray-100-light inline-block py-2 px-4 text-gray-600 hover:text-blue-light font-semibold" href="#">Details</label>
+    <label for="tab2" class="bg-gray-100 inline-block py-2 px-4 text-gray-600 hover:text-blue-500 font-semibold" href="#">Details</label>
   </li>
   <li class="mr-1 tab3">
-    <label for="tab3" class="bg-gray-100-light inline-block py-2 px-4 text-gray-600 hover:text-blue-light font-semibold" href="#">Mirrors</label>
+    <label for="tab3" class="bg-gray-100 inline-block py-2 px-4 text-gray-600 hover:text-blue-500 font-semibold" href="#">Mirrors</label>
   </li>
 </ul>
 
 
 
-<section class="p-3 bg-white-light border-b border-l border-r rounded-b border-gray-300-light">
+<section class="p-3 bg-white-light border-b border-l border-r rounded-b border-gray-300">
     <form action="/app/update" method="post">
       @csrf
   <div class="hidden tab1">
@@ -88,36 +88,36 @@
             <input type="hidden" name="uid" value="{{ $app->uid }}">
             <div class="w-1/2 mb-3" >
               <label for="" class="block">App name</label>
-              <input type="text" class="px-3 py-1 border w-full border-gray-200-light" maxlength="255" placeholder="String..." data-lpignore="true" value="{{ $app->name }}" name="name">
+              <input type="text" class="px-3 py-1 border w-full border-gray-200" maxlength="255" placeholder="String..." data-lpignore="true" value="{{ $app->name }}" name="name">
             </div>
       
             
       
             <div class="w-1/2 mb-3">
               <label for="" class="block">App Size (1000000 = 1MB)</label>
-              <input type="text" class="px-3 py-1 border-t border-b border-r border-gray-200-light w-full" maxlength="20" placeholder="Number..." data-lpignore="true" value="{{ $app->size }}" name="size">
+              <input type="text" class="px-3 py-1 border-t border-b border-r border-gray-200 w-full" maxlength="20" placeholder="Number..." data-lpignore="true" value="{{ $app->size }}" name="size">
             </div>
       
             
       
             <div class="w-1/2 mb-3">
               <label for="" class="block">App Icon</label>
-              <input type="text" class="px-3 py-1 border w-full border-gray-200-light" maxlength="255" placeholder="URL..." data-lpignore="true" value="{{ $app->icon }}" name="icon">
+              <input type="text" class="px-3 py-1 border w-full border-gray-200" maxlength="255" placeholder="URL..." data-lpignore="true" value="{{ $app->icon }}" name="icon">
             </div>
       
             <div class="w-1/2 mb-3 hidden">
               <label for="" class="block">App Banner</label>
-              <input type="text" class="px-3 py-1 border-t border-b border-r border-gray-200-light w-full" maxlength="255" placeholder="URL..." data-lpignore="true" value="{{ $app->banner }}" name="banner">
+              <input type="text" class="px-3 py-1 border-t border-b border-r border-gray-200 w-full" maxlength="255" placeholder="URL..." data-lpignore="true" value="{{ $app->banner }}" name="banner">
             </div>
       
             <div class="w-1/2 mb-3">
               <label for="" class="block">Short Description</label>
-              <input type="text" class="px-3 py-1 border-t border-b border-r border-gray-200-light w-full" maxlength="18" placeholder="String..." data-lpignore="true" value="{{ $app->short }}" name="short">
+              <input type="text" class="px-3 py-1 border-t border-b border-r border-gray-200 w-full" maxlength="18" placeholder="String..." data-lpignore="true" value="{{ $app->short }}" name="short">
             </div>
       
             <div class="w-full mb-3">
               <label for="" class="block">Full Description</label>
-              <textarea rows="8" class="px-3 py-1 border w-full border-gray-200-light" maxlength="65000" placeholder="Markdown..." name="description"> {{ $app->description }}</textarea>
+              <textarea rows="8" class="px-3 py-1 border w-full border-gray-200" maxlength="65000" placeholder="Markdown..." name="description"> {{ $app->description }}</textarea>
             </div>
       
             
@@ -135,24 +135,24 @@
       <div class="flex flex-wrap">
           <div class="w-1/2 mb-3">
             <label for="" class="block">App Version</label>
-            <input type="text" class="px-3 py-1 border w-full border-gray-200-light" maxlength="12" placeholder="String..." data-lpignore="true" value="{{ $app->version }}" name="version">
+            <input type="text" class="px-3 py-1 border w-full border-gray-200" maxlength="12" placeholder="String..." data-lpignore="true" value="{{ $app->version }}" name="version">
           </div>
           <div class="w-1/2 mb-3">
             <label for="" class="block">IPA Link</label>
-            <input type="text" class="px-3 py-1 border-t border-b border-r border-gray-200-light w-full" maxlength="65000" placeholder="URL..." data-lpignore="true" value="{{ $app->unsigned }}" name="unsigned">
+            <input type="text" class="px-3 py-1 border-t border-b border-r border-gray-200 w-full" maxlength="65000" placeholder="URL..." data-lpignore="true" value="{{ $app->unsigned }}" name="unsigned">
           </div>
     
           <div class="w-1/2 mb-3">
             <label for="" class="block">Signed Link</label>
             @if($app->mirrors->isNotEmpty())
-            <div class="px-3 py-1 border w-full border-gray-200-light bg-red-light text-white-light">See 'Mirrors' tab</div>
+            <div class="px-3 py-1 border w-full border-gray-200 bg-red-500 text-white-light">See 'Mirrors' tab</div>
             @else
-            <input type="text" class="px-3 py-1 border w-full border-gray-200-light" maxlength="65000" placeholder="ITMS URL..." data-lpignore="true" value="{{ $app->signed }}" name="signed">
+            <input type="text" class="px-3 py-1 border w-full border-gray-200" maxlength="65000" placeholder="ITMS URL..." data-lpignore="true" value="{{ $app->signed }}" name="signed">
             @endif
           </div>
           <div class="w-full mb-3">
             <label for="" class="block">Tags</label>
-            <input type="text" class="px-3 py-1 border w-full border-gray-200-light" maxlength="255" placeholder="<String>..." data-lpignore="true" value="{{ $app->tags }}" name="tags">
+            <input type="text" class="px-3 py-1 border w-full border-gray-200" maxlength="255" placeholder="<String>..." data-lpignore="true" value="{{ $app->tags }}" name="tags">
           </div>
       </div>
   </div>

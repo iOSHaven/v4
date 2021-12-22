@@ -8,7 +8,7 @@
 
 <div class="flex items-center justify-between">
   <div class="text-4xl">Shortcuts</div>
-  <a href="/nova/resources/shortcuts/new" class='flex items-center font-bold rounded text-sm px-5 py-1 {{ theme("bg-blue", "text-white") }}'>
+  <a href="/nova/resources/shortcuts/new" class='flex items-center font-bold rounded text-sm px-5 py-1 bg-blue-500 text-white dark:text-black'>
     <span class="mr-2">Create</span>
     <i class="fas fa-plus"></i>
   </a>
@@ -37,7 +37,7 @@
 
 @if($shortcuts->hasMorePages())
 <div id="loadmoreshortcuts" class="text-center mt-5 mb-4" style="width: 100%;">
-  <button class="font-bold text-lg rounded-full text-sm px-10 py-3 {{ theme("bg-black", "text-white") }}" onclick="loadMoreApps(this, 'shortcuts')" data-template="/tl/shortcut">
+  <button class="font-bold text-lg rounded-full text-sm px-10 py-3 bg-black dark:bg-white text-white dark:text-black" onclick="loadMoreApps(this, 'shortcuts')" data-template="/tl/shortcut">
     Load more...</button>
 </div>
 @endif

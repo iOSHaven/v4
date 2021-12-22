@@ -14,8 +14,8 @@
       
 
       <a href="/contact/general" class="px-1" style="width: 152px">
-        <div class="p-5 rounded-full {{ theme('bg-gray-100') }}">
-            <div class="text-center mb-3 {{ theme('text-indigo') }}">General</div>
+        <div class="p-5 rounded-full bg-gray-100 dark:bg-gray-900">
+            <div class="text-center mb-3 text-indigo-500">General</div>
             <div class="px-3">
                 <img src="/SVG/contact.general.svg" class="w-full" alt="">
             </div>
@@ -23,8 +23,8 @@
       </a>
 
       <a href="/contact/bug" class="px-1" style="width: 152px">
-        <div class="p-5 rounded-full {{ theme('bg-gray-100') }}">
-            <div class="text-center mb-3 {{ theme('text-indigo') }}">Bug</div>
+        <div class="p-5 rounded-full bg-gray-100 dark:bg-gray-900">
+            <div class="text-center mb-3 text-indigo-500">Bug</div>
             <div class="px-3">
                 <img src="/SVG/contact.bug.svg" class="w-full" alt="">
             </div>
@@ -32,8 +32,8 @@
       </a>
 
       <a href="/contact/request" class="px-1" style="width: 152px">
-        <div class="p-5 rounded-full {{ theme('bg-gray-100') }}">
-            <div class="text-center mb-3 {{ theme('text-indigo') }}">Request</div>
+        <div class="p-5 rounded-full bg-gray-100 dark:bg-gray-900">
+            <div class="text-center mb-3 text-indigo-500">Request</div>
             <div class="px-3">
                 <img src="/SVG/contact.request.svg" class="w-full" alt="">
             </div>

@@ -30,26 +30,26 @@
 
 <section>
   <div class="container">
-    <div class="mb-4 {{ theme('text-black') }}">
+    <div class="mb-4 text-black dark:text-white">
       <h1 class="text-4xl">iOS 14 Themes</h1>
       <p class="my-1">Download icon packs to customize your iOS 14 experience. Get <span class="font-bold uppercase">free updates</span> on all icon packs! <a href="https://www.macrumors.com/how-to/change-app-icons/" class="text-blue-dark underline">Tutorial</a></p>
       <p class="my-3">We suggest that you download <a href="https://ioshaven.com/shortcut/d74594a23453441aa4f567c4a3900272" class="text-blue-dark underline">Fancy Icon Maker</a> or <a href="https://ioshaven.com/shortcut/ec8873bd0c5f4c0aa1e7cc9ed9a6eba3" class="text-blue-dark underline">Icon Themer</a> to remove the Shortcuts animation that happens opening apps with custom icons. Watch this <a href="https://www.youtube.com/watch?v=iWe1s3VdRmE" class="text-blue-dark underline">Fancy Icon Maker Video</a> or <a href="" class="underline text-blue-dark">Icon Themer Video</a> for help.</p>
       <p class="my-1">Send us a message on <a href="https://twitter.com/ioshavencom" class="underline text-blue-dark">Twitter</a> if you want to see your theme on this page.</p>
     </div>
-    {{-- <div class="w-full bg-yellow-light p-3 rounded-lg text-black-light text-center uppercase mb-4">
+    {{-- <div class="w-full bg-yellow-500 p-3 rounded-lg text-black-light text-center uppercase mb-4">
       iOS 14 Required
     </div>
 
-    <div class="w-full bg-green-light p-3 rounded-lg text-black-light text-center uppercase mb-4">
+    <div class="w-full bg-emerald-500 p-3 rounded-lg text-black-light text-center uppercase mb-4">
       Unlimited Free Updates
     </div> --}}
 
 
     @foreach($skins as $skin)
-    <div class="{{ theme('bg-white', 'text-black') }} rounded-lg overflow-hidden mb-3 shadow relative">
+    <div class="bg-white dark:bg-black text-black bg:text-white rounded-lg overflow-hidden mb-3 shadow relative">
       <div class="absolute top-0 right-0 mr-3 mt-3 hidden" id="skintag-{{$skin->uuid}}" style="z-index: 1">
         @if($skin->amount == 0)
-        <span class="bg-green-light uppcase font-bold text-black-light px-3 py-1 rounded-lg">free</span>
+        <span class="bg-emerald-500 uppcase font-bold text-black-light px-3 py-1 rounded-lg">free</span>
         @elseif($skin->onSale)
         <i class="fas fa-tag fa-2x text-green-dark"></i>
         @endif
@@ -68,14 +68,14 @@
         @if(count($skin->covers) > 1)
         <div class="swiper-pagination"></div>
         {{-- <div class="slide-button-prev absolute top-0 left-0 bottom-0 ml-2 flex items-center" style="z-index: 100000">
-                <div class="p-3 rounded-full relative {{ theme('bg-white') }}">
-        <i class="fas fa-chevron-left fa-lg absolute left-0 right-0 bottom-0 top-0 flex items-center justify-center {{ theme('text-black') }}" style="margin-left: -3px;"></i>
+                <div class="p-3 rounded-full relative bg-white dark:bg-black">
+        <i class="fas fa-chevron-left fa-lg absolute left-0 right-0 bottom-0 top-0 flex items-center justify-center " style="margin-left: -3px;"></i>
       </div>
     </div>
 
     <div class="slide-button-next absolute top-0 right-0 bottom-0 mr-2 flex items-center" style="z-index: 100000">
-      <div class="p-3 rounded-full relative {{ theme('bg-white') }}">
-        <i class="fas fa-chevron-right fa-lg absolute left-0 right-0 bottom-0 top-0 flex items-center justify-center {{ theme('text-black') }}" style="margin-right: -3px;"></i>
+      <div class="p-3 rounded-full relative bg-white dark:bg-black">
+        <i class="fas fa-chevron-right fa-lg absolute left-0 right-0 bottom-0 top-0 flex items-center justify-center " style="margin-right: -3px;"></i>
       </div>
     </div> --}}
     @endif
@@ -97,23 +97,23 @@
 
 
     <div class="flex items-center">
-      <button class='flex mr-3 items-center font-bold rounded-full pointer-events-auto shadow text-sm -mt-1 {{ theme("bg-white", "text-black") }}' onclick="showDetail('{{ $skin->description }}')"><i class="fas fa-info-circle fa-2x -mb-1"></i></button>
+      <button class='flex mr-3 items-center font-bold rounded-full pointer-events-auto shadow text-sm -mt-1 bg-white dark:bg-black text-black dark:text-white' onclick="showDetail('{{ $skin->description }}')"><i class="fas fa-info-circle fa-2x -mb-1"></i></button>
       @auth
       @if($skin->affiliate)
       <a href="{{ URL::temporarySignedRoute(
                 'skin.ref', now()->addMinutes(10), ['uuid' => $skin->uuid]
-                ) }}" target="_blank" class='ppbtn flex items-center font-bold rounded-full pointer-events-auto shadow text-sm px-5 py-1 text-white-light {{ theme("bg-blue") }}'>Buy</a>
+                ) }}" target="_blank" class='ppbtn flex items-center font-bold rounded-full pointer-events-auto shadow text-sm px-5 py-1 text-white-light bg-blue'>Buy</a>
       @elseif(Auth::user()->skins->contains($skin->id) || $skin->amount == 0)
       <a href="{{ URL::temporarySignedRoute(
                   'skin', now()->addMinutes(10), ['uuid' => $skin->uuid]
-                  ) }}" download class='ppbtn flex items-center font-bold rounded-full pointer-events-auto shadow text-sm px-5 py-1 text-white-light {{ theme("bg-green") }}'>Download</a>
+                  ) }}" download class='ppbtn flex items-center font-bold rounded-full pointer-events-auto shadow text-sm px-5 py-1 text-white-light bg-green'>Download</a>
       @else
-      <button class='ppbtn flex items-center font-bold rounded-full pointer-events-auto shadow text-sm px-5 py-1 text-white-light {{ theme("bg-blue") }}' data-ppuuid="{{$skin->uuid}}" data-price="{{ $skin->amount }}" onclick="showPP(this)">
+      <button class='ppbtn flex items-center font-bold rounded-full pointer-events-auto shadow text-sm px-5 py-1 text-white-light bg-blue' data-ppuuid="{{$skin->uuid}}" data-price="{{ $skin->amount }}" onclick="showPP(this)">
         <span class="mr-1">Buy</span>
       </button>
       @endif
       @else
-      <a href="/login" class='flex items-center font-bold rounded-full pointer-events-auto shadow text-sm px-5 py-1 text-white-light {{ theme("bg-blue") }}'>Login</a>
+      <a href="/login" class='flex items-center font-bold rounded-full pointer-events-auto shadow text-sm px-5 py-1 text-white-light bg-blue'>Login</a>
       @endauth
     </div>
   </div>
@@ -127,13 +127,13 @@
 
 
   <div class="fixed items-center justify-center top-0 left-0 right-0 bottom-0 overflow-scroll scrolling-touch hidden" style="z-index: 10000; background-color: rgba(0,0,0,0.8)" id="paypal-modal" onclick="showPP()">
-    <div class="p-3 {{ theme('bg-white') }} rounded-lg overflow-scroll scrolling-touch" style="max-width: 680px; width: 100%; max-height: 90vh;">
+    <div class="p-3 bg-white dark:bg-black rounded-lg overflow-scroll scrolling-touch" style="max-width: 680px; width: 100%; max-height: 90vh;">
       <div id="paypal-button-container"></div>
     </div>
   </div>
 
   <div class="fixed items-center justify-center top-0 left-0 right-0 bottom-0 overflow-scroll scrolling-touch hidden" style="z-index: 10000; background-color: rgba(0,0,0,0.8)" id="detail-modal" onclick="showDetail()">
-    <div class="p-3 {{ theme('bg-white') }} rounded-lg overflow-scroll scrolling-touch" style="max-width: 680px; width: 100%; max-height: 90vh;">
+    <div class="p-3 bg-white dark:bg-black rounded-lg overflow-scroll scrolling-touch" style="max-width: 680px; width: 100%; max-height: 90vh;">
       <div id="detail-paragraph"></div>
     </div>
   </div>

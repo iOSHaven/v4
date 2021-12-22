@@ -1,7 +1,7 @@
 @extends('layouts.redesign', ["hide_footer" => true])
 @section('content')
 
-    <!-- @component('components.example', ["background" => "blue", "text" => "white"])
+    <!-- @component('components.example', ["background" => "blue-500", "text" => "white"])
         <strong>Strong</strong> example
     @endcomponent -->
 

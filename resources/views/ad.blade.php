@@ -36,18 +36,18 @@ dd(url($model->url))
 
     <div class="text-xl mx-auto">Provided By:</div>
 
-    <div class="inline-block rounded-lg border py-3 pl-3 pr-8 mb-3 {{ theme('border-gray-100') }}">
+    <div class="inline-block rounded-lg border py-3 pl-3 pr-8 mb-3 border-gray-100'">
       <div class="flex items-center">
         @component('components.tinyProviderIcon', ["provider" => $model->provider, "size" => 40])@endcomponent
         <div>
           <div>{{ $model->provider->name }}</div>
           @if($model->working)
-          <div class="text-green-light font-bold text-sm">
+          <div class="text-emerald-500 font-bold text-sm">
             <span class="mr-1">Working</span>
             <i class="fas fa-check-circle"></i>
           </div>
           @else
-          <div class="text-red-light font-bold text-sm">
+          <div class="text-red-500 font-bold text-sm">
             <span class="mr-1">Revoked</span>
             <i class="fas fa-times-octagon"></i>
           </div>
@@ -86,7 +86,7 @@ dd(url($model->url))
 
 
     <div>
-      <a id="twitter-button" target="_blank" href="https://twitter.com/intent/tweet?text={{ twitterNeutral($app, $model) }}" class='mx-1 mb-16 flex items-center justify-center font-bold rounded-full text-sm px-8 py-5 {{ theme('bg-blue', 'text-white') }}'>
+      <a id="twitter-button" target="_blank" href="https://twitter.com/intent/tweet?text={{ twitterNeutral($app, $model) }}" class='mx-1 mb-16 flex items-center justify-center font-bold rounded-full text-sm px-8 py-5 bg-blue-500 text-white'>
         <i class="fab fa-twitter mr-3 fa-lg"></i>
         TWEET
         <i class="fab fa-twitter ml-3 fa-lg"></i>
@@ -97,7 +97,7 @@ dd(url($model->url))
     </div>
 
     <div>
-      <a href="{{ $url }}" class='mx-1 mb-16 flex items-center justify-center font-bold rounded-full text-sm px-8 py-5 {{ theme('bg-green', 'text-white') }}'>
+      <a href="{{ $url }}" class='mx-1 mb-16 flex items-center justify-center font-bold rounded-full text-sm px-8 py-5 bg-green-500 text-white dark:text-black'>
         <i class="fas fa-download mr-3 fa-lg"></i>
         @if($type == "itms")
         INSTALL
