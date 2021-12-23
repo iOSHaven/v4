@@ -178,6 +178,19 @@ body {
   li {
     text-align: left;
   }
+
+  ul {
+    list-style: circle;
+  }
+
+  ol {
+    list-style: decimal;
+  }
+
+  li img {
+    max-height: 70vh;
+    margin: 1rem auto 2rem;
+  }
   
   p {
     color: #08090a;
