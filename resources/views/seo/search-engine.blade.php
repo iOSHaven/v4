@@ -20,45 +20,65 @@
   "@context" : "http://schema.org",
   "@type" : "SoftwareApplication",
   "name" : "Minecraft",
-  "image" : "https://ioshaven.com/apps",
+  "image" : "https://storage.ihvn.dev/icons/apps/minecraft.jpg",
+  "operatingSystem": "iOS",
   "aggregateRating" : {
     "@type" : "AggregateRating",
-    "bestRating" : "Free game",
     "ratingValue": 9.4,
     "reviewCount": 213
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "FREE",
+    "priceCurrency": "USD"
   }
 },{
   "@context" : "http://schema.org",
   "@type" : "SoftwareApplication",
   "name" : "Cercube 5",
   "image" : "https://ioshaven.com/apps",
+  "operatingSystem": "iOS",
   "aggregateRating" : {
     "@type" : "AggregateRating",
-    "bestRating" : "Tweaked YouTube",
     "ratingValue": 8.3,
     "reviewCount": 174
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "FREE",
+    "priceCurrency": "USD"
   }
 }, {
   "@context" : "http://schema.org",
   "@type" : "SoftwareApplication",
   "name" : "iPoGo - Pokémon Go Spoofer",
-  "image" : "https://ioshaven.com/apps",
+  "image" : "https://storage.ihvn.dev/icons/b4cf627abe479a71e714566b06df1886192c8a350f4962fc45f79601eacbd243.png",
+  "operatingSystem": "iOS",
   "aggregateRating" : {
     "@type" : "AggregateRating",
-    "bestRating" : "Pokémon Go Hack",
     "ratingValue": 9.1,
     "reviewCount": 122
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "FREE",
+    "priceCurrency": "USD"
   }
 }, {
   "@context" : "http://schema.org",
   "@type" : "SoftwareApplication",
   "name" : "Unc0ver iOS 11.0 - 14.3 Jailbreak",
-  "image" : "https://ioshaven.com/apps",
+  "image" : "https://storage.ihvn.dev/icons/apps/uncover.png",
+  "operatingSystem": "iOS",
   "aggregateRating" : {
     "@type" : "AggregateRating",
-    "bestRating" : "Jailbreak App",
     "ratingValue": 8.6,
     "reviewCount": 98
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "FREE",
+    "priceCurrency": "USD"
   }
 } ]
 </script>
