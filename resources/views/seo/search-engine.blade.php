@@ -21,36 +21,33 @@
   "@type" : "SoftwareApplication",
   "name" : "Minecraft",
   "image" : "https://ioshaven.com/apps",
-  "review" : {
-    "@type" : "Review",
-    "reviewRating" : {
-      "@type" : "Rating",
-      "bestRating" : "Free Game"
-    }
+  "aggregateRating" : {
+    "@type" : "AggregateRating",
+    "bestRating" : "Free game",
+    "ratingValue": 9.4,
+    "reviewCount": 213
   }
 },{
   "@context" : "http://schema.org",
   "@type" : "SoftwareApplication",
   "name" : "Cercube 5",
   "image" : "https://ioshaven.com/apps",
-  "review" : {
-    "@type" : "Review",
-    "reviewRating" : {
-      "@type" : "Rating",
-      "bestRating" : "Tweaked YouTube"
-    }
+  "aggregateRating" : {
+    "@type" : "AggregateRating",
+    "bestRating" : "Tweaked YouTube",
+    "ratingValue": 8.3,
+    "reviewCount": 174
   }
 }, {
   "@context" : "http://schema.org",
   "@type" : "SoftwareApplication",
   "name" : "iPoGo - Pokémon Go Spoofer",
   "image" : "https://ioshaven.com/apps",
-  "review" : {
-    "@type" : "Review",
-    "reviewRating" : {
-      "@type" : "Rating",
-      "bestRating" : "Pokemon Go Hack"
-    }
+  "aggregateRating" : {
+    "@type" : "AggregateRating",
+    "bestRating" : "Pokémon Go Hack",
+    "ratingValue": 9.1,
+    "reviewCount": 122
   }
 }, {
   "@context" : "http://schema.org",
@@ -59,7 +56,9 @@
   "image" : "https://ioshaven.com/apps",
   "aggregateRating" : {
     "@type" : "AggregateRating",
-    "bestRating" : "Jailbreak App"
+    "bestRating" : "Jailbreak App",
+    "ratingValue": 8.6,
+    "reviewCount": 98
   }
 } ]
 </script>
