@@ -217,7 +217,7 @@ class AppController extends Controller
 
 
 
-  public function showAppDetailPage($slug, $uid)
+  public function showAppDetailPage($uid)
   {
     $app = App::base_query()
       ->where('uid', $uid)
@@ -229,11 +229,6 @@ class AppController extends Controller
 
     return view('uid')->with(['app' => $app]);
   }
-
-    public function oldShowAppDetailPage($uid)
-    {
-       return $this->showAppDetailPage(null, $uid);
-    }
 
   public function edit($uid)
   {
