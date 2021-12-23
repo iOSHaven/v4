@@ -5,6 +5,7 @@ namespace App\Nova;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Text;
@@ -53,6 +54,9 @@ class Post extends Resource
                 ->maxWidth(50),
 
             ID::make()->sortable(),
+
+            Boolean::make('Ad Free Reading', 'ad_free')
+                ->hideFromIndex(),
 
             Text::make('Title', 'title')
                 ->required(),
