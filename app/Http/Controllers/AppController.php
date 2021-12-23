@@ -118,7 +118,7 @@ class AppController extends Controller
       ->search($request, $tag);
 
     $apps = $this->gathered_query($request, $apps, $tag);
-    return $this->display($request, $apps, "Apps");
+    return $this->display($request, $apps, Str::title($tag) . " Apps");
   }
 
   public function games(Request $request)
@@ -217,7 +217,7 @@ class AppController extends Controller
 
 
 
-  public function showAppDetailPage($uid)
+  public function showAppDetailPage($slug, $uid)
   {
     $app = App::base_query()
       ->where('uid', $uid)
@@ -229,6 +229,11 @@ class AppController extends Controller
 
     return view('uid')->with(['app' => $app]);
   }
+
+    public function oldShowAppDetailPage($uid)
+    {
+       return $this->showAppDetailPage(null, $uid);
+    }
 
   public function edit($uid)
   {

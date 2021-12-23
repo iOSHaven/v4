@@ -119,7 +119,8 @@ Route::get('/itms/{id}', 'AppController@itms');
 Route::post('/app/create', 'AppController@create');
 
 // app security starts here
-Route::get('/app/{uid}', 'AppController@showAppDetailPage')->name('detail');
+Route::get('/app/{slug}-{uid}', 'AppController@showAppDetailPage')->name('detail');
+Route::get('/app/{uid}', 'AppController@oldShowAppDetailPage')->name('detail');
 Route::get('/app/edit/{uid}', 'AppController@edit');
 Route::post('/app/update', 'AppController@update');
 Route::post('/app/remove', 'AppController@remove');
