@@ -91,7 +91,7 @@
         <!-- ShareThis BEGIN -->
         <div class="sharethis-inline-share-buttons my-4"></div>
         <!-- ShareThis END -->
-        <section class="fb-comments" data-href="{{ url()->current() }}" data-width="100%" data-numposts="10"></section>
+        <section class="fb-comments w-full" data-href="{{ url()->current() }}" data-width="100%" data-numposts="10" data-lazy="true"></section>
     </article>
 
 @endsection
