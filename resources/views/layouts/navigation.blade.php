@@ -32,7 +32,12 @@
           </a>
         @endif
       </div>
-      
+
+        <a href="/blog" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Blog') }}">
+            <i class="md:hidden fas fa-book"></i>
+            <div class="md:hidden text-xs leading-none"><small>Blog</small></div>
+            <div class="hidden md:inline-block p-2 -mt-px">Blog</div>
+        </a>
       <a href="/apps" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Apps') }}">
         <i class="md:hidden fas fa-layer-group"></i>
         <div class="md:hidden text-xs leading-none"><small>Apps</small></div>
@@ -59,11 +64,11 @@
         
         <div class="hidden md:inline-block p-2 -mt-px">Updates</div>
       </a>
-      <a href="/themes" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Themes') }}">
-        <i class="md:hidden fas fa-palette"></i>
-        <div class="md:hidden text-xs leading-none"><small>Themes</small></div>
-        <div class="hidden md:inline-block p-2 -mt-px">Themes</div>
-      </a>
+{{--      <a href="/themes" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Themes') }}">--}}
+{{--        <i class="md:hidden fas fa-palette"></i>--}}
+{{--        <div class="md:hidden text-xs leading-none"><small>Themes</small></div>--}}
+{{--        <div class="hidden md:inline-block p-2 -mt-px">Themes</div>--}}
+{{--      </a>--}}
       <a href="/search" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Search') }}">
         <i class="md:hidden fas fa-search"></i>
         <div class="md:hidden text-xs leading-none"><small>Search</small></div>
