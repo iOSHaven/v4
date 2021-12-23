@@ -5,6 +5,14 @@
     <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
 @endsection
 
+@section('search-engine')
+    <meta name="keywords" content="iphone,jailbreak,sideload,hack,crack,signed,download,ipa,free">
+    <meta name="robots" content="index, follow">
+    <meta name="web_author" content="iOS Haven">
+    <meta name="language" content="English">
+    <title>{{ $post->title }} | IPA Insider {{ now()->year }}</title>
+@endsection
+
 @section('content')
 
     <img class="inset-0 bg-red-500 w-full object-cover -mt-8 mb-12"
