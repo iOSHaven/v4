@@ -14,10 +14,12 @@ class CreatePostsTable extends Migration
             $table->uuid('uid')->unique();
             $table->integer('user_id')->unsigned();
             $table->string('title');
+            $table->string('subtitle')->nullable();
             $table->string('description');
             $table->string('image');
             $table->longText('markdown');
             $table->longText('html');
+            $table->longText('tags');
             $table->timestamps();
             $table->softDeletes();
 

@@ -12,14 +12,16 @@
                     <a href="{{ $post->url }}" class="absolute inset-0 cursor-default"></a>
                     <div class="pointer-events-none">
                         <div class="aspect-w-gw aspect-h-gh">
-                            <img class="inset-0 bg-red-500 w-full object-cover"
-                                 srcset="{{ $post->getPictureSrcsetAttribute() }}"
-                                 src="{{ $post->picture }}"/>
+                            @if(!empty($post->image))
+                                <img class="inset-0 bg-red-500 w-full object-cover"
+                                     srcset="{{ $post->getPictureSrcsetAttribute() }}"
+                                     src="{{ $post->picture }}"/>
+                            @endif
                         </div>
 
                         <div class="w-full p-3">
                             <p class="text-2xl font-bold font-mono">{{ $post->title }}</p>
-                            <p>{{ $post->description }}</p>
+                            <p>{{ $post->subtitle ?? $post->description }}</p>
                         </div>
                     </div>
 

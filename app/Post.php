@@ -36,10 +36,12 @@ class Post extends Model
             $model->uid = Str::random(5);
             $model->user_id = Auth::id();
             $model->html = Markdown::parse($model->markdown);
+            $model->tags = implode(",", $model->getKeywords());
         });
 
         static::updating(function ($model) {
             $model->html = Markdown::parse($model->markdown);
+            $model->tags = implode(",", $model->getKeywords());
         });
     }
 
@@ -56,12 +58,21 @@ class Post extends Model
         return 'uid';
     }
 
+    public function getKeywords() {
+        return array_map(function ($tag) {
+            return Str::slug($tag);
+        }, explode(",", $this->tags));
+    }
+
     public function getSlugAttribute() {
         return Str::slug($this->title);
     }
 
     public function getUrlAttribute() {
-        return url("/blog/" . $this->uid . "/" . $this->slug);
+        return route('blog.reader', [
+            "post"=>$this,
+            "slug" => $this->slug
+        ]);
     }
 
     public function getPictureAttribute () {

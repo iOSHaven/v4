@@ -82,8 +82,9 @@ Auth::routes();
 
 
 Route::group(['prefix' => 'blog'], function () {
-    Route::get('/', "PostsController@index");
-    Route::get('/{post}/{slug}', "PostsController@show");
+    Route::get('/', "PostsController@index")->name('blog.listing');
+    Route::get('/tag/{tag}', "PostsController@showTag")->name('blog.tag');
+    Route::get('/{slug}_{post}', "PostsController@show")->name('blog.reader');
 });
 
 Route::group(['prefix' => 'plist'], function () {

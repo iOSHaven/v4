@@ -23,9 +23,15 @@ class PostsController extends Controller
         //
     }
 
-    public function show(Post $post)
+    public function show(string $slug, Post $post)
     {
         return view('blog-reader')->with('post', $post);
+    }
+
+    public function showTag(string $tag)
+    {
+        $posts = Post::where('tags', 'like', "%$tag%")->simplePaginate(12);
+        return view('blog-listing')->with('posts', $posts);
     }
 
     public function edit(Post $post)

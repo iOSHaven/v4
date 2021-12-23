@@ -57,7 +57,15 @@ class Post extends Resource
             Text::make('Title', 'title')
                 ->required(),
 
+            Text::make('Subtitle', 'subtitle')
+                ->hideFromIndex(),
+
             Textarea::make('SEO Description', 'description')
+                ->rows(2)
+                ->required()
+                ->hideFromIndex(),
+
+            Text::make('Keyword tags', 'tags')
                 ->required()
                 ->hideFromIndex(),
 
