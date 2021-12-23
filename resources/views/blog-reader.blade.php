@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="{{ mix('/css/markdown.css') }}">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4649450952406116"
             crossorigin="anonymous"></script>
+    <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5aeb628d96e6fc00110b2f1a&product=inline-share-buttons' async='async'></script>
 @endsection
 
 @section('twitter')
@@ -60,11 +61,15 @@
                 <h2 class="mt-2 uppercase text-2xl opacity-[0.6]">{{ $post->subtitle }}</h2>
             @endif
 
-            <section class="mt-8">
+            <section class="mt-2">
                 @foreach($post->getKeywords() as $keyword)
                     <a class="mr-1 underline text-emerald-500 font-bold hover:text-emerald-700" href="{{ route('blog.tag', ["tag" => $keyword]) }}">#{{$keyword}}</a>
                 @endforeach
             </section>
+            <!-- ShareThis BEGIN -->
+            <div class="sharethis-inline-share-buttons mt-6"></div>
+            <!-- ShareThis END -->
+
         </header>
 
         <section class="markdown mx-auto mt-8">
@@ -82,6 +87,10 @@
             @endforeach
         </section>
 
+        <p class="text-xl font-bold underline uppercase">Share now & comment!</p>
+        <!-- ShareThis BEGIN -->
+        <div class="sharethis-inline-share-buttons my-4"></div>
+        <!-- ShareThis END -->
         <section class="fb-comments" data-href="{{ url()->current() }}" data-width="100%" data-numposts="10"></section>
     </article>
 
