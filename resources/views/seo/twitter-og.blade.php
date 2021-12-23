@@ -9,7 +9,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ $url ?? url()->current() }}">
 <meta property="og:site_name" content="iOS Haven">
-<meta property="article:modified_time" content="{{ now()->tz('UTC') }}">
+<meta property="article:modified_time" content="{{ $modifiedTime ?? now()->toIso8601String() }}">
 <meta property="og:description" content="{{ $description ?? "Search for the best hacked iOS Apps." }}">
 <meta property="og:image" content="{{$image ?? "https://storage.ihvn.dev/icons/apps/ioshaven.jpg"}}">
 <meta property="twitter:site:id" content="715729557769166848">

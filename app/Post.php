@@ -86,12 +86,20 @@ class Post extends Model
         ));
     }
 
-    public function getPictureSrcsetAttribute($amount=3) {
+
+    public function getScaledImages($amount=3) {
         $srcset = [];
         for ($i = 1; $i <= $amount; $i++) {
-            $srcset[] = $this->getScaledPicture($i) . " " . $i . "x";
+            $srcset[] = $this->getScaledPicture($i);
         }
-        return implode(",", $srcset);
+        return $srcset;
+    }
+
+    public function getPictureSrcsetAttribute($amount=3) {
+        $images = $this->getScaledImages($amount);
+        return implode(",", array_map(function ($image, $index) {
+            return $image . " $index" . "x";
+        }, $images, array_keys($images)));
     }
 
     public function getBannerAttribute () {

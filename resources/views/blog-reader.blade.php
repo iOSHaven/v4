@@ -6,7 +6,8 @@
 
 @section('header')
     <link rel="stylesheet" href="{{ mix('/css/markdown.css') }}">
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4649450952406116"
+            crossorigin="anonymous"></script>
 @endsection
 
 @section('twitter')
@@ -25,6 +26,25 @@
     <meta name="language" content="English">
     <link rel="canonical" href="{{url()->current()}}">
     <title>{{ $title }}</title>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NewsArticle",
+      "headline": "{{ $post->title }}",
+      "image": @json($post->getScaledImages(3)),
+      "datePublished": "{{ $post->created_at->toIso8601String() }}",
+      "dateModified": "{{ $post->updated_at->toIso8601String() }}",
+      "author": [{
+            "@type": "Organization",
+            "name": "iOS Haven"
+        },{
+          "@type": "Person",
+          "name": "John Doe",
+          "url": "http://example.com/profile/johndoe123"
+      }]
+    }
+    </script>
+
 @endsection
 
 @section('content')
@@ -51,7 +71,5 @@
 
         <div class="fb-comments" data-href="/blog/{{ $post->uid }}/comments" data-width="100%" data-numposts="10" data-lazy="true"></div>
     </div>
-
-
 
 @endsection
