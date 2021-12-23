@@ -6,7 +6,7 @@
 
 
   @php
-    View::share('title', $title);
+    View::share('title', $title ?? "");
   @endphp
 
   <meta name="monetization" content="$ilp.uphold.com/qXi9AbDQiGD7">
