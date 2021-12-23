@@ -28,6 +28,11 @@
 </head>
   <body class="antialiased ">
 
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVKPPPZ"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
   <div id="fb-root"></div>
   <script>(function(d, s, id) {
       var js, fjs = d.getElementsByTagName(s)[0];
@@ -64,7 +69,6 @@
 {{--    <script src="{{ mix('/js/main.min.js') }}"></script>--}}
     @yield("footer")
     @include('includes.standalone-app')
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PVKPPPZ" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   </body>
 
