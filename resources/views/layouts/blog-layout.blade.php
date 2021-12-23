@@ -41,12 +41,12 @@
 
   <main class="mx-auto lg:max-w-screen-lg max-w-prose selection:bg-red-500 selection:text-white px-3">
 
-    <header class="text-center mt-4 mb-12 select-none">
+    <navigation class="text-center mt-4 mb-12 select-none block">
       <a href="/blog" class="font-bold text-3xl mt-2 hover:underline hover:decoration-2 hover:decoration-red-500">IPA Insider</a>
       <p class="uppercase">By iOS Haven</p>
       <hr class="mx-auto w-16 border-stone-300 dark:border-slate-700 my-4">
       @yield('blog-header')
-    </header>
+    </navigation>
 
     @yield('content')
 
