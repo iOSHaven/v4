@@ -141,9 +141,15 @@ body {
 }
 .markdown ul {
   list-style: circle;
+  margin: 1rem 0 1.5rem;
+  line-height: 2rem;
+  padding-left: 20px;
 }
 .markdown ol {
   list-style: decimal;
+  margin: 0.5rem 0 1.5rem;
+  line-height: 2rem;
+  padding-left: 20px;
 }
 .markdown li img {
   max-height: 70vh;

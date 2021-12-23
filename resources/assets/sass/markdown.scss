@@ -181,10 +181,16 @@ body {
 
   ul {
     list-style: circle;
+    margin: 1rem 0 1.5rem;
+    line-height: 2rem;
+    padding-left: 20px;
   }
 
   ol {
     list-style: decimal;
+    margin: 0.5rem 0 1.5rem;
+    line-height: 2rem;
+    padding-left: 20px;
   }
 
   li img {
