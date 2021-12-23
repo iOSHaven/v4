@@ -6,7 +6,7 @@
 @endsection
 
 @section('search-engine')
-    <meta name="keywords" content="iphone,jailbreak,sideload,hack,crack,signed,download,ipa,free">
+    <meta name="keywords" content="{{ $post->tags ?? "iphone,jailbreak,sideload,hack,crack,signed,download,ipa,free" }}">
     <meta name="robots" content="index, follow">
     <meta name="web_author" content="iOS Haven">
     <meta name="language" content="English">
