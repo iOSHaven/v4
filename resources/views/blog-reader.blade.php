@@ -13,7 +13,8 @@
     @include('seo.twitter-og', [
         "title" => $title,
         "description" => $post->description,
-        "image" => $post->picture
+        "image" => $post->picture,
+        "imageSize" => "summary_large_image"
     ])
 @endsection
 

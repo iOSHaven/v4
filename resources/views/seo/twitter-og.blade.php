@@ -13,6 +13,6 @@
 <meta property="og:description" content="{{ $description ?? "Search for the best hacked iOS Apps." }}">
 <meta property="og:image" content="{{$image ?? "https://storage.ihvn.dev/icons/apps/ioshaven.jpg"}}">
 <meta property="twitter:site:id" content="715729557769166848">
-<meta property="twitter:card" content="summary">
+<meta property="twitter:card" content="{{ $imageSize ?? "summary" }}">
 <meta property="twitter:label1" content="Est. reading time">
 <meta property="twitter:data1" content="1 minute">
