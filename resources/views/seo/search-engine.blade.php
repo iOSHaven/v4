@@ -22,15 +22,17 @@
   "name" : "Minecraft",
   "image" : "https://storage.ihvn.dev/icons/apps/minecraft.jpg",
   "operatingSystem": "iOS",
+  "applicationCategory": "GameApplication",
   "aggregateRating" : {
     "@type" : "AggregateRating",
-    "ratingValue": 9.4,
-    "reviewCount": 213
+    "bestRating": "10",
+    "worstRating": "1",
+    "ratingValue": "9.4",
+    "reviewCount": "213"
   },
   "offers": {
     "@type": "Offer",
-    "price": "FREE",
-    "priceCurrency": "USD"
+    "price": "0"
   }
 },{
   "@context" : "http://schema.org",
@@ -38,15 +40,17 @@
   "name" : "Cercube 5",
   "image" : "https://ioshaven.com/apps",
   "operatingSystem": "iOS",
+  "applicationCategory": "SocialNetworkingApplication",
   "aggregateRating" : {
     "@type" : "AggregateRating",
-    "ratingValue": 8.3,
-    "reviewCount": 174
+    "bestRating": "10",
+    "worstRating": "1",
+    "ratingValue": "8.3",
+    "reviewCount": "174"
   },
   "offers": {
     "@type": "Offer",
-    "price": "FREE",
-    "priceCurrency": "USD"
+    "price": "0"
   }
 }, {
   "@context" : "http://schema.org",
@@ -54,15 +58,17 @@
   "name" : "iPoGo - Pokémon Go Spoofer",
   "image" : "https://storage.ihvn.dev/icons/b4cf627abe479a71e714566b06df1886192c8a350f4962fc45f79601eacbd243.png",
   "operatingSystem": "iOS",
+  "applicationCategory": "GameApplication",
   "aggregateRating" : {
     "@type" : "AggregateRating",
-    "ratingValue": 9.1,
-    "reviewCount": 122
+    "bestRating": "10",
+    "worstRating": "1",
+    "ratingValue": "9.1",
+    "reviewCount": "122"
   },
   "offers": {
     "@type": "Offer",
-    "price": "FREE",
-    "priceCurrency": "USD"
+    "price": "0"
   }
 }, {
   "@context" : "http://schema.org",
@@ -70,15 +76,17 @@
   "name" : "Unc0ver iOS 11.0 - 14.3 Jailbreak",
   "image" : "https://storage.ihvn.dev/icons/apps/uncover.png",
   "operatingSystem": "iOS",
+  "applicationCategory": "UtilitiesApplication",
   "aggregateRating" : {
     "@type" : "AggregateRating",
-    "ratingValue": 8.6,
-    "reviewCount": 98
+    "bestRating": "10",
+    "worstRating": "1",
+    "ratingValue": "8.6",
+    "reviewCount": "98"
   },
   "offers": {
     "@type": "Offer",
-    "price": "FREE",
-    "priceCurrency": "USD"
+    "price": "0"
   }
 } ]
 </script>
