@@ -11,7 +11,7 @@
 <meta property="og:site_name" content="iOS Haven">
 <meta property="article:modified_time" content="{{ now()->tz('UTC') }}">
 <meta property="og:description" content="{{ $description ?? "Search for the best hacked iOS Apps." }}">
-<meta property="og:image" content="https://storage.ihvn.dev/icons/apps/ioshaven.jpg">
+<meta property="og:image" content="{{$image ?? "https://storage.ihvn.dev/icons/apps/ioshaven.jpg"}}">
 <meta property="twitter:site:id" content="715729557769166848">
 <meta property="twitter:card" content="summary">
 <meta property="twitter:label1" content="Est. reading time">

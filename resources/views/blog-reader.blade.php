@@ -12,7 +12,8 @@
 @section('twitter')
     @include('seo.twitter-og', [
         "title" => $title,
-        "description" => $post->description
+        "description" => $post->description,
+        "image" => $post->picture
     ])
 @endsection
 
