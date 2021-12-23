@@ -4,6 +4,11 @@
 
 <head>
 
+
+  @php
+    View::share('title', $title);
+  @endphp
+
   <meta name="monetization" content="$ilp.uphold.com/qXi9AbDQiGD7">
 
   @include('includes.google-tag-manager')

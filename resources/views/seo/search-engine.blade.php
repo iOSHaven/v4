@@ -4,8 +4,11 @@
   <meta name="web_author" content="IOS Haven Development Team">
   <meta name="language" content="English">
 
-  @if(!empty($title))
-    <title>{{ $title}} | {{ config('app.name', 'IOS Haven') }}</title>
+  @php
+    $context = $title ?? session("current_tab")
+  @endphp
+  @if(!empty($context))
+    <title>{{ $context }} | {{ config('app.name', 'IOS Haven') }}</title>
   @else
     <title>{{ config('app.name', 'IOS Haven') }}</title>
   @endif
