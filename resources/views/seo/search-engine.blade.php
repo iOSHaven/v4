@@ -32,7 +32,8 @@
   },
   "offers": {
     "@type": "Offer",
-    "price": "0"
+    "price": "0",
+    "priceCurrency": "USD"
   }
 },{
   "@context" : "http://schema.org",
@@ -50,7 +51,8 @@
   },
   "offers": {
     "@type": "Offer",
-    "price": "0"
+    "price": "0",
+    "priceCurrency": "USD"
   }
 }, {
   "@context" : "http://schema.org",
@@ -68,7 +70,8 @@
   },
   "offers": {
     "@type": "Offer",
-    "price": "0"
+    "price": "0",
+    "priceCurrency": "USD"
   }
 }, {
   "@context" : "http://schema.org",
@@ -86,7 +89,8 @@
   },
   "offers": {
     "@type": "Offer",
-    "price": "0"
+    "price": "0",
+    "priceCurrency": "USD"
   }
 } ]
 </script>
