@@ -31,6 +31,8 @@ use App\Itms;
 use App\Shortcut;
 use Illuminate\Http\Request;
 
+Route::view('/privacy', 'privacy-policy');
+
 Route::get("/map.xml", function () {
   $contents = View::make('sitemap')
     ->with([
