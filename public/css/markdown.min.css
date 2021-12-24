@@ -113,6 +113,7 @@ body {
 .markdown select,
 .markdown textarea {
   max-width: 100%;
+  max-height: 60vh;
 }
 .markdown body {
   color: #444;
@@ -123,7 +124,7 @@ body {
   text-align: center;
 }
 .markdown pre {
-  background-color: #fafafa;
+  background-color: #282727;
   padding: 1rem;
   text-align: left;
 }

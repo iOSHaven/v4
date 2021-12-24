@@ -78,15 +78,16 @@
                 $chunks = array_filter(explode("\n", $post->markdown));
             @endphp
 
-            @foreach($chunks as $chunk)
-                {!! \Illuminate\Mail\Markdown::parse($chunk) !!}
-
-                @unless($post->ad_free)
+            @unless($post->ad_free)
+                @foreach($chunks as $chunk)
+                    {!! \Illuminate\Mail\Markdown::parse($chunk) !!}
                     @if($loop->iteration % (count($chunks) / 3) == 0)
                         @include('ads.google-blog')
                     @endif
-                @endunless
-            @endforeach
+                @endforeach
+            @else
+                {!! \Illuminate\Mail\Markdown::parse($post->markdown) !!}
+            @endunless
         </section>
 
         <p class="text-xl font-bold underline uppercase">Share now & comment!</p>

@@ -135,6 +135,7 @@ body {
   select,
   textarea {
     max-width: 100%;
+    max-height: 60vh;
   }
   
   @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,300);
@@ -160,7 +161,7 @@ body {
   //}
   
   pre {
-    background-color: #fafafa;
+    background-color: #282727;
     padding: 1rem;
     text-align: left;
   }
