@@ -9,6 +9,7 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4649450952406116"
             crossorigin="anonymous"></script>
     <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5aeb628d96e6fc00110b2f1a&product=inline-share-buttons' async='async'></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 @endsection
 
 @section('twitter')
