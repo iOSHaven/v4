@@ -241,3 +241,13 @@ img.listing-icon{
 .markdown a, .link {
     @apply font-bold underline decoration-blue-500 text-blue-500;
 }
+
+.dark .fb-comments .UFIImageBlockContent {
+    color: white;
+}
+
+@media(prefers-color-scheme: dark) {
+    .fb-comments .UFIImageBlockContent {
+        color: white;
+    }
+}
