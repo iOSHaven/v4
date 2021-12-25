@@ -151,7 +151,7 @@
   @component('components.post', [
       "url" => "/games",
       "image" => "https://images.unsplash.com/photo-1587573089283-f14c65841f75",
-      "title" => "Large Collection of Games",
+      "title" => "Gaming Collection",
       "subtitle" => "Tweaked, Hacked, and Free Games"
   ])@endcomponent
 
@@ -165,14 +165,14 @@
   @component('components.post', [
       "url" => "/search",
       "image" => "https://images.unsplash.com/photo-1490127252417-7c393f993ee4",
-      "title" => "Powerful Search Engine Capability",
+      "title" => "Powerful Search Engine",
       "subtitle" => "Find More With Less"
   ])@endcomponent
 
   @component('components.post', [
       "url" => "/blog",
       "image" => "https://images.unsplash.com/photo-1521714161819-15534968fc5f",
-      "title" => "Guided Tutorials and News",
+      "title" => "Tutorials and News",
       "subtitle" => "Read Community Blog"
   ])@endcomponent
 
