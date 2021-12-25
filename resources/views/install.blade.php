@@ -1,6 +1,6 @@
 @extends('layouts.redesign', ["hide_nav" => true, "hide_ads" => true, "hide_back" => true])
 
-@section("head")
+@section("header")
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/framework7-icons@2.3.1/css/framework7-icons.min.css">
 @endsection

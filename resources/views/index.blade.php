@@ -123,8 +123,8 @@
 <main class="mx-auto lg:max-w-screen-lg max-w-prose selection:bg-red-500 selection:text-white px-3">
 
 <section class="text-center mt-4 mb-8 select-none block">
-  <a href="/apps" class="uppercase font-bold text-3xl mt-2 hover:underline hover:decoration-2 hover:decoration-red-500">iOS Haven</a>
-  <p class="uppercase">Power User Community</p>
+  <h1 class="uppercase font-bold text-3xl mt-2 hover:underline hover:decoration-2 hover:decoration-red-500">iOS Haven</h1>
+  <h2 class="uppercase">Power User Community</h2>
   <div class="flex items-center justify-center mb-4 mt-4">
     <a href="/install?theme=dark" class='hide-webapp mx-1 flex items-center justify-center font-bold rounded-md text-sm px-5 py-1 bg-black dark:bg-white text-white dark:text-black'>
       <i class="fas fa-moon-stars mr-3 fa-lg"></i>

@@ -9,6 +9,7 @@
 <meta property="og:description" content="Download {{ $app->name}} now! This app is a {{ $app->short }} and includes the following features: {{$app->description}}">
 <meta property="og:image" content="{{ url($app->icon) }}">
 <meta property="twitter:site:id" content="715729557769166848">
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5aeb628d96e6fc00110b2f1a&product=inline-share-buttons' async='async'></script>
 @endsection
 
 @section('description')
@@ -47,8 +48,9 @@
               <div class="mt-5">
                 @component('components.appButtons', ["app" => $app])@endcomponent
                 <div class="mt-4">
-                  <a class="twitter-share-button" data-size="large" href="https://twitter.com/intent/tweet?text={{ urlencode("I just installed $app->name from @ioshavencom and it is working!") }}">
-                    Tweet</a>
+{{--                  <a class="twitter-share-button" data-size="large" href="https://twitter.com/intent/tweet?text={{ urlencode("I just installed $app->name from @ioshavencom and it is working!") }}">--}}
+{{--                    Tweet</a>--}}
+                  <div class="sharethis-inline-share-buttons my-4"></div>
                 </div>
 
               </div>

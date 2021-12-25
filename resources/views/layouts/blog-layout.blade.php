@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="bg-stone-200 dark:bg-stone-700 dark:text-stone-200">
+<html lang="english" class="bg-stone-200 dark:bg-stone-700 dark:text-stone-200">
 
 
 <head>
