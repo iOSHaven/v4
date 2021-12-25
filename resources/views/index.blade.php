@@ -152,14 +152,14 @@
       "url" => "/games",
       "image" => "https://images.unsplash.com/photo-1587573089283-f14c65841f75",
       "title" => "Large Collection of Games",
-      "subtitle" => "Tweaked, Hacked, Modded, and Free Games"
+      "subtitle" => "Tweaked, Hacked, and Free Games"
   ])@endcomponent
 
   @component('components.post', [
       "url" => "/themes",
       "image" => "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f",
       "title" => "Fashionable Themes",
-      "subtitle" => "Premium Curated Themes for High Fashion"
+      "subtitle" => "Curated Themes for High Fashion"
   ])@endcomponent
 
   @component('components.post', [
@@ -173,14 +173,14 @@
       "url" => "/blog",
       "image" => "https://images.unsplash.com/photo-1521714161819-15534968fc5f",
       "title" => "Guided Tutorials and News",
-      "subtitle" => "Expand Your Skills With Community Blog"
+      "subtitle" => "Read Community Blog"
   ])@endcomponent
 
   @component('components.post', [
       "url" => "altstore://source?url=". url('/altstore/apps.json'),
       "image" => "https://ihax.io/wp-content/uploads/2020/06/AltStore.png",
       "title" => "Altstore",
-      "subtitle" => "Open Our Library Directly in Altstore"
+      "subtitle" => "Open Directly in Altstore"
   ])@endcomponent
   {{--  @endforeach--}}
 </section>
@@ -234,7 +234,7 @@
 </script>
 
 <section>
-  <div class="mx-auto w-full text-justify px-3" style="max-width: 700px">
+  <div class="mx-auto w-full px-3" style="max-width: 700px">
     {{-- <h1 class="mb-5 block text-6xl text-white-light">About Us</h1> --}}
     @include('layouts.about')
   </div>
