@@ -157,7 +157,7 @@
 
   @component('components.post', [
       "url" => "/themes",
-      "image" => "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f",
+      "image" => "https://images.unsplash.com/photo-1569172122301-bc5008bc09c5",
       "title" => "Fashionable Themes",
       "subtitle" => "Curated Themes for High Fashion"
   ])@endcomponent
