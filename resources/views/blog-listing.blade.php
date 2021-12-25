@@ -7,26 +7,13 @@
 @section('content')
     <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-5 masonry invisible">
         @foreach($posts as $post)
-            <div class="grid-item p-3 relative w-full lg:w-1/3 md:w-1/2 ">
-                <div class="relative rounded-lg overflow-hidden shadow-sm shadow-orange-600/20 dark:shadow-black/40 bg-stone-100 dark:bg-slate-800 hover:shadow-lg hover:shadow-orange-700/10 dark:hover:shadow-black/50">
-                    <a href="{{ $post->url }}" class="absolute inset-0 cursor-default"></a>
-                    <div class="pointer-events-none">
-                        <div class="aspect-w-gw aspect-h-gh">
-                            @if(!empty($post->image))
-                                <img class="inset-0 bg-red-500 w-full object-cover"
-                                     srcset="{{ $post->getPictureSrcsetAttribute() }}"
-                                     src="{{ $post->picture }}"/>
-                            @endif
-                        </div>
-
-                        <div class="w-full p-3">
-                            <p class="text-2xl font-bold font-mono">{{ $post->title }}</p>
-                            <p>{{ $post->subtitle ?? $post->description }}</p>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+            @component('components.post', [
+                "url" => $post->url,
+                "image" => $post->image,
+                "title" => $post->title,
+                "subtitle" => $post->subtitle,
+                "description" => $post->description
+            ])@endcomponent
         @endforeach
     </section>
 

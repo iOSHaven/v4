@@ -165,3 +165,42 @@ function slugify($text,$strict = false) {
     }
     return $text;
 }
+
+
+function getDefaultImageSettings () {
+    return [
+        "h" => 200,
+        "w" => 200 * 3.2361/2,
+        "fit" => "crop",
+        "crop" => "focalpoint",
+        "auto" => "format,compress,enhance"
+    ];
+}
+
+function imgix($image, $settings=[]) {
+    $settings = array_merge(getDefaultImageSettings(), $settings);
+    return imgixUrl($image, $settings);
+}
+
+function scaleImage($image, $dpr, $settings=[]) {
+    $settings = array_merge(getDefaultImageSettings(), $settings);
+    return imgixUrl($image, array_merge(
+        $settings,
+        ["dpr" => $dpr]
+    ));
+}
+
+function scaleImages($image, $amount=3, $settings=[]) {
+    $srcset = [];
+    for ($i = 1; $i <= $amount; $i++) {
+        $srcset[] = scaleImage($image, $i, $settings);
+    }
+    return $srcset;
+}
+
+function imageSrcSet($image, $amount=3, $settings=[]) {
+    $images = scaleImages($image, $amount, $settings);
+    return implode(",", array_map(function ($image, $index) {
+        return $image . " $index" . "x";
+    }, $images, array_keys($images)));
+}

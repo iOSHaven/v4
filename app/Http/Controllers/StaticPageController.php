@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\App;
+use App\Post;
 use App\Provider;
 use App\Skin;
 use Illuminate\Http\Request;
@@ -21,7 +22,8 @@ class StaticPageController extends Controller
 {
   public function index()
   {
-    return view('index');
+    $posts = Post::orderBy('created_at', 'desc')->limit(6)->get();
+    return view('index')->with('posts', $posts);
   }
 
   public function template($view)
