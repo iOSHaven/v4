@@ -9,7 +9,7 @@
     <p class="mt-4">Smart people use the automated systems of iOS Haven to bank on quality insights.</p>
 
     <h2 class="text-shadow text-5xl">Blog/News</h2>
-    <p class="mt-4">We also provide a free blog for technophiles looking to gain knowledge in iOS related topics ranging from beginner tutorials for jailbreaking and sideloading; to news about latest features in iOS and convert apps including those which provide hidden power for iOS devices that directly access the AppStore.</p>
+    <p class="mt-4">We also provide a free blog for technophiles looking to gain knowledge in iOS related topics ranging from beginner tutorials for jailbreaking and sideloading; to news about latest features in iOS and covert apps including those which provide hidden power for iOS devices that directly access the AppStore.</p>
     <p class="mt-4">All content on the blog is suggested by users who reach out on social media. Influencers looking to reach a broader audience should share their content with @ioshavencom on Twitter to get featured in the next blog driving viewership for key demographics.</p>
     <p class="mt-4">We have access to insider sources and iOS experts in the field across language barriers and ethnicity groups. The people of iOS Haven have a say in what they want to see.</p>
 

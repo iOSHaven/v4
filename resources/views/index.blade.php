@@ -179,10 +179,10 @@
   ])@endcomponent
 
   @component('components.post', [
-      "url" => "altstore://source?url=". url('/altstore/apps.json'),
-      "image" => "https://ihax.io/wp-content/uploads/2020/06/AltStore.png",
-      "title" => "Altstore",
-      "subtitle" => "Open Directly in Altstore"
+      "url" => "/shortcuts",
+      "image" => "https://imgur.com/PtW5Uxl.png",
+      "title" => "Shortcuts",
+      "subtitle" => "Browse Apple Shortcuts"
   ])@endcomponent
   {{--  @endforeach--}}
 </section>
