@@ -120,6 +120,8 @@
 
 {{--</section>--}}
 
+<main class="mx-auto lg:max-w-screen-lg max-w-prose selection:bg-red-500 selection:text-white px-3">
+
 <section class="text-center mt-4 mb-8 select-none block">
   <a href="/apps" class="uppercase font-bold text-3xl mt-2 hover:underline hover:decoration-2 hover:decoration-red-500">iOS Haven</a>
   <p class="uppercase">The Community Powered 3rd Party App Store</p>
@@ -245,6 +247,8 @@
   <p class="text-lg font-mono py-5">
     <a href="https://ioshaven.com" class="hover:underline">iOS Haven</a> &copy; {{now()->year}}</p>
 </footer>
+
+</main>
 
 
 {{-- <section class="bg-blue" style="margin-top: -3px">
