@@ -12,7 +12,7 @@
   @if(!empty($context))
     <title>{{ $context }} | {{ config('app.name', 'IOS Haven') }}</title>
   @else
-    <title>{{ config('app.name', 'IOS Haven') }}</title>
+    <title>{{ config('app.name', 'IOS Haven') }} | The Community Driven App Store</title>
   @endif
 
   <script type="application/ld+json">

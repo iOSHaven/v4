@@ -3,7 +3,7 @@
 
 <head>
 
-  !<title>{{ config('app.name', 'IOS Haven') }}</title>
+  !<title>{{ config('app.name', 'IOS Haven | Community Driven 3rd Party App Store') }}</title>
   !<meta name="csrf-token" content="{{ csrf_token() }}">
 
   @if(empty($hide_meta))

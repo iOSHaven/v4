@@ -9,7 +9,7 @@
 
   <div class="mx-auto w-full text-center" style="max-width: 700px">
     <h1 class="mb-1 block text-6xl text-black dark:text-white">iOS Haven</h1>
-    <p class="-mt-4 mb-12">The app store for the people</p>
+    <p class="-mt-4 mb-12">The Community Driven App Store</p>
     <div class="mb-12">
       <script type='text/javascript' src='https://ko-fi.com/widgets/widget_2.js'></script>
       <script type='text/javascript'>
