@@ -99,12 +99,12 @@
           Contact
           <i class="fal fa-chevron-right"></i>
           </a> --}}
-          {{-- <a href="/shop" target="_blank" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
-          <span>Merch
+          <a href="/themes" target="_blank" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
+          <span>Themes
             <strong class="ml-3 text-blue-500">NEW!</strong>
           </span>
-          <i class="fal fa-tshirt"></i>
-          </a> --}}
+          <i class="fal fa-paint-brush"></i>
+          </a>
           <a href="/shortcuts" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
             Shortcuts
             <i class="fal fa-chevron-right"></i>

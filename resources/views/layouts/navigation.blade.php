@@ -13,7 +13,7 @@
         @endif
         <h1 class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center -z-1">{{ $title ?? session("current_tab") ?? "IOS Haven" }}</h1>
         <label for="check-sidebar-right" class="text-center mx-2 scroll-toggler">
-          <i class="far fa-lg fa-ellipsis-v"></i>
+          <i class="far fa-lg fa-bars"></i>
         </label>
     </div>
   </nav>
@@ -78,7 +78,7 @@
     <h1 class="hidden md:flex absolute top-0 left-0 right-0 bottom-0 items-center justify-center -z-1">{{ $title ?? session("current_tab") ?? "IOS Haven" }}</h1>
     <div class="hidden md:flex items-center justify-between md:justify-end text-white">
         <label for="check-sidebar-right" class="text-center px-2 scroll-toggler">
-          <i class="far fa-lg fa-ellipsis-v"></i>
+          <i class="far fa-lg fa-bars"></i>
         </label>
     </div>
   </nav>
