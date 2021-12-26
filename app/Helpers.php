@@ -214,3 +214,10 @@ function geoLocation() {
     session()->put('geoLocation', $details);
     return $details;
 }
+
+function geoCountry () {
+    if (isset($_SERVER["HTTP_CF_IPCOUNTRY"])){
+        return $_SERVER["HTTP_CF_IPCOUNTRY"];
+    }
+    return geoLocation()->country;
+}

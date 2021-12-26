@@ -22,6 +22,7 @@ Route::view('/giveaway', 'giveaway');
 // Route::get('/themetest', 'StaticPageController@getThemesPage');
 
 Route::get('/geoLocation', function () {
+    dump(geoCountry());
     dump($_SERVER);
     return response()->json(geoLocation());
 });
