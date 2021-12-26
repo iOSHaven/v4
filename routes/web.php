@@ -21,6 +21,9 @@ Route::view('/giveaway', 'giveaway');
 
 // Route::get('/themetest', 'StaticPageController@getThemesPage');
 
+Route::get('/geoLocation', function () {
+    return response()->json(geoLocation());
+});
 
 Route::get('/test', function () {
   return view('test');

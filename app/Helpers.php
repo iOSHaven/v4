@@ -204,3 +204,13 @@ function imageSrcSet($image, $amount=3, $settings=[]) {
         return $image . " $index" . "x";
     }, $images, array_keys($images)));
 }
+
+function geoLocation() {
+    if (session()->has('geoLocation')) {
+        return session()->get('geoLocation');
+    }
+    $ip = "139.82.250.250";
+    $details = json_decode(file_get_contents("http://ipinfo.io/{$ip}/json"));
+    session()->put('geoLocation', $details);
+    return $details;
+}
