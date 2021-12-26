@@ -33,7 +33,7 @@
         @endif
       </div>
 
-        <a href="blog.ioshaven.com" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Blog') }}">
+        <a href="//blog.ioshaven.com" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Blog') }}">
             <i class="md:hidden fas fa-book"></i>
             <div class="md:hidden text-xs leading-none"><small>Blog</small></div>
             <div class="hidden md:inline-block p-2 -mt-px">Blog</div>
