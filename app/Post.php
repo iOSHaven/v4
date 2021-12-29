@@ -54,7 +54,7 @@ class Post extends Model
 //                debug($data);
                 $output = [
                     "title" => $data['title']->rendered,
-                    "subtitle" => $data['yoast_head_json']->og_description,
+                    "subtitle" => Str::limit($data['yoast_head_json']->og_description, 200, ''),
                     "image" => $data['yoast_head_json']->og_image[0]->url,
                     "description" => strip_tags($data['excerpt']->rendered),
                     "html" => $data['content']->rendered

@@ -12,7 +12,7 @@
 
             <div class="w-full p-3">
                 <p class="text-2xl font-bold font-mono">{{ $title }}</p>
-                <p>{{ $subtitle ?? $description }}</p>
+                <p>{{ Str::limit($subtitle ?? $description, 100, "...") }}</p>
             </div>
         </div>
 
