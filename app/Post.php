@@ -3,15 +3,22 @@
 namespace App;
 
 use App\User;
+use GuzzleHttp\Client;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Mail\Markdown;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Barryvdh\Debugbar\Facade as Debug;
 
 class Post extends Model
 {
     use SoftDeletes;
+
+    protected $casts = [
+        'wp_json' => 'json',
+    ];
 
     private $cardImageSettings = [
         "h" => 200,
@@ -34,15 +41,45 @@ class Post extends Model
 
         static::creating(function ($model) {
             $model->uid = Str::random(5);
+        });
+
+        static::saving(function ($model) {
             $model->user_id = Auth::id();
-            $model->html = Markdown::parse($model->markdown);
+
+            if (!empty($model->wp_url)) {
+                $client = new Client();
+                $res = $client->get($model->wp_url);
+                $data = collect(json_decode($res->getBody()->getContents()));
+//                Storage::disk('local')->put('debug.txt', 'hello world content');
+//                debug($data);
+                $output = [
+                    "title" => $data['title']->rendered,
+                    "subtitle" => $data['yoast_head_json']->og_description,
+                    "image" => $data['yoast_head_json']->og_image[0]->url,
+                    "description" => strip_tags($data['excerpt']->rendered),
+                    "html" => $data['content']->rendered
+                ];
+                debug($output);
+
+                $model->title = html_entity_decode($data['title']->rendered);
+                $model->subtitle = $data['yoast_head_json']->og_description;
+                $model->image = $data['yoast_head_json']->og_image[0]->url;
+                $model->description = html_entity_decode(strip_tags($data['excerpt']->rendered));
+                $model->html = $data['content']->rendered;
+                $model->markdown = strip_tags($model->html);
+                $model->wp_json = $data;
+//                dd($data);
+            } else {
+                $model->html = Markdown::parse($model->markdown);
+            }
+
             $model->tags = implode(",", $model->getKeywords());
         });
 
-        static::updating(function ($model) {
-            $model->html = Markdown::parse($model->markdown);
-            $model->tags = implode(",", $model->getKeywords());
-        });
+//        static::updating(function ($model) {
+//            $model->html = Markdown::parse($model->markdown);
+//            $model->tags = implode(",", $model->getKeywords());
+//        });
     }
 
     public function user() {

@@ -25,6 +25,9 @@ class PostsController extends Controller
 
     public function show(string $slug, Post $post)
     {
+        if (!empty($post->wp_url)) {
+            return redirect($post->wp_json["link"]);
+        }
         return view('blog-reader')->with('post', $post);
     }
 

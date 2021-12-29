@@ -53,28 +53,35 @@ class Post extends Resource
                 ->preview($this->handleIcon($this->image))
                 ->maxWidth(50),
 
-            ID::make()->sortable(),
+            Text::make('uid')
+                ->sortable()
+                ->readonly()
+                ->hideWhenCreating(),
+
+            Text::make('Wordpress API Link', 'wp_url')
+                ->rules(['active_url'])
+                ->hideFromIndex(),
 
             Boolean::make('Ad Free Reading', 'ad_free')
                 ->hideFromIndex(),
 
             Text::make('Title', 'title')
-                ->required(),
+                ->rules(['required_without:wp_url']),
 
             Text::make('Subtitle', 'subtitle')
                 ->hideFromIndex(),
 
             Textarea::make('SEO Description', 'description')
                 ->rows(2)
-                ->required()
+                ->rules(['required_without:wp_url'])
                 ->hideFromIndex(),
 
             Text::make('Keyword tags', 'tags')
-                ->required()
+                ->rules(['required_without:wp_url'])
                 ->hideFromIndex(),
 
             Markdown::make('Post', 'markdown')
-                ->required()
+                ->rules(['required_without:wp_url'])
                 ->hideFromIndex(),
 
             BelongsTo::make('User')
