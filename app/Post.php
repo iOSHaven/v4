@@ -50,19 +50,9 @@ class Post extends Model
                 $client = new Client();
                 $res = $client->get($model->wp_url);
                 $data = collect(json_decode($res->getBody()->getContents()));
-//                Storage::disk('local')->put('debug.txt', 'hello world content');
-//                debug($data);
-                $output = [
-                    "title" => $data['title']->rendered,
-                    "subtitle" => Str::limit($data['yoast_head_json']->og_description, 200, ''),
-                    "image" => $data['yoast_head_json']->og_image[0]->url,
-                    "description" => strip_tags($data['excerpt']->rendered),
-                    "html" => $data['content']->rendered
-                ];
-                debug($output);
-
+//
                 $model->title = html_entity_decode($data['title']->rendered);
-                $model->subtitle = $data['yoast_head_json']->og_description;
+                $model->subtitle = Str::limit($data['yoast_head_json']->og_description;
                 $model->image = $data['yoast_head_json']->og_image[0]->url;
                 $model->description = html_entity_decode(strip_tags($data['excerpt']->rendered));
                 $model->html = $data['content']->rendered;
