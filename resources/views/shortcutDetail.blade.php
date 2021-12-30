@@ -1,5 +1,9 @@
 @extends('layouts.redesign', ["title" => $shortcut->name, "hide_nav" => true ])
 
+@section('header')
+  <link rel="stylesheet" href="{{ mix('/css/markdown.css') }}">
+@endsection
+
 
 @section('content')
 
@@ -70,7 +74,8 @@
             <div class="markdown">
               {!! simpleMarkdown($shortcut->description) !!}
             </div>
-        @endcomponent
+
+          @endcomponent
 
 
         {{-- APPLICATON STATS --}}
