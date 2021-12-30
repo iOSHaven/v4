@@ -124,10 +124,9 @@
       <div class="h6 display-clear mb-2">
         <strong>Comments</strong>
       </div>
-      Comments are comming soon. <br>
-      <br>
-      <br>
-      <br>
+
+      <div class="fb-comments" data-href="{{ url()->current() }}" data-width="100%" data-numposts="10" data-lazy="true"></div>
+
       <br>
 
     </div>
