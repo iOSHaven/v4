@@ -5,6 +5,17 @@
 @endsection
 
 
+@section('twitter')
+
+  <meta property="og:title" content="iOS Haven Shortcuts - {{ $shortcut->name }}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{ url()->current() }}">
+  <meta property="og:description" content="Install {{ $shortcut->name}} now and browse other iOS Shortcuts from iOS Haven">
+  <meta property="og:image" content="{{ url($shortcut->icon) }}">
+  <meta property="twitter:site:id" content="715729557769166848">
+  <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5aeb628d96e6fc00110b2f1a&product=inline-share-buttons' async='async'></script>
+@endsection
+
 @section('content')
 
 
@@ -54,6 +65,11 @@
 
               </div>
               {{-- @component('components.appButtons', ["app" => $app])@endcomponent --}}
+
+              <dv class="mt-4">
+                <div class="sharethis-inline-share-buttons my-4"></div>
+              </dv>
+
             </div>
           </div>
         </div>
