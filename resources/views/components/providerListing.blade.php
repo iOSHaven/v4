@@ -12,6 +12,7 @@ $type = strtolower(class_basename($model));
         <div class="flex items-center">
             <div class="">
                 <div>{{ $provider->name }}</div>
+                <small class="block">{{ $model->name }}</small>
                 @if($model->working)
                 <div class="text-emerald-500 font-bold text-sm">
                     <span class="mr-1">Working</span>
