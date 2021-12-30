@@ -221,3 +221,9 @@ function geoCountry () {
     }
     return geoLocation()->country;
 }
+
+function simpleMarkdown($text) {
+    $p = new Parsedown();
+    $removedDuplicateLines = implode("\n", array_filter(explode("\n", $text)));
+    return $p->setSafeMode(true)->parse($removedDuplicateLines);
+}

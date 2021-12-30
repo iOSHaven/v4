@@ -1,6 +1,9 @@
 @extends('layouts.redesign', ["title" => $app->name, "hide_nav" => true ])
 
 
+@section('header')
+  <link rel="stylesheet" href="{{ mix('/css/markdown.css') }}">
+@endsection
 
 @section('twitter')
 <meta property="og:title" content="iOS Haven - {{ $app->name }}">
@@ -69,8 +72,10 @@
 
 
           {{-- APPLICATION FEATURES --}}
-          @component('components.collapse', ["title" => "Description", "pre" => true, "show" => true])
-          {{ $app->description }}
+          @component('components.collapse', ["title" => "Description", "pre" => false, "show" => true])
+            <div class="markdown">
+              {!! simpleMarkdown($app->description) !!}
+            </div>
           @endcomponent
 
 

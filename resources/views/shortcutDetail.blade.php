@@ -66,8 +66,10 @@
 
 
         {{-- APPLICATION FEATURES --}}
-        @component('components.collapse', ["title" => "Description", "pre" => true, "show" => true])
-        {{ $shortcut->description }}
+        @component('components.collapse', ["title" => "Description", "pre" => false, "show" => true])
+            <div class="markdown">
+              {!! simpleMarkdown($shortcut->description) !!}
+            </div>
         @endcomponent
 
 
