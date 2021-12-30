@@ -58,7 +58,7 @@
       <ul>
         @if(Auth::check())
         <li class="p-3 border-b text-center border-gray-200 dark:border-gray-800">
-          <img class="rounded-full border mb-3 mx-auto border-gray-200 dark:border-gray-800" src="https://api.adorable.io/avatars/70/{{ Auth::user()->username }}" alt="" width="70">
+          <img class="rounded-full border mb-3 mx-auto border-gray-200 dark:border-gray-800" src="{{ Auth::user()->gravatar }}" alt="" width="70">
           <strong>{{ Auth::user()->username }}</strong>
           <div class="leading-none">@admin Admin @else Member @endadmin</div>
         </li>

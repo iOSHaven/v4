@@ -4,7 +4,7 @@
         <div class="absolute top-0 left-0 right-0 bottom-0 -z-1 bg-white dark:bg-black"></div>
         @if(Auth::check())
         <label for="check-sidebar-left" class="text-center mx-2 scroll-toggler">
-          <img class="rounded-full border inline-block mx-auto border-gray-200 dark:border-gray-800" width="24" src="https://api.adorable.io/avatars/10/{{ Auth::user()->username }}" alt="">
+          <img class="rounded-full border inline-block mx-auto border-gray-200 dark:border-gray-800" width="24" src="{{ Auth::user()->gravatar }}" alt="">
         </label>
         @else
         <a href="/login" class="text-center mx-2">
@@ -24,7 +24,7 @@
       <div class="hidden md:block">
           @if(Auth::check())
           <label for="check-sidebar-left" class="text-center px-2 scroll-toggler">
-            <img class="rounded-full border inline-block mx-auto border-gray-200 dark:border-gray-800" width="24" src="https://api.adorable.io/avatars/10/{{ Auth::user()->username }}" alt="">
+            <img class="rounded-full border inline-block mx-auto border-gray-200 dark:border-gray-800" width="24" src="{{ Auth::user()->gravatar }}" alt="">
           </label>
         @else
           <a href="/login" class="text-center px-2">

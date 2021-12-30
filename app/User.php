@@ -40,4 +40,10 @@ class User extends Authenticatable
     public function skins() {
         return $this->belongsToMany(Skin::class);
     }
+
+    public function getGravatarAttribute()
+    {
+        $hash = md5(strtolower(trim($this->email)));
+        return "http://www.gravatar.com/avatar/$hash";
+    }
 }
