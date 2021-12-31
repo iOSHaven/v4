@@ -1,14 +1,14 @@
 @extends('layouts.redesign', ["hide_ads" => true])
 
 @section('content')
-<div class="bg-gray-100-light rounded border w-1/2 mx-auto p-3 ">
-    <i class="fas fa-user text-gray-300-light ml-3 mr-1"></i>
+<div class="bg-gray-100 rounded border w-1/2 mx-auto p-3 ">
+    <i class="fas fa-user text-gray-300 ml-3 mr-1"></i>
     <input id="card-holder-name" class="p-1 bg-transparent" type="text" placeholder="Cardholder">
 
     <!-- Stripe Elements Placeholder -->
     <div id="card-element" class="p-3 my-3"></div>
 
-    <button id="card-button" class="p-3 bg-blue-light text-white-light" data-secret="{{ $intent->client_secret }}">
+    <button id="card-button" class="p-3 bg-blue-500 text-white dark:text-black" data-secret="{{ $intent->client_secret }}">
         Update Payment Method
     </button>
 </div>

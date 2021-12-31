@@ -12,30 +12,41 @@
 */
 
 $themesPage = 'StaticPageController@getThemesPage';
-Route::domain('themes.'.env('ROOT_DOMAIN'))->group(function () use ($themesPage) {
+Route::domain('themes.' . env('ROOT_DOMAIN'))->group(function () use ($themesPage) {
   Route::get('/', $themesPage);
 });
 Route::get('/skins', $themesPage);
 Route::get('/themes', $themesPage);
+Route::view('/giveaway', 'giveaway');
 
 // Route::get('/themetest', 'StaticPageController@getThemesPage');
 
-
-
+Route::get('/geoCountry', function () {
+    return response()->json(geoCountry());
+});
 
 Route::get('/test', function () {
   return view('test');
 });
 
+use App\Ipa;
+use App\Itms;
 use App\Shortcut;
 use Illuminate\Http\Request;
 
-Route::get("/map.xml", function() {
-        $contents = View::make('sitemap')
-        ->with(["apps" => \App\App::get(), "shortcuts" => Shortcut::get()]);
-        return response($contents)->withHeaders([
-          'Content-Type' => 'text/xml'
-        ]);
+Route::view('/privacy', 'privacy-policy');
+
+Route::get("/map.xml", function () {
+  $contents = View::make('sitemap')
+    ->with([
+      "apps" => \App\App::with(["itms", "ipas"])->get(),
+      "shortcuts" => Shortcut::get(),
+      // "itms" => Itms::get(),
+      // "ipas" => Ipa::get()
+    ]);
+  return response($contents)->withHeaders([
+    'Content-Type' => 'text/xml'
+  ]);
 });
 
 Route::get('/generate/manifest', function (Request $request) {
@@ -46,11 +57,11 @@ Route::get('/generate/protocol', function (Request $request) {
   return Redirect::away($request->get('protocol') . "://");
 })->name('protocol.generate');
 
-Route::get("/shop", function() {
+Route::get("/shop", function () {
   return redirect("https://memes33.com/collections/ios-haven");
 });
 
-Route::get("/merch", function() {
+Route::get("/merch", function () {
   return view('merch');
 });
 
@@ -74,19 +85,26 @@ Auth::routes();
 // Route::post('/profile/color', 'HomeController@color');
 // Route::post('/auth/toggleEditing', 'HomeController@toggleEditing');
 
+
+Route::group(['prefix' => 'blog'], function () {
+    Route::get('/', "PostsController@index")->name('blog.listing');
+    Route::get('/tag/{tag}', "PostsController@showTag")->name('blog.tag');
+    Route::get('/{slug}_{post}', "PostsController@show")->name('blog.reader');
+});
+
 Route::group(['prefix' => 'plist'], function () {
-  Route::get('{any}',"StaticPageController@plist")->where('any', '.*');
+  Route::get('{any}', "StaticPageController@plist")->where('any', '.*');
 });
 // Route::get('/plist/{name}', "StaticPageController@plist");
 
 
 Route::group(['prefix' => 'user'], function () {
-    Route::get("/settings", "UserController@getSettings");
-    Route::post("/settings", "UserController@postSettings");
-    Route::get("/notifications", "UserController@getNotifications");
-    Route::get("/badges", "UserController@getBadges");
-    Route::get("/password", "UserController@getPassword");
-    Route::post("/password", "UserController@postPassword");
+  Route::get("/settings", "UserController@getSettings");
+  Route::post("/settings", "UserController@postSettings");
+  Route::get("/notifications", "UserController@getNotifications");
+  Route::get("/badges", "UserController@getBadges");
+  Route::get("/password", "UserController@getPassword");
+  Route::post("/password", "UserController@postPassword");
 });
 
 Route::group(['prefix' => 'image'], function () {
@@ -105,19 +123,24 @@ Route::get('/itms/{id}', 'AppController@itms');
 
 
 Route::post('/app/create', 'AppController@create');
+
+// app security starts here
 Route::get('/app/{uid}', 'AppController@showAppDetailPage')->name('detail');
-Route::get('/shortcut/{itunes_id}', 'ShortcutController@showDetail');
-Route::get('/shortcut/install/{itunes_id}', 'ShortcutController@install');
 Route::get('/app/edit/{uid}', 'AppController@edit');
 Route::post('/app/update', 'AppController@update');
 Route::post('/app/remove', 'AppController@remove');
 Route::post('/app/token', 'AppController@token');
+
+Route::get('/shortcut/{itunes_id}', 'ShortcutController@showDetail');
+Route::get('/shortcut/install/{itunes_id}', 'ShortcutController@install');
+
 
 Route::get('/install/{itms}', 'AppController@install')->name('install');
 Route::get('/download/{ipa}', 'AppController@download')->name('download');
 Route::get('/install/uid/{app}', 'AppController@installUid');
 Route::get('/download/uid/{app}', 'AppController@downloadUid');
 
+Route::get('/tutubox/cert', 'StaticPageController@tutubox');
 
 Route::group(["prefix" => "shortcuts", "middleware" => ["tab:Shortcuts", "back:Shortcuts"]], function () {
   Route::get('/{tag?}', 'ShortcutController@page')->name('shortcuts');
@@ -135,6 +158,7 @@ Route::group(["prefix" => "providers", "middleware" => ["tab:Providers", "back:P
   Route::get("/edit", "ProviderController@edit");
   Route::post("/update", "ProviderController@update");
   Route::post("/destroy/{provider}", "ProviderController@destroy");
+  // Route::get('/{name}', "ProviderController@status")
 });
 
 
@@ -183,6 +207,9 @@ Route::get('/payment/add-funds/paypal/status', 'PaymentController@getPaymentStat
 Route::post('/paypal-log', 'PaymentController@logPayment');
 Route::get('/skin/{uuid}', 'PaymentController@downloadSkin')->name('skin');
 Route::get('/skin/affiliate/{uuid}', 'PaymentController@affiliateSkin')->name('skin.ref');
+
+
+Route::post('/add/iosgods/plist', 'StaticPageController@addIGPlist');
 
 Auth::routes();
 

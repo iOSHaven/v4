@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\App;
 use App\Ipa;
 use App\Itms;
+use App\Post;
 use App\Provider;
 use App\Shortcut;
 use App\Skin;
@@ -115,6 +116,15 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                         '_url'    => '/nova/resources/apps',
                         '_params' => [
                             "resourceName" => "apps"
+                        ]
+                    ],
+
+                    'Blog Posts' => [
+                        '_can' => ['viewAny', Post::class],
+                        '_icon' => fa('fas fa-book'),
+                        '_url'    => '/nova/resources/posts',
+                        '_params' => [
+                            "resourceName" => "posts"
                         ]
                     ],
             

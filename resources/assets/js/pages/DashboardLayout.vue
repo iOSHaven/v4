@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import { setTimeout } from 'timers';
 export default {
     mounted () {
         this.$root.loading = false

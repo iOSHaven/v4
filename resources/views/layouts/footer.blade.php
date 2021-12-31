@@ -1,5 +1,5 @@
 <div class="relative">
-  <div class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center -z-1 {{ theme('bg-gray-100') }}">
+  <div class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center -z-1 bg-gray-100 dark:bg-gray-900">
     
   </div>
   <!-- v4-footer -->
@@ -35,7 +35,7 @@
     </div>
 
     <div class="text-center">
-      Made with <i class="fas fa-heart {{ theme('text-red') }}"></i>
+      Made with <i class="fas fa-heart"></i>
       by <a href="https://twitter.com/_ZackBz">Zack</a> & <a href="https://twitter.com/wizardzeb">Zeb</a>
       <br>
       <i class="fal fa-copyright"></i> 2019. <strong>IOS Haven</strong>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Provider;
 use Illuminate\Http\Request;
 
 /*
@@ -16,3 +17,7 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/status/{name}', function ($name) {
+    return response()->json(Provider::where('name', $name)->first());
+})->middleware('throttle:5,20');

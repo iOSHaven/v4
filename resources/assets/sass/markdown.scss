@@ -1,3 +1,22 @@
+html {
+  font-size: 20px !important;
+}
+@media screen and (min-width: 32rem) and (max-width: 48rem) {
+  html {
+    font-size: 16px !important;
+  }
+}
+
+@media screen and (min-width: 48rem) {
+  html {
+    font-size: 18px !important;
+  }
+}
+
+body {
+  line-height: 1.85 !important;
+}
+
 .markdown {
   @media print {
     *,
@@ -59,25 +78,7 @@
     }
   }
   
-  html {
-    font-size: 12px;
-  }
-  
-  @media screen and (min-width: 32rem) and (max-width: 48rem) {
-    html {
-      font-size: 15px;
-    }
-  }
-  
-  @media screen and (min-width: 48rem) {
-    html {
-      font-size: 16px;
-    }
-  }
-  
-  body {
-    line-height: 1.85;
-  }
+
   
   p {
     font-size: 1rem;
@@ -95,15 +96,17 @@
   
   h1 {
     margin-top: 0;
-    font-size: 3.998rem;
+    font-size: 2.998rem;
+    font-weight: bold;
   }
   
   h2 {
-    font-size: 2.827rem;
+    font-size: 2.027rem;
+    font-weight: bold;
   }
   
   h3 {
-    font-size: 1.999rem;
+    font-size: 1.799rem;
   }
   
   h4 {
@@ -130,8 +133,10 @@
   video,
   svg,
   select,
-  textarea {
+  textarea,
+  ins {
     max-width: 100%;
+    margin-bottom: 1rem;
   }
   
   @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,300);
@@ -145,21 +150,22 @@
     text-align: center;
   }
   
-  a,
-  a:visited {
-    color: #3498db;
-  }
-  
-  a:hover,
-  a:focus,
-  a:active {
-    color: #2980b9;
-  }
+  //a,
+  //a:visited {
+  //  color: #3498db;
+  //}
+  //
+  //a:hover,
+  //a:focus,
+  //a:active {
+  //  color: #2980b9;
+  //}
   
   pre {
-    background-color: #fafafa;
+    background-color: #282727;
     padding: 1rem;
     text-align: left;
+    overflow: scroll;
   }
   
   blockquote {
@@ -175,8 +181,48 @@
   li {
     text-align: left;
   }
+
+  ul {
+    list-style: circle;
+    margin: 1rem 0 1.5rem;
+    line-height: 2rem;
+    padding-left: 20px;
+  }
+
+  ol {
+    list-style: decimal;
+    margin: 0.5rem 0 1.5rem;
+    line-height: 2rem;
+    padding-left: 20px;
+  }
+
+  li img {
+    max-height: 90vh;
+    margin: 1rem auto 2rem;
+  }
   
   p {
-    color: #777;
+    color: #08090a;
+  }
+  @media(prefers-color-scheme: dark) {
+    p {
+      color: #eee;
+    }
+  }
+
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+  }
+
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
   }
 }

@@ -27,7 +27,7 @@ dd(url($model->url))
       
 
       <div>
-            <a href="{{ $url }}" class='mx-1 mb-16 flex items-center justify-center font-bold rounded-full text-sm px-8 py-5 {{ theme('bg-blue', 'text-white') }}'>
+            <a href="{{ $url }}" class='mx-1 mb-16 flex items-center justify-center font-bold rounded-full text-sm px-8 py-5 bg-blue-500 text-white dark:text-black'>
                 <i class="fas fa-tshirt mr-3 fa-lg"></i>
                 Launch
                 <i class="fas fa-tshirt ml-3 fa-lg"></i>

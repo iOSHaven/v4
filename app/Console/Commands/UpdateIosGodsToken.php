@@ -2,6 +2,9 @@
 
 namespace App\Console\Commands;
 
+use Doctrine\DBAL\ConnectionException;
+use GuzzleHttp\Exception\ClientException;
+use GuzzleHttp\Exception\ServerException;
 use Illuminate\Console\Command;
 use App\App;
 use App\Mirror;
@@ -75,7 +78,18 @@ class UpdateIosGodsToken extends Command
           
           try {
             $appDetailsResponse = $client->request('GET', 'https://app.iosgods.com/store/appdetails/'.$iosgodsid, [
-              'timeout' => 30,
+                'timeout' => 30,
+                'headers' => [
+                    'Upgrade-Insecure-Requests' => [1],
+                    'User-Agent' => ['Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 ' .
+                                    '(KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36'],
+                    'Accept' => [
+                        'text/html,application/xhtml+xml,application/xml;q=0.9,' .
+                        'image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+                    ],
+                    'Accept-Encoding' => 'gzip, deflate, br',
+                    'Accept-Language' => ['en-US,en;q=0.9']
+                ]
             ])->getBody()->getContents();
             $itmslink = explode('"', explode('data-href="', $appDetailsResponse, 2)[1], 2)[0];
             $protocol = explode('itms-services://', $itmslink)[1] ?? false;
@@ -89,8 +103,15 @@ class UpdateIosGodsToken extends Command
                     'url' => 'itms-services://?action=download-manifest&url=' . url('/plist/iosgods/'.$iosgodsid)
                 ]);
             }  
-          } catch (Exception $err) {
-            Log::error($err);
+          } catch (ServerException $err) {
+              $response = $err->getResponse();
+              $request = $err->getRequest();
+              Log::error($err);
+              dump($request->getHeaders());
+              dump($request->getUri());
+              dd($response->getBody()->getContents());
+          } catch (ConnectionException $err) {
+              dump("TIMEOUT FOR $itms->name");
           }
           $progress->advance();       
         }

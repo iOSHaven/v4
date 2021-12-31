@@ -5,12 +5,12 @@
     <div class="container">
       <div class="flex flex-wrap">
           <div class="w-1/4 px-3">
-            <div class="bg-white-light">
+            <div class="bg-white dark:bg-black">
                 <image-input
                   :width="80"
                   :height="80"
                   :src="application.icon"
-                  class="block border border-gray-200-light"
+                  class="block border border-gray-200"
                 ></image-input>
                 <strong class="my-2 block">{{ application.name || "No name" }}</strong>
                 <div>
@@ -35,20 +35,20 @@
   
                 <ul>
                   
-                  <li :class="[page == 'Information' ? 'border-l-2 border-blue-light pl-3' : '']">
+                  <li :class="[page == 'Information' ? 'border-l-2 border-blue-500 pl-3' : '']">
                     <a href="#" @click.prevent="goto('Information')">Information</a>
                   </li>
-                  <li :class="[page == 'Description' ? 'border-l-2 border-blue-light pl-3' : '']">
+                  <li :class="[page == 'Description' ? 'border-l-2 border-blue-500 pl-3' : '']">
                     <a href="#" @click.prevent="goto('Description')">Description</a>
                   </li>
-                  <li :class="[page == 'Images' ? 'border-l-2 border-blue-light pl-3' : '']">
+                  <li :class="[page == 'Images' ? 'border-l-2 border-blue-500 pl-3' : '']">
                     <a href="#" @click.prevent="goto('Images')">Images</a>
                   </li>
-                  <li :class="[page == 'Mirrors' ? 'border-l-2 border-blue-light pl-3' : '']">
+                  <li :class="[page == 'Mirrors' ? 'border-l-2 border-blue-500 pl-3' : '']">
                     <a href="#" @click.prevent="goto('Mirrors')">Mirrors</a>
                   </li>
                   <li>
-                    <a href="#" class="text-red-light">Delete app</a>
+                    <a href="#" class="text-red-500">Delete app</a>
                   </li>
                   
                 </ul>
@@ -58,7 +58,7 @@
               <div class="p-3 bg-white">
                 <div class="flex items-center justify-between mb-3">
                   <h6 class="font-display">{{ page }}</h6>
-                  <button class="py-1 px-3 bg-blue-light text-white-light rounded-full flex items-center justify-center">
+                  <button class="py-1 px-3 bg-blue-500 text-white dark:text-black rounded-full flex items-center justify-center">
                     <small>
                       <i class="fad fa-save mr-2"></i>
                       Save app

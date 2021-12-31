@@ -24,11 +24,13 @@ class Ipa extends Resource
      *
      * @var string
      */
-    public function title () {
+    public function title()
+    {
         return $this->name;
     }
 
-    public function subtitle () {
+    public function subtitle()
+    {
         return $this->provider_name . ($this->working ? "" : " - REVOKED");
     }
 
@@ -41,7 +43,8 @@ class Ipa extends Resource
         'id', 'name',
     ];
 
-    public static function label() {
+    public static function label()
+    {
         return "Unsigned Links (IPA)";
     }
 
@@ -67,7 +70,7 @@ class Ipa extends Resource
                 ->onlyOnIndex(),
 
             Boolean::make('working')->sortable(),
-            BelongsToMany::make('providers')->nullable()->searchable(),
+            BelongsToMany::make('providers')->nullable(),
             BelongsToMany::make('apps')->nullable()->searchable(),
         ];
     }

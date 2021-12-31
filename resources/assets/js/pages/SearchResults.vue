@@ -47,7 +47,7 @@ export default {
         highlight(item) {
             if (item) {
                 var exp = new RegExp(this.input, 'gi');
-                return item.replace(exp, '<span class="font-bold '+ this.t('bg-yellow') + ' ' + this.t('text-black') +'">' +  this.input + '</span>')
+                return item.replace(exp, '<span class="font-bold bg-yellow-500 text-black dark:text-white">' +  this.input + '</span>')
             }
         },
         t(classname) {

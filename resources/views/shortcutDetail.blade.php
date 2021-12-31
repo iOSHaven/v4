@@ -1,5 +1,20 @@
 @extends('layouts.redesign', ["title" => $shortcut->name, "hide_nav" => true ])
 
+@section('header')
+  <link rel="stylesheet" href="{{ mix('/css/markdown.css') }}">
+@endsection
+
+
+@section('twitter')
+
+  <meta property="og:title" content="iOS Haven Shortcuts - {{ $shortcut->name }}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{ url()->current() }}">
+  <meta property="og:description" content="Install {{ $shortcut->name}} now and browse other iOS Shortcuts from iOS Haven">
+  <meta property="og:image" content="{{ url($shortcut->icon) }}">
+  <meta property="twitter:site:id" content="715729557769166848">
+  <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5aeb628d96e6fc00110b2f1a&product=inline-share-buttons' async='async'></script>
+@endsection
 
 @section('content')
 
@@ -9,7 +24,7 @@
   <div class="container">
     <div class="row">
       <div class="col-tablet-portrait-6 px-tablet-portrait">
-        <div class="bg-gray-100-light">
+        <div class="bg-gray-100 dark:bg-gray-900">
 
 
           {{-- APPLICATION ICON, TITLE, SHORT, & BUTTONS --}}
@@ -29,59 +44,77 @@
             <div class="mt-5">
               <div class="flex items-center flex-wrap -mt-2">
                 @component('components.button', [
-                    "href"=> $shortcut->url,
-                    "bg" => "blue",
-                    "color" => "white",
-                    "class" => "mt-2 mr-2"
-                  ])
-                  GET
+                "href"=> $shortcut->url,
+                "bg" => "blue-500",
+                "color" => "white",
+                "class" => "mt-2 mr-2"
+                ])
+                GET
                 @endcomponent
 
                 @can('update', $shortcut)
-                  @component('components.button', [
-                    "href"=> "/nova/resources/shortcuts/$shortcut->id",
-                    "bg" => "red",
-                    "color" => "white",
-                    "class" => "mt-2"
-                  ])
-                  EDIT
-                  @endcomponent
+                @component('components.button', [
+                "href"=> "/nova/resources/shortcuts/$shortcut->id",
+                "bg" => "red-500",
+                "color" => "white",
+                "class" => "mt-2"
+                ])
+                EDIT
+                @endcomponent
                 @endcan
 
               </div>
               {{-- @component('components.appButtons', ["app" => $app])@endcomponent --}}
+
+              <dv class="mt-4">
+                <div class="sharethis-inline-share-buttons my-4"></div>
+              </dv>
+
             </div>
           </div>
         </div>
 
         <br>
-        @component('components.ad')@endcomponent
+
+        @component('ads.google-header')@endcomponent
+
         @if(env('APP_ENV') == 'production')
-          <br>
+        <br>
         @endif
 
 
 
 
         {{-- APPLICATION FEATURES --}}
-        @component('components.collapse', ["title" => "Description", "pre" => true, "show" => true])
-        {{ $shortcut->description }}
-        @endcomponent
+        @component('components.collapse', ["title" => "Description", "pre" => false, "show" => true])
+            <div class="markdown">
+              {!! simpleMarkdown($shortcut->description) !!}
+            </div>
+
+          @endcomponent
 
 
         {{-- APPLICATON STATS --}}
+        @if(config('app-analytics.enabled'))
         @component('components.collapse', ["title" => "Stats", "show" => true])
         <div class="flex items-center justify-start">
+
+          @if(config('app-analytics.views'))
           <div class="mr-2 flex items-center justify-start">
             <i class="fad fa-eye mr-2 text-center" style="width: 20px;"></i>
             <span>{{ format_int($shortcut->impressions ?? "0") }}<span>
           </div>
+          @endif
+
+          @if(config('app-analytics.downloads'))
           <div class="mr-2 flex items-center justify-start">
             <i class="fad fa-download mr-2 text-center" style="width: 20px;"></i>
-            <span>{{ format_int($shortcut->downloads ?? "0") }}<span>
+            <span>{{ format_int($shortcut->downloads + $shortcut->installs ?? "0") }}<span>
           </div>
+          @endif
         </div>
         @endcomponent
+        @endif
 
 
         {{-- APPLICATION ITMS --}}
@@ -114,10 +147,9 @@
       <div class="h6 display-clear mb-2">
         <strong>Comments</strong>
       </div>
-      Comments are comming soon. <br>
-      <br>
-      <br>
-      <br>
+
+      <div class="fb-comments" data-href="{{ url()->current() }}" data-width="100%" data-numposts="10" data-lazy="true"></div>
+
       <br>
 
     </div>
@@ -136,7 +168,7 @@
 
 @section('footer')
 <script>
-  autocomplete('appsearch', function (e, target, json) {
+  autocomplete('appsearch', function(e, target, json) {
     var j = []
     json.forEach(app => {
       var a = Object.assign({}, app)

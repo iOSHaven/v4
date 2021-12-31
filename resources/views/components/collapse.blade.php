@@ -2,7 +2,7 @@
 $id = Str::random(10);
 @endphp
 
-<div class="shadow rounded-lg mb-2 {{ theme('bg-white') }}">
+<div class="shadow rounded-lg mb-2 bg-white dark:bg-black">
     <input id="collapse-{{$id}}" type="checkbox" class="collapse-check" {{ ($show ?? false) ? 'checked' : ''}}>
     <label for="collapse-{{$id}}" class="collapse-label block select-none px-3 py-1">
         <div class="flex items-center justify-between">
@@ -14,4 +14,4 @@ $id = Str::random(10);
     <div class=" select-none pt-1 px-2 pb-1 {{ ($pre ?? false) ? 'text-pre' : ''}} collapse">{{ $slot }}</div>
     
 </div>
-{{-- <hr class="border-0 border-b {{ theme('border-gray-200') }}"> --}}
+{{-- <hr class="border-0 border-b border-gray-200 dark:border-gray-800"> --}}

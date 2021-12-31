@@ -1,20 +1,37 @@
 @extends('layouts.redesign', ["title" => $app->name, "hide_nav" => true ])
 
+
+@section('header')
+  <link rel="stylesheet" href="{{ mix('/css/markdown.css') }}">
+@endsection
+
 @section('twitter')
-    <meta property="og:title" content="iOS Haven - {{ $app->name }}">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:description" content="{{ $app->short }}">
-    <meta property="og:image" content="{{ url($app->icon) }}">
-    <meta property="twitter:site:id" content="715729557769166848">
+<meta property="og:title" content="iOS Haven - {{ $app->name }}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{{ url()->current() }}">
+<meta property="og:description" content="Download {{ $app->name}} now! This app is a {{ $app->short }} and includes the following features: {{$app->description}}">
+<meta property="og:image" content="{{ url($app->icon) }}">
+<meta property="twitter:site:id" content="715729557769166848">
+<script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=5aeb628d96e6fc00110b2f1a&product=inline-share-buttons' async='async'></script>
+@endsection
+
+@section('description')
+<meta name="description" content="Download {{ $app->name}} now! This app is a {{ $app->short }} and includes the following features: {{$app->description}}">
+@endsection
+
+
+@section('topbody')
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0" nonce="IpjA0plZ"></script>
 @endsection
 
 @section('content')
+
 <section class="p-0">
   <div class="container">
     <div class="row">
       <div class="col-tablet-portrait-6 px-tablet-portrait">
-        <div class="bg-white">
+        <div class="bg-gray-100 dark:bg-gray-900">
 
 
           {{-- APPLICATION ICON, TITLE, SHORT, & BUTTONS --}}
@@ -27,26 +44,25 @@
               </div>
               <div class="flex items-center justify-start mt-1">
                 @foreach($app->providers as $provider)
-                  @component('components.tinyProviderIcon', ["provider" => $provider])@endcomponent
+                @component('components.tinyProviderIcon', ["provider" => $provider])@endcomponent
                 @endforeach
               </div>
 
               <div class="mt-5">
                 @component('components.appButtons', ["app" => $app])@endcomponent
                 <div class="mt-4">
-                  <a class="twitter-share-button"
-                  data-size="large"
-                href="https://twitter.com/intent/tweet?text={{ urlencode("I just installed $app->name from @ioshavencom and it is working!") }}">
-                Tweet</a>
+{{--                  <a class="twitter-share-button" data-size="large" href="https://twitter.com/intent/tweet?text={{ urlencode("I just installed $app->name from @ioshavencom and it is working!") }}">--}}
+{{--                    Tweet</a>--}}
+                  <div class="sharethis-inline-share-buttons my-4"></div>
                 </div>
-                
+
               </div>
             </div>
           </div>
 
           <br>
 
-          @component('components.ad')@endcomponent
+          @component('ads.google-header')@endcomponent
 
           @if(env('APP_ENV') == 'production')
           <br>
@@ -56,48 +72,60 @@
 
 
           {{-- APPLICATION FEATURES --}}
-          @component('components.collapse', ["title" => "Description", "pre" => true, "show" => true])
-            {{ $app->description }}
-          @endcomponent
-
-
-          {{-- APPLICATON STATS --}}
-          @component('components.collapse', ["title" => "Stats", "show" => true])
-            <div class="flex items-center justify-start">
-              <div class="mr-2 flex items-center justify-start">
-                <i class="fad fa-eye mr-2 text-center" style="width: 20px;"></i>
-                <span>{{ format_int($app->impressions ?? "0") }}<span>
-              </div>
-              <div class="mr-2 flex items-center justify-start">
-                <i class="fad fa-download mr-2 text-center" style="width: 20px;"></i>
-                <span>{{ format_int($app->downloads + $app->installs ?? "0") }}<span>
-              </div>
-              <div class="mr-2 flex items-center justify-start">
-                <i class="fas fa-database mr-2 text-center" style="width: 20px;"></i>
-                <span>{{ format_int($app->size ?? "0b", 'file') }}<span>
-              </div>
+          @component('components.collapse', ["title" => "Description", "pre" => false, "show" => true])
+            <div class="markdown">
+              {!! simpleMarkdown($app->description) !!}
             </div>
           @endcomponent
 
 
+          {{-- APPLICATON STATS --}}
+          @if(config('app-analytics.enabled'))
+          @component('components.collapse', ["title" => "Stats", "show" => true])
+          <div class="flex items-center justify-start">
+            @if(config('app-analytics.views'))
+            <div class="mr-2 flex items-center justify-start">
+              <i class="fad fa-eye mr-2 text-center" style="width: 20px;"></i>
+              <span>{{ format_int($app->impressions ?? "0") }}<span>
+            </div>
+            @endif
+
+            @if(config('app-analytics.downloads') || config('app-analytics.installs') )
+            <div class="mr-2 flex items-center justify-start">
+              <i class="fad fa-download mr-2 text-center" style="width: 20px;"></i>
+              <span>{{ format_int($app->downloads + $app->installs ?? "0") }}<span>
+            </div>
+            @endif
+
+            @if(config('app-analytics.sizes'))
+            <div class="mr-2 flex items-center justify-start">
+              <i class="fas fa-database mr-2 text-center" style="width: 20px;"></i>
+              <span>{{ format_int($app->size ?? "0b", 'file') }}<span>
+            </div>
+            @endif
+          </div>
+          @endcomponent
+          @endif
+
+
           {{-- APPLICATION ITMS --}}
           @component('components.collapse', ["title" => "Signed Links", "show" => true])
-              @foreach($app->itms as $itms)
-                @component('components.providerListing', [
-                  "model" => $itms, 
-                  "showLine" => !$loop->last])
-                @endcomponent
-              @endforeach
+          @foreach($app->itms as $itms)
+          @component('components.providerListing', [
+          "model" => $itms,
+          "showLine" => !$loop->last])
+          @endcomponent
+          @endforeach
           @endcomponent
 
           {{-- APPLICATION IPAs --}}
           @component('components.collapse', ["title" => "IPA Links", "show" => true])
-              @foreach($app->ipas as $ipas)
-                @component('components.providerListing', [
-                  "model" => $ipas, 
-                  "showLine" => !$loop->last])
-                @endcomponent
-              @endforeach
+          @foreach($app->ipas as $ipas)
+          @component('components.providerListing', [
+          "model" => $ipas,
+          "showLine" => !$loop->last])
+          @endcomponent
+          @endforeach
           @endcomponent
 
           <div class="mb-5 show-gt-tablet-portrait"></div>
@@ -110,11 +138,8 @@
         <div class="h6 display-clear mb-2">
           <strong>Comments</strong>
         </div>
-        Comments are comming soon. <br>
-        <br>
-        <br>
-        <br>
-        <br>
+
+        <div class="fb-comments" data-href="{{ url()->current() }}" data-width="100%" data-numposts="10" data-lazy="true"></div>
 
       </div>
     </div>
@@ -132,7 +157,7 @@
 
 @section('footer')
 <script>
-  autocomplete('appsearch', function (e, target, json) {
+  autocomplete('appsearch', function(e, target, json) {
     var j = []
     json.forEach(app => {
       var a = Object.assign({}, app)
@@ -154,20 +179,22 @@
   })
 </script>
 
-<script>window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  fjs.parentNode.insertBefore(js, fjs);
+<script>
+  window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
 
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
 
-  return t;
-}(document, "script", "twitter-wjs"));</script>
+    return t;
+  }(document, "script", "twitter-wjs"));
+</script>
 @endsection

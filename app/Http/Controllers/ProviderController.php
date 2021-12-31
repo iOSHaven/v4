@@ -38,6 +38,7 @@ class ProviderController extends Controller
         //
     }
 
+
     /**
      * Display the specified resource.
      *
@@ -71,13 +72,13 @@ class ProviderController extends Controller
     public function update(Request $r)
     {
         $count = $r->dynamic_input_count;
-        for ($i=1; $i <= $count; $i++) { 
-            $name = $r->{'name-'.$i};
+        for ($i = 1; $i <= $count; $i++) {
+            $name = $r->{'name-' . $i};
             if (!empty($name)) {
                 $p = Provider::firstOrNew(["id" => $i]);
                 $p->name = $name;
-                $p->twitter = $r->{'twitter-'.$i};
-                $p->revoked = !empty($r->{'revoked-'.$i});
+                $p->twitter = $r->{'twitter-' . $i};
+                $p->revoked = !empty($r->{'revoked-' . $i});
                 $p->save();
             }
         }

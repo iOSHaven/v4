@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Archivo+Black|Roboto&display=swap');
 
-@tailwind base;
-
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 aside > ul {
     width: 300px;
@@ -75,7 +75,7 @@ label.toggle-dark:before {
 
 label.toggle-light:after,
 label.toggle-dark:after {
-    @apply absolute block left-0 top-0 rounded-full bg-white-light;
+    @apply absolute block left-0 top-0 rounded-full bg-white;
     content: "";
     box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 4px 0px 0 hsla(0, 0%, 0%, 0.04), 0 4px 9px hsla(0, 0%, 0%, 0.13), 0 3px 3px hsla(0, 0%, 0%, 0.05);
     transition: 0.35s all cubic-bezier(0.54, 1.6, 0.5, 1);
@@ -90,11 +90,11 @@ label.toggle-dark:after {
 }
 
 .check-toggle:checked + .toggle-light:before {
-    @apply bg-green-light;
+    @apply bg-emerald-500;
 }
 
 .check-toggle:checked + .toggle-dark:before {
-    @apply bg-green-dark;
+    @apply bg-emerald-500;
 }
 
 .check-toggle:checked + .toggle-light:after,
@@ -113,7 +113,7 @@ label.toggle-dark:after {
 } */
 
 /* #view .ptr--box {
-    @apply p-0 pb-3 border-b border-gray-500-light mb-2;
+    @apply p-0 pb-3 border-b border-gray-500 mb-2;
 } */
 
 
@@ -228,7 +228,7 @@ label.toggle-dark:after {
 #tab2:checked ~ ul .tab2 label,
 #tab3:checked ~ ul .tab3 label
 {
-    @apply bg-white-light border-t border-l border-r border-black-light rounded-t border-gray-300-light;
+    @apply bg-white border-t border-l border-r border-black rounded-t border-gray-300;
 }
 
 
@@ -236,4 +236,18 @@ img.listing-icon{
     height:77px !important;
     border-radius: 1.3rem !important;
     width: 77px !important;
+}
+
+.markdown a, .link {
+    @apply font-bold underline decoration-blue-500 text-blue-500;
+}
+
+.dark .fb-comments .UFIImageBlockContent {
+    color: white;
+}
+
+@media(prefers-color-scheme: dark) {
+    .fb-comments .UFIImageBlockContent {
+        color: white;
+    }
 }

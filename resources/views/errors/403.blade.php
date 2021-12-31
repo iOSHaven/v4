@@ -6,7 +6,7 @@
         <img src="/SVG/403.svg" alt="" class="w-full mx-auto" style="max-width: 200px">
         <h1 class="font-display text-lg">Sorry this page is not for you.</h1>
         <h1 class="font-display text-4xl">403</h1>
-        <a href="/apps" class='mt-5 mb-8 flex items-center justify-center mx-1 font-bold rounded-full text-sm px-8 py-5 text-white-light {{ theme("bg-indigo") }}'>
+        <a href="/apps" class='mt-5 mb-8 flex items-center justify-center mx-1 font-bold rounded-full text-sm px-8 py-5 text-white-light text-indigo-500'>
             <i class="fas fa-layer-group mr-2 fa-lg"></i>
             Apps
         </a>

@@ -5,6 +5,8 @@ namespace App\Providers;
 use App\App;
 use App\Ipa;
 use App\Itms;
+use App\Policies\PostPolicy;
+use App\Post;
 use App\Provider;
 use App\User;
 use App\Policies\AppPolicy;
@@ -31,6 +33,7 @@ class AuthServiceProvider extends ServiceProvider
         Provider::class => ProviderPolicy::class,
         User::class => UserPolicy::class,
         Shortcut::class => ShortcutPolicy::class,
+        Post::class => PostPolicy::class,
     ];
 
     /**

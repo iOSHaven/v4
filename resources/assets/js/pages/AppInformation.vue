@@ -3,7 +3,7 @@
 
 <div>
   <label for="title">Name</label>
-  <div class="flex items-center justify-center mb-4 relative border border-gray-300-light">
+  <div class="flex items-center justify-center mb-4 relative border border-gray-300">
     <span class="input-icon p-3">
       <i class="fal fa-feather"></i>
     </span>
@@ -11,7 +11,7 @@
   </div>
 
   <label for="title">Version</label>
-  <div class="flex items-center justify-center mb-4 relative border border-gray-300-light">
+  <div class="flex items-center justify-center mb-4 relative border border-gray-300">
     <span class="input-icon p-3">
       <i class="fal fa-code-branch"></i>
     </span>
@@ -19,7 +19,7 @@
   </div>
 
   <label for="title">Short description</label>
-  <div class="flex items-center justify-center mb-4 relative border border-gray-300-light">
+  <div class="flex items-center justify-center mb-4 relative border border-gray-300">
     <span class="input-icon p-3">
       <i class="fal fa-feather"></i>
     </span>
@@ -27,7 +27,7 @@
   </div>
 
   <label for="title">Size in bytes</label>
-  <div class="flex items-center justify-center mb-4 relative border border-gray-300-light">
+  <div class="flex items-center justify-center mb-4 relative border border-gray-300">
     <span class="input-icon p-3">
       <i class="fal fa-database"></i>
     </span>

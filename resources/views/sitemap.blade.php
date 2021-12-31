@@ -109,6 +109,24 @@
             <changefreq>hourly</changefreq>
             <priority>0.41</priority>
         </url>
+
+        @foreach($app->ipas as $ipa)
+            <url>
+                <loc>{{ url("/download/$ipa->id") }}</loc>
+                <lastmod>{{ date('Y-m-d') }}</lastmod>
+                <changefreq>hourly</changefreq>
+                <priority>0.9</priority>
+            </url>
+        @endforeach
+
+        @foreach($app->itms as $link)
+            <url>
+                <loc>{{ url("/install/$link->id") }}</loc>
+                <lastmod>{{ date('Y-m-d') }}</lastmod>
+                <changefreq>hourly</changefreq>
+                <priority>0.9</priority>
+            </url>
+        @endforeach
     @endforeach
 
     @foreach($shortcuts as $shortcut)
@@ -119,4 +137,6 @@
             <priority>0.41</priority>
         </url>
     @endforeach
+
+    
 </urlset>

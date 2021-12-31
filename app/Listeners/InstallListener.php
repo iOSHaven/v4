@@ -15,7 +15,9 @@ class InstallListener
 
     public function handle($event)
     {
-        $install = new Install;
-        $install->trigger()->associate($event->model)->save();
+        if (config('app-analytics.installs')) {
+            $install = new Install;
+            $install->trigger()->associate($event->model)->save();
+        }
     }
 }

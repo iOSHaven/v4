@@ -2,6 +2,8 @@
 
 return [
 
+    "prevent_scraping" => env("PREVENT_SCRAPING", true),
+
     /*
     |--------------------------------------------------------------------------
     | Application Name

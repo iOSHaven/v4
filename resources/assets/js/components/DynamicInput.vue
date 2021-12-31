@@ -8,7 +8,7 @@
       <div v-for="n in count" :key="n" v-html="rendertemp(n)">
       </div>
       <div class="text-center">
-        <a v-if="!hide" @click.prevent="increment" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-white-light bg-blue-light">{{this.text}}</a>
+        <a v-if="!hide" @click.prevent="increment" class="font-bold rounded-full text-sm mr-1 px-5 py-1 text-white dark:text-black bg-blue-500">{{this.text}}</a>
       </div>
       
       <input type="hidden" :name="this.name + '_count'" :value="this.count + this.start">

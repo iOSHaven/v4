@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="english">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,27 +17,27 @@
 
 
 </head>
-<body class="bg-gray-100-light h-screen">
+<body class="bg-gray-100 h-screen">
   <main id="dashboard">
     
     <div id="content" v-show="!loading">
         <div class="flex items-center justify-center overflow-hidden h-screen">
-            <aside class="bg-black-light h-full overflow-auto text-white-light border-r border-gray-100-dark">
+            <aside class="bg-black-light h-full overflow-auto text-white-light border-r border-gray-900">
                 <ul style="width: 250px">
-                  <li class="p-3 border-b text-center border-b border-gray-200-dark">
-                    <img class="rounded-full border mb-3 mx-auto border-b border-gray-200-dark" src="/avatar/zeb" alt=""
+                  <li class="p-3 border-b text-center border-b border-gray-800">
+                    <img class="rounded-full border mb-3 mx-auto border-b border-gray-800" src="/avatar/zeb" alt=""
                       width="70">
                     <strong>{{ Auth::user()->username }}</strong>
                     <div class="leading-none">@admin Admin @else Member @endadmin</div>
                   </li>
-                  <a href="#apps" class="p-3 flex items-center bg-black-light justify-between border-b border-gray-200-dark">
+                  <a href="#apps" class="p-3 flex items-center bg-black-light justify-between border-b border-gray-800">
                     <span>
                         <i class="fas fa-info-circle mr-2"></i>
                         Info
                     </span>
-                    <i class="fas fa-circle text-blue-light"></i>
+                    <i class="fas fa-circle text-blue-500"></i>
                   </a>
-                  <a href="#apps" class="p-3 flex items-center bg-black-light justify-between border-b border-gray-200-dark">
+                  <a href="#apps" class="p-3 flex items-center bg-black-light justify-between border-b border-gray-800">
                     <span>
                         <i class="fas fa-magnet mr-2"></i>
                         Mirrors
@@ -47,7 +47,7 @@
             </aside>
             <div class="h-full overflow-auto flex-grow text-white-light relative" style="background-color: rgba(255,255,255,0.1)">
                 <nav class="absolute left-0 right-0 flex items-center justify-start bg-white-light text-black-light">
-                    <a href="#apps" class="p-3 flex items-center justify-between border-blue-dark border-b-4 bg-gray-100-light -mb-1">
+                    <a href="#apps" class="p-3 flex items-center justify-between border-blue-dark border-b-4 bg-gray-100 -mb-1">
                       <span>
                           <i class="fas fa-layer-group mr-2"></i>
                           Apps
@@ -61,7 +61,7 @@
                     </a>
                 </nav>
                 <div class="h-full " style="padding-top: 48px">
-                    <div class="p-3 text-gray-600-light">
+                    <div class="p-3 text-gray-600">
                         @yield('content')
                     </div>
                     

@@ -37,11 +37,11 @@
         "text" => "Login"
       ])@endcomponent
 
-      <a href="/password/reset" class="{{ theme('text-blue') }}">
+      <a href="/password/reset" class="text-blue-500">
         Forgot password?
       </a>
 
-      <p class="mt-1">Don't have an account? <a href="/register" class="{{ theme('text-blue') }}">Sign up.</a></p>
+      <p class="mt-1">Don't have an account? <a href="/register" class="text-blue-500">Sign up.</a></p>
 
     </form>
   </div>

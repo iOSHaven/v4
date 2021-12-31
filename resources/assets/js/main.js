@@ -6,9 +6,9 @@ import { disablePageScroll, enablePageScroll, getScrollState } from 'scroll-lock
 
 var breakpoint = 768;
 if (window.innerWidth < breakpoint) {
-   document.body.style.marginTop = document.querySelector("#nav-top-phone").offsetHeight + "px";
+   (document.body.style.marginTop = document.querySelector("#nav-top-phone")?.offsetHeight || 0) + "px";
 } else {
-   document.body.style.marginTop = document.querySelector("#nav-top-desktop").offsetHeight + "px";
+   (document.body.style.marginTop = document.querySelector("#nav-top-desktop")?.offsetHeight || 0) + "px";
 }
 
 const ptr = PullToRefresh.init({
@@ -29,19 +29,19 @@ u(".scroll-toggler").on('click', function () {
 })
 
 // setTimeout(() => {
-   // u('#status-bar-style').attr('content', 'black')
-   // var mode = u("#status-bar-style").attr('content');
-   // alert(`You're in *${mode}**** mode`);
+// u('#status-bar-style').attr('content', 'black')
+// var mode = u("#status-bar-style").attr('content');
+// alert(`You're in *${mode}**** mode`);
 // }, 1000)
 
-window.loadMoreApps = function(el, id="apps") {
-   var meta =  document.head.querySelector('meta[name=page][content]')
+window.loadMoreApps = function (el, id = "apps") {
+   var meta = document.head.querySelector('meta[name=page][content]')
    var currentPage = parseInt(meta.content)
    var nextPage = currentPage + 1
    if (window.location.href.includes('?')) {
-     var url = window.location.href + "&html=true&page=" + nextPage
+      var url = window.location.href + "&html=true&page=" + nextPage
    } else {
-     var url = window.location.href + "?html=true&page=" + nextPage
+      var url = window.location.href + "?html=true&page=" + nextPage
    }
    getJSON(url, function (err, doc) {
       if (err || typeof doc.body == "undefined") {
@@ -49,7 +49,9 @@ window.loadMoreApps = function(el, id="apps") {
       } else {
          var apps = document.getElementById(id)
          apps.innerHTML += doc.body.innerHTML
-         meta.setAttribute('content', nextPage.toString())
+         meta.setAttribute('content', nextPage.toString());
+
+         (adsbygoogle = window.adsbygoogle || []).push({});
       }
    }, "document")
 };
@@ -60,7 +62,7 @@ window.loadMoreApps = function(el, id="apps") {
 //    } catch (err) {
 //       //
 //    }
-   
+
 // }, 500)
 
 

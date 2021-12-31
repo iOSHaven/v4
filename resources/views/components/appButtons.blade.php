@@ -16,7 +16,7 @@
     @admin
         @component('components.button', [
             "href"=> "/nova/resources/apps/$app->id", 
-            "bg" => "red", 
+            "bg" => "red-500",
             "color" => "white",
             "class" => "mt-2"
             ])
