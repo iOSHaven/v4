@@ -223,7 +223,7 @@ function geoCountry () {
 }
 
 function simpleMarkdown($text) {
-    $p = new Parsedown();
+    $p = new \App\Lib\ParseDownExtensions\HavenMarkup();
     $removedDuplicateLines = implode("\n", array_filter(explode("\n", $text)));
     return $p->setSafeMode(true)->parse($removedDuplicateLines);
 }
