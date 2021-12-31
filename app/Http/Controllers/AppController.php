@@ -21,9 +21,10 @@ use Jenssegers\Agent\Agent;
 
 class AppController extends Controller
 {
-    private function gathered_query(Request $request, $collection, $search = null)
+    private function gathered_query($collection, $search = null)
     {
-        $collection = $this->paginate($request, $collection);
+        $request = request();
+        $collection = $this->paginate($collection);
 
         return $filteredData = [
             'count' => $collection->count(),
@@ -33,20 +34,24 @@ class AppController extends Controller
         ];
     }
 
-    private function display(Request $request, $data, $pageTitle = null)
+    private function display($data, $pageTitle = null)
     {
+        $request = request();
         $data['pageTitle'] = $request->get('title', $pageTitle);
         $data['agent'] = new Agent();
-        if ($request->json == 'true') {
+
+        if ($request->json === 'true') {
             return response()->json($data);
-        } elseif ($request->html == 'true') {
-            return  view('templates.AppTemplate')->with($data);
-        } else {
-            return view('apps')->with($data);
         }
+
+        if ($request->html === 'true') {
+            return  view('templates.AppTemplate')->with($data);
+        }
+
+        return view('apps')->with($data);
     }
 
-    private function paginate(Request $request, $collection, $limit = null)
+    private function paginate($collection, $limit = null)
     {
         $limit = $limit ?? $request->limit ?? 15;
 
@@ -115,54 +120,55 @@ class AppController extends Controller
         return response()->json($json);
     }
 
-    public function page($tag, Request $request)
+    public function page($tag=null)
     {
         $apps = App::base_query()
-      ->search($request, $tag);
+      ->search($tag);
 
-        $apps = $this->gathered_query($request, $apps, $tag);
+        $apps = $this->gathered_query($apps, $tag);
 
-        return $this->display($request, $apps, Str::title($tag).' Apps');
+        return $this->display($apps, Str::title($tag).' Apps');
     }
 
-    public function games(Request $request)
+    public function games()
     {
         $apps = App::base_query()
       ->games()
-      ->search($request);
+      ->search();
 
-        $apps = $this->gathered_query($request, $apps);
+        $apps = $this->gathered_query($apps);
 
-        return $this->display($request, $apps, 'Games');
+        return $this->display($apps, 'Games');
     }
 
-    public function jailbreaks(Request $request)
+    public function jailbreaks()
     {
         $apps = App::base_query()
       ->tag('jailbreak')
-      ->search($request);
+      ->search();
 
-        $apps = $this->gathered_query($request, $apps);
+        $apps = $this->gathered_query($apps);
 
-        return $this->display($request, $apps, 'Jailbreaks');
+        return $this->display($apps, 'Jailbreaks');
     }
 
-    public function updates($tag, Request $request)
+    public function updates($tag=null)
     {
+        $request = request();
         $apps = App::base_query()
       ->recently_updated()
-      ->search($request, $tag);
+      ->search($tag);
 
         $shortcuts = Shortcut::recently_updated()
-      ->search($request, $tag);
+      ->search($tag);
 
         $models = $apps->merge($shortcuts)->sortByDesc('updated_at');
         if ($request->limit) {
             $models = $models->take($request->limit);
         }
-        $apps = $this->gathered_query($request, $models);
+        $apps = $this->gathered_query($models);
 
-        return $this->display($request, $apps, 'Updates');
+        return $this->display($apps, 'Updates');
     }
 
     public function getSearchPage()

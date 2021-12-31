@@ -38,9 +38,9 @@ class User extends Resource
     {
         if ($request->user()->isAdmin) {
             return $query;
-        } else {
-            return $query->where('id', $request->user()->id);
         }
+
+        return $query->where('id', $request->user()->id);
     }
 
     /**

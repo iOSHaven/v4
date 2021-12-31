@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,13 +18,12 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        // dd($request->all());
         if (Auth::guard($guard)->check()) {
             if ($request->has('redirect')) {
                 return redirect()->intended($request->get('redirect'));
             }
 
-            return redirect()->intended('/apps');
+            return redirect()->intended(RouteServiceProvider::HOME);
         }
 
         return $next($request);

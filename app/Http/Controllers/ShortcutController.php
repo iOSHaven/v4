@@ -41,13 +41,13 @@ class ShortcutController extends Controller
         }
     }
 
-    public function page($tag, Request $request)
+    public function page($tag=null)
     {
-        $shortcuts = Shortcut::search($request, $tag);
+        $shortcuts = Shortcut::search($tag);
 
-        $shortcuts = $this->gathered_query($request, $shortcuts, $tag);
+        $shortcuts = $this->gathered_query($shortcuts, $tag);
 
-        return $this->display($request, $shortcuts);
+        return $this->display($shortcuts);
     }
 
     public function showDetail($uid)

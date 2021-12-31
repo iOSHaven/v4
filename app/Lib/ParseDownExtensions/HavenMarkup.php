@@ -2,7 +2,9 @@
 
 namespace App\Lib\ParseDownExtensions;
 
-class HavenMarkup extends \Parsedown implements IHavenMarkup
+use Parsedown;
+
+class HavenMarkup extends Parsedown implements IHavenMarkup
 {
     use HasRegistry;
 

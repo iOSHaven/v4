@@ -63,21 +63,14 @@ class AppBuilder extends Builder
                     ->hasName();
     }
 
-    // public function withStats() {
-    //     return $this->withCount([
-    //         'impressions as impressions',
-    //         'installs as installs',
-    //         'downloads as downloads'
-    //     ]);
-    // }
-
     public function recently_updated($days = 3)
     {
         return $this->where('updated_at', '>', now()->subDays($days))->orderBy('updated_at', 'desc');
     }
 
-    public function search(Request $r, $search = null)
+    public function search($search = null)
     {
+        $r = request();
         $args = parseQuery($search ?? $r->q, [
             'type' => $r->type,
             'by' => $r->by,
@@ -94,16 +87,16 @@ class AppBuilder extends Builder
             }
         }
 
-        if ($r->working == 'true') {
-            if ($args['type'] == 'ipa') {
+        if ($r->working === 'true') {
+            if ($args['type'] === 'ipa') {
                 $query = $query->working('ipas');
-            } elseif ($args['type'] == 'signed' || $args['type'] == 'install') {
+            } elseif ($args['type'] === 'signed' || $args['type'] === 'install') {
                 $query = $query->working('itms');
             }
         } else {
-            if ($args['type'] == 'ipa') {
+            if ($args['type'] === 'ipa') {
                 $query = $query->type('ipas');
-            } elseif ($args['type'] == 'signed' || $args['type'] == 'install') {
+            } elseif ($args['type'] === 'signed' || $args['type'] === 'install') {
                 $query = $query->type('itms');
             }
         }
