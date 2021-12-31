@@ -23,6 +23,7 @@ class YoutubeVideo extends HavenMarkupBase implements IHavenMarkup
                 ),
                 'handler' => 'element',
                 'text' => array(
+                    'text' => '',
                     'name' => 'iframe',
                     'attributes' => array(
                         'src' => "https://www.youtube.com/embed/$value",
