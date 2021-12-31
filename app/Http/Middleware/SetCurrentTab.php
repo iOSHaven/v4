@@ -15,7 +15,8 @@ class SetCurrentTab
      */
     public function handle($request, Closure $next, $tab)
     {
-        $request->session()->flash("current_tab", $tab);
+        $request->session()->flash('current_tab', $tab);
+
         return $next($request);
     }
 }

@@ -24,10 +24,10 @@ class DenyShortcut extends DestructiveAction implements ShouldQueue
      */
     public function handle(ActionFields $fields, Collection $models)
     {
-        foreach($models as $model) {
+        foreach ($models as $model) {
             $model->forceFill([
-                "approval_status" => "denied",
-                "approval_message" => $fields->message,
+                'approval_status' => 'denied',
+                'approval_message' => $fields->message,
             ])->save();
         }
     }

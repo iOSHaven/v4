@@ -2,15 +2,15 @@
 
 namespace App\Lib;
 
-use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\ResponseInterface;
 use CloudflareBypass\CFCurlImpl;
 use CloudflareBypass\Model\UAMOptions;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
 
 class CFBypassAgent
 {
     /** @var string USER_AGENT */
-    const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 ' .
+    const USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_1) AppleWebKit/537.36 '.
     '(KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36';
 
     /** @var string[][] DEFAULT_HEADERS */
@@ -18,15 +18,16 @@ class CFBypassAgent
         'Upgrade-Insecure-Requests' => [1],
         'User-Agent' => [self::USER_AGENT],
         'Accept' => [
-            'text/html,application/xhtml+xml,application/xml;q=0.9,' .
+            'text/html,application/xhtml+xml,application/xml;q=0.9,'.
             'image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
         ],
         'Accept-Language' => ['en-US,en;q=0.9'],
     ];
 
-    /** @var callable $cNextHandler */
+    /** @var callable */
     private $cNextHandler;
-    /** @var array $aOptions */
+
+    /** @var array */
     private $aOptions = [];
 
     /**
@@ -39,7 +40,6 @@ class CFBypassAgent
         $this->cNextHandler = $cNextHandler;
         $this->aOptions = $aOptions;
     }
-
 
     public static function create(array $aOptions = []): \Closure
     {
@@ -77,7 +77,7 @@ class CFBypassAgent
      */
     protected function checkResponse(RequestInterface $oRequest, ResponseInterface $oResponse, array $aOptions = [])
     {
-        return !$this->shouldHack($oResponse) ? $oResponse : $this($this->hackRequest($oRequest), $aOptions);
+        return ! $this->shouldHack($oResponse) ? $oResponse : $this($this->hackRequest($oRequest), $aOptions);
     }
 
     /**
@@ -108,7 +108,7 @@ class CFBypassAgent
         $aHeaders = array_merge(self::DEFAULT_HEADERS, $oRequest->getHeaders());
         $aCfHeaders = [];
         foreach ($aHeaders as $sHeaderType => $aHeaderValue) {
-            $aCfHeaders[] = $sHeaderType . ': ' . implode(';', $aHeaderValue);
+            $aCfHeaders[] = $sHeaderType.': '.implode(';', $aHeaderValue);
         }
         \curl_setopt($oCurlInstance, \CURLOPT_HTTPHEADER, $aCfHeaders);
         $oCfCurl = new CFCurlImpl();
@@ -119,6 +119,7 @@ class CFBypassAgent
         foreach ($aCookies as $sCookieLine) {
             $aSavedCookies[] = implode('=', array_slice(explode("\t", $sCookieLine), 5, 2));
         }
+
         return $oRequest->withHeader(
             'Cookie',
             array_merge($aSavedCookies, $oRequest->getHeader('Cookie'))

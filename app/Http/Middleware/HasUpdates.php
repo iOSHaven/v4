@@ -27,6 +27,7 @@ class HasUpdates
                 'updateCount' => $updates,
             ]);
         });
+
         return $next($request);
     }
 }

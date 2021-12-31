@@ -2,14 +2,14 @@
 
 namespace App\Nova;
 
+use Illuminate\Support\Facades\Storage;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Resource as NovaResource;
-use Illuminate\Support\Facades\Storage;
 
 abstract class Resource extends NovaResource
 {
-
     public static $orderBy = ['id' => 'asc'];
+
     /**
      * Build an "index" query for the given resource.
      *
@@ -66,27 +66,30 @@ abstract class Resource extends NovaResource
             // This is your default order
             return $query;
         }
-    
+
         foreach ($orderings as $column => $direction) {
             $query->orderBy($column, $direction);
         }
-    
+
         return $query;
     }
 
-    public function handleStorage(string $folder, string $icon = "icon") {
+    public function handleStorage(string $folder, string $icon = 'icon')
+    {
         return function ($request) use ($folder, $icon) {
             $file = $request->$icon;
             $ext = $file->extension();
+
             return [
-                $icon => env("DO_SPACES_SUBDOMAIN") . "/". Storage::disk("spaces")->putFileAs($folder, $file, hash("sha256", $this->name . now()) . ".$ext", ["visibility" => "public"]),
+                $icon => env('DO_SPACES_SUBDOMAIN').'/'.Storage::disk('spaces')->putFileAs($folder, $file, hash('sha256', $this->name.now()).".$ext", ['visibility' => 'public']),
             ];
         };
     }
 
-    public function handleIcon($icon) {
-        return function () use ($icon){
-            return $icon ? url($icon) : "data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=";
+    public function handleIcon($icon)
+    {
+        return function () use ($icon) {
+            return $icon ? url($icon) : 'data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=';
         };
     }
 }

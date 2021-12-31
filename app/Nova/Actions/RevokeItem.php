@@ -23,8 +23,8 @@ class RevokeItem extends DestructiveAction implements ShouldQueue
      */
     public function handle(ActionFields $fields, Collection $models)
     {
-        foreach($models as $model) {
-            $model->forceFill(["working" => false])->save();
+        foreach ($models as $model) {
+            $model->forceFill(['working' => false])->save();
             $this->markAsFinished($model);
         }
     }

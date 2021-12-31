@@ -48,7 +48,7 @@ class Post extends Resource
         return [
 
             Avatar::make('image')
-                ->store($this->handleStorage("/blog-images", "image"))
+                ->store($this->handleStorage('/blog-images', 'image'))
                 ->thumbnail($this->handleIcon($this->image))
                 ->preview($this->handleIcon($this->image))
                 ->maxWidth(50),

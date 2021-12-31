@@ -22,8 +22,8 @@ class SignItem extends Action implements ShouldQueue
      */
     public function handle(ActionFields $fields, Collection $models)
     {
-        foreach($models as $model) {
-            $model->forceFill(["working" => true])->save();
+        foreach ($models as $model) {
+            $model->forceFill(['working' => true])->save();
             $this->markAsFinished($model);
         }
     }

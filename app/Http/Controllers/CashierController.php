@@ -9,14 +9,17 @@ use Laravel\Cashier\Billable;
 
 class CashierController extends Controller
 {
-    public function setup() {
+    public function setup()
+    {
         $user = User::find(Auth::id());
+
         return view('cashier.setup', [
-            'intent' => $user->createSetupIntent()
+            'intent' => $user->createSetupIntent(),
         ]);
     }
 
-    public function charge() {
+    public function charge()
+    {
         $user = User::find(Auth::id());
         $user->charge();
     }

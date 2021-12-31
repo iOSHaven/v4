@@ -10,13 +10,13 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Log;
+use Laravel\Nova\Actions\Action;
 use Laravel\Nova\Actions\DestructiveAction;
 use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Fields\ActionFields;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Heading;
-use Illuminate\Support\Facades\Log;
-use Laravel\Nova\Actions\Action;
 
 class RevokeProvider extends DestructiveAction implements ShouldQueue
 {
@@ -32,8 +32,8 @@ class RevokeProvider extends DestructiveAction implements ShouldQueue
     public function handle(ActionFields $fields, Collection $providers)
     {
         try {
-            foreach($providers as $provider) {
-                $provider->forceFill(["revoked" => true])->save();
+            foreach ($providers as $provider) {
+                $provider->forceFill(['revoked' => true])->save();
                 $ids = $provider->itms->pluck('id');
                 if ($fields->itms) {
                     Itms::whereIn('id', $ids)->update(['working' => false]);
@@ -44,7 +44,7 @@ class RevokeProvider extends DestructiveAction implements ShouldQueue
                 $this->markAsFinished($provider);
             }
         } catch (\Exception $err) {
-           $this->fail($err);
+            $this->fail($err);
         }
     }
 

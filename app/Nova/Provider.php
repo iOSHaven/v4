@@ -2,14 +2,14 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Avatar;
+use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use App\Nova\Actions;
-use Laravel\Nova\Fields\BelongsToMany;
 
 class Provider extends Resource
 {
@@ -25,12 +25,14 @@ class Provider extends Resource
      *
      * @var string
      */
-    public function title () {
+    public function title()
+    {
         return $this->name;
     }
 
-    public function subtitle () {
-        return $this->revoked ? "REVOKED" : "";
+    public function subtitle()
+    {
+        return $this->revoked ? 'REVOKED' : '';
     }
 
     /**
@@ -51,18 +53,18 @@ class Provider extends Resource
     public function fields(Request $request)
     {
         return [
-            
+
             Avatar::make('icon')
-                ->store($this->handleStorage("/providers", "avatar"))
+                ->store($this->handleStorage('/providers', 'avatar'))
                 ->thumbnail($this->handleIcon($this->avatar))
                 ->preview($this->handleIcon($this->avatar))
                 ->maxWidth(50),
 
-            Text::make("Name")->sortable()->rules('required'),
+            Text::make('Name')->sortable()->rules('required'),
 
-            Text::make("Parsing ID", "parsingIdentifier")->rules('required')->onlyOnForms(),
+            Text::make('Parsing ID', 'parsingIdentifier')->rules('required')->onlyOnForms(),
 
-            Text::make("Website")->rules('required'),
+            Text::make('Website')->rules('required'),
 
             Boolean::make('Working', 'revoked')
                     ->trueValue(0)
@@ -125,7 +127,7 @@ class Provider extends Resource
                 ->confirmText('Sign all providers?')
                 ->confirmButtonText('Sign')
                 ->cancelButtonText('Never mind'),
-            
+
         ];
     }
 }

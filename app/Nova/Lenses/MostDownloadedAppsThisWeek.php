@@ -25,13 +25,12 @@ class MostDownloadedAppsThisWeek extends Lens
     {
         return $request->withOrdering($request->withFilters(
             $query->withCount([
-                "downloads as downloads" => function($query){
+                'downloads as downloads' => function ($query) {
                     $query->where('created_at', '>', now()->subDays(7));
-                }])
+                }, ])
             ->orderBy('downloads', 'desc')
         ));
     }
-
 
     protected static function columns()
     {
@@ -47,11 +46,11 @@ class MostDownloadedAppsThisWeek extends Lens
      * @return array
      */
     public function fields(Request $request)
-    {        
+    {
         return [
             Text::make('uid'),
             Text::make('name'),
-            Number::make('downloads'),            
+            Number::make('downloads'),
         ];
     }
 

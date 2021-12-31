@@ -2,14 +2,14 @@
 
 namespace App\Policies;
 
-use App\User;
 use App\Ipa;
+use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class IpaPolicy
 {
     use HandlesAuthorization;
-    
+
     /**
      * Determine whether the user can view any ipas.
      *

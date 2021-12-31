@@ -9,22 +9,26 @@ use Laravel\Nova\Metrics\Trend;
 
 class DownloadsPerDay extends Trend
 {
-
     private $type;
 
-    public function type($type) {
+    public function type($type)
+    {
         $this->type = $type;
+
         return $this;
     }
 
-    public function userRelation($relation) {
+    public function userRelation($relation)
+    {
         $this->relation = $relation;
+
         return $this;
     }
 
-
-    private function getData() {
+    private function getData()
+    {
         $relation = $this->relation;
+
         return Download::whereHasMorph('trigger', $this->type, function ($query) use ($relation) {
             $query->whereIn('id', Auth::user()->{$relation}->pluck('id'));
         });
@@ -34,6 +38,7 @@ class DownloadsPerDay extends Trend
     {
         return $this->countByDays($request, $this->getData())->showLatestValue();
     }
+
     /**
      * Get the ranges available for the metric.
      *
@@ -42,7 +47,7 @@ class DownloadsPerDay extends Trend
     public function ranges()
     {
         return [
-            7 => "7 days",
+            7 => '7 days',
             30 => '30 Days',
             60 => '60 Days',
             90 => '90 Days',

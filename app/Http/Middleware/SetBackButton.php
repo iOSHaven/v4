@@ -15,7 +15,8 @@ class SetBackButton
      */
     public function handle($request, Closure $next, $back_button)
     {
-        $request->session()->put("back_button", $back_button);
+        $request->session()->put('back_button', $back_button);
+
         return $next($request);
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class ChangeAppsTable2 extends Migration
 {
@@ -20,7 +20,7 @@ class ChangeAppsTable2 extends Migration
             $table->dropColumn('views');
             $table->dropColumn('downloads');
 
-            $table->enum('approval_status', ["approved", "denied", "pending"])->default("pending");
+            $table->enum('approval_status', ['approved', 'denied', 'pending'])->default('pending');
             $table->longText('approval_message')->nullable();
             $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users');
@@ -45,7 +45,6 @@ class ChangeAppsTable2 extends Migration
             $table->dropColumn('approval_message');
             $table->dropForeign('apps_user_id_foreign');
             $table->dropColumn('user_id');
-            
         });
     }
 }

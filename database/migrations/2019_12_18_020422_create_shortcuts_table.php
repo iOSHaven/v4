@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateShortcutsTable extends Migration
 {
@@ -19,7 +19,7 @@ class CreateShortcutsTable extends Migration
             $table->string('name');
             $table->string('icon')->default('defaults/provider.png');
             $table->longText('description')->nullable();
-            $table->enum('approval_status', ["approved", "denied", "pending"])->default("pending");
+            $table->enum('approval_status', ['approved', 'denied', 'pending'])->default('pending');
             $table->longText('approval_message')->nullable();
             $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');

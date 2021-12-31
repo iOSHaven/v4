@@ -30,14 +30,14 @@ class ExtractIpaAndItmsLinks extends DestructiveAction implements ShouldQueue
     {
         $providers = Provider::get();
 
-        foreach($apps as $app) {
+        foreach ($apps as $app) {
             try {
                 $provider = Provider::where('name', 'Unknown')->firstOrFail();
                 // debug($provider);
                 try {
                     $itms = Itms::firstOrCreate([
-                        "name" => $app->name,
-                        "url" => $app->signed,
+                        'name' => $app->name,
+                        'url' => $app->signed,
                     ]);
                     foreach ($providers as $p) {
                         if (strpos($app->signed, $p->parsingIdentifier) !== false) {
@@ -47,23 +47,23 @@ class ExtractIpaAndItmsLinks extends DestructiveAction implements ShouldQueue
                     }
                     $itms->providers()->sync([$provider->id]);
                     $itms->apps()->sync([$app->id]);
-                } catch (\Exception $err) {}
+                } catch (\Exception $err) {
+                }
 
                 try {
                     $ipa = Ipa::firstOrCreate([
-                        "name" => $app->name,
-                        "url" => $app->unsigned,
+                        'name' => $app->name,
+                        'url' => $app->unsigned,
                     ]);
                     $ipa->providers()->sync([$provider->id]);
                     $ipa->apps()->sync([$app->id]);
-                } catch (\Exception $err) {}
-                
+                } catch (\Exception $err) {
+                }
+
                 $this->markAsFinished($app);
-            } catch(\Exception $err) {
+            } catch (\Exception $err) {
                 $this->markAsFailed($app, $err);
             }
-            
-            
         }
     }
 

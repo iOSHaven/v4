@@ -67,7 +67,7 @@ return [
                 'NO_ZERO_DATE',
                 'ERROR_FOR_DIVISION_BY_ZERO',
                 'NO_ENGINE_SUBSTITUTION',
-            ]
+            ],
         ],
 
         'pgsql' => [
@@ -120,17 +120,17 @@ return [
     |
     */
 
-    'beanstalkd' => array(
+    'beanstalkd' => [
         'driver' => 'beanstalkd',
-        'host'   => 'localhost', 
+        'host'   => 'localhost',
         'queue'  => 'default',
         'ttr'    => 60,
-    ),
+    ],
 
     'redis' => [
 
         'client' => env('REDIS_CLIENT', 'phpredis'),
-    
+
         'options' => [
             // 'cluster' => env('REDIS_CLUSTER', false),
             'password' => env('REDIS_PASSWORD', null),
@@ -147,7 +147,7 @@ return [
             'port' => env('REDIS_PORT', 6379),
             'database' => env('REDIS_DB', 0),
         ],
-    
+
         // 'cache' => [
         //     'scheme' => env('REDIS_SCHEME', 'tls'),
         //     'host' => env('REDIS_HOST', '127.0.0.1'),
@@ -155,7 +155,7 @@ return [
         //     'port' => env('REDIS_PORT', 6379),
         //     'database' => env('REDIS_CACHE_DB', 1),
         // ],
-    
+
     ],
 
     // 'redis' => [
@@ -191,7 +191,6 @@ return [
     //     //     'database' => 1,
     //     // ],
 
-
     //     // 'client' => env('REDIS_CLIENT', 'phpredis'),
     //     // // 'cluster' => env('REDIS_CLUSTER', false),
     //     // 'clusters' => [
@@ -219,7 +218,6 @@ return [
     //     //     ],
     //     // ],
 
-        
     // ],
 
 ];

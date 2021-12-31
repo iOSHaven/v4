@@ -31,7 +31,7 @@ class Ipa extends Resource
 
     public function subtitle()
     {
-        return $this->provider_name . ($this->working ? "" : " - REVOKED");
+        return $this->provider_name.($this->working ? '' : ' - REVOKED');
     }
 
     /**
@@ -45,7 +45,7 @@ class Ipa extends Resource
 
     public static function label()
     {
-        return "Unsigned Links (IPA)";
+        return 'Unsigned Links (IPA)';
     }
 
     /**

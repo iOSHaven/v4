@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class SummaryUse extends Model
 {
     protected $table = 'summary_use';
-    
-    public function trigger() {
+
+    public function trigger()
+    {
         return $this->morphTo();
     }
 }

@@ -6,41 +6,40 @@ use Parsedown;
 
 class YoutubeVideo extends HavenMarkupBase implements IHavenMarkup
 {
-
-    function __construct($scope)
+    public function __construct($scope)
     {
-        $scope->InlineTypes['{'][]= 'YoutubeEmbed';
+        $scope->InlineTypes['{'][] = 'YoutubeEmbed';
         $scope->inlineMarkerList .= '{';
     }
 
     public function inlineYoutubeEmbed($excerpt)
     {
-        return $this->matchSingleTwig("youtube", $excerpt, function ($value) {
-            return array(
+        return $this->matchSingleTwig('youtube', $excerpt, function ($value) {
+            return [
                 'name' => 'div',
-                'attributes' => array(
-                    'class' => 'video-wrapper'
-                ),
+                'attributes' => [
+                    'class' => 'video-wrapper',
+                ],
                 'handler' => 'element',
-                'text' => array(
+                'text' => [
                     'text' => '',
                     'name' => 'iframe',
-                    'attributes' => array(
+                    'attributes' => [
                         'src' => "https://www.youtube.com/embed/$value",
                         'title' => 'YouTube video player',
                         'frameborder'=>'0',
                         'allow'=> implode(';', [
-                            "accelerometer",
-                            "autoplay",
-                            "clipboard-write",
-                            "encrypted-media",
-                            "gyroscope",
-                            "picture-in-picture"
+                            'accelerometer',
+                            'autoplay',
+                            'clipboard-write',
+                            'encrypted-media',
+                            'gyroscope',
+                            'picture-in-picture',
                         ]),
-                        "allowfullscreen" => true
-                    ),
-                )
-            );
+                        'allowfullscreen' => true,
+                    ],
+                ],
+            ];
         });
 //        dd([$excerpt]);
 //        if (preg_match('/^{%(\s+)?youtube(\s+)?(\w+)(\s+)?%}/', $excerpt['text'], $matches))
@@ -62,5 +61,4 @@ class YoutubeVideo extends HavenMarkupBase implements IHavenMarkup
 //            );
 //        }
     }
-
 }

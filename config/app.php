@@ -2,7 +2,7 @@
 
 return [
 
-    "prevent_scraping" => env("PREVENT_SCRAPING", true),
+    'prevent_scraping' => env('PREVENT_SCRAPING', true),
 
     /*
     |--------------------------------------------------------------------------

@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\MessageBag;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\MessageBag;
 
 class UserController extends Controller
 {
@@ -24,7 +24,8 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function getSettings () {
+    public function getSettings()
+    {
         return view('dashboard.settings');
     }
 
@@ -33,23 +34,25 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function postSettings (Request $r) {
+    public function postSettings(Request $r)
+    {
         $v = [
-            "username" => "",
-            "email" => ""
+            'username' => '',
+            'email' => '',
         ];
         if ($r->old_username !== Auth::user()->username) {
-            $v["username"] = 'required|string|max:255|unique:users';
+            $v['username'] = 'required|string|max:255|unique:users';
         }
         if ($r->old_email !== Auth::user()->email) {
-            $v["email"] = 'required|string|email|max:255|unique:users';
+            $v['email'] = 'required|string|email|max:255|unique:users';
         }
 
         $r->validate($v);
         Auth::user()->username = $r->username;
         Auth::user()->email = $r->email;
         Auth::user()->save();
-        $r->session()->flash("success", "Account updated successfully.");
+        $r->session()->flash('success', 'Account updated successfully.');
+
         return view('dashboard.settings');
     }
 
@@ -58,7 +61,8 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function getNotifications () {
+    public function getNotifications()
+    {
         return view('dashboard.notifications');
     }
 
@@ -67,7 +71,8 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function getBadges () {
+    public function getBadges()
+    {
         return view('dashboard.badges');
     }
 
@@ -76,7 +81,8 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function getPassword () {
+    public function getPassword()
+    {
         return view('dashboard.password');
     }
 
@@ -85,18 +91,21 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function postPassword (Request $r, MessageBag $mb) {
+    public function postPassword(Request $r, MessageBag $mb)
+    {
         $r->validate([
             'password' => 'required|string',
-            'new_password' => 'required|string|min:6|confirmed'
+            'new_password' => 'required|string|min:6|confirmed',
         ]);
-        if (!Hash::check($r->password, Auth::user()->getAuthPassword())) {
+        if (! Hash::check($r->password, Auth::user()->getAuthPassword())) {
             $mb->add('old password', 'Your old password is incorrect.');
+
             return back()->withErrors($mb);
         }
         Auth::user()->password = Hash::make($r->new_password);
         Auth::user()->save();
-        $r->session()->flash("success", "Password updated successfully.");
+        $r->session()->flash('success', 'Password updated successfully.');
+
         return view('dashboard.password');
     }
 }

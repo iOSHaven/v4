@@ -10,14 +10,16 @@ class Ipa extends Model
     use Actionable;
 
     protected $fillable = [
-        "name", "url"
+        'name', 'url',
     ];
 
-    public function providers() {
+    public function providers()
+    {
         return $this->belongsToMany(Provider::class)->using(Link::class);
     }
 
-    public function apps() {
+    public function apps()
+    {
         return $this->belongsToMany(App::class)->using(Link::class);
     }
 

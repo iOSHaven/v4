@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreatePivotsForItmsAndIpas extends Migration
 {
@@ -28,7 +28,7 @@ class CreatePivotsForItmsAndIpas extends Migration
             $table->foreign('app_id')->references('id')->on('apps')->onDelete('cascade');
             $table->bigInteger('itms_id')->unsigned()->index();
             $table->foreign('itms_id')->references('id')->on('itms')->onDelete('cascade');
-            
+
             $table->timestamps();
         });
 
@@ -47,7 +47,7 @@ class CreatePivotsForItmsAndIpas extends Migration
             $table->foreign('app_id')->references('id')->on('apps')->onDelete('cascade');
             $table->bigInteger('ipa_id')->unsigned()->index();
             $table->foreign('ipa_id')->references('id')->on('ipas')->onDelete('cascade');
-            
+
             $table->timestamps();
         });
     }

@@ -62,7 +62,7 @@ return [
             'region' => env('AWS_DEFAULT_REGION'),
             'bucket' => env('AWS_BUCKET'),
         ],
-        
+
         'spaces' => [
             'driver' => 's3',
             'key' => env('DO_SPACES_KEY'),

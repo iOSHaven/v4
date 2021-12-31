@@ -22,6 +22,7 @@ class RedirectIfAuthenticated
             if ($request->has('redirect')) {
                 return redirect()->intended($request->get('redirect'));
             }
+
             return redirect()->intended('/apps');
         }
 

@@ -12,13 +12,13 @@ class Link extends Pivot
 
         static::saving(function ($item) {
             $item->pivotParent->forceFill([
-                "updated_at" => now()
+                'updated_at' => now(),
             ])->save();
         });
 
         static::deleting(function ($item) {
             $item->pivotParent->forceFill([
-                "updated_at" => now()
+                'updated_at' => now(),
             ])->save();
         });
     }

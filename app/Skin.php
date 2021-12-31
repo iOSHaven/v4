@@ -22,37 +22,43 @@ class Skin extends Model
     //     return 'id';
     // }
 
-    public function getCoversAttribute() {
+    public function getCoversAttribute()
+    {
         return explode("\n", $this->images);
     }
 
-    public function getAmountAttribute() {
+    public function getAmountAttribute()
+    {
         return $this->onSale ? $this->salePrice : $this->price;
     }
 
-    public function users() {
+    public function users()
+    {
         return $this->belongsToMany(User::class);
     }
 
-    public function getPurchaseCountAttribute() {
+    public function getPurchaseCountAttribute()
+    {
         if ($this->amount == 0 || $this->affiliate) {
             return 0;
         } else {
-            return $this->users()->get()->count(); 
+            return $this->users()->get()->count();
         }
     }
 
-    public function getDownloadAmountAttribute() {
+    public function getDownloadAmountAttribute()
+    {
         if ($this->affiliate) {
             return 0;
         } else {
-            return $this->users()->get()->count() + $this->downloadCount; 
+            return $this->users()->get()->count() + $this->downloadCount;
         }
     }
 
-    public function getClickAmountAttribute() {
+    public function getClickAmountAttribute()
+    {
         if ($this->affiliate) {
-            return $this->users()->get()->count() + $this->downloadCount; 
+            return $this->users()->get()->count() + $this->downloadCount;
         } else {
             return 0;
         }

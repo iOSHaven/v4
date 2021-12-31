@@ -38,7 +38,6 @@ class ProviderController extends Controller
         //
     }
 
-
     /**
      * Display the specified resource.
      *
@@ -59,7 +58,8 @@ class ProviderController extends Controller
     public function edit(Provider $provider)
     {
         $providers = Provider::get();
-        return view("EditProviders")->with('providers', $providers);
+
+        return view('EditProviders')->with('providers', $providers);
     }
 
     /**
@@ -73,15 +73,16 @@ class ProviderController extends Controller
     {
         $count = $r->dynamic_input_count;
         for ($i = 1; $i <= $count; $i++) {
-            $name = $r->{'name-' . $i};
-            if (!empty($name)) {
-                $p = Provider::firstOrNew(["id" => $i]);
+            $name = $r->{'name-'.$i};
+            if (! empty($name)) {
+                $p = Provider::firstOrNew(['id' => $i]);
                 $p->name = $name;
-                $p->twitter = $r->{'twitter-' . $i};
-                $p->revoked = !empty($r->{'revoked-' . $i});
+                $p->twitter = $r->{'twitter-'.$i};
+                $p->revoked = ! empty($r->{'revoked-'.$i});
                 $p->save();
             }
         }
+
         return back();
     }
 
@@ -94,6 +95,7 @@ class ProviderController extends Controller
     public function destroy(Provider $provider)
     {
         $provider->delete();
+
         return back();
     }
 }
