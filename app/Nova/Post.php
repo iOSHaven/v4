@@ -19,7 +19,7 @@ class Post extends Resource
      *
      * @var string
      */
-    public static $model = 'App\Post';
+    public static $model = \App\Post::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.

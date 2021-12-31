@@ -19,7 +19,7 @@ class Itms extends Resource
      *
      * @var string
      */
-    public static $model = 'App\Itms';
+    public static $model = \App\Itms::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
