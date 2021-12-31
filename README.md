@@ -1,11 +1,11 @@
 # IOS Haven - Version 4
 
-This version uses PHP's Laravel framework to run this code you first will need to install a few things on your computer to get it to work.
+iOS Haven uses PHP's Laravel framework. You MUST install a few things on your machine to get it to work.
 - MySQL
 - Composer
 - Nodejs / NPM
 - Laravel
-- PHP >= 7.1.3
+- PHP = 7.3
 - OpenSSL PHP Extension
 - PDO PHP Extension
 - Mbstring PHP Extension
@@ -14,25 +14,21 @@ This version uses PHP's Laravel framework to run this code you first will need t
 - Ctype PHP Extension
 - JSON PHP Extension
 
-Or if you don't want to install all of that you can install Laravel Homestead which has all of that built in.
-https://laravel.com/docs/5.8/homestead
-
 ## After Installing 
-- Install composer dependicies
-- Install npm dependicies
+- Install composer dependencies
+- Install npm dependencies
 - Create environment key
 - Migrate the databases
-- reference https://laracasts.com/series/laravel-from-scratch-2017 for help
-- reference https://laravel.com/docs/5.8 for help
+
 
 install composer dependencies
 ```
 composer install
 ```
 
-Install npm dependicies
+Install npm dependencies
 ```
-npm install
+yarn
 ```
 
 duplicate env file
@@ -53,4 +49,11 @@ php artisan migrate
 serve application
 ```
 php artisan serve
+```
+
+## Add styling and javascript
+All styling and javascript is compiled using Laravel Mix. The code for these files is located in resources/assets. To see the changes you need to recompile the code using the following command:
+```bash
+yarn dev
+# yarn watch
 ```
