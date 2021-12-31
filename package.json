@@ -30,7 +30,7 @@
         "cross-env": "^7.0.3",
         "cssnano": "^5.0.14",
         "framework7": "^6.3.12",
-        "jquery": "^3.6.0",
+        "jquery": "^3.5.0",
         "laravel-mix": "^6.0.39",
         "lodash": "^4.17.15",
         "marked": "^4.0.8",
