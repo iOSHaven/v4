@@ -23,7 +23,7 @@
         "bladejs": "^1.0.3",
         "body-scroll-lock": "^4.0.0-beta.0",
         "bootstrap-sass": "^3.4.1",
-        "browserslist": "^4.19.1",
+        "browserslist": "^4.16.5",
         "caniuse-lite": "^1.0.30001292",
         "child-process-promise": "^2.2.1",
         "command-line-args": "^5.2.0",
