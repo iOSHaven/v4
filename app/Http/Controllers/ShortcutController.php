@@ -8,8 +8,9 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 class ShortcutController extends Controller
 {
-    private function paginate(Request $request, $collection, $limit = null)
+    private function paginate($collection, $limit = null)
     {
+        $request = request();
         $limit = $limit ?? $request->limit ?? 15;
 
         $page = LengthAwarePaginator::resolveCurrentPage();
@@ -18,9 +19,10 @@ class ShortcutController extends Controller
         return new LengthAwarePaginator($results, count($collection), $limit);
     }
 
-    private function gathered_query(Request $request, $collection, $search = null)
+    private function gathered_query($collection, $search = null)
     {
-        $collection = $this->paginate($request, $collection);
+        $request = request();
+        $collection = $this->paginate($collection);
 
         return $filteredData = [
             'count' => $collection->count(),
@@ -30,15 +32,18 @@ class ShortcutController extends Controller
         ];
     }
 
-    private function display(Request $request, $data)
+    private function display($data)
     {
-        if ($request->json == 'true') {
+        $request = request();
+        if ($request->json === 'true') {
             return response()->json($data);
-        } elseif ($request->html == 'true') {
-            return  view('templates.ShortcutTemplate')->with($data);
-        } else {
-            return view('shortcuts')->with($data);
         }
+
+        if ($request->html === 'true') {
+            return  view('templates.ShortcutTemplate')->with($data);
+        }
+
+        return view('shortcuts')->with($data);
     }
 
     public function page($tag=null)
