@@ -56,7 +56,8 @@
         "rap2hpoutre/laravel-log-viewer": "^2.0",
         "saumini/count": "^1.0",
         "spatie/laravel-sitemap": "^5.8",
-        "symfony/translation-contracts": "^1.1.6"
+        "symfony/translation-contracts": "^1.1.6",
+        "laravel/ui": "^2.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",
