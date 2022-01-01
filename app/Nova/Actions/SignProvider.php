@@ -27,8 +27,8 @@ class SignProvider extends Action implements ShouldQueue
     public function handle(ActionFields $fields, Collection $providers)
     {
         try {
-            foreach($providers as $provider) {
-                $provider->forceFill(["revoked" => false])->save();
+            foreach ($providers as $provider) {
+                $provider->forceFill(['revoked' => false])->save();
                 $ids = $provider->itms->pluck('id');
                 if ($fields->itms) {
                     Itms::whereIn('id', $ids)->update(['working' => true]);
@@ -39,7 +39,7 @@ class SignProvider extends Action implements ShouldQueue
                 $this->markAsFinished($provider);
             }
         } catch (\Exception $err) {
-           $this->fail($err);
+            $this->fail($err);
         }
     }
 

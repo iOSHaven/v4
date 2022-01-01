@@ -7,8 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class SummaryInstall extends Model
 {
     protected $table = 'summary_install';
-    
-    public function trigger() {
+
+    public function trigger()
+    {
         return $this->morphTo();
     }
 }

@@ -5,19 +5,19 @@ namespace App\Providers;
 use App\App;
 use App\Ipa;
 use App\Itms;
-use App\Policies\PostPolicy;
-use App\Post;
-use App\Provider;
-use App\User;
 use App\Policies\AppPolicy;
 use App\Policies\IpaPolicy;
 use App\Policies\ItmsPolicy;
+use App\Policies\PostPolicy;
 use App\Policies\ProviderPolicy;
 use App\Policies\ShortcutPolicy;
 use App\Policies\UserPolicy;
+use App\Post;
+use App\Provider;
 use App\Shortcut;
-use Illuminate\Support\Facades\Gate;
+use App\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Gate;
 
 class AuthServiceProvider extends ServiceProvider
 {

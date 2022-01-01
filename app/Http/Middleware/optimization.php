@@ -17,6 +17,7 @@ class optimization
     {
         $response = $next($request);
         $response->header('Cache-Control', 'max-age=31536000');
+
         return $response;
     }
 }

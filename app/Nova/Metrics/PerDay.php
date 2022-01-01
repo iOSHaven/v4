@@ -3,47 +3,55 @@
 namespace App\Nova\Metrics;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Trend;
-use Illuminate\Support\Str;
 
 class PerDay extends Trend
 {
-
     protected $model;
+
     protected $trigger;
+
     protected $type;
+
     protected $relation;
 
-    public function model($model) {
+    public function model($model)
+    {
         $this->model = $this->model ?? $model;
         // $this->name = Str::plural(class_basename($this->model));
         return $this;
     }
 
-    public function trigger($trigger) {
+    public function trigger($trigger)
+    {
         $this->trigger = $this->trigger ?? $trigger;
+
         return $this;
     }
 
-    public function setName($name) {
+    public function setName($name)
+    {
         $this->name = $name;
+
         return $this;
     }
-    
 
     // public function type() {
     //     return $this->type = $this->trigger ?? 'App/' . class_basename($this->trigger);
     // }
 
-    protected function relation() {
+    protected function relation()
+    {
         return $this->relation ?? strtolower(Str::plural(class_basename($this->trigger)));
     }
 
-    protected function getData($startingDate) {
+    protected function getData($startingDate)
+    {
         $relation = $this->relation();
 
-        if(Auth::user()->isAdmin) {
+        if (Auth::user()->isAdmin) {
             return $this->model::whereBetween('created_at', [$startingDate, now()])
                         ->whereHasMorph('trigger', $this->trigger);
         } else {
@@ -52,15 +60,13 @@ class PerDay extends Trend
                     $query->whereIn('id', Auth::user()->{$relation}->pluck('id'));
                 });
         }
-
-        
-        
     }
 
     public function calculate(NovaRequest $request)
     {
         // $this->result(10);
         $startingDate = $this->getAggregateStartingDate($request, self::BY_DAYS);
+
         return $this->sumByDays($request, $this->getData($startingDate), 'amount')
         // ->result($this->sumByDays($request, $this->getData(), ));
 
@@ -75,7 +81,7 @@ class PerDay extends Trend
     public function ranges()
     {
         return [
-            7 => "7 days",
+            7 => '7 days',
             30 => '30 Days',
             60 => '60 Days',
             90 => '90 Days',
@@ -99,6 +105,6 @@ class PerDay extends Trend
      */
     public function uriKey()
     {
-        return Str::slug($this->name . ' ' . $this->trigger . ' per day');
+        return Str::slug($this->name.' '.$this->trigger.' per day');
     }
 }

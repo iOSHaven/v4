@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class AddEditedToApps extends Migration
 {
@@ -13,8 +13,8 @@ class AddEditedToApps extends Migration
      */
     public function up()
     {
-        Schema::table('apps', function($table) {
-          $table->timestamp('edited_at')->useCurrent();
+        Schema::table('apps', function ($table) {
+            $table->timestamp('edited_at')->useCurrent();
         });
     }
 
@@ -25,8 +25,8 @@ class AddEditedToApps extends Migration
      */
     public function down()
     {
-      Schema::table('apps', function($table) {
-        $table->dropColumn('edited_at');
-      });
+        Schema::table('apps', function ($table) {
+            $table->dropColumn('edited_at');
+        });
     }
 }

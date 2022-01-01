@@ -2,18 +2,20 @@
 
 namespace App\Nova\Metrics;
 
+use App\Builders\AppBuilder as Builder;
 use App\Install;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Trend;
-use App\Builders\AppBuilder as Builder;
 
 class InstallsPerDayPerResource extends Trend
 {
-    public function name () {
-        return "Installs per day";
+    public function name()
+    {
+        return 'Installs per day';
     }
 
-    private function getData($resource) {
+    private function getData($resource)
+    {
         $type = get_class($resource->resource);
 
         return Install::whereHasMorph('trigger', $type, function ($query) use ($resource) {
@@ -40,7 +42,7 @@ class InstallsPerDayPerResource extends Trend
     public function ranges()
     {
         return [
-            7 => "7 days",
+            7 => '7 days',
             30 => '30 Days',
             60 => '60 Days',
             90 => '90 Days',

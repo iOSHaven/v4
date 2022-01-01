@@ -17,6 +17,7 @@ use ioshaven\v4\DashboardSidebar;
 use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
+
 // use Wehaa\CustomLinks\CustomLinks;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
@@ -91,7 +92,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             // (new Ads),
             new DashboardSidebar([
                 'links' => [
-            
+
                     /*
                      * '{TEXT}' => [
                      *      '_icon'   => '{ICON}',
@@ -109,14 +110,14 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                      *      ]
                      * ]
                      */
-            
+
                     'Apps' => [
                         '_can' => ['viewAny', App::class],
                         '_icon' => fa('fas fa-layer-group'),
                         '_url'    => '/nova/resources/apps',
                         '_params' => [
-                            "resourceName" => "apps"
-                        ]
+                            'resourceName' => 'apps',
+                        ],
                     ],
 
                     'Blog Posts' => [
@@ -124,54 +125,54 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                         '_icon' => fa('fas fa-book'),
                         '_url'    => '/nova/resources/posts',
                         '_params' => [
-                            "resourceName" => "posts"
-                        ]
+                            'resourceName' => 'posts',
+                        ],
                     ],
-            
+
                     'Shortcuts' => [
                         '_can' => ['viewAny', Shortcut::class],
                         '_icon' => fa('fas fa-sparkles'),
                         '_url'    => '/nova/resources/shortcuts',
                         '_params' => [
-                            "resourceName" => "shortcuts"
-                        ]
+                            'resourceName' => 'shortcuts',
+                        ],
                     ],
-            
+
                     'Signed Links' => [
                         '_can' => ['viewAny', Itms::class],
                         '_icon' => fa('fas fa-arrow-alt-to-bottom'),
                         '_url'    => '/nova/resources/itms',
                         '_params' => [
-                            "resourceName" => "itms"
-                        ]
+                            'resourceName' => 'itms',
+                        ],
                     ],
-            
+
                     'Unsigned Links' => [
                         '_can' => ['viewAny', Ipa::class],
                         '_icon' => fa('fas fa-file-archive'),
                         '_url'    => '/nova/resources/ipas',
                         '_params' => [
-                            "resourceName" => "ipas"
-                        ]
+                            'resourceName' => 'ipas',
+                        ],
                     ],
-            
+
                     'Providers' => [
                         '_can' => ['viewAny', Provider::class],
                         '_icon' => fa('fab fa-app-store-ios'),
                         '_url'    => '/nova/resources/providers',
                         '_params' => [
-                            "resourceName" => "providers"
-                        ]
+                            'resourceName' => 'providers',
+                        ],
                     ],
-            
+
                     'Users' => [
                         '_admin_only' => true,
                         '_can' => ['viewAny', User::class],
                         '_icon' => fa('fas fa-users'),
                         '_url'    => '/nova/resources/users',
                         '_params' => [
-                            "resourceName" => "users"
-                        ]
+                            'resourceName' => 'users',
+                        ],
                     ],
 
                     'Logs' => [
@@ -185,23 +186,23 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                         '_icon' => fa('fas fa-moon-stars'),
                         '_url'    => '/nova/resources/skins',
                         '_params' => [
-                            "resourceName" => "skins"
-                        ]
+                            'resourceName' => 'skins',
+                        ],
                     ],
-            
+
                     'Account' => [
                         '_can' => ['view',  Auth::user()],
                         '_icon' => fa('fas fa-user-circle'),
-                        '_url'    => '/nova/resources/users/'. Auth::id(),
+                        '_url'    => '/nova/resources/users/'.Auth::id(),
                         '_type' => 'detail',
                         '_params' => [
-                            "resourceId" => Auth::id(),
-                            "resourceName" => "users"
-                        ]
-                    ]
-            
-                ]
-            ])
+                            'resourceId' => Auth::id(),
+                            'resourceName' => 'users',
+                        ],
+                    ],
+
+                ],
+            ]),
         ];
     }
 

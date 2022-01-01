@@ -2,9 +2,10 @@
 
 namespace App\Lib\ParseDownExtensions;
 
-class HavenMarkup extends \Parsedown implements IHavenMarkup
-{
+use Parsedown;
 
+class HavenMarkup extends Parsedown implements IHavenMarkup
+{
     use HasRegistry;
 
     public function __construct()
@@ -13,7 +14,7 @@ class HavenMarkup extends \Parsedown implements IHavenMarkup
         $this->register(YoutubeVideo::class);
     }
 
-    function inlineYouTubeEmbed($excerpt)
+    public function inlineYouTubeEmbed($excerpt)
     {
         return $this->youtubeVideo->inlineYoutubeEmbed($excerpt);
     }

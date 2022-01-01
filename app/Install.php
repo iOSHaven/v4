@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Install extends Model
 {
-    public function trigger() {
+    public function trigger()
+    {
         return $this->morphTo();
     }
 }

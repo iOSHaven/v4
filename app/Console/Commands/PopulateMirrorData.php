@@ -2,11 +2,11 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Console\Command;
 use App\App;
-use App\Provider;
 use App\Mirror;
+use App\Provider;
 use Carbon\Carbon;
+use Illuminate\Console\Command;
 
 class PopulateMirrorData extends Command
 {
@@ -42,11 +42,11 @@ class PopulateMirrorData extends Command
     public function handle()
     {
         $mirrors = Mirror::where(function ($q) {
-                        $q
+            $q
                         ->whereColumn('updated_at', '>', 'fetched_at')
                         ->orWhereNull('fetched_at')
                         ->orWhere('fetched_at', '<', Carbon::now()->subDays(7));
-                    })
+        })
                     ->whereNotNull('install_link')
                     ->get();
         foreach ($mirrors as $mirror) {

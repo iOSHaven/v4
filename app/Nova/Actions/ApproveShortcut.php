@@ -23,10 +23,10 @@ class ApproveShortcut extends Action implements ShouldQueue
      */
     public function handle(ActionFields $fields, Collection $models)
     {
-        foreach($models as $model) {
+        foreach ($models as $model) {
             $model->forceFill([
-                "approval_status" => "approved",
-                "approval_message" => $fields->message,
+                'approval_status' => 'approved',
+                'approval_message' => $fields->message,
             ])->save();
         }
     }

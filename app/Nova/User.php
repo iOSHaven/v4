@@ -17,27 +17,30 @@ class User extends Resource
      *
      * @var string
      */
-    public static $model = 'App\\User';
+    public static $model = \App\User::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-    public function title () {
+    public function title()
+    {
         return $this->username;
     }
 
-    public function subtitle () {
+    public function subtitle()
+    {
         return $this->email;
     }
 
-    public static function indexQuery(NovaRequest $request, $query) {
+    public static function indexQuery(NovaRequest $request, $query)
+    {
         if ($request->user()->isAdmin) {
             return $query;
-        } else {
-            return $query->where('id', $request->user()->id);
         }
+
+        return $query->where('id', $request->user()->id);
     }
 
     /**
@@ -77,7 +80,7 @@ class User extends Resource
                 ->creationRules('required', 'string', 'min:8', 'confirmed')
                 ->updateRules('nullable', 'string', 'min:8', 'confirmed'),
 
-            PasswordConfirmation::make('Password Confirmation')
+            PasswordConfirmation::make('Password Confirmation'),
         ];
     }
 

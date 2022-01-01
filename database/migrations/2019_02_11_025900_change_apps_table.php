@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class ChangeAppsTable extends Migration
 {
@@ -13,10 +13,10 @@ class ChangeAppsTable extends Migration
      */
     public function up()
     {
-      Schema::table('apps', function (Blueprint $table) {
-        $table->longText('unsigned')->change();
-        $table->longText('signed')->change();
-      });
+        Schema::table('apps', function (Blueprint $table) {
+            $table->longText('unsigned')->change();
+            $table->longText('signed')->change();
+        });
     }
 
     /**

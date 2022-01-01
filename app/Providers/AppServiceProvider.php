@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Blade;
 use Auth;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -17,13 +17,13 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Blade::directive('admin', function () {
-          return "<?php if (Auth::check() && Auth::user()->isAdmin): ?>";
+            return '<?php if (Auth::check() && Auth::user()->isAdmin): ?>';
         });
         Blade::directive('notadmin', function () {
-            return "<?php  else: ?>";
+            return '<?php  else: ?>';
         });
         Blade::directive('endadmin', function () {
-            return "<?php endif; ?>";
+            return '<?php endif; ?>';
         });
 
         Blueprint::macro('analytics', function () {

@@ -4,33 +4,31 @@ namespace App\Nova;
 
 use App\Download;
 use App\Install;
-use Illuminate\Http\Request;
-use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Http\Requests\NovaRequest;
-use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Avatar;
-use Laravel\Nova\Fields\Markdown;
-
-use App\Nova\Metrics;
 use App\Nova\Actions;
 use App\Nova\Lenses;
+use App\Nova\Metrics;
 use App\Summary\SummaryDownload;
 use App\Summary\SummaryInstall;
 use App\Summary\SummaryView;
 use App\View;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\HasMany;
+use Laravel\Nova\Fields\ID;
+use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Number;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
+use Laravel\Nova\Http\Requests\NovaRequest;
 use Saumini\Count\RelationshipCount;
 
 class App extends Resource
 {
-
     // public static $with = ['impressions'];
 
     /**
@@ -38,7 +36,7 @@ class App extends Resource
      *
      * @var string
      */
-    public static $model = 'App\App';
+    public static $model = \App\App::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -56,13 +54,11 @@ class App extends Resource
         'name',
         'uid',
         'tags',
-        'short'
+        'short',
     ];
-
 
     public static function indexQuery(NovaRequest $request, $query)
     {
-
         $query = $query
             // ->withStats()
             // ->base_query()
@@ -91,12 +87,12 @@ class App extends Resource
                 ->hideWhenCreating(),
 
             Avatar::make('icon')
-                ->store($this->handleStorage("/icons", "icon"))
+                ->store($this->handleStorage('/icons', 'icon'))
                 ->thumbnail($this->handleIcon($this->icon))
                 ->preview($this->handleIcon($this->icon))
                 ->maxWidth(50),
 
-            Text::make("Name")->sortable()->rules('required'),
+            Text::make('Name')->sortable()->rules('required'),
 
             Number::make('Views', 'impressions')->sortable()->onlyOnIndex(),
             Number::make('Downloads')->sortable()->onlyOnIndex(),
@@ -105,17 +101,12 @@ class App extends Resource
             // RelationshipCount::make('IPA', 'downloads')->sortable()->onlyOnIndex(),
             // RelationshipCount::make('ITMS', 'installs')->sortable()->onlyOnIndex(),
 
-
-
-
             BelongsToMany::make('Itms', 'itms', Itms::class)->nullable()->searchable()->singularLabel('Signed Link (ITMS)'),
             BelongsToMany::make('Ipa', 'ipas', Ipa::class)->nullable()->searchable()->singularLabel('Unsigned Link (IPA)'),
 
             Text::make('Short Description', 'short')->required(),
             Markdown::make('Description')->required(),
             Textarea::make('tags'),
-
-
 
         ];
     }
@@ -134,27 +125,26 @@ class App extends Resource
 
         if (config('app-analytics.views')) {
             $views = [
-                (new Metrics\PerDay)->model(SummaryView::class)->trigger('\App\App')->setName('Total Views'),
-                (new Metrics\PerDayPerResource)->model(SummaryView::class)->trigger('\App\App')->setName('Views')->onlyOnDetail(),
+                (new Metrics\PerDay)->model(SummaryView::class)->trigger(\App\App::class)->setName('Total Views'),
+                (new Metrics\PerDayPerResource)->model(SummaryView::class)->trigger(\App\App::class)->setName('Views')->onlyOnDetail(),
             ];
         }
 
         if (config('app-analytics.downloads')) {
             $downloads = [
-                (new Metrics\PerDay)->model(SummaryDownload::class)->trigger('\App\App')->setName('Total Downloads'),
-                (new Metrics\PerDayPerResource)->model(SummaryDownload::class)->trigger('\App\App')->setName('Downloads')->onlyOnDetail(),
+                (new Metrics\PerDay)->model(SummaryDownload::class)->trigger(\App\App::class)->setName('Total Downloads'),
+                (new Metrics\PerDayPerResource)->model(SummaryDownload::class)->trigger(\App\App::class)->setName('Downloads')->onlyOnDetail(),
             ];
         }
 
         if (config('app-analytics.installs')) {
             $installs = [
-                (new Metrics\PerDay)->model(SummaryInstall::class)->trigger('\App\App')->setName('Total Installs'),
-                (new Metrics\PerDayPerResource)->model(SummaryInstall::class)->trigger('\App\App')->setName('Installs')->onlyOnDetail(),
+                (new Metrics\PerDay)->model(SummaryInstall::class)->trigger(\App\App::class)->setName('Total Installs'),
+                (new Metrics\PerDayPerResource)->model(SummaryInstall::class)->trigger(\App\App::class)->setName('Installs')->onlyOnDetail(),
             ];
         }
 
         $res = array_merge($views, $downloads, $installs);
-
 
         return $res;
     }

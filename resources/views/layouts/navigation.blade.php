@@ -51,7 +51,7 @@
       <a href="/updates" class="text-center px-2 pb-2 py-1 md:p-0 relative {{ tab('Updates') }}">
         <div class="relative">
           <i class="md:hidden fas fa-bell"></i>
-          @if($hasUpdates)
+          @if(isset($hasUpdates))
             <div class="absolute top-0 right-0">
               <div class="px-1 text-xs rounded-full display-inline bg-red-500 text-white dark:text-black">
                 {{ $updateCount }}

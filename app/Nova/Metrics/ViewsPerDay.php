@@ -2,10 +2,10 @@
 
 namespace App\Nova\Metrics;
 
-use Laravel\Nova\Http\Requests\NovaRequest;
-use Laravel\Nova\Metrics\Trend;
 use App\View;
 use Illuminate\Support\Facades\Auth;
+use Laravel\Nova\Http\Requests\NovaRequest;
+use Laravel\Nova\Metrics\Trend;
 
 class ViewsPerDay extends PerDay
 {
@@ -24,7 +24,7 @@ class ViewsPerDay extends PerDay
     public function ranges()
     {
         return [
-            7 => "7 days",
+            7 => '7 days',
             30 => '30 Days',
             60 => '60 Days',
             90 => '90 Days',

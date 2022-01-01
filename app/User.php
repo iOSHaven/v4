@@ -2,8 +2,8 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 use Laravel\Cashier\Billable;
 use Laravel\Nova\Actions\Actionable;
 
@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'password', 'email'
+        'username', 'password', 'email',
     ];
 
     /**
@@ -26,24 +26,28 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token', 'id'
+        'password', 'remember_token', 'id',
     ];
 
-    public function shortcuts() {
+    public function shortcuts()
+    {
         return $this->hasMany(Shortcut::class);
     }
 
-    public function apps() {
+    public function apps()
+    {
         return $this->hasMany(App::class);
     }
 
-    public function skins() {
+    public function skins()
+    {
         return $this->belongsToMany(Skin::class);
     }
 
     public function getGravatarAttribute()
     {
         $hash = md5(strtolower(trim($this->email)));
+
         return "http://www.gravatar.com/avatar/$hash";
     }
 }

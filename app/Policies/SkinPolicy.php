@@ -2,14 +2,14 @@
 
 namespace App\Policies;
 
-use App\User;
 use App\Skin;
+use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class SkinPolicy
 {
     use HandlesAuthorization;
-    
+
     /**
      * Determine whether the user can view any skins.
      *

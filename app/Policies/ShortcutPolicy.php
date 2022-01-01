@@ -2,14 +2,14 @@
 
 namespace App\Policies;
 
-use App\User;
 use App\Shortcut;
+use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class ShortcutPolicy
 {
     use HandlesAuthorization;
-    
+
     /**
      * Determine whether the user can view any shortcuts.
      *

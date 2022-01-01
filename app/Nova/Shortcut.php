@@ -3,6 +3,10 @@
 namespace App\Nova;
 
 use App\Install;
+use App\Nova\Actions;
+use App\Summary\SummaryInstall;
+use App\Summary\SummaryView;
+use App\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Inspheric\Fields\Url;
@@ -12,15 +16,11 @@ use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Markdown;
+use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Status;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use App\Nova\Actions;
-use App\Summary\SummaryInstall;
-use App\Summary\SummaryView;
-use App\View;
-use Laravel\Nova\Fields\Number;
 use Saumini\Count\RelationshipCount;
 
 class Shortcut extends Resource
@@ -30,7 +30,7 @@ class Shortcut extends Resource
      *
      * @var string
      */
-    public static $model = 'App\Shortcut';
+    public static $model = \App\Shortcut::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -45,7 +45,7 @@ class Shortcut extends Resource
      * @var array
      */
     public static $search = [
-        'id', 'name'
+        'id', 'name',
     ];
 
     public static function indexQuery(NovaRequest $request, $query)
@@ -83,7 +83,6 @@ class Shortcut extends Resource
 
             Markdown::make('Description'),
 
-
             Url::make('Itunes Url', 'url')
                 ->label('Install')
                 ->alwaysClickable()
@@ -110,10 +109,9 @@ class Shortcut extends Resource
             // RelationshipCount::make('IPA', 'downloads')->sortable()->onlyOnIndex(),
             // RelationshipCount::make('Installs', 'installs')->sortable()->onlyOnIndex(),
 
-
             Textarea::make('Notes', 'approval_message')
                 ->canSee(function ($request) {
-                    return !empty($this->approval_message);
+                    return ! empty($this->approval_message);
                 })
                 ->readonly()
                 ->onlyOnDetail(),
@@ -138,7 +136,6 @@ class Shortcut extends Resource
      */
     public function cards(Request $request)
     {
-
         $views = [];
         $installs = [];
 
@@ -146,28 +143,27 @@ class Shortcut extends Resource
             $views = [
                 (new Metrics\PerDay)
                     ->model(SummaryView::class)
-                    ->trigger('\App\Shortcut')
+                    ->trigger(\App\Shortcut::class)
                     ->setName('Total Views'),
 
                 (new Metrics\PerDayPerResource)
                     ->model(SummaryView::class)
-                    ->trigger('\App\Shortcut')
+                    ->trigger(\App\Shortcut::class)
                     ->setName('Views')
                     ->onlyOnDetail(),
             ];
         }
 
-
         if (config('app-analytics.installs')) {
             $installs = [
                 (new Metrics\PerDay)
                     ->model(SummaryInstall::class)
-                    ->trigger('\App\Shortcut')
+                    ->trigger(\App\Shortcut::class)
                     ->setName('Total Installs'),
 
                 (new Metrics\PerDayPerResource)
                     ->model(SummaryInstall::class)
-                    ->trigger('\App\Shortcut')
+                    ->trigger(\App\Shortcut::class)
                     ->setName('Installs')
                     ->onlyOnDetail(),
             ];

@@ -19,7 +19,7 @@ class Post extends Resource
      *
      * @var string
      */
-    public static $model = 'App\Post';
+    public static $model = \App\Post::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -48,7 +48,7 @@ class Post extends Resource
         return [
 
             Avatar::make('image')
-                ->store($this->handleStorage("/blog-images", "image"))
+                ->store($this->handleStorage('/blog-images', 'image'))
                 ->thumbnail($this->handleIcon($this->image))
                 ->preview($this->handleIcon($this->image))
                 ->maxWidth(50),

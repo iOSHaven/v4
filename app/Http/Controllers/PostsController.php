@@ -10,6 +10,7 @@ class PostsController extends Controller
     public function index()
     {
         $posts = Post::orderBy('created_at', 'desc')->simplePaginate(12);
+
         return view('blog-listing')->with('posts', $posts);
     }
 
@@ -25,9 +26,10 @@ class PostsController extends Controller
 
     public function show(string $slug, Post $post)
     {
-        if (!empty($post->wp_url)) {
-            return redirect($post->wp_json["link"]);
+        if (! empty($post->wp_url)) {
+            return redirect($post->wp_json['link']);
         }
+
         return view('blog-reader')->with('post', $post);
     }
 
@@ -36,6 +38,7 @@ class PostsController extends Controller
         $posts = Post::where('tags', 'like', "%$tag%")
             ->orderBy('created_at', 'desc')
             ->simplePaginate(12);
+
         return view('blog-listing')->with('posts', $posts);
     }
 

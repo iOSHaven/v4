@@ -2,9 +2,9 @@
 
 namespace App\Nova\Metrics;
 
+use App\App;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Value;
-use App\App;
 
 class NewApps extends Value
 {

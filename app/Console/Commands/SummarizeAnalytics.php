@@ -36,39 +36,38 @@ class SummarizeAnalytics extends Command
         parent::__construct();
     }
 
-
-    private function analyticTable($class, $column = null, $summary = null) {
-        
+    private function analyticTable($class, $column = null, $summary = null)
+    {
         $column = $column ?? Str::plural(strtolower(class_basename($class)));
-        $summary = $summary ?? 'summary_' . Str::singular($column);
+        $summary = $summary ?? 'summary_'.Str::singular($column);
 
         $dates = $class::where(function ($query) {
-                    return $query->whereColumn('created_at', '>=', 'updated_at')
+            return $query->whereColumn('created_at', '>=', 'updated_at')
                     ->orWhereNull('updated_at');
-                })
+        })
                 ->select(DB::raw('date(created_at) as ts'))
                 ->groupBy('ts')
                 ->get()
                 ->pluck('ts');
 
-        foreach($dates as $date) {
+        foreach ($dates as $date) {
             $models = $class::where(function ($query) {
                 return $query->whereColumn('created_at', '>=', 'updated_at')
                 ->orWhereNull('updated_at');
             })
                 ->whereDate('created_at', $date)->get();
             $bar = $this->output->createProgressBar($models->count());
-            print("\n[$date] $column - {$models->count()}\n");
+            echo "\n[$date] $column - {$models->count()}\n";
             $bar->start();
             // print("\n");
-            foreach($models as $model) {
+            foreach ($models as $model) {
                 if ($model->trigger) {
                     DB::table($summary)
                         ->lockForUpdate()
                         ->updateOrInsert(
                             [
-                                'trigger_type'=> $model->trigger_type, 
-                                'trigger_id' => $model->trigger_id, 
+                                'trigger_type'=> $model->trigger_type,
+                                'trigger_id' => $model->trigger_id,
                                 'created_at' => $date,
                             ],
                             [
@@ -81,11 +80,11 @@ class SummarizeAnalytics extends Command
                     ->where('trigger_type', $model->trigger_type)
                     ->lockForUpdate()
                     ->sum('amount');
-                
+
                     DB::table($model->trigger->getTable())
                         ->where('id', $model->trigger_id)
                         ->lockForUpdate()
-                        ->update([ $column => $amount]);
+                        ->update([$column => $amount]);
                 }
                 $model->touch();
                 $bar->advance();

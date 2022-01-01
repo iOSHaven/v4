@@ -22,9 +22,9 @@ class MostInstalledAppsThisWeek extends Lens
     {
         return $request->withOrdering($request->withFilters(
             $query->withCount([
-                "installs as installs" => function($query){
+                'installs as installs' => function ($query) {
                     $query->where('created_at', '>', now()->subDays(7));
-                }])
+                }, ])
             ->orderBy('installs', 'desc')
         ));
     }
@@ -40,7 +40,7 @@ class MostInstalledAppsThisWeek extends Lens
         return [
             Text::make('uid'),
             Text::make('name'),
-            Number::make('installs'),  
+            Number::make('installs'),
         ];
     }
 

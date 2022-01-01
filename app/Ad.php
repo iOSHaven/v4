@@ -5,15 +5,24 @@ namespace App;
 class Ad
 {
     private $token = '0fe95427f2fd244b88e85dbbcbdf6edc45bebee8';
+
     private $zoneId = '2944409';
+
     ///// do not change anything below this point /////
     private $requestDomainName = 'go.transferzenad.com';
+
     private $requestTimeout = 1000;
+
     private $requestUserAgent = 'AntiAdBlock API Client';
+
     private $requestIsSSL = false;
+
     private $cacheTtl = 30; // minutes
+
     private $version = '1';
+
     private $routeGetTag = '/v3/getTag';
+
     private $selfSourceContent;
 
     private function getTimeout()
@@ -30,30 +39,30 @@ class Ad
 
     private function ignoreCache()
     {
-        $key = md5('PMy6vsrjIf-' . $this->zoneId);
+        $key = md5('PMy6vsrjIf-'.$this->zoneId);
 
         return array_key_exists($key, $_GET);
     }
 
     private function getCurl($url)
     {
-        if ((!extension_loaded('curl')) || (!function_exists('curl_version'))) {
+        if ((! extension_loaded('curl')) || (! function_exists('curl_version'))) {
             return false;
         }
         $curl = curl_init();
-        curl_setopt_array($curl, array(
+        curl_setopt_array($curl, [
             CURLOPT_RETURNTRANSFER => 1,
-            CURLOPT_USERAGENT => $this->requestUserAgent . ' (curl)',
+            CURLOPT_USERAGENT => $this->requestUserAgent.' (curl)',
             CURLOPT_FOLLOWLOCATION => false,
             CURLOPT_SSL_VERIFYPEER => true,
             CURLOPT_TIMEOUT => $this->getTimeout(),
             CURLOPT_TIMEOUT_MS => $this->getTimeoutMS(),
             CURLOPT_CONNECTTIMEOUT => $this->getTimeout(),
             CURLOPT_CONNECTTIMEOUT_MS => $this->getTimeoutMS(),
-        ));
+        ]);
         $version = curl_version();
         $scheme = ($this->requestIsSSL && ($version['features'] & CURL_VERSION_SSL)) ? 'https' : 'http';
-        curl_setopt($curl, CURLOPT_URL, $scheme . '://' . $this->requestDomainName . $url);
+        curl_setopt($curl, CURLOPT_URL, $scheme.'://'.$this->requestDomainName.$url);
         $result = curl_exec($curl);
         curl_close($curl);
 
@@ -62,28 +71,28 @@ class Ad
 
     private function getFileGetContents($url)
     {
-        if (!function_exists('file_get_contents') || !ini_get('allow_url_fopen') ||
-            ((function_exists('stream_get_wrappers')) && (!in_array('http', stream_get_wrappers())))) {
+        if (! function_exists('file_get_contents') || ! ini_get('allow_url_fopen') ||
+            ((function_exists('stream_get_wrappers')) && (! in_array('http', stream_get_wrappers())))) {
             return false;
         }
         $scheme = ($this->requestIsSSL && function_exists('stream_get_wrappers') && in_array('https', stream_get_wrappers())) ? 'https' : 'http';
-        $context = stream_context_create(array(
-            $scheme => array(
+        $context = stream_context_create([
+            $scheme => [
                 'timeout' => $this->getTimeout(), // seconds
-                'user_agent' => $this->requestUserAgent . ' (fgc)',
-            ),
-        ));
+                'user_agent' => $this->requestUserAgent.' (fgc)',
+            ],
+        ]);
 
-        return file_get_contents($scheme . '://' . $this->requestDomainName . $url, false, $context);
+        return file_get_contents($scheme.'://'.$this->requestDomainName.$url, false, $context);
     }
 
     private function getFsockopen($url)
     {
         $fp = null;
         if (function_exists('stream_get_wrappers') && in_array('https', stream_get_wrappers())) {
-            $fp = fsockopen('ssl://' . $this->requestDomainName, 443, $enum, $estr, $this->getTimeout());
+            $fp = fsockopen('ssl://'.$this->requestDomainName, 443, $enum, $estr, $this->getTimeout());
         }
-        if ((!$fp) && (!($fp = fsockopen('tcp://' . gethostbyname($this->requestDomainName), 80, $enum, $estr, $this->getTimeout())))) {
+        if ((! $fp) && (! ($fp = fsockopen('tcp://'.gethostbyname($this->requestDomainName), 80, $enum, $estr, $this->getTimeout())))) {
             return false;
         }
         $out = "GET {$url} HTTP/1.1\r\n";
@@ -93,7 +102,7 @@ class Ad
         fwrite($fp, $out);
         stream_set_timeout($fp, $this->getTimeout());
         $in = '';
-        while (!feof($fp)) {
+        while (! feof($fp)) {
             $in .= fgets($fp, 2048);
         }
         fclose($fp);
@@ -113,11 +122,11 @@ class Ad
         $dir = null;
         if (function_exists('sys_get_temp_dir')) {
             $dir = sys_get_temp_dir();
-        } elseif (!empty($_ENV['TMP'])) {
+        } elseif (! empty($_ENV['TMP'])) {
             $dir = realpath($_ENV['TMP']);
-        } elseif (!empty($_ENV['TMPDIR'])) {
+        } elseif (! empty($_ENV['TMPDIR'])) {
             $dir = realpath($_ENV['TMPDIR']);
-        } elseif (!empty($_ENV['TEMP'])) {
+        } elseif (! empty($_ENV['TEMP'])) {
             $dir = realpath($_ENV['TEMP']);
         } else {
             $filename = tempnam(dirname(__FILE__), '');
@@ -142,13 +151,13 @@ class Ad
     private function getCode($url)
     {
         $code = false;
-        if (!$code) {
+        if (! $code) {
             $code = $this->getCurl($url);
         }
-        if (!$code) {
+        if (! $code) {
             $code = $this->getFileGetContents($url);
         }
-        if (!$code) {
+        if (! $code) {
             $code = $this->getFsockopen($url);
         }
 
@@ -159,8 +168,9 @@ class Ad
     {
         $version = explode('.', phpversion());
         if ($major) {
-            return (int)$version[0];
+            return (int) $version[0];
         }
+
         return $version;
     }
 
@@ -173,14 +183,14 @@ class Ad
         }
 
         if ($this->getPHPVersion() >= 7) {
-            $data = @unserialize($dataRaw, array(
+            $data = @unserialize($dataRaw, [
                 'allowed_classes' => false,
-            ));
+            ]);
         } else {
             $data = @unserialize($dataRaw);
         }
 
-        if ($data === false || !is_array($data)) {
+        if ($data === false || ! is_array($data)) {
             return null;
         }
 
@@ -199,7 +209,7 @@ class Ad
         }
 
         if (array_key_exists('tag', $data)) {
-            return (string)$data['tag'];
+            return (string) $data['tag'];
         }
 
         return '';
@@ -208,23 +218,23 @@ class Ad
     public function get()
     {
         $e = error_reporting(0);
-        $url = $this->routeGetTag . '?' . http_build_query(array(
-                'token' => $this->token,
-                'zoneId' => $this->zoneId,
-                'version' => $this->version,
-            ));
+        $url = $this->routeGetTag.'?'.http_build_query([
+            'token' => $this->token,
+            'zoneId' => $this->zoneId,
+            'version' => $this->version,
+        ]);
         $file = $this->getCacheFilePath($url);
         if ($this->isActualCache($file)) {
             error_reporting($e);
 
             return $this->getTag(file_get_contents($file));
         }
-        if (!file_exists($file)) {
+        if (! file_exists($file)) {
             @touch($file);
         }
         $code = '';
         if ($this->ignoreCache()) {
-            $fp = fopen($file, "r+");
+            $fp = fopen($file, 'r+');
             if (flock($fp, LOCK_EX)) {
                 $code = $this->getCode($url);
                 ftruncate($fp, 0);
@@ -235,11 +245,11 @@ class Ad
             fclose($fp);
         } else {
             $fp = fopen($file, 'r+');
-            if (!flock($fp, LOCK_EX | LOCK_NB)) {
+            if (! flock($fp, LOCK_EX | LOCK_NB)) {
                 if (file_exists($file)) {
                     $code = file_get_contents($file);
                 } else {
-                    $code = "<!-- cache not found / file locked  -->";
+                    $code = '<!-- cache not found / file locked  -->';
                 }
             } else {
                 $code = $this->getCode($url);
@@ -265,7 +275,7 @@ class Ad
         $this->selfSourceContent = file_get_contents(__FILE__);
         if ($this->selfSourceContent !== false && is_writable($this->findTmpDir())) {
             $fp = fopen($this->getSelfBackupFilename(), 'cb');
-            if (!flock($fp, LOCK_EX)) {
+            if (! flock($fp, LOCK_EX)) {
                 fclose($fp);
 
                 return false;
@@ -293,13 +303,13 @@ class Ad
 
     private function selfUpdate($newCode)
     {
-        if(is_writable(__FILE__)) {
+        if (is_writable(__FILE__)) {
             $hasBackup = $this->selfBackup();
 
             if ($hasBackup) {
                 try {
                     $fp = fopen(__FILE__, 'cb');
-                    if (!flock($fp, LOCK_EX)) {
+                    if (! flock($fp, LOCK_EX)) {
                         fclose($fp);
                         throw new Exception();
                     }

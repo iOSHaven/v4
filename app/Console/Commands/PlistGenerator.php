@@ -2,8 +2,8 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Console\Command;
 use DOMDocument;
+use Illuminate\Console\Command;
 
 class PlistGenerator extends Command
 {
@@ -41,7 +41,7 @@ class PlistGenerator extends Command
     public function handle()
     {
         $name = $this->option('name');
-        $url = explode("url=", $this->argument('url'))[1];
+        $url = explode('url=', $this->argument('url'))[1];
         $decoded = urldecode($url);
         $plist = file_get_contents($decoded);
         $dom = new DOMDocument();
@@ -50,6 +50,6 @@ class PlistGenerator extends Command
         $plist->dict->array->dict->array->dict[1]->string[1] = asset('logo.svg');
         $plist->dict->array->dict->dict->string[3] = "**$name**\n🙏 iOS Haven 🙏";
         $plist->asXml(public_path("signed/$name.plist"));
-        echo "itms-services://?action=download-manifest&url=" . asset("signed/$name.plist") . "\n";
+        echo 'itms-services://?action=download-manifest&url='.asset("signed/$name.plist")."\n";
     }
 }

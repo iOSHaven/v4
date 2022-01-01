@@ -4,13 +4,13 @@ namespace App\Nova;
 
 use Barryvdh\Debugbar\Facade as Debug;
 use Illuminate\Http\Request;
+use ioshaven\plist\Plist;
 use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use ioshaven\plist\Plist;
 
 class Itms extends Resource
 {
@@ -19,20 +19,21 @@ class Itms extends Resource
      *
      * @var string
      */
-    public static $model = 'App\Itms';
+    public static $model = \App\Itms::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
      *
      * @var string
      */
-
-    public function title () {
+    public function title()
+    {
         return $this->name;
     }
 
-    public function subtitle () {
-        return $this->provider_name . ($this->working ? "" : " - REVOKED");
+    public function subtitle()
+    {
+        return $this->provider_name.($this->working ? '' : ' - REVOKED');
     }
 
     /**
@@ -44,8 +45,9 @@ class Itms extends Resource
         'id', 'name',
     ];
 
-    public static function label() {
-        return "Signed Links (ITMS)";
+    public static function label()
+    {
+        return 'Signed Links (ITMS)';
     }
 
     /**
@@ -56,12 +58,11 @@ class Itms extends Resource
      */
     public function fields(Request $request)
     {
-        
         return [
             ID::make('id')->sortable(),
             Text::make('name')->sortable(),
             Text::make('url'),
-            
+
             Text::make('Provider', 'provider.name')->onlyOnIndex(),
 
             Plist::make('plist'),
@@ -71,7 +72,6 @@ class Itms extends Resource
                 ->preview($this->handleIcon($this->provider_avatar))
                 ->maxWidth(50)
                 ->onlyOnIndex(),
-
 
             Boolean::make('working')->sortable(),
             BelongsToMany::make('providers')->nullable(),

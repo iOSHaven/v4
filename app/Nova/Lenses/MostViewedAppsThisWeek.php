@@ -22,9 +22,9 @@ class MostViewedAppsThisWeek extends Lens
     {
         return $request->withOrdering($request->withFilters(
             $query->withCount([
-                "impressions as views" => function($query){
+                'impressions as views' => function ($query) {
                     $query->where('created_at', '>', now()->subDays(7));
-                }])
+                }, ])
             ->orderBy('views', 'desc')
         ));
     }
@@ -40,7 +40,7 @@ class MostViewedAppsThisWeek extends Lens
         return [
             Text::make('uid'),
             Text::make('name'),
-            Number::make('views'),  
+            Number::make('views'),
         ];
     }
 

@@ -2,14 +2,14 @@
 
 namespace App\Policies;
 
-use App\User;
 use App\Itms;
+use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class ItmsPolicy
 {
     use HandlesAuthorization;
-    
+
     /**
      * Determine whether the user can view any itms.
      *

@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class AddAvatarToProviders extends Migration
 {
@@ -30,7 +30,7 @@ class AddAvatarToProviders extends Migration
     {
         Schema::table('providers', function (Blueprint $table) {
             $table->dropColumn('avatar');
-            $table->string("twitter");
+            $table->string('twitter');
         });
     }
 }

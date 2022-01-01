@@ -2,19 +2,20 @@
 
 namespace App\Nova\Metrics;
 
+use App\Builders\AppBuilder as Builder;
 use App\Download;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Trend;
-use App\Builders\AppBuilder as Builder;
 
 class DownloadsPerDayPerResource extends Trend
 {
-
-    public function name () {
-        return "Downloads per day";
+    public function name()
+    {
+        return 'Downloads per day';
     }
 
-    private function getData($resource) {
+    private function getData($resource)
+    {
         $type = get_class($resource->resource);
 
         return Download::whereHasMorph('trigger', $type, function ($query) use ($resource) {
@@ -41,7 +42,7 @@ class DownloadsPerDayPerResource extends Trend
     public function ranges()
     {
         return [
-            7 => "7 days",
+            7 => '7 days',
             30 => '30 Days',
             60 => '60 Days',
             90 => '90 Days',

@@ -19,7 +19,7 @@ class Skin extends Resource
      *
      * @var string
      */
-    public static $model = 'App\Skin';
+    public static $model = \App\Skin::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -35,14 +35,13 @@ class Skin extends Resource
      */
     public static $search = [
         'uuid',
-        'name'
+        'name',
     ];
 
+    public static function indexQuery(NovaRequest $request, $query)
+    {
+        $query = $query->orderBy('order', 'asc');
 
-    public static function indexQuery(NovaRequest $request, $query) {
-
-        $query = $query->orderBy('order', 'asc')
-                ;
         return $query;
     }
 
@@ -68,12 +67,12 @@ class Skin extends Resource
             Number::make('Downloads', 'downloadAmount')->readonly(),
             Number::make('Clicks', 'clickAmount')->readonly(),
             Number::make('Purchases', 'purchaseCount')->readonly(),
-            
+
             Text::make('affiliate link', 'affiliate'),
             Textarea::make('download')->resolveUsing(function ($value) {
                 return trim($value);
             }),
-            
+
             // $table->string('name');
             // $table->longText('description');
             // $table->longText('images');

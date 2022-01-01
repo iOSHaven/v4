@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Event;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -13,14 +13,14 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        'App\Events\ViewEvent' => [
-            'App\Listeners\ViewListener',
+        \App\Events\ViewEvent::class => [
+            \App\Listeners\ViewListener::class,
         ],
-        'App\Events\DownloadEvent' => [
-            'App\Listeners\DownloadListener',
+        \App\Events\DownloadEvent::class => [
+            \App\Listeners\DownloadListener::class,
         ],
-        'App\Events\InstallEvent' => [
-            'App\Listeners\InstallListener',
+        \App\Events\InstallEvent::class => [
+            \App\Listeners\InstallListener::class,
         ],
     ];
 
@@ -32,7 +32,5 @@ class EventServiceProvider extends ServiceProvider
     public function boot()
     {
         parent::boot();
-
-        
     }
 }

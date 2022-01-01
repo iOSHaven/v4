@@ -19,10 +19,11 @@ class Shortcut extends Model
 
     public function newEloquentBuilder($query)
     {
-      return new ShortcutBuilder($query);
+        return new ShortcutBuilder($query);
     }
 
-    public function user() {
+    public function user()
+    {
         return $this->belongsTo(User::class);
     }
 
@@ -51,14 +52,14 @@ class Shortcut extends Model
     public function toArray()
     {
         return [
-          "type" => strtolower(class_basename($this)),
-          "id" => $this->id,
-          "uid" => $this->itunes_id,
-          "icon" => $this->icon,
-          "name" => $this->name,
-          "impressions" => $this->impressions,
-          "short" => Str::limit($this->description, 20),
-          "tags" => "",
+            'type' => strtolower(class_basename($this)),
+            'id' => $this->id,
+            'uid' => $this->itunes_id,
+            'icon' => $this->icon,
+            'name' => $this->name,
+            'impressions' => $this->impressions,
+            'short' => Str::limit($this->description, 20),
+            'tags' => '',
         ];
     }
 

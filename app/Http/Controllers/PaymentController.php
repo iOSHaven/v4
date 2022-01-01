@@ -7,7 +7,7 @@ use Auth;
 use Config;
 use Exception;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Request as Input;
 use PayPal\Api\Amount;
 use PayPal\Api\Item;
 use PayPal\Api\ItemList;
@@ -25,7 +25,6 @@ use URL;
 
 class PaymentController extends Controller
 {
-
     public function __construct()
     {
         /** PayPal api context **/
@@ -37,15 +36,17 @@ class PaymentController extends Controller
         $this->_api_context->setConfig($paypal_conf['settings']);
     }
 
-    private function countDownload($skin) {
+    private function countDownload($skin)
+    {
         $skin->increment('downloadCount');
         $skin->save();
     }
 
-    public function logPayment(Request $request){
+    public function logPayment(Request $request)
+    {
         try {
             // dd("download");
-            
+
             $skin = Skin::where('uuid', $request->uuid)->first();
             if (Auth::check()) {
                 $user = Auth::user();
@@ -53,28 +54,29 @@ class PaymentController extends Controller
             }
 
             $this->countDownload($skin);
-            
+
             return response()->json([
-                "email" => $request->details['payer']['email_address'],
-                "download" => $skin->download
+                'email' => $request->details['payer']['email_address'],
+                'download' => $skin->download,
             ]);
         } catch (Exception $ex) {
-            return abort (500);
+            return abort(500);
         }
     }
 
-    public function downloadSkin(Request $request) {
+    public function downloadSkin(Request $request)
+    {
         if (! $request->hasValidSignature()) {
             abort(401);
         }
-        
+
         $skin = Skin::where('uuid', $request->uuid)->first();
         if (Auth::check() || $skin->amount > 0) {
             $attachedIds = Auth::user()->skins->pluck('id')->toArray();
             $newIds = array_diff([$skin->id], $attachedIds);
             Auth::user()->skins()->attach($newIds);
         }
-        
+
         $this->countDownload($skin);
 
         // dd($skin, $attachedIds, $newIds);
@@ -82,16 +84,17 @@ class PaymentController extends Controller
         return redirect($skin->download);
     }
 
-    public function affiliateSkin(Request $request) {
+    public function affiliateSkin(Request $request)
+    {
         if (! $request->hasValidSignature()) {
             abort(401);
         }
-        
+
         $skin = Skin::where('uuid', $request->uuid)->first();
         $this->countDownload($skin);
+
         return redirect($skin->affiliate);
     }
-
 
     private function createItem($name, $amount)
     {
@@ -124,10 +127,10 @@ class PaymentController extends Controller
     {
         return view('paywithpaypal');
     }
+
     public function payWithpaypal(Request $request)
     {
-
-        $redirectTo = "/skins";
+        $redirectTo = '/skins';
 
         $payer = new Payer();
         $payer->setPaymentMethod('paypal');
@@ -141,9 +144,8 @@ class PaymentController extends Controller
             ->setCurrency('USD')
             ->setQuantity(1)
             ->setPrice($request->get('amount')); /** unit price **/
-
         $item_list = new ItemList();
-        $item_list->setItems(array($item_1));
+        $item_list->setItems([$item_1]);
 
         $amount = new Amount();
         $amount->setCurrency('USD')
@@ -162,38 +164,28 @@ class PaymentController extends Controller
         $payment->setIntent('Sale')
             ->setPayer($payer)
             ->setRedirectUrls($redirect_urls)
-            ->setTransactions(array($transaction));
+            ->setTransactions([$transaction]);
         /** dd($payment->create($this->_api_context));exit; **/
         try {
-
             $payment->create($this->_api_context);
-
         } catch (PayPalConnectionException $ex) {
-
             dd($ex);
             if (\Config::get('app.debug')) {
-
                 \Session::put('error', 'Connection timeout');
-                return Redirect::to($redirectTo);
 
+                return Redirect::to($redirectTo);
             } else {
-
                 \Session::put('error', 'Some error occur, sorry for inconvenient');
+
                 return Redirect::to($redirectTo);
-
             }
-
         }
 
         foreach ($payment->getLinks() as $link) {
-
             if ($link->getRel() == 'approval_url') {
-
                 $redirect_url = $link->getHref();
                 break;
-
             }
-
         }
 
         /** add payment ID to session **/
@@ -203,17 +195,16 @@ class PaymentController extends Controller
 
             /** redirect to paypal **/
             return Redirect::away($redirect_url);
-
         }
 
         \Session::put('error', 'Unknown error occurred');
-        return Redirect::to($redirectTo);
 
+        return Redirect::to($redirectTo);
     }
 
     public function getPaymentStatus()
     {
-        $redirectTo = "/skins";
+        $redirectTo = '/skins';
 
         /** Get the payment ID before session clear **/
         $payment_id = Session::get('paypal_payment_id');
@@ -221,10 +212,9 @@ class PaymentController extends Controller
         /** clear the session payment ID **/
         Session::forget('paypal_payment_id');
         if (empty(Input::get('PayerID')) || empty(Input::get('token'))) {
-
             \Session::put('error', 'Payment failed');
-            return Redirect::to($redirectTo);
 
+            return Redirect::to($redirectTo);
         }
 
         $payment = Payment::get($payment_id, $this->_api_context);
@@ -235,16 +225,13 @@ class PaymentController extends Controller
         $result = $payment->execute($execution, $this->_api_context);
 
         if ($result->getState() == 'approved') {
-
             \Session::put('success', 'Payment success');
-            return Redirect::to($redirectTo);
 
+            return Redirect::to($redirectTo);
         }
 
         \Session::put('error', 'Payment failed');
+
         return Redirect::to($redirectTo);
-
     }
-
-    
 }

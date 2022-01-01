@@ -2,7 +2,7 @@
 
 return [
 
-    "prevent_scraping" => env("PREVENT_SCRAPING", true),
+    'prevent_scraping' => env('PREVENT_SCRAPING', true),
 
     /*
     |--------------------------------------------------------------------------
@@ -192,6 +192,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
+        App\Providers\NovaServiceProvider::class,
         App\Providers\NovaServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Fedeisas\LaravelMailCssInliner\LaravelMailCssInlinerServiceProvider::class,
