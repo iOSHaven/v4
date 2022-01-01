@@ -60,7 +60,7 @@ class Shortcut extends Model
     public static function boot() {
         parent::boot();
 
-        static::creating(function ($model) {
+        static::saving(function ($model) {
             try {
                 $itunes_id = $model->itunes_id;
                 if (Str::contains($itunes_id, 'icloud.com')) {
@@ -83,12 +83,6 @@ class Shortcut extends Model
                 }
             } catch (\Exception $e) {
                 throw new Exception("Invalid ID for shortcut.");
-            }
-        });
-
-        static::updating(function ($model) {
-            if (Str::contains($model->itunes_id, 'icloud.com')) {
-                $model->itunes_id = last(explode("/", $model->itunes_id));
             }
         });
     }
