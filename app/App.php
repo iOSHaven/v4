@@ -15,7 +15,6 @@ class App extends Model
 {
     use SoftDeletes, Actionable, HasAnalytics;
 
-    protected $dates = ['deleted_at'];
 
     protected $fillable = ['name',
         'uid',
