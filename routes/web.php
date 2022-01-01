@@ -1,5 +1,21 @@
 <?php
 
+use App\Http\Controllers\AppController;
+use App\Http\Controllers\AvatarController;
+use App\Http\Controllers\CashierController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ImageController;
+use App\Http\Controllers\MobileConfigController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\PostsController;
+use App\Http\Controllers\ProviderController;
+use App\Http\Controllers\RosterController;
+use App\Http\Controllers\ShortcutController;
+use App\Http\Controllers\StaticPageController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,7 +27,7 @@
 |
 */
 
-$themesPage = 'StaticPageController@getThemesPage';
+$themesPage = [StaticPageController::class, 'getThemesPage'];
 Route::domain('themes.'.env('ROOT_DOMAIN'))->group(function () use ($themesPage) {
     Route::get('/', $themesPage);
 });
@@ -19,7 +35,7 @@ Route::get('/skins', $themesPage);
 Route::get('/themes', $themesPage);
 Route::view('/giveaway', 'giveaway');
 
-// Route::get('/themetest', 'StaticPageController@getThemesPage');
+// Route::get('/themetest', [StaticPageController::class, 'getThemesPage']);
 
 Route::get('/geoCountry', function () {
     return response()->json(geoCountry());
@@ -71,142 +87,142 @@ Route::get('/nordvpn', function () {
     return response()->json('Verifying NordVPN ownership 02/15/2020. Official email ioshavenco@gmail.com');
 });
 
-Route::get('/avatar/{value}/{size?}', 'AvatarController@api');
+Route::get('/avatar/{value}/{size?}', [AvatarController::class, 'api']);
 
-Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->middleware('admin');
+Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'index'])->middleware('admin');
 
-Route::get('/tl/{view}', 'StaticPageController@template');
+Route::get('/tl/{view}', [StaticPageController::class, 'template']);
 
-Route::get('/tutorials/{view}', 'StaticPageController@tutorial');
+Route::get('/tutorials/{view}', [StaticPageController::class, 'tutorial']);
 
-Route::get('/', 'StaticPageController@index')->middleware('tab:Home', 'back:Home');
+Route::get('/', [StaticPageController::class, 'index'])->middleware('tab:Home', 'back:Home');
 
 Auth::routes();
 
-// Route::get('/profile', 'HomeController@index')->name('profile');
-// Route::post('/profile/color', 'HomeController@color');
-// Route::post('/auth/toggleEditing', 'HomeController@toggleEditing');
+// Route::get('/profile', [HomeController::class, 'index'])->name('profile');
+// Route::post('/profile/color', [HomeController::class, 'color']);
+// Route::post('/auth/toggleEditing', [HomeController::class, 'toggleEditing']);
 
 Route::prefix('blog')->group(function () {
-    Route::get('/', 'PostsController@index')->name('blog.listing');
-    Route::get('/tag/{tag}', 'PostsController@showTag')->name('blog.tag');
-    Route::get('/{slug}_{post}', 'PostsController@show')->name('blog.reader');
+    Route::get('/', [PostsController::class, 'index'])->name('blog.listing');
+    Route::get('/tag/{tag}', [PostsController::class, 'showTag'])->name('blog.tag');
+    Route::get('/{slug}_{post}', [PostsController::class, 'show'])->name('blog.reader');
 });
 
 Route::prefix('plist')->group(function () {
-    Route::get('{any}', 'StaticPageController@plist')->where('any', '.*');
+    Route::get('{any}', [StaticPageController::class, 'plist'])->where('any', '.*');
 });
-// Route::get('/plist/{name}', "StaticPageController@plist");
+// Route::get('/plist/{name}', [StaticPageController::class, 'plist']);
 
 Route::prefix('user')->group(function () {
-    Route::get('/settings', 'UserController@getSettings');
-    Route::post('/settings', 'UserController@postSettings');
-    Route::get('/notifications', 'UserController@getNotifications');
-    Route::get('/badges', 'UserController@getBadges');
-    Route::get('/password', 'UserController@getPassword');
-    Route::post('/password', 'UserController@postPassword');
+    Route::get('/settings', [UserController::class, 'getSettings']);
+    Route::post('/settings', [UserController::class, 'postSettings']);
+    Route::get('/notifications', [UserController::class, 'getNotifications']);
+    Route::get('/badges', [UserController::class, 'getBadges']);
+    Route::get('/password', [UserController::class, 'getPassword']);
+    Route::post('/password', [UserController::class, 'postPassword']);
 });
 
 Route::prefix('image')->group(function () {
-    Route::get('/', 'ImageController@index');
-    // Route::get('all', 'RosterController@all');
-  // Route::get('creators', 'RosterController@creators');
-  // Route::get('streamers', 'RosterController@streamers');
-  // Route::get('team/{team}', 'RosterController@teams');
+    Route::get('/', [ImageController::class, 'index']);
+    // Route::get('all', [RosterController::class, 'all']);
+  // Route::get('creators', [RosterController::class, 'creators']);
+  // Route::get('streamers', [RosterController::class, 'streamers']);
+  // Route::get('team/{team}', [RosterController::class, 'teams']);
 });
 
 // Route::post('putlinks', function (\Request $r) {
 //   return response()->json(["hello"]);
 // });
 
-Route::get('/itms/{id}', 'AppController@itms');
+Route::get('/itms/{id}', [AppController::class, 'itms']);
 
-Route::post('/app/create', 'AppController@create');
+Route::post('/app/create', [AppController::class, 'create']);
 
 // app security starts here
-Route::get('/app/{uid}', 'AppController@showAppDetailPage')->name('detail');
-Route::get('/app/edit/{uid}', 'AppController@edit');
-Route::post('/app/update', 'AppController@update');
-Route::post('/app/remove', 'AppController@remove');
-Route::post('/app/token', 'AppController@token');
+Route::get('/app/{uid}', [AppController::class, 'showAppDetailPage'])->name('detail');
+Route::get('/app/edit/{uid}', [AppController::class, 'edit']);
+Route::post('/app/update', [AppController::class, 'update']);
+Route::post('/app/remove', [AppController::class, 'remove']);
+Route::post('/app/token', [AppController::class, 'token']);
 
-Route::get('/shortcut/{itunes_id}', 'ShortcutController@showDetail');
-Route::get('/shortcut/install/{itunes_id}', 'ShortcutController@install');
+Route::get('/shortcut/{itunes_id}', [ShortcutController::class, 'showDetail']);
+Route::get('/shortcut/install/{itunes_id}', [ShortcutController::class, 'install']);
 
-Route::get('/install/{itms}', 'AppController@install')->name('install');
-Route::get('/download/{ipa}', 'AppController@download')->name('download');
-Route::get('/install/uid/{app}', 'AppController@installUid');
-Route::get('/download/uid/{app}', 'AppController@downloadUid');
+Route::get('/install/{itms}', [AppController::class, 'install'])->name('install');
+Route::get('/download/{ipa}', [AppController::class, 'download'])->name('download');
+Route::get('/install/uid/{app}', [AppController::class, 'installUid']);
+Route::get('/download/uid/{app}', [AppController::class, 'downloadUid']);
 
-Route::get('/tutubox/cert', 'StaticPageController@tutubox');
+Route::get('/tutubox/cert', [StaticPageController::class, 'tutubox']);
 
 Route::prefix('shortcuts')->middleware('tab:Shortcuts', 'back:Shortcuts')->group(function () {
-    Route::get('/{tag?}', 'ShortcutController@page')->name('shortcuts');
+    Route::get('/{tag?}', [ShortcutController::class, 'page'])->name('shortcuts');
 });
 
-Route::get('/altstore/burrito/apps.json', 'AppController@burrito');
-Route::get('/altstore/apps.json', 'AppController@showAltstoreJson');
+Route::get('/altstore/burrito/apps.json', [AppController::class, 'burrito']);
+Route::get('/altstore/apps.json', [AppController::class, 'showAltstoreJson']);
 
 Route::prefix('apps')->middleware('tab:Apps', 'back:Apps')->group(function () {
     Route::redirect('/signednow', '/apps?type=signed&working=true', 301);
-    Route::get('/{tag?}', 'AppController@page')->name('apps');
+    Route::get('/{tag?}', [AppController::class, 'page'])->name('apps');
 });
 
 Route::prefix('providers')->middleware('tab:Providers', 'back:Providers')->group(function () {
-    Route::get('/edit', 'ProviderController@edit');
-    Route::post('/update', 'ProviderController@update');
-    Route::post('/destroy/{provider}', 'ProviderController@destroy');
-    // Route::get('/{name}', "ProviderController@status")
+    Route::get('/edit', [ProviderController::class, 'edit']);
+    Route::post('/update', [ProviderController::class, 'update']);
+    Route::post('/destroy/{provider}', [ProviderController::class, 'destroy']);
+    // Route::get('/{name}', [ProviderController::class, 'status'])
 });
 
 Route::prefix('cashier')->group(function () {
-    Route::get('/setup', 'CashierController@setup');
+    Route::get('/setup', [CashierController::class, 'setup']);
 });
 
-Route::get('/games', 'AppController@games')->middleware('tab:Games', 'back:Games')->name('games');
-Route::get('/jailbreaks', 'AppController@jailbreaks')->middleware('tab:Jailbreaks', 'back:Jailbreaks')->name('jailbreaks');
-Route::get('/updates{tag?}', 'AppController@updates')->middleware('tab:Updates', 'back:Updates')->name('updates');
+Route::get('/games', [AppController::class, 'games'])->middleware('tab:Games', 'back:Games')->name('games');
+Route::get('/jailbreaks', [AppController::class, 'jailbreaks'])->middleware('tab:Jailbreaks', 'back:Jailbreaks')->name('jailbreaks');
+Route::get('/updates{tag?}', [AppController::class, 'updates'])->middleware('tab:Updates', 'back:Updates')->name('updates');
 
-Route::get('/plist', 'HomeController@getPlist');
-Route::post('/plist', 'HomeController@postPlist');
+Route::get('/plist', [HomeController::class, 'getPlist']);
+Route::post('/plist', [HomeController::class, 'postPlist']);
 
-Route::get('/contact/index', 'ContactController@view')->middleware('tab:Contact');
-Route::get('/contact/{type}', 'ContactController@view')->middleware('back:Contact');
-Route::post('/contact/{type}', 'ContactController@send');
+Route::get('/contact/index', [ContactController::class, 'view'])->middleware('tab:Contact');
+Route::get('/contact/{type}', [ContactController::class, 'view'])->middleware('back:Contact');
+Route::post('/contact/{type}', [ContactController::class, 'send']);
 // Route::get('/contact/{type?}', function () {
 //   return abort(500, 'Sorry for the inconvenience, but this page is under maintenance.');
 // });
-Route::any('/site.mobileconfig', 'MobileConfigController@webapp');
+Route::any('/site.mobileconfig', [MobileConfigController::class, 'webapp']);
 
-Route::get('/dashboard', 'StaticPageController@getDashboard')->middleware('auth');
-Route::get('/install', 'StaticPageController@chooseInstall');
-Route::get('/light', 'StaticPageController@lightTheme');
-Route::get('/dark', 'StaticPageController@darkTheme');
-Route::post('/theme', 'StaticPageController@postTheme');
-// Route::get('/test', 'StaticPageController@getTestPage');
-Route::get('/search', 'AppController@getSearchPage')->middleware('tab:Search', 'back:Search')->name('search');
-Route::get('/credits', 'StaticPageController@getCreditsPage');
-Route::get('/faq', 'StaticPageController@getFaqPage');
-Route::get('/cydia', 'StaticPageController@getCydiaPage');
-Route::get('/betas', 'StaticPageController@getBetasPage');
-Route::get('/jailbreak', 'StaticPageController@getJailbreakPage');
-Route::get('/aboutUs', 'StaticPageController@getAboutUsPage');
-Route::get('/fight-for-net-neutrality', 'StaticPageController@getFightForNetNeutrality');
-// Route::get('/shortcuts', 'StaticPageController@getShortcutsPage');
+Route::get('/dashboard', [StaticPageController::class, 'getDashboard'])->middleware('auth');
+Route::get('/install', [StaticPageController::class, 'chooseInstall']);
+Route::get('/light', [StaticPageController::class, 'lightTheme']);
+Route::get('/dark', [StaticPageController::class, 'darkTheme']);
+Route::post('/theme', [StaticPageController::class, 'postTheme']);
+// Route::get('/test', [StaticPageController::class, 'getTestPage']);
+Route::get('/search', [AppController::class, 'getSearchPage'])->middleware('tab:Search', 'back:Search')->name('search');
+Route::get('/credits', [StaticPageController::class, 'getCreditsPage']);
+Route::get('/faq', [StaticPageController::class, 'getFaqPage']);
+Route::get('/cydia', [StaticPageController::class, 'getCydiaPage']);
+Route::get('/betas', [StaticPageController::class, 'getBetasPage']);
+Route::get('/jailbreak', [StaticPageController::class, 'getJailbreakPage']);
+Route::get('/aboutUs', [StaticPageController::class, 'getAboutUsPage']);
+Route::get('/fight-for-net-neutrality', [StaticPageController::class, 'getFightForNetNeutrality']);
+// Route::get('/shortcuts', [StaticPageController::class, 'getShortcutsPage']);
 
-Route::post('/close_announcement', 'StaticPageController@closeAnnouncement');
-Route::post('/payment/add-funds/paypal', 'PaymentController@payWithPaypal')->name('paywithpaypal');
-Route::get('/payment/add-funds/paypal/status', 'PaymentController@getPaymentStatus')->name('ppStatus');
-Route::post('/paypal-log', 'PaymentController@logPayment');
-Route::get('/skin/{uuid}', 'PaymentController@downloadSkin')->name('skin');
-Route::get('/skin/affiliate/{uuid}', 'PaymentController@affiliateSkin')->name('skin.ref');
+Route::post('/close_announcement', [StaticPageController::class, 'closeAnnouncement']);
+Route::post('/payment/add-funds/paypal', [PaymentController::class, 'payWithPaypal'])->name('paywithpaypal');
+Route::get('/payment/add-funds/paypal/status', [PaymentController::class, 'getPaymentStatus'])->name('ppStatus');
+Route::post('/paypal-log', [PaymentController::class, 'logPayment']);
+Route::get('/skin/{uuid}', [PaymentController::class, 'downloadSkin'])->name('skin');
+Route::get('/skin/affiliate/{uuid}', [PaymentController::class, 'affiliateSkin'])->name('skin.ref');
 
-Route::post('/add/iosgods/plist', 'StaticPageController@addIGPlist');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/add/iosgods/plist', [StaticPageController::class, 'addIGPlist']);
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [HomeController::class, 'index'])->name('home');
