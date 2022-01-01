@@ -87,18 +87,18 @@ Auth::routes();
 // Route::post('/profile/color', 'HomeController@color');
 // Route::post('/auth/toggleEditing', 'HomeController@toggleEditing');
 
-Route::group(['prefix' => 'blog'], function () {
+Route::prefix('blog')->group(function () {
     Route::get('/', 'PostsController@index')->name('blog.listing');
     Route::get('/tag/{tag}', 'PostsController@showTag')->name('blog.tag');
     Route::get('/{slug}_{post}', 'PostsController@show')->name('blog.reader');
 });
 
-Route::group(['prefix' => 'plist'], function () {
+Route::prefix('plist')->group(function () {
     Route::get('{any}', 'StaticPageController@plist')->where('any', '.*');
 });
 // Route::get('/plist/{name}', "StaticPageController@plist");
 
-Route::group(['prefix' => 'user'], function () {
+Route::prefix('user')->group(function () {
     Route::get('/settings', 'UserController@getSettings');
     Route::post('/settings', 'UserController@postSettings');
     Route::get('/notifications', 'UserController@getNotifications');
@@ -107,7 +107,7 @@ Route::group(['prefix' => 'user'], function () {
     Route::post('/password', 'UserController@postPassword');
 });
 
-Route::group(['prefix' => 'image'], function () {
+Route::prefix('image')->group(function () {
     Route::get('/', 'ImageController@index');
     // Route::get('all', 'RosterController@all');
   // Route::get('creators', 'RosterController@creators');
@@ -140,26 +140,26 @@ Route::get('/download/uid/{app}', 'AppController@downloadUid');
 
 Route::get('/tutubox/cert', 'StaticPageController@tutubox');
 
-Route::group(['prefix' => 'shortcuts', 'middleware' => ['tab:Shortcuts', 'back:Shortcuts']], function () {
+Route::prefix('shortcuts')->middleware('tab:Shortcuts', 'back:Shortcuts')->group(function () {
     Route::get('/{tag?}', 'ShortcutController@page')->name('shortcuts');
 });
 
 Route::get('/altstore/burrito/apps.json', 'AppController@burrito');
 Route::get('/altstore/apps.json', 'AppController@showAltstoreJson');
 
-Route::group(['prefix' => 'apps', 'middleware' => ['tab:Apps', 'back:Apps']], function () {
+Route::prefix('apps')->middleware('tab:Apps', 'back:Apps')->group(function () {
     Route::redirect('/signednow', '/apps?type=signed&working=true', 301);
     Route::get('/{tag?}', 'AppController@page')->name('apps');
 });
 
-Route::group(['prefix' => 'providers', 'middleware' => ['tab:Providers', 'back:Providers']], function () {
+Route::prefix('providers')->middleware('tab:Providers', 'back:Providers')->group(function () {
     Route::get('/edit', 'ProviderController@edit');
     Route::post('/update', 'ProviderController@update');
     Route::post('/destroy/{provider}', 'ProviderController@destroy');
     // Route::get('/{name}', "ProviderController@status")
 });
 
-Route::group(['prefix' => 'cashier'], function () {
+Route::prefix('cashier')->group(function () {
     Route::get('/setup', 'CashierController@setup');
 });
 
