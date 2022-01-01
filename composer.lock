@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3c2910c7f95c6a911a464e4ea0664030",
+    "content-hash": "7652173528f1d77a711131b9b6f73aa5",
     "packages": [
         {
             "name": "anhskohbo/no-captcha",
@@ -1849,7 +1849,7 @@
         },
         {
             "name": "ioshaven/ads",
-            "version": "dev-laravel-5.8-to-6.0",
+            "version": "dev-master",
             "dist": {
                 "type": "path",
                 "url": "./nova-components/Ads",
@@ -1885,7 +1885,7 @@
         },
         {
             "name": "ioshaven/plist",
-            "version": "dev-laravel-5.8-to-6.0",
+            "version": "dev-master",
             "dist": {
                 "type": "path",
                 "url": "./nova-components/plist",
@@ -1921,7 +1921,7 @@
         },
         {
             "name": "ioshaven/v4",
-            "version": "dev-laravel-5.8-to-6.0",
+            "version": "dev-master",
             "dist": {
                 "type": "path",
                 "url": "./nova-components/v4",
@@ -11737,5 +11737,8 @@
         "ext-bcmath": "*"
     },
     "platform-dev": [],
+    "platform-overrides": {
+        "php": "7.4"
+    },
     "plugin-api-version": "2.1.0"
 }
