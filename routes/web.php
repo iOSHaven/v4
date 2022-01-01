@@ -39,10 +39,11 @@ Route::view('/privacy', 'privacy-policy');
 Route::get('/map.xml', function () {
     $contents = View::make('sitemap')
     ->with([
-        'apps' => \App\App::with(['itms', 'ipas'])->get(),
-        'shortcuts' => Shortcut::get(),
-        // "itms" => Itms::get(),
-        // "ipas" => Ipa::get()
+      "apps" => \App\App::with(["itms", "ipas"])->get(),
+      "shortcuts" => Shortcut::get(),
+      "posts" => Post::get()
+      // "itms" => Itms::get(),
+      // "ipas" => Ipa::get()
     ]);
 
     return response($contents)->withHeaders([

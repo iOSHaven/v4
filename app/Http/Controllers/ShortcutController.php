@@ -64,8 +64,16 @@ class ShortcutController extends Controller
         return view('shortcutDetail')->with(['shortcut' => $shortcut]);
     }
 
-    public function install($uid)
+    public function showPermDetail ($id)
     {
+        $shortcut = Shortcut::findOrFail($id);
+
+        event(new \App\Events\ViewEvent($shortcut));
+
+        return view('shortcutDetail')->with(['shortcut' => $shortcut]);
+    }
+
+      public function install($uid) {
         $shortcut = Shortcut::uid($uid)
           ->firstOrFail();
 
@@ -73,5 +81,5 @@ class ShortcutController extends Controller
         event(new \App\Events\InstallEvent($shortcut));
 
         return redirect($shortcut->url);
-    }
+      }
 }

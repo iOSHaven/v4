@@ -131,10 +131,19 @@
 
     @foreach($shortcuts as $shortcut)
         <url>
-            <loc>{{ url("/shortcut/$shortcut->itunes_id") }}</loc>
+            <loc>{{ $shortcut->perm }}</loc>
             <lastmod>{{ date('Y-m-d') }}</lastmod>
             <changefreq>hourly</changefreq>
             <priority>0.41</priority>
+        </url>
+    @endforeach
+
+    @foreach($posts as $post)
+        <url>
+            <loc>{{ $post->url }}</loc>
+            <lastmod>{{ date('Y-m-d') }}</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>1</priority>
         </url>
     @endforeach
 

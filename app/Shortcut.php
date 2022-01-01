@@ -14,6 +14,7 @@ use Laravel\Nova\Actions\Actionable;
 
 class Shortcut extends Model
 {
+
     use Actionable, HasAnalytics;
 
     public function newEloquentBuilder($query)
@@ -43,6 +44,11 @@ class Shortcut extends Model
         return "https://www.icloud.com/shortcuts/$this->itunes_id";
     }
 
+    public function getPermAttribute()
+    {
+        return url("/shortcut/perm/$this->id");
+    }
+
     public function toArray()
     {
         return [
@@ -57,40 +63,46 @@ class Shortcut extends Model
         ];
     }
 
-    public static function boot()
-    {
+    private static function fetchAppleData($model) {
+        try {
+            $itunes_id = $model->itunes_id;
+            if (Str::contains($itunes_id, 'icloud.com')) {
+                $itunes_id = last(explode("/", $itunes_id));
+            }
+            if ($model->itunes_id !== $itunes_id) {
+                request()->validate([
+                    'itunes_id' => 'unique:shortcuts'
+                ]);
+                $model->itunes_id = $itunes_id;
+            }
+            $client = new Client();
+            $res = $client->get("https://www.icloud.com/shortcuts/api/records/$itunes_id");
+            if ($res->getStatusCode() == 200) {
+                $data = json_decode($res->getBody()->getContents());
+                $iconURL = $data->fields->icon->value->downloadURL;
+                $model->name = $data->fields->name->value;
+                $client = new Client();
+                $res = $client->get($iconURL);
+                $iconBinary = $res->getBody()->getContents();
+                $path = "/icons/shortcuts/".hash("sha256", $model->name . now());
+                Storage::disk("spaces")->put($path, $iconBinary, ["visibility" => "public"]);
+                $model->icon = env("DO_SPACES_SUBDOMAIN") . "/". $path;
+            }
+        } catch (\Exception $e) {
+            throw $e;
+        }
+    }
+
+    public static function boot() {
         parent::boot();
 
-        static::creating(function ($model) {
-            try {
-                $itunes_id = $model->itunes_id;
-                if (Str::contains($itunes_id, 'icloud.com')) {
-                    $itunes_id = last(explode('/', $itunes_id));
-                }
-                $model->itunes_id = $itunes_id;
-                $client = new Client();
-                $res = $client->get("https://www.icloud.com/shortcuts/api/records/$itunes_id");
-                if ($res->getStatusCode() == 200) {
-                    $data = json_decode($res->getBody()->getContents());
-                    $iconURL = $data->fields->icon->value->downloadURL;
-                    $model->name = $data->fields->name->value;
-                    $client = new Client();
-                    $res = $client->get($iconURL);
-                    $iconBinary = $res->getBody()->getContents();
-                    $path = '/icons/shortcuts/'.hash('sha256', $model->name.now());
-                    Storage::disk('spaces')->put($path, $iconBinary, ['visibility' => 'public']);
-                    $model->icon = env('DO_SPACES_SUBDOMAIN').'/'.$path;
-                    $model->user_id = Auth::id();
-                }
-            } catch (\Exception $e) {
-                throw new Exception('Invalid ID for shortcut.');
-            }
+        static::creating(function($model) {
+            $model->user_id = Auth::id();
+            static::fetchAppleData($model);
         });
 
         static::updating(function ($model) {
-            if (Str::contains($model->itunes_id, 'icloud.com')) {
-                $model->itunes_id = last(explode('/', $model->itunes_id));
-            }
+            static::fetchAppleData($model);
         });
     }
 }
