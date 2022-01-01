@@ -75,7 +75,6 @@ class Shortcut extends Resource
             Text::make('Shortcut ID', 'itunes_id')
                 ->hideFromIndex()
                 ->help('https://www.icloud.com/shortcuts/&lt;Shortcut ID&gt;')
-                ->rules('unique:shortcuts')
                 ->required(),
 
             Text::make('Name')
