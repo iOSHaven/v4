@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-cd /code
-# composer install --no-interaction --prefer-dist --optimize-autoloader
+cd $GIT_WORK_TREE
+composer install --no-interaction --prefer-dist --optimize-autoloader
 # php artisan migrate --force
 php artisan make:sitemap
 # npm install
