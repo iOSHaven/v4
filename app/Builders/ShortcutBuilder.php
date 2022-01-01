@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 
 class ShortcutBuilder extends Builder
 {
-
     public function uid($uid)
     {
         return $this->where('itunes_id', $uid);
@@ -23,7 +22,6 @@ class ShortcutBuilder extends Builder
     {
         return $this->where('approval_status', 'approved');
     }
-
 
     public function ownedByUser()
     {

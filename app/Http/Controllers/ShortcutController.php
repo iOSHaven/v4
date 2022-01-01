@@ -46,7 +46,7 @@ class ShortcutController extends Controller
         return view('shortcuts')->with($data);
     }
 
-    public function page($tag=null)
+    public function page($tag = null)
     {
         $shortcuts = Shortcut::search($tag);
 
@@ -64,7 +64,7 @@ class ShortcutController extends Controller
         return view('shortcutDetail')->with(['shortcut' => $shortcut]);
     }
 
-    public function showPermDetail ($id)
+    public function showPermDetail($id)
     {
         $shortcut = Shortcut::findOrFail($id);
 
@@ -73,7 +73,8 @@ class ShortcutController extends Controller
         return view('shortcutDetail')->with(['shortcut' => $shortcut]);
     }
 
-      public function install($uid) {
+    public function install($uid)
+    {
         $shortcut = Shortcut::uid($uid)
           ->firstOrFail();
 
@@ -81,5 +82,5 @@ class ShortcutController extends Controller
         event(new \App\Events\InstallEvent($shortcut));
 
         return redirect($shortcut->url);
-      }
+    }
 }
