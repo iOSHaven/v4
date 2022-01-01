@@ -14,7 +14,7 @@ use App\Http\Controllers\RosterController;
 use App\Http\Controllers\ShortcutController;
 use App\Http\Controllers\StaticPageController;
 use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Route;
+use App\Ipa;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,10 +45,10 @@ Route::get('/test', function () {
     return view('test');
 });
 
-use App\Ipa;
 use App\Itms;
 use App\Shortcut;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 Route::view('/privacy', 'privacy-policy');
 

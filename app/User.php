@@ -11,7 +11,6 @@ use Laravel\Nova\Actions\Actionable;
 class User extends Authenticatable
 {
     use HasFactory;
-
     use Notifiable, Actionable, Billable;
 
     /**

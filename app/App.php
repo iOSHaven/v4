@@ -15,7 +15,6 @@ class App extends Model
 {
     use SoftDeletes, Actionable, HasAnalytics;
 
-
     protected $fillable = ['name',
         'uid',
         'icon',
