@@ -14,7 +14,6 @@ use Laravel\Nova\Actions\Actionable;
 
 class Shortcut extends Model
 {
-
     use Actionable, HasAnalytics;
 
     public function newEloquentBuilder($query)
@@ -63,15 +62,16 @@ class Shortcut extends Model
         ];
     }
 
-    private static function fetchAppleData($model) {
+    private static function fetchAppleData($model)
+    {
         try {
             $itunes_id = $model->itunes_id;
             if (Str::contains($itunes_id, 'icloud.com')) {
-                $itunes_id = last(explode("/", $itunes_id));
+                $itunes_id = last(explode('/', $itunes_id));
             }
             if ($model->itunes_id !== $itunes_id) {
                 request()->validate([
-                    'itunes_id' => 'unique:shortcuts'
+                    'itunes_id' => 'unique:shortcuts',
                 ]);
                 $model->itunes_id = $itunes_id;
             }
@@ -84,19 +84,20 @@ class Shortcut extends Model
                 $client = new Client();
                 $res = $client->get($iconURL);
                 $iconBinary = $res->getBody()->getContents();
-                $path = "/icons/shortcuts/".hash("sha256", $model->name . now());
-                Storage::disk("spaces")->put($path, $iconBinary, ["visibility" => "public"]);
-                $model->icon = env("DO_SPACES_SUBDOMAIN") . "/". $path;
+                $path = '/icons/shortcuts/'.hash('sha256', $model->name.now());
+                Storage::disk('spaces')->put($path, $iconBinary, ['visibility' => 'public']);
+                $model->icon = env('DO_SPACES_SUBDOMAIN').'/'.$path;
             }
         } catch (\Exception $e) {
             throw $e;
         }
     }
 
-    public static function boot() {
+    public static function boot()
+    {
         parent::boot();
 
-        static::creating(function($model) {
+        static::creating(function ($model) {
             $model->user_id = Auth::id();
             static::fetchAppleData($model);
         });

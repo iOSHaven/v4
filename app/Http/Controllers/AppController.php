@@ -120,7 +120,7 @@ class AppController extends Controller
         return response()->json($json);
     }
 
-    public function page($tag=null)
+    public function page($tag = null)
     {
         $apps = App::base_query()
       ->search($tag);
@@ -152,7 +152,7 @@ class AppController extends Controller
         return $this->display($apps, 'Jailbreaks');
     }
 
-    public function updates($tag=null)
+    public function updates($tag = null)
     {
         $request = request();
         $apps = App::base_query()
