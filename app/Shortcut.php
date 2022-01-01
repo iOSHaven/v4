@@ -60,6 +60,10 @@ class Shortcut extends Model
     public static function boot() {
         parent::boot();
 
+        static::creating(function($model) {
+            $model->user_id = Auth::id();
+        });
+
         static::saving(function ($model) {
             try {
                 $itunes_id = $model->itunes_id;
@@ -78,8 +82,7 @@ class Shortcut extends Model
                     $iconBinary = $res->getBody()->getContents();
                     $path = "/icons/shortcuts/".hash("sha256", $model->name . now());
                     Storage::disk("spaces")->put($path, $iconBinary, ["visibility" => "public"]);
-                    $model->icon = env("DO_SPACES_SUBDOMAIN") . "/". $path;  
-                    $model->user_id = Auth::id();              
+                    $model->icon = env("DO_SPACES_SUBDOMAIN") . "/". $path;
                 }
             } catch (\Exception $e) {
                 throw new Exception("Invalid ID for shortcut.");
