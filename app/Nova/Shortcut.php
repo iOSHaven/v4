@@ -75,7 +75,6 @@ class Shortcut extends Resource
             Text::make('Shortcut ID', 'itunes_id')
                 ->hideFromIndex()
                 ->help('https://www.icloud.com/shortcuts/&lt;Shortcut ID&gt;')
-                ->rules('unique:shortcuts')
                 ->required(),
 
             Text::make('Name')
@@ -87,6 +86,12 @@ class Shortcut extends Resource
 
             Url::make('Itunes Url', 'url')
                 ->label('Install')
+                ->alwaysClickable()
+                ->hideWhenCreating()
+                ->hideWhenUpdating(),
+
+            Url::make('Perm Link', 'perm')
+                ->label('Visit')
                 ->alwaysClickable()
                 ->hideWhenCreating()
                 ->hideWhenUpdating(),

@@ -31,6 +31,7 @@ Route::get('/test', function () {
 
 use App\Ipa;
 use App\Itms;
+use App\Post;
 use App\Shortcut;
 use Illuminate\Http\Request;
 
@@ -41,6 +42,7 @@ Route::get("/map.xml", function () {
     ->with([
       "apps" => \App\App::with(["itms", "ipas"])->get(),
       "shortcuts" => Shortcut::get(),
+      "posts" => Post::get()
       // "itms" => Itms::get(),
       // "ipas" => Ipa::get()
     ]);
@@ -131,6 +133,7 @@ Route::post('/app/update', 'AppController@update');
 Route::post('/app/remove', 'AppController@remove');
 Route::post('/app/token', 'AppController@token');
 
+Route::get('/shortcut/perm/{id}', 'ShortcutController@showPermDetail');
 Route::get('/shortcut/{itunes_id}', 'ShortcutController@showDetail');
 Route::get('/shortcut/install/{itunes_id}', 'ShortcutController@install');
 
