@@ -30,7 +30,7 @@
         "ext-bcmath": "^8.1.0",
         "anhskohbo/no-captcha": "^3.3",
         "david-griffiths/nova-dark-theme": "^1.0",
-        "doctrine/dbal": "^3.2",
+        "doctrine/dbal": "^2.9",
         "erusev/parsedown": "^1.7",
         "fedeisas/laravel-mail-css-inliner": "^4.0",
         "gregoriohc/laravel-nova-theme-responsive": "^0.8.0",
