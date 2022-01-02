@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Shortcut;
+use App\Models\Shortcut;
 use Illuminate\Http\Request;
 use Illuminate\Pagination\LengthAwarePaginator;
 

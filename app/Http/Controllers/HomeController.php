@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\App;
+use App\Models\App;
 use App\ReactJS;
-use App\User;
+use App\Models\User;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;

@@ -3,7 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\ViewEvent;
-use App\View;
+use App\Models\View;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 

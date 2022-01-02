@@ -2,15 +2,15 @@
 
 namespace App\Nova;
 
-use App\Download;
-use App\Install;
+use App\Models\Download;
+use App\Models\Install;
 use App\Nova\Actions;
 use App\Nova\Lenses;
 use App\Nova\Metrics;
 use App\Summary\SummaryDownload;
 use App\Summary\SummaryInstall;
 use App\Summary\SummaryView;
-use App\View;
+use App\Models\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -36,7 +36,7 @@ class App extends Resource
      *
      * @var string
      */
-    public static $model = \App\App::class;
+    public static $model = \App\Models\App::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -125,22 +125,22 @@ class App extends Resource
 
         if (config('app-analytics.views')) {
             $views = [
-                (new Metrics\PerDay)->model(SummaryView::class)->trigger(\App\App::class)->setName('Total Views'),
-                (new Metrics\PerDayPerResource)->model(SummaryView::class)->trigger(\App\App::class)->setName('Views')->onlyOnDetail(),
+                (new Metrics\PerDay)->model(SummaryView::class)->trigger(\App\Models\App::class)->setName('Total Views'),
+                (new Metrics\PerDayPerResource)->model(SummaryView::class)->trigger(\App\Models\App::class)->setName('Views')->onlyOnDetail(),
             ];
         }
 
         if (config('app-analytics.downloads')) {
             $downloads = [
-                (new Metrics\PerDay)->model(SummaryDownload::class)->trigger(\App\App::class)->setName('Total Downloads'),
-                (new Metrics\PerDayPerResource)->model(SummaryDownload::class)->trigger(\App\App::class)->setName('Downloads')->onlyOnDetail(),
+                (new Metrics\PerDay)->model(SummaryDownload::class)->trigger(\App\Models\App::class)->setName('Total Downloads'),
+                (new Metrics\PerDayPerResource)->model(SummaryDownload::class)->trigger(\App\Models\App::class)->setName('Downloads')->onlyOnDetail(),
             ];
         }
 
         if (config('app-analytics.installs')) {
             $installs = [
-                (new Metrics\PerDay)->model(SummaryInstall::class)->trigger(\App\App::class)->setName('Total Installs'),
-                (new Metrics\PerDayPerResource)->model(SummaryInstall::class)->trigger(\App\App::class)->setName('Installs')->onlyOnDetail(),
+                (new Metrics\PerDay)->model(SummaryInstall::class)->trigger(\App\Models\App::class)->setName('Total Installs'),
+                (new Metrics\PerDayPerResource)->model(SummaryInstall::class)->trigger(\App\Models\App::class)->setName('Installs')->onlyOnDetail(),
             ];
         }
 

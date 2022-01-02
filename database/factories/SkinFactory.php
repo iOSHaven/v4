@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Skin;
+use App\Models\Skin;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class SkinFactory extends Factory

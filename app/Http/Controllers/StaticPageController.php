@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\App;
-use App\Post;
-use App\Provider;
-use App\Skin;
+use App\Models\App;
+use App\Models\Post;
+use App\Models\Provider;
+use App\Models\Skin;
 use Auth;
 use Carbon\Carbon;
 use DOMDocument;

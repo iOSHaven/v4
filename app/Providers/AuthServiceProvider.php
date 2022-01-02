@@ -2,9 +2,9 @@
 
 namespace App\Providers;
 
-use App\App;
-use App\Ipa;
-use App\Itms;
+use App\Models\App;
+use App\Models\Ipa;
+use App\Models\Itms;
 use App\Policies\AppPolicy;
 use App\Policies\IpaPolicy;
 use App\Policies\ItmsPolicy;
@@ -12,10 +12,10 @@ use App\Policies\PostPolicy;
 use App\Policies\ProviderPolicy;
 use App\Policies\ShortcutPolicy;
 use App\Policies\UserPolicy;
-use App\Post;
-use App\Provider;
-use App\Shortcut;
-use App\User;
+use App\Models\Post;
+use App\Models\Provider;
+use App\Models\Shortcut;
+use App\Models\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 

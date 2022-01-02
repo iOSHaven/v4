@@ -2,11 +2,11 @@
 
 namespace App\Nova;
 
-use App\Install;
+use App\Models\Install;
 use App\Nova\Actions;
 use App\Summary\SummaryInstall;
 use App\Summary\SummaryView;
-use App\View;
+use App\Models\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Inspheric\Fields\Url;
@@ -30,7 +30,7 @@ class Shortcut extends Resource
      *
      * @var string
      */
-    public static $model = \App\Shortcut::class;
+    public static $model = \App\Models\Shortcut::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
@@ -143,12 +143,12 @@ class Shortcut extends Resource
             $views = [
                 (new Metrics\PerDay)
                     ->model(SummaryView::class)
-                    ->trigger(\App\Shortcut::class)
+                    ->trigger(\App\Models\Shortcut::class)
                     ->setName('Total Views'),
 
                 (new Metrics\PerDayPerResource)
                     ->model(SummaryView::class)
-                    ->trigger(\App\Shortcut::class)
+                    ->trigger(\App\Models\Shortcut::class)
                     ->setName('Views')
                     ->onlyOnDetail(),
             ];
@@ -158,12 +158,12 @@ class Shortcut extends Resource
             $installs = [
                 (new Metrics\PerDay)
                     ->model(SummaryInstall::class)
-                    ->trigger(\App\Shortcut::class)
+                    ->trigger(\App\Models\Shortcut::class)
                     ->setName('Total Installs'),
 
                 (new Metrics\PerDayPerResource)
                     ->model(SummaryInstall::class)
-                    ->trigger(\App\Shortcut::class)
+                    ->trigger(\App\Models\Shortcut::class)
                     ->setName('Installs')
                     ->onlyOnDetail(),
             ];

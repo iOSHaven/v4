@@ -1,10 +1,10 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
-use App\App;
-use App\Image;
-use App\Provider;
+use App\Models\App;
+use App\Models\Image;
+use App\Models\Provider;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Symfony\Component\Process\Exception\ProcessFailedException;

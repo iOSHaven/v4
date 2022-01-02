@@ -2,7 +2,7 @@
 
 namespace App\Listeners;
 
-use App\Download;
+use App\Models\Download;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 

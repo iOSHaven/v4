@@ -1,8 +1,8 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
-use App\User;
+use App\Models\User;
 use Barryvdh\Debugbar\Facade as Debug;
 use GuzzleHttp\Client;
 use Illuminate\Database\Eloquent\Model;

@@ -2,7 +2,7 @@
 
 namespace App\Listeners;
 
-use App\Install;
+use App\Models\Install;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 

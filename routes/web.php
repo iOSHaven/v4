@@ -14,7 +14,7 @@ use App\Http\Controllers\RosterController;
 use App\Http\Controllers\ShortcutController;
 use App\Http\Controllers\StaticPageController;
 use App\Http\Controllers\UserController;
-use App\Ipa;
+use App\Models\Ipa;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,8 +45,8 @@ Route::get('/test', function () {
     return view('test');
 });
 
-use App\Itms;
-use App\Shortcut;
+use App\Models\Itms;
+use App\Models\Shortcut;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -55,7 +55,7 @@ Route::view('/privacy', 'privacy-policy');
 Route::get('/map.xml', function () {
     $contents = View::make('sitemap')
     ->with([
-        'apps' => \App\App::with(['itms', 'ipas'])->get(),
+        'apps' => \App\Models\App::with(['itms', 'ipas'])->get(),
         'shortcuts' => Shortcut::get(),
         'posts' => Post::get(),
         // "itms" => Itms::get(),

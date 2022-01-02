@@ -2,9 +2,9 @@
 
 namespace App\Console\Commands;
 
-use App\Download;
-use App\Install;
-use App\View;
+use App\Models\Download;
+use App\Models\Install;
+use App\Models\View;
 use Carbon\Carbon;
 use DB;
 use Illuminate\Console\Command;

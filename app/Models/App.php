@@ -1,9 +1,9 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use App\Builders\AppBuilder;
-use App\Mirror;
+use App\Models\Mirror;
 use App\Traits\HasAnalytics;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;

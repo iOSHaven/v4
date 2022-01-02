@@ -2,9 +2,9 @@
 
 namespace App\Console\Commands;
 
-use App\App;
-use App\Mirror;
-use App\Provider;
+use App\Models\App;
+use App\Models\Mirror;
+use App\Models\Provider;
 use Doctrine\DBAL\ConnectionException;
 use Exception;
 use GuzzleHttp\Client;

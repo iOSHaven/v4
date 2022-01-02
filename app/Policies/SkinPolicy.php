@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use App\Skin;
-use App\User;
+use App\Models\Skin;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class SkinPolicy
@@ -13,7 +13,7 @@ class SkinPolicy
     /**
      * Determine whether the user can view any skins.
      *
-     * @param  \App\User  $user
+     * @param  \App\Models\User  $user
      * @return mixed
      */
     public function viewAny(User $user)
@@ -24,8 +24,8 @@ class SkinPolicy
     /**
      * Determine whether the user can view the skin.
      *
-     * @param  \App\User  $user
-     * @param  \App\Skin  $skin
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\Skin  $skin
      * @return mixed
      */
     public function view(User $user, Skin $skin)
@@ -36,7 +36,7 @@ class SkinPolicy
     /**
      * Determine whether the user can create skins.
      *
-     * @param  \App\User  $user
+     * @param  \App\Models\User  $user
      * @return mixed
      */
     public function create(User $user)
@@ -47,8 +47,8 @@ class SkinPolicy
     /**
      * Determine whether the user can update the skin.
      *
-     * @param  \App\User  $user
-     * @param  \App\Skin  $skin
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\Skin  $skin
      * @return mixed
      */
     public function update(User $user, Skin $skin)
@@ -59,8 +59,8 @@ class SkinPolicy
     /**
      * Determine whether the user can delete the skin.
      *
-     * @param  \App\User  $user
-     * @param  \App\Skin  $skin
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\Skin  $skin
      * @return mixed
      */
     public function delete(User $user, Skin $skin)
@@ -71,8 +71,8 @@ class SkinPolicy
     /**
      * Determine whether the user can restore the skin.
      *
-     * @param  \App\User  $user
-     * @param  \App\Skin  $skin
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\Skin  $skin
      * @return mixed
      */
     public function restore(User $user, Skin $skin)
@@ -83,8 +83,8 @@ class SkinPolicy
     /**
      * Determine whether the user can permanently delete the skin.
      *
-     * @param  \App\User  $user
-     * @param  \App\Skin  $skin
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\Skin  $skin
      * @return mixed
      */
     public function forceDelete(User $user, Skin $skin)

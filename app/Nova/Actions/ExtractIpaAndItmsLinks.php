@@ -2,9 +2,9 @@
 
 namespace App\Nova\Actions;
 
-use App\Ipa;
-use App\Itms;
-use App\Provider;
+use App\Models\Ipa;
+use App\Models\Itms;
+use App\Models\Provider;
 use Exception;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;

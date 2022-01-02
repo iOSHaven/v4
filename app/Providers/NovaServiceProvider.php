@@ -2,14 +2,14 @@
 
 namespace App\Providers;
 
-use App\App;
-use App\Ipa;
-use App\Itms;
-use App\Post;
-use App\Provider;
-use App\Shortcut;
-use App\Skin;
-use App\User;
+use App\Models\App;
+use App\Models\Ipa;
+use App\Models\Itms;
+use App\Models\Post;
+use App\Models\Provider;
+use App\Models\Shortcut;
+use App\Models\Skin;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use Ioshaven\Ads\Ads;
