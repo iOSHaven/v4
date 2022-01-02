@@ -146,6 +146,7 @@ Route::post('/app/update', [AppController::class, 'update']);
 Route::post('/app/remove', [AppController::class, 'remove']);
 Route::post('/app/token', [AppController::class, 'token']);
 
+Route::get('/shortcut/perm/{id}', [ShortcutController::class, 'showPermDetail']);
 Route::get('/shortcut/{itunes_id}', [ShortcutController::class, 'showDetail']);
 Route::get('/shortcut/install/{itunes_id}', [ShortcutController::class, 'install']);
 
