@@ -78,15 +78,17 @@ class Shortcut extends Model
             $client = new Client();
             $res = $client->get("https://www.icloud.com/shortcuts/api/records/$itunes_id");
             if ($res->getStatusCode() == 200) {
-                $data = json_decode($res->getBody()->getContents());
-                $iconURL = $data->fields->icon->value->downloadURL;
-                $model->name = $data->fields->name->value;
-                $client = new Client();
-                $res = $client->get($iconURL);
-                $iconBinary = $res->getBody()->getContents();
-                $path = '/icons/shortcuts/'.hash('sha256', $model->name.now());
-                Storage::disk('spaces')->put($path, $iconBinary, ['visibility' => 'public']);
-                $model->icon = env('DO_SPACES_SUBDOMAIN').'/'.$path;
+                if (empty($model->icon)) {
+                    $data = json_decode($res->getBody()->getContents());
+                    $iconURL = $data->fields->icon->value->downloadURL;
+                    $model->name = $data->fields->name->value;
+                    $client = new Client();
+                    $res = $client->get($iconURL);
+                    $iconBinary = $res->getBody()->getContents();
+                    $path = '/icons/shortcuts/'.hash('sha256', $model->name.now());
+                    Storage::disk('spaces')->put($path, $iconBinary, ['visibility' => 'public']);
+                    $model->icon = env('DO_SPACES_SUBDOMAIN').'/'.$path;
+                }
             }
         } catch (\Exception $e) {
             throw $e;
@@ -100,10 +102,22 @@ class Shortcut extends Model
         static::creating(function ($model) {
             $model->user_id = Auth::id();
             static::fetchAppleData($model);
+            if (request()->has('icon')) {
+                $model->icon = request()->icon;
+            }
         });
 
         static::updating(function ($model) {
             static::fetchAppleData($model);
+            if (request()->has('icon')) {
+                $model->icon = request()->icon;
+            }
         });
+
+//        static::saving(function ($model) {
+//            if(request()->has('icon')) {
+//                $model->icon = request()->icon;
+//            }
+//        });
     }
 }
