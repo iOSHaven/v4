@@ -100,10 +100,12 @@
           <i class="fal fa-chevron-right"></i>
           </a> --}}
           <a href="/themes" target="_blank" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
-          <span>Themes
+          <span>
+            <i class="fas fa-paint-brush mr-1"></i>
+            Themes
             <strong class="ml-3 text-blue-500">NEW!</strong>
           </span>
-          <i class="fal fa-paint-brush"></i>
+          <i class="fas fa-chevron-right"></i>
           </a>
           <a href="/shortcuts" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
             Shortcuts
@@ -117,8 +119,16 @@
             Betas
             <i class="fal fa-chevron-right"></i>
           </a>
-          <a href="/cydia" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
-            Cydia Impactor
+{{--          <a href="/cydia" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">--}}
+{{--            Cydia Impactor--}}
+{{--            <i class="fal fa-chevron-right"></i>--}}
+{{--          </a>--}}
+          <a href="https://ioshaven.com/shortcut/perm/135" target="_blank" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
+          <span>
+            <i class="fas fa-box-heart mr-1"></i>
+            Tweak Pack
+            <strong class="ml-3 text-blue-500">NEW!</strong>
+          </span>
             <i class="fal fa-chevron-right"></i>
           </a>
           <a href="/aboutUs" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
