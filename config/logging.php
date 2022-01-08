@@ -1,4 +1,4 @@
-<?php
+i<?php
 
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
@@ -50,7 +50,7 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['single', 'discord'],
+            'channels' => ['single'],
             'ignore_exceptions' => false,
         ],
 
