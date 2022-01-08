@@ -25,9 +25,9 @@
           </div>
         </div>  -->
 
-    @if($agent->isMobile())
-    @component('ads.google-mobile-optimized')@endcomponent
-    @endif
+{{--    @if($agent->isMobile())--}}
+{{--    @component('ads.google-mobile-optimized')@endcomponent--}}
+{{--    @endif--}}
 
     @foreach($apps as $model)
     @if(class_basename($model) == 'App')
@@ -39,20 +39,20 @@
 
 
 
-    @if($apps->currentPage() <= 3) @if($agent->isMobile())
-      @if ($loop->iteration == 4)
-      @component('ads.google-in-feed') @endcomponent
-      @endif
-      @elseif($loop->iteration == 3)
-      @component('ads.google-in-feed') @endcomponent
-      @endif
-      @endif
+{{--    @if($apps->currentPage() <= 3) @if($agent->isMobile())--}}
+{{--      @if ($loop->iteration == 4)--}}
+{{--      @component('ads.google-in-feed') @endcomponent--}}
+{{--      @endif--}}
+{{--      @elseif($loop->iteration == 3)--}}
+{{--      @component('ads.google-in-feed') @endcomponent--}}
+{{--      @endif--}}
+{{--      @endif--}}
 
-      @endforeach
+{{--      @endforeach--}}
   </div>
 </div>
 
-@component('ads.google-footer')@endcomponent
+{{--@component('ads.google-footer')@endcomponent--}}
 
 @if($apps->hasMorePages())
 <div id="loadmoreapps" class="text-center mt-5 mb-4" style="width: 100%;">
