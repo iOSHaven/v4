@@ -30,25 +30,25 @@
 {{--    @endif--}}
 
     @foreach($apps as $model)
-    @if(class_basename($model) == 'App')
-    @component('components.applayout', ["app" => $model])@endcomponent
-    @else
-    @component('components.shortcut', ["shortcut" => $model])@endcomponent
-    @endif
+      @if(class_basename($model) == 'App')
+      @component('components.applayout', ["app" => $model])@endcomponent
+      @else
+      @component('components.shortcut', ["shortcut" => $model])@endcomponent
+      @endif
 
 
 
 
-{{--    @if($apps->currentPage() <= 3) @if($agent->isMobile())--}}
-{{--      @if ($loop->iteration == 4)--}}
-{{--      @component('ads.google-in-feed') @endcomponent--}}
+{{--      @if($apps->currentPage() <= 3) @if($agent->isMobile())--}}
+{{--        @if ($loop->iteration == 4)--}}
+{{--          @component('ads.google-in-feed') @endcomponent--}}
+{{--        @endif--}}
+{{--        @elseif($loop->iteration == 3)--}}
+{{--          @component('ads.google-in-feed') @endcomponent--}}
+{{--        @endif--}}
 {{--      @endif--}}
-{{--      @elseif($loop->iteration == 3)--}}
-{{--      @component('ads.google-in-feed') @endcomponent--}}
-{{--      @endif--}}
-{{--      @endif--}}
 
-{{--      @endforeach--}}
+      @endforeach
   </div>
 </div>
 
