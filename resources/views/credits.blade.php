@@ -33,7 +33,7 @@
     <li class="flex items-center justify-center p-3">
       <div class="w-2/3">
         <div class="font-bold">Smile</div>
-        <div class="text-sm">Shortcut Innovator, Japanese Translator, & Student Helper</div>
+        <div class="text-sm">Shortcut Innovator, Japanese Translator, & Student Helper/UI</div>
       </div>
       <div class="w-1/3 text-right">
        <a href="https://twitter.com/Smiledayo_" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
