@@ -11,29 +11,38 @@
     <h3>Developers</h3>
   </div>
 
-  <ul>
-    <li class="flex items-center justify-center my-1">
-      <div class="w-2/3">Zeb - Networking & Software Engineer</div>
+  <ul class="divide-y border border-neutral-200 dark:border-neutral-800 divide-inherit rounded-sm">
+    <li class="flex items-center justify-center p-3">
+      <div class="w-2/3">
+        <div class="font-bold">Zeb</div>
+        <div class="text-sm">Risk Taker, Networking/Reach, & Software Engineer</div>
+      </div>
       <div class="w-1/3 text-right">
         <a href="https://twitter.com/wizardzeb" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
       </div>
     </li>
-    <li class="flex items-center justify-center my-1">
-      <div class="w-2/3">Zack - Business & Social Media Executive
+    <li class="flex items-center justify-center p-3">
+      <div class="w-2/3">
+        <div class="font-bold">Zack</div>
+        <div class="text-sm">Anchor/Presenter, Brand Awareness, & Professional Support</div>
       </div>
       <div class="w-1/3 text-right">
        <a href="https://twitter.com/_ZackBz" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
       </div>
     </li>
-    <li class="flex items-center justify-center my-1">
-      <div class="w-2/3">Smile - Shortcut Enthusiast, Japanese Translator, and Student Helper
+    <li class="flex items-center justify-center p-3">
+      <div class="w-2/3">
+        <div class="font-bold">Smile</div>
+        <div class="text-sm">Shortcut Innovator, Japanese Translator, & Student Helper</div>
       </div>
       <div class="w-1/3 text-right">
        <a href="https://twitter.com/Smiledayo_" target="_blank"><i class="fab fa-twitter fa-lg"></i></a>
       </div>
     </li>
-    <li class="flex items-center justify-center my-1">
-      <div class="w-2/3">Nick - Game Enthusiast
+    <li class="flex items-center justify-center p-3">
+      <div class="w-2/3">
+        <div class="font-bold">Nerk</div>
+        <div class="text-sm">Game Guru & Free Spirit</div>
       </div>
       <div class="w-1/3 text-right">
        <a href="https://discord.gg/kK4TJBf" target="_blank"><i class="fab fa-discord fa-lg"></i></a>
@@ -82,10 +91,10 @@
     <h3>App Providers</h3>
   </div>
 
-  <ul>
+  <ul class="divide-y border border-neutral-200 dark:border-neutral-800 divide-inherit rounded-sm">
     @foreach(\App\Provider::get() as $provider)
 {{--      @dump($provider)--}}
-    <li class="flex items-center justify-center my-1">
+    <li class="flex items-center justify-center p-3">
       <div class="w-2/3 flex items-center">
           <x-tinyProviderIcon :src="$provider->avatar" class="mr-2"></x-tinyProviderIcon>
           <div>{{ $provider->name }}</div>
