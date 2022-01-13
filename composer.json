@@ -33,6 +33,7 @@
         "doctrine/dbal": "^2.9",
         "erusev/parsedown": "^1.7",
         "fedeisas/laravel-mail-css-inliner": "^4.0",
+        "fruitcake/laravel-cors": "^2.0",
         "gregoriohc/laravel-nova-theme-responsive": "^0.8.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "inspheric/nova-url-field": "^1.4",
@@ -45,8 +46,10 @@
         "laravel/framework": "^8.77",
         "laravel/nova": "^3.22",
         "laravel/tinker": "^2.5",
+        "laravel/ui": "^3.4",
         "league/flysystem-aws-s3-v3": "^1.0",
         "marvinlabs/laravel-discord-logger": "^1.1",
+        "mcamara/laravel-localization": "^1.6",
         "moontoast/math": "^1.2",
         "paypal/rest-api-sdk-php": "^1.14",
         "pda/pheanstalk": "~4.0",
@@ -54,9 +57,7 @@
         "rap2hpoutre/laravel-log-viewer": "^2.0",
         "saumini/count": "^1.0",
         "spatie/laravel-sitemap": "^5.8",
-        "symfony/translation-contracts": "^2.5.0",
-        "laravel/ui": "^3.4",
-        "fruitcake/laravel-cors": "^2.0"
+        "symfony/translation-contracts": "^2.5.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",

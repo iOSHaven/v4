@@ -33,6 +33,21 @@ class StaticPageController extends Controller
     // return response()->file(resource_path("views/components/$view"), ["Content-Type", "text/html"]);
     }
 
+    public function sitemap () {
+        $contents = View::make('sitemap')
+            ->with([
+                'apps' => \App\App::with(['itms', 'ipas'])->get(),
+                'shortcuts' => Shortcut::get(),
+                'posts' => Post::get(),
+                // "itms" => Itms::get(),
+                // "ipas" => Ipa::get()
+            ]);
+
+        return response($contents)->withHeaders([
+            'Content-Type' => 'text/xml',
+        ]);
+    }
+
     public function plist($name)
     {
         verifyAppSecurity('plist');

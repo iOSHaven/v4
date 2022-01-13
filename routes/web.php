@@ -14,7 +14,8 @@ use App\Http\Controllers\RosterController;
 use App\Http\Controllers\ShortcutController;
 use App\Http\Controllers\StaticPageController;
 use App\Http\Controllers\UserController;
-use App\Ipa;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,14 +27,77 @@ use App\Ipa;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
-$themesPage = [StaticPageController::class, 'getThemesPage'];
-Route::domain('themes.'.env('ROOT_DOMAIN'))->group(function () use ($themesPage) {
-    Route::get('/', $themesPage);
+Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
+
+    /**
+     * APPS - anything related to app routes
+     */
+    Route::prefix('apps')->middleware('tab:Apps', 'back:Apps')->group(function () {
+        Route::redirect('/signednow', '/apps?type=signed&working=true', 301);
+        Route::get('/{tag?}', [AppController::class, 'page'])->name('apps');
+    });
+    Route::prefix('app')->middleware('tab:Apps', 'back:Apps')->group(function () {
+        Route::post('/create', [AppController::class, 'create']);
+        Route::get('/{uid}', [AppController::class, 'showAppDetailPage'])->name('detail');
+        Route::get('/edit/{uid}', [AppController::class, 'edit']);
+        Route::post('/update', [AppController::class, 'update']);
+        Route::post('/remove', [AppController::class, 'remove']);
+        Route::post('/token', [AppController::class, 'token']);
+    });
+
+    /**
+     * MAIN - main navigational routes. The popular pages.
+     */
+    Route::get('/games', [AppController::class, 'games'])->middleware('tab:Games', 'back:Games')->name('games');
+    Route::get('/jailbreaks', [AppController::class, 'jailbreaks'])->middleware('tab:Jailbreaks', 'back:Jailbreaks')->name('jailbreaks');
+    Route::get('/updates{tag?}', [AppController::class, 'updates'])->middleware('tab:Updates', 'back:Updates')->name('updates');
+    $themesPage = [StaticPageController::class, 'getThemesPage'];
+    Route::domain('themes.'.env('ROOT_DOMAIN'))->group(function () use ($themesPage) {
+        Route::get('/', $themesPage);
+    });
+    Route::get('/skins', $themesPage);
+    Route::get('/themes', $themesPage);
+    Route::get('/itms/{id}', [AppController::class, 'itms']);
+    Route::get('/shortcut/perm/{id}', [ShortcutController::class, 'showPermDetail']);
+    Route::get('/shortcut/{itunes_id}', [ShortcutController::class, 'showDetail']);
+    Route::get('/shortcut/install/{itunes_id}', [ShortcutController::class, 'install']);
+    Route::get('/install/{itms}', [AppController::class, 'install'])->name('install');
+    Route::get('/download/{ipa}', [AppController::class, 'download'])->name('download');
+    Route::get('/install/uid/{app}', [AppController::class, 'installUid']);
+    Route::get('/download/uid/{app}', [AppController::class, 'downloadUid']);
+
+    /**
+     * SEO - pages used for SEO and legal stuff.
+     */
+    Route::view('/privacy', 'privacy-policy');
+    Route::get('/map.xml', [StaticPageController::class, 'sitemap']);
+
+    /**
+     * SPECIAL - routes related to special events
+     */
+    Route::view('/giveaway', 'giveaway');
+    Route::get('/generate/manifest', function (Request $request) {
+        return response()->json($request->all());
+    })->name('manifest.generate');
+    Route::get('/generate/protocol', function (Request $request) {
+        return Redirect::away($request->get('protocol').'://');
+    })->name('protocol.generate');
+    Route::get('/shop', function () {
+        return redirect('https://memes33.com/collections/ios-haven');
+    });
+    Route::get('/merch', function () {
+        return view('merch');
+    });
+    Route::get('/nordvpn', function () {
+        return response()->json('Verifying NordVPN ownership 02/15/2020. Official email ioshavenco@gmail.com');
+    });
 });
-Route::get('/skins', $themesPage);
-Route::get('/themes', $themesPage);
-Route::view('/giveaway', 'giveaway');
+
+
+
+
 
 // Route::get('/themetest', [StaticPageController::class, 'getThemesPage']);
 
@@ -45,47 +109,13 @@ Route::get('/test', function () {
     return view('test');
 });
 
-use App\Itms;
-use App\Shortcut;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route;
 
-Route::view('/privacy', 'privacy-policy');
 
-Route::get('/map.xml', function () {
-    $contents = View::make('sitemap')
-    ->with([
-        'apps' => \App\App::with(['itms', 'ipas'])->get(),
-        'shortcuts' => Shortcut::get(),
-        'posts' => Post::get(),
-        // "itms" => Itms::get(),
-        // "ipas" => Ipa::get()
-    ]);
 
-    return response($contents)->withHeaders([
-        'Content-Type' => 'text/xml',
-    ]);
-});
 
-Route::get('/generate/manifest', function (Request $request) {
-    return response()->json($request->all());
-})->name('manifest.generate');
 
-Route::get('/generate/protocol', function (Request $request) {
-    return Redirect::away($request->get('protocol').'://');
-})->name('protocol.generate');
 
-Route::get('/shop', function () {
-    return redirect('https://memes33.com/collections/ios-haven');
-});
 
-Route::get('/merch', function () {
-    return view('merch');
-});
-
-Route::get('/nordvpn', function () {
-    return response()->json('Verifying NordVPN ownership 02/15/2020. Official email ioshavenco@gmail.com');
-});
 
 Route::get('/avatar/{value}/{size?}', [AvatarController::class, 'api']);
 
@@ -97,7 +127,7 @@ Route::get('/tutorials/{view}', [StaticPageController::class, 'tutorial']);
 
 Route::get('/', [StaticPageController::class, 'index'])->middleware('tab:Home', 'back:Home');
 
-Auth::routes();
+
 
 // Route::get('/profile', [HomeController::class, 'index'])->name('profile');
 // Route::post('/profile/color', [HomeController::class, 'color']);
@@ -125,35 +155,10 @@ Route::prefix('user')->group(function () {
 
 Route::prefix('image')->group(function () {
     Route::get('/', [ImageController::class, 'index']);
-    // Route::get('all', [RosterController::class, 'all']);
-  // Route::get('creators', [RosterController::class, 'creators']);
-  // Route::get('streamers', [RosterController::class, 'streamers']);
-  // Route::get('team/{team}', [RosterController::class, 'teams']);
 });
 
-// Route::post('putlinks', function (\Request $r) {
-//   return response()->json(["hello"]);
-// });
 
-Route::get('/itms/{id}', [AppController::class, 'itms']);
 
-Route::post('/app/create', [AppController::class, 'create']);
-
-// app security starts here
-Route::get('/app/{uid}', [AppController::class, 'showAppDetailPage'])->name('detail');
-Route::get('/app/edit/{uid}', [AppController::class, 'edit']);
-Route::post('/app/update', [AppController::class, 'update']);
-Route::post('/app/remove', [AppController::class, 'remove']);
-Route::post('/app/token', [AppController::class, 'token']);
-
-Route::get('/shortcut/perm/{id}', [ShortcutController::class, 'showPermDetail']);
-Route::get('/shortcut/{itunes_id}', [ShortcutController::class, 'showDetail']);
-Route::get('/shortcut/install/{itunes_id}', [ShortcutController::class, 'install']);
-
-Route::get('/install/{itms}', [AppController::class, 'install'])->name('install');
-Route::get('/download/{ipa}', [AppController::class, 'download'])->name('download');
-Route::get('/install/uid/{app}', [AppController::class, 'installUid']);
-Route::get('/download/uid/{app}', [AppController::class, 'downloadUid']);
 
 Route::get('/tutubox/cert', [StaticPageController::class, 'tutubox']);
 
@@ -164,10 +169,8 @@ Route::prefix('shortcuts')->middleware('tab:Shortcuts', 'back:Shortcuts')->group
 Route::get('/altstore/burrito/apps.json', [AppController::class, 'burrito']);
 Route::get('/altstore/apps.json', [AppController::class, 'showAltstoreJson']);
 
-Route::prefix('apps')->middleware('tab:Apps', 'back:Apps')->group(function () {
-    Route::redirect('/signednow', '/apps?type=signed&working=true', 301);
-    Route::get('/{tag?}', [AppController::class, 'page'])->name('apps');
-});
+
+
 
 Route::prefix('providers')->middleware('tab:Providers', 'back:Providers')->group(function () {
     Route::get('/edit', [ProviderController::class, 'edit']);
@@ -180,9 +183,7 @@ Route::prefix('cashier')->group(function () {
     Route::get('/setup', [CashierController::class, 'setup']);
 });
 
-Route::get('/games', [AppController::class, 'games'])->middleware('tab:Games', 'back:Games')->name('games');
-Route::get('/jailbreaks', [AppController::class, 'jailbreaks'])->middleware('tab:Jailbreaks', 'back:Jailbreaks')->name('jailbreaks');
-Route::get('/updates{tag?}', [AppController::class, 'updates'])->middleware('tab:Updates', 'back:Updates')->name('updates');
+
 
 Route::get('/plist', [HomeController::class, 'getPlist']);
 Route::post('/plist', [HomeController::class, 'postPlist']);
@@ -220,10 +221,5 @@ Route::get('/skin/affiliate/{uuid}', [PaymentController::class, 'affiliateSkin']
 
 Route::post('/add/iosgods/plist', [StaticPageController::class, 'addIGPlist']);
 
-Auth::routes();
-
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-
-Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');

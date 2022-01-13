@@ -231,11 +231,15 @@ label.toggle-dark:after {
     @apply bg-white border-t border-l border-r border-black rounded-t border-gray-300;
 }
 
-
-img.listing-icon{
-    height:77px !important;
+.rounded-icon {
     border-radius: 1.3rem !important;
+}
+
+.listing-icon{
+    height:77px !important;
+    border-radius: 1.1rem !important;
     width: 77px !important;
+    overflow: hidden;
 }
 
 .markdown a, .link {
