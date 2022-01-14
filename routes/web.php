@@ -93,6 +93,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
     Route::get('/nordvpn', function () {
         return response()->json('Verifying NordVPN ownership 02/15/2020. Official email ioshavenco@gmail.com');
     });
+    Route::get('/news', function () {
+        Log::emergency(json_encode($_SERVER));
+        return redirect("blog.ioshaven.com");
+    });
 });
 
 
