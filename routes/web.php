@@ -95,7 +95,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
     });
     Route::get('/news', function () {
         Log::emergency(json_encode($_SERVER));
-        return redirect("blog.ioshaven.com");
+        return redirect("https://blog.ioshaven.com");
     });
 });
 
