@@ -82,9 +82,9 @@
             @unless($post->ad_free)
                 @foreach($chunks as $chunk)
                     {!! \Illuminate\Mail\Markdown::parse($chunk) !!}
-                    @if($loop->iteration % (count($chunks) / 3) == 0)
-                        @include('ads.google-blog')
-                    @endif
+{{--                    @if($loop->iteration % (count($chunks) / 3) == 0)--}}
+{{--                        @include('ads.google-blog')--}}
+{{--                    @endif--}}
                 @endforeach
             @else
                 {!! \Illuminate\Mail\Markdown::parse($post->markdown) !!}

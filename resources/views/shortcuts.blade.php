@@ -25,7 +25,7 @@
     @component('components.shortcut', ["shortcut" => $shortcut])@endcomponent
     @if($loop->iteration == 3)
 
-    @component('ads.google-in-feed')@endcomponent
+{{--    @component('ads.google-in-feed')@endcomponent--}}
 
     @endif
     @endforeach
@@ -33,7 +33,7 @@
 </div>
 
 
-@component('ads.google-footer')@endcomponent
+{{--@component('ads.google-footer')@endcomponent--}}
 
 @if($shortcuts->hasMorePages())
 <div id="loadmoreshortcuts" class="text-center mt-5 mb-4" style="width: 100%;">

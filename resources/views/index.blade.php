@@ -192,7 +192,7 @@
 </section>
 
 
-    @component('ads.google-home-page')@endcomponent
+{{--    @component('ads.google-home-page')@endcomponent--}}
 
 <section class="text-center mt-4 mb-8 select-none block">
 {{--  <a href="/blog" class="font-bold text-3xl mt-2 hover:underline hover:decoration-2 hover:decoration-red-500">iPA Insider</a>--}}

@@ -3,12 +3,13 @@
     
   </div>
   <!-- v4-footer -->
-  <ins class="adsbygoogle"
-      style="display:block"
-      data-ad-client="ca-pub-4649450952406116"
-      data-ad-slot="6495367539"
-      data-ad-format="auto"
-      data-full-width-responsive="true"></ins>
+{{--  <ins class="adsbygoogle"--}}
+{{--      style="display:block"--}}
+{{--      data-ad-client="ca-pub-4649450952406116"--}}
+{{--      data-ad-slot="6495367539"--}}
+{{--      data-ad-format="auto"--}}
+{{--      data-full-width-responsive="true"></ins>--}}
+
 </div>
 
 

@@ -36,7 +36,7 @@
 {{-- CHANGE THE BODY BASED IF NAV SHOULD BE HIDDEN --}}
 @if(empty($hide_nav))
 
-<body class="relative mb-16 bg-gray-100 dark:bg-gray-900 text-gray-600 dark:text-gray-300" style="margin-top: 33px;">
+<body class="relative mb-16 bg-neutral-100 dark:bg-neutral-900 text-gray-600 dark:text-gray-300" style="margin-top: 33px;">
   @include('layouts.navigation', ["title" => $title ?? null])
   @else
 

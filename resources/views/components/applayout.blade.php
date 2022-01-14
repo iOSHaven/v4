@@ -2,7 +2,9 @@
   <div class="flex items-center mb-3">
     <a href="/app/{{$app->uid }}" class="absolute top-0 left-0 right-0 bottom-0"></a>
     <div class="flex py-1 pointer-events-none flex-grow">
-      <img class="listing-icon" src="{{ $app->icon }}" width="77" height="77">
+      <x-app-icon :src="$app->icon"></x-app-icon>
+
+
       <div class="pl-5 w-full relative">
         <div class="text-black dark:text-white">{{ $app->name }}</div>
         <div class="leading-none text-sm text-gray-500">{{ $app->short }}</div>

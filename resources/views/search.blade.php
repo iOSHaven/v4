@@ -56,7 +56,8 @@
     ])@endcomponent
 </div>
 
-@component('ads.google-header')@endcomponent
+{{--@component('ads.google-header')@endcomponent--}}
+{{--@component('ads.social-bar')@endcomponent--}}
 
 
 <h1 class="mt-3">Providers</h1>
