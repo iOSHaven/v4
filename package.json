@@ -32,7 +32,7 @@
         "jquery": "^3.5.0",
         "laravel-mix": "^6.0.39",
         "lodash": "^4.17.15",
-        "marked": "^4.0.8",
+        "marked": "^4.0.10",
         "mobile-pull-to-refresh": "^0.2.2",
         "node-fetch": "^3.1.0",
         "node-sass": "^7.0.0",
