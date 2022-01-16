@@ -126,11 +126,11 @@
   <h1 class="uppercase font-bold text-3xl mt-2 hover:underline hover:decoration-2 hover:decoration-red-500">iOS Haven</h1>
   <h2 class="uppercase">{{ __("strings.Power User Community") }}</h2>
   <div class="flex items-center justify-center mb-4 mt-4">
-    <a href="{{ LaravelLocalization::localizeUrl('/install?theme=dark') }}" class='uppercase hide-webapp mx-1 flex items-center justify-center font-bold rounded-md text-sm px-5 py-1 bg-black dark:bg-white text-white dark:text-black'>
+    <a href="{{ LaravelLocalization::localizeUrl('/install?theme=dark') }}" class='uppercase hide-webapp mx-1 flex items-center justify-center font-bold rounded-md text-sm px-2 py-1 bg-black dark:bg-white text-white dark:text-black'>
       <i class="fas fa-moon-stars mr-3 fa-lg"></i>
       {{ __("strings.install") }}
     </a>
-    <a href="{{ LaravelLocalization::localizeUrl('/install?theme=light') }}" class='uppercase hide-webapp mx-1 flex items-center justify-center font-bold rounded-md text-sm px-5 py-1 text-black-light bg-yellow-500'>
+    <a href="{{ LaravelLocalization::localizeUrl('/install?theme=light') }}" class='uppercase hide-webapp mx-1 flex items-center justify-center font-bold rounded-md text-sm px-2 py-1 text-black-light bg-yellow-500'>
       <i class="fas fa-sun mr-3 fa-lg"></i>
       {{ __("strings.install") }}
     </a>
