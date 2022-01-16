@@ -1,4 +1,4 @@
-@extends('layouts.redesign', ["hide_footer" => true, "title" => "Search"])
+@extends('layouts.redesign', ["hide_footer" => true, "title" => __("strings.Search")])
 
 @section('header')
 @include('ads.prop-push-notifications-with-worker')
@@ -16,40 +16,40 @@
 </div>
 
 
-<h1 class="mt-3">Categories</h1>
+<h1 class="mt-3">{{ __("strings.Categories") }}</h1>
 <div class="flex flex-wrap -mx-1">
     @component('components.category', [
-    "title" => "Hacks",
+    "title" => __("strings.Hacks"),
     "icon" => "fas fa-user-secret",
     "link" => "/apps?tags=hack&title=Hacked%20Apps",
     "bg" => "red-500",
     ])@endcomponent
     @component('components.category', [
-    "title" => "Free",
+    "title" => __("strings.Free"),
     "icon" => "fas fa-gift",
     "link" => "/apps?tags=free&title=Free%20Apps",
     "bg" => "red-500",
     ])@endcomponent
     @component('components.category', [
-    "title" => "Music",
+    "title" => __("strings.Music"),
     "icon" => "fas fa-music",
     "link" => "/apps?tags=music&title=Music%20Apps",
     "bg" => "red-500",
     ])@endcomponent
     @component('components.category', [
-    "title" => "Movie",
+    "title" => __("strings.Movies"),
     "icon" => "fas fa-popcorn",
     "link" => "/apps?tags=movie&title=Movie%20Apps",
     "bg" => "red-500",
     ])@endcomponent
     @component('components.category', [
-    "title" => "Emulator",
+    "title" => __("strings.Emulators"),
     "icon" => "fas fa-gamepad",
     "link" => "/apps?tags=emulator&title=Emulators",
     "bg" => "red-500",
     ])@endcomponent
     @component('components.category', [
-    "title" => "Jailbreak",
+    "title" => __("strings.Jailbreaks"),
     "icon" => "fas fa-lock-open-alt",
     "link" => "/jailbreaks",
     "bg" => "red-500",
@@ -60,7 +60,7 @@
 {{--@component('ads.social-bar')@endcomponent--}}
 
 
-<h1 class="mt-3">Providers</h1>
+<h1 class="mt-3">{{ __("strings.Providers") }}</h1>
 <div class="flex flex-wrap -mx-1">
     @foreach($providers as $provider)
     <div class="w-1/2 p-1 ">
@@ -71,12 +71,12 @@
                     <div>{{ $provider->name }}</div>
                     @unless($provider->revoked)
                     <div class="text-emerald-500 font-bold text-sm">
-                        <span class="mr-1">Working</span>
+                        <span class="mr-1">{{ __("strings.Working") }}</span>
                         <i class="fas fa-check-circle"></i>
                     </div>
                     @else
                     <div class="text-red-500 font-bold text-sm">
-                        <span class="mr-1">Revoked</span>
+                        <span class="mr-1">{{ __("strings.Revoked") }}</span>
                         <i class="fas fa-times-octagon"></i>
                     </div>
                     @endif
@@ -89,16 +89,16 @@
 </div>
 
 
-<h1 class="mt-3">Download Type</h1>
+<h1 class="mt-3">{{ __("strings.Type of Download") }}</h1>
 <div class="flex flex-wrap -mx-1">
     @component('components.category', [
-    "title" => "Install Now",
+    "title" => __("strings.Direct Install"),
     "icon" => "fas fa-cloud-download-alt",
     "link" => "/apps?type=signed&working=true",
     "bg" => "blue-500",
     ])@endcomponent
     @component('components.category', [
-    "title" => "IPA Archive",
+    "title" => __("strings.IPA Archive"),
     "icon" => "fas fa-file-archive",
     "link" => "/apps?type=ipa&working=true",
     "bg" => "blue-500",

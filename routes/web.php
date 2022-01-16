@@ -31,6 +31,8 @@ Auth::routes();
 
 Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
 
+    Route::get('/', [StaticPageController::class, 'index'])->middleware('tab:Home', 'back:Home');
+
     /**
      * APPS - anything related to app routes
      */
@@ -67,7 +69,9 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
     Route::get('/download/{ipa}', [AppController::class, 'download'])->name('download');
     Route::get('/install/uid/{app}', [AppController::class, 'installUid']);
     Route::get('/download/uid/{app}', [AppController::class, 'downloadUid']);
+    Route::get('/manifest-{theme}.json', [StaticPageController::class, 'getManifest']);
 
+    Route::get('/search', [AppController::class, 'getSearchPage'])->middleware('tab:Search', 'back:Search')->name('search');
     /**
      * SEO - pages used for SEO and legal stuff.
      */
@@ -92,6 +96,20 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
     });
     Route::get('/nordvpn', function () {
         return response()->json('Verifying NordVPN ownership 02/15/2020. Official email ioshavenco@gmail.com');
+    });
+
+
+    Route::get('/install', [StaticPageController::class, 'chooseInstall']);
+    Route::get('/light', [StaticPageController::class, 'lightTheme']);
+    Route::get('/dark', [StaticPageController::class, 'darkTheme']);
+    Route::prefix('shortcuts')->middleware('tab:Shortcuts', 'back:Shortcuts')->group(function () {
+        Route::get('/{tag?}', [ShortcutController::class, 'page'])->name('shortcuts');
+    });
+
+    Route::prefix('blog')->group(function () {
+        Route::get('/', [PostsController::class, 'index'])->name('blog.listing');
+        Route::get('/tag/{tag}', [PostsController::class, 'showTag'])->name('blog.tag');
+        Route::get('/{slug}_{post}', [PostsController::class, 'show'])->name('blog.reader');
     });
 });
 
@@ -125,7 +143,7 @@ Route::get('/tl/{view}', [StaticPageController::class, 'template']);
 
 Route::get('/tutorials/{view}', [StaticPageController::class, 'tutorial']);
 
-Route::get('/', [StaticPageController::class, 'index'])->middleware('tab:Home', 'back:Home');
+
 
 
 
@@ -133,11 +151,7 @@ Route::get('/', [StaticPageController::class, 'index'])->middleware('tab:Home', 
 // Route::post('/profile/color', [HomeController::class, 'color']);
 // Route::post('/auth/toggleEditing', [HomeController::class, 'toggleEditing']);
 
-Route::prefix('blog')->group(function () {
-    Route::get('/', [PostsController::class, 'index'])->name('blog.listing');
-    Route::get('/tag/{tag}', [PostsController::class, 'showTag'])->name('blog.tag');
-    Route::get('/{slug}_{post}', [PostsController::class, 'show'])->name('blog.reader');
-});
+
 
 Route::prefix('plist')->group(function () {
     Route::get('{any}', [StaticPageController::class, 'plist'])->where('any', '.*');
@@ -162,9 +176,7 @@ Route::prefix('image')->group(function () {
 
 Route::get('/tutubox/cert', [StaticPageController::class, 'tutubox']);
 
-Route::prefix('shortcuts')->middleware('tab:Shortcuts', 'back:Shortcuts')->group(function () {
-    Route::get('/{tag?}', [ShortcutController::class, 'page'])->name('shortcuts');
-});
+
 
 Route::get('/altstore/burrito/apps.json', [AppController::class, 'burrito']);
 Route::get('/altstore/apps.json', [AppController::class, 'showAltstoreJson']);
@@ -197,12 +209,8 @@ Route::post('/contact/{type}', [ContactController::class, 'send']);
 Route::any('/site.mobileconfig', [MobileConfigController::class, 'webapp']);
 
 Route::get('/dashboard', [StaticPageController::class, 'getDashboard'])->middleware('auth');
-Route::get('/install', [StaticPageController::class, 'chooseInstall']);
-Route::get('/light', [StaticPageController::class, 'lightTheme']);
-Route::get('/dark', [StaticPageController::class, 'darkTheme']);
 Route::post('/theme', [StaticPageController::class, 'postTheme']);
 // Route::get('/test', [StaticPageController::class, 'getTestPage']);
-Route::get('/search', [AppController::class, 'getSearchPage'])->middleware('tab:Search', 'back:Search')->name('search');
 Route::get('/credits', [StaticPageController::class, 'getCreditsPage']);
 Route::get('/faq', [StaticPageController::class, 'getFaqPage']);
 Route::get('/cydia', [StaticPageController::class, 'getCydiaPage']);

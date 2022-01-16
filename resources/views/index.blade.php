@@ -124,15 +124,15 @@
 
 <section class="text-center mt-4 mb-8 select-none block">
   <h1 class="uppercase font-bold text-3xl mt-2 hover:underline hover:decoration-2 hover:decoration-red-500">iOS Haven</h1>
-  <h2 class="uppercase">Power User Community</h2>
+  <h2 class="uppercase">{{ __("strings.Power User Community") }}</h2>
   <div class="flex items-center justify-center mb-4 mt-4">
-    <a href="/install?theme=dark" class='hide-webapp mx-1 flex items-center justify-center font-bold rounded-md text-sm px-5 py-1 bg-black dark:bg-white text-white dark:text-black'>
+    <a href="{{ LaravelLocalization::localizeUrl('/install?theme=dark') }}" class='uppercase hide-webapp mx-1 flex items-center justify-center font-bold rounded-md text-sm px-5 py-1 bg-black dark:bg-white text-white dark:text-black'>
       <i class="fas fa-moon-stars mr-3 fa-lg"></i>
-      INSTALL
+      {{ __("strings.install") }}
     </a>
-    <a href="/install?theme=light" class='hide-webapp mx-1 flex items-center justify-center font-bold rounded-md text-sm px-5 py-1 text-black-light bg-yellow-500'>
+    <a href="{{ LaravelLocalization::localizeUrl('/install?theme=light') }}" class='uppercase hide-webapp mx-1 flex items-center justify-center font-bold rounded-md text-sm px-5 py-1 text-black-light bg-yellow-500'>
       <i class="fas fa-sun mr-3 fa-lg"></i>
-      INSTALL
+      {{ __("strings.install") }}
     </a>
   </div>
   <hr class="mx-auto w-16 border-stone-300 dark:border-slate-700 my-4">
@@ -144,45 +144,45 @@
 <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-5 masonry2 invisible">
   {{--  @foreach($posts as $post)--}}
   @component('components.post', [
-      "url" => "/apps",
+      "url" => LaravelLocalization::localizeUrl("/apps"),
       "image" => "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7",
-      "title" => "2000+ Apps",
-      "subtitle" => "Tweaked, Modded, and Covert Apps"
+      "title" => __("strings.2000+ Apps"),
+      "subtitle" => __("strings.Tweaked, Modded, and Covert Apps"),
   ])@endcomponent
 
   @component('components.post', [
-      "url" => "/shortcuts",
+      "url" => LaravelLocalization::localizeUrl("/shortcuts"),
       "image" => "https://imgur.com/PtW5Uxl.png",
-      "title" => "Shortcuts",
-      "subtitle" => "Browse Apple Shortcuts"
+      "title" => __("strings.Shortcuts"),
+      "subtitle" => __("strings.Browse Apple Shortcuts"),
   ])@endcomponent
 
   @component('components.post', [
-      "url" => "/blog",
+      "url" => LaravelLocalization::localizeUrl("/blog"),
       "image" => "https://images.unsplash.com/photo-1521714161819-15534968fc5f",
-      "title" => "Tutorials and News",
-      "subtitle" => "Read Community Blog"
+      "title" => __("strings.Tutorials & News"),
+      "subtitle" => __("strings.Read Community Blog"),
   ])@endcomponent
 
   @component('components.post', [
-      "url" => "/search",
+      "url" => LaravelLocalization::localizeUrl("/search"),
       "image" => "https://images.unsplash.com/photo-1490127252417-7c393f993ee4",
-      "title" => "Powerful Search Engine",
-      "subtitle" => "Find More With Less"
+      "title" => __("strings.Powerful Search Engine"),
+      "subtitle" => __("strings.Find More With Less"),
   ])@endcomponent
 
   @component('components.post', [
-      "url" => "/games",
+      "url" => LaravelLocalization::localizeUrl("/games"),
       "image" => "https://images.unsplash.com/photo-1587573089283-f14c65841f75",
-      "title" => "Gaming Collection",
-      "subtitle" => "Tweaked, Hacked, and Free Games"
+      "title" => __("strings.Gaming Collection"),
+      "subtitle" => __("strings.Tweaked, Hacked, and Free Games"),
   ])@endcomponent
 
   @component('components.post', [
-      "url" => "/themes",
+      "url" => LaravelLocalization::localizeUrl("/themes"),
       "image" => "https://images.unsplash.com/photo-1569172122301-bc5008bc09c5",
-      "title" => "Fashionable Themes",
-      "subtitle" => "Curated Themes for High Fashion"
+      "title" => __("strings.Fashionable Themes"),
+      "subtitle" => __("strings.Curated Themes for High Fashion"),
   ])@endcomponent
 
 
@@ -196,7 +196,7 @@
 
 <section class="text-center mt-4 mb-8 select-none block">
 {{--  <a href="/blog" class="font-bold text-3xl mt-2 hover:underline hover:decoration-2 hover:decoration-red-500">iPA Insider</a>--}}
-  <a href="/blog" class="uppercase hover:underline hover:decoration-2 hover:decoration-red-500">Most Recent Stories</a>
+  <a href="/blog" class="uppercase hover:underline hover:decoration-2 hover:decoration-red-500">{{ __("strings.Most Recent Stories") }}</a>
   <hr class="mx-auto w-16 border-stone-300 dark:border-slate-700 my-4">
   @yield('blog-header')
 </section>
