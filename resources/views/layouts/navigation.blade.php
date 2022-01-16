@@ -35,20 +35,20 @@
 
         <a href="//blog.ioshaven.com" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Blog') }}">
             <i class="md:hidden fas fa-book"></i>
-            <div class="md:hidden text-xs leading-none"><small>Blog</small></div>
-            <div class="hidden md:inline-block p-2 -mt-px">Blog</div>
+            <div class="md:hidden text-xs leading-none"><small>{{ __("strings.Blog") }}</small></div>
+            <div class="hidden md:inline-block p-2 -mt-px">{{ __("strings.Blog") }}</div>
         </a>
-      <a href="/apps" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Apps') }}">
+      <a href="{{ LaravelLocalization::localizeUrl('/apps') }}" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Apps') }}">
         <i class="md:hidden fas fa-layer-group"></i>
-        <div class="md:hidden text-xs leading-none"><small>Apps</small></div>
-        <div class="hidden md:inline-block p-2 -mt-px">Apps</div>
+        <div class="md:hidden text-xs leading-none"><small>{{ __("strings.Apps") }}</small></div>
+        <div class="hidden md:inline-block p-2 -mt-px">{{ __("strings.Apps") }}</div>
       </a>
-      <a href="/games" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Games') }}">
+      <a href="{{ LaravelLocalization::localizeUrl('/games') }}" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Games') }}">
         <i class="md:hidden fas fa-rocket"></i>
-        <div class="md:hidden text-xs leading-none"><small>Games</small></div>
-        <div class="hidden md:inline-block p-2 -mt-px">Games</div>
+        <div class="md:hidden text-xs leading-none"><small>{{ __("strings.Games") }}</small></div>
+        <div class="hidden md:inline-block p-2 -mt-px">{{ __("strings.Games") }}</div>
       </a>
-      <a href="/updates" class="text-center px-2 pb-2 py-1 md:p-0 relative {{ tab('Updates') }}">
+      <a href="{{ LaravelLocalization::localizeUrl('/updates') }}" class="text-center px-2 pb-2 py-1 md:p-0 relative {{ tab('Updates') }}">
         <div class="relative">
           <i class="md:hidden fas fa-bell"></i>
           @if(isset($hasUpdates))
@@ -60,19 +60,19 @@
           @endif
         </div>
         
-        <div class="md:hidden text-xs leading-none"><small>Updates</small></div>
+        <div class="md:hidden text-xs leading-none"><small>{{ __("strings.Updates") }}</small></div>
         
-        <div class="hidden md:inline-block p-2 -mt-px">Updates</div>
+        <div class="hidden md:inline-block p-2 -mt-px">{{ __("strings.Updates") }}</div>
       </a>
 {{--      <a href="/themes" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Themes') }}">--}}
 {{--        <i class="md:hidden fas fa-palette"></i>--}}
 {{--        <div class="md:hidden text-xs leading-none"><small>Themes</small></div>--}}
 {{--        <div class="hidden md:inline-block p-2 -mt-px">Themes</div>--}}
 {{--      </a>--}}
-      <a href="/search" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Search') }}">
+      <a href="{{ LaravelLocalization::localizeUrl('/search') }}" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Search') }}">
         <i class="md:hidden fas fa-search"></i>
-        <div class="md:hidden text-xs leading-none"><small>Search</small></div>
-        <div class="hidden md:inline-block p-2 -mt-px">Search</div>
+        <div class="md:hidden text-xs leading-none"><small>{{ __("strings.Search") }}</small></div>
+        <div class="hidden md:inline-block p-2 -mt-px">{{ __("strings.Search") }}</div>
       </a>
     </div>
     <h1 class="hidden md:flex absolute top-0 left-0 right-0 bottom-0 items-center justify-center -z-1">{{ $title ?? session("current_tab") ?? "IOS Haven" }}</h1>

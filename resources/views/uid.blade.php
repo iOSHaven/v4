@@ -72,7 +72,7 @@
 
 
           {{-- APPLICATION FEATURES --}}
-          @component('components.collapse', ["title" => "Description", "pre" => false, "show" => true])
+          @component('components.collapse', ["title" => __("strings.Description"), "pre" => false, "show" => true])
             <div class="markdown">
               {!! simpleMarkdown($app->description) !!}
             </div>
@@ -81,7 +81,7 @@
 
           {{-- APPLICATON STATS --}}
           @if(config('app-analytics.enabled'))
-          @component('components.collapse', ["title" => "Stats", "show" => true])
+          @component('components.collapse', ["title" => __("strings.Stats"), "show" => true])
           <div class="flex items-center justify-start">
             @if(config('app-analytics.views'))
             <div class="mr-2 flex items-center justify-start">
@@ -109,7 +109,7 @@
 
 
           {{-- APPLICATION ITMS --}}
-          @component('components.collapse', ["title" => "Signed Links", "show" => true])
+          @component('components.collapse', ["title" => __("strings.Signed Links"), "show" => true])
           @foreach($app->itms as $itms)
           @component('components.providerListing', [
           "model" => $itms,
@@ -119,7 +119,7 @@
           @endcomponent
 
           {{-- APPLICATION IPAs --}}
-          @component('components.collapse', ["title" => "IPA Links", "show" => true])
+          @component('components.collapse', ["title" => __("strings.IPA Links"), "show" => true])
           @foreach($app->ipas as $ipas)
           @component('components.providerListing', [
           "model" => $ipas,
@@ -136,7 +136,7 @@
       </div>
       <div class="col-tablet-portrait-6 px-tablet-portrait">
         <div class="h6 display-clear mb-2">
-          <strong>Comments</strong>
+          <strong>{{ __('strings.Comments') }}</strong>
         </div>
 
         <div class="fb-comments" data-href="{{ url()->current() }}" data-width="100%" data-numposts="10" data-lazy="true"></div>

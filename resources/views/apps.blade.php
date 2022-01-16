@@ -1,3 +1,8 @@
+@php
+$pageTitle = str_replace("strings.", "", __("strings.".trim($pageTitle)));
+
+@endphp
+
 @extends('layouts.redesign', ["title" => $pageTitle ?? null ])
 
 @section('header')
