@@ -1,13 +1,13 @@
 {
-    "/js/main.js": "/js/main.js?id=bff8f48fa6dddb04944b",
-    "/js/app.js": "/js/app.js?id=d6b671ae008b8158e4e9",
-    "/js/dashboard.js": "/js/dashboard.js?id=9d71ada9cf8c704b3b0b",
-    "/css/redesign.min.css": "/css/redesign.min.css?id=b590e99e0b2c07cae3bb",
-    "/css/markdown.css": "/css/markdown.css?id=21ba7e4cac849d62ab7b",
-    "/css/markdown.min.css": "/css/markdown.min.css?id=21ba7e4cac849d62ab7b",
+    "/js/main.js": "/js/main.js?id=ea0a4807109478761b43",
+    "/js/app.js": "/js/app.js?id=7600060c80444181b16e",
+    "/js/dashboard.js": "/js/dashboard.js?id=e92694fb4bdaa1cffd4c",
+    "/css/redesign.min.css": "/css/redesign.min.css?id=6102814cf0df1ab1660c",
+    "/css/markdown.css": "/css/markdown.css?id=89747b9da39a2054ecde",
+    "/css/markdown.min.css": "/css/markdown.min.css?id=89747b9da39a2054ecde",
     "/js/vendor.min.js": "/js/vendor.min.js?id=04772ade0bf6c81dc23d",
     "/js/manifest.min.js": "/js/manifest.min.js?id=41f053ba9a94d81b39f8",
-    "/js/main.min.js": "/js/main.min.js?id=bff8f48fa6dddb04944b",
-    "/js/app.min.js": "/js/app.min.js?id=d6b671ae008b8158e4e9",
-    "/js/dashboard.min.js": "/js/dashboard.min.js?id=9d71ada9cf8c704b3b0b"
+    "/js/main.min.js": "/js/main.min.js?id=ea0a4807109478761b43",
+    "/js/app.min.js": "/js/app.min.js?id=7600060c80444181b16e",
+    "/js/dashboard.min.js": "/js/dashboard.min.js?id=e92694fb4bdaa1cffd4c"
 }
