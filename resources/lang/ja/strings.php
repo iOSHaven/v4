@@ -31,7 +31,7 @@ return [
     'Power Tools' => '電動工具',
     'Fashion' => '流行',
     'Frequent Updates' => '頻繁な更新',
-    'install' => 'インストール',
+    'install' => 'ホームに追加',
     'Blog' => 'ブログ',
     'Apps' => 'アプリ',
     'Games' => 'ゲーム',
