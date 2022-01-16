@@ -102,6 +102,15 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
     Route::get('/install', [StaticPageController::class, 'chooseInstall']);
     Route::get('/light', [StaticPageController::class, 'lightTheme']);
     Route::get('/dark', [StaticPageController::class, 'darkTheme']);
+    Route::prefix('shortcuts')->middleware('tab:Shortcuts', 'back:Shortcuts')->group(function () {
+        Route::get('/{tag?}', [ShortcutController::class, 'page'])->name('shortcuts');
+    });
+
+    Route::prefix('blog')->group(function () {
+        Route::get('/', [PostsController::class, 'index'])->name('blog.listing');
+        Route::get('/tag/{tag}', [PostsController::class, 'showTag'])->name('blog.tag');
+        Route::get('/{slug}_{post}', [PostsController::class, 'show'])->name('blog.reader');
+    });
 });
 
 
@@ -142,11 +151,7 @@ Route::get('/tutorials/{view}', [StaticPageController::class, 'tutorial']);
 // Route::post('/profile/color', [HomeController::class, 'color']);
 // Route::post('/auth/toggleEditing', [HomeController::class, 'toggleEditing']);
 
-Route::prefix('blog')->group(function () {
-    Route::get('/', [PostsController::class, 'index'])->name('blog.listing');
-    Route::get('/tag/{tag}', [PostsController::class, 'showTag'])->name('blog.tag');
-    Route::get('/{slug}_{post}', [PostsController::class, 'show'])->name('blog.reader');
-});
+
 
 Route::prefix('plist')->group(function () {
     Route::get('{any}', [StaticPageController::class, 'plist'])->where('any', '.*');
@@ -171,9 +176,7 @@ Route::prefix('image')->group(function () {
 
 Route::get('/tutubox/cert', [StaticPageController::class, 'tutubox']);
 
-Route::prefix('shortcuts')->middleware('tab:Shortcuts', 'back:Shortcuts')->group(function () {
-    Route::get('/{tag?}', [ShortcutController::class, 'page'])->name('shortcuts');
-});
+
 
 Route::get('/altstore/burrito/apps.json', [AppController::class, 'burrito']);
 Route::get('/altstore/apps.json', [AppController::class, 'showAltstoreJson']);
