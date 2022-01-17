@@ -71,5 +71,6 @@ return [
     'Comments' => 'コメント',
     "Open" => "Open",
     "Continue Reading >>" => "Continue Reading >>", //📖➡️
+    "Launch" => "Launch", // 🚀
     "Open in AltStore" => "Open in AltStore",
 ];
