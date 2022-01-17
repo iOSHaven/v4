@@ -40,7 +40,7 @@
   @include('layouts.navigation', ["title" => $title ?? null])
   @else
 
-  <body class="m-inset-top relative bg-gray-100 dark:bg-gray-900 text-gray-600 dark:text-gray-300">
+  <body class="m-inset-top relative bg-neutral-100 dark:bg-neutral-900 text-gray-600 dark:text-gray-300">
     @endif
 
     {{-- ====INSIDE BODY==== --}}

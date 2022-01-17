@@ -241,6 +241,10 @@ class AppController extends Controller
 
         event(new \App\Events\ViewEvent($app));
 
+        if (request()->json === 'true') {
+            return response()->json($app);
+        }
+
         return view('uid')->with(['app' => $app]);
     }
 

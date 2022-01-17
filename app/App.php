@@ -99,6 +99,13 @@ class App extends Model
         return $itms->merge($ipas)->unique('id');
     }
 
+    public function getWorkingProvidersAttribute() {
+        $itms = $this->itms()->where("working", true)->get()->pluck("providers")->flatten();
+        $ipas = $this->ipas()->where("working", true)->get()->pluck("providers")->flatten();
+
+        return $itms->merge($ipas)->unique('id');
+    }
+
     public function toArray()
     {
         return [
@@ -110,6 +117,8 @@ class App extends Model
             'impressions' => $this->impressions,
             'short' => $this->short,
             'tags' => $this->tags,
+            'providers' => $this->providers,
+            'workingProviders' => $this->workingProviders
         ];
     }
 
