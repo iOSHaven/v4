@@ -148,6 +148,7 @@
       "image" => "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7",
       "title" => __("strings.2000+ Apps"),
       "subtitle" => __("strings.Tweaked, Modded, and Covert Apps"),
+      "callToActionButton" => "Open"
   ])@endcomponent
 
   @component('components.post', [
@@ -155,6 +156,7 @@
       "image" => "https://imgur.com/PtW5Uxl.png",
       "title" => __("strings.Shortcuts"),
       "subtitle" => __("strings.Browse Apple Shortcuts"),
+      "callToActionButton" => __("strings.Open"),
   ])@endcomponent
 
   @component('components.post', [
@@ -162,6 +164,7 @@
       "image" => "https://images.unsplash.com/photo-1521714161819-15534968fc5f",
       "title" => __("strings.Tutorials & News"),
       "subtitle" => __("strings.Read Community Blog"),
+      "callToActionButton" => __("strings.Open"),
   ])@endcomponent
 
   @component('components.post', [
@@ -169,6 +172,7 @@
       "image" => "https://images.unsplash.com/photo-1490127252417-7c393f993ee4",
       "title" => __("strings.Powerful Search Engine"),
       "subtitle" => __("strings.Find More With Less"),
+      "callToActionButton" => __("strings.Open"),
   ])@endcomponent
 
   @component('components.post', [
@@ -176,6 +180,7 @@
       "image" => "https://images.unsplash.com/photo-1587573089283-f14c65841f75",
       "title" => __("strings.Gaming Collection"),
       "subtitle" => __("strings.Tweaked, Hacked, and Free Games"),
+      "callToActionButton" => __("strings.Open"),
   ])@endcomponent
 
   @component('components.post', [
@@ -183,6 +188,7 @@
       "image" => "https://images.unsplash.com/photo-1569172122301-bc5008bc09c5",
       "title" => __("strings.Fashionable Themes"),
       "subtitle" => __("strings.Curated Themes for High Fashion"),
+      "callToActionButton" => __("strings.Open"),
   ])@endcomponent
 
 
@@ -208,7 +214,8 @@
         "image" => $post->image,
         "title" => $post->title,
         "subtitle" => $post->subtitle,
-        "description" => $post->description
+        "description" => $post->description,
+        "callToActionText" => __("strings.Continue Reading >>"),
     ])@endcomponent
   @endforeach
 </section>

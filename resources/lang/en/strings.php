@@ -68,5 +68,7 @@ return [
     'Stats' => 'Stats',
     'Signed Links' => 'Signed Links',
     'IPA Links' => 'IPA Links',
-    'Comments' => 'Comments'
+    'Comments' => 'Comments',
+    "Open" => "Open",
+    "Continue Reading >>" => "Continue Reading >>",
 ];

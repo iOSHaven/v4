@@ -68,5 +68,7 @@ return [
     'Stats' => '統計情報',
     'Signed Links' => '署名入りリンク',
     'IPA Links' => 'アーカイブリンク',
-    'Comments' => 'コメント'
+    'Comments' => 'コメント',
+    "Open" => "Open",
+    "Continue Reading >>" => "Continue Reading >>", //📖➡️
 ];
