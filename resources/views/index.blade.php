@@ -125,17 +125,34 @@
 <section class="text-center mt-4 mb-8 select-none block">
   <h1 class="uppercase font-bold text-3xl mt-2 hover:underline hover:decoration-2 hover:decoration-red-500">iOS Haven</h1>
   <h2 class="uppercase">{{ __("strings.Power User Community") }}</h2>
-  <div class="flex items-center justify-center mb-4 mt-4">
-    <a href="{{ LaravelLocalization::localizeUrl('/install?theme=dark') }}" class='uppercase hide-webapp mx-1 flex items-center justify-center font-bold rounded-md text-sm px-2 py-1 bg-black dark:bg-white text-white dark:text-black'>
+  <div class="flex items-center justify-center mt-4 max-w-xs mx-auto">
+    <a href="{{ LaravelLocalization::localizeUrl('/install?theme=dark') }}" class='uppercase w-full hide-webapp mx-1 flex items-center justify-center font-bold rounded-md text-sm px-2 py-1 bg-black text-white border border-white'>
       <i class="fas fa-moon-stars mr-3 fa-lg"></i>
       {{ __("strings.install") }}
     </a>
-    <a href="{{ LaravelLocalization::localizeUrl('/install?theme=light') }}" class='uppercase hide-webapp mx-1 flex items-center justify-center font-bold rounded-md text-sm px-2 py-1 text-black-light bg-yellow-500'>
+    <a href="{{ LaravelLocalization::localizeUrl('/install?theme=light') }}" class='uppercase w-full hide-webapp mx-1 flex items-center justify-center font-bold rounded-md text-sm px-2 py-1 text-black bg-yellow-400 border border-yellow-800'>
       <i class="fas fa-sun mr-3 fa-lg"></i>
       {{ __("strings.install") }}
     </a>
   </div>
+  <div class="mb-4 mt-4 max-w-xs mx-auto">
+    <a href="{{ LaravelLocalization::localizeUrl('/apps') }}" class='uppercase mx-1 flex items-center justify-center font-bold rounded-md text-sm px-2 py-1 text-white bg-green-500 border border-green-800'>
+      <i class="fas fa-rocket mr-3 fa-lg"></i>
+      {{ __("strings.Launch") }}
+    </a>
+  </div>
+
+{{--  <hr class="mx-auto w-16 border-stone-300 dark:border-slate-700 my-4">--}}
+
+{{--  <div class="mb-4 mt-4 max-w-xs mx-auto">--}}
+{{--    <a href="altstore://source?url={{ url('/altstore/apps.json')}}" class='uppercase hide-webapp mx-1 flex items-center justify-center font-bold rounded-md text-sm px-2 py-1 text-white bg-purple-500 border border-purple-800'>--}}
+{{--      <i class="fas fa-mobile-alt mr-3 fa-lg"></i>--}}
+{{--      {{ __("strings.Open in AltStore") }}--}}
+{{--    </a>--}}
+{{--  </div>--}}
+
   <hr class="mx-auto w-16 border-stone-300 dark:border-slate-700 my-4">
+
   @yield('blog-header')
 </section>
 

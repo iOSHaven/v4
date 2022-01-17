@@ -50,7 +50,7 @@ return [
     'Badges' => 'バッジ',
     'Logout' => 'ログアウト',
     'IPA' => 'IPA',
-    'GET' => 'ゲット',
+    'GET' => '入手',
     "Download" => 'ダウンロード',
     'Categories' => 'カテゴリー',
     'Hacks' => 'ハック',
@@ -71,4 +71,5 @@ return [
     'Comments' => 'コメント',
     "Open" => "Open",
     "Continue Reading >>" => "Continue Reading >>", //📖➡️
+    "Open in AltStore" => "Open in AltStore",
 ];
