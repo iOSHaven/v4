@@ -31,7 +31,7 @@
   <div class="container">
     <div class="row">
       <div class="col-tablet-portrait-6 px-tablet-portrait">
-        <div class="bg-white dark:bg-gray-900">
+        <div class="bg-white dark:bg-neutral">
 
 
           {{-- APPLICATION ICON, TITLE, SHORT, & BUTTONS --}}
