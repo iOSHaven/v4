@@ -29,7 +29,8 @@ use Illuminate\Support\Facades\Route;
 */
 Auth::routes();
 
-Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
+Route::group(['prefix' => LaravelLocalization::setLocale(),
+    'middleware' => 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'], function () {
 
     Route::get('/', [StaticPageController::class, 'index'])->middleware('tab:Home', 'back:Home');
 
