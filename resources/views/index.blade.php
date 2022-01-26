@@ -126,17 +126,17 @@
   <h1 class="uppercase font-bold text-3xl mt-2 hover:underline hover:decoration-2 hover:decoration-red-500">iOS Haven</h1>
   <h2 class="uppercase">{{ __("strings.Power User Community") }}</h2>
   <div class="flex items-center justify-center mt-4 max-w-xs mx-auto">
-    <a href="{{ LaravelLocalization::localizeUrl('/install?theme=dark') }}" class='uppercase w-full hide-webapp mx-1 flex items-center justify-center font-bold rounded-md text-sm px-2 py-1 bg-black text-white border border-white'>
+    <a href="{{ '/install?theme=dark' }}" class='uppercase w-full hide-webapp mx-1 flex items-center justify-center font-bold rounded-md text-sm px-2 py-1 bg-black text-white border border-white'>
       <i class="fas fa-moon-stars mr-3 fa-lg"></i>
       {{ __("strings.install") }}
     </a>
-    <a href="{{ LaravelLocalization::localizeUrl('/install?theme=light') }}" class='uppercase w-full hide-webapp mx-1 flex items-center justify-center font-bold rounded-md text-sm px-2 py-1 text-black bg-yellow-400 border border-yellow-800'>
+    <a href="{{ '/install?theme=light' }}" class='uppercase w-full hide-webapp mx-1 flex items-center justify-center font-bold rounded-md text-sm px-2 py-1 text-black bg-yellow-400 border border-yellow-800'>
       <i class="fas fa-sun mr-3 fa-lg"></i>
       {{ __("strings.install") }}
     </a>
   </div>
   <div class="mb-4 mt-4 max-w-xs mx-auto">
-    <a href="{{ LaravelLocalization::localizeUrl('/apps') }}" class='uppercase mx-1 flex items-center justify-center font-bold rounded-md text-sm px-2 py-1 text-white bg-green-500 border border-green-800'>
+    <a href="{{ '/apps' }}" class='uppercase mx-1 flex items-center justify-center font-bold rounded-md text-sm px-2 py-1 text-white bg-green-500 border border-green-800'>
       <i class="fas fa-rocket mr-3 fa-lg"></i>
       {{ __("strings.Launch") }}
     </a>
@@ -161,7 +161,7 @@
 <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-5 mb-5 masonry2 invisible">
   {{--  @foreach($posts as $post)--}}
   @component('components.post', [
-      "url" => LaravelLocalization::localizeUrl("/apps"),
+      "url" => "/apps",
       "image" => "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7",
       "title" => __("strings.2000+ Apps"),
       "subtitle" => __("strings.Tweaked, Modded, and Covert Apps"),
@@ -169,7 +169,7 @@
   ])@endcomponent
 
   @component('components.post', [
-      "url" => LaravelLocalization::localizeUrl("/shortcuts"),
+      "url" => "/shortcuts",
       "image" => "https://imgur.com/PtW5Uxl.png",
       "title" => __("strings.Shortcuts"),
       "subtitle" => __("strings.Browse Apple Shortcuts"),
@@ -177,7 +177,7 @@
   ])@endcomponent
 
   @component('components.post', [
-      "url" => LaravelLocalization::localizeUrl("/blog"),
+      "url" => "/blog",
       "image" => "https://images.unsplash.com/photo-1521714161819-15534968fc5f",
       "title" => __("strings.Tutorials & News"),
       "subtitle" => __("strings.Read Community Blog"),
@@ -185,7 +185,7 @@
   ])@endcomponent
 
   @component('components.post', [
-      "url" => LaravelLocalization::localizeUrl("/search"),
+      "url" => "/search",
       "image" => "https://images.unsplash.com/photo-1490127252417-7c393f993ee4",
       "title" => __("strings.Powerful Search Engine"),
       "subtitle" => __("strings.Find More With Less"),
@@ -193,7 +193,7 @@
   ])@endcomponent
 
   @component('components.post', [
-      "url" => LaravelLocalization::localizeUrl("/games"),
+      "url" => "/games",
       "image" => "https://images.unsplash.com/photo-1587573089283-f14c65841f75",
       "title" => __("strings.Gaming Collection"),
       "subtitle" => __("strings.Tweaked, Hacked, and Free Games"),
@@ -201,7 +201,7 @@
   ])@endcomponent
 
   @component('components.post', [
-      "url" => LaravelLocalization::localizeUrl("/themes"),
+      "url" => "/themes",
       "image" => "https://images.unsplash.com/photo-1569172122301-bc5008bc09c5",
       "title" => __("strings.Fashionable Themes"),
       "subtitle" => __("strings.Curated Themes for High Fashion"),

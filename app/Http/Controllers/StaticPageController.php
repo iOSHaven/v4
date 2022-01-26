@@ -172,7 +172,7 @@ class StaticPageController extends Controller
 
     public function getManifest($theme) {
         $manifest = config('webapp-manifest');
-        $manifest['start_url'] = LaravelLocalization::localizeUrl("/apps?theme=$theme");
+        $manifest['start_url'] = "/apps?theme=$theme";
         return response()->json($manifest);
     }
 

@@ -38,17 +38,17 @@
             <div class="md:hidden text-xs leading-none"><small>{{ __("strings.Blog") }}</small></div>
             <div class="hidden md:inline-block p-2 -mt-px">{{ __("strings.Blog") }}</div>
         </a>
-      <a href="{{ LaravelLocalization::localizeUrl('/apps') }}" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Apps') }}">
+      <a href="{{ '/apps' }}" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Apps') }}">
         <i class="md:hidden fas fa-layer-group"></i>
         <div class="md:hidden text-xs leading-none"><small>{{ __("strings.Apps") }}</small></div>
         <div class="hidden md:inline-block p-2 -mt-px">{{ __("strings.Apps") }}</div>
       </a>
-      <a href="{{ LaravelLocalization::localizeUrl('/games') }}" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Games') }}">
+      <a href="{{ '/games' }}" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Games') }}">
         <i class="md:hidden fas fa-rocket"></i>
         <div class="md:hidden text-xs leading-none"><small>{{ __("strings.Games") }}</small></div>
         <div class="hidden md:inline-block p-2 -mt-px">{{ __("strings.Games") }}</div>
       </a>
-      <a href="{{ LaravelLocalization::localizeUrl('/updates') }}" class="text-center px-2 pb-2 py-1 md:p-0 relative {{ tab('Updates') }}">
+      <a href="{{ '/updates' }}" class="text-center px-2 pb-2 py-1 md:p-0 relative {{ tab('Updates') }}">
         <div class="relative">
           <i class="md:hidden fas fa-bell"></i>
           @if(isset($hasUpdates))
@@ -69,7 +69,7 @@
 {{--        <div class="md:hidden text-xs leading-none"><small>Themes</small></div>--}}
 {{--        <div class="hidden md:inline-block p-2 -mt-px">Themes</div>--}}
 {{--      </a>--}}
-      <a href="{{ LaravelLocalization::localizeUrl('/search') }}" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Search') }}">
+      <a href="{{ '/search' }}" class="text-center px-2 pb-2 py-1 md:p-0 {{ tab('Search') }}">
         <i class="md:hidden fas fa-search"></i>
         <div class="md:hidden text-xs leading-none"><small>{{ __("strings.Search") }}</small></div>
         <div class="hidden md:inline-block p-2 -mt-px">{{ __("strings.Search") }}</div>

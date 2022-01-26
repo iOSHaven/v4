@@ -29,8 +29,8 @@ use Illuminate\Support\Facades\Route;
 */
 Auth::routes();
 
-Route::group(['prefix' => LaravelLocalization::setLocale(),
-    'middleware' => 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'], function () {
+//Route::group(['prefix' => LaravelLocalization::setLocale(),
+//    'middleware' => 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'], function () {
 
     Route::get('/', [StaticPageController::class, 'index'])->middleware('tab:Home', 'back:Home');
 
@@ -116,7 +116,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),
         Log::emergency(json_encode($_SERVER));
         return redirect("https://blog.ioshaven.com");
     });
-});
+//});
 
 
 
