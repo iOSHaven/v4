@@ -1,5 +1,5 @@
 @php
-  $pageSubtitle = "Downloading $app->name ". strtoupper($type) . " from " . $model->provider->name . "...";
+  $pageSubtitle = "Downloading $model->name ". strtoupper($type) . " from " . $model->provider->name . "...";
 @endphp
 
 @extends('layouts.redesign', ["title" => $pageSubtitle, "hide_nav" => true, "hide_ads" => true, "back_link" => url("/apps")])
