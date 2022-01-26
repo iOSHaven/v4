@@ -29,7 +29,7 @@ use Illuminate\Support\Facades\Route;
 */
 Auth::routes();
 
-Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
+//Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
 
     /**
      * APPS - anything related to app routes
@@ -93,7 +93,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function () {
     Route::get('/nordvpn', function () {
         return response()->json('Verifying NordVPN ownership 02/15/2020. Official email ioshavenco@gmail.com');
     });
-});
+//});
 
 
 
