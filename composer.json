@@ -49,7 +49,6 @@
         "laravel/ui": "^3.4",
         "league/flysystem-aws-s3-v3": "^1.0",
         "marvinlabs/laravel-discord-logger": "^1.1",
-        "mcamara/laravel-localization": "^1.6",
         "moontoast/math": "^1.2",
         "paypal/rest-api-sdk-php": "^1.14",
         "pda/pheanstalk": "~4.0",
