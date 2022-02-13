@@ -1,5 +1,5 @@
 @php
-  $pageSubtitle = "Downloading $model->name ". strtoupper($type) . " from " . $model->provider->name . "...";
+  $pageSubtitle = "Downloading $app->name ". strtoupper($type) . " from " . $model->provider->name . "...";
 @endphp
 
 @extends('layouts.redesign', ["title" => $pageSubtitle, "hide_nav" => true, "hide_ads" => true, "back_link" => url("/apps")])
@@ -94,10 +94,7 @@ dd(url($model->url))
         <i class="fab fa-twitter mr-3 fa-lg"></i>
         TWEET
         <i class="fab fa-twitter ml-3 fa-lg"></i>
-
       </a>
-
-
     </div>
 
     <div>

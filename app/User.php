@@ -52,4 +52,12 @@ class User extends Authenticatable
 
         return "http://www.gravatar.com/avatar/$hash";
     }
+
+    /**
+     * @return bool
+     */
+    public function canImpersonate($impersonated = null)
+    {
+        return $this->isAdmin;
+    }
 }
