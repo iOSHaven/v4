@@ -1,4 +1,4 @@
-@extends('layouts.redesign', ["title" => $pageTitle ?? null, "hide_footer" => true ])
+@extends('layouts.redesign', ["title" => $pageTitle ?? null, "hide_footer" => $pageTitle === "Updates" ])
 
 @section('header')
 <meta name="page" content="{{ $apps->currentPage() }}">
