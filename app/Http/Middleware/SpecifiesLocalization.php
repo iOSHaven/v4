@@ -18,7 +18,7 @@ class SpecifiesLocalization
     {
         $locale = $request->route()->parameter('localeIdentifier', 'en');
         $request->route()->forgetParameter('localeIdentifier');
-        if (isset($locale) && in_array($locale, config('localization.supportedLocales'))) {
+        if (array_key_exists($locale, config('localization.supportedLocales'))) {
             session()->put('locale', $locale);
         }
         return $next($request);
