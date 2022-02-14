@@ -107,7 +107,7 @@
 {{--                @endforeach--}}
 {{--            </ul>--}}
 {{--        </div>--}}
-        <select name="locale" id="locale" onchange="this.form.submit()" class="form-select relative appearance-none block w-full w-60 text-center py-2 mx-auto rounded transition ease-in-out bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
+        <select name="locale" id="locale" onchange="this.form.submit()" class="form-select relative appearance-none block w-full w-60 text-center py-2 px-3 mx-auto rounded transition ease-in-out bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
             <option value="" disabled selected>Language: {{config('localization.supportedLocales')[app()->getLocale()]['native']}}</option>
 
             @foreach(config('localization.supportedLocales') as $key => $value)
@@ -117,18 +117,18 @@
     </form>
 
     <div class="text-sm max-w-xs mx-auto">
-        <a class="text-white underline py-2" href="#">{{ __("Apps") }}</a>
-        <a class="text-white underline py-2" href="#">{{ __("Games") }}</a>
-        <a class="text-white underline py-2" href="#">{{ __("Updates") }}</a>
-        <a class="text-white underline py-2" href="#">{{ __("Search") }}</a>
-        <a class="text-white underline py-2" href="#">{{ __("Themes") }}</a>
-        <a class="text-white underline py-2" href="#">{{ __("Shortcuts") }}</a>
-        <a class="text-white underline py-2" href="#">{{ __("Jailbreaks") }}</a>
-        <a class="text-white underline py-2" href="#">{{ __("Betas") }}</a>
-        <a class="text-white underline py-2" href="#">{{ __("Tweak Pack") }}</a>
-        <a class="text-white underline py-2" href="#">{{ __("About Us") }}</a>
-        <a class="text-white underline py-2" href="#">{{ __("Credits") }}</a>
-        <a class="text-white underline py-2" href="#">{{ __("Dashboard") }}</a>
+        <a class="text-white underline py-2" href="/apps">{{ __("Apps") }}</a>
+        <a class="text-white underline py-2" href="/games">{{ __("Games") }}</a>
+        <a class="text-white underline py-2" href="/updates">{{ __("Updates") }}</a>
+        <a class="text-white underline py-2" href="/search">{{ __("Search") }}</a>
+        <a class="text-white underline py-2" href="/themes">{{ __("Themes") }}</a>
+        <a class="text-white underline py-2" href="/shortcuts">{{ __("Shortcuts") }}</a>
+        <a class="text-white underline py-2" href="/jailbreaks">{{ __("Jailbreaks") }}</a>
+        <a class="text-white underline py-2" href="/betas">{{ __("Betas") }}</a>
+        <a class="text-white underline py-2" href="/shortcut/perm/135">{{ __("Tweak Pack") }}</a>
+        <a class="text-white underline py-2" href="/aboutUs">{{ __("About Us") }}</a>
+        <a class="text-white underline py-2" href="/credits">{{ __("Credits") }}</a>
+        <a class="text-white underline py-2" href="/dashboard">{{ __("Dashboard") }}</a>
     </div>
 
     <div class="max-w-xs mx-auto p-3 flex items-center justify-between border-t border-gray-200 dark:border-gray-800">
