@@ -110,18 +110,18 @@
     </form>
 
     <div class="text-sm max-w-xs mx-auto">
-        <a class="text-white underline py-2" href="#">Apps</a>
-        <a class="text-white underline py-2" href="#">Games</a>
-        <a class="text-white underline py-2" href="#">Updates</a>
-        <a class="text-white underline py-2" href="#">Search</a>
-        <a class="text-white underline py-2" href="#">Themes</a>
-        <a class="text-white underline py-2" href="#">Shortcuts</a>
-        <a class="text-white underline py-2" href="#">Jailbreaks</a>
-        <a class="text-white underline py-2" href="#">Betas</a>
-        <a class="text-white underline py-2" href="#">Tweak Pack</a>
-        <a class="text-white underline py-2" href="#">About Us</a>
-        <a class="text-white underline py-2" href="#">Credits</a>
-        <a class="text-white underline py-2" href="#">Dashboard</a>
+        <a class="text-white underline py-2" href="#">{{ __("Apps") }}</a>
+        <a class="text-white underline py-2" href="#">{{ __("Games") }}</a>
+        <a class="text-white underline py-2" href="#">{{ __("Updates") }}</a>
+        <a class="text-white underline py-2" href="#">{{ __("Search") }}</a>
+        <a class="text-white underline py-2" href="#">{{ __("Themes") }}</a>
+        <a class="text-white underline py-2" href="#">{{ __("Shortcuts") }}</a>
+        <a class="text-white underline py-2" href="#">{{ __("Jailbreaks") }}</a>
+        <a class="text-white underline py-2" href="#">{{ __("Betas") }}</a>
+        <a class="text-white underline py-2" href="#">{{ __("Tweak Pack") }}</a>
+        <a class="text-white underline py-2" href="#">{{ __("About Us") }}</a>
+        <a class="text-white underline py-2" href="#">{{ __("Credits") }}</a>
+        <a class="text-white underline py-2" href="#">{{ __("Dashboard") }}</a>
     </div>
 
     <div class="max-w-xs mx-auto p-3 flex items-center justify-between border-t border-gray-200 dark:border-gray-800">
