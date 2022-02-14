@@ -107,8 +107,9 @@
 {{--                @endforeach--}}
 {{--            </ul>--}}
 {{--        </div>--}}
-        <select name="locale" id="locale" onchange="this.form.submit()" class="form-select block w-full w-60 text-center py-2 mx-auto rounded transition ease-in-out bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
-            <option value="" disabled selected>Locale: {{config('localization.supportedLocales')[app()->getLocale()]['native']}}</option>
+        <select name="locale" id="locale" onchange="this.form.submit()" class="form-select relative appearance-none block w-full w-60 text-center py-2 mx-auto rounded transition ease-in-out bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
+            <option value="" disabled selected>Language: {{config('localization.supportedLocales')[app()->getLocale()]['native']}}</option>
+
             @foreach(config('localization.supportedLocales') as $key => $value)
                 <option value="{{$key}}">{{$value['native']}}</option>
             @endforeach
