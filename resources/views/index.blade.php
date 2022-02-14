@@ -254,11 +254,6 @@
   </div>
 </section>
 
-<footer class="text-center my-8 select-none">
-  <hr class="mx-auto w-16 border-stone-300 dark:border-slate-700">
-  <p class="text-lg font-mono py-5">
-    <a href="https://ioshaven.com" class="hover:underline">iOS Haven</a> &copy; {{now()->year}}</p>
-</footer>
 
 </main>
 
