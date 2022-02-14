@@ -90,23 +90,29 @@
 
     <form action="/locale" method="post">
         @csrf
-        <div class="dropdown dropdown-focus inline-block relative mx-auto w-60">
-            <button type="button" class="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-300 w-full py-2 px-4 rounded relative">
-                <span class="mr-1">Locale: {{config('localization.supportedLocales')[app()->getLocale()]['native']}}</span>
-                <div class="absolute right-0 inset-y-0 flex items-center pr-3">
-                    <svg class="fill-current h-4 w-4 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>
-                </div>
-            </button>
-            <ul class="dropdown-menu w-full absolute hidden text-gray-700 dark:text-gray-300 overflow-hidden rounded bg-gray-200 dark:bg-gray-800">
-                @foreach(config('localization.supportedLocales') as $key => $value)
-                <li class="">
-                    <button type="submit" name="locale" value="{{$key}}" class="hover:bg-gray-300 dark:hover:bg-gray-900 py-2 px-4 block w-full">
-                        {{$value['native']}}
-                    </button>
-                </li>
-                @endforeach
-            </ul>
-        </div>
+{{--        <div class="dropdown dropdown-focus inline-block relative mx-auto w-60">--}}
+{{--            <button type="button" class="bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-300 w-full py-2 px-4 rounded relative">--}}
+{{--                <span class="mr-1">Locale: {{config('localization.supportedLocales')[app()->getLocale()]['native']}}</span>--}}
+{{--                <div class="absolute right-0 inset-y-0 flex items-center pr-3">--}}
+{{--                    <svg class="fill-current h-4 w-4 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/> </svg>--}}
+{{--                </div>--}}
+{{--            </button>--}}
+{{--            <ul class="dropdown-menu w-full absolute hidden text-gray-700 dark:text-gray-300 overflow-hidden rounded bg-gray-200 dark:bg-gray-800">--}}
+{{--                @foreach(config('localization.supportedLocales') as $key => $value)--}}
+{{--                <li class="">--}}
+{{--                    <button type="submit" name="locale" value="{{$key}}" class="hover:bg-gray-300 dark:hover:bg-gray-900 py-2 px-4 block w-full">--}}
+{{--                        {{$value['native']}}--}}
+{{--                    </button>--}}
+{{--                </li>--}}
+{{--                @endforeach--}}
+{{--            </ul>--}}
+{{--        </div>--}}
+        <select name="locale" id="locale" onchange="this.form.submit()" class="form-select block w-full w-60 text-center py-2 mx-auto rounded transition ease-in-out bg-gray-300 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
+            <option value="" disabled selected>Locale: {{config('localization.supportedLocales')[app()->getLocale()]['native']}}</option>
+            @foreach(config('localization.supportedLocales') as $key => $value)
+                <option value="{{$key}}">{{$value['native']}}</option>
+            @endforeach
+        </select>
     </form>
 
     <div class="text-sm max-w-xs mx-auto">
