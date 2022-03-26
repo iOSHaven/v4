@@ -1,13 +1,13 @@
 <?php
 
 return [
-     "apps" => "prop-push-notifications",
-     "games" => "prop-push-notifications",
-     "updates" => "prop-push-notifications",
+     "apps" => "admaven-floater",
+     "games" => "admaven-floater",
+     "updates" => "admaven-floater",
      "download" => "adsterra-pop-under",
      "install" => "adsterra-pop-under",
 
     // contains additional code on blade templates.
-     "search" => "prop-push-notifications",
-     "detail" => "prop-push-notifications",
+     "search" => "admaven-pop-under",
+     "detail" => "admaven-pop-under",
 ];
