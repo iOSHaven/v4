@@ -2,7 +2,11 @@
 
 namespace App\Nova;
 
+use Eminiarts\Tabs\Tab;
+use Eminiarts\Tabs\Tabs;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use KABBOUCHI\NovaImpersonate\Impersonate;
 use Laravel\Nova\Fields\Gravatar;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Password;
@@ -12,6 +16,18 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 
 class User extends Resource
 {
+
+    /**
+     * Determine if the resource should have an Action field.
+     *
+     * @param \Laravel\Nova\Http\Requests\NovaRequest $request
+     * @return bool
+     */
+    protected function shouldAddActionsField($request)
+    {
+        return false;
+    }
+
     /**
      * The model the resource corresponds to.
      *
@@ -61,26 +77,35 @@ class User extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make()->sortable()->onlyOnIndex(),
+            Tabs::make(Auth::user()->username, [
+                Tab::make('Account', [
+                    ID::make()->sortable()->onlyOnIndex(),
 
-            Gravatar::make()->maxWidth(50),
+                    Gravatar::make()->maxWidth(50),
 
-            Text::make('Username')
-                ->sortable()
-                ->rules('required', 'max:255'),
+                    Text::make('Username')
+                        ->sortable()
+                        ->rules('required', 'max:255'),
 
-            Text::make('Email')
-                ->sortable()
-                ->rules('required', 'email', 'max:254')
-                ->creationRules('unique:users,email')
-                ->updateRules('unique:users,email,{{resourceId}}'),
+                    Text::make('Email')
+                        ->sortable()
+                        ->rules('required', 'email', 'max:254')
+                        ->creationRules('unique:users,email')
+                        ->updateRules('unique:users,email,{{resourceId}}'),
 
-            Password::make('Password')
-                ->onlyOnForms()
-                ->creationRules('required', 'string', 'min:8', 'confirmed')
-                ->updateRules('nullable', 'string', 'min:8', 'confirmed'),
+                    Password::make('Password')
+                        ->onlyOnForms()
+                        ->creationRules('required', 'string', 'min:8', 'confirmed')
+                        ->updateRules('nullable', 'string', 'min:8', 'confirmed'),
 
-            PasswordConfirmation::make('Password Confirmation'),
+                    PasswordConfirmation::make('Password Confirmation'),
+
+                    Impersonate::make($this),
+                ]),
+                Tab::make('History', [
+                    $this->actionfield(), // Add Actions whererver you like.
+                ]),
+            ])->withToolbar(),
         ];
     }
 

@@ -174,7 +174,10 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/phar-io/version" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phar-io/manifest" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/phpspec/prophecy" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/mcamara/laravel-localization" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/eminiarts/nova-tabs" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/kabbouchi/nova-impersonate" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/lab404/laravel-impersonate" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/_laravel_idea" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

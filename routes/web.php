@@ -29,97 +29,15 @@ use Illuminate\Support\Facades\Route;
 */
 Auth::routes();
 
-//Route::group(['prefix' => LaravelLocalization::setLocale(),
-//    'middleware' => 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath'], function () {
+//Route::group(['prefix' => "{locale?}", "where" => ["locale" => "(en|jp)?"]], function () {
 
-    Route::get('/', [StaticPageController::class, 'index'])->middleware('tab:Home', 'back:Home');
-
-    /**
-     * APPS - anything related to app routes
-     */
-    Route::prefix('apps')->middleware('tab:Apps', 'back:Apps')->group(function () {
-        Route::redirect('/signednow', '/apps?type=signed&working=true', 301);
-        Route::get('/{tag?}', [AppController::class, 'page'])->name('apps');
-    });
-    Route::prefix('app')->middleware('tab:Apps', 'back:Apps')->group(function () {
-        Route::post('/create', [AppController::class, 'create']);
-        Route::get('/{uid}', [AppController::class, 'showAppDetailPage'])->name('detail');
-        Route::get('/edit/{uid}', [AppController::class, 'edit']);
-        Route::post('/update', [AppController::class, 'update']);
-        Route::post('/remove', [AppController::class, 'remove']);
-        Route::post('/token', [AppController::class, 'token']);
-    });
-
-    /**
-     * MAIN - main navigational routes. The popular pages.
-     */
-    Route::get('/games', [AppController::class, 'games'])->middleware('tab:Games', 'back:Games')->name('games');
-    Route::get('/jailbreaks', [AppController::class, 'jailbreaks'])->middleware('tab:Jailbreaks', 'back:Jailbreaks')->name('jailbreaks');
-    Route::get('/updates{tag?}', [AppController::class, 'updates'])->middleware('tab:Updates', 'back:Updates')->name('updates');
-    $themesPage = [StaticPageController::class, 'getThemesPage'];
-    Route::domain('themes.'.env('ROOT_DOMAIN'))->group(function () use ($themesPage) {
-        Route::get('/', $themesPage);
-    });
-    Route::get('/skins', $themesPage);
-    Route::get('/themes', $themesPage);
-    Route::get('/itms/{id}', [AppController::class, 'itms']);
-    Route::get('/shortcut/perm/{id}', [ShortcutController::class, 'showPermDetail']);
-    Route::get('/shortcut/{itunes_id}', [ShortcutController::class, 'showDetail']);
-    Route::get('/shortcut/install/{itunes_id}', [ShortcutController::class, 'install']);
-    Route::get('/install/{itms}', [AppController::class, 'install'])->name('install');
-    Route::get('/download/{ipa}', [AppController::class, 'download'])->name('download');
-    Route::get('/install/uid/{app}', [AppController::class, 'installUid']);
-    Route::get('/download/uid/{app}', [AppController::class, 'downloadUid']);
-    Route::get('/manifest-{theme}.json', [StaticPageController::class, 'getManifest']);
-
-    Route::get('/search', [AppController::class, 'getSearchPage'])->middleware('tab:Search', 'back:Search')->name('search');
-    /**
-     * SEO - pages used for SEO and legal stuff.
-     */
-    Route::view('/privacy', 'privacy-policy');
-    Route::get('/map.xml', [StaticPageController::class, 'sitemap']);
-
-    /**
-     * SPECIAL - routes related to special events
-     */
-    Route::view('/giveaway', 'giveaway');
-    Route::get('/generate/manifest', function (Request $request) {
-        return response()->json($request->all());
-    })->name('manifest.generate');
-    Route::get('/generate/protocol', function (Request $request) {
-        return Redirect::away($request->get('protocol').'://');
-    })->name('protocol.generate');
-    Route::get('/shop', function () {
-        return redirect('https://memes33.com/collections/ios-haven');
-    });
-    Route::get('/merch', function () {
-        return view('merch');
-    });
-    Route::get('/nordvpn', function () {
-        return response()->json('Verifying NordVPN ownership 02/15/2020. Official email ioshavenco@gmail.com');
-    });
+//    require "./localized.php";
 
 
-    Route::get('/install', [StaticPageController::class, 'chooseInstall']);
-    Route::get('/light', [StaticPageController::class, 'lightTheme']);
-    Route::get('/dark', [StaticPageController::class, 'darkTheme']);
-    Route::prefix('shortcuts')->middleware('tab:Shortcuts', 'back:Shortcuts')->group(function () {
-        Route::get('/{tag?}', [ShortcutController::class, 'page'])->name('shortcuts');
-    });
-
-    Route::prefix('blog')->group(function () {
-        Route::get('/', [PostsController::class, 'index'])->name('blog.listing');
-        Route::get('/tag/{tag}', [PostsController::class, 'showTag'])->name('blog.tag');
-        Route::get('/{slug}_{post}', [PostsController::class, 'show'])->name('blog.reader');
-    });
-    Route::get('/news', function () {
-        Log::emergency(json_encode($_SERVER));
-        return redirect("https://blog.ioshaven.com");
-    });
 //});
 
 
-
+//require "./localized.php";
 
 
 // Route::get('/themetest', [StaticPageController::class, 'getThemesPage']);
@@ -132,9 +50,14 @@ Route::get('/test', function () {
     return view('test');
 });
 
-//
 
-
+Route::post('/locale', function () {
+    $locale = request()->get('locale');
+    if (isset($locale) && array_key_exists($locale, config('localization.supportedLocales'))) {
+        session()->put('locale', $locale);
+    }
+    return back();
+});
 
 
 
@@ -150,7 +73,6 @@ Route::get('/tl/{view}', [StaticPageController::class, 'template']);
 
 Route::get('/tutorials/{view}', [StaticPageController::class, 'tutorial']);
 
-Route::get('/', [StaticPageController::class, 'index'])->middleware('tab:Home', 'back:Home');
 
 
 

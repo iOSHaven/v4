@@ -31,7 +31,7 @@ return [
      * 'The <x> must be accepted.' => '<x>は必ず受け付けること。',
      * 'The <x> must be accepted.' => '<x>を受け付けること。',
      */
-    'accepted' => '<x>は必ず受け入れること',
+    'accepted' => ':attribute は必ず受け入れること',
 
 
     /*

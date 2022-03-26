@@ -124,35 +124,26 @@
 
 <section class="text-center mt-4 mb-8 select-none block">
   <h1 class="uppercase font-bold text-3xl mt-2 hover:underline hover:decoration-2 hover:decoration-red-500">iOS Haven</h1>
-  <h2 class="uppercase">{{ __("strings.Power User Community") }}</h2>
+  <h2 class="uppercase">{{ __("Power User Community") }}</h2>
   <div class="flex items-center justify-center mt-4 max-w-xs mx-auto">
-    <a href="{{ '/install?theme=dark' }}" class='uppercase w-full hide-webapp mx-1 flex items-center justify-center font-bold rounded-md text-sm px-2 py-1 bg-black text-white border border-white'>
-      <i class="fas fa-moon-stars mr-3 fa-lg"></i>
-      {{ __("strings.install") }}
+    <a href="/install?theme=dark" class='uppercase w-full hide-webapp mx-1 flex items-center justify-center font-bold rounded-md text-sm px-2 py-1 bg-black text-white border border-white'>
+      <i class="fas fa-moon-stars mr-3 fa-lg uppercase"></i>
+      {{ __("Install") }}
     </a>
-    <a href="{{ '/install?theme=light' }}" class='uppercase w-full hide-webapp mx-1 flex items-center justify-center font-bold rounded-md text-sm px-2 py-1 text-black bg-yellow-400 border border-yellow-800'>
-      <i class="fas fa-sun mr-3 fa-lg"></i>
-      {{ __("strings.install") }}
+    <a href="/install?theme=light" class='uppercase w-full hide-webapp mx-1 flex items-center justify-center font-bold rounded-md text-sm px-2 py-1 text-black bg-yellow-400 border border-yellow-800'>
+      <i class="fas fa-sun mr-3 fa-lg uppercase"></i>
+      {{ __("Install") }}
     </a>
   </div>
   <div class="mb-4 mt-4 max-w-xs mx-auto">
     <a href="{{ '/apps' }}" class='uppercase mx-1 flex items-center justify-center font-bold rounded-md text-sm px-2 py-1 text-white bg-green-500 border border-green-800'>
-      <i class="fas fa-rocket mr-3 fa-lg"></i>
-      {{ __("strings.Launch") }}
+      <i class="fas fa-rocket mr-3 fa-lg uppercase"></i>
+      {{ __("Launch") }}
     </a>
   </div>
 
-{{--  <hr class="mx-auto w-16 border-stone-300 dark:border-slate-700 my-4">--}}
-
-{{--  <div class="mb-4 mt-4 max-w-xs mx-auto">--}}
-{{--    <a href="altstore://source?url={{ url('/altstore/apps.json')}}" class='uppercase hide-webapp mx-1 flex items-center justify-center font-bold rounded-md text-sm px-2 py-1 text-white bg-purple-500 border border-purple-800'>--}}
-{{--      <i class="fas fa-mobile-alt mr-3 fa-lg"></i>--}}
-{{--      {{ __("strings.Open in AltStore") }}--}}
-{{--    </a>--}}
-{{--  </div>--}}
 
   <hr class="mx-auto w-16 border-stone-300 dark:border-slate-700 my-4">
-
   @yield('blog-header')
 </section>
 
@@ -163,49 +154,43 @@
   @component('components.post', [
       "url" => "/apps",
       "image" => "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7",
-      "title" => __("strings.2000+ Apps"),
-      "subtitle" => __("strings.Tweaked, Modded, and Covert Apps"),
-      "callToActionButton" => "Open"
+      "title" => __("2000+ Apps"),
+      "subtitle" => __("Tweaked, Modded, and Covert Apps")
   ])@endcomponent
 
   @component('components.post', [
       "url" => "/shortcuts",
       "image" => "https://imgur.com/PtW5Uxl.png",
-      "title" => __("strings.Shortcuts"),
-      "subtitle" => __("strings.Browse Apple Shortcuts"),
-      "callToActionButton" => __("strings.Open"),
+      "title" => __("Shortcuts"),
+      "subtitle" => __("Browse Apple Shortcuts")
   ])@endcomponent
 
   @component('components.post', [
       "url" => "/blog",
       "image" => "https://images.unsplash.com/photo-1521714161819-15534968fc5f",
-      "title" => __("strings.Tutorials & News"),
-      "subtitle" => __("strings.Read Community Blog"),
-      "callToActionButton" => __("strings.Open"),
+      "title" => __("Tutorials and News"),
+      "subtitle" => __("Read Community Blog")
   ])@endcomponent
 
   @component('components.post', [
       "url" => "/search",
       "image" => "https://images.unsplash.com/photo-1490127252417-7c393f993ee4",
-      "title" => __("strings.Powerful Search Engine"),
-      "subtitle" => __("strings.Find More With Less"),
-      "callToActionButton" => __("strings.Open"),
+      "title" => __("Powerful Search Engine"),
+      "subtitle" => __("Find More With Less")
   ])@endcomponent
 
   @component('components.post', [
       "url" => "/games",
       "image" => "https://images.unsplash.com/photo-1587573089283-f14c65841f75",
-      "title" => __("strings.Gaming Collection"),
-      "subtitle" => __("strings.Tweaked, Hacked, and Free Games"),
-      "callToActionButton" => __("strings.Open"),
+      "title" => __("Gaming Collection"),
+      "subtitle" => __("Tweaked, Hacked, and Free Games")
   ])@endcomponent
 
   @component('components.post', [
       "url" => "/themes",
       "image" => "https://images.unsplash.com/photo-1569172122301-bc5008bc09c5",
-      "title" => __("strings.Fashionable Themes"),
-      "subtitle" => __("strings.Curated Themes for High Fashion"),
-      "callToActionButton" => __("strings.Open"),
+      "title" => __("Fashionable Themes"),
+      "subtitle" => __("Curated Themes for High Fashion")
   ])@endcomponent
 
 
@@ -219,7 +204,7 @@
 
 <section class="text-center mt-4 mb-8 select-none block">
 {{--  <a href="/blog" class="font-bold text-3xl mt-2 hover:underline hover:decoration-2 hover:decoration-red-500">iPA Insider</a>--}}
-  <a href="/blog" class="uppercase hover:underline hover:decoration-2 hover:decoration-red-500">{{ __("strings.Most Recent Stories") }}</a>
+  <a href="/blog" class="uppercase hover:underline hover:decoration-2 hover:decoration-red-500">{{ __("Most Recent Stories") }}</a>
   <hr class="mx-auto w-16 border-stone-300 dark:border-slate-700 my-4">
   @yield('blog-header')
 </section>
@@ -231,8 +216,7 @@
         "image" => $post->image,
         "title" => $post->title,
         "subtitle" => $post->subtitle,
-        "description" => $post->description,
-        "callToActionText" => __("strings.Continue Reading >>"),
+        "description" => $post->description
     ])@endcomponent
   @endforeach
 </section>
@@ -270,11 +254,6 @@
   </div>
 </section>
 
-<footer class="text-center my-8 select-none">
-  <hr class="mx-auto w-16 border-stone-300 dark:border-slate-700">
-  <p class="text-lg font-mono py-5">
-    <a href="https://ioshaven.com" class="hover:underline">iOS Haven</a> &copy; {{now()->year}}</p>
-</footer>
 
 </main>
 

@@ -2,6 +2,8 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\Localization;
+use App\Http\Middleware\SpecifiesLocalization;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
 class Kernel extends HttpKernel
@@ -65,11 +67,7 @@ class Kernel extends HttpKernel
         'admin' => \App\Http\Middleware\IsAdmin::class,
         'tab' => \App\Http\Middleware\SetCurrentTab::class,
         'back' => \App\Http\Middleware\SetBackButton::class,
-
-        'localize'                => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRoutes::class,
-        'localizationRedirect'    => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationRedirectFilter::class,
-        'localeSessionRedirect'   => \Mcamara\LaravelLocalization\Middleware\LocaleSessionRedirect::class,
-        'localeCookieRedirect'    => \Mcamara\LaravelLocalization\Middleware\LocaleCookieRedirect::class,
-        'localeViewPath'          => \Mcamara\LaravelLocalization\Middleware\LaravelLocalizationViewPath::class
+        'useLocale' => Localization::class,
+        'setLocale' => SpecifiesLocalization::class
     ];
 }

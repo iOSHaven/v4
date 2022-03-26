@@ -212,7 +212,7 @@
     @endif
 
     @if(empty($hide_footer))
-    {{--@include('layouts.footer')--}}
+      @include('layouts.footer')
     @endif
     </div>
 
