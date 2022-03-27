@@ -17810,6 +17810,17 @@
      
 }
 
+    namespace Laravel\Horizon { 
+            /**
+     * 
+     *
+     */ 
+        class Horizon {
+         
+    }
+     
+}
+
     namespace Laravel\Nova { 
             /**
      * 
@@ -21427,6 +21438,7 @@ namespace  {
             class Debugbar extends \Barryvdh\Debugbar\Facades\Debugbar {}
             class Flare extends \Facade\Ignition\Facades\Flare {}
             class Image extends \Intervention\Image\Facades\Image {}
+            class Horizon extends \Laravel\Horizon\Horizon {}
             class Nova extends \Laravel\Nova\Nova {}
      
 }
