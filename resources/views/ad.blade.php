@@ -64,7 +64,7 @@ dd(url($model->url))
     {{-- @component('components.banner')@endcomponent --}}
 
 {{--    @component('ads.google-header')@endcomponent--}}
-{{--    @component('ads.adsterra-pop-under')@endcomponent--}}
+{{--    @component('ads.admaven-popunder')@endcomponent--}}
 
     @php
     function twitterGood($app, $model) {
