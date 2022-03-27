@@ -1,7 +1,7 @@
 @extends('layouts.redesign', ["hide_footer" => true, "title" => "Search"])
 
 @section('header')
-@include('ads.admaven-popunder')
+@include('ads.prop-push-notifications-with-worker')
 @endsection
 
 @section('content')
