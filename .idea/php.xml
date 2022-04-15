@@ -186,6 +186,7 @@
       <path value="$PROJECT_DIR$/vendor/kabbouchi/nova-impersonate" />
       <path value="$PROJECT_DIR$/vendor/lab404/laravel-impersonate" />
       <path value="$PROJECT_DIR$/vendor/_laravel_idea" />
+      <path value="$PROJECT_DIR$/vendor/laravel/horizon" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />
