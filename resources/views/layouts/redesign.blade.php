@@ -243,6 +243,28 @@
 
     {{-- ==== PROPELLER ADVERTISING TRACKING ==== --}}
     <!-- <script type='text/javascript' src='https://propeller-tracking.com/fv.js?t=99810'></script> -->
+
+    <script>
+      if ('serviceWorker' in navigator) {
+        console.log("Trying to uninstall service workers");
+        navigator.serviceWorker.getRegistrations()
+                .then( function(registrations) {
+                  console.log(registrations)
+                  for(let registration of registrations) {
+                    console.log(registration)
+                    registration.unregister();
+                  }
+                }).catch(err => console.log("Could not uninstall service workers", err));
+        if ('caches' in window) {
+          caches.keys()
+                  .then(function(keyList) {
+                    return Promise.all(keyList.map(function(key) {
+                      return caches.delete(key);
+                    }));
+                  })
+        }
+      }
+    </script>
   </body>
 
 </html>
