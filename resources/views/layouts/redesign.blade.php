@@ -218,7 +218,7 @@
 
 
     <script src="{{ mix('/js/manifest.min.js') }}"></script>
-    <script src="{{ mix('/js/vendor.min.js') }}"></script>
+{{--    <script src="{{ mix('/js/vendor.min.js') }}"></script>--}}
     <script src="{{ mix('/js/main.min.js') }}"></script>
 
 

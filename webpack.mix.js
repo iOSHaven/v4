@@ -27,7 +27,7 @@ mix.postCss('resources/assets/postCss/redesign.css', 'public/css/redesign.min.cs
    .js('resources/assets/js/dashboard.js', 'public/js')
    .minify([
       "public/css/markdown.css",
-      "public/js/vendor.js",
+      // "public/js/vendor.js",
       "public/js/manifest.js",
       "public/js/main.js",
       "public/js/app.js",

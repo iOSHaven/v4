@@ -343,7 +343,7 @@ class AppController extends Controller
         addAppSecurityTimeoutToSession('plist', 1);
 
         return view('ad', [
-            'ad' => new Ad(),
+//            'ad' => new Ad(),
             'model' => $model,
             'app' => $app,
             'url' => $url ?? url($model->url),
