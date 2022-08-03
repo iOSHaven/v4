@@ -159,6 +159,7 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/lab404/laravel-impersonate" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/inspheric/nova-url-field" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ioshaven/plist" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/erusev/parsedown" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
