@@ -1,8 +1,8 @@
 @extends('layouts.redesign', ["hide_footer" => true, "title" => __("strings.Search")])
 
-@section('header')
-@include('ads.prop-push-notifications-with-worker')
-@endsection
+<!-- @section('header')
+{{--@include('ads.prop-push-notifications-with-worker')--}}
+@endsection -->
 
 @section('content')
 
