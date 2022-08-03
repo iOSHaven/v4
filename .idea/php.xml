@@ -151,6 +151,7 @@
       <path value="$PROJECT_DIR$/vendor/lab404/laravel-impersonate" />
       <path value="$PROJECT_DIR$/vendor/inspheric/nova-url-field" />
       <path value="$PROJECT_DIR$/vendor/ioshaven/plist" />
+      <path value="$PROJECT_DIR$/vendor/erusev/parsedown" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.0" />

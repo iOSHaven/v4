@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9295cab2769c0a6c01a315a58a7ebfef",
+    "content-hash": "77c0fdceaff015d506ceeb67331d996f",
     "packages": [
         {
             "name": "anhskohbo/no-captcha",
@@ -1791,7 +1791,7 @@
         },
         {
             "name": "ioshaven/plist",
-            "version": "dev-master",
+            "version": "dev-feature/jetstream-dashboard",
             "dist": {
                 "type": "path",
                 "url": "./nova-components/plist",
@@ -1827,7 +1827,7 @@
         },
         {
             "name": "ioshaven/v4",
-            "version": "dev-master",
+            "version": "dev-feature/jetstream-dashboard",
             "dist": {
                 "type": "path",
                 "url": "./nova-components/v4",
@@ -10581,10 +10581,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "ioshaven/plist": 20,
-        "ioshaven/v4": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
