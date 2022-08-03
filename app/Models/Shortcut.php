@@ -1,10 +1,9 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use App\Builders\ShortcutBuilder;
 use App\Traits\HasAnalytics;
-use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;

@@ -1,20 +1,17 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\DB;
 use Laravel\Nova\Actions\Actionable;
 
-class Itms extends Model
+class Ipa extends Model
 {
     use Actionable;
 
     protected $fillable = [
         'name', 'url',
     ];
-
-    protected $touches = ['apps'];
 
     public function providers()
     {
@@ -23,7 +20,7 @@ class Itms extends Model
 
     public function apps()
     {
-        return $this->belongsToMany(App::class);
+        return $this->belongsToMany(App::class)->using(Link::class);
     }
 
     public function getAppAttribute()

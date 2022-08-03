@@ -2,10 +2,8 @@
 
 namespace App\Nova\Metrics;
 
-use App\View;
-use Illuminate\Support\Facades\Auth;
+use App\Models\View;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Laravel\Nova\Metrics\Trend;
 
 class ViewsPerDay extends PerDay
 {

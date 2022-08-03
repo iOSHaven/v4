@@ -2,18 +2,15 @@
 
 namespace App\Nova\Actions;
 
-use App\Ipa;
-use App\Itms;
-use App\Provider;
-use Exception;
+use App\Models\Ipa;
+use App\Models\Itms;
+use App\Models\Provider;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Collection;
-use Laravel\Nova\Actions\Action;
 use Laravel\Nova\Actions\DestructiveAction;
 use Laravel\Nova\Fields\ActionFields;
-use Throwable;
 
 class ExtractIpaAndItmsLinks extends DestructiveAction implements ShouldQueue
 {

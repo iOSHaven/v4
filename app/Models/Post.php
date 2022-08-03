@@ -1,15 +1,12 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
-use App\User;
-use Barryvdh\Debugbar\Facade as Debug;
 use GuzzleHttp\Client;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Mail\Markdown;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class Post extends Model

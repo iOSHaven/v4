@@ -1,13 +1,9 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
-use App\App;
-use App\Image;
-use App\Provider;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use Symfony\Component\Process\Exception\ProcessFailedException;
 use Symfony\Component\Process\Process;
 
 class Mirror extends Model

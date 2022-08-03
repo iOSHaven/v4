@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Shortcut;
-use Illuminate\Http\Request;
+use App\Models\Shortcut;
 use Illuminate\Pagination\LengthAwarePaginator;
 
 class ShortcutController extends Controller

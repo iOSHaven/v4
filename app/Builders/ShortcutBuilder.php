@@ -2,9 +2,7 @@
 
 namespace App\Builders;
 
-use App\Provider;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Http\Request;
 
 class ShortcutBuilder extends Builder
 {
