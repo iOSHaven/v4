@@ -8,8 +8,9 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      display: ['Archivo Black', 'sans-serif'],
-      body: ['Roboto', 'sans-serif'],
+      display: ['Archivo Black', 'ui-sans-serif'],
+      body: ['Roboto', 'ui-sans-serif'],
+      mono: ['ui-monospace', 'SFMono-Regular', 'monospace']
     },
     aspectRatio: {
       auto: 'auto',

@@ -1,5 +1,6 @@
 <?php
 
+use App\Nova\BetterActionResource;
 use Laravel\Nova\Actions\ActionResource;
 use Laravel\Nova\Http\Middleware\Authenticate;
 use Laravel\Nova\Http\Middleware\Authorize;

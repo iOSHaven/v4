@@ -255,3 +255,13 @@ label.toggle-dark:after {
         color: white;
     }
 }
+
+.dropdown-hover:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-focus:focus .dropdown-menu,
+.dropdown-focus:focus-within .dropdown-menu,
+.dropdown-focus:target .dropdown-menu{
+    display: block;
+}

@@ -94,10 +94,7 @@ dd(url($model->url))
         <i class="fab fa-twitter mr-3 fa-lg"></i>
         TWEET
         <i class="fab fa-twitter ml-3 fa-lg"></i>
-
       </a>
-
-
     </div>
 
     <div>

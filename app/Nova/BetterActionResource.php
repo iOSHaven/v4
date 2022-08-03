@@ -80,8 +80,8 @@ class BetterActionResource extends \Laravel\Nova\Resource
     public function fields(Request $request)
     {
 //        debug_print_backtrace();
-        throw new \Exception("asdf");
-        Debugbar::debug('asdf');
+//        throw new \Exception("asdf");
+//        Debugbar::debug('asdf');
         return [
             ID::make('ID', 'id'),
             Text::make(__('Action Name'), 'name', function ($value) {

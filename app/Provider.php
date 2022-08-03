@@ -14,6 +14,15 @@ class Provider extends Model
 
     protected $fillable = ['name', 'twitter'];
 
+    public function toArray()
+    {
+        return [
+            'name' => $this->name,
+            'revoked' => $this->revoked,
+            'avatar' => $this->avatar,
+        ];
+    }
+
     public function newEloquentBuilder($query)
     {
         return new ProviderBuilder($query);

@@ -36,11 +36,11 @@
 {{-- CHANGE THE BODY BASED IF NAV SHOULD BE HIDDEN --}}
 @if(empty($hide_nav))
 
-<body class="relative mb-16 bg-neutral-100 dark:bg-neutral-900 text-gray-600 dark:text-gray-300" style="margin-top: 33px;">
+<body class="relative mb-16 bg-neutral-100 dark:bg-neutral-900 text-neutral-600 dark:text-neutral-300" style="margin-top: 33px;">
   @include('layouts.navigation', ["title" => $title ?? null])
   @else
 
-  <body class="m-inset-top relative bg-gray-100 dark:bg-gray-900 text-gray-600 dark:text-gray-300">
+  <body class="m-inset-top relative bg-neutral-100 dark:bg-neutral-900 text-neutral-600 dark:text-neutral-300">
     @endif
 
     {{-- ====INSIDE BODY==== --}}
@@ -63,15 +63,15 @@
           <div class="leading-none">@admin Admin @else Member @endadmin</div>
         </li>
         <a href="/dashboard" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
-          Dashboard
+          {{ __("strings.Dashboard") }}"
           <i class="fal fa-chevron-right"></i>
         </a>
         <li class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800 text-gray-200 dark:text-gray-800">
-          Notifications
+          {{ __("strings.Notifications") }}
           <i class="fal fa-chevron-right"></i>
         </li>
         <li class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800 text-gray-200 dark:text-gray-800">
-          Badges
+          {{ __("strings.Badges") }}
           <i class="fal fa-chevron-right"></i>
         </li>
         @endif
@@ -81,7 +81,7 @@
         <form action="/logout" method="post">
           @csrf
           <button type="submit" class="w-full p-3 flex font-bold items-center justify-between border-t text-red-500 bg-white dark:bg-black border-gray-200 dark:border-gray-800">
-            Logout
+            {{ __("strings.Logout") }}
             <i class="fas fa-sign-out"></i>
           </button>
         </form>
@@ -93,7 +93,7 @@
     <label for="check-sidebar-right" class="fixed z-2 w-full h-full top-0 left-0 scroll-toggler" style="background-color: black; opacity: 0.7;"></label>
     <aside class="p-inset-top p-inset-bottom z-2 top-0 right-0 fixed h-full flex flex-col justify-between bg-white dark:bg-black border-gray-200 dark:border-gray-800">
       <div>
-        <h1 class="border-b text-center py-1 border-gray-200 dark:border-gray-800">Other links</h1>
+        <h1 class="border-b text-center py-1 border-gray-200 dark:border-gray-800">{{ __("strings.Other Links") }}</h1>
         <ul class="">
           {{-- <a href="/contact/index" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
           Contact
@@ -102,21 +102,21 @@
           <a href="/themes" target="_blank" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
           <span>
             <i class="fas fa-paint-brush mr-1"></i>
-            Themes
-            <strong class="ml-3 text-blue-500">NEW!</strong>
+            {{ __("strings.Themes") }}
+            <strong class="ml-3 text-blue-500 uppercase">{{ __("strings.New!") }}</strong>
           </span>
           <i class="fas fa-chevron-right"></i>
           </a>
           <a href="/shortcuts" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
-            Shortcuts
+            {{ __("strings.Shortcuts") }}
             <i class="fal fa-chevron-right"></i>
           </a>
           <a href="/jailbreaks" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
-            Jailbreaks
+            {{ __("strings.Jailbreaks") }}
             <i class="fal fa-chevron-right"></i>
           </a>
           <a href="/betas" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
-            Betas
+            {{ __("strings.Betas") }}
             <i class="fal fa-chevron-right"></i>
           </a>
 {{--          <a href="/cydia" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">--}}
@@ -126,17 +126,17 @@
           <a href="https://ioshaven.com/shortcut/perm/135" target="_blank" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
           <span>
             <i class="fas fa-box-heart mr-1"></i>
-            Tweak Pack
-            <strong class="ml-3 text-blue-500">NEW!</strong>
+            {{ __("strings.TweakPack") }}
+            <strong class="ml-3 text-blue-500 uppercase">{{ __("strings.New!") }}</strong>
           </span>
             <i class="fal fa-chevron-right"></i>
           </a>
           <a href="/aboutUs" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
-            About Us
+            {{ __("strings.About Us") }}
             <i class="fal fa-chevron-right"></i>
           </a>
           <a href="/credits" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
-            Credits
+            {{ __("strings.Credits") }}
             <i class="fal fa-chevron-right"></i>
           </a>
         </ul>
@@ -212,7 +212,7 @@
     @endif
 
     @if(empty($hide_footer))
-    {{--@include('layouts.footer')--}}
+      @include('layouts.footer')
     @endif
     </div>
 

@@ -15,6 +15,7 @@ use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
+use LaravelLocalization;
 use Session;
 use Str;
 
@@ -166,6 +167,13 @@ class StaticPageController extends Controller
         return view('skins', [
             'skins' => Skin::orderBy('order', 'asc')->get(),
         ]);
+    }
+
+
+    public function getManifest($theme) {
+        $manifest = config('webapp-manifest');
+        $manifest['start_url'] = "/apps?theme=$theme";
+        return response()->json($manifest);
     }
 
     public function getThemesPage()

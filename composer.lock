@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1ebbb919685d8fd41228e410965c0d18",
+    "content-hash": "acb03452cab9ca0dfcc31dfcc452ce06",
     "packages": [
         {
             "name": "anhskohbo/no-captcha",
@@ -1290,6 +1290,65 @@
             "time": "2020-12-29T14:50:06+00:00"
         },
         {
+            "name": "eminiarts/nova-tabs",
+            "version": "1.4.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eminiarts/nova-tabs.git",
+                "reference": "ba6adf5c0470b967397b1c4e8f71d046acdac984"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eminiarts/nova-tabs/zipball/ba6adf5c0470b967397b1c4e8f71d046acdac984",
+                "reference": "ba6adf5c0470b967397b1c4e8f71d046acdac984",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "laravel/nova": ">=2.9.0",
+                "php": ">=7.1.3"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.17",
+                "orchestra/testbench": "^6.7"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Eminiarts\\Tabs\\TabsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Eminiarts\\Tabs\\": "src/",
+                    "Eminiarts\\Tabs\\Tests\\": "tests/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Emini Arts GmbH",
+                    "email": "support@eminiarts.ch",
+                    "homepage": "https://eminiarts.ch"
+                }
+            ],
+            "description": "Laravel Nova - Tabs.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/eminiarts/nova-tabs/issues",
+                "source": "https://github.com/eminiarts/nova-tabs/tree/1.4.6"
+            },
+            "time": "2021-07-12T16:34:23+00:00"
+        },
+        {
             "name": "erusev/parsedown",
             "version": "1.7.4",
             "source": {
@@ -2339,6 +2398,120 @@
                 }
             ],
             "time": "2020-06-13T08:05:20+00:00"
+        },
+        {
+            "name": "kabbouchi/nova-impersonate",
+            "version": "v1.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/KABBOUCHI/nova-impersonate.git",
+                "reference": "0c6cff8a2dcc6597d438850849b836e49b945876"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/KABBOUCHI/nova-impersonate/zipball/0c6cff8a2dcc6597d438850849b836e49b945876",
+                "reference": "0c6cff8a2dcc6597d438850849b836e49b945876",
+                "shasum": ""
+            },
+            "require": {
+                "lab404/laravel-impersonate": "^1.4.1",
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "KABBOUCHI\\NovaImpersonate\\ToolServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "KABBOUCHI\\NovaImpersonate\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A Laravel Nova field allows you to authenticate as your users.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/KABBOUCHI/nova-impersonate/issues",
+                "source": "https://github.com/KABBOUCHI/nova-impersonate/tree/v1.10.0"
+            },
+            "time": "2021-11-13T13:45:08+00:00"
+        },
+        {
+            "name": "lab404/laravel-impersonate",
+            "version": "1.7.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/404labfr/laravel-impersonate.git",
+                "reference": "14de9dbf3446406282fa16f7920a8049860b3832"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/404labfr/laravel-impersonate/zipball/14de9dbf3446406282fa16f7920a8049860b3832",
+                "reference": "14de9dbf3446406282fa16f7920a8049860b3832",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^6.0 | ^7.0 | ^8.0",
+                "php": "^7.2 | ^8.0"
+            },
+            "require-dev": {
+                "mockery/mockery": "^1.3.3",
+                "orchestra/database": "^4.0 | ^5.0 | ^6.0",
+                "orchestra/testbench": "^4.0 | ^5.0 | ^6.0",
+                "phpunit/phpunit": "^7.5 | ^8.0 | ^9.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Lab404\\Impersonate\\ImpersonateServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Lab404\\Impersonate\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Marceau Casals",
+                    "email": "marceau@casals.fr"
+                }
+            ],
+            "description": "Laravel Impersonate is a plugin that allows to you to authenticate as your users.",
+            "keywords": [
+                "auth",
+                "impersonate",
+                "impersonation",
+                "laravel",
+                "laravel-package",
+                "laravel-plugin",
+                "package",
+                "plugin",
+                "user"
+            ],
+            "support": {
+                "issues": "https://github.com/404labfr/laravel-impersonate/issues",
+                "source": "https://github.com/404labfr/laravel-impersonate/tree/1.7.2"
+            },
+            "time": "2020-11-11T11:13:14+00:00"
         },
         {
             "name": "laravel/cashier",
@@ -3396,82 +3569,6 @@
                 }
             ],
             "time": "2021-12-17T13:37:37+00:00"
-        },
-        {
-            "name": "mcamara/laravel-localization",
-            "version": "1.6.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/mcamara/laravel-localization.git",
-                "reference": "645819da9ef29f3ba7588d9b4598799caf0b2463"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/mcamara/laravel-localization/zipball/645819da9ef29f3ba7588d9b4598799caf0b2463",
-                "reference": "645819da9ef29f3ba7588d9b4598799caf0b2463",
-                "shasum": ""
-            },
-            "require": {
-                "laravel/framework": "~5.2.0||~5.3.0||~5.4.0||~5.5.0||~5.6.0||~5.7.0||~5.8.0||^6.0||^7.0||^8.0",
-                "php": ">=7.1.0"
-            },
-            "require-dev": {
-                "orchestra/testbench-browser-kit": "~3.4|~3.8|~4.0",
-                "phpunit/phpunit": "6.0.*|^8.0"
-            },
-            "suggest": {
-                "ext-intl": "*"
-            },
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "Mcamara\\LaravelLocalization\\LaravelLocalizationServiceProvider"
-                    ],
-                    "aliases": {
-                        "LaravelLocalization": "Mcamara\\LaravelLocalization\\Facades\\LaravelLocalization"
-                    }
-                }
-            },
-            "autoload": {
-                "classmap": [],
-                "psr-0": {
-                    "Mcamara\\LaravelLocalization": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Marc Cámara",
-                    "email": "mcamara88@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Easy localization for Laravel",
-            "homepage": "https://github.com/mcamara/laravel-localization",
-            "keywords": [
-                "laravel",
-                "localization",
-                "php"
-            ],
-            "support": {
-                "issues": "https://github.com/mcamara/laravel-localization/issues",
-                "source": "https://github.com/mcamara/laravel-localization/tree/1.6.2"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/iwasherefirst2",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/mcamara",
-                    "type": "github"
-                }
-            ],
-            "time": "2021-10-24T11:55:35+00:00"
         },
         {
             "name": "mobiledetect/mobiledetectlib",

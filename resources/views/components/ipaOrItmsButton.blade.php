@@ -2,7 +2,7 @@
 $type = strtoupper(class_basename($model));
 $isIPA = $type == "IPA";
 $href = ( $isIPA ? "/download" : "/install") . '/' . $model->id;
-$title = ($isIPA ? "IPA" : "GET");
+$title = ($isIPA ? __("strings.IPA") : __("strings.GET"));
 @endphp
 @component('components.button', [
         "href"=> $href, 

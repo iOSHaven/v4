@@ -1,4 +1,4 @@
-@extends('layouts.redesign', ["title" => $pageTitle ?? null ])
+@extends('layouts.redesign', ["title" => $pageTitle ?? null, "hide_footer" => $pageTitle === "Updates" ])
 
 @section('header')
 <meta name="page" content="{{ $apps->currentPage() }}">
@@ -29,7 +29,7 @@
 {{--    @component('ads.google-mobile-optimized')@endcomponent--}}
 {{--    @endif--}}
 
-    @foreach($apps as $model)
+    @forelse($apps as $model)
       @if(class_basename($model) == 'App')
       @component('components.applayout', ["app" => $model])@endcomponent
       @else
@@ -47,8 +47,11 @@
 {{--          @component('ads.google-in-feed') @endcomponent--}}
 {{--        @endif--}}
 {{--      @endif--}}
-
-      @endforeach
+      @empty
+        <div class="markdown text-center mt-4 text-gray-400">
+          No {{ strtolower($pageTitle) }} found.  Please check back later.
+        </div>
+      @endforelse
   </div>
 </div>
 

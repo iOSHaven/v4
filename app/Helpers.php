@@ -39,7 +39,7 @@ function theme(string ...$classes)
 
 function tab($tab)
 {
-    return __(session('current_tab') == $tab ? 'text-blue-500' : '');
+    return session('current_tab') == $tab ? 'text-blue-500' : '';
 }
 
 function user_agent_has($str)
