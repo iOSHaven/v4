@@ -1,2 +1,32 @@
-import{ay as s,W as t,a2 as o,b1 as n,b3 as c,bn as i,X as r,aF as l,b6 as d}from"./runtime-dom.esm-bundler.3714f197.js";const _={class:"text-sm text-gray-600"},m={__name:"ActionMessage",props:{on:Boolean},setup(a){return(e,p)=>(s(),t("div",null,[o(d,{"leave-active-class":"transition ease-in duration-1000","leave-from-class":"opacity-100","leave-to-class":"opacity-0"},{default:n(()=>[c(r("div",_,[l(e.$slots,"default")],512),[[i,a.on]])]),_:3})]))}};export{m as _};
+import { ay as openBlock, W as createElementBlock, a2 as createVNode, b1 as withCtx, b3 as withDirectives, bn as vShow, X as createBaseVNode, aF as renderSlot, b6 as Transition } from "./runtime-dom.esm-bundler.3714f197.js";
+const _hoisted_1 = { class: "text-sm text-gray-600" };
+const _sfc_main = {
+  __name: "ActionMessage",
+  props: {
+    on: Boolean
+  },
+  setup(__props) {
+    return (_ctx, _cache) => {
+      return openBlock(), createElementBlock("div", null, [
+        createVNode(Transition, {
+          "leave-active-class": "transition ease-in duration-1000",
+          "leave-from-class": "opacity-100",
+          "leave-to-class": "opacity-0"
+        }, {
+          default: withCtx(() => [
+            withDirectives(createBaseVNode("div", _hoisted_1, [
+              renderSlot(_ctx.$slots, "default")
+            ], 512), [
+              [vShow, __props.on]
+            ])
+          ]),
+          _: 3
+        })
+      ]);
+    };
+  }
+};
+export {
+  _sfc_main as _
+};
 //# sourceMappingURL=ActionMessage.a358f0ed.js.map
