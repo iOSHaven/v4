@@ -10,10 +10,16 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Laravel\Nova\Actions\Actionable;
+use Laravel\Scout\Searchable;
 
 class Shortcut extends Model
 {
-    use Actionable, HasAnalytics;
+    use Actionable, HasAnalytics, Searchable;
+
+    public function searchableAs()
+    {
+        return config('app.env').'-shortcuts';
+    }
 
     public function newEloquentBuilder($query)
     {

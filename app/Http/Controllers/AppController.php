@@ -169,16 +169,24 @@ class AppController extends Controller
         return $this->display($apps, 'Updates');
     }
 
-    public function getSearchPage()
+    public function getSearchPage(Request $request)
     {
         $providers = Provider::orderBy('name')->get();
-        $apps = App::all();
 
-        $shortcuts = Shortcut::working()->get();
-        $models = $apps->merge($shortcuts);
+
+        if($request->has('q')) {
+            $search = Str::transliterate($request->q);
+            $apps = App::search($search)->take(12)->get();
+            $shortcuts = Shortcut::search($search)->get();
+            $shortcuts = $shortcuts->where('approval_status', 'approved');
+        }
+
+
         return view('search')->with([
-            'models' => $models,
             'providers' => $providers,
+            'apps' => $apps ?? [],
+            'shortcuts' => $shortcuts ?? [],
+            'search' => $search ?? '',
             'pageTitle' => 'Search',
         ]);
     }

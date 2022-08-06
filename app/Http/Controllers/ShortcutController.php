@@ -47,7 +47,7 @@ class ShortcutController extends Controller
 
     public function page($tag = null)
     {
-        $shortcuts = Shortcut::search($tag);
+        $shortcuts = Shortcut::searchWithoutScout($tag);
 
         $shortcuts = $this->gathered_query($shortcuts, $tag);
 

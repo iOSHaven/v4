@@ -31,6 +31,7 @@
         "command-line-args": "^5.2.0",
         "cssnano": "^5.0.14",
         "framework7": "^6.3.12",
+        "framework7-icons": "^5.0.5",
         "jquery": "^3.5.0",
         "laravel-mix": "^6.0.39",
         "laravel-vite-plugin": "^0.5.2",

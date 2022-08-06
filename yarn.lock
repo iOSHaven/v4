@@ -3564,6 +3564,11 @@ fraction.js@^4.2.0:
   resolved "https://registry.yarnpkg.com/fraction.js/-/fraction.js-4.2.0.tgz#448e5109a313a3527f5a3ab2119ec4cf0e0e2950"
   integrity sha512-MhLuK+2gUcnZe8ZHlaaINnQLl0xRIGRfcGk2yl8xoQAfHrSsL3rYu6FCmBdkdbhc9EPlwyGHewaRsvwRMJtAlA==
 
+framework7-icons@^5.0.5:
+  version "5.0.5"
+  resolved "https://registry.yarnpkg.com/framework7-icons/-/framework7-icons-5.0.5.tgz#a067709755054c69c22318de94c92bca40f3a908"
+  integrity sha512-bvHMLyujV9TFuudehd3ORZ/EvNp19Ir3ckVzYAOf3MkLymHba/9oHLsgopCh0x5UsrYZUpkrE+fd7ggj5y4wRw==
+
 framework7@^6.3.12:
   version "6.3.17"
   resolved "https://registry.yarnpkg.com/framework7/-/framework7-6.3.17.tgz#0b8b2d67537c80f59a1c48854cbff3bc99fc3de0"

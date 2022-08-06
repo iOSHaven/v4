@@ -9,10 +9,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Laravel\Nova\Actions\Actionable;
+use Laravel\Scout\Searchable;
 
 class App extends Model
 {
-    use SoftDeletes, Actionable, HasAnalytics;
+    use SoftDeletes, Actionable, HasAnalytics, Searchable;
 
     protected $fillable = ['name',
         'uid',
@@ -33,6 +34,11 @@ class App extends Model
     protected $hidden = ['id'];
 
     protected $appends = ['abs_icon', 'is_admin'];
+
+    public function searchableAs()
+    {
+        return config('app.env').'-apps';
+    }
 
     public static function findByUid($uid)
     {
