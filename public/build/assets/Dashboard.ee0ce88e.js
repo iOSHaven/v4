@@ -1,1 +1,0 @@
-import{_ as o}from"./AppLayout.243a22f7.js";import{o as r,c as a}from"./app.e48a4295.js";import"./_plugin-vue_export-helper.cdc0426e.js";/* empty css            */const i={__name:"Dashboard",setup(t){return(e,s)=>(r(),a(o,{title:"Dashboard"}))}};export{i as default};

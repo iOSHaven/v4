@@ -1,0 +1,2 @@
+import{ay as s,W as t,a2 as o,b1 as n,b3 as c,bn as i,X as r,aF as l,b6 as d}from"./runtime-dom.esm-bundler.3714f197.js";const _={class:"text-sm text-gray-600"},m={__name:"ActionMessage",props:{on:Boolean},setup(a){return(e,p)=>(s(),t("div",null,[o(d,{"leave-active-class":"transition ease-in duration-1000","leave-from-class":"opacity-100","leave-to-class":"opacity-0"},{default:n(()=>[c(r("div",_,[l(e.$slots,"default")],512),[[i,a.on]])]),_:3})]))}};export{m as _};
+//# sourceMappingURL=ActionMessage.a358f0ed.js.map
