@@ -18,7 +18,9 @@ use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [StaticPageController::class, 'index'])->middleware('tab:Home', 'back:Home');
+Route::get('/', [StaticPageController::class, 'index'])
+    ->middleware('tab:Home', 'back:Home')
+    ->name('landing');
 
 /**
  * APPS - anything related to app routes

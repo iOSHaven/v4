@@ -2,9 +2,7 @@
 
 namespace App\Builders;
 
-use App\Provider;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Http\Request;
 
 class ShortcutBuilder extends Builder
 {
@@ -37,7 +35,7 @@ class ShortcutBuilder extends Builder
         return $this->where('updated_at', '>', now()->subDays($days))->orderBy('updated_at', 'desc');
     }
 
-    public function search($search = null)
+    public function searchWithoutScout($search = null)
     {
         $r = request();
         $args = parseQuery($search ?? $r->q, [

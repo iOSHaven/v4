@@ -2,8 +2,7 @@
 
 namespace App\Nova\Metrics;
 
-use App\Nova\Resource;
-use App\View;
+use App\Models\View;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Trend;
 

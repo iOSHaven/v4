@@ -2,13 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\App;
+use App\Models\User;
 use App\ReactJS;
-use App\User;
 use Auth;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Artisan;
-use Illuminate\Support\Facades\File;
 use Session;
 
 class HomeController extends Controller

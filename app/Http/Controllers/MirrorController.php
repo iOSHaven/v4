@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Mirror;
+use App\Models\Mirror;
 use Illuminate\Http\Request;
 
 class MirrorController extends Controller
@@ -41,7 +41,7 @@ class MirrorController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Mirror  $mirror
+     * @param  \App\Models\Mirror  $mirror
      * @return \Illuminate\Http\Response
      */
     public function show(Mirror $mirror)
@@ -52,7 +52,7 @@ class MirrorController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Mirror  $mirror
+     * @param  \App\Models\Mirror  $mirror
      * @return \Illuminate\Http\Response
      */
     public function edit(Mirror $mirror)
@@ -64,7 +64,7 @@ class MirrorController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Mirror  $mirror
+     * @param  \App\Models\Mirror  $mirror
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Mirror $mirror)
@@ -75,7 +75,7 @@ class MirrorController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Mirror  $mirror
+     * @param  \App\Models\Mirror  $mirror
      * @return \Illuminate\Http\Response
      */
     public function destroy(Mirror $mirror)

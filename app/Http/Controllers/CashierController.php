@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
-use Illuminate\Http\Request;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
-use Laravel\Cashier\Billable;
 
 class CashierController extends Controller
 {

@@ -2,9 +2,8 @@
 
 namespace App\Builders;
 
-use App\Provider;
+use App\Models\Provider;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Http\Request;
 
 class AppBuilder extends Builder
 {

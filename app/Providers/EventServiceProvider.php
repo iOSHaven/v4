@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Listeners\AuthResetListener;
+use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
 
@@ -21,6 +23,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         \App\Events\InstallEvent::class => [
             \App\Listeners\InstallListener::class,
+        ],
+        PasswordReset::class => [
+            AuthResetListener::class
         ],
     ];
 

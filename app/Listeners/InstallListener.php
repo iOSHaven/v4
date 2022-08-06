@@ -2,9 +2,7 @@
 
 namespace App\Listeners;
 
-use App\Install;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
+use App\Models\Install;
 
 class InstallListener
 {

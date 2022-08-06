@@ -3,9 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\ViewEvent;
-use App\View;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
+use App\Models\View;
 
 class ViewListener
 {

@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use App\Provider;
-use App\User;
+use App\Models\Provider;
+use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class ProviderPolicy
@@ -13,7 +13,7 @@ class ProviderPolicy
     /**
      * Determine whether the user can view any providers.
      *
-     * @param  \App\User  $user
+     * @param  \App\Models\User  $user
      * @return mixed
      */
     public function viewAny(User $user)
@@ -24,8 +24,8 @@ class ProviderPolicy
     /**
      * Determine whether the user can view the provider.
      *
-     * @param  \App\User  $user
-     * @param  \App\Provider  $provider
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\Provider  $provider
      * @return mixed
      */
     public function view(User $user, Provider $provider)
@@ -36,7 +36,7 @@ class ProviderPolicy
     /**
      * Determine whether the user can create providers.
      *
-     * @param  \App\User  $user
+     * @param  \App\Models\User  $user
      * @return mixed
      */
     public function create(User $user)
@@ -47,8 +47,8 @@ class ProviderPolicy
     /**
      * Determine whether the user can update the provider.
      *
-     * @param  \App\User  $user
-     * @param  \App\Provider  $provider
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\Provider  $provider
      * @return mixed
      */
     public function update(User $user, Provider $provider)
@@ -59,8 +59,8 @@ class ProviderPolicy
     /**
      * Determine whether the user can delete the provider.
      *
-     * @param  \App\User  $user
-     * @param  \App\Provider  $provider
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\Provider  $provider
      * @return mixed
      */
     public function delete(User $user, Provider $provider)
@@ -71,8 +71,8 @@ class ProviderPolicy
     /**
      * Determine whether the user can restore the provider.
      *
-     * @param  \App\User  $user
-     * @param  \App\Provider  $provider
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\Provider  $provider
      * @return mixed
      */
     public function restore(User $user, Provider $provider)
@@ -83,8 +83,8 @@ class ProviderPolicy
     /**
      * Determine whether the user can permanently delete the provider.
      *
-     * @param  \App\User  $user
-     * @param  \App\Provider  $provider
+     * @param  \App\Models\User  $user
+     * @param  \App\Models\Provider  $provider
      * @return mixed
      */
     public function forceDelete(User $user, Provider $provider)

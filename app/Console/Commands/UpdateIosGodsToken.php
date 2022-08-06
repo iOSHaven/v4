@@ -2,13 +2,9 @@
 
 namespace App\Console\Commands;
 
-use App\App;
-use App\Mirror;
-use App\Provider;
+use App\Models\Provider;
 use Doctrine\DBAL\ConnectionException;
-use Exception;
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\ClientException;
 use GuzzleHttp\Exception\ServerException;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
