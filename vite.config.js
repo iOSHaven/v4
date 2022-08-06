@@ -3,6 +3,12 @@ import laravel from 'laravel-vite-plugin';
 import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
+    build: {
+        target: 'chrome58',
+        sourcemap: true,
+        manifest: true,
+        minify: false
+    },
     plugins: [
         laravel([
             'resources/js/app.js',
