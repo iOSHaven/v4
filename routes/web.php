@@ -10,12 +10,12 @@ use App\Http\Controllers\MobileConfigController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ProviderController;
-use App\Http\Controllers\RosterController;
 use App\Http\Controllers\ShortcutController;
 use App\Http\Controllers\StaticPageController;
 use App\Http\Controllers\UserController;
-use Illuminate\Http\Request;
+use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +27,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes();
+//Auth::routes();
+
+require __DIR__.'/auth.php';
 
 //Route::group(['prefix' => "{locale?}", "where" => ["locale" => "(en|jp)?"]], function () {
 
@@ -97,7 +99,10 @@ Route::prefix('user')->group(function () {
     Route::get('/notifications', [UserController::class, 'getNotifications']);
     Route::get('/badges', [UserController::class, 'getBadges']);
     Route::get('/password', [UserController::class, 'getPassword']);
-    Route::post('/password', [UserController::class, 'postPassword']);
+    Route::post('/password', [UserController::class, 'postPassword'])->name('postPassword');
+    Route::post('/update-password', [UserController::class, 'updatePassword'])
+        ->middleware([config('fortify.auth_middleware', 'auth').':'.config('fortify.guard')])
+        ->name('update-password');
 });
 
 Route::prefix('image')->group(function () {
@@ -149,7 +154,9 @@ Route::get('/light', [StaticPageController::class, 'lightTheme']);
 Route::get('/dark', [StaticPageController::class, 'darkTheme']);
 Route::post('/theme', [StaticPageController::class, 'postTheme']);
 // Route::get('/test', [StaticPageController::class, 'getTestPage']);
-Route::get('/search', [AppController::class, 'getSearchPage'])->middleware('tab:Search', 'back:Search')->name('search');
+Route::get('/search', [AppController::class, 'getSearchPage'])
+    ->middleware('tab:Search', 'back:Search')
+    ->name('search');
 Route::get('/credits', [StaticPageController::class, 'getCreditsPage']);
 Route::get('/faq', [StaticPageController::class, 'getFaqPage']);
 Route::get('/cydia', [StaticPageController::class, 'getCydiaPage']);
@@ -170,3 +177,25 @@ Route::post('/add/iosgods/plist', [StaticPageController::class, 'addIGPlist']);
 
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+
+//Route::get('/me', function () {
+//    return Inertia::render('Welcome', [
+//        'canLogin' => Route::has('login'),
+//        'canRegister' => Route::has('register'),
+//        'laravelVersion' => Application::VERSION,
+//        'phpVersion' => PHP_VERSION,
+//    ]);
+//});
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/me', function () {
+        return Inertia::render('Dashboard');
+    })->name('dashboard');
+});
+
+//Route::inertia('/custom-reset-link', function () {})->name('custom-password-reset');

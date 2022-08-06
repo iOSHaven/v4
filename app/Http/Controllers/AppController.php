@@ -172,11 +172,10 @@ class AppController extends Controller
     public function getSearchPage()
     {
         $providers = Provider::orderBy('name')->get();
-        $apps = collect(App::get()->toArray());
-        $shortcuts = collect(Shortcut::working()->get()->toArray());
-        // dd($apps->all());
-        $models = $apps->merge($shortcuts->toArray())->values()->all();
-        // dd($models->all());
+        $apps = App::all();
+
+        $shortcuts = Shortcut::working()->get();
+        $models = $apps->merge($shortcuts);
         return view('search')->with([
             'models' => $models,
             'providers' => $providers,

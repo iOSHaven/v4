@@ -1,0 +1,267 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black|Roboto&display=swap');
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+aside > ul {
+    width: 300px;
+}
+
+#view {
+    margin-left: -250px;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+#check-sidebar-left + label {
+    transform: translateX(-100%);
+}
+#check-sidebar-left:checked + label {
+    transform: translateX(0%);
+}
+
+#check-sidebar-left + label + aside {
+    transform: translateX(-100%);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+#check-sidebar-left:checked + label + aside {
+    transform: translateX(0%);
+    box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.6);
+}
+
+
+#check-sidebar-right:checked ~ #view {
+    margin-left: -500px;
+}
+
+#check-sidebar-right + label {
+    transform: translateX(100%);
+}
+#check-sidebar-right:checked + label {
+    transform: translateX(0%);
+}
+
+#check-sidebar-right + label + aside {
+    transform: translateX(100%);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+#check-sidebar-right:checked + label + aside {
+    transform: translateX(0%);
+    box-shadow: 0px 0px 0px 9999px rgba(0, 0, 0, 0.6);
+}
+
+#check-sidebar-right:checked ~ aside {
+    border-left-width: 1px;
+}
+
+#check-sidebar-left:checked ~ aside {
+    border-right-width: 1px;
+}
+
+label.toggle-light,
+label.toggle-dark {
+    @apply relative inline-block select-none border rounded-full;
+    height: 24px;
+    width: 40px;
+    transition: 0.4s ease;
+}
+
+label.toggle-light:before,
+label.toggle-dark:before {
+    @apply absolute block top-0 left-0 rounded-full h-full w-full;
+    content: "";
+    transition: 0.2s all cubic-bezier(0.24, 0, 0.5, 1);
+}
+
+label.toggle-light:after,
+label.toggle-dark:after {
+    @apply absolute block left-0 top-0 rounded-full bg-white;
+    content: "";
+    box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.1), 0 4px 0px 0 hsla(0, 0%, 0%, 0.04), 0 4px 9px hsla(0, 0%, 0%, 0.13), 0 3px 3px hsla(0, 0%, 0%, 0.05);
+    transition: 0.35s all cubic-bezier(0.54, 1.6, 0.5, 1);
+    height: 22px;
+    width: 22px;
+}
+
+.check-toggle:checked + .toggle-light:before,
+.check-toggle:checked + .toggle-dark:before {
+    background: rgb(52, 199, 89);
+    transition: width 0.2s cubic-bezier(0,0,0,0.1);
+}
+
+.check-toggle:checked + .toggle-light:before {
+    @apply bg-emerald-500;
+}
+
+.check-toggle:checked + .toggle-dark:before {
+    @apply bg-emerald-500;
+}
+
+.check-toggle:checked + .toggle-light:after,
+.check-toggle:checked + .toggle-dark:after {
+    left: 100%;
+    transform: translateX(-100%);
+}
+
+.ptr--icon,
+.ptr--text {
+    color: inherit !important;
+}
+
+/* #view .ptr--ptr {
+    @apply w-screen;
+} */
+
+/* #view .ptr--box {
+    @apply p-0 pb-3 border-b border-gray-500 mb-2;
+} */
+
+
+.collapse-check {
+    display: none;
+}
+
+.collapse-label .show-closed {
+    display: inherit;
+}
+
+.collapse-label .show-open {
+    display: none;
+}
+
+.collapse {
+    display: none;
+}
+
+.collapse-check:checked + .collapse-label .show-open {
+    display: inherit;
+}
+
+
+.collapse-check:checked + .collapse-label .show-closed {
+    display: none;
+}
+
+.collapse-check:checked + .collapse-label + .collapse {
+    /* background: blue; */
+    display: inherit;
+}
+
+
+.no-border-on-last:last-of-type {
+    border: none;
+}
+
+.p-inset-top {
+    padding-top: env(safe-area-inset-top);
+}
+
+.p-inset-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+}
+.m-inset-top {
+    margin-top: env(safe-area-inset-top);
+}
+
+.m-inset-bottom {
+    margin-bottom: env(safe-area-inset-bottom);
+}
+
+.circle {
+    @apply relative w-full h-auto rounded-full;
+    padding-top: 100%;
+}
+
+.circle-image {
+    @apply absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)scale(3.5);
+}
+
+.show-webapp {
+    visibility: hidden;
+}
+.hide-webapp {
+    visibility: visible;
+}
+
+@media all and (display-mode: standalone) {
+    /* Here goes the CSS rules that will only apply if app is running standalone */
+    .show-webapp {
+        visibility: visible;
+    }
+    .hide-webapp {
+        visibility: hidden;
+    }
+}
+
+.text-pre {
+    white-space: pre-line;
+}
+
+.bg-gradient {
+    background-color: #222233;
+    background-image:
+            repeating-linear-gradient(45deg, black 0%, black 5%, transparent 5%, transparent 10%),
+            repeating-linear-gradient(-45deg, black 0%, black 5%, transparent 5%, transparent 10%),
+            linear-gradient(45deg, black, transparent);
+}
+
+
+#tab1:checked ~ section .tab1,
+#tab2:checked ~ section .tab2,
+#tab3:checked ~ section .tab3
+{
+    display: block;
+}
+
+
+#tab1:checked ~ ul .tab1,
+#tab2:checked ~ ul .tab2,
+#tab3:checked ~ ul .tab3
+{
+    @apply -mb-1;
+}
+
+#tab1:checked ~ ul .tab1 label,
+#tab2:checked ~ ul .tab2 label,
+#tab3:checked ~ ul .tab3 label
+{
+    @apply bg-white border-t border-l border-r border-black rounded-t border-gray-300;
+}
+
+.rounded-icon {
+    border-radius: 1.3rem !important;
+}
+
+.listing-icon{
+    height:77px !important;
+    border-radius: 1.1rem !important;
+    width: 77px !important;
+    overflow: hidden;
+}
+
+.markdown a, .link {
+    @apply font-bold underline decoration-blue-500 text-blue-500;
+}
+
+.dark .fb-comments .UFIImageBlockContent {
+    color: white;
+}
+
+@media(prefers-color-scheme: dark) {
+    .fb-comments .UFIImageBlockContent {
+        color: white;
+    }
+}
+
+.dropdown-hover:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-focus:focus .dropdown-menu,
+.dropdown-focus:focus-within .dropdown-menu,
+.dropdown-focus:target .dropdown-menu{
+    display: block;
+}

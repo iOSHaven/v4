@@ -3,16 +3,48 @@
 <!-- @section('header')
 {{--@include('ads.prop-push-notifications-with-worker')--}}
 @endsection -->
+    @vite(['resources/assets/js/app.js'])
+@push('styles')
+
+@endpush
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+<script>
+    Alpine.data('dropdown', () => ({
+        open: false,
+        models: {{ $models }},
+
+        toggle() {
+            this.open = ! this.open
+        }
+    }))
+</script>
 
 @section('content')
 
-<div id="vuescope" class="mt-3">
+<div class="mt-3">
     <div class="fixed flex items-center justify-start relative rounded-full bg-white dark:bg-black">
         <i class="far fa-search absolute p-3"></i>
-        <input type="text" placeholder="Search" class="border-0 w-full pl-10 py-2 bg-transparent" v-model="searchinput">
+        <input type="text" placeholder="Search" class="border-0 w-full pl-10 py-2 bg-transparent">
     </div>
 
-    <search-results theme="{{ theme() }}" :phpdata='@json($models)'></search-results>
+    <ul class="mt-3" x-if="input" x-data="{ open: false }">
+        <!-- Search result -->
+        <!--        <h1>Search results</h1>-->
+        <!--        <li :key="app.uid" v-for="app in filteredApps" :class="['flex', 'items-center', 'justify-between', t('border-gray-200'), 'border-b', 'no-border-on-last']">-->
+        <!--            <a :href="`/${app.type}/${app.uid}`" class="w-full flex items-center justify-start overflow-hidden py-3">-->
+        <!--                <img class="rounded-lg mr-3" :src="app.icon" alt="" height="40" width="40">-->
+        <!--                <div>-->
+        <!--                    <div v-html="highlight(app.name)"></div>-->
+        <!--                    <div v-html="highlight(app.short)"></div>-->
+        <!--                </div>-->
+        <!--            </a>-->
+        <!--            <div class="-ml-4">-->
+        <!--                <i :class="['fal', 'fa-chevron-right', 'fa-2x', t('text-gray-400')]"></i>-->
+        <!--            </div>-->
+        <!--        </li>-->
+    </ul>
+{{--    <search-results theme="{{ theme() }}" :phpdata='[]'></search-results>--}}
 </div>
 
 
