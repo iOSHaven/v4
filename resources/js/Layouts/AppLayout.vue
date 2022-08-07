@@ -133,10 +133,10 @@ const logout = () => {
                                     <template #trigger>
                                         <button v-if="$page.props.jetstream.managesProfilePhotos" class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-gray-300 transition">
                                             <div v-if="$page.props.user?.current_team" class="h-8 w-8 rounded-full relative">
-                                              <img class="h-8 w-8 rounded-full object-cover" :src="$page.props.user.current_team.profile_photo_url" :alt="$page.props.user.current_team.name">
-                                              <img class="absolute h-6 w-6 rounded-full object-cover -bottom-2 -right-3 border border-white border-[3px]" :src="$page.props.user.profile_photo_url" :alt="$page.props.user.name">
+                                              <img class="h-8 w-8 rounded-full object-cover" :src="$page.props.user.current_team.photo_url" :alt="$page.props.user.current_team.name">
+                                              <img class="absolute h-6 w-6 rounded-full object-cover -bottom-2 -right-3 border border-white border-[3px]" :src="$page.props.user.photo_url" :alt="$page.props.user.name">
                                             </div>
-                                            <img v-else class="h-8 w-8 rounded-full object-cover" :src="$page.props.user.profile_photo_url" :alt="$page.props.user.name">
+                                            <img v-else class="h-8 w-8 rounded-full object-cover" :src="$page.props.user.photo_url" :alt="$page.props.user.name">
                                         </button>
 
                                         <span v-else class="inline-flex rounded-md">
@@ -223,7 +223,7 @@ const logout = () => {
                     <div class="pt-4 pb-1 border-t border-gray-200">
                         <div class="flex items-center px-4">
                             <div v-if="$page.props.jetstream.managesProfilePhotos" class="shrink-0 mr-3">
-                                <img class="h-10 w-10 rounded-full object-cover" :src="$page.props.user.profile_photo_url" :alt="$page.props.user.name">
+                                <img class="h-10 w-10 rounded-full object-cover" :src="$page.props.user.photo_url" :alt="$page.props.user.name">
                             </div>
 
                             <div>

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\HasPhoto;
 use Illuminate\Auth\Passwords\CanResetPassword;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -18,7 +19,7 @@ class User extends Authenticatable
 {
     use HasApiTokens;
     use HasFactory;
-    use HasProfilePhoto;
+    use HasPhoto;
     use HasTeams;
     use Notifiable;
     use TwoFactorAuthenticatable;
@@ -41,7 +42,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $appends = [
-        'profile_photo_url',
+        'photo_url',
         'name'
     ];
 

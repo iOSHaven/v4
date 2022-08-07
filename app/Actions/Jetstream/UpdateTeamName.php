@@ -26,7 +26,7 @@ class UpdateTeamName implements UpdatesTeamNames
         ])->validateWithBag('updateTeamName');
 
         if (isset($input['photo'])) {
-            $team->updateProfilePhoto($input['photo']);
+            $team->updatePhoto($input['photo']);
         }
 
         $team->forceFill([
