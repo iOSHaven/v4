@@ -6,6 +6,7 @@ use App\Http\Controllers\CashierController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\JetStreamController;
 use App\Http\Controllers\MobileConfigController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PostsController;
@@ -196,6 +197,8 @@ Route::middleware([
     Route::get('/me', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
+    Route::delete('/teams/{team}/profile-photo', [JetStreamController::class, 'destroyTeamPhoto'])
+        ->name('current-team-photo.destroy');
 });
 
 //Route::inertia('/custom-reset-link', function () {})->name('custom-password-reset');
