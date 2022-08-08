@@ -9,7 +9,9 @@ use App\Actions\Jetstream\DeleteUser;
 use App\Actions\Jetstream\InviteTeamMember;
 use App\Actions\Jetstream\RemoveTeamMember;
 use App\Actions\Jetstream\UpdateTeamName;
+use App\Membership;
 use App\Team;
+use App\TeamInvitation;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Jetstream\Jetstream;
 
@@ -42,6 +44,8 @@ class JetstreamServiceProvider extends ServiceProvider
         Jetstream::deleteTeamsUsing(DeleteTeam::class);
         Jetstream::deleteUsersUsing(DeleteUser::class);
         Jetstream::useTeamModel(Team::class);
+        Jetstream::useMembershipModel(Membership::class);
+        Jetstream::useTeamInvitationModel(TeamInvitation::class);
     }
 
     /**
