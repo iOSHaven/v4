@@ -216,7 +216,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/components/IndexField.vue"
+Component.options.__file = "resources/js/Components/IndexField.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -298,7 +298,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/components/DetailField.vue"
+Component.options.__file = "resources/js/Components/DetailField.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -380,7 +380,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/components/FormField.vue"
+Component.options.__file = "resources/js/Components/FormField.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -5420,7 +5420,7 @@ module.exports = (
     var originURL;
 
     /**
-    * Parse a URL to discover it's components
+    * Parse a URL to discover it's Components
     *
     * @param {String} url The URL to be parsed
     * @returns {Object}

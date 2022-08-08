@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Team;
+use App\Team;
 use Illuminate\Http\Request;
 
 class JetStreamController extends Controller

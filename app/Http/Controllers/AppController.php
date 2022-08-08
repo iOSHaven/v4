@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\App;
+use App\Ipa;
+use App\Itms;
 use App\Jobs\UpdateIosGodsToken;
-use App\Models\App;
-use App\Models\Ipa;
-use App\Models\Itms;
-use App\Models\Mirror;
-use App\Models\Provider;
-use App\Models\Shortcut;
+use App\Mirror;
+use App\Provider;
+use App\Shortcut;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;

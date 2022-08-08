@@ -2,8 +2,8 @@
 
 namespace App\Nova\Actions;
 
-use App\Models\Ipa;
-use App\Models\Itms;
+use App\Ipa;
+use App\Itms;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;

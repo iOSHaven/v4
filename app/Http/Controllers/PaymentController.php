@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Skin;
+use App\Skin;
 use Auth;
 use Config;
 use Exception;

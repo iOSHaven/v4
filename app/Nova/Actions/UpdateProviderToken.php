@@ -2,8 +2,8 @@
 
 namespace App\Nova\Actions;
 
-use App\Models\App;
-use App\Models\Itms;
+use App\App;
+use App\Itms;
 use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Bus\Queueable;

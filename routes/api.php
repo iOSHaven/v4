@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Provider;
+use App\Provider;
 use Illuminate\Http\Request;
 
 /*

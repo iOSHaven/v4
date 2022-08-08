@@ -2,14 +2,15 @@
 
 namespace App\Providers;
 
-use App\Models\App;
-use App\Models\Ipa;
-use App\Models\Itms;
-use App\Models\Post;
-use App\Models\Provider;
-use App\Models\Shortcut;
-use App\Models\Skin;
-use App\Models\User;
+use App\App;
+use App\Ipa;
+use App\Itms;
+use App\Post;
+use App\Provider;
+use App\Shortcut;
+use App\Skin;
+use App\Team;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
 use ioshaven\v4\DashboardSidebar;
@@ -161,6 +162,15 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                         '_url'    => '/nova/resources/providers',
                         '_params' => [
                             'resourceName' => 'providers',
+                        ],
+                    ],
+
+                    'Team' => [
+                        '_can' => ['viewAny', Team::class],
+                        '_icon' => fa('fab fa-app-store-ios'),
+                        '_url'    => '/nova/resources/teams',
+                        '_params' => [
+                            'resourceName' => 'teams',
                         ],
                     ],
 

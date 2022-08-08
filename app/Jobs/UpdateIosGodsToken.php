@@ -2,8 +2,8 @@
 
 namespace App\Jobs;
 
-use App\Models\App;
-use App\Models\Mirror;
+use App\App;
+use App\Mirror;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;

@@ -2,8 +2,8 @@
 
 namespace App\Http\Middleware;
 
-use App\Models\App;
-use App\Models\Shortcut;
+use App\App;
+use App\Shortcut;
 use Closure;
 
 class HasUpdates

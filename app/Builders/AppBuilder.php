@@ -2,7 +2,7 @@
 
 namespace App\Builders;
 
-use App\Models\Provider;
+use App\Provider;
 use Illuminate\Database\Eloquent\Builder;
 
 class AppBuilder extends Builder
