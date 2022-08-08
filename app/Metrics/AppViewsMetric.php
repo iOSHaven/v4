@@ -6,6 +6,7 @@ use App\App;
 use App\Download;
 use App\Http\Requests\MetricRequest;
 use App\Install;
+use App\Summary\SummaryView;
 use App\View;
 use Illuminate\Support\Facades\DB;
 use Laravel\Jetstream\Jetstream;
@@ -20,7 +21,7 @@ class AppViewsMetric extends Metric
 
     public function calculateSeries(MetricRequest $request)
     {
-        $seriesARaw = View::whereHasMorph('trigger', App::class, function($query) use ($request) {
+        $seriesARaw = SummaryView::whereHasMorph('trigger', App::class, function($query) use ($request) {
             return $query->whereIn('id', App::whereHas('itms.providers', function($q) use ($request) {
                 $q->where('providers.id', $request->user()->currentTeam->provider->id);
             })->pluck('id'));

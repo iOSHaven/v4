@@ -5,6 +5,7 @@ namespace App\Metrics;
 use App\App;
 use App\Download;
 use App\Http\Requests\MetricRequest;
+use App\Summary\SummaryDownload;
 use App\View;
 use Illuminate\Support\Facades\DB;
 use Laravel\Jetstream\Jetstream;
@@ -19,7 +20,7 @@ class AppDownloadsMetric extends Metric
 
     public function calculateSeries(MetricRequest $request)
     {
-        $seriesARaw = Download::whereHasMorph('trigger', App::class, function($query) use ($request) {
+        $seriesARaw = SummaryDownload::whereHasMorph('trigger', App::class, function($query) use ($request) {
             return $query->whereIn('id', App::whereHas('itms.providers', function($q) use ($request) {
                 $q->where('providers.id', $request->user()->currentTeam->provider->id);
             })->pluck('id'));
@@ -44,6 +45,6 @@ class AppDownloadsMetric extends Metric
 
     public function cacheFor()
     {
-//         return now()->addMinutes(5);
+         return now()->addMinutes(5);
     }
 }
