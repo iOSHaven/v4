@@ -2,7 +2,7 @@
 
 namespace App\Listeners;
 
-use App\Models\Install;
+use App\Install;
 
 class InstallListener
 {

@@ -3,7 +3,7 @@
 
 /***/ "./resources/assets/js/components/DynamicInput.vue":
 /*!*********************************************************!*\
-  !*** ./resources/assets/js/components/DynamicInput.vue ***!
+  !*** ./resources/assets/js/Components/DynamicInput.vue ***!
   \*********************************************************/
 /***/ (() => {
 
@@ -73,12 +73,12 @@ Object(function webpackMissingModule() { var e = new Error("Cannot find module '
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
+ * the page. Then, you may begin adding Components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
 Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())('search-results', (__webpack_require__(/*! ./pages/SearchResults.vue */ "./resources/assets/js/pages/SearchResults.vue")["default"]));
-Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())('dynamic-input', (__webpack_require__(/*! ./components/DynamicInput.vue */ "./resources/assets/js/components/DynamicInput.vue")["default"]));
+Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())('dynamic-input', (__webpack_require__(/*! ./Components/DynamicInput.vue */ "./resources/assets/js/components/DynamicInput.vue")["default"]));
 var app = new Object(function webpackMissingModule() { var e = new Error("Cannot find module 'vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())({
   el: '#vuescope',
   data: {

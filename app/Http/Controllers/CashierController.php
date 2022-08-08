@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 
 class CashierController extends Controller

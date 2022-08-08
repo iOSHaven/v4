@@ -2,7 +2,7 @@
 
 namespace App\Listeners;
 
-use App\Models\Download;
+use App\Download;
 
 class DownloadListener
 {

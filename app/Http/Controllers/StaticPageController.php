@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Post;
-use App\Models\Skin;
+use App\Post;
+use App\Skin;
 use Auth;
 use DOMDocument;
 use Exception;
@@ -27,13 +27,13 @@ class StaticPageController extends Controller
     public function template($view)
     {
         // return File::get(resource_path("templates/$view.ejs"));
-    // return response()->file(resource_path("views/components/$view"), ["Content-Type", "text/html"]);
+    // return response()->file(resource_path("views/Components/$view"), ["Content-Type", "text/html"]);
     }
 
     public function sitemap () {
         $contents = View::make('sitemap')
             ->with([
-                'apps' => \App\Models\App::with(['itms', 'ipas'])->get(),
+                'apps' => \App\App::with(['itms', 'ipas'])->get(),
                 'shortcuts' => Shortcut::get(),
                 'posts' => Post::get(),
                 // "itms" => Itms::get(),

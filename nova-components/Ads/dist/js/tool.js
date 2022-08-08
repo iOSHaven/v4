@@ -113,7 +113,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/components/Tool.vue"
+Component.options.__file = "resources/js/Components/Tool.vue"
 
 /* hot reload */
 if (false) {(function () {

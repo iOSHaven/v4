@@ -52,6 +52,7 @@
         "meilisearch/meilisearch-php": "^0.24.0",
         "paypal/rest-api-sdk-php": " *",
         "rap2hpoutre/laravel-log-viewer": "^2.2",
+        "spatie/laravel-queueable-action": "^2.14",
         "tightenco/ziggy": "^1.0"
     },
     "require-dev": {

@@ -113,7 +113,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/components/Tool.vue"
+Component.options.__file = "resources/js/Components/Tool.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -734,7 +734,7 @@ var render = function() {
               },
               [
                 _vm._v(
-                  "\n                /nova-components/V4/resources/js/components/Tool.vue\n            "
+                  "\n                /nova-Components/V4/resources/js/Components/Tool.vue\n            "
                 )
               ]
             )

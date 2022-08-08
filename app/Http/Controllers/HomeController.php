@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use App\ReactJS;
+use App\User;
 use Auth;
 use Illuminate\Http\Request;
 use Session;

@@ -7,6 +7,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\JetStreamController;
+use App\Http\Controllers\MetricsController;
 use App\Http\Controllers\MobileConfigController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PostsController;
@@ -197,6 +198,8 @@ Route::middleware([
     Route::get('/me', function () {
         return Inertia::render('Dashboard');
     })->name('dashboard');
+    Route::put('/team/metrics', [MetricsController::class, 'handle'])
+        ->name('team.metrics');
     Route::delete('/teams/{team}/profile-photo', [JetStreamController::class, 'destroyTeamPhoto'])
         ->name('current-team-photo.destroy');
 });

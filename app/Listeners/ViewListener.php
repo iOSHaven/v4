@@ -3,7 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\ViewEvent;
-use App\Models\View;
+use App\View;
 
 class ViewListener
 {

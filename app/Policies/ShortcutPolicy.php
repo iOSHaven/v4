@@ -2,8 +2,8 @@
 
 namespace App\Policies;
 
-use App\Models\Shortcut;
-use App\Models\User;
+use App\Shortcut;
+use App\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class ShortcutPolicy
@@ -13,7 +13,7 @@ class ShortcutPolicy
     /**
      * Determine whether the user can view any shortcuts.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\User  $user
      * @return mixed
      */
     public function viewAny(User $user)
@@ -24,8 +24,8 @@ class ShortcutPolicy
     /**
      * Determine whether the user can view the shortcut.
      *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Shortcut  $shortcut
+     * @param  \App\User  $user
+     * @param  \App\Shortcut  $shortcut
      * @return mixed
      */
     public function view(User $user, Shortcut $shortcut)
@@ -36,7 +36,7 @@ class ShortcutPolicy
     /**
      * Determine whether the user can create shortcuts.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\User  $user
      * @return mixed
      */
     public function create(User $user)
@@ -47,8 +47,8 @@ class ShortcutPolicy
     /**
      * Determine whether the user can update the shortcut.
      *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Shortcut  $shortcut
+     * @param  \App\User  $user
+     * @param  \App\Shortcut  $shortcut
      * @return mixed
      */
     public function update(User $user, Shortcut $shortcut)
@@ -59,8 +59,8 @@ class ShortcutPolicy
     /**
      * Determine whether the user can delete the shortcut.
      *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Shortcut  $shortcut
+     * @param  \App\User  $user
+     * @param  \App\Shortcut  $shortcut
      * @return mixed
      */
     public function delete(User $user, Shortcut $shortcut)
@@ -71,8 +71,8 @@ class ShortcutPolicy
     /**
      * Determine whether the user can restore the shortcut.
      *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Shortcut  $shortcut
+     * @param  \App\User  $user
+     * @param  \App\Shortcut  $shortcut
      * @return mixed
      */
     public function restore(User $user, Shortcut $shortcut)
@@ -83,8 +83,8 @@ class ShortcutPolicy
     /**
      * Determine whether the user can permanently delete the shortcut.
      *
-     * @param  \App\Models\User  $user
-     * @param  \App\Models\Shortcut  $shortcut
+     * @param  \App\User  $user
+     * @param  \App\Shortcut  $shortcut
      * @return mixed
      */
     public function forceDelete(User $user, Shortcut $shortcut)

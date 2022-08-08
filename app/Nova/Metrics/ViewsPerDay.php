@@ -2,7 +2,7 @@
 
 namespace App\Nova\Metrics;
 
-use App\Models\View;
+use App\View;
 use Laravel\Nova\Http\Requests\NovaRequest;
 
 class ViewsPerDay extends PerDay

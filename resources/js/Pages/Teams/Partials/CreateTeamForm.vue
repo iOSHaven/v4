@@ -8,6 +8,7 @@ import JetLabel from '@/Jetstream/Label.vue';
 
 const form = useForm({
     name: '',
+    website: ''
 });
 
 const createTeam = () => {
@@ -16,6 +17,8 @@ const createTeam = () => {
         preserveScroll: true,
     });
 };
+
+console.log(this)
 </script>
 
 <template>
@@ -33,7 +36,7 @@ const createTeam = () => {
                 <JetLabel value="Team Owner" />
 
                 <div class="flex items-center mt-2">
-                    <img class="object-cover w-12 h-12 rounded-full" :src="$page.props.user.profile_photo_url" :alt="$page.props.user.name">
+                    <img class="object-cover w-12 h-12 rounded-full" :src="$page.props.user.photo_url" :alt="$page.props.user.name">
 
                     <div class="ml-4 leading-tight">
                         <div>{{ $page.props.user.name }}</div>
@@ -54,6 +57,17 @@ const createTeam = () => {
                     autofocus
                 />
                 <JetInputError :message="form.errors.name" class="mt-2" />
+            </div>
+
+            <div class="col-span-6 sm:col-span-4">
+              <JetLabel for="name" value="Website" />
+              <JetInput
+                  id="website"
+                  v-model="form.website"
+                  type="text"
+                  class="block w-full mt-1"
+              />
+              <JetInputError :message="form.errors.website" class="mt-2" />
             </div>
         </template>
 

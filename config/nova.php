@@ -87,7 +87,11 @@ return [
 
     'middleware' => [
         'web',
-        Authenticate::class,
+//        Authenticate::class,
+        'auth',
+        'auth:sanctum',
+        'verified',
+        \Laravel\Jetstream\Http\Middleware\AuthenticateSession::class,
         DispatchServingNovaEvent::class,
         BootTools::class,
         Authorize::class,

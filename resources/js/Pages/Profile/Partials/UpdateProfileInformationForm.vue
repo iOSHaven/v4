@@ -101,7 +101,7 @@ const clearPhotoFileInput = () => {
 
                 <!-- Current Profile Photo -->
                 <div v-show="! photoPreview" class="mt-2">
-                    <img :src="user.profile_photo_url" :alt="user.name" class="rounded-full h-20 w-20 object-cover">
+                    <img :src="user.photo_url" :alt="user.name" class="rounded-full h-20 w-20 object-cover">
                 </div>
 
                 <!-- New Profile Photo Preview -->

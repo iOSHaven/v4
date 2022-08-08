@@ -74,7 +74,7 @@ return [
      | Custom Error Handler for Deprecated warnings
      |--------------------------------------------------------------------------
      |
-     | When enabled, the Debugbar shows deprecated warnings for Symfony components
+     | When enabled, the Debugbar shows deprecated warnings for Symfony Components
      | in the Messages tab.
      |
      */
