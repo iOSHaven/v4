@@ -60,33 +60,35 @@ class SummarizeAnalytics extends Command
             $bar->start();
             // print("\n");
             foreach ($models as $model) {
-                if ($model->trigger) {
-                    DB::table($summary)
-                        ->lockForUpdate()
-                        ->updateOrInsert(
-                            [
-                                'trigger_type'=> $model->trigger_type,
-                                'trigger_id' => $model->trigger_id,
-                                'created_at' => $date,
-                            ],
-                            [
-                                'amount'=>\DB::raw('amount + 1'),
-                            ]
-                        );
+                if (class_exists($model->trigger_type)) {
+                    if ($model->trigger) {
+                        DB::table($summary)
+                            ->lockForUpdate()
+                            ->updateOrInsert(
+                                [
+                                    'trigger_type' => $model->trigger_type,
+                                    'trigger_id' => $model->trigger_id,
+                                    'created_at' => $date,
+                                ],
+                                [
+                                    'amount' => \DB::raw('amount + 1'),
+                                ]
+                            );
 
-                    $amount = DB::table($summary)
-                    ->where('trigger_id', $model->trigger_id)
-                    ->where('trigger_type', $model->trigger_type)
-                    ->lockForUpdate()
-                    ->sum('amount');
+                        $amount = DB::table($summary)
+                            ->where('trigger_id', $model->trigger_id)
+                            ->where('trigger_type', $model->trigger_type)
+                            ->lockForUpdate()
+                            ->sum('amount');
 
-                    DB::table($model->trigger->getTable())
-                        ->where('id', $model->trigger_id)
-                        ->lockForUpdate()
-                        ->update([$column => $amount]);
+                        DB::table($model->trigger->getTable())
+                            ->where('id', $model->trigger_id)
+                            ->lockForUpdate()
+                            ->update([$column => $amount]);
+                    }
+                    $model->touch();
+                    $bar->advance();
                 }
-                $model->touch();
-                $bar->advance();
             }
             $bar->finish();
         }
