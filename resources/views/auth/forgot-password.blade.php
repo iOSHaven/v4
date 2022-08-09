@@ -12,13 +12,13 @@
 <section>
   <div class="max-w-[50ch] mx-auto">
     {{-- <h3 class="mt-0 text-3xl font-display">Login</h3> --}}
-    <form action="{{ route('login') }}" method="post">
+    <form action="{{ route('password.email') }}" method="post">
       {{ csrf_field() }}
 
       <div class="mb-10">
         @component('components.form.image', [
-        "src" => "/SVG/login.svg",
-      ])@endcomponent
+        "src" => "/SVG/secure.svg",
+        ])@endcomponent
       </div>
 
 
@@ -28,23 +28,13 @@
         "icon" => "fal fa-at",
         "type" => "text",
       ])@endcomponent
-      @component('components.form.input', [
-        "label" => "Password",
-        "name" => "password",
-        "icon" => "fal fa-lock-alt",
-        "type" => "password",
-      ])@endcomponent
+
 
       @component('components.form.submit', [
         "icon" => "fas fa-sign-in-alt",
-        "text" => "Login"
+        "text" => "Send reset"
       ])@endcomponent
 
-      <a href="{{ route('password.request') }}" class="text-blue-500">
-        Forgot password?
-      </a>
-
-      <p class="mt-1">Don't have an account? <a href="/register" class="text-blue-500">Sign up.</a></p>
 
     </form>
   </div>
