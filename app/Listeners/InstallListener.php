@@ -3,6 +3,8 @@
 namespace App\Listeners;
 
 use App\Install;
+use App\Summary\SummaryInstall;
+use Illuminate\Support\Facades\DB;
 
 class InstallListener
 {
@@ -14,8 +16,15 @@ class InstallListener
     public function handle($event)
     {
         if (config('app-analytics.installs')) {
-            $install = new Install;
-            $install->trigger()->associate($event->model)->save();
+            SummaryInstall::whereMorphedTo('trigger', $event->model)
+                ->updateOrCreate([
+                    "created_at" => now()->floorDay(),
+                ], [
+                    "amount" => DB::raw("amount + 1")
+                ]);
+
+            $event->model->installs += 1;
+            $event->model->save();
         }
     }
 }

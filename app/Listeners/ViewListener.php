@@ -3,7 +3,9 @@
 namespace App\Listeners;
 
 use App\Events\ViewEvent;
+use App\Summary\SummaryView;
 use App\View;
+use Illuminate\Support\Facades\DB;
 
 class ViewListener
 {
@@ -15,8 +17,15 @@ class ViewListener
     public function handle(ViewEvent $event)
     {
         if (config('app-analytics.views')) {
-            $view = new View;
-            $view->trigger()->associate($event->model)->save();
+                SummaryView::whereMorphedTo('trigger', $event->model)
+                    ->updateOrCreate([
+                        "created_at" => now()->floorDay(),
+                    ], [
+                        "amount" => DB::raw("amount + 1")
+                    ]);
+
+                $event->model->impressions += 1;
+                $event->model->save();
         }
     }
 }
