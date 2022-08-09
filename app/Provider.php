@@ -6,10 +6,12 @@ use App\Builders\ProviderBuilder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Nova\Actions\Actionable;
+use Staudenmeir\EloquentHasManyDeep\HasRelationships;
 
 class Provider extends Model
 {
     use SoftDeletes, Actionable;
+    use HasRelationships;
 
     protected $fillable = ['name', 'twitter', 'parsingIdentifier', 'website'];
 
@@ -47,5 +49,13 @@ class Provider extends Model
         return null;
 
         return static::where('name', 'Unknown')->first() ?? null;
+    }
+
+    public function itmsApps() {
+        return $this->hasManyDeep(App::class, ['itms_provider', Itms::class, 'app_itms']);
+    }
+
+    public function ipaApps() {
+        return $this->hasManyDeep(App::class, ['ipa_provider', Ipa::class, 'app_ipa']);
     }
 }

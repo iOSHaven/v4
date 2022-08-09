@@ -3,6 +3,8 @@
 namespace App\Listeners;
 
 use App\Download;
+use App\Summary\SummaryDownload;
+use Illuminate\Support\Facades\DB;
 
 class DownloadListener
 {
@@ -14,8 +16,15 @@ class DownloadListener
     public function handle($event)
     {
         if (config('app-analytics.downloads')) {
-            $download = new Download;
-            $download->trigger()->associate($event->model)->save();
+            SummaryDownload::whereMorphedTo('trigger', $event->model)
+                ->updateOrCreate([
+                    "created_at" => now()->floorDay(),
+                ], [
+                    "amount" => DB::raw("amount + 1")
+                ]);
+
+            $event->model->downloads += 1;
+            $event->model->save();
         }
     }
 }

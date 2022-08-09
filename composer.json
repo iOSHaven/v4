@@ -53,6 +53,7 @@
         "paypal/rest-api-sdk-php": " *",
         "rap2hpoutre/laravel-log-viewer": "^2.2",
         "spatie/laravel-queueable-action": "^2.14",
+        "staudenmeir/eloquent-has-many-deep": "^1.15",
         "tightenco/ziggy": "^1.0"
     },
     "require-dev": {

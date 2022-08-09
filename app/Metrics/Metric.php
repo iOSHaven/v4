@@ -2,7 +2,11 @@
 
 namespace App\Metrics;
 
+use App\App;
 use App\Http\Requests\MetricRequest;
+use App\Summary\SummaryView;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 abstract class Metric
 {
@@ -10,6 +14,41 @@ abstract class Metric
     abstract public function title(MetricRequest $request);
     abstract public function calculateSeries(MetricRequest $request);
 
+    public function providerStatSeries(string $summaryClass, string $targetClass, MetricRequest $request)
+    {
+        $seriesARaw = $this->selectProviderMetric($summaryClass, $targetClass, $request);
+
+        $result = [];
+        for ($i = $request->selectedRangeKey - 1; $i >= 0; $i--)
+        {
+            $date = now()->subDay($i);
+            $key = $date->toDateString();
+            $result[] = [
+                "meta" => $date->toFormattedDateString(),
+                "value" => $seriesARaw[$key] ?? 0
+            ];
+        }
+        return [$result];
+    }
+
+    public function selectProviderMetric(string $summaryClass, string $targetClass, MetricRequest $request) {
+        $provider = $request->user()->currentTeam->provider;
+
+        $providerQuery = fn($q) => $q->where('providers.id', $provider->id);
+
+        $app_ids = $targetClass::whereHas('itms.providers', $providerQuery)
+            ->orWhereHas('ipas.providers', $providerQuery)
+            ->pluck('id');
+
+        if (empty($provider)) return [[]];
+
+        return $summaryClass::whereHasMorph('trigger', $targetClass,
+            fn($q) => $q->whereIn('id', $app_ids))
+            ->whereDate('created_at', '>', now()->subDays($request->selectedRangeKey))
+            ->select(DB::raw('DATE(created_at) as date'), DB::raw('count(*) as stat'))
+            ->groupBy('date')
+            ->pluck('stat', 'date');
+    }
 
     public function calculateLabels(MetricRequest $request) {
         $result = [];
