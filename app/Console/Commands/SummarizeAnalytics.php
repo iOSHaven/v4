@@ -4,6 +4,9 @@ namespace App\Console\Commands;
 
 use App\Download;
 use App\Install;
+use App\Summary\SummaryDownload;
+use App\Summary\SummaryInstall;
+use App\Summary\SummaryView;
 use App\View;
 use DB;
 use Illuminate\Console\Command;
@@ -35,63 +38,45 @@ class SummarizeAnalytics extends Command
         parent::__construct();
     }
 
-    private function analyticTable($class, $column = null, $summary = null)
+    private function analyticTable($class, $summaryClass, $column = null, $summary = null)
     {
         $column = $column ?? Str::plural(strtolower(class_basename($class)));
-        $summary = $summary ?? 'summary_'.Str::singular($column);
 
-        $dates = $class::where(function ($query) {
-            return $query->whereColumn('created_at', '>=', 'updated_at')
-                    ->orWhereNull('updated_at');
-        })
-                ->select(DB::raw('date(created_at) as ts'))
-                ->groupBy('ts')
-                ->get()
-                ->pluck('ts');
+        $query = $class::where(fn($query) =>
+            $query->whereColumn('created_at', '>=', 'updated_at')
+                  ->orWhereNull('updated_at')
+            )
+            ->select('trigger_type',
+                'trigger_id',
+                DB::raw("CAST(DATE(created_at) as DATETIME) as created_at"),
+                DB::raw('count(*) as amount')
+            );
 
-        foreach ($dates as $date) {
-            $models = $class::where(function ($query) {
-                return $query->whereColumn('created_at', '>=', 'updated_at')
-                ->orWhereNull('updated_at');
-            })
-                ->whereDate('created_at', $date)->get();
-            $bar = $this->output->createProgressBar($models->count());
-            echo "\n[$date] $column - {$models->count()}\n";
-            $bar->start();
-            // print("\n");
-            foreach ($models as $model) {
-                if (class_exists($model->trigger_type)) {
-                    if ($model->trigger) {
-                        DB::table($summary)
-                            ->lockForUpdate()
-                            ->updateOrInsert(
-                                [
-                                    'trigger_type' => $model->trigger_type,
-                                    'trigger_id' => $model->trigger_id,
-                                    'created_at' => $date,
-                                ],
-                                [
-                                    'amount' => \DB::raw('amount + 1'),
-                                ]
-                            );
+        $summary = $query
+            ->groupBy('trigger_type', 'trigger_id', 'created_at')
+            ->get()
+            ->map(fn($x) => array_merge($x->toArray(), [
+                "created_at" => $x->created_at->toDateTimeString()
+            ]));
 
-                        $amount = DB::table($summary)
-                            ->where('trigger_id', $model->trigger_id)
-                            ->where('trigger_type', $model->trigger_type)
-                            ->lockForUpdate()
-                            ->sum('amount');
+        $totals = $query
+            ->groupBy('trigger_type', 'trigger_id', 'created_at')
+            ->get();
 
-                        DB::table($model->trigger->getTable())
-                            ->where('id', $model->trigger_id)
-                            ->lockForUpdate()
-                            ->update([$column => $amount]);
-                    }
-                    $model->touch();
-                    $bar->advance();
-                }
+        $bar = $this->output->createProgressBar($totals->count());
+
+        foreach($totals as $total) {
+            if (class_exists($total->trigger_type)) {
+                $total->trigger->$column += $total->amount;
+                $total->trigger->save();
+                $bar->advance();
             }
-            $bar->finish();
         }
+
+        $summaryClass::upsert($summary->toArray(),
+            ['trigger_type', 'trigger_id', 'created_at'],
+            ['created_at', 'amount']);
+
     }
 
     /**
@@ -101,8 +86,8 @@ class SummarizeAnalytics extends Command
      */
     public function handle()
     {
-        $this->analyticTable(View::class, 'impressions', 'summary_view');
-        $this->analyticTable(Download::class);
-        $this->analyticTable(Install::class);
+        $this->analyticTable(View::class, SummaryView::class,'impressions', 'summary_view');
+        $this->analyticTable(Download::class, SummaryDownload::class);
+        $this->analyticTable(Install::class, SummaryInstall::class);
     }
 }
