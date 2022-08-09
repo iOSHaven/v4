@@ -42,10 +42,9 @@ class SummarizeAnalytics extends Command
     {
         $column = $column ?? Str::plural(strtolower(class_basename($class)));
 
-        $query = $class::where(fn($query) =>
-            $query->whereColumn('created_at', '>=', 'updated_at')
-                  ->orWhereNull('updated_at')
-            )
+        $query = $class::whereColumn('created_at', '>=', 'updated_at')
+            ->whereDate('created_at', '>', now()->subDays(90))
+            ->orWhereNull('updated_at')
             ->select('trigger_type',
                 'trigger_id',
                 DB::raw("CAST(DATE(created_at) as DATETIME) as created_at"),
