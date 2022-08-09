@@ -16,12 +16,13 @@ class InstallListener
     public function handle($event)
     {
         if (config('app-analytics.installs')) {
-            SummaryInstall::whereMorphedTo('trigger', $event->model)
-                ->updateOrCreate([
-                    "created_at" => now()->floorDay(),
-                ], [
-                    "amount" => DB::raw("amount + 1")
-                ]);
+            SummaryInstall::updateOrCreate([
+                "trigger_id" => $event->model->id,
+                "trigger_type" => get_class($event->model),
+                "created_at" => now()->floorDay(),
+            ], [
+                "amount" => DB::raw("amount + 1")
+            ]);
 
             $event->model->installs += 1;
             $event->model->save();
