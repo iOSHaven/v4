@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use App\Builders\ShortcutBuilder;
 use App\Traits\HasAnalytics;

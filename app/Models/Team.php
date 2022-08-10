@@ -1,10 +1,9 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use App\Traits\HasPhoto;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 use Laravel\Jetstream\Events\TeamCreated;
 use Laravel\Jetstream\Events\TeamDeleted;
 use Laravel\Jetstream\Events\TeamUpdated;

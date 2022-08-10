@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\App;
+use App\Models\App;
 use Illuminate\Console\Command;
 
 class LinkTransfer extends Command

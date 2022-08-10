@@ -2,7 +2,6 @@
 
 namespace App\Listeners;
 
-use App\Download;
 use App\Summary\SummaryDownload;
 use Illuminate\Support\Facades\DB;
 

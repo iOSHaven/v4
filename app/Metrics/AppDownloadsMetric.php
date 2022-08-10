@@ -2,13 +2,9 @@
 
 namespace App\Metrics;
 
-use App\App;
-use App\Download;
 use App\Http\Requests\MetricRequest;
+use App\Models\App;
 use App\Summary\SummaryDownload;
-use App\View;
-use Illuminate\Support\Facades\DB;
-use Laravel\Jetstream\Jetstream;
 
 class AppDownloadsMetric extends Metric
 {

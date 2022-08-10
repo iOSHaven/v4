@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Provider;
+use App\Models\Provider;
 use Doctrine\DBAL\ConnectionException;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\ServerException;

@@ -2,10 +2,7 @@
 
 namespace App\Metrics;
 
-use App\App;
 use App\Http\Requests\MetricRequest;
-use App\Summary\SummaryView;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
 abstract class Metric

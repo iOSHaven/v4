@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::table('teams', function (Blueprint $table) {
-            $table->foreignIdFor(\App\Provider::class)->nullable();
+            $table->foreignIdFor(\App\Models\Provider::class)->nullable();
         });
     }
 

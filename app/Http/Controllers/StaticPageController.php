@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Post;
-use App\Skin;
+use App\Models\Post;
+use App\Models\Skin;
 use Auth;
 use DOMDocument;
 use Exception;
@@ -33,7 +33,7 @@ class StaticPageController extends Controller
     public function sitemap () {
         $contents = View::make('sitemap')
             ->with([
-                'apps' => \App\App::with(['itms', 'ipas'])->get(),
+                'apps' => \App\Models\App::with(['itms', 'ipas'])->get(),
                 'shortcuts' => Shortcut::get(),
                 'posts' => Post::get(),
                 // "itms" => Itms::get(),

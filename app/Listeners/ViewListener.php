@@ -4,7 +4,6 @@ namespace App\Listeners;
 
 use App\Events\ViewEvent;
 use App\Summary\SummaryView;
-use App\View;
 use Illuminate\Support\Facades\DB;
 
 class ViewListener

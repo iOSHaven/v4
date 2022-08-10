@@ -2,7 +2,6 @@
 
 namespace App\Listeners;
 
-use App\Install;
 use App\Summary\SummaryInstall;
 use Illuminate\Support\Facades\DB;
 

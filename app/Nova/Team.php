@@ -6,7 +6,6 @@ use App\Nova\Actions;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\BelongsTo;
-use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Text;
 
@@ -17,7 +16,7 @@ class Team extends Resource
      *
      * @var string
      */
-    public static $model = \App\Team::class;
+    public static $model = \App\Models\Team::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
