@@ -16,11 +16,10 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 
 class User extends Resource
 {
-
     /**
      * Determine if the resource should have an Action field.
      *
-     * @param \Laravel\Nova\Http\Requests\NovaRequest $request
+     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
      * @return bool
      */
     protected function shouldAddActionsField($request)
@@ -33,7 +32,7 @@ class User extends Resource
      *
      * @var string
      */
-    public static $model = \App\User::class;
+    public static $model = \App\Models\User::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.

@@ -2,9 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\App;
-use App\Mirror;
-use App\Provider;
+use App\Models\Mirror;
 use Carbon\Carbon;
 use Illuminate\Console\Command;
 

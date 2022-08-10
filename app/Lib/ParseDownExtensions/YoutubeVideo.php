@@ -27,8 +27,8 @@ class YoutubeVideo extends HavenMarkupBase implements IHavenMarkup
                     'attributes' => [
                         'src' => "https://www.youtube.com/embed/$value",
                         'title' => 'YouTube video player',
-                        'frameborder'=>'0',
-                        'allow'=> implode(';', [
+                        'frameborder' => '0',
+                        'allow' => implode(';', [
                             'accelerometer',
                             'autoplay',
                             'clipboard-write',

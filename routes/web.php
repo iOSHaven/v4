@@ -6,16 +6,18 @@ use App\Http\Controllers\CashierController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\JetStreamController;
+use App\Http\Controllers\MetricsController;
 use App\Http\Controllers\MobileConfigController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\PostsController;
 use App\Http\Controllers\ProviderController;
-use App\Http\Controllers\RosterController;
 use App\Http\Controllers\ShortcutController;
 use App\Http\Controllers\StaticPageController;
 use App\Http\Controllers\UserController;
-use Illuminate\Http\Request;
+use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use Inertia\Inertia;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,18 +29,17 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes();
+//Auth::routes();
+
+require __DIR__.'/auth.php';
 
 //Route::group(['prefix' => "{locale?}", "where" => ["locale" => "(en|jp)?"]], function () {
 
 //    require "./localized.php";
 
-
 //});
 
-
 //require "./localized.php";
-
 
 // Route::get('/themetest', [StaticPageController::class, 'getThemesPage']);
 
@@ -50,20 +51,14 @@ Route::get('/test', function () {
     return view('test');
 });
 
-
 Route::post('/locale', function () {
     $locale = request()->get('locale');
     if (isset($locale) && array_key_exists($locale, config('localization.supportedLocales'))) {
         session()->put('locale', $locale);
     }
+
     return back();
 });
-
-
-
-
-
-
 
 Route::get('/avatar/{value}/{size?}', [AvatarController::class, 'api']);
 
@@ -72,9 +67,6 @@ Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'i
 Route::get('/tl/{view}', [StaticPageController::class, 'template']);
 
 Route::get('/tutorials/{view}', [StaticPageController::class, 'tutorial']);
-
-
-
 
 // Route::get('/profile', [HomeController::class, 'index'])->name('profile');
 // Route::post('/profile/color', [HomeController::class, 'color']);
@@ -97,15 +89,15 @@ Route::prefix('user')->group(function () {
     Route::get('/notifications', [UserController::class, 'getNotifications']);
     Route::get('/badges', [UserController::class, 'getBadges']);
     Route::get('/password', [UserController::class, 'getPassword']);
-    Route::post('/password', [UserController::class, 'postPassword']);
+    Route::post('/password', [UserController::class, 'postPassword'])->name('postPassword');
+    Route::post('/update-password', [UserController::class, 'updatePassword'])
+        ->middleware([config('fortify.auth_middleware', 'auth').':'.config('fortify.guard')])
+        ->name('update-password');
 });
 
 Route::prefix('image')->group(function () {
     Route::get('/', [ImageController::class, 'index']);
 });
-
-
-
 
 Route::get('/tutubox/cert', [StaticPageController::class, 'tutubox']);
 
@@ -115,9 +107,6 @@ Route::prefix('shortcuts')->middleware('tab:Shortcuts', 'back:Shortcuts')->group
 
 Route::get('/altstore/burrito/apps.json', [AppController::class, 'burrito']);
 Route::get('/altstore/apps.json', [AppController::class, 'showAltstoreJson']);
-
-
-
 
 Route::prefix('providers')->middleware('tab:Providers', 'back:Providers')->group(function () {
     Route::get('/edit', [ProviderController::class, 'edit']);
@@ -129,8 +118,6 @@ Route::prefix('providers')->middleware('tab:Providers', 'back:Providers')->group
 Route::prefix('cashier')->group(function () {
     Route::get('/setup', [CashierController::class, 'setup']);
 });
-
-
 
 Route::get('/plist', [HomeController::class, 'getPlist']);
 Route::post('/plist', [HomeController::class, 'postPlist']);
@@ -149,7 +136,9 @@ Route::get('/light', [StaticPageController::class, 'lightTheme']);
 Route::get('/dark', [StaticPageController::class, 'darkTheme']);
 Route::post('/theme', [StaticPageController::class, 'postTheme']);
 // Route::get('/test', [StaticPageController::class, 'getTestPage']);
-Route::get('/search', [AppController::class, 'getSearchPage'])->middleware('tab:Search', 'back:Search')->name('search');
+Route::get('/search', [AppController::class, 'getSearchPage'])
+    ->middleware('tab:Search', 'back:Search')
+    ->name('search');
 Route::get('/credits', [StaticPageController::class, 'getCreditsPage']);
 Route::get('/faq', [StaticPageController::class, 'getFaqPage']);
 Route::get('/cydia', [StaticPageController::class, 'getCydiaPage']);
@@ -168,5 +157,29 @@ Route::get('/skin/affiliate/{uuid}', [PaymentController::class, 'affiliateSkin']
 
 Route::post('/add/iosgods/plist', [StaticPageController::class, 'addIGPlist']);
 
-
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+//Route::get('/me', function () {
+//    return Inertia::render('Welcome', [
+//        'canLogin' => Route::has('login'),
+//        'canRegister' => Route::has('register'),
+//        'laravelVersion' => Application::VERSION,
+//        'phpVersion' => PHP_VERSION,
+//    ]);
+//});
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified',
+])->group(function () {
+    Route::get('/me', function () {
+        return Inertia::render('Dashboard');
+    })->name('dashboard');
+    Route::put('/team/metrics', [MetricsController::class, 'handle'])
+        ->name('team.metrics');
+    Route::delete('/teams/{team}/profile-photo', [JetStreamController::class, 'destroyTeamPhoto'])
+        ->name('current-team-photo.destroy');
+});
+
+//Route::inertia('/custom-reset-link', function () {})->name('custom-password-reset');

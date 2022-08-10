@@ -33,7 +33,7 @@ mix.postCss('resources/assets/postCss/redesign.css', 'public/css/redesign.min.cs
       "public/js/app.js",
       "public/js/dashboard.js",
    ])
-    .vue({ version: 2 })
+    .vue({ version: 3 })
    .version()
 
 

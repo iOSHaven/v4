@@ -1,5 +1,5 @@
-<label for="{{ $name }}" class="text-lg">{{ __($label) }}</label>
-<div class="flex items-center justify-center mb-2 relative border {{ $type == 'textarea' ? 'rounded-lg' : 'rounded-full' }} ">
+{{--<label for="{{ $name }}" class="text-lg">{{ __($label) }}</label>--}}
+<div class="flex items-center justify-center mb-5 relative border rounded-lg ">
     <span class="absolute top-0 left-0 py-3 pl-4">
         <i class="{{ $icon }}"></i>
     </span>
@@ -11,13 +11,9 @@
                 @else
                     value="{{ $value ?? old($name)}}" 
                 @endif
-                class="w-full p-3 pl-12 rounded-full bg-gray-100 dark:bg-gray-900"
+                class="w-full p-3 pl-12 rounded-lg bg-gray-100 dark:bg-gray-900"
                 type="{{ $type }}"
-                @if($type == "password")
-                    placeholder="* * * * * * * *" 
-                @else
-                    placeholder="{{ __($label) }}" 
-                @endif
+                placeholder="{{ __($label) }}"
                 name="{{ $name }}" 
                 id="{{ $name }}">
     @endif

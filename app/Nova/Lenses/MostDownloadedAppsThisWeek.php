@@ -3,14 +3,10 @@
 namespace App\Nova\Lenses;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Laravel\Nova\Fields\Avatar;
-use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\LensRequest;
 use Laravel\Nova\Lenses\Lens;
-use Saumini\Count\RelationshipCount;
 
 class MostDownloadedAppsThisWeek extends Lens
 {

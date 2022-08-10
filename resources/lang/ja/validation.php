@@ -33,7 +33,6 @@ return [
      */
     'accepted' => ':attribute は必ず受け入れること',
 
-
     /*
      * accepted_if => 'The <x> must be accepted when <y> is <z>.'
      * accepted_if => 'The <x> must be accepted when <y> is <z>.'
@@ -123,7 +122,7 @@ return [
     'password' => 'パスワードが正しくありません。',
     'present' => '内容のフィールドが必要です。',
     'regex' => '内容の形式が無効です。',
-    'required' => '内容は必須項目です。',
+    'required' => '名前の記入は必ずして下さい。',
     'required_if' => 'その他が値の場合、内容は必須です。',
     'required_unless' => '内容のフィールドは、値に「その他」が含まれない限り必須です。',
     'required_with' => '値が存在する場合、内容のフィールドは必須である。',

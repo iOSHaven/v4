@@ -10,19 +10,22 @@
 
 
 <section>
-  <div class="container">
+  <div class="max-w-[50ch] mx-auto">
     {{-- <h3 class="mt-0 text-3xl font-display">Login</h3> --}}
     <form action="{{ route('login') }}" method="post">
       {{ csrf_field() }}
 
-      @component('components.form.image', [
+      <div class="mb-10">
+        @component('components.form.image', [
         "src" => "/SVG/login.svg",
       ])@endcomponent
+      </div>
+
 
       @component('components.form.input', [
-        "label" => "Username",
-        "name" => "username",
-        "icon" => "fal fa-id-card",
+        "label" => "Email",
+        "name" => "email",
+        "icon" => "fal fa-at",
         "type" => "text",
       ])@endcomponent
       @component('components.form.input', [
@@ -37,7 +40,7 @@
         "text" => "Login"
       ])@endcomponent
 
-      <a href="/password/reset" class="text-blue-500">
+      <a href="{{ route('password.request') }}" class="text-blue-500">
         Forgot password?
       </a>
 

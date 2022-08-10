@@ -18,7 +18,7 @@ class CreateSettingsTable extends Migration
         });
 
         $s = DB::table('settings')->insert(
-          ['show_announcements' => true]
+            ['show_announcements' => true]
         );
     }
 

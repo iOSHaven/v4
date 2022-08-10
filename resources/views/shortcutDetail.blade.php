@@ -24,7 +24,7 @@
   <div class="container">
     <div class="row">
       <div class="col-tablet-portrait-6 px-tablet-portrait">
-        <div class="bg-gray-100 dark:bg-gray-900">
+        <div class="bg-neutral-100 dark:bg-neutral-900">
 
 
           {{-- APPLICATION ICON, TITLE, SHORT, & BUTTONS --}}
@@ -37,7 +37,7 @@
             </div> --}}
             {{-- <div class="flex items-center justify-start mt-1">
                 @foreach($app->providers as $provider)
-                  @component('components.tinyProviderIcon', ["provider" => $provider])@endcomponent
+                  @component('Components.tinyProviderIcon', ["provider" => $provider])@endcomponent
                 @endforeach
               </div> --}}
 
@@ -64,7 +64,7 @@
                 @endcan
 
               </div>
-              {{-- @component('components.appButtons', ["app" => $app])@endcomponent --}}
+              {{-- @component('Components.appButtons', ["app" => $app])@endcomponent --}}
 
               <dv class="mt-4">
                 <div class="sharethis-inline-share-buttons my-4"></div>
@@ -118,9 +118,9 @@
 
 
         {{-- APPLICATION ITMS --}}
-        {{-- @component('components.collapse', ["title" => "Signed Links", "show" => true])
+        {{-- @component('Components.collapse', ["title" => "Signed Links", "show" => true])
               @foreach($app->itms as $itms)
-                @component('components.providerListing', [
+                @component('Components.providerListing', [
                   "model" => $itms, 
                   "showLine" => !$loop->last])
                 @endcomponent
@@ -128,9 +128,9 @@
           @endcomponent --}}
 
         {{-- APPLICATION IPAs --}}
-        {{-- @component('components.collapse', ["title" => "IPA Links", "show" => true])
+        {{-- @component('Components.collapse', ["title" => "IPA Links", "show" => true])
               @foreach($app->ipas as $ipas)
-                @component('components.providerListing', [
+                @component('Components.providerListing', [
                   "model" => $ipas, 
                   "showLine" => !$loop->last])
                 @endcomponent

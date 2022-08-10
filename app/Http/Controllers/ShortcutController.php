@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Shortcut;
-use Illuminate\Http\Request;
+use App\Models\Shortcut;
 use Illuminate\Pagination\LengthAwarePaginator;
 
 class ShortcutController extends Controller
@@ -48,7 +47,7 @@ class ShortcutController extends Controller
 
     public function page($tag = null)
     {
-        $shortcuts = Shortcut::search($tag);
+        $shortcuts = Shortcut::searchWithoutScout($tag);
 
         $shortcuts = $this->gathered_query($shortcuts, $tag);
 

@@ -38,9 +38,11 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            \App\Http\Middleware\HandleInertiaRequests::class,
         ],
 
         'api' => [
+            \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
@@ -68,6 +70,6 @@ class Kernel extends HttpKernel
         'tab' => \App\Http\Middleware\SetCurrentTab::class,
         'back' => \App\Http\Middleware\SetBackButton::class,
         'useLocale' => Localization::class,
-        'setLocale' => SpecifiesLocalization::class
+        'setLocale' => SpecifiesLocalization::class,
     ];
 }

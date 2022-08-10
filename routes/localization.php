@@ -1,24 +1,14 @@
 <?php
 
-
 use App\Http\Controllers\AppController;
-use App\Http\Controllers\AvatarController;
-use App\Http\Controllers\CashierController;
-use App\Http\Controllers\ContactController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ImageController;
-use App\Http\Controllers\MobileConfigController;
-use App\Http\Controllers\PaymentController;
-use App\Http\Controllers\PostsController;
-use App\Http\Controllers\ProviderController;
-use App\Http\Controllers\RosterController;
 use App\Http\Controllers\ShortcutController;
 use App\Http\Controllers\StaticPageController;
-use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [StaticPageController::class, 'index'])->middleware('tab:Home', 'back:Home');
+Route::get('/', [StaticPageController::class, 'index'])
+    ->middleware('tab:Home', 'back:Home')
+    ->name('landing');
 
 /**
  * APPS - anything related to app routes

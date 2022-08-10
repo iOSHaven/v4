@@ -2,7 +2,7 @@
 $type = strtoupper(class_basename($model));
 $isIPA = $type == "IPA";
 $href = ( $isIPA ? "/download" : "/install") . '/' . $model->id;
-$title = ($isIPA ? "IPA" : "GET");
+$title = ($isIPA ? __("strings.IPA") : __("strings.GET"));
 @endphp
 @component('components.button', [
         "href"=> $href, 
@@ -13,13 +13,13 @@ $title = ($isIPA ? "IPA" : "GET");
         @if($image ?? true)
             @if($model->working)
                 <i class="fas fa-check-circle ml-1"></i>
-                {{-- @component('components.tinyProviderIcon', [
+                {{-- @component('Components.tinyProviderIcon', [
                     "provider" => $model->provider, 
                     "class" => "ml-1"])
                 @endcomponent --}}
             @else
                 <i class="fas fa-times-octagon ml-1"></i>
-                {{-- @component('components.tinyProviderIcon', [
+                {{-- @component('Components.tinyProviderIcon', [
                     "src" => "/defaults/revoked.png", 
                     "class" => "ml-1"])
                 @endcomponent --}}

@@ -3,7 +3,6 @@
 namespace Ioshaven\Ads;
 
 use Illuminate\Support\Facades\Auth;
-use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
 use Laravel\Nova\Tool;
 
@@ -19,7 +18,6 @@ class Ads extends Tool
         Nova::script('ads', __DIR__.'/../dist/js/tool.js');
         Nova::style('ads', __DIR__.'/../dist/css/tool.css');
         Nova::script('stripe', 'https://js.stripe.com/v3/');
-        
     }
 
     /**
@@ -30,9 +28,8 @@ class Ads extends Tool
     public function renderNavigation()
     {
         return  view('ads::navigation', [
-            'intent' => Auth::user()->createSetupIntent()
+            'intent' => Auth::user()->createSetupIntent(),
         ]);
         // return view('ads::navigation');
-        
     }
 }

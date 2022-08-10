@@ -117,9 +117,9 @@ return [
 
     'beanstalkd' => [
         'driver' => 'beanstalkd',
-        'host'   => 'localhost',
-        'queue'  => 'default',
-        'ttr'    => 60,
+        'host' => 'localhost',
+        'queue' => 'default',
+        'ttr' => 60,
     ],
 
     /*

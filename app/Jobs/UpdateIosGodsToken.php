@@ -2,8 +2,8 @@
 
 namespace App\Jobs;
 
-use App\App;
-use App\Mirror;
+use App\Models\App;
+use App\Models\Mirror;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -37,7 +37,7 @@ class UpdateIosGodsToken implements ShouldQueue
         $mirror = Mirror::where('install_link', 'like', '%iosgods%')->orderBy('updated_at')->first();
         $mirror_time = $mirror->updated_at ?? null;
 
-        list($_, $token) = explode('%3Ftoken%3D', $app_time->gt($mirror_time) ? $app->signed : $mirror->install_link);
+        [$_, $token] = explode('%3Ftoken%3D', $app_time->gt($mirror_time) ? $app->signed : $mirror->install_link);
         Artisan::call('update:token', ['token' => $token]);
     }
 }

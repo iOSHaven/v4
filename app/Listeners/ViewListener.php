@@ -3,9 +3,8 @@
 namespace App\Listeners;
 
 use App\Events\ViewEvent;
-use App\View;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
+use App\Summary\SummaryView;
+use Illuminate\Support\Facades\DB;
 
 class ViewListener
 {
@@ -17,8 +16,16 @@ class ViewListener
     public function handle(ViewEvent $event)
     {
         if (config('app-analytics.views')) {
-            $view = new View;
-            $view->trigger()->associate($event->model)->save();
+            SummaryView::updateOrCreate([
+                'trigger_id' => $event->model->id,
+                'trigger_type' => get_class($event->model),
+                'created_at' => now()->floorDay(),
+            ], [
+                'amount' => DB::raw('amount + 1'),
+            ]);
+
+            $event->model->impressions += 1;
+            $event->model->save();
         }
     }
 }

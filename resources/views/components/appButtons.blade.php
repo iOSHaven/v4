@@ -32,10 +32,10 @@
 
 @endif
 @if($app->signed)
-@component('components.button', ["href"=> "/install/$app->uid", "bg" => "blue", "color" => "white"])
+@component('Components.button', ["href"=> "/install/$app->uid", "bg" => "blue", "color" => "white"])
 GET @endcomponent
 @endif
 @admin
-@component('components.button', ["href"=> "/app/edit/$app->uid", "bg" => "red", "color" => "white"])
+@component('Components.button', ["href"=> "/app/edit/$app->uid", "bg" => "red", "color" => "white"])
 EDIT @endcomponent
 @endadmin --}}

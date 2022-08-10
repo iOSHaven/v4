@@ -2,7 +2,6 @@
 
 namespace Database\Factories;
 
-use App\View;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ViewFactory extends Factory

@@ -1,20 +1,28 @@
-import Vue from 'vue'
+// import Vue from 'vue'
 // window.Vue = require('vue');
+import {createApp, createSSRApp, h} from 'vue';
+import SearchResults from "./pages/SearchResults.vue";
+import DynamicInput from "./components/DynamicInput.vue";
 
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-Vue.component('search-results', require('./pages/SearchResults.vue').default);
-Vue.component('dynamic-input', require('./components/DynamicInput.vue').default);
-
-const app = new Vue({
-  el: '#vuescope',
-  data: {
-    searchinput: ""
+window.app = createApp({
+  el: '#vue-scope',
+  data() {
+    return {
+      searchinput: ""
+    }
+  },
+  components: {
+    SearchResults
+  },
+  mounted() {
+    console.log("Hello vue")
   }
-});
+})
+
+app.component('SearchResults', SearchResults.default);
+app.component('DynamicInput', DynamicInput);
+
+app.mount("#vue-scope")
 
 
