@@ -92,7 +92,7 @@
         </div>
 
         <ul class="divide-y border border-neutral-200 dark:border-neutral-800 divide-inherit rounded-sm">
-            @foreach(App\Provider::get() as $provider)
+            @foreach(\App\Models\Provider::get() as $provider)
                 {{--      @dump($provider)--}}
                 <li class="flex items-center justify-center p-3">
                     <div class="w-2/3 flex items-center">

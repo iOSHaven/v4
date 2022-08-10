@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use App\Traits\HasPhoto;
 use Illuminate\Auth\Passwords\CanResetPassword;
@@ -41,7 +41,7 @@ class User extends Authenticatable
      */
     protected $appends = [
         'photo_url',
-        'name'
+        'name',
     ];
 
     /**
@@ -92,12 +92,8 @@ class User extends Authenticatable
         return $this->username;
     }
 
-
-
-
     public function canImpersonate($impersonated = null)
     {
         return $this->isAdmin;
     }
-
 }

@@ -33,7 +33,6 @@ return [
      */
     'accepted' => ':attribute は必ず受け入れること',
 
-
     /*
      * accepted_if => 'The <x> must be accepted when <y> is <z>.'
      * accepted_if => 'The <x> must be accepted when <y> is <z>.'

@@ -5,8 +5,6 @@ namespace App\Traits;
 use App\Summary\SummaryDownload;
 use App\Summary\SummaryInstall;
 use App\Summary\SummaryView;
-use Stripe\InvoiceItem;
-use Stripe\Stripe;
 
 trait HasAnalytics
 {

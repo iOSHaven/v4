@@ -21,6 +21,7 @@ class SpecifiesLocalization
         if (array_key_exists($locale, config('localization.supportedLocales'))) {
             session()->put('locale', $locale);
         }
+
         return $next($request);
     }
 }

@@ -7,9 +7,6 @@ use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Route;
-use Inertia\Inertia;
-use Laravel\Jetstream\Http\Middleware\AuthenticateSession;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -53,7 +50,7 @@ class AuthenticatedSessionController extends Controller
         $request->session()->regenerateToken();
 
         return $request->inertia() ?
-            response('', 409)->header('X-Inertia-Location', route('landing')):
+            response('', 409)->header('X-Inertia-Location', route('landing')) :
             redirect(route('landing'));
     }
 }

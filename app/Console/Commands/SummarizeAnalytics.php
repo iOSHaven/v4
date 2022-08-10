@@ -2,12 +2,12 @@
 
 namespace App\Console\Commands;
 
-use App\Download;
-use App\Install;
+use App\Models\Download;
+use App\Models\Install;
+use App\Models\View;
 use App\Summary\SummaryDownload;
 use App\Summary\SummaryInstall;
 use App\Summary\SummaryView;
-use App\View;
 use DB;
 use Illuminate\Console\Command;
 use Illuminate\Support\Str;
@@ -47,15 +47,15 @@ class SummarizeAnalytics extends Command
             ->orWhereNull('updated_at')
             ->select('trigger_type',
                 'trigger_id',
-                DB::raw("CAST(DATE(created_at) as DATETIME) as created_at"),
+                DB::raw('CAST(DATE(created_at) as DATETIME) as created_at'),
                 DB::raw('count(*) as amount')
             );
 
         $summary = $query
             ->groupBy('trigger_type', 'trigger_id', 'created_at')
             ->get()
-            ->map(fn($x) => array_merge($x->toArray(), [
-                "created_at" => $x->created_at->toDateTimeString()
+            ->map(fn ($x) => array_merge($x->toArray(), [
+                'created_at' => $x->created_at->toDateTimeString(),
             ]));
 
         $totals = $query
@@ -64,7 +64,7 @@ class SummarizeAnalytics extends Command
 
         $bar = $this->output->createProgressBar($totals->count());
 
-        foreach($totals as $total) {
+        foreach ($totals as $total) {
             if (class_exists($total->trigger_type)) {
                 $total->trigger->$column += $total->amount;
                 $total->trigger->save();
@@ -75,7 +75,6 @@ class SummarizeAnalytics extends Command
         $summaryClass::upsert($summary->toArray(),
             ['trigger_type', 'trigger_id', 'created_at'],
             ['created_at', 'amount']);
-
     }
 
     /**
@@ -85,7 +84,7 @@ class SummarizeAnalytics extends Command
      */
     public function handle()
     {
-        $this->analyticTable(View::class, SummaryView::class,'impressions', 'summary_view');
+        $this->analyticTable(View::class, SummaryView::class, 'impressions', 'summary_view');
         $this->analyticTable(Download::class, SummaryDownload::class);
         $this->analyticTable(Install::class, SummaryInstall::class);
     }

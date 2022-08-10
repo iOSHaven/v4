@@ -2,20 +2,15 @@
 
 namespace App\Metrics;
 
-use App\App;
-use App\Download;
 use App\Http\Requests\MetricRequest;
+use App\Models\App;
 use App\Summary\SummaryDownload;
-use App\View;
-use Illuminate\Support\Facades\DB;
-use Laravel\Jetstream\Jetstream;
 
 class AppDownloadsMetric extends Metric
 {
-
     public function title(MetricRequest $request)
     {
-        return "App Downloads";
+        return 'App Downloads';
     }
 
     public function calculateSeries(MetricRequest $request)
@@ -25,6 +20,6 @@ class AppDownloadsMetric extends Metric
 
     public function cacheFor()
     {
-         return now()->addMinutes(20);
+        return now()->addMinutes(20);
     }
 }

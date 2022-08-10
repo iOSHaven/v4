@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use App\Builders\ProviderBuilder;
 use Illuminate\Database\Eloquent\Model;
@@ -51,11 +51,13 @@ class Provider extends Model
         return static::where('name', 'Unknown')->first() ?? null;
     }
 
-    public function itmsApps() {
+    public function itmsApps()
+    {
         return $this->hasManyDeep(App::class, ['itms_provider', Itms::class, 'app_itms']);
     }
 
-    public function ipaApps() {
+    public function ipaApps()
+    {
         return $this->hasManyDeep(App::class, ['ipa_provider', Ipa::class, 'app_ipa']);
     }
 }

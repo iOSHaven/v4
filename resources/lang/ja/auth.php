@@ -16,5 +16,5 @@ return [
     'failed' => 'ID、もしくはパスワードが一致しません。.',
     'password' => '入力されたパスワードが正しくありません。.',
     'throttle' => 'ログインの試行回数が多すぎます。数秒後に再度試して下さい.',
-    'apps' => "asdfadsf",
+    'apps' => 'asdfadsf',
 ];

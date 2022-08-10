@@ -37,12 +37,9 @@ require __DIR__.'/auth.php';
 
 //    require "./localized.php";
 
-
 //});
 
-
 //require "./localized.php";
-
 
 // Route::get('/themetest', [StaticPageController::class, 'getThemesPage']);
 
@@ -54,20 +51,14 @@ Route::get('/test', function () {
     return view('test');
 });
 
-
 Route::post('/locale', function () {
     $locale = request()->get('locale');
     if (isset($locale) && array_key_exists($locale, config('localization.supportedLocales'))) {
         session()->put('locale', $locale);
     }
+
     return back();
 });
-
-
-
-
-
-
 
 Route::get('/avatar/{value}/{size?}', [AvatarController::class, 'api']);
 
@@ -76,9 +67,6 @@ Route::get('logs', [\Rap2hpoutre\LaravelLogViewer\LogViewerController::class, 'i
 Route::get('/tl/{view}', [StaticPageController::class, 'template']);
 
 Route::get('/tutorials/{view}', [StaticPageController::class, 'tutorial']);
-
-
-
 
 // Route::get('/profile', [HomeController::class, 'index'])->name('profile');
 // Route::post('/profile/color', [HomeController::class, 'color']);
@@ -111,9 +99,6 @@ Route::prefix('image')->group(function () {
     Route::get('/', [ImageController::class, 'index']);
 });
 
-
-
-
 Route::get('/tutubox/cert', [StaticPageController::class, 'tutubox']);
 
 Route::prefix('shortcuts')->middleware('tab:Shortcuts', 'back:Shortcuts')->group(function () {
@@ -122,9 +107,6 @@ Route::prefix('shortcuts')->middleware('tab:Shortcuts', 'back:Shortcuts')->group
 
 Route::get('/altstore/burrito/apps.json', [AppController::class, 'burrito']);
 Route::get('/altstore/apps.json', [AppController::class, 'showAltstoreJson']);
-
-
-
 
 Route::prefix('providers')->middleware('tab:Providers', 'back:Providers')->group(function () {
     Route::get('/edit', [ProviderController::class, 'edit']);
@@ -136,8 +118,6 @@ Route::prefix('providers')->middleware('tab:Providers', 'back:Providers')->group
 Route::prefix('cashier')->group(function () {
     Route::get('/setup', [CashierController::class, 'setup']);
 });
-
-
 
 Route::get('/plist', [HomeController::class, 'getPlist']);
 Route::post('/plist', [HomeController::class, 'postPlist']);
@@ -177,9 +157,7 @@ Route::get('/skin/affiliate/{uuid}', [PaymentController::class, 'affiliateSkin']
 
 Route::post('/add/iosgods/plist', [StaticPageController::class, 'addIGPlist']);
 
-
 Route::get('/home', [HomeController::class, 'index'])->name('home');
-
 
 //Route::get('/me', function () {
 //    return Inertia::render('Welcome', [

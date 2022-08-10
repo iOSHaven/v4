@@ -1,10 +1,9 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use App\Traits\HasPhoto;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 use Laravel\Jetstream\Events\TeamCreated;
 use Laravel\Jetstream\Events\TeamDeleted;
 use Laravel\Jetstream\Events\TeamUpdated;
@@ -59,7 +58,8 @@ class Team extends JetstreamTeam
         return 'https://ui-avatars.com/api/?name='.urlencode($name).'&color=417505&background=b8e986';
     }
 
-    public function provider() {
+    public function provider()
+    {
         return $this->belongsTo(Provider::class);
     }
 }

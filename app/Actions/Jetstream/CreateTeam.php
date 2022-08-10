@@ -2,7 +2,7 @@
 
 namespace App\Actions\Jetstream;
 
-use App\Provider;
+use App\Models\Provider;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Jetstream\Contracts\CreatesTeams;
@@ -28,9 +28,9 @@ class CreateTeam implements CreatesTeams
         ])->validateWithBag('createTeam');
 
         $provider = Provider::create([
-            "name" => $input["name"],
-            "parsingIdentifier" => $input["name"],
-            'website' => $input['website']
+            'name' => $input['name'],
+            'parsingIdentifier' => $input['name'],
+            'website' => $input['website'],
         ]);
 //        dd($provider);
 
@@ -39,13 +39,12 @@ class CreateTeam implements CreatesTeams
         $team = $user->ownedTeams()->create([
             'name' => $input['name'],
             'personal_team' => false,
-            "provider_id" => $provider->id
+            'provider_id' => $provider->id,
         ]);
 
 //        $provider =
 
 //        $team->provider()->associate();
-
 
         $user->switchTeam($team);
 

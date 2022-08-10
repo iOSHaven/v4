@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Post;
-use App\Skin;
+use App\Models\Post;
+use App\Models\Skin;
 use Auth;
 use DOMDocument;
 use Exception;
@@ -11,7 +11,6 @@ use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
-use LaravelLocalization;
 use Session;
 use Str;
 
@@ -27,13 +26,14 @@ class StaticPageController extends Controller
     public function template($view)
     {
         // return File::get(resource_path("templates/$view.ejs"));
-    // return response()->file(resource_path("views/Components/$view"), ["Content-Type", "text/html"]);
+        // return response()->file(resource_path("views/Components/$view"), ["Content-Type", "text/html"]);
     }
 
-    public function sitemap () {
+    public function sitemap()
+    {
         $contents = View::make('sitemap')
             ->with([
-                'apps' => \App\App::with(['itms', 'ipas'])->get(),
+                'apps' => \App\Models\App::with(['itms', 'ipas'])->get(),
                 'shortcuts' => Shortcut::get(),
                 'posts' => Post::get(),
                 // "itms" => Itms::get(),
@@ -165,10 +165,11 @@ class StaticPageController extends Controller
         ]);
     }
 
-
-    public function getManifest($theme) {
+    public function getManifest($theme)
+    {
         $manifest = config('webapp-manifest');
         $manifest['start_url'] = "/apps?theme=$theme";
+
         return response()->json($manifest);
     }
 
@@ -279,6 +280,6 @@ class StaticPageController extends Controller
         }
 
         // if (Auth::guest() || !Auth::user()->isAdmin) return abort(404);
-    // return view('dashboard');
+        // return view('dashboard');
     }
 }

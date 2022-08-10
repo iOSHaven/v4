@@ -16,7 +16,7 @@ class Ipa extends Resource
      *
      * @var string
      */
-    public static $model = \App\Ipa::class;
+    public static $model = \App\Models\Ipa::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.

@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use GuzzleHttp\Client;
 use Illuminate\Database\Eloquent\Model;
@@ -100,7 +100,7 @@ class Post extends Model
     public function getUrlAttribute()
     {
         return route('blog.reader', [
-            'post'=>$this,
+            'post' => $this,
             'slug' => $this->slug,
         ]);
     }

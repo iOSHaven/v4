@@ -6,7 +6,6 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class MetricRequest extends FormRequest
 {
-
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -26,7 +25,7 @@ class MetricRequest extends FormRequest
     {
         return [
             'metric' => ['required', 'string'],
-            'selectedRangeKey' => ['required', 'numeric']
+            'selectedRangeKey' => ['required', 'numeric'],
         ];
     }
 }

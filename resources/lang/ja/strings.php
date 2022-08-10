@@ -44,14 +44,14 @@ return [
     'About Us' => '会社概要',
     'Credits' => 'クレジット',
     'New!' => '新規!',
-    'Other Links' => "その他のリンク",
+    'Other Links' => 'その他のリンク',
     'Dashboard' => 'ダッシュボード',
     'Notifications' => 'お知らせ',
     'Badges' => 'バッジ',
     'Logout' => 'ログアウト',
     'IPA' => 'IPA',
     'GET' => '入手',
-    "Download" => 'ダウンロード',
+    'Download' => 'ダウンロード',
     'Categories' => 'カテゴリー',
     'Hacks' => 'ハック',
     'Free' => '無料',
@@ -69,8 +69,8 @@ return [
     'Signed Links' => '署名入りリンク',
     'IPA Links' => 'アーカイブリンク',
     'Comments' => 'コメント',
-    "Open" => "Open",
-    "Continue Reading >>" => "Continue Reading >>", //📖➡️
-    "Launch" => "Launch", // 🚀
-    "Open in AltStore" => "Open in AltStore",
+    'Open' => 'Open',
+    'Continue Reading >>' => 'Continue Reading >>', //📖➡️
+    'Launch' => 'Launch', // 🚀
+    'Open in AltStore' => 'Open in AltStore',
 ];

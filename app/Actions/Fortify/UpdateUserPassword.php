@@ -4,13 +4,10 @@ namespace App\Actions\Fortify;
 
 use Illuminate\Auth\Events\PasswordReset;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\UpdatesUserPasswords;
-use Str;
 
 class UpdateUserPassword implements UpdatesUserPasswords
 {

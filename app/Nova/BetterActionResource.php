@@ -5,7 +5,6 @@ namespace App\Nova;
 use Barryvdh\Debugbar\Facades\Debugbar;
 use Illuminate\Http\Request;
 use Laravel\Nova\Actions\ActionEvent;
-use Laravel\Nova\Actions\ActionResource;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\KeyValue;
@@ -155,7 +154,8 @@ class BetterActionResource extends \Laravel\Nova\Resource
         return __('History');
     }
 
-    public static $title="History";
+    public static $title = 'History';
+
     /**
      * Get the displayable singular label of the resource.
      *

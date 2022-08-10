@@ -2,7 +2,6 @@
 
 namespace App\Nova;
 
-use App\Nova\Actions;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\BelongsToMany;
@@ -16,7 +15,7 @@ class Provider extends Resource
      *
      * @var string
      */
-    public static $model = \App\Provider::class;
+    public static $model = \App\Models\Provider::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
