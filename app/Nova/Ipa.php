@@ -8,7 +8,6 @@ use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Ipa extends Resource
 {
@@ -17,7 +16,7 @@ class Ipa extends Resource
      *
      * @var string
      */
-    public static $model = \App\Ipa::class;
+    public static $model = \App\Models\Ipa::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.

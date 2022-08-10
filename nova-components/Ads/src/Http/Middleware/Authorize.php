@@ -2,8 +2,8 @@
 
 namespace Ioshaven\Ads\Http\Middleware;
 
-use Laravel\Nova\Nova;
 use Ioshaven\Ads\Ads;
+use Laravel\Nova\Nova;
 
 class Authorize
 {

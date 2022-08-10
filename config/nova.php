@@ -1,6 +1,5 @@
 <?php
 
-use App\Nova\BetterActionResource;
 use Laravel\Nova\Actions\ActionResource;
 use Laravel\Nova\Http\Middleware\Authenticate;
 use Laravel\Nova\Http\Middleware\Authorize;
@@ -87,7 +86,11 @@ return [
 
     'middleware' => [
         'web',
-        Authenticate::class,
+        //        Authenticate::class,
+        'auth',
+        'auth:sanctum',
+        'verified',
+        \Laravel\Jetstream\Http\Middleware\AuthenticateSession::class,
         DispatchServingNovaEvent::class,
         BootTools::class,
         Authorize::class,

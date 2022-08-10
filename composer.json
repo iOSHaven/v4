@@ -26,49 +26,46 @@
         }
     ],
     "require": {
-        "php": "^7.3.13",
-        "ext-bcmath": "^8.1.0",
-        "anhskohbo/no-captcha": "^3.3",
-        "david-griffiths/nova-dark-theme": "^1.0",
-        "doctrine/dbal": "^2.9",
-        "eminiarts/nova-tabs": "^1.4",
+        "php": "^8.0.2",
+        "anhskohbo/no-captcha": "^3.4",
+        "eminiarts/nova-tabs": "*",
         "erusev/parsedown": "^1.7",
-        "fedeisas/laravel-mail-css-inliner": "^4.0",
-        "fruitcake/laravel-cors": "^2.0",
-        "gregoriohc/laravel-nova-theme-responsive": "^0.8.0",
-        "guzzlehttp/guzzle": "^7.0.1",
-        "inspheric/nova-url-field": "^1.4",
-        "ioshaven/ads": "dev-master",
-        "ioshaven/plist": "dev-master",
-        "ioshaven/v4": "dev-master",
-        "jdenticon/jdenticon": "^0.10.0",
+        "fedeisas/laravel-mail-css-inliner": "*",
+        "fruitcake/laravel-cors": "^3.0",
+        "guzzlehttp/guzzle": "^7.2",
+        "http-interop/http-factory-guzzle": "^1.2",
+        "inertiajs/inertia-laravel": "^0.5.2",
+        "inspheric/nova-url-field": "*",
+        "ioshaven/plist": "*",
+        "ioshaven/v4": "*",
         "jenssegers/agent": "^2.6",
-        "kabbouchi/nova-impersonate": "^1.10",
-        "laravel/cashier": "^13.6",
-        "laravel/framework": "^8.77",
+        "kabbouchi/nova-impersonate": "*",
+        "laravel/cashier": "^13.14",
+        "laravel/framework": "9.24",
+        "laravel/horizon": "^5.9",
+        "laravel/jetstream": "^2.10",
         "laravel/nova": "^3.22",
-        "laravel/tinker": "^2.5",
-        "laravel/ui": "^3.4",
-        "league/flysystem-aws-s3-v3": "^1.0",
-        "marvinlabs/laravel-discord-logger": "^1.1",
-        "moontoast/math": "^1.2",
-        "paypal/rest-api-sdk-php": "^1.14",
-        "pda/pheanstalk": "~4.0",
-        "predis/predis": "^1.1",
-        "rap2hpoutre/laravel-log-viewer": "^2.0",
-        "saumini/count": "^1.0",
-        "spatie/laravel-sitemap": "^5.8",
-        "symfony/translation-contracts": "^2.5.0"
+        "laravel/sanctum": "^3.0",
+        "laravel/scout": "^9.4",
+        "laravel/tinker": "^2.7",
+        "league/flysystem-aws-s3-v3": "^3.2",
+        "meilisearch/meilisearch-php": "^0.24.0",
+        "paypal/rest-api-sdk-php": " *",
+        "rap2hpoutre/laravel-log-viewer": "^2.2",
+        "spatie/laravel-queueable-action": "^2.14",
+        "staudenmeir/eloquent-has-many-deep": "^1.15",
+        "tightenco/ziggy": "^1.0"
     },
     "require-dev": {
-        "barryvdh/laravel-debugbar": "^3.6",
-        "barryvdh/laravel-ide-helper": "^2.10",
-        "davidbadura/faker-markdown-generator": "^1.1",
-        "mockery/mockery": "^1.4.4",
-        "nunomaduro/collision": "^5.10",
+        "barryvdh/laravel-debugbar": "^3.7",
+        "barryvdh/laravel-ide-helper": "^2.12",
         "fakerphp/faker": "^1.9.1",
-        "facade/ignition": "^2.5",
-        "phpunit/phpunit": "^9.5.10"
+        "laravel/pint": "^1.1",
+        "laravel/sail": "^1.0.1",
+        "mockery/mockery": "^1.4.4",
+        "nunomaduro/collision": "^6.1",
+        "phpunit/phpunit": "^9.5.10",
+        "spatie/laravel-ignition": "^1.0"
     },
     "autoload": {
         "psr-4": {
@@ -91,30 +88,24 @@
         }
     },
     "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-update-cmd": [
+            "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
+        ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "post-create-project-cmd": [
-            "@php artisan key:generate"
-        ],
-        "post-autoload-dump": [
-            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover"
-        ],
-        "post-update-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "@php artisan ide-helper:generate",
-            "@php artisan ide-helper:meta",
-            "@php artisan vendor:publish --tag=laravel-assets --ansi"
+            "@php artisan key:generate --ansi"
         ]
     },
     "config": {
         "preferred-install": "dist",
         "sort-packages": true,
-        "optimize-autoloader": true,
-        "platform": {
-            "php": "7.4"
-        }
+        "optimize-autoloader": true
     },
     "minimum-stability": "dev",
     "prefer-stable": true

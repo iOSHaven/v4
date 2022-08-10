@@ -3,6 +3,7 @@ import u from 'umbrellajs';
 import "./autocomplete";
 import PullToRefresh from 'pulltorefreshjs';
 import { disablePageScroll, enablePageScroll, getScrollState } from 'scroll-lock';
+import 'framework7-icons';
 
 var breakpoint = 768;
 if (window.innerWidth < breakpoint) {

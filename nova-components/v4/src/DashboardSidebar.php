@@ -2,15 +2,14 @@
 
 namespace ioshaven\v4;
 
-use Laravel\Nova\Nova;
 use Laravel\Nova\Tool;
 
 class DashboardSidebar extends Tool
 {
-
     private $config;
 
-    public function __construct($config) {
+    public function __construct($config)
+    {
         $this->config = $config;
     }
 

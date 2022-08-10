@@ -18,9 +18,9 @@
                         "removable" => true
                         ])@endcomponent
                 @endforeach
-                {{-- @component('components.providerField', [ "id" => 1])@endcomponent
-                @component('components.providerField', [ "id" => 2])@endcomponent
-                @component('components.providerField', [ "id" => 3])@endcomponent --}}
+                {{-- @component('Components.providerField', [ "id" => 1])@endcomponent
+                @component('Components.providerField', [ "id" => 2])@endcomponent
+                @component('Components.providerField', [ "id" => 3])@endcomponent --}}
             </template>
         </dynamic-input>
         

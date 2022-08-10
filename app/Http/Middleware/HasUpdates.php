@@ -2,10 +2,9 @@
 
 namespace App\Http\Middleware;
 
-use App\App;
-use App\Shortcut;
+use App\Models\App;
+use App\Models\Shortcut;
 use Closure;
-use Session;
 
 class HasUpdates
 {
@@ -21,7 +20,7 @@ class HasUpdates
         $apps = App::recently_updated()->count();
         $shortcuts = Shortcut::recently_updated()->count();
         $updates = $apps + $shortcuts;
-        view()->composer('*', function ($view) use ($updates, $request) {
+        view()->composer('*', function ($view) use ($updates) {
             $view->with([
                 'hasUpdates' => $updates > 0,
                 'updateCount' => $updates,

@@ -4,9 +4,9 @@ namespace ioshaven\v4;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use ioshaven\v4\Http\Middleware\Authorize;
 use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
-use ioshaven\v4\Http\Middleware\Authorize;
 
 class ToolServiceProvider extends ServiceProvider
 {
@@ -20,7 +20,7 @@ class ToolServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'dashboard-sidebar');
 
         $this->publishes([
-            __DIR__ . '/../config/dashboard-sidebar.php' => config_path('dashboard-sidebar.php')
+            __DIR__.'/../config/dashboard-sidebar.php' => config_path('dashboard-sidebar.php'),
         ]);
         // $this->loadViewsFrom(__DIR__.'/../resources/views', 'V4');
 

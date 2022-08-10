@@ -18,7 +18,6 @@ use Illuminate\Support\Facades\Route;
 //     //
 // });
 
-
 Route::get('/stripe/key', 'StripeController@GetKey');
 Route::get('/stripe/secret', 'StripeController@GetSecret');
 Route::post('/stripe/payment_method', 'StripeController@SavePaymentMethod');

@@ -3,14 +3,12 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use phpDocumentor\Reflection\Types\Integer;
 
 class Skin extends Resource
 {
@@ -19,7 +17,7 @@ class Skin extends Resource
      *
      * @var string
      */
-    public static $model = \App\Skin::class;
+    public static $model = \App\Models\Skin::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.

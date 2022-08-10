@@ -976,7 +976,7 @@ asyncComponentPrototype.render = function () {
 /**
  * Keeps track of the current owner.
  *
- * The current owner is the component who should own any components that are
+ * The current owner is the component who should own any Components that are
  * currently being constructed.
  */
 var ReactCurrentOwner = {
@@ -1886,7 +1886,7 @@ function createElementWithValidation(type, props, children) {
 
     info += getStackAddendum() || '';
 
-    warning(false, 'React.createElement: type is invalid -- expected a string (for ' + 'built-in components) or a class/function (for composite ' + 'components) but got: %s.%s', type == null ? type : typeof type, info);
+    warning(false, 'React.createElement: type is invalid -- expected a string (for ' + 'built-in Components) or a class/function (for composite ' + 'Components) but got: %s.%s', type == null ? type : typeof type, info);
   }
 
   var element = createElement.apply(this, arguments);
@@ -2368,7 +2368,7 @@ var HTMLDOMPropertyConfig = {
     // support for projecting regular DOM Elements via V1 named slots ( shadow dom )
     span: HAS_POSITIVE_NUMERIC_VALUE,
     spellCheck: HAS_STRING_BOOLEAN_VALUE,
-    // Style must be explicitly set in the attribute list. React components
+    // Style must be explicitly set in the attribute list. React Components
     // expect a style object
     style: 0,
     // Keep it in the whitelist because it is case-sensitive for SVG.
@@ -2659,7 +2659,7 @@ var invokeGuardedCallback = function (name, func, context, a, b, c, d, e, f) {
       if (didError) {
         if (!didSetError) {
           // The callback errored, but the error event never fired.
-          error = new Error('An error was thrown inside one of your components, but React ' + "doesn't know what it was. This is likely due to browser " + 'flakiness. React does its best to preserve the "Pause on ' + 'exceptions" behavior of the DevTools, which requires some ' + "DEV-mode only tricks. It's possible that these don't work in " + 'your browser. Try triggering the error in production mode, ' + 'or switching to a modern browser. If you suspect that this is ' + 'actually an issue with React, please file an issue.');
+          error = new Error('An error was thrown inside one of your Components, but React ' + "doesn't know what it was. This is likely due to browser " + 'flakiness. React does its best to preserve the "Pause on ' + 'exceptions" behavior of the DevTools, which requires some ' + "DEV-mode only tricks. It's possible that these don't work in " + 'your browser. Try triggering the error in production mode, ' + 'or switching to a modern browser. If you suspect that this is ' + 'actually an issue with React, please file an issue.');
         } else if (isCrossOriginError) {
           error = new Error("A cross-origin error was thrown. React doesn't have access to " + 'the actual error object in development. ' + 'See https://fb.me/react-crossorigin-error for more information.');
         }
@@ -4401,7 +4401,7 @@ function batchedUpdates(fn, bookkeeping) {
     return fiberBatchedUpdates(fn, bookkeeping);
   } finally {
     // Here we wait until all updates have propagated, which is important
-    // when using controlled components within layers:
+    // when using controlled Components within layers:
     // https://github.com/facebook/react/issues/1698
     // Then we restore state of any controlled component.
     isNestingBatched = false;
@@ -4669,7 +4669,7 @@ function manualDispatchChangeEvent(nativeEvent) {
   // Batching is necessary here in order to ensure that all event handlers run
   // before the next rerender (including event handlers attached to ancestor
   // elements instead of directly on the input). Without this, controlled
-  // components don't work properly in conjunction with event bubbling because
+  // Components don't work properly in conjunction with event bubbling because
   // the component is rerendered and the value reverted before all the event
   // handlers can run. See https://github.com/facebook/react/issues/708.
   batchedUpdates(runEventInBatch, event);
@@ -5023,7 +5023,7 @@ var EnterLeaveEventPlugin = {
     }
 
     if (from === to) {
-      // Nothing pertains to our managed components.
+      // Nothing pertains to our managed Components.
       return null;
     }
 
@@ -5395,7 +5395,7 @@ function releaseTopLevelCallbackBookKeeping(instance) {
 function handleTopLevelImpl(bookKeeping) {
   var targetInst = bookKeeping.targetInst;
 
-  // Loop through the hierarchy, in case there's any nested components.
+  // Loop through the hierarchy, in case there's any nested Components.
   // It's important that we build the array of ancestors before calling any
   // event handlers, because event handlers can modify the DOM, leading to
   // inconsistencies with ReactMount's node cache. See #1105.
@@ -7125,7 +7125,7 @@ var endFiberMark = function (fiber, phase, warning$$1) {
 };
 
 var shouldIgnoreFiber = function (fiber) {
-  // Host components should be skipped in the timeline.
+  // Host Components should be skipped in the timeline.
   // We could check typeof fiber.type, but does this work with RN?
   switch (fiber.tag) {
     case HostRoot:
@@ -7826,7 +7826,7 @@ function createFiberFromElement(element, internalContextTag, expirationTime) {
         info += '\n\nCheck the render method of `' + ownerName + '`.';
       }
     }
-    invariant(false, 'Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: %s.%s', type == null ? type : typeof type, info);
+    invariant(false, 'Element type is invalid: expected a string (for built-in Components) or a class/function (for composite Components) but got: %s.%s', type == null ? type : typeof type, info);
   }
 
   {
@@ -8790,7 +8790,7 @@ function coerceRef(current, element) {
       var inst = void 0;
       if (owner) {
         var ownerFiber = owner;
-        !(ownerFiber.tag === ClassComponent) ? invariant(false, 'Stateless function components cannot have refs.') : void 0;
+        !(ownerFiber.tag === ClassComponent) ? invariant(false, 'Stateless function Components cannot have refs.') : void 0;
         inst = ownerFiber.stateNode;
       }
       !inst ? invariant(false, 'Missing owner for string ref %s. This error is likely caused by a bug in React. Please file an issue.', mixedRef) : void 0;
@@ -9283,7 +9283,7 @@ function ChildReconciler(shouldClone, shouldTrackSideEffects) {
             knownKeys.add(key);
             break;
           }
-          warning(false, 'Encountered two children with the same key, `%s`. ' + 'Keys should be unique so that components maintain their identity ' + 'across updates. Non-unique keys may cause children to be ' + 'duplicated and/or omitted — the behavior is unsupported and ' + 'could change in a future version.%s', key, getCurrentFiberStackAddendum$1());
+          warning(false, 'Encountered two children with the same key, `%s`. ' + 'Keys should be unique so that Components maintain their identity ' + 'across updates. Non-unique keys may cause children to be ' + 'duplicated and/or omitted — the behavior is unsupported and ' + 'could change in a future version.%s', key, getCurrentFiberStackAddendum$1());
           break;
         default:
           break;
@@ -10172,7 +10172,7 @@ var ReactFiberBeginWork = function (config, hostContext, hydrationContext, sched
           }
           if (!warnedAboutStatelessRefs[warningKey]) {
             warnedAboutStatelessRefs[warningKey] = true;
-            warning(false, 'Stateless function components cannot be given refs. ' + 'Attempts to access this ref will fail.%s%s', info, ReactDebugCurrentFiber.getCurrentFiberStackAddendum());
+            warning(false, 'Stateless function Components cannot be given refs. ' + 'Attempts to access this ref will fail.%s%s', info, ReactDebugCurrentFiber.getCurrentFiberStackAddendum());
           }
         }
       }
@@ -10904,9 +10904,9 @@ var ReactFiberCommitWork = function (config, captureError) {
         {
           var _instance2 = finishedWork.stateNode;
 
-          // Renderers may schedule work to be done after host components are mounted
+          // Renderers may schedule work to be done after host Components are mounted
           // (eg DOM renderer may schedule auto-focus for inputs and form controls).
-          // These effects should only be committed when components are first mounted,
+          // These effects should only be committed when Components are first mounted,
           // aka when there is no current/alternate.
           if (current === null && finishedWork.effectTag & Update) {
             var type = finishedWork.type;
@@ -11300,7 +11300,7 @@ var ReactFiberCommitWork = function (config, captureError) {
         // When we go into a portal, it becomes the parent to remove from.
         // We will reassign it back when we pop the portal on the way up.
         currentParent = node.stateNode.containerInfo;
-        // Visit children because portals might contain host components.
+        // Visit children because portals might contain host Components.
         if (node.child !== null) {
           node.child['return'] = node;
           node = node.child;
@@ -11308,7 +11308,7 @@ var ReactFiberCommitWork = function (config, captureError) {
         }
       } else {
         commitUnmount(node);
-        // Visit children because we may find more host components below.
+        // Visit children because we may find more host Components below.
         if (node.child !== null) {
           node.child['return'] = node;
           node = node.child;
@@ -11358,7 +11358,7 @@ var ReactFiberCommitWork = function (config, captureError) {
             // this case.
             var oldProps = current !== null ? current.memoizedProps : newProps;
             var type = finishedWork.type;
-            // TODO: Type the updateQueue to be specific to host components.
+            // TODO: Type the updateQueue to be specific to host Components.
             var updatePayload = finishedWork.updateQueue;
             finishedWork.updateQueue = null;
             if (updatePayload !== null) {
@@ -11760,7 +11760,7 @@ var ReactFiberHydrationContext = function (config) {
 
     // If we have any remaining hydratable nodes, we need to delete them now.
     // We only do this deeper than head and body since they tend to have random
-    // other nodes in them. We also ignore components with pure text content in
+    // other nodes in them. We also ignore Components with pure text content in
     // side of them.
     // TODO: Better heuristic.
     if (fiber.tag !== HostComponent || type !== 'head' && type !== 'body' && !shouldSetTextContent(type, fiber.memoizedProps)) {
@@ -11825,7 +11825,7 @@ function logCapturedError(capturedError) {
         willRetry = capturedError.willRetry;
 
 
-    var componentNameMessage = componentName ? 'The above error occurred in the <' + componentName + '> component:' : 'The above error occurred in one of your React components:';
+    var componentNameMessage = componentName ? 'The above error occurred in the <' + componentName + '> component:' : 'The above error occurred in one of your React Components:';
 
     var errorBoundaryMessage = void 0;
     // errorBoundaryFound check is sufficient; errorBoundaryName check is to satisfy Flow.
@@ -13797,7 +13797,7 @@ var ReactControlledValuePropTypes = {
 
   /**
    * Provide a linked `value` attribute for controlled forms. You should not use
-   * this outside of the ReactDOM controlled form components.
+   * this outside of the ReactDOM controlled form Components.
    */
   ReactControlledValuePropTypes.checkPropTypes = function (tagName, props, getStack) {
     checkPropTypes(propTypes, props, 'prop', tagName, getStack);
@@ -15046,9 +15046,9 @@ function validateProperties$1(type, props) {
   if (props != null && props.value === null && !didWarnValueNull) {
     didWarnValueNull = true;
     if (type === 'select' && props.multiple) {
-      warning(false, '`value` prop on `%s` should not be null. ' + 'Consider using an empty array when `multiple` is set to `true` ' + 'to clear the component or `undefined` for uncontrolled components.%s', type, getStackAddendum$1());
+      warning(false, '`value` prop on `%s` should not be null. ' + 'Consider using an empty array when `multiple` is set to `true` ' + 'to clear the component or `undefined` for uncontrolled Components.%s', type, getStackAddendum$1());
     } else {
-      warning(false, '`value` prop on `%s` should not be null. ' + 'Consider using an empty string to clear the component or `undefined` ' + 'for uncontrolled components.%s', type, getStackAddendum$1());
+      warning(false, '`value` prop on `%s` should not be null. ' + 'Consider using an empty string to clear the component or `undefined` ' + 'for uncontrolled Components.%s', type, getStackAddendum$1());
     }
   }
 }
@@ -16039,7 +16039,7 @@ function setInitialProperties$1(domElement, tag, rawProps, rootContainerElement)
       initWrapperState(domElement, rawProps);
       props = getHostProps(domElement, rawProps);
       trapBubbledEvent('topInvalid', 'invalid', domElement);
-      // For controlled components we always need to ensure we're listening
+      // For controlled Components we always need to ensure we're listening
       // to onChange. Even if there is no listener.
       ensureListeningTo(rootContainerElement, 'onChange');
       break;
@@ -16051,7 +16051,7 @@ function setInitialProperties$1(domElement, tag, rawProps, rootContainerElement)
       initWrapperState$1(domElement, rawProps);
       props = getHostProps$2(domElement, rawProps);
       trapBubbledEvent('topInvalid', 'invalid', domElement);
-      // For controlled components we always need to ensure we're listening
+      // For controlled Components we always need to ensure we're listening
       // to onChange. Even if there is no listener.
       ensureListeningTo(rootContainerElement, 'onChange');
       break;
@@ -16059,7 +16059,7 @@ function setInitialProperties$1(domElement, tag, rawProps, rootContainerElement)
       initWrapperState$2(domElement, rawProps);
       props = getHostProps$3(domElement, rawProps);
       trapBubbledEvent('topInvalid', 'invalid', domElement);
-      // For controlled components we always need to ensure we're listening
+      // For controlled Components we always need to ensure we're listening
       // to onChange. Even if there is no listener.
       ensureListeningTo(rootContainerElement, 'onChange');
       break;
@@ -16339,7 +16339,7 @@ function diffHydratedProperties$1(domElement, tag, rawProps, parentNamespace, ro
     case 'input':
       initWrapperState(domElement, rawProps);
       trapBubbledEvent('topInvalid', 'invalid', domElement);
-      // For controlled components we always need to ensure we're listening
+      // For controlled Components we always need to ensure we're listening
       // to onChange. Even if there is no listener.
       ensureListeningTo(rootContainerElement, 'onChange');
       break;
@@ -16349,14 +16349,14 @@ function diffHydratedProperties$1(domElement, tag, rawProps, parentNamespace, ro
     case 'select':
       initWrapperState$1(domElement, rawProps);
       trapBubbledEvent('topInvalid', 'invalid', domElement);
-      // For controlled components we always need to ensure we're listening
+      // For controlled Components we always need to ensure we're listening
       // to onChange. Even if there is no listener.
       ensureListeningTo(rootContainerElement, 'onChange');
       break;
     case 'textarea':
       initWrapperState$2(domElement, rawProps);
       trapBubbledEvent('topInvalid', 'invalid', domElement);
-      // For controlled components we always need to ensure we're listening
+      // For controlled Components we always need to ensure we're listening
       // to onChange. Even if there is no listener.
       ensureListeningTo(rootContainerElement, 'onChange');
       break;
@@ -17275,9 +17275,9 @@ function renderSubtreeIntoContainer(parentComponent, children, container, forceH
     var rootEl = getReactRootElementInContainer(container);
     var hasNonRootReactChild = !!(rootEl && getInstanceFromNode$1(rootEl));
 
-    warning(!hasNonRootReactChild || isRootRenderedBySomeReact, 'render(...): Replacing React-rendered children with a new root ' + 'component. If you intended to update the children of this node, ' + 'you should instead have the existing children update their state ' + 'and render the new components instead of calling ReactDOM.render.');
+    warning(!hasNonRootReactChild || isRootRenderedBySomeReact, 'render(...): Replacing React-rendered children with a new root ' + 'component. If you intended to update the children of this node, ' + 'you should instead have the existing children update their state ' + 'and render the new Components instead of calling ReactDOM.render.');
 
-    warning(container.nodeType !== ELEMENT_NODE || !container.tagName || container.tagName.toUpperCase() !== 'BODY', 'render(): Rendering components directly into document.body is ' + 'discouraged, since its children are often manipulated by third-party ' + 'scripts and browser extensions. This may lead to subtle ' + 'reconciliation issues. Try rendering into a container element created ' + 'for your app.');
+    warning(container.nodeType !== ELEMENT_NODE || !container.tagName || container.tagName.toUpperCase() !== 'BODY', 'render(): Rendering Components directly into document.body is ' + 'discouraged, since its children are often manipulated by third-party ' + 'scripts and browser extensions. This may lead to subtle ' + 'reconciliation issues. Try rendering into a container element created ' + 'for your app.');
   }
 
   var root = container._reactRootContainer;
@@ -18214,7 +18214,7 @@ var HTMLDOMPropertyConfig = {
     // support for projecting regular DOM Elements via V1 named slots ( shadow dom )
     span: HAS_POSITIVE_NUMERIC_VALUE,
     spellCheck: HAS_STRING_BOOLEAN_VALUE,
-    // Style must be explicitly set in the attribute list. React components
+    // Style must be explicitly set in the attribute list. React Components
     // expect a style object
     style: 0,
     // Keep it in the whitelist because it is case-sensitive for SVG.
@@ -18587,7 +18587,7 @@ var ReactControlledValuePropTypes = {
 
   /**
    * Provide a linked `value` attribute for controlled forms. You should not use
-   * this outside of the ReactDOM controlled form components.
+   * this outside of the ReactDOM controlled form Components.
    */
   ReactControlledValuePropTypes.checkPropTypes = function (tagName, props, getStack) {
     checkPropTypes(propTypes, props, 'prop', tagName, getStack);
@@ -19004,9 +19004,9 @@ function validateProperties$1(type, props) {
   if (props != null && props.value === null && !didWarnValueNull) {
     didWarnValueNull = true;
     if (type === 'select' && props.multiple) {
-      warning(false, '`value` prop on `%s` should not be null. ' + 'Consider using an empty array when `multiple` is set to `true` ' + 'to clear the component or `undefined` for uncontrolled components.%s', type, getStackAddendum$2());
+      warning(false, '`value` prop on `%s` should not be null. ' + 'Consider using an empty array when `multiple` is set to `true` ' + 'to clear the component or `undefined` for uncontrolled Components.%s', type, getStackAddendum$2());
     } else {
-      warning(false, '`value` prop on `%s` should not be null. ' + 'Consider using an empty string to clear the component or `undefined` ' + 'for uncontrolled components.%s', type, getStackAddendum$2());
+      warning(false, '`value` prop on `%s` should not be null. ' + 'Consider using an empty string to clear the component or `undefined` ' + 'for uncontrolled Components.%s', type, getStackAddendum$2());
     }
   }
 }

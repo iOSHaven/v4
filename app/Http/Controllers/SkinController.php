@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Skin;
+use App\Models\Skin;
 use Illuminate\Http\Request;
 
 class SkinController extends Controller
@@ -41,7 +41,7 @@ class SkinController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Skin  $skin
+     * @param  \App\Models\Skin  $skin
      * @return \Illuminate\Http\Response
      */
     public function show(Skin $skin)
@@ -52,7 +52,7 @@ class SkinController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Skin  $skin
+     * @param  \App\Models\Skin  $skin
      * @return \Illuminate\Http\Response
      */
     public function edit(Skin $skin)
@@ -64,7 +64,7 @@ class SkinController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Skin  $skin
+     * @param  \App\Models\Skin  $skin
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Skin $skin)
@@ -75,7 +75,7 @@ class SkinController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Skin  $skin
+     * @param  \App\Models\Skin  $skin
      * @return \Illuminate\Http\Response
      */
     public function destroy(Skin $skin)

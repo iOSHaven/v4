@@ -2,8 +2,8 @@
 
 namespace App\Nova\Actions;
 
-use App\App;
-use App\Itms;
+use App\Models\App;
+use App\Models\Itms;
 use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Bus\Queueable;
@@ -13,9 +13,6 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
 use Laravel\Nova\Actions\Action;
 use Laravel\Nova\Fields\ActionFields;
-use Laravel\Nova\Fields\Boolean;
-use Laravel\Nova\Fields\Heading;
-use Laravel\Nova\Fields\Text;
 use Log;
 
 class UpdateProviderToken extends Action implements ShouldQueue
@@ -94,13 +91,13 @@ class UpdateProviderToken extends Action implements ShouldQueue
                     $this->markAsFailed($itms, new Exception('could not find iosgods itms link'));
 
                     // dd("hello");
-                        // $url = $this->createItmsServicesLink($itms, $token, $param, $shouldEncodeUrl);
-                        // Log::debug();
+                    // $url = $this->createItmsServicesLink($itms, $token, $param, $shouldEncodeUrl);
+                    // Log::debug();
                 } catch (\Exception $err) {
                     $this->markAsFailed($itms, $err);
                 }
             }
-            //   $id = "0001";
+        //   $id = "0001";
         } else {
             $this->markAsFailed($itms, new Exception('Invalid iOS Gods login'));
         }

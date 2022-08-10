@@ -2,9 +2,8 @@
 
 namespace App\Listeners;
 
-use App\Download;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
+use App\Summary\SummaryDownload;
+use Illuminate\Support\Facades\DB;
 
 class DownloadListener
 {
@@ -16,8 +15,16 @@ class DownloadListener
     public function handle($event)
     {
         if (config('app-analytics.downloads')) {
-            $download = new Download;
-            $download->trigger()->associate($event->model)->save();
+            SummaryDownload::updateOrCreate([
+                'trigger_id' => $event->model->id,
+                'trigger_type' => get_class($event->model),
+                'created_at' => now()->floorDay(),
+            ], [
+                'amount' => DB::raw('amount + 1'),
+            ]);
+
+            $event->model->downloads += 1;
+            $event->model->save();
         }
     }
 }

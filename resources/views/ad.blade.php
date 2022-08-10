@@ -61,7 +61,7 @@ dd(url($model->url))
       </div>
     </div>
 
-    {{-- @component('components.banner')@endcomponent --}}
+    {{-- @component('Components.banner')@endcomponent --}}
 
 {{--    @component('ads.google-header')@endcomponent--}}
 {{--    @component('ads.adsterra-pop-under')@endcomponent--}}

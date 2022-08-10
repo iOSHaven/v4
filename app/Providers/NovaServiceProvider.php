@@ -2,17 +2,17 @@
 
 namespace App\Providers;
 
-use App\App;
-use App\Ipa;
-use App\Itms;
-use App\Post;
-use App\Provider;
-use App\Shortcut;
-use App\Skin;
-use App\User;
+use App\Models\App;
+use App\Models\Ipa;
+use App\Models\Itms;
+use App\Models\Post;
+use App\Models\Provider;
+use App\Models\Shortcut;
+use App\Models\Skin;
+use App\Models\Team;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
-use Ioshaven\Ads\Ads;
 use ioshaven\v4\DashboardSidebar;
 use Laravel\Nova\Cards\Help;
 use Laravel\Nova\Nova;
@@ -114,7 +114,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     'Apps' => [
                         '_can' => ['viewAny', App::class],
                         '_icon' => fa('fas fa-layer-group'),
-                        '_url'    => '/nova/resources/apps',
+                        '_url' => '/nova/resources/apps',
                         '_params' => [
                             'resourceName' => 'apps',
                         ],
@@ -123,7 +123,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     'Blog Posts' => [
                         '_can' => ['viewAny', Post::class],
                         '_icon' => fa('fas fa-book'),
-                        '_url'    => '/nova/resources/posts',
+                        '_url' => '/nova/resources/posts',
                         '_params' => [
                             'resourceName' => 'posts',
                         ],
@@ -132,7 +132,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     'Shortcuts' => [
                         '_can' => ['viewAny', Shortcut::class],
                         '_icon' => fa('fas fa-sparkles'),
-                        '_url'    => '/nova/resources/shortcuts',
+                        '_url' => '/nova/resources/shortcuts',
                         '_params' => [
                             'resourceName' => 'shortcuts',
                         ],
@@ -141,7 +141,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     'Signed Links' => [
                         '_can' => ['viewAny', Itms::class],
                         '_icon' => fa('fas fa-arrow-alt-to-bottom'),
-                        '_url'    => '/nova/resources/itms',
+                        '_url' => '/nova/resources/itms',
                         '_params' => [
                             'resourceName' => 'itms',
                         ],
@@ -150,7 +150,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     'Unsigned Links' => [
                         '_can' => ['viewAny', Ipa::class],
                         '_icon' => fa('fas fa-file-archive'),
-                        '_url'    => '/nova/resources/ipas',
+                        '_url' => '/nova/resources/ipas',
                         '_params' => [
                             'resourceName' => 'ipas',
                         ],
@@ -159,9 +159,18 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     'Providers' => [
                         '_can' => ['viewAny', Provider::class],
                         '_icon' => fa('fab fa-app-store-ios'),
-                        '_url'    => '/nova/resources/providers',
+                        '_url' => '/nova/resources/providers',
                         '_params' => [
                             'resourceName' => 'providers',
+                        ],
+                    ],
+
+                    'Team' => [
+                        '_can' => ['viewAny', Team::class],
+                        '_icon' => fa('fab fa-app-store-ios'),
+                        '_url' => '/nova/resources/teams',
+                        '_params' => [
+                            'resourceName' => 'teams',
                         ],
                     ],
 
@@ -169,7 +178,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                         '_admin_only' => true,
                         '_can' => ['viewAny', User::class],
                         '_icon' => fa('fas fa-users'),
-                        '_url'    => '/nova/resources/users',
+                        '_url' => '/nova/resources/users',
                         '_params' => [
                             'resourceName' => 'users',
                         ],
@@ -178,13 +187,13 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     'Logs' => [
                         '_admin_only' => true,
                         '_icon' => fa('fas fa-database'),
-                        '_url'    => '/logs',
+                        '_url' => '/logs',
                     ],
 
                     'Skins' => [
                         '_can' => ['viewAny', Skin::class],
                         '_icon' => fa('fas fa-moon-stars'),
-                        '_url'    => '/nova/resources/skins',
+                        '_url' => '/nova/resources/skins',
                         '_params' => [
                             'resourceName' => 'skins',
                         ],
@@ -193,7 +202,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
                     'Account' => [
                         '_can' => ['view',  Auth::user()],
                         '_icon' => fa('fas fa-user-circle'),
-                        '_url'    => '/nova/resources/users/'.Auth::id(),
+                        '_url' => '/nova/resources/users/'.Auth::id(),
                         '_type' => 'detail',
                         '_params' => [
                             'resourceId' => Auth::id(),
