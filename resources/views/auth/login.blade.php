@@ -40,7 +40,7 @@
         "text" => "Login"
       ])@endcomponent
 
-      <a href="/password/reset" class="text-blue-500">
+      <a href="{{ route('password.request') }}" class="text-blue-500">
         Forgot password?
       </a>
 
