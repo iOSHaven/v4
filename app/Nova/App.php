@@ -2,8 +2,6 @@
 
 namespace App\Nova;
 
-use App\Nova\Actions;
-use App\Nova\Metrics;
 use App\Summary\SummaryDownload;
 use App\Summary\SummaryInstall;
 use App\Summary\SummaryView;

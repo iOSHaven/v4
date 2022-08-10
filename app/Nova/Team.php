@@ -2,7 +2,6 @@
 
 namespace App\Nova;
 
-use App\Nova\Actions;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\BelongsTo;
@@ -27,7 +26,6 @@ class Team extends Resource
     {
         return $this->name;
     }
-
 
     /**
      * The columns that should be searched.
@@ -58,18 +56,18 @@ class Team extends Resource
 
             Boolean::make('Personal Team')->sortable()->rules('required'),
 
-//            Text::make('Parsing ID', 'parsingIdentifier')->rules('required')->onlyOnForms(),
-//
-//            Text::make('Website')->rules('required'),
-//
-//            Boolean::make('Working', 'revoked')
-//                    ->trueValue(0)
-//                    ->falseValue(1),
-//
-//            BelongsToMany::make('Signed Links', 'itms', Itms::class)->nullable()->searchable(),
-//            BelongsToMany::make('Unsigned IPA links', 'ipas', Ipa::class)->nullable()->searchable(),
+            //            Text::make('Parsing ID', 'parsingIdentifier')->rules('required')->onlyOnForms(),
+            //
+            //            Text::make('Website')->rules('required'),
+            //
+            //            Boolean::make('Working', 'revoked')
+            //                    ->trueValue(0)
+            //                    ->falseValue(1),
+            //
+            //            BelongsToMany::make('Signed Links', 'itms', Itms::class)->nullable()->searchable(),
+            //            BelongsToMany::make('Unsigned IPA links', 'ipas', Ipa::class)->nullable()->searchable(),
 
-                BelongsTo::make('Provider')
+            BelongsTo::make('Provider'),
         ];
     }
 

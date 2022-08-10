@@ -8,10 +8,9 @@ use App\Summary\SummaryInstall;
 
 class AppInstallsMetric extends Metric
 {
-
     public function title(MetricRequest $request)
     {
-        return "App Installs";
+        return 'App Installs';
     }
 
     public function calculateSeries(MetricRequest $request)
@@ -21,6 +20,6 @@ class AppInstallsMetric extends Metric
 
     public function cacheFor()
     {
-         return now()->addMinutes(20);
+        return now()->addMinutes(20);
     }
 }

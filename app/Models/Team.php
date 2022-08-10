@@ -58,7 +58,8 @@ class Team extends JetstreamTeam
         return 'https://ui-avatars.com/api/?name='.urlencode($name).'&color=417505&background=b8e986';
     }
 
-    public function provider() {
+    public function provider()
+    {
         return $this->belongsTo(Provider::class);
     }
 }

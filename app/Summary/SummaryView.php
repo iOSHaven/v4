@@ -8,7 +8,7 @@ class SummaryView extends Model
 {
     protected $table = 'summary_view';
 
-    protected $fillable = ["created_at", "trigger_type", "trigger_id", "amount"];
+    protected $fillable = ['created_at', 'trigger_type', 'trigger_id', 'amount'];
 
     public function trigger()
     {

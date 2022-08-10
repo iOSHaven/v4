@@ -2,7 +2,6 @@
 
 namespace App\Nova;
 
-use App\Nova\Actions;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\BelongsToMany;

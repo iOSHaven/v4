@@ -2,7 +2,6 @@
 
 namespace App\Nova;
 
-use App\Nova\Actions;
 use App\Summary\SummaryInstall;
 use App\Summary\SummaryView;
 use Illuminate\Http\Request;
@@ -54,7 +53,6 @@ class Shortcut extends Resource
      * @param  \Illuminate\Http\Request  $request
      * @return string
      */
-
     public static function redirectAfterUpdate(NovaRequest $request, $resource)
     {
 //        return $request->url();

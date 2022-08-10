@@ -50,8 +50,7 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware(['web', 'useLocale'])
             ->group(base_path('routes/localization.php'));
 
-
-        $supportedLocales = implode("|", array_keys(config('localization.supportedLocales')));
+        $supportedLocales = implode('|', array_keys(config('localization.supportedLocales')));
         Route::prefix('{localeIdentifier}')
             ->name('locale.')
             ->where(['localeIdentifier' => "$supportedLocales"])
@@ -71,8 +70,6 @@ class RouteServiceProvider extends ServiceProvider
         Route::prefix('api')
              ->middleware('api')
              ->group(base_path('routes/api.php'));
-
-
     }
 
     /**

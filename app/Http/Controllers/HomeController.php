@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use App\ReactJS;
 use Auth;
 use Illuminate\Http\Request;
 use Session;

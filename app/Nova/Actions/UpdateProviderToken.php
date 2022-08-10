@@ -91,13 +91,13 @@ class UpdateProviderToken extends Action implements ShouldQueue
                     $this->markAsFailed($itms, new Exception('could not find iosgods itms link'));
 
                     // dd("hello");
-                        // $url = $this->createItmsServicesLink($itms, $token, $param, $shouldEncodeUrl);
-                        // Log::debug();
+                    // $url = $this->createItmsServicesLink($itms, $token, $param, $shouldEncodeUrl);
+                    // Log::debug();
                 } catch (\Exception $err) {
                     $this->markAsFailed($itms, $err);
                 }
             }
-            //   $id = "0001";
+        //   $id = "0001";
         } else {
             $this->markAsFailed($itms, new Exception('Invalid iOS Gods login'));
         }

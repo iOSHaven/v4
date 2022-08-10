@@ -8,10 +8,9 @@ use App\Summary\SummaryDownload;
 
 class AppDownloadsMetric extends Metric
 {
-
     public function title(MetricRequest $request)
     {
-        return "App Downloads";
+        return 'App Downloads';
     }
 
     public function calculateSeries(MetricRequest $request)
@@ -21,6 +20,6 @@ class AppDownloadsMetric extends Metric
 
     public function cacheFor()
     {
-         return now()->addMinutes(20);
+        return now()->addMinutes(20);
     }
 }

@@ -25,7 +25,7 @@ class EventServiceProvider extends ServiceProvider
             \App\Listeners\InstallListener::class,
         ],
         PasswordReset::class => [
-            AuthResetListener::class
+            AuthResetListener::class,
         ],
     ];
 

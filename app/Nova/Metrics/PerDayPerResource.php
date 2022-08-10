@@ -2,11 +2,9 @@
 
 namespace App\Nova\Metrics;
 
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Trend;
-use Log;
 
 class PerDayPerResource extends Trend
 {

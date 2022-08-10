@@ -8,10 +8,9 @@ use App\Summary\SummaryView;
 
 class AppViewsMetric extends Metric
 {
-
     public function title(MetricRequest $request)
     {
-        return "App Views";
+        return 'App Views';
     }
 
     public function calculateSeries(MetricRequest $request)
@@ -21,6 +20,6 @@ class AppViewsMetric extends Metric
 
     public function cacheFor()
     {
-         return now()->addMinutes(20);
+        return now()->addMinutes(20);
     }
 }

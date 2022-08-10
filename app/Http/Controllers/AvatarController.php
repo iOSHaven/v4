@@ -2,8 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class AvatarController extends Controller
 {
     public function api($value, $size = 100)

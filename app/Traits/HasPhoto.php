@@ -4,17 +4,17 @@ namespace App\Traits;
 
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 use Laravel\Jetstream\Features;
 
 trait HasPhoto
 {
-
-    protected function PhotoColumn () {
+    protected function PhotoColumn()
+    {
         return self::$photoColumn ?? 'profile_photo_path';
     }
 
-    protected function PhotoFolder () {
+    protected function PhotoFolder()
+    {
         return self::$photoColumn ?? 'profile-photos';
     }
 
@@ -24,7 +24,8 @@ trait HasPhoto
      * @param  \Illuminate\Http\UploadedFile  $photo
      * @return void
      */
-    public function updateProfilePhoto(UploadedFile $photo) {
+    public function updateProfilePhoto(UploadedFile $photo)
+    {
         $this->updatePhoto($photo);
     }
 
@@ -57,7 +58,8 @@ trait HasPhoto
      *
      * @return void
      */
-    public function deleteProfilePhoto() {
+    public function deleteProfilePhoto()
+    {
         $this->deletePhoto();
     }
 

@@ -90,14 +90,14 @@ class Mirror extends Model
 
         // dump($plistJSON);
 
-    // foreach ($plistJSON->ipadScreenshotUrls as $screenshot) {
-    //   $image = new Image;
-    //   $image->type = "phone";
-    //   $image->url = $screenshot;
-    //   $this->images()->save($image);
-    // }
+        // foreach ($plistJSON->ipadScreenshotUrls as $screenshot) {
+        //   $image = new Image;
+        //   $image->type = "phone";
+        //   $image->url = $screenshot;
+        //   $this->images()->save($image);
+        // }
 
-    // dd($this);
-    // dd($this->toArray());
+        // dd($this);
+        // dd($this->toArray());
     }
 }

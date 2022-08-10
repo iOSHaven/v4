@@ -61,7 +61,7 @@ class LinkTransfer extends Command
         $bar = $this->output->createProgressBar($count);
         foreach (file('links') as $line) {
             $line = trim($line);
-            list($link, $redirect) = explode("\t", $line);
+            [$link, $redirect] = explode("\t", $line);
             $linkclk = str_replace('http://pinkhindi.com', 'https://clk.sh', $link);
             // print_r([$link, $linkclk]);
             $appq = App::where(function ($q) use ($link, $linkclk) {

@@ -1,7 +1,5 @@
 <?php
 
-use phpDocumentor\Reflection\Types\String_;
-
 function format_int(int $number, string $type = null)
 {
     if ($number > 999999999) {

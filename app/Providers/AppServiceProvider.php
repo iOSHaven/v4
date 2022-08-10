@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use Auth;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;

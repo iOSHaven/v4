@@ -16,11 +16,11 @@ class DownloadListener
     {
         if (config('app-analytics.downloads')) {
             SummaryDownload::updateOrCreate([
-                "trigger_id" => $event->model->id,
-                "trigger_type" => get_class($event->model),
-                "created_at" => now()->floorDay(),
+                'trigger_id' => $event->model->id,
+                'trigger_type' => get_class($event->model),
+                'created_at' => now()->floorDay(),
             ], [
-                "amount" => DB::raw("amount + 1")
+                'amount' => DB::raw('amount + 1'),
             ]);
 
             $event->model->downloads += 1;

@@ -173,14 +173,12 @@ class AppController extends Controller
     {
         $providers = Provider::orderBy('name')->get();
 
-
-        if($request->has('q')) {
+        if ($request->has('q')) {
             $search = Str::transliterate($request->q);
             $apps = App::search($search)->take(12)->get();
             $shortcuts = Shortcut::search($search)->get();
             $shortcuts = $shortcuts->where('approval_status', 'approved');
         }
-
 
         return view('search')->with([
             'providers' => $providers,
@@ -213,7 +211,7 @@ class AppController extends Controller
     public function update(Request $request)
     {
 
-    // dd($request->all());
+        // dd($request->all());
         $app = App::findByUid($request->uid);
         $app->update($request->all());
         // // dd('asdf');
@@ -289,7 +287,7 @@ class AppController extends Controller
           ->header('Cache-Control', 'no-cache, no-store, max-age=0, must-revalidate')
           ->header('Pragma', 'no-cache');
             } else {
-                list(, $url) = explode($itms, $itmsurl);
+                [, $url] = explode($itms, $itmsurl);
                 $d = urldecode($url);
                 $e = urlencode($d);
 
@@ -312,7 +310,7 @@ class AppController extends Controller
             if (strpos($itmsurl, 'app.iosgods.com') !== false) {
                 return $itmsurl;
             } else {
-                list(, $url) = explode($itms, $itmsurl);
+                [, $url] = explode($itms, $itmsurl);
                 $d = urldecode($url);
                 $e = urlencode($d);
 
@@ -352,7 +350,7 @@ class AppController extends Controller
         addAppSecurityTimeoutToSession('plist', 1);
 
         return view('ad', [
-//            'ad' => new Ad(),
+            //            'ad' => new Ad(),
             'model' => $model,
             'app' => $app,
             'url' => $url ?? url($model->url),

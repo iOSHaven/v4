@@ -70,6 +70,6 @@ class Kernel extends HttpKernel
         'tab' => \App\Http\Middleware\SetCurrentTab::class,
         'back' => \App\Http\Middleware\SetBackButton::class,
         'useLocale' => Localization::class,
-        'setLocale' => SpecifiesLocalization::class
+        'setLocale' => SpecifiesLocalization::class,
     ];
 }

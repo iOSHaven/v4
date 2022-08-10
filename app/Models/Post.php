@@ -100,7 +100,7 @@ class Post extends Model
     public function getUrlAttribute()
     {
         return route('blog.reader', [
-            'post'=>$this,
+            'post' => $this,
             'slug' => $this->slug,
         ]);
     }
