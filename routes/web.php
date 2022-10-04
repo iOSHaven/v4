@@ -168,18 +168,18 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 //    ]);
 //});
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified',
-])->group(function () {
-    Route::get('/me', function () {
-        return Inertia::render('Dashboard');
-    })->name('dashboard');
-    Route::put('/team/metrics', [MetricsController::class, 'handle'])
-        ->name('team.metrics');
-    Route::delete('/teams/{team}/profile-photo', [JetStreamController::class, 'destroyTeamPhoto'])
-        ->name('current-team-photo.destroy');
-});
+// Route::middleware([
+//     'auth:sanctum',
+//     config('jetstream.auth_session'),
+//     'verified',
+// ])->group(function () {
+//     Route::get('/me', function () {
+//         return Inertia::render('Dashboard');
+//     })->name('dashboard');
+//     Route::put('/team/metrics', [MetricsController::class, 'handle'])
+//         ->name('team.metrics');
+//     Route::delete('/teams/{team}/profile-photo', [JetStreamController::class, 'destroyTeamPhoto'])
+//         ->name('current-team-photo.destroy');
+// });
 
 //Route::inertia('/custom-reset-link', function () {})->name('custom-password-reset');
