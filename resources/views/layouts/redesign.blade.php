@@ -63,7 +63,7 @@
           <div class="leading-none">@admin Admin @else Member @endadmin</div>
         </li>
         <a href="/dashboard" class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800">
-          {{ __("strings.Dashboard") }}"
+          {{ __("strings.Dashboard") }}
           <i class="fal fa-chevron-right"></i>
         </a>
         <li class="p-3 flex items-center justify-between border-b border-gray-200 dark:border-gray-800 text-gray-200 dark:text-gray-800">

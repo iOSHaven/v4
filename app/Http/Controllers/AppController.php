@@ -158,7 +158,7 @@ class AppController extends Controller
       ->search($tag);
 
         $shortcuts = Shortcut::recently_updated()
-      ->search($tag);
+      ->searchWithoutScout($tag);
 
         $models = $apps->merge($shortcuts)->sortByDesc('updated_at');
         if ($request->limit) {
