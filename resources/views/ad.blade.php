@@ -90,7 +90,7 @@ dd(url($model->url))
 
     <div class="w-full mb-8">
       <!-- Baseline Reactions -->
-      <div class="baseline__reactions" data-cb="if (window.$baseline.weight > 0) {document.getElementById('twitter-button').href='https://twitter.com/intent/tweet?text={{ twitterGood($app, $model) }}';}else{document.getElementById('twitter-button').href='https://twitter.com/intent/tweet?text={{ twitterBad($app, $model) }}';}" data-team="29a12e05-29fe-41f6-8293-86cac4712b8d" data-tag="{{ $model->provider->name }}">
+      <div class="baseline__reactions" data-cb="if (window.$baseline.weight > 0) {document.getElementById('twitter-button').href='https://twitter.com/intent/tweet?text={{ twitterGood($app, $model) }}';}else{document.getElementById('twitter-button').href='https://twitter.com/intent/tweet?text={{ twitterBad($app, $model) }}';}" data-team="29a12e05-29fe-41f6-8293-86cac4712b8d" data-tag="{{ $providerName }}">
       </div>
       <script async src="https://baseline.smeltlab.com/js/embed.js" charset="utf-8"></script>
       <!-- End of Baseline Reactions -->
