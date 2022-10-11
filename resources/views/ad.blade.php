@@ -69,15 +69,15 @@ dd(url($model->url))
 {{--    @component('ads.adsterra-pop-under')@endcomponent--}}
 
     @php
-    function twitterGood($app, $model) {
+    function twitterGood($app, $model) use($appName, $providerName) {
     return urlencode("I just installed $appName from ". $providerName . " and it is working! " . url("/app/".$app?->uid) . " #ihvn_working");
     }
 
-    function twitterBad($app, $model) {
+    function twitterBad($app, $model) use($appName, $providerName) {
     return urlencode("$appName from ". $providerName . " is broken! #ihvn_broken");
     }
 
-    function twitterNeutral($app, $model) {
+    function twitterNeutral($app, $model) use($appName, $providerName) {
     return urlencode("Get $appName from ". $providerName . "! " . url("/app/".$app?->uid));
     }
     @endphp
