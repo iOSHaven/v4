@@ -11,7 +11,7 @@ $type = strtolower(class_basename($model));
     <div class="flex items-center justify-between">
         <div class="flex items-center">
             <div class="">
-                <div>{{ $provider->name }}</div>
+                <div>{{ $provider?->name 'No Name' }}</div>
                 <small class="block">{{ $model?->name ?? 'No Name' }}</small>
                 @if($model->working)
                 <div class="text-emerald-500 font-bold text-sm">
