@@ -1,5 +1,7 @@
 @php
-  $pageSubtitle = "Downloading $app->name ". strtoupper($type) . " from " . $model->provider->name . "...";
+  $appName = $app?->name ?? 'No Name';
+  $providerName = $model?->provider?->name ?? 'No Name';
+  $pageSubtitle = "Downloading $appName ". strtoupper($type) . " from " . $providerName . "...";
 @endphp
 
 @extends('layouts.redesign', ["title" => $pageSubtitle, "hide_nav" => true, "hide_ads" => true, "back_link" => url("/apps")])
@@ -33,7 +35,7 @@ dd(url($model->url))
 
 <section>
   <div class="container text-center">
-    <h3 class="mt-0 text-3xl font-display">{{ $app->name }}</h3>
+    <h3 class="mt-0 text-3xl font-display">{{ $appName }}</h3>
 
 
     <img src="{{ url($app->icon) }}" width="77" height="77" class="d-block mx-auto mb-3" style="height:77px; border-radius: 1.3rem">
@@ -44,7 +46,7 @@ dd(url($model->url))
       <div class="flex items-center">
         @component('components.tinyProviderIcon', ["provider" => $model->provider, "size" => 40])@endcomponent
         <div>
-          <div>{{ $model->provider->name }}</div>
+          <div>{{ $providerName }}</div>
           @if($model->working)
           <div class="text-emerald-500 font-bold text-sm">
             <span class="mr-1">Working</span>
@@ -68,15 +70,15 @@ dd(url($model->url))
 
     @php
     function twitterGood($app, $model) {
-    return urlencode("I just installed $app->name from ". $model->provider->name . " and it is working! " . url("/app/".$app->uid) . " #ihvn_working");
+    return urlencode("I just installed $appName from ". $providerName . " and it is working! " . url("/app/".$app?->uid) . " #ihvn_working");
     }
 
     function twitterBad($app, $model) {
-    return urlencode("$app->name from ". $model->provider->name . " is broken! #ihvn_broken");
+    return urlencode("$appName from ". $providerName . " is broken! #ihvn_broken");
     }
 
     function twitterNeutral($app, $model) {
-    return urlencode("Get $app->name from ". $model->provider->name . "! " . url("/app/".$app->uid));
+    return urlencode("Get $appName from ". $providerName . "! " . url("/app/".$app?->uid));
     }
     @endphp
 
