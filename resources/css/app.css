@@ -131,6 +131,7 @@ label.toggle-dark:after {
 
 .collapse {
     display: none;
+    visibility: visible;
 }
 
 .collapse-check:checked + .collapse-label .show-open {

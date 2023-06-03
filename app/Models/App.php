@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Builders\AppBuilder;
 use App\Traits\HasAnalytics;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Auth;
@@ -13,9 +14,10 @@ use Laravel\Scout\Searchable;
 
 class App extends Model
 {
-    use SoftDeletes, Actionable, HasAnalytics, Searchable;
+    use SoftDeletes, Actionable, HasAnalytics, Searchable, HasFactory;
 
-    protected $fillable = ['name',
+    protected $fillable = [
+        'name',
         'uid',
         'icon',
         'banner',
@@ -29,11 +31,12 @@ class App extends Model
         'views',
         'downloads',
         'version',
-        'size', ];
+        'size',
+    ];
 
     protected $hidden = ['id'];
 
-    protected $appends = ['abs_icon', 'is_admin'];
+    protected $appends = ['is_admin'];
 
     public function searchableAs()
     {
