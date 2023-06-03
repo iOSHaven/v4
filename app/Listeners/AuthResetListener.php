@@ -25,7 +25,7 @@ class AuthResetListener
      */
     public function handle(PasswordReset $event)
     {
-//        dd($event);
+        //        dd($event);
         Auth::login($event->user);
 
         redirect()->to(config('fortify.home'));

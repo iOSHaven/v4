@@ -30,7 +30,6 @@ class MirrorController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -41,7 +40,6 @@ class MirrorController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Mirror  $mirror
      * @return \Illuminate\Http\Response
      */
     public function show(Mirror $mirror)
@@ -52,7 +50,6 @@ class MirrorController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Mirror  $mirror
      * @return \Illuminate\Http\Response
      */
     public function edit(Mirror $mirror)
@@ -63,8 +60,6 @@ class MirrorController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Mirror  $mirror
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Mirror $mirror)
@@ -75,7 +70,6 @@ class MirrorController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Mirror  $mirror
      * @return \Illuminate\Http\Response
      */
     public function destroy(Mirror $mirror)

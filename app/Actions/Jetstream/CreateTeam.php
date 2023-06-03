@@ -15,7 +15,6 @@ class CreateTeam implements CreatesTeams
      * Validate and create a new team for the given user.
      *
      * @param  mixed  $user
-     * @param  array  $input
      * @return mixed
      */
     public function create($user, array $input)
@@ -32,7 +31,7 @@ class CreateTeam implements CreatesTeams
             'parsingIdentifier' => $input['name'],
             'website' => $input['website'],
         ]);
-//        dd($provider);
+        //        dd($provider);
 
         AddingTeam::dispatch($user);
 
@@ -42,9 +41,9 @@ class CreateTeam implements CreatesTeams
             'provider_id' => $provider->id,
         ]);
 
-//        $provider =
+        //        $provider =
 
-//        $team->provider()->associate();
+        //        $team->provider()->associate();
 
         $user->switchTeam($team);
 

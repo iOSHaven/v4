@@ -43,7 +43,7 @@ class AppController extends Controller
         }
 
         if ($request->html === 'true') {
-            return  view('templates.AppTemplate')->with($data);
+            return view('templates.AppTemplate')->with($data);
         }
 
         return view('apps')->with($data);
@@ -121,7 +121,7 @@ class AppController extends Controller
     public function page($tag = null)
     {
         $apps = App::base_query()
-      ->search($tag);
+            ->search($tag);
 
         $apps = $this->gathered_query($apps, $tag);
 
@@ -131,8 +131,8 @@ class AppController extends Controller
     public function games()
     {
         $apps = App::base_query()
-      ->games()
-      ->search();
+            ->games()
+            ->search();
 
         $apps = $this->gathered_query($apps);
 
@@ -142,8 +142,8 @@ class AppController extends Controller
     public function jailbreaks()
     {
         $apps = App::base_query()
-      ->tag('jailbreak')
-      ->search();
+            ->tag('jailbreak')
+            ->search();
 
         $apps = $this->gathered_query($apps);
 
@@ -154,11 +154,11 @@ class AppController extends Controller
     {
         $request = request();
         $apps = App::base_query()
-      ->recently_updated()
-      ->search($tag);
+            ->recently_updated()
+            ->search($tag);
 
         $shortcuts = Shortcut::recently_updated()
-      ->searchWithoutScout($tag);
+            ->searchWithoutScout($tag);
 
         $models = $apps->merge($shortcuts)->sortByDesc('updated_at');
         if ($request->limit) {
@@ -237,8 +237,8 @@ class AppController extends Controller
     public function showAppDetailPage($uid)
     {
         $app = App::base_query()
-      ->where('uid', $uid)
-      ->firstOrFail();
+            ->where('uid', $uid)
+            ->firstOrFail();
 
         addAppSecurityTimeoutToSession($uid);
 
@@ -283,22 +283,22 @@ class AppController extends Controller
         try {
             if (strpos($itmsurl, 'app.iosgods.com') !== false) {
                 return Response::make('', 302)
-          ->header('Location', $itmsurl)
-          ->header('Cache-Control', 'no-cache, no-store, max-age=0, must-revalidate')
-          ->header('Pragma', 'no-cache');
+                    ->header('Location', $itmsurl)
+                    ->header('Cache-Control', 'no-cache, no-store, max-age=0, must-revalidate')
+                    ->header('Pragma', 'no-cache');
             } else {
                 [, $url] = explode($itms, $itmsurl);
                 $d = urldecode($url);
                 $e = urlencode($d);
 
                 return Response::make('', 302)->header('Location', $itms.$e)
-          ->header('Cache-Control', 'no-cache, no-store, max-age=0, must-revalidate')
-          ->header('Pragma', 'no-cache');
+                    ->header('Cache-Control', 'no-cache, no-store, max-age=0, must-revalidate')
+                    ->header('Pragma', 'no-cache');
             }
         } catch (\Throwable $th) {
             return Response::make('', 302)->header('Location', $itmsurl)
-        ->header('Cache-Control', 'no-cache, no-store, max-age=0, must-revalidate')
-        ->header('Pragma', 'no-cache');
+                ->header('Cache-Control', 'no-cache, no-store, max-age=0, must-revalidate')
+                ->header('Pragma', 'no-cache');
         }
     }
 

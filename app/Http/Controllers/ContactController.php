@@ -53,7 +53,7 @@ class ContactController extends Controller
         ]);
 
         Mail::to('ioshavenco@gmail.com')
-          ->send(new ContactSubmission($data));
+            ->send(new ContactSubmission($data));
         // return view('emails.contactSubmission')->with(['data' => $data]);
         return view('contact.success')->with(['data' => $data]);
     }

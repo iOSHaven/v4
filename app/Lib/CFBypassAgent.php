@@ -32,9 +32,6 @@ class CFBypassAgent
 
     /**
      * Middleware constructor.
-     *
-     * @param  callable  $cNextHandler
-     * @param  array  $aOptions
      */
     public function __construct(callable $cNextHandler, array $aOptions = [])
     {
@@ -50,8 +47,6 @@ class CFBypassAgent
     }
 
     /**
-     * @param  \Psr\Http\Message\RequestInterface  $oRequest
-     * @param  array  $aOptions
      * @return \Psr\Http\Message\RequestInterface
      */
     public function __invoke(RequestInterface $oRequest, array $aOptions = [])
@@ -67,9 +62,6 @@ class CFBypassAgent
     }
 
     /**
-     * @param  \Psr\Http\Message\RequestInterface  $oRequest
-     * @param  \Psr\Http\Message\ResponseInterface  $oResponse
-     * @param  array  $aOptions
      * @return \Psr\Http\Message\RequestInterface|\Psr\Http\Message\ResponseInterface
      *
      * @throws \Exception
@@ -80,7 +72,6 @@ class CFBypassAgent
     }
 
     /**
-     * @param  \Psr\Http\Message\ResponseInterface  $oResponse
      * @return bool
      */
     protected function shouldHack(ResponseInterface $oResponse)
@@ -90,9 +81,6 @@ class CFBypassAgent
     }
 
     /**
-     * @param  \Psr\Http\Message\RequestInterface  $oRequest
-     * @return \Psr\Http\Message\RequestInterface
-     *
      * @throws \Exception
      */
     protected function hackRequest(RequestInterface $oRequest): RequestInterface

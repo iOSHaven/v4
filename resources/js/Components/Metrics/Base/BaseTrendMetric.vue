@@ -10,7 +10,7 @@
           class="ml-auto w-[6rem] flex-shrink-0"
           size="xxs"
           :options="ranges"
-          v-model:selected="selectedRangeKey"
+          v-bind="{selected:selectedRangeKey}"
           @change="handleChange"
           :aria-label="'Select Ranges'"
       />
