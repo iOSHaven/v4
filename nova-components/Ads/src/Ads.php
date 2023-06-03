@@ -27,7 +27,7 @@ class Ads extends Tool
      */
     public function renderNavigation()
     {
-        return  view('ads::navigation', [
+        return view('ads::navigation', [
             'intent' => Auth::user()->createSetupIntent(),
         ]);
         // return view('ads::navigation');

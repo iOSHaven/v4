@@ -43,9 +43,9 @@ class PerDayPerResource extends Trend
     {
         // $trigger = get_class($resource);
         return $this->model::whereBetween('created_at', [$startingDate, now()])
-                ->whereHasMorph('trigger', $this->trigger, function ($query) use ($resource) {
-                    $query->where('id', $resource->id);
-                });
+            ->whereHasMorph('trigger', $this->trigger, function ($query) use ($resource) {
+                $query->where('id', $resource->id);
+            });
     }
 
     public function calculate(NovaRequest $request)
@@ -58,7 +58,7 @@ class PerDayPerResource extends Trend
             ->result(
                 // 'asdf'
                 $this->getData($startingDate, $resource)
-                ->sum('amount')
+                    ->sum('amount')
                 // ->whereBetween('created_at', [$startingDate, now()])
                 // ->count()
             );

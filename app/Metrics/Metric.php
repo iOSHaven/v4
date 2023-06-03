@@ -118,7 +118,7 @@ abstract class Metric
      */
     public function cacheFor()
     {
-//         return now()->addMinutes(5);
+        //         return now()->addMinutes(5);
     }
 
     public function cacheToken(MetricRequest $request)

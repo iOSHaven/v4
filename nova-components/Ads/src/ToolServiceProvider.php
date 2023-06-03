@@ -42,9 +42,9 @@ class ToolServiceProvider extends ServiceProvider
         }
 
         Route::middleware(['nova', Authorize::class])
-                ->namespace('Ioshaven\Ads\Http\Controllers')
-                ->prefix('nova-vendor/ads')
-                ->group(__DIR__.'/../routes/api.php');
+            ->namespace('Ioshaven\Ads\Http\Controllers')
+            ->prefix('nova-vendor/ads')
+            ->group(__DIR__.'/../routes/api.php');
     }
 
     /**

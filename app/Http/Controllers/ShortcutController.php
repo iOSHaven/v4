@@ -39,7 +39,7 @@ class ShortcutController extends Controller
         }
 
         if ($request->html === 'true') {
-            return  view('templates.ShortcutTemplate')->with($data);
+            return view('templates.ShortcutTemplate')->with($data);
         }
 
         return view('shortcuts')->with($data);
@@ -75,7 +75,7 @@ class ShortcutController extends Controller
     public function install($uid)
     {
         $shortcut = Shortcut::uid($uid)
-          ->firstOrFail();
+            ->firstOrFail();
 
         event(new \App\Events\ViewEvent($shortcut));
         event(new \App\Events\InstallEvent($shortcut));

@@ -66,9 +66,9 @@ class LinkTransfer extends Command
             // print_r([$link, $linkclk]);
             $appq = App::where(function ($q) use ($link, $linkclk) {
                 $q->where('unsigned', $link)
-              ->orWhere('signed', $link)
-              ->orWhere('unsigned', $linkclk)
-              ->orWhere('signed', $linkclk);
+                    ->orWhere('signed', $link)
+                    ->orWhere('unsigned', $linkclk)
+                    ->orWhere('signed', $linkclk);
             });
             if ($appq->exists()) {
                 $app = $appq->first();
@@ -87,7 +87,7 @@ class LinkTransfer extends Command
 
         $appq = App::where(function ($q) {
             $q->where('signed', 'like', '%appvalley%')
-            ->orWhere('unsigned', 'like', '%appvalley%');
+                ->orWhere('unsigned', 'like', '%appvalley%');
         });
         $bar2 = $this->output->createProgressBar($appq->count());
         foreach ($appq->get() as $app) {
