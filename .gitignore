@@ -46,3 +46,10 @@ public/signed/*
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# meilisearch
+nohup.out
+data.ms
+
+# os
+.DS_Store

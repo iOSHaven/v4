@@ -2,9 +2,12 @@
 
 namespace App\Providers;
 
+use Bezhanov\Faker\ProviderCollectionHelper;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
+use Bluemmb\Faker\PicsumPhotosProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -38,6 +41,15 @@ class AppServiceProvider extends ServiceProvider
             $this->dropColumn('installs');
             $this->dropColumn('uses');
         });
+
+        Arr::macro('exceptValue', function (array $arr, array $values) {
+            return array_keys(Arr::except(array_flip($arr), $values));
+        });
+
+        $faker = fake();
+        $faker->addProvider(PicsumPhotosProvider::class);
+        ProviderCollectionHelper::addAllProvidersTo($faker);
+
     }
 
     /**
