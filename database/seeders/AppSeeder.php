@@ -15,8 +15,11 @@ class AppSeeder extends Seeder
      */
     public function run()
     {
-        App::factory(100)
-            ->hasAttached(Ipa::factory(3))
-            ->create();
+        for ($i = 0; $i < 10; $i++) {
+            App::factory(10)
+                ->hasAttached(Ipa::factory(fake()->numberBetween(0, 6)))
+                ->create();
+        }
+
     }
 }
