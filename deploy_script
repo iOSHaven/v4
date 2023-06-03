@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-cd "$WORK_CODE_DIR"
-echo "running deploy script in [[$WORK_CODE_DIR]]"
-sudo -u v4 composer install --no-interaction --prefer-dist --optimize-autoloader
-php artisan view:clear
-# php artisan migrate --force
-php artisan make:sitemap
-# npm install
-# npm run production

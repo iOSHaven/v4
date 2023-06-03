@@ -32,3 +32,8 @@ public/signed/*
 
 *.crt
 *.pem
+
+# hidden files
+.vagrant
+.idea
+.vscode

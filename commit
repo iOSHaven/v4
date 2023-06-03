@@ -1,5 +1,0 @@
-<?php
-
-shell_exec("git add .");
-shell_exec("git commit -m \"{$argv[2]}\"");
-shell_exec("git push {$argv[1]} master");
