@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use App\Models\Ipa;
 use App\Models\Itms;
 use App\Models\Provider;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class ProviderSeeder extends Seeder

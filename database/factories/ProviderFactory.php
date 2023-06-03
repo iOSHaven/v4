@@ -14,6 +14,7 @@ use Illuminate\Support\Str;
 class ProviderFactory extends Factory
 {
     public static $ipas;
+
     public static $itms;
 
     /**
@@ -24,6 +25,7 @@ class ProviderFactory extends Factory
     public function definition()
     {
         $name = fake()->company();
+
         return [
             'name' => $name,
             'revoked' => fake()->boolean(10),
@@ -34,17 +36,21 @@ class ProviderFactory extends Factory
         ];
     }
 
-    public function withExistingIpas($count=null) {
+    public function withExistingIpas($count = null)
+    {
         static::$ipas ??= Ipa::get(['id'])->pluck('id');
-        $count ??= fake()->numberBetween(0,20);
+        $count ??= fake()->numberBetween(0, 20);
+
         return $this->afterCreating(function (Provider $provider) use ($count) {
             $provider->ipas()->sync(static::$ipas->random($count));
         });
     }
 
-    public function withExistingItms($count=null) {
+    public function withExistingItms($count = null)
+    {
         static::$itms ??= Itms::get(['id'])->pluck('id');
-        $count ??= fake()->numberBetween(0,20);
+        $count ??= fake()->numberBetween(0, 20);
+
         return $this->afterCreating(function (Provider $provider) use ($count) {
             $provider->itms()->sync(static::$itms->random($count));
         });
