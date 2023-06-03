@@ -35,7 +35,8 @@ class AppFactory extends Factory
         ];
     }
 
-    public static function fakeStats($only=['impressions', 'downloads', 'installs', 'uses']) {
+    public static function fakeStats($only = ['impressions', 'downloads', 'installs', 'uses'])
+    {
         return Arr::only([
             'impressions' => fake()->numberBetween(1000, 2000000000),
             'downloads' => fake()->numberBetween(1000, 2000000000),
@@ -44,7 +45,8 @@ class AppFactory extends Factory
         ], $only);
     }
 
-    public static function fakeTimestamps($only=['created_at', 'updated_at', 'deleted_at']) {
+    public static function fakeTimestamps($only = ['created_at', 'updated_at', 'deleted_at'])
+    {
         return Arr::only([
             'created_at' => fake()->dateTimeBetween('-6 years', '-1 year'),
             'updated_at' => fake()->dateTimeBetween('-6 years'),
