@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\App;
 use App\Models\Ipa;
+use App\Models\Itms;
 use Illuminate\Database\Seeder;
 
 class AppSeeder extends Seeder
@@ -15,9 +16,13 @@ class AppSeeder extends Seeder
      */
     public function run()
     {
-        for ($i = 0; $i < 10; $i++) {
-            App::factory(10)
-                ->hasAttached(Ipa::factory(fake()->numberBetween(0, 6)))
+        $count = 100;
+        $loops = 10;
+        $maxLinks = 6;
+        for ($i = 0; $i < $loops; $i++) {
+            App::factory(floor($count / $loops))
+                ->hasAttached(Ipa::factory(fake()->numberBetween(0, $maxLinks)))
+                ->hasAttached(Itms::factory(fake()->numberBetween(0, $maxLinks)))
                 ->create();
         }
 
