@@ -48,7 +48,7 @@ class Post extends Model
                 $client = new Client();
                 $res = $client->get($model->wp_url);
                 $data = collect(json_decode($res->getBody()->getContents()));
-//
+                //
                 $model->title = html_entity_decode($data['title']->rendered);
                 $model->subtitle = Str::limit($data['yoast_head_json']->og_description, 200, '');
                 $model->image = $data['yoast_head_json']->og_image[0]->url;
@@ -56,7 +56,7 @@ class Post extends Model
                 $model->html = Str::limit($data['content']->rendered, 1000, '');
                 $model->markdown = Str::limit(strip_tags($model->html), 1000, '');
                 $model->wp_json = $data;
-//                dd($data);
+            //                dd($data);
             } else {
                 $model->html = Markdown::parse($model->markdown);
             }
@@ -64,10 +64,10 @@ class Post extends Model
             $model->tags = implode(',', $model->getKeywords());
         });
 
-//        static::updating(function ($model) {
-//            $model->html = Markdown::parse($model->markdown);
-//            $model->tags = implode(",", $model->getKeywords());
-//        });
+        //        static::updating(function ($model) {
+        //            $model->html = Markdown::parse($model->markdown);
+        //            $model->tags = implode(",", $model->getKeywords());
+        //        });
     }
 
     public function user()

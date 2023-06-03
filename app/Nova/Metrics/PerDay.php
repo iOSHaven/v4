@@ -53,7 +53,7 @@ class PerDay extends Trend
 
         if (Auth::user()->isAdmin) {
             return $this->model::whereBetween('created_at', [$startingDate, now()])
-                        ->whereHasMorph('trigger', $this->trigger);
+                ->whereHasMorph('trigger', $this->trigger);
         } else {
             return $this->model::whereBetween('created_at', [$startingDate, now()])
                 ->whereHasMorph('trigger', $this->trigger, function ($query) use ($relation) {
@@ -69,8 +69,7 @@ class PerDay extends Trend
 
         return $this->sumByDays($request, $this->getData($startingDate), 'amount')
         // ->result($this->sumByDays($request, $this->getData(), ));
-
-        ->result($this->getData($startingDate)->sum('amount'));
+            ->result($this->getData($startingDate)->sum('amount'));
     }
 
     /**

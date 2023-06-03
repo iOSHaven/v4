@@ -41,12 +41,12 @@ class PopulateMirrorData extends Command
     {
         $mirrors = Mirror::where(function ($q) {
             $q
-                        ->whereColumn('updated_at', '>', 'fetched_at')
-                        ->orWhereNull('fetched_at')
-                        ->orWhere('fetched_at', '<', Carbon::now()->subDays(7));
+                ->whereColumn('updated_at', '>', 'fetched_at')
+                ->orWhereNull('fetched_at')
+                ->orWhere('fetched_at', '<', Carbon::now()->subDays(7));
         })
-                    ->whereNotNull('install_link')
-                    ->get();
+            ->whereNotNull('install_link')
+            ->get();
         foreach ($mirrors as $mirror) {
             $mirror->createFromPlistURL($mirror->install_link);
         }

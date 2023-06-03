@@ -41,24 +41,24 @@ class YoutubeVideo extends HavenMarkupBase implements IHavenMarkup
                 ],
             ];
         });
-//        dd([$excerpt]);
-//        if (preg_match('/^{%(\s+)?youtube(\s+)?(\w+)(\s+)?%}/', $excerpt['text'], $matches))
-//        {
-//            dd([$matches, $excerpt]);
-//            return array(
-//
-//                // How many characters to advance the Parsedown's
-//                // cursor after being done processing this tag.
-//                'extent' => strlen($matches[0]),
-//                'element' => array(
-//                    'name' => 'span',
-//                    'text' => $matches[2],
-//                    'attributes' => array(
-//                        'style' => 'color: ' . $matches[1],
-//                    ),
-//                ),
-//
-//            );
-//        }
+        //        dd([$excerpt]);
+        //        if (preg_match('/^{%(\s+)?youtube(\s+)?(\w+)(\s+)?%}/', $excerpt['text'], $matches))
+        //        {
+        //            dd([$matches, $excerpt]);
+        //            return array(
+        //
+        //                // How many characters to advance the Parsedown's
+        //                // cursor after being done processing this tag.
+        //                'extent' => strlen($matches[0]),
+        //                'element' => array(
+        //                    'name' => 'span',
+        //                    'text' => $matches[2],
+        //                    'attributes' => array(
+        //                        'style' => 'color: ' . $matches[1],
+        //                    ),
+        //                ),
+        //
+        //            );
+        //        }
     }
 }

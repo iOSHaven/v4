@@ -59,7 +59,7 @@ class AppBuilder extends Builder
     {
         return $this->with(['itms.providers', 'ipas.providers'])
                     // ->withStats()
-                    ->hasName();
+            ->hasName();
     }
 
     public function recently_updated($days = 3)

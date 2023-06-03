@@ -119,10 +119,10 @@ class Shortcut extends Model
             }
         });
 
-//        static::saving(function ($model) {
-//            if(request()->has('icon')) {
-//                $model->icon = request()->icon;
-//            }
-//        });
+        //        static::saving(function ($model) {
+        //            if(request()->has('icon')) {
+        //                $model->icon = request()->icon;
+        //            }
+        //        });
     }
 }
