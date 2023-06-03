@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\App;
+use App\Models\Ipa;
 use Illuminate\Database\Seeder;
 
 class AppSeeder extends Seeder
@@ -14,6 +15,8 @@ class AppSeeder extends Seeder
      */
     public function run()
     {
-        App::factory(500)->create();
+        App::factory(100)
+            ->hasAttached(Ipa::factory(3))
+            ->create();
     }
 }
