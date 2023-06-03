@@ -3,11 +3,11 @@
 namespace App\Providers;
 
 use Bezhanov\Faker\ProviderCollectionHelper;
+use Bluemmb\Faker\PicsumPhotosProvider;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
-use Bluemmb\Faker\PicsumPhotosProvider;
 
 class AppServiceProvider extends ServiceProvider
 {

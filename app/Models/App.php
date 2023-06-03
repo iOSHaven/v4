@@ -31,7 +31,7 @@ class App extends Model
         'views',
         'downloads',
         'version',
-        'size', 
+        'size',
     ];
 
     protected $hidden = ['id'];

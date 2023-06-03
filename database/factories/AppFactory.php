@@ -23,7 +23,7 @@ class AppFactory extends Factory
             'name' => fake()->productName(),
             'uid' => Str::random(5),
             'icon' => fake()->imageUrl(50, 50),
-            'short' => str(fake()->sentence())->limit(18, end:''),
+            'short' => str(fake()->sentence())->limit(18, end: ''),
             'tags' => static::fakeTags(),
             'version' => fake()->regexify('1?[1-9]{1}\.[1-2]?[0-9]\.1?[1-9]{1,2}'),
             'size' => fake()->numberBetween(1000, 2000000000),
@@ -40,41 +40,45 @@ class AppFactory extends Factory
         ];
     }
 
-    public static function fakeTags () {
+    public static function fakeTags()
+    {
         return implode(', ', fake()->randomElements([
             'game', 'hack', 'free', 'movie', 'jailbreak',
             'emulator', 'music', ...fake()->words(6),
-        ], fake()->numberBetween(3,6)));
+        ], fake()->numberBetween(3, 6)));
     }
 
-    public static function fakeMarkdown($sections=10):string {
+    public static function fakeMarkdown($sections = 10): string
+    {
         $content = [];
 
         $last = '';
-        for ($i=0; $i < $sections; $i++) {
+        for ($i = 0; $i < $sections; $i++) {
             $last = fake()->randomElement(Arr::exceptValue([
-                'heading', 'p', 'li', 'quote'
+                'heading', 'p', 'li', 'quote',
             ], [$last]));
 
-            $content[] = match($last) {
+            $content[] = match ($last) {
                 'heading' => static::fakeHeading(),
                 'p' => fake()->paragraph(),
                 'li' => static::fakeList(),
-                'quote' => static::fakeList(types:['>']),
+                'quote' => static::fakeList(types: ['>']),
             };
         }
 
         return implode('\n\n', $content);
     }
 
-    public static function fakeHeading() {
+    public static function fakeHeading()
+    {
         return implode(' ', [
-            str_repeat('#', fake()->numberBetween(1,6)),
-            fake()->sentence()
+            str_repeat('#', fake()->numberBetween(1, 6)),
+            fake()->sentence(),
         ]);
     }
 
-    public static function fakeList($lines=6, $minLines=3, $randomize=true, $types=['1.', '*', '-']) {
+    public static function fakeList($lines = 6, $minLines = 3, $randomize = true, $types = ['1.', '*', '-'])
+    {
         $content = [];
 
         if ($randomize) {
@@ -82,8 +86,8 @@ class AppFactory extends Factory
         }
 
         $prefix = fake()->randomElement($types);
-        for($i=0; $i < $lines; $i++) {
-            $content[] = $prefix . ' ' . fake()->sentence();
+        for ($i = 0; $i < $lines; $i++) {
+            $content[] = $prefix.' '.fake()->sentence();
         }
 
         return implode('\n', $content);
