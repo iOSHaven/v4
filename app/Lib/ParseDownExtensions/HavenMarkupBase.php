@@ -6,7 +6,7 @@ class HavenMarkupBase extends \Parsedown
 {
     protected function matchSingleTwig($key, $excerpt, \Closure $closure)
     {
-        if (preg_match("/^{%(\s+)?$key(\s+)?(\w+)(\s+)?%}/", $excerpt['text'], $matches)) {
+        if (preg_match("/^{%(\s+)?{$key}(\s+)?(\w+)(\s+)?%}/", $excerpt['text'], $matches)) {
             $data = [
                 // How many characters to advance the Parsedown's
                 // cursor after being done processing this tag.

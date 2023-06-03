@@ -77,7 +77,7 @@ abstract class Resource extends NovaResource
             $ext = $file->extension();
 
             request()->$icon = env('DO_SPACES_SUBDOMAIN').'/'.Storage::disk('spaces')
-                ->putFileAs($folder, $file, hash('sha256', $this->name.now()).".$ext", ['visibility' => 'public']);
+                ->putFileAs($folder, $file, hash('sha256', $this->name.now()).".{$ext}", ['visibility' => 'public']);
 
             return [
                 $icon => request()->$icon,

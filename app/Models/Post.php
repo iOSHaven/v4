@@ -133,7 +133,7 @@ class Post extends Model
         $images = $this->getScaledImages($amount);
 
         return implode(',', array_map(function ($image, $index) {
-            return $image." $index".'x';
+            return $image." {$index}".'x';
         }, $images, array_keys($images)));
     }
 

@@ -42,7 +42,7 @@ function tab($tab)
 
 function user_agent_has($str)
 {
-    $user_agent = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
+    $user_agent = $_SERVER['HTTP_USER_AGENT'] ?? '';
 
     return stripos($user_agent, $str);
 }
@@ -75,7 +75,7 @@ function markdown($view)
 {
     $p = new \Parsedown;
     try {
-        $contents = File::get(resource_path("tutorials/$view"));
+        $contents = File::get(resource_path("tutorials/{$view}"));
         $html = $p->setBreaksEnabled(false)->text($contents);
 
         return $html;
@@ -91,7 +91,7 @@ function handleStorage(string $folder, string $icon = 'icon')
         $ext = $request->icon->extension();
 
         return [
-            $icon => env('DO_SPACES_SUBDOMAIN').'/'.Storage::disk('spaces')->putFileAs($folder, $request->icon, hash('sha256', $this->name.now()).".$ext", ['visibility' => 'public']),
+            $icon => env('DO_SPACES_SUBDOMAIN').'/'.Storage::disk('spaces')->putFileAs($folder, $request->icon, hash('sha256', $this->name.now()).".{$ext}", ['visibility' => 'public']),
         ];
     };
 }
@@ -138,7 +138,7 @@ function imgixUrl($url, $settings = [])
     $parsed = parse_url($url);
     $path = urlencode($parsed['scheme'].'://'.$parsed['host'].($parsed['path'] ?? ''));
     $query = [];
-    $parsed['query'] = $parsed['query'] ?? '';
+    $parsed['query'] ??= '';
     parse_str($parsed['query'], $query);
     $query = array_merge($query, $settings);
     $queryString = ! empty($query) ? '?'.http_build_query($query) : '';
@@ -220,7 +220,7 @@ function imageSrcSet($image, $amount = 3, $settings = [])
     $images = scaleImages($image, $amount, $settings);
 
     return implode(',', array_map(function ($image, $index) {
-        return $image." $index".'x';
+        return $image." {$index}".'x';
     }, $images, array_keys($images)));
 }
 

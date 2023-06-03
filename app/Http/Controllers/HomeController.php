@@ -74,9 +74,9 @@ class HomeController extends Controller
         } else {
             $plist->dict->array->dict->array->dict[1]->string[1] = asset('logo.svg');
         }
-        $plist->dict->array->dict->dict->string[3] = "**$name**\n🙏 iOS Haven 🙏";
-        $plist->asXml(public_path("signed/$name.plist"));
-        $result = 'itms-services://?action=download-manifest&url='.asset("signed/$name.plist");
+        $plist->dict->array->dict->dict->string[3] = "**{$name}**\n🙏 iOS Haven 🙏";
+        $plist->asXml(public_path("signed/{$name}.plist"));
+        $result = 'itms-services://?action=download-manifest&url='.asset("signed/{$name}.plist");
         $r->session()->flash('plist', $result);
 
         return back();

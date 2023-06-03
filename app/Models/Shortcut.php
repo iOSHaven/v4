@@ -45,12 +45,12 @@ class Shortcut extends Model
 
     public function getUrlAttribute()
     {
-        return "https://www.icloud.com/shortcuts/$this->itunes_id";
+        return "https://www.icloud.com/shortcuts/{$this->itunes_id}";
     }
 
     public function getPermAttribute()
     {
-        return url("/shortcut/perm/$this->id");
+        return url("/shortcut/perm/{$this->id}");
     }
 
     public function toArray()
@@ -81,7 +81,7 @@ class Shortcut extends Model
                 $model->itunes_id = $itunes_id;
             }
             $client = new Client();
-            $res = $client->get("https://www.icloud.com/shortcuts/api/records/$itunes_id");
+            $res = $client->get("https://www.icloud.com/shortcuts/api/records/{$itunes_id}");
             if ($res->getStatusCode() == 200) {
                 if (empty($model->icon)) {
                     $data = json_decode($res->getBody()->getContents());

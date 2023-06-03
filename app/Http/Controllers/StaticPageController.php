@@ -49,7 +49,7 @@ class StaticPageController extends Controller
     {
         verifyAppSecurity('plist');
         try {
-            return response(Storage::disk('local')->get("/plist/$name"))->withHeaders([
+            return response(Storage::disk('local')->get("/plist/{$name}"))->withHeaders([
                 'Content-Type' => 'text/xml',
             ]);
         } catch (Exception $err) {
@@ -168,7 +168,7 @@ class StaticPageController extends Controller
     public function getManifest($theme)
     {
         $manifest = config('webapp-manifest');
-        $manifest['start_url'] = "/apps?theme=$theme";
+        $manifest['start_url'] = "/apps?theme={$theme}";
 
         return response()->json($manifest);
     }
@@ -229,7 +229,7 @@ class StaticPageController extends Controller
         $mode = theme() == 'dark' ? 'light' : 'dark';
         session(['theme' => $mode]);
 
-        return redirect(explode('?', url()->previous())[0]."?theme=$mode");
+        return redirect(explode('?', url()->previous())[0]."?theme={$mode}");
     }
 
     /**

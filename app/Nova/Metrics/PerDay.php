@@ -19,14 +19,14 @@ class PerDay extends Trend
 
     public function model($model)
     {
-        $this->model = $this->model ?? $model;
+        $this->model ??= $model;
         // $this->name = Str::plural(class_basename($this->model));
         return $this;
     }
 
     public function trigger($trigger)
     {
-        $this->trigger = $this->trigger ?? $trigger;
+        $this->trigger ??= $trigger;
 
         return $this;
     }

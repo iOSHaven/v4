@@ -5,10 +5,10 @@ $DEVICE_VERSION = $_GET['DEVICE_VERSION'] ?? 'unknown';
 $DEVICE_NAME = $_GET['DEVICE_NAME'] ?? 'unknown';
 
 $subject = 'This is my UDID from iOS device';
-$body = "Hello<br /> This is my UDID: $UDID <br />";
-$body .= "Device product: $DEVICE_PRODUCT <br />";
-$body .= "Device version: $DEVICE_VERSION <br />";
-$body .= "Device name: $DEVICE_NAME <br />";
+$body = "Hello<br /> This is my UDID: {$UDID} <br />";
+$body .= "Device product: {$DEVICE_PRODUCT} <br />";
+$body .= "Device version: {$DEVICE_VERSION} <br />";
+$body .= "Device name: {$DEVICE_NAME} <br />";
 ?>
 <!DOCTYPE html>
 <html>

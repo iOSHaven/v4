@@ -10,7 +10,7 @@ class ShortcutController extends Controller
     private function paginate($collection, $limit = null)
     {
         $request = request();
-        $limit = $limit ?? $request->limit ?? 15;
+        $limit ??= $request->limit ?? 15;
 
         $page = LengthAwarePaginator::resolveCurrentPage();
         $results = $collection->slice(($page - 1) * $limit, $limit)->all();

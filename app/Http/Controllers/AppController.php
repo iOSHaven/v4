@@ -51,7 +51,8 @@ class AppController extends Controller
 
     private function paginate($collection, $limit = null)
     {
-        $limit = $limit ?? $request->limit ?? 15;
+        $request = request();
+        $limit ??= $request->limit ?? 15;
 
         $page = LengthAwarePaginator::resolveCurrentPage();
         $results = $collection->slice(($page - 1) * $limit, $limit)->all();
