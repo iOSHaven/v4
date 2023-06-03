@@ -46,8 +46,9 @@ class AppFactory extends Factory
     }
 
     public static function fakeTimestamps($only = ['created_at', 'updated_at', 'deleted_at'])
-    {   
+    {
         $tz = 'America/New_York';
+
         return Arr::only([
             'created_at' => fake()->dateTimeBetween('-6 years', '-1 year', $tz),
             'updated_at' => fake()->dateTimeBetween('-6 years', 'now', $tz),

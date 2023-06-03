@@ -25,12 +25,14 @@ class ItmsFactory extends Factory
         ];
     }
 
-    public static function fakeItms($scheme="itms-services", $base='', $params=[]) {
+    public static function fakeItms($scheme = 'itms-services', $base = '', $params = [])
+    {
         $query = http_build_query([
             'action' => 'download-manifest',
             'url' => urlencode(fake()->url()),
             ...$params,
         ]);
+
         return "{$scheme}://{$base}?{$query}";
     }
 }
