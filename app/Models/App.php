@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Builders\AppBuilder;
+use App\Models\Stats\Target;
 use App\Traits\HasAnalytics;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -12,7 +13,7 @@ use Illuminate\Support\Str;
 use Laravel\Nova\Actions\Actionable;
 use Laravel\Scout\Searchable;
 
-class App extends Model
+class App extends Model implements Target
 {
     use SoftDeletes, Actionable, HasAnalytics, Searchable, HasFactory;
 
