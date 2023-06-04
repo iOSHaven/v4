@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Builders\ShortcutBuilder;
+use App\Models\Stats\Target;
 use App\Traits\HasAnalytics;
 use GuzzleHttp\Client;
 use Illuminate\Database\Eloquent\Model;
@@ -12,7 +13,7 @@ use Illuminate\Support\Str;
 use Laravel\Nova\Actions\Actionable;
 use Laravel\Scout\Searchable;
 
-class Shortcut extends Model
+class Shortcut extends Model implements Target
 {
     use Actionable, HasAnalytics, Searchable;
 

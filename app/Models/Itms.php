@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
+use App\Models\Stats\Target;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Nova\Actions\Actionable;
 
-class Itms extends Model
+class Itms extends Model implements Target
 {
     use Actionable, HasFactory;
 

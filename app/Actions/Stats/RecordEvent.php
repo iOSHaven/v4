@@ -28,14 +28,21 @@ class RecordEvent
      *
      * @return mixed
      */
-    public function execute(Target $target, Event $event, Carbon $when, int $amount = 1)
+    public function execute(
+        ?Target $target, 
+        Event $event, 
+        Carbon $when, 
+        int $amount = 1, 
+        int $for_id = null,
+        string $for_type = null,
+    )
     {
         $day = $when->dayOfWeek + 1;
         $bucket = $when->startOfWeek(Carbon::SUNDAY);
 
         $combo = [
-            'target_id' => $target->getKey(),
-            'target_type' => get_class($target),
+            'target_id' => $for_id ?? $target->getKey(),
+            'target_type' => $for_type ?? get_class($target),
             'event' => $event,
         ];
 
