@@ -40,7 +40,7 @@ class App extends Model implements Target
     protected $hidden = ['id'];
 
     // protected $with = ['impressionStatBuffer', 'downloadStatBuffer', 'installStatBuffer'];
-protected $appends = ['is_admin', /*'impressions', 'downloads', 'installs', 'weeklyInstalls'*/];
+    protected $appends = ['is_admin'/*'impressions', 'downloads', 'installs', 'weeklyInstalls'*/];
 
     public function searchableAs()
     {

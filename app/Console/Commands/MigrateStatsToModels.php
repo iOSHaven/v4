@@ -2,13 +2,10 @@
 
 namespace App\Console\Commands;
 
-use App\Actions\Stats\RecordEvent;
 use App\Models\App;
-use App\Models\Enums\Stats\Event;
 use App\Models\Ipa;
 use App\Models\Itms;
 use App\Models\Shortcut;
-use App\Models\Stats\StatBuffer;
 use Illuminate\Console\Command;
 use Illuminate\Support\LazyCollection;
 use Illuminate\Support\Str;
@@ -63,14 +60,16 @@ class MigrateStatsToModels extends Command
             event(new \App\Events\DownloadEvent($model));
             event(new \App\Events\InstallEvent($model));
         });
+
         return 0;
     }
-
 
     public function loop(LazyCollection $models, callable $callback)
     {
         $model = $models->first();
-        if (is_null($model)) return;
+        if (is_null($model)) {
+            return;
+        }
         $class = get_class($model);
         $type = str(class_basename($class))->lower()->value();
 
