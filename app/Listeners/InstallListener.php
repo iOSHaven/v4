@@ -2,8 +2,8 @@
 
 namespace App\Listeners;
 
-use App\Summary\SummaryInstall;
-use Illuminate\Support\Facades\DB;
+use App\Actions\Stats\RecordEvent;
+use App\Models\Enums\Stats\Event;
 
 class InstallListener
 {
@@ -15,13 +15,8 @@ class InstallListener
     public function handle($event)
     {
         if (config('app-analytics.installs')) {
-            SummaryInstall::updateOrCreate([
-                'trigger_id' => $event->model->id,
-                'trigger_type' => get_class($event->model),
-                'created_at' => now()->floorDay(),
-            ], [
-                'amount' => DB::raw('amount + 1'),
-            ]);
+            resolve(RecordEvent::class)
+                ->execute($event->model, Event::INSTALL, now());
 
             $event->model->installs += 1;
             $event->model->save();

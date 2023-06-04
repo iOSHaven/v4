@@ -2,10 +2,14 @@
 
 namespace App\Nova\Metrics;
 
+use App\Models\Enums\Stats\Event;
+use App\Models\Stats\StatBuffer;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Trend;
+use Laravel\Nova\Metrics\TrendResult;
 
 class PerDay extends Trend
 {
@@ -17,16 +21,25 @@ class PerDay extends Trend
 
     protected $relation;
 
+    protected Event $event;
+
     public function model($model)
     {
-        $this->model = $this->model ?? $model;
+        $this->model ??= $model;
         // $this->name = Str::plural(class_basename($this->model));
         return $this;
     }
 
     public function trigger($trigger)
     {
-        $this->trigger = $this->trigger ?? $trigger;
+        $this->trigger ??= $trigger;
+
+        return $this;
+    }
+
+    public function event(Event $event)
+    {
+        $this->event ??= $event;
 
         return $this;
     }
@@ -47,29 +60,55 @@ class PerDay extends Trend
         return $this->relation ?? strtolower(Str::plural(class_basename($this->trigger)));
     }
 
-    protected function getData($startingDate)
+    public static function queryStatBuffer($relation, $event, $startingDate, $trigger, $user): Builder
     {
-        $relation = $this->relation();
+        $query = StatBuffer::buffers($startingDate)
+            ->where('event', $event);
 
-        if (Auth::user()->isAdmin) {
-            return $this->model::whereBetween('created_at', [$startingDate, now()])
-                ->whereHasMorph('trigger', $this->trigger);
+        if ($user->isAdmin) {
+            $result = $query->whereHasMorph('target', $trigger);
         } else {
-            return $this->model::whereBetween('created_at', [$startingDate, now()])
-                ->whereHasMorph('trigger', $this->trigger, function ($query) use ($relation) {
-                    $query->whereIn('id', Auth::user()->{$relation}->pluck('id'));
+            $ids = $user->{$relation}->pluck('id');
+            $result = $query
+                ->whereHasMorph('target', $trigger, function ($query) use ($ids) {
+                    $query->whereIn('id', $ids);
                 });
         }
+
+        return $result;
     }
 
     public function calculate(NovaRequest $request)
     {
-        // $this->result(10);
         $startingDate = $this->getAggregateStartingDate($request, self::BY_DAYS);
 
-        return $this->sumByDays($request, $this->getData($startingDate), 'amount')
-        // ->result($this->sumByDays($request, $this->getData(), ));
-            ->result($this->getData($startingDate)->sum('amount'));
+        $query = static::queryStatBuffer(
+            relation: $this->relation(),
+            event: $this->event?->value ?? 'view',
+            startingDate: $startingDate,
+            trigger: $this->trigger,
+            user: Auth::user()
+        );
+
+        $buffer = $query->get()->reduce(
+            fn ($c, $v) => array_merge($c, $v->buffer),
+            []
+        );
+
+        $trend = [];
+        $total = 0;
+
+        foreach ($buffer as $item) {
+            $trend[$startingDate->format('M d, Y')] = $item;
+            $total += $item;
+
+            $startingDate = $startingDate->addDay();
+        }
+
+        $result = new TrendResult($total);
+        $result->trend($trend);
+
+        return $result;
     }
 
     /**
@@ -81,6 +120,7 @@ class PerDay extends Trend
     {
         return [
             7 => '7 days',
+            14 => '14 days',
             30 => '30 Days',
             60 => '60 Days',
             90 => '90 Days',
@@ -94,7 +134,7 @@ class PerDay extends Trend
      */
     public function cacheFor()
     {
-        return now()->addHours(2);
+        return now()->addMinutes(config('app-analytics.cache'));
     }
 
     /**

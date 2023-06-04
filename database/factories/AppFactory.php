@@ -29,15 +29,31 @@ class AppFactory extends Factory
             'size' => fake()->numberBetween(1000, 2000000000),
             'approval_status' => fake()->randomElement(['approved', 'denied', 'pending']),
             'approval_message' => fake()->boolean(40) ? fake()->sentence() : null,
+            ...static::fakeStats(),
+            ...static::fakeTimestamps(),
+            'description' => static::fakeMarkdown(),
+        ];
+    }
+
+    public static function fakeStats($only = ['impressions', 'downloads', 'installs', 'uses'])
+    {
+        return Arr::only([
             'impressions' => fake()->numberBetween(1000, 2000000000),
             'downloads' => fake()->numberBetween(1000, 2000000000),
             'installs' => fake()->numberBetween(1000, 2000000000),
             'uses' => fake()->numberBetween(1000, 2000000000),
-            'created_at' => fake()->dateTimeBetween('-6 years', '-1 year'),
-            'updated_at' => fake()->dateTimeBetween('-6 years'),
-            'deleted_at' => fake()->boolean(20) ? fake()->dateTimeBetween('-6 years') : null,
-            'description' => static::fakeMarkdown(),
-        ];
+        ], $only);
+    }
+
+    public static function fakeTimestamps($only = ['created_at', 'updated_at', 'deleted_at'])
+    {
+        $tz = 'America/New_York';
+
+        return Arr::only([
+            'created_at' => fake()->dateTimeBetween('-6 years', '-1 year', $tz),
+            'updated_at' => fake()->dateTimeBetween('-6 years', 'now', $tz),
+            'deleted_at' => fake()->boolean(20) ? fake()->dateTimeBetween('-6 years', 'now', $tz) : null,
+        ], $only);
     }
 
     public static function fakeTags()

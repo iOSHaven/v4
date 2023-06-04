@@ -111,7 +111,7 @@ class Ad
 
         $parts = explode("\r\n\r\n", trim($in));
 
-        return isset($parts[1]) ? $parts[1] : '';
+        return $parts[1] ?? '';
     }
 
     private function getCacheFilePath($url, $suffix = '.js')

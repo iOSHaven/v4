@@ -53,3 +53,8 @@ data.ms
 
 # os
 .DS_Store
+
+# testing
+.phpunit*
+.env.*
+!.env.example

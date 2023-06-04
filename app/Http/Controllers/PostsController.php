@@ -35,7 +35,7 @@ class PostsController extends Controller
 
     public function showTag(string $tag)
     {
-        $posts = Post::where('tags', 'like', "%$tag%")
+        $posts = Post::where('tags', 'like', "%{$tag}%")
             ->orderBy('created_at', 'desc')
             ->simplePaginate(12);
 

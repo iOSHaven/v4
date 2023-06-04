@@ -2,9 +2,13 @@
 
 namespace App\Nova\Metrics;
 
+use App\Models\Enums\Stats\Event;
+use App\Models\Stats\StatBuffer;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Support\Str;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Metrics\Trend;
+use Laravel\Nova\Metrics\TrendResult;
 
 class PerDayPerResource extends Trend
 {
@@ -16,18 +20,27 @@ class PerDayPerResource extends Trend
 
     protected $relation;
 
+    protected Event $event;
+
     private $resource;
 
     public function model($model)
     {
-        $this->model = $this->model ?? $model;
+        $this->model ??= $model;
         // $this->setName(Str::plural(class_basename($this->model)));
         return $this;
     }
 
     public function trigger($trigger)
     {
-        $this->trigger = $this->trigger ?? $trigger;
+        $this->trigger ??= $trigger;
+
+        return $this;
+    }
+
+    public function event(Event $event)
+    {
+        $this->event ??= $event;
 
         return $this;
     }
@@ -48,20 +61,50 @@ class PerDayPerResource extends Trend
             });
     }
 
+    public static function queryStatBuffer($resource, $event, $startingDate, $trigger): Builder
+    {
+        $query = StatBuffer::buffers($startingDate)
+            ->where('event', $event);
+
+        $result = $query
+            ->whereHasMorph('target', $trigger, function ($query) use ($resource) {
+                $query->where('id', $resource->id);
+            });
+
+        return $result;
+    }
+
     public function calculate(NovaRequest $request)
     {
         $resource = $request->findResourceOrFail();
         $startingDate = $this->getAggregateStartingDate($request, self::BY_DAYS);
 
-        return $this->sumByDays($request, $this->getData($startingDate, $resource), 'amount')
-            // ->showLatestValue()
-            ->result(
-                // 'asdf'
-                $this->getData($startingDate, $resource)
-                    ->sum('amount')
-                // ->whereBetween('created_at', [$startingDate, now()])
-                // ->count()
-            );
+        $query = static::queryStatBuffer(
+            resource: $resource,
+            event: $this->event?->value ?? 'view',
+            startingDate: $startingDate,
+            trigger: $this->trigger
+        );
+
+        $buffer = $query->get()->reduce(
+            fn ($c, $v) => array_merge($c, $v->buffer),
+            []
+        );
+
+        $trend = [];
+        $total = 0;
+
+        foreach ($buffer as $item) {
+            $trend[$startingDate->format('M d, Y')] = $item;
+            $total += $item;
+
+            $startingDate = $startingDate->addDay();
+        }
+
+        $result = new TrendResult($total);
+        $result->trend($trend);
+
+        return $result;
     }
 
     /**
@@ -73,6 +116,7 @@ class PerDayPerResource extends Trend
     {
         return [
             7 => '7 days',
+            14 => '14 days',
             30 => '30 Days',
             60 => '60 Days',
             90 => '90 Days',
@@ -86,7 +130,7 @@ class PerDayPerResource extends Trend
      */
     public function cacheFor()
     {
-        return now()->addHours(2);
+        return now()->addHours(config('app-analytics.cache'));
     }
 
     /**

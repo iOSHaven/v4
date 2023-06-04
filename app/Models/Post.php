@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Stats\Target;
 use GuzzleHttp\Client;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -9,7 +10,7 @@ use Illuminate\Mail\Markdown;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
-class Post extends Model
+class Post extends Model implements Target
 {
     use SoftDeletes;
 
@@ -133,7 +134,7 @@ class Post extends Model
         $images = $this->getScaledImages($amount);
 
         return implode(',', array_map(function ($image, $index) {
-            return $image." $index".'x';
+            return $image." {$index}".'x';
         }, $images, array_keys($images)));
     }
 

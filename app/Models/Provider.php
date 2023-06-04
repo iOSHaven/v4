@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Builders\ProviderBuilder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Laravel\Nova\Actions\Actionable;
@@ -12,6 +13,7 @@ class Provider extends Model
 {
     use SoftDeletes, Actionable;
     use HasRelationships;
+    use HasFactory;
 
     protected $fillable = ['name', 'twitter', 'parsingIdentifier', 'website'];
 

@@ -99,7 +99,7 @@ class Post extends Resource
      */
     public function cards(Request $request)
     {
-        return [];
+        return $this->statCards(['view', 'download']);
     }
 
     /**

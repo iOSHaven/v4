@@ -32,7 +32,7 @@ class AppBuilder extends Builder
     public function working($model)
     {
         return $this->whereHas($model, function ($q) use ($model) {
-            $q->where("$model.working", true);
+            $q->where("{$model}.working", true);
         });
     }
 
