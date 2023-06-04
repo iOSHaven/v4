@@ -3,8 +3,6 @@
 namespace App\Nova;
 
 use App\Models\Enums\Stats\Event;
-use App\Models\Stats\Target;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -96,26 +94,30 @@ abstract class Resource extends NovaResource
         };
     }
 
-    public function statCards(array $events, $model=null) {
+    public function statCards(array $events, $model = null)
+    {
         $cards = [];
         $model ??= get_class($this->resource);
-        foreach($events as $event) {
-            if (! config('app-analytics.'. Str::plural($event))) continue;
+        foreach ($events as $event) {
+            if (! config('app-analytics.'.Str::plural($event))) {
+                continue;
+            }
 
             $name = Str::plural(Str::title($event));
-            $event =  Event::from($event);
+            $event = Event::from($event);
 
             $cards[] = (new Metrics\PerDay)
-                    ->event($event)
-                    ->trigger($model)
-                    ->setName('Total '. $name);
+                ->event($event)
+                ->trigger($model)
+                ->setName('Total '.$name);
 
             $cards[] = (new Metrics\PerDayPerResource)
-                    ->event($event)
-                    ->trigger($model)
-                    ->setName($name)
-                    ->onlyOnDetail();
+                ->event($event)
+                ->trigger($model)
+                ->setName($name)
+                ->onlyOnDetail();
         }
+
         return $cards;
     }
 }

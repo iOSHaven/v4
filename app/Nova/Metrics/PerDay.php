@@ -4,7 +4,6 @@ namespace App\Nova\Metrics;
 
 use App\Models\Enums\Stats\Event;
 use App\Models\Stats\StatBuffer;
-use DB;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
@@ -61,7 +60,7 @@ class PerDay extends Trend
         return $this->relation ?? strtolower(Str::plural(class_basename($this->trigger)));
     }
 
-    public static function queryStatBuffer($relation, $event, $startingDate, $trigger, $user) : Builder
+    public static function queryStatBuffer($relation, $event, $startingDate, $trigger, $user): Builder
     {
         $query = StatBuffer::buffers($startingDate)
             ->where('event', $event);
@@ -92,7 +91,7 @@ class PerDay extends Trend
         );
 
         $buffer = $query->get()->reduce(
-            fn($c, $v) => array_merge($c, $v->buffer),
+            fn ($c, $v) => array_merge($c, $v->buffer),
             []
         );
 
@@ -102,7 +101,7 @@ class PerDay extends Trend
         foreach ($buffer as $item) {
             $trend[$startingDate->format('M d, Y')] = $item;
             $total += $item;
-            
+
             $startingDate = $startingDate->addDay();
         }
 

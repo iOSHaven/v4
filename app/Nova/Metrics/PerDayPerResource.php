@@ -61,7 +61,7 @@ class PerDayPerResource extends Trend
             });
     }
 
-    public static function queryStatBuffer($resource, $event, $startingDate, $trigger) : Builder
+    public static function queryStatBuffer($resource, $event, $startingDate, $trigger): Builder
     {
         $query = StatBuffer::buffers($startingDate)
             ->where('event', $event);
@@ -87,7 +87,7 @@ class PerDayPerResource extends Trend
         );
 
         $buffer = $query->get()->reduce(
-            fn($c, $v) => array_merge($c, $v->buffer),
+            fn ($c, $v) => array_merge($c, $v->buffer),
             []
         );
 
@@ -97,7 +97,7 @@ class PerDayPerResource extends Trend
         foreach ($buffer as $item) {
             $trend[$startingDate->format('M d, Y')] = $item;
             $total += $item;
-            
+
             $startingDate = $startingDate->addDay();
         }
 

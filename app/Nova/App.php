@@ -2,10 +2,6 @@
 
 namespace App\Nova;
 
-use App\Models\Enums\Stats\Event;
-use App\Summary\SummaryDownload;
-use App\Summary\SummaryInstall;
-use App\Summary\SummaryView;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\BelongsToMany;
@@ -103,7 +99,8 @@ class App extends Resource
      *
      * @return array
      */
-    public function cards(Request $request) {
+    public function cards(Request $request)
+    {
         return $this->statCards(['view', 'download']);
     }
 

@@ -28,14 +28,15 @@ class StatBuffer extends Model
         return $this->morphTo('target');
     }
 
-    public static function queryBufferAsArray($min, $max, $order='desc') {
-        $range = match($order) {
+    public static function queryBufferAsArray($min, $max, $order = 'desc')
+    {
+        $range = match ($order) {
             'asc' => range($min, $max),
             'desc' => range($max, $min),
         };
 
         $dailyValueColumns = collect($range)
-            ->map(fn($x) => "SUM(day_{$x})")
+            ->map(fn ($x) => "SUM(day_{$x})")
             ->join(', ",", ');
 
         $dailyValues = 'CONCAT("[",'.$dailyValueColumns.',"]") AS buffer';
@@ -43,12 +44,12 @@ class StatBuffer extends Model
         return DB::raw($dailyValues);
     }
 
-    public function scopeBuffers($query, $startingDate, $endDate=null, $order='desc')
+    public function scopeBuffers($query, $startingDate, $endDate = null, $order = 'desc')
     {
         return $query
             ->whereBetween('created_at', [$startingDate, $endDate ?? now()])
             ->groupBy('created_at')
-            ->select('created_at', static::queryBufferAsArray(1,7, $order));
+            ->select('created_at', static::queryBufferAsArray(1, 7, $order));
 
         return $query;
     }

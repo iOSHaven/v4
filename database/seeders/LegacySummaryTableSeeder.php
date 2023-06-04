@@ -3,12 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\App;
-use App\Models\Download;
-use App\Models\Install;
 use App\Models\Ipa;
 use App\Models\Itms;
 use App\Models\Stats\StatBuffer;
-use App\Models\View;
 use App\Summary\SummaryDownload;
 use App\Summary\SummaryInstall;
 use App\Summary\SummaryUse;
@@ -46,12 +43,13 @@ class LegacySummaryTableSeeder extends Seeder
         Artisan::call('optimize:clear');
     }
 
-    public static function makeStats($class, $amount) {
+    public static function makeStats($class, $amount)
+    {
         $maxDate = now()->endOfWeek(Carbon::SATURDAY);
         $minDate = now()->subMonths(3)->startOfWeek(Carbon::SUNDAY);
 
-        $diffMin = (-$minDate->diffInDays(now(), false)) . " days";
-        $diffMax = (-$maxDate->diffInDays(now(), false)) . " days";
+        $diffMin = (-$minDate->diffInDays(now(), false)).' days';
+        $diffMax = (-$maxDate->diffInDays(now(), false)).' days';
 
         $items = [];
         for ($i = 0; $i < $amount; $i++) {
@@ -62,6 +60,7 @@ class LegacySummaryTableSeeder extends Seeder
                 'created_at' => Carbon::parse(fake()->dateTimeBetween($diffMin, $diffMax)),
             ];
         }
+
         return $items;
     }
 

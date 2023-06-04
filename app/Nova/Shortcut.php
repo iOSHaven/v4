@@ -2,8 +2,6 @@
 
 namespace App\Nova;
 
-use App\Summary\SummaryInstall;
-use App\Summary\SummaryView;
 use Illuminate\Http\Request;
 use Inspheric\Fields\Url;
 use Laravel\Nova\Fields\Avatar;
