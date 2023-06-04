@@ -28,7 +28,7 @@ class RecordEvent
      *
      * @return mixed
      */
-    public function execute(Target $target, Event $event, Carbon $when)
+    public function execute(Target $target, Event $event, Carbon $when, int $amount=1)
     {
         $day = $when->dayOfWeek + 1;
         $bucket = $when->startOfWeek(Carbon::SUNDAY);
@@ -48,11 +48,11 @@ class RecordEvent
 
         $stat->forceFill([
             ...$attributes,
-            "day_{$day}" => DB::raw("day_{$day} + 1"),
-            'total' => DB::raw('total + 1'),
+            "day_{$day}" => DB::raw("day_{$day} + {$amount}"),
+            'total' => DB::raw("total + {$amount}"),
             'running_total' => $stat->isDirty()
-                ? StatBuffer::where($combo)->orderBy('created_at', 'desc')->first()?->running_total + 1
-                : DB::raw('running_total + 1'),
+                ? StatBuffer::where($combo)->orderBy('created_at', 'desc')->first()?->running_total + $amount
+                : DB::raw("running_total + {$amount}"),
         ])->save();
 
         return $stat;
