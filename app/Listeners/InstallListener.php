@@ -15,10 +15,10 @@ class InstallListener
     public function handle($event)
     {
         if (config('app-analytics.installs')) {
-            resolve(RecordEvent::class)
+            $stat = resolve(RecordEvent::class)
                 ->execute($event->model, Event::INSTALL, now());
 
-            $event->model->installs += 1;
+            $event->model->installs = $stat->running_total;
             $event->model->save();
         }
     }

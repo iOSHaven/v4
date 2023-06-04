@@ -15,10 +15,10 @@ class DownloadListener
     public function handle($event)
     {
         if (config('app-analytics.downloads')) {
-            resolve(RecordEvent::class)
+            $stat = resolve(RecordEvent::class)
                 ->execute($event->model, Event::DOWNLOAD, now());
 
-            $event->model->downloads += 1;
+            $event->model->downloads = $stat->running_total;
             $event->model->save();
         }
     }
