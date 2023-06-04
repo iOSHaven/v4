@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class SummaryDownload extends Model
 {
     use HasFactory;
-    
+
     protected $table = 'summary_download';
 
     protected $fillable = [

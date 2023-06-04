@@ -4,8 +4,6 @@ namespace App\Listeners;
 
 use App\Actions\Stats\RecordEvent;
 use App\Models\Enums\Stats\Event;
-use App\Summary\SummaryDownload;
-use Illuminate\Support\Facades\DB;
 
 class DownloadListener
 {

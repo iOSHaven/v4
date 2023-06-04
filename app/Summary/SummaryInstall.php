@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class SummaryInstall extends Model
 {
     use HasFactory;
-    
+
     protected $table = 'summary_install';
 
     protected $fillable = [

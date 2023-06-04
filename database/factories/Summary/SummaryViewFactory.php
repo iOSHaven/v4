@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 class SummaryViewFactory extends Factory
 {
     protected $model = SummaryView::class;
+
     /**
      * Define the model's default state.
      *
@@ -21,14 +22,15 @@ class SummaryViewFactory extends Factory
     {
         return [
             'amount' => fake()->randomNumber(2),
-            ...AppFactory::fakeTimestamps(['created_at'])
+            ...AppFactory::fakeTimestamps(['created_at']),
         ];
     }
 
-    public function withFakeTrigger($class, $count) {
+    public function withFakeTrigger($class, $count)
+    {
         return $this->state([
             'trigger_id' => fake()->numberBetween(1, $count),
-            'trigger_type' => $class
+            'trigger_type' => $class,
         ]);
     }
 }

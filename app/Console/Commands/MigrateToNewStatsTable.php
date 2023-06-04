@@ -4,7 +4,6 @@ namespace App\Console\Commands;
 
 use App\Actions\Stats\RecordEvent;
 use App\Models\Enums\Stats\Event;
-use App\Models\Stats\Target;
 use App\Summary\SummaryDownload;
 use App\Summary\SummaryInstall;
 use App\Summary\SummaryUse;
@@ -41,9 +40,9 @@ class MigrateToNewStatsTable extends Command
         $this->loop(SummaryView::with(['trigger'])->orderBy('created_at', 'asc')->cursor(),
             function (SummaryView $model, Event $event, Carbon $when) use ($action) {
                 $action->execute(
-                    target:null, 
-                    event: $event, 
-                    when: $when, 
+                    target: null,
+                    event: $event,
+                    when: $when,
                     amount: $model->amount,
                     for_id: $model->trigger_id,
                     for_type: $model->trigger_type
@@ -55,9 +54,9 @@ class MigrateToNewStatsTable extends Command
         $this->loop(SummaryDownload::with(['trigger'])->orderBy('created_at', 'asc')->cursor(),
             function (SummaryDownload $model, Event $event, Carbon $when) use ($action) {
                 $action->execute(
-                    target:null, 
-                    event: $event, 
-                    when: $when, 
+                    target: null,
+                    event: $event,
+                    when: $when,
                     amount: $model->amount,
                     for_id: $model->trigger_id,
                     for_type: $model->trigger_type
@@ -69,9 +68,9 @@ class MigrateToNewStatsTable extends Command
         $this->loop(SummaryInstall::with(['trigger'])->orderBy('created_at', 'asc')->cursor(),
             function (SummaryInstall $model, Event $event, Carbon $when) use ($action) {
                 $action->execute(
-                    target:null, 
-                    event: $event, 
-                    when: $when, 
+                    target: null,
+                    event: $event,
+                    when: $when,
                     amount: $model->amount,
                     for_id: $model->trigger_id,
                     for_type: $model->trigger_type
@@ -83,9 +82,9 @@ class MigrateToNewStatsTable extends Command
         $this->loop(SummaryUse::with(['trigger'])->orderBy('created_at', 'asc')->cursor(),
             function (SummaryUse $model, Event $event, Carbon $when) use ($action) {
                 $action->execute(
-                    target:null, 
-                    event: $event, 
-                    when: $when, 
+                    target: null,
+                    event: $event,
+                    when: $when,
                     amount: $model->amount,
                     for_id: $model->trigger_id,
                     for_type: $model->trigger_type

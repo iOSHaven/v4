@@ -3,7 +3,6 @@
 namespace Database\Factories\Summary;
 
 use App\Summary\SummaryDownload;
-use App\Summary\SummaryView;
 use Database\Factories\AppFactory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -13,6 +12,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 class SummaryDownloadFactory extends Factory
 {
     protected $model = SummaryDownload::class;
+
     /**
      * Define the model's default state.
      *
@@ -22,7 +22,7 @@ class SummaryDownloadFactory extends Factory
     {
         return [
             'amount' => fake()->randomNumber(2),
-            ...AppFactory::fakeTimestamps(['created_at'])
+            ...AppFactory::fakeTimestamps(['created_at']),
         ];
     }
 }

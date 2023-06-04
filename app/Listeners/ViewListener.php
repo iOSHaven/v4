@@ -5,8 +5,6 @@ namespace App\Listeners;
 use App\Actions\Stats\RecordEvent;
 use App\Events\ViewEvent;
 use App\Models\Enums\Stats\Event;
-use App\Summary\SummaryView;
-use Illuminate\Support\Facades\DB;
 
 class ViewListener
 {

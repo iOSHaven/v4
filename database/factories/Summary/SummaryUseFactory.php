@@ -3,7 +3,6 @@
 namespace Database\Factories\Summary;
 
 use App\Summary\SummaryUse;
-use App\Summary\SummaryView;
 use Database\Factories\AppFactory;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -13,6 +12,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 class SummaryUseFactory extends Factory
 {
     protected $model = SummaryUse::class;
+
     /**
      * Define the model's default state.
      *
@@ -22,7 +22,7 @@ class SummaryUseFactory extends Factory
     {
         return [
             'amount' => fake()->randomNumber(2),
-            ...AppFactory::fakeTimestamps(['created_at'])
+            ...AppFactory::fakeTimestamps(['created_at']),
         ];
     }
 }
