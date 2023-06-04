@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Builders\AppBuilder;
 use App\Models\Stats\Target;
 use App\Traits\HasAnalytics;
+use App\Traits\StatBuckets;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -16,6 +17,7 @@ use Laravel\Scout\Searchable;
 class App extends Model implements Target
 {
     use SoftDeletes, Actionable, HasAnalytics, Searchable, HasFactory;
+    // use StatBuckets;
 
     protected $fillable = [
         'name',
@@ -37,7 +39,8 @@ class App extends Model implements Target
 
     protected $hidden = ['id'];
 
-    protected $appends = ['is_admin'];
+    // protected $with = ['impressionStatBuffer', 'downloadStatBuffer', 'installStatBuffer'];
+    protected $appends = ['is_admin'/*'impressions', 'downloads', 'installs', 'weeklyInstalls'*/];
 
     public function searchableAs()
     {

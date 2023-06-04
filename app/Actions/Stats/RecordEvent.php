@@ -61,6 +61,6 @@ class RecordEvent
                 : DB::raw("running_total + {$amount}"),
         ])->save();
 
-        return $stat;
+        return $stat->refresh();
     }
 }

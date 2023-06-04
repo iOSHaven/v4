@@ -16,10 +16,10 @@ class ViewListener
     public function handle(ViewEvent $event)
     {
         if (config('app-analytics.views')) {
-            resolve(RecordEvent::class)
+            $stat = resolve(RecordEvent::class)
                 ->execute($event->model, Event::VIEW, now());
 
-            $event->model->impressions += 1;
+            $event->model->impressions = $stat->running_total;
             $event->model->save();
         }
     }
