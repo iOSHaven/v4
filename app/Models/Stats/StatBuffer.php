@@ -8,12 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Stores polymorphic relationship of item and statistic type in 7 day buffer.
- * @package App\Models\Stats
  */
 class StatBuffer extends Model
 {
     use HasFactory;
-    
+
     public $timestamps = false;
 
     protected $guarded = [];
@@ -22,7 +21,8 @@ class StatBuffer extends Model
         'event' => Event::class,
     ];
 
-    public function target() {
+    public function target()
+    {
         return $this->morphTo('target');
     }
 }

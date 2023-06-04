@@ -2,6 +2,6 @@
 
 namespace App\Models\Stats;
 
-interface Target {
-
+interface Target
+{
 }

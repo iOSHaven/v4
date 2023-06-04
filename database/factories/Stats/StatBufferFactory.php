@@ -13,8 +13,11 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 class StatBufferFactory extends Factory
 {
     public static $apps;
+
     public static $shortcuts;
+
     public static $itms;
+
     public static $ipas;
 
     /**
@@ -45,8 +48,10 @@ class StatBufferFactory extends Factory
         ];
     }
 
-    public function forApp() {
+    public function forApp()
+    {
         static::$apps ??= App::get(['id'])->pluck('id');
+
         return $this->state([
             'target_type' => App::class,
             'target_id' => static::$apps->random(),

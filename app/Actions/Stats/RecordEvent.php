@@ -32,7 +32,7 @@ class RecordEvent
     {
         $day = $when->dayOfWeek + 1;
         $bucket = $when->startOfWeek(Carbon::SUNDAY);
-        
+
         $combo = [
             'target_id' => $target->getKey(),
             'target_type' => get_class($target),
@@ -46,14 +46,13 @@ class RecordEvent
 
         $stat = StatBuffer::firstOrNew($attributes);
 
-        
         $stat->forceFill([
             ...$attributes,
             "day_{$day}" => DB::raw("day_{$day} + 1"),
-            "total" => DB::raw("total + 1"),
-            "running_total" => $stat->isDirty()
+            'total' => DB::raw('total + 1'),
+            'running_total' => $stat->isDirty()
                 ? StatBuffer::where($combo)->orderBy('created_at', 'desc')->first()?->running_total + 1
-                : DB::raw("running_total + 1")
+                : DB::raw('running_total + 1'),
         ])->save();
 
         return $stat;

@@ -2,7 +2,6 @@
 
 namespace Tests\Unit\Stats;
 
-use App;
 use App\Actions\Stats\RecordEvent;
 use App\Models\Enums\Stats\Event;
 use App\Models\Ipa;
@@ -14,12 +13,12 @@ use Tests\TestCase;
 
 class StatBufferTest extends TestCase
 {
-
     use RefreshDatabase;
 
     public RecordEvent $action;
 
-    public function setup() : void {
+    public function setup(): void
+    {
         parent::setUp();
         $this->action = resolve(RecordEvent::class);
         Ipa::factory()->create();
@@ -29,13 +28,13 @@ class StatBufferTest extends TestCase
 
     public function test_it_only_creates_one_record_per_week()
     {
-        $this->action->execute(Ipa::first(), Event::INSTALL,now());
+        $this->action->execute(Ipa::first(), Event::INSTALL, now());
 
         $this->travel(1)->days();
-        $this->action->execute(Ipa::first(), Event::INSTALL,now());
+        $this->action->execute(Ipa::first(), Event::INSTALL, now());
 
         $this->travel(1)->days();
-        $this->action->execute(Ipa::first(), Event::INSTALL,now());
+        $this->action->execute(Ipa::first(), Event::INSTALL, now());
 
         $this->assertEquals(1, StatBuffer::count());
     }
@@ -43,13 +42,13 @@ class StatBufferTest extends TestCase
     public function test_it_can_increment_based_on_day_of_week()
     {
 
-        $this->action->execute(Ipa::first(), Event::INSTALL,now());
+        $this->action->execute(Ipa::first(), Event::INSTALL, now());
 
         $this->travel(1)->days();
-        $this->action->execute(Ipa::first(), Event::INSTALL,now());
+        $this->action->execute(Ipa::first(), Event::INSTALL, now());
 
         $this->travel(1)->days();
-        $this->action->execute(Ipa::first(), Event::INSTALL,now());
+        $this->action->execute(Ipa::first(), Event::INSTALL, now());
 
         $this->assertEquals(1, StatBuffer::first()->day_1);
         $this->assertEquals(1, StatBuffer::first()->day_2);
@@ -58,9 +57,9 @@ class StatBufferTest extends TestCase
 
     public function test_it_totals_all_7_days()
     {
-        for($i=0; $i < 7; $i++) {
-            $this->action->execute(Ipa::first(), Event::INSTALL,now());
-            $this->action->execute(Ipa::first(), Event::INSTALL,now());
+        for ($i = 0; $i < 7; $i++) {
+            $this->action->execute(Ipa::first(), Event::INSTALL, now());
+            $this->action->execute(Ipa::first(), Event::INSTALL, now());
             $this->travel(1)->days();
         }
 
@@ -69,9 +68,9 @@ class StatBufferTest extends TestCase
 
     public function test_it_keeps_a_running_total()
     {
-        for($i=0; $i < 28; $i++) {
-            $this->action->execute(Ipa::first(), Event::INSTALL,now());
-            $this->action->execute(Ipa::first(), Event::INSTALL,now());
+        for ($i = 0; $i < 28; $i++) {
+            $this->action->execute(Ipa::first(), Event::INSTALL, now());
+            $this->action->execute(Ipa::first(), Event::INSTALL, now());
             $this->travel(1)->days();
         }
 
