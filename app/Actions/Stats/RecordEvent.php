@@ -28,7 +28,7 @@ class RecordEvent
      *
      * @return mixed
      */
-    public function execute(Target $target, Event $event, Carbon $when, int $amount=1)
+    public function execute(Target $target, Event $event, Carbon $when, int $amount = 1)
     {
         $day = $when->dayOfWeek + 1;
         $bucket = $when->startOfWeek(Carbon::SUNDAY);
