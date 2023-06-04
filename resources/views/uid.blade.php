@@ -86,21 +86,21 @@
             @if(config('app-analytics.views'))
             <div class="mr-2 flex items-center justify-start">
               <i class="fad fa-eye mr-2 text-center" style="width: 20px;"></i>
-              <span>{{ format_int($app->impressions ?? "0") }}<span>
+              <span>{{ format_my_int($app->impressions ?? "0") }}<span>
             </div>
             @endif
 
             @if(config('app-analytics.downloads') || config('app-analytics.installs') )
             <div class="mr-2 flex items-center justify-start">
               <i class="fad fa-download mr-2 text-center" style="width: 20px;"></i>
-              <span>{{ format_int($app->downloads + $app->installs ?? "0") }}<span>
+              <span>{{ format_my_int($app->downloads + $app->installs ?? "0") }}<span>
             </div>
             @endif
 
             @if(config('app-analytics.sizes'))
             <div class="mr-2 flex items-center justify-start">
               <i class="fas fa-database mr-2 text-center" style="width: 20px;"></i>
-              <span>{{ format_int($app->size ?? "0b", 'file') }}<span>
+              <span>{{ format_my_int($app->size ?? "0b", 'file') }}<span>
             </div>
             @endif
           </div>

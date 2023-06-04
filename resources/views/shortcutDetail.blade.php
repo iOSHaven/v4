@@ -102,14 +102,14 @@
           @if(config('app-analytics.views'))
           <div class="mr-2 flex items-center justify-start">
             <i class="fad fa-eye mr-2 text-center" style="width: 20px;"></i>
-            <span>{{ format_int($shortcut->impressions ?? "0") }}<span>
+            <span>{{ format_my_int($shortcut->impressions ?? "0") }}<span>
           </div>
           @endif
 
           @if(config('app-analytics.downloads'))
           <div class="mr-2 flex items-center justify-start">
             <i class="fad fa-download mr-2 text-center" style="width: 20px;"></i>
-            <span>{{ format_int($shortcut->downloads + $shortcut->installs ?? "0") }}<span>
+            <span>{{ format_my_int($shortcut->downloads + $shortcut->installs ?? "0") }}<span>
           </div>
           @endif
         </div>

@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Models\Enums\Stats\Event;
 use App\Summary\SummaryDownload;
 use App\Summary\SummaryInstall;
 use App\Summary\SummaryView;
@@ -66,7 +67,6 @@ class App extends Resource
         // if ($this->icon) {
         //     Storage::setVisibility($this->icon, 'public');
         // }
-
         return [
             Text::make('uid')
                 ->sortable()
@@ -103,36 +103,8 @@ class App extends Resource
      *
      * @return array
      */
-    public function cards(Request $request)
-    {
-        $views = [];
-        $downloads = [];
-        $installs = [];
-
-        if (config('app-analytics.views')) {
-            $views = [
-                (new Metrics\PerDay)->model(SummaryView::class)->trigger(\App\Models\App::class)->setName('Total Views'),
-                (new Metrics\PerDayPerResource)->model(SummaryView::class)->trigger(\App\Models\App::class)->setName('Views')->onlyOnDetail(),
-            ];
-        }
-
-        if (config('app-analytics.downloads')) {
-            $downloads = [
-                (new Metrics\PerDay)->model(SummaryDownload::class)->trigger(\App\Models\App::class)->setName('Total Downloads'),
-                (new Metrics\PerDayPerResource)->model(SummaryDownload::class)->trigger(\App\Models\App::class)->setName('Downloads')->onlyOnDetail(),
-            ];
-        }
-
-        if (config('app-analytics.installs')) {
-            $installs = [
-                (new Metrics\PerDay)->model(SummaryInstall::class)->trigger(\App\Models\App::class)->setName('Total Installs'),
-                (new Metrics\PerDayPerResource)->model(SummaryInstall::class)->trigger(\App\Models\App::class)->setName('Installs')->onlyOnDetail(),
-            ];
-        }
-
-        $res = array_merge($views, $downloads, $installs);
-
-        return $res;
+    public function cards(Request $request) {
+        return $this->statCards(['view', 'download']);
     }
 
     /**

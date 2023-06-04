@@ -132,42 +132,7 @@ class Shortcut extends Resource
      */
     public function cards(Request $request)
     {
-        $views = [];
-        $installs = [];
-
-        if (config('app-analytics.views')) {
-            $views = [
-                (new Metrics\PerDay)
-                    ->model(SummaryView::class)
-                    ->trigger(\App\Models\Shortcut::class)
-                    ->setName('Total Views'),
-
-                (new Metrics\PerDayPerResource)
-                    ->model(SummaryView::class)
-                    ->trigger(\App\Models\Shortcut::class)
-                    ->setName('Views')
-                    ->onlyOnDetail(),
-            ];
-        }
-
-        if (config('app-analytics.installs')) {
-            $installs = [
-                (new Metrics\PerDay)
-                    ->model(SummaryInstall::class)
-                    ->trigger(\App\Models\Shortcut::class)
-                    ->setName('Total Installs'),
-
-                (new Metrics\PerDayPerResource)
-                    ->model(SummaryInstall::class)
-                    ->trigger(\App\Models\Shortcut::class)
-                    ->setName('Installs')
-                    ->onlyOnDetail(),
-            ];
-        }
-
-        $res = array_merge($views, $installs);
-
-        return $res;
+        return $this->statCards(['view', 'install']);
     }
 
     /**

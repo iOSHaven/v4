@@ -1,6 +1,6 @@
 <?php
 
-function format_int(int $number, string $type = null)
+function format_my_int(int $number, string $type = null)
 {
     if ($number > 999999999) {
         return number_format($number / 1000000000, 1).($type == 'file' ? 'gb' : 'b');
