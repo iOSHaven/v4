@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\App;
 use App\Models\Post;
+use App\Models\Shortcut;
 use App\Models\Skin;
 use Auth;
 use DOMDocument;
@@ -11,6 +13,7 @@ use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\View;
 use Session;
 use Str;
 
@@ -33,7 +36,7 @@ class StaticPageController extends Controller
     {
         $contents = View::make('sitemap')
             ->with([
-                'apps' => \App\Models\App::with(['itms', 'ipas'])->get(),
+                'apps' => App::with(['itms', 'ipas'])->get(),
                 'shortcuts' => Shortcut::get(),
                 'posts' => Post::get(),
                 // "itms" => Itms::get(),
