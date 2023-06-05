@@ -94,7 +94,7 @@ class PerDayPerResource extends Trend
         );
 
         $buffer = array_slice($buffer, $dayOfWeek, -$offset);
-        
+
         $trend = [];
         $total = 0;
 
@@ -135,6 +135,7 @@ class PerDayPerResource extends Trend
     public function cacheFor()
     {
         return now();
+
         return now()->addHours(config('app-analytics.cache'));
     }
 

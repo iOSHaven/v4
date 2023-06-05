@@ -96,7 +96,7 @@ class PerDay extends Trend
             fn ($c, $v) => array_merge($c, $v->buffer),
             []
         );
-        
+
         $buffer = array_slice($buffer, $dayOfWeek, -$offset);
 
         $trend = [];
@@ -139,6 +139,7 @@ class PerDay extends Trend
     public function cacheFor()
     {
         return now();
+
         return now()->addMinutes(config('app-analytics.cache'));
     }
 
