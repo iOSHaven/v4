@@ -49,9 +49,9 @@ class CreateViewSummaryTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('summary_views');
-        Schema::dropIfExists('summary_downloads');
-        Schema::dropIfExists('summary_installs');
+        Schema::dropIfExists('summary_view');
+        Schema::dropIfExists('summary_download');
+        Schema::dropIfExists('summary_install');
         Schema::dropIfExists('summary_uses');
     }
 }

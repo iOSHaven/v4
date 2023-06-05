@@ -23,8 +23,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('summarize:analytics')
-            ->cron('0 */2 * * *')->withoutOverlapping();
+        //
     }
 
     /**
