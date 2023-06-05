@@ -138,8 +138,6 @@ class PerDay extends Trend
      */
     public function cacheFor()
     {
-        return now();
-
         return now()->addMinutes(config('app-analytics.cache'));
     }
 
