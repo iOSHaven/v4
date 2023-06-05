@@ -28,7 +28,7 @@ class StatBuffer extends Model
         return $this->morphTo('target');
     }
 
-    public static function queryBufferAsArray($min, $max, $order = 'desc')
+    public static function queryBufferAsArray($min, $max, $order = 'asc')
     {
         $range = match ($order) {
             'asc' => range($min, $max),
@@ -44,7 +44,7 @@ class StatBuffer extends Model
         return DB::raw($dailyValues);
     }
 
-    public function scopeBuffers($query, $startingDate, $endDate = null, $order = 'desc')
+    public function scopeBuffers($query, $startingDate, $endDate = null, $order = 'asc')
     {
         return $query
             ->whereBetween('created_at', [$startingDate, $endDate ?? now()])
