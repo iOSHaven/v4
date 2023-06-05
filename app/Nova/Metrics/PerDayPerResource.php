@@ -134,8 +134,6 @@ class PerDayPerResource extends Trend
      */
     public function cacheFor()
     {
-        return now();
-
         return now()->addHours(config('app-analytics.cache'));
     }
 
