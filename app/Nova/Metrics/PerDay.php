@@ -80,12 +80,14 @@ class PerDay extends Trend
 
     public function calculate(NovaRequest $request)
     {
+        $dayOfWeek = now()->dayOfWeek + 1;
+        $offset = 7 - $dayOfWeek;
         $startingDate = $this->getAggregateStartingDate($request, self::BY_DAYS);
 
         $query = static::queryStatBuffer(
             relation: $this->relation(),
             event: $this->event?->value ?? 'view',
-            startingDate: $startingDate,
+            startingDate: $startingDate->subDays($offset),
             trigger: $this->trigger,
             user: Auth::user()
         );
@@ -94,6 +96,8 @@ class PerDay extends Trend
             fn ($c, $v) => array_merge($c, $v->buffer),
             []
         );
+
+        $buffer = array_slice($buffer, $dayOfWeek, -$offset);
 
         $trend = [];
         $total = 0;
@@ -134,6 +138,8 @@ class PerDay extends Trend
      */
     public function cacheFor()
     {
+        return now();
+
         return now()->addMinutes(config('app-analytics.cache'));
     }
 
