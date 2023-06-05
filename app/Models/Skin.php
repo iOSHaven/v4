@@ -2,11 +2,12 @@
 
 namespace App\Models;
 
+use App\Models\Stats\Target;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
-class Skin extends Model
+class Skin extends Model implements Target
 {
     use HasFactory;
 

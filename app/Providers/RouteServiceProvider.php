@@ -53,7 +53,7 @@ class RouteServiceProvider extends ServiceProvider
         $supportedLocales = implode('|', array_keys(config('localization.supportedLocales')));
         Route::prefix('{localeIdentifier}')
             ->name('locale.')
-            ->where(['localeIdentifier' => "$supportedLocales"])
+            ->where(['localeIdentifier' => "{$supportedLocales}"])
             ->middleware(['web', 'setLocale', 'useLocale'])
             ->group(base_path('routes/localization.php'));
     }

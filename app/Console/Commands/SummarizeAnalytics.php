@@ -40,7 +40,7 @@ class SummarizeAnalytics extends Command
 
     private function analyticTable($class, $summaryClass, $column = null, $summary = null)
     {
-        $column = $column ?? Str::plural(strtolower(class_basename($class)));
+        $column ??= Str::plural(strtolower(class_basename($class)));
 
         $query = $class::whereColumn('created_at', '>=', 'updated_at')
             ->whereDate('created_at', '>', now()->subDays(90))

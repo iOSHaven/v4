@@ -13,7 +13,7 @@ class ContactController extends Controller
     public function view($type = 'index')
     {
         // Types include: general, request, bug
-        return view("contact.$type");
+        return view("contact.{$type}");
     }
 
     public function send($type, Request $r)
@@ -31,7 +31,7 @@ class ContactController extends Controller
         $client = new Client();
 
         $payload = [
-            'username' => "**$type** iOS Haven",
+            'username' => "**{$type}** iOS Haven",
             'embeds' => [
                 [
                     'title' => $r->title,

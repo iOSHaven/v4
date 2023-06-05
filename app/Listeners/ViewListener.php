@@ -2,9 +2,9 @@
 
 namespace App\Listeners;
 
+use App\Actions\Stats\RecordEvent;
 use App\Events\ViewEvent;
-use App\Summary\SummaryView;
-use Illuminate\Support\Facades\DB;
+use App\Models\Enums\Stats\Event;
 
 class ViewListener
 {
@@ -16,15 +16,10 @@ class ViewListener
     public function handle(ViewEvent $event)
     {
         if (config('app-analytics.views')) {
-            SummaryView::updateOrCreate([
-                'trigger_id' => $event->model->id,
-                'trigger_type' => get_class($event->model),
-                'created_at' => now()->floorDay(),
-            ], [
-                'amount' => DB::raw('amount + 1'),
-            ]);
+            $stat = resolve(RecordEvent::class)
+                ->execute($event->model, Event::VIEW, now());
 
-            $event->model->impressions += 1;
+            $event->model->impressions = $stat->running_total;
             $event->model->save();
         }
     }

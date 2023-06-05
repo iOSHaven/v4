@@ -103,7 +103,7 @@ class UpdateIosGodsToken extends Command
                     dump($request->getUri());
                     dd($response->getBody()->getContents());
                 } catch (ConnectionException $err) {
-                    dump("TIMEOUT FOR $itms->name");
+                    dump("TIMEOUT FOR {$itms->name}");
                 }
                 $progress->advance();
             }
