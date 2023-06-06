@@ -38,10 +38,10 @@ class TrimAppIcon
             ->path($media->getPathRelativeToRoot($conversion));
 
         $name ??= $conversion;
-        $newPath = Str::before($path, $conversion) .  "{$name}.{$format}";
+        $newPath = Str::before($path, $conversion)."{$name}.{$format}";
         $image = Image::make($path);
         $image->trim('transparent')
             ->fit($size, $size)
-            ->save($newPath, format:$format);
+            ->save($newPath, format: $format);
     }
 }

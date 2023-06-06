@@ -11,7 +11,6 @@ use Illuminate\Support\Str;
 use Laravel\Nova\Fields\File;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Resource as NovaResource;
-use Laravel\Nova\Fields\Image;
 
 abstract class Resource extends NovaResource
 {
@@ -77,7 +76,8 @@ abstract class Resource extends NovaResource
         return $query;
     }
 
-    public static function mediaLibraryImage($label, $relation, $field=null) {
+    public static function mediaLibraryImage($label, $relation, $field = null)
+    {
         return File::make($label)
             ->nullable()
             ->store(function (Request $request, $model) use ($field, $label, $relation) {
@@ -111,7 +111,7 @@ abstract class Resource extends NovaResource
 
                 return true;
             })
-            ->preview(function ($url,$disk,$model) use ($relation) {
+            ->preview(function ($url, $disk, $model) use ($relation) {
                 return $model->$relation()?->getUrl('preview');
             })
             ->thumbnail(function ($url, $disk, $model) use ($relation) {

@@ -3,7 +3,6 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
-use Image;
 use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Markdown;

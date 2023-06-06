@@ -21,6 +21,7 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 class App extends Model implements Target, HasMedia
 {
     use SoftDeletes, Actionable, HasAnalytics, Searchable, HasFactory;
+
     // use StatBuckets;
     use InteractsWithMedia;
 
@@ -80,9 +81,11 @@ class App extends Model implements Target, HasMedia
         return $this->getFirstMedia();
     }
 
-    public function getImageAttribute() {
+    public function getImageAttribute()
+    {
         $preview = $this->iconMedia()?->getUrl('preview') ?? $this->icon;
         $tiny = $this->iconMedia()?->getUrl('tiny') ?? $this->icon;
+
         return "{$preview} 77w, {$tiny} 10w";
     }
 
