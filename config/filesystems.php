@@ -62,6 +62,12 @@ return [
             'bucket' => env('DO_SPACES_BUCKET'),
         ],
 
+        'media' => [
+            'driver' => 'local',
+            'root'   => public_path('media'),
+            'url'    => env('APP_URL').'/media',
+        ],
+
     ],
 
     /*

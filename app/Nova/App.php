@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Image;
 use Laravel\Nova\Fields\Avatar;
 use Laravel\Nova\Fields\BelongsToMany;
 use Laravel\Nova\Fields\Markdown;
@@ -68,6 +69,8 @@ class App extends Resource
                 ->sortable()
                 ->readonly()
                 ->hideWhenCreating(),
+
+            static::mediaLibraryImage('Icon Media', 'iconMedia'),
 
             Avatar::make('icon')
                 ->store($this->handleStorage('/icons', 'icon'))

@@ -58,3 +58,7 @@ data.ms
 .phpunit*
 .env.*
 !.env.example
+
+#images
+public/media
+storage/media-library

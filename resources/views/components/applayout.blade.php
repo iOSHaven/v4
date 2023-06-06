@@ -3,7 +3,7 @@
 
     <a href="{{ "/app/$app->uid" }}" class="absolute top-0 left-0 right-0 bottom-0"></a>
     <div class="flex py-1 pointer-events-none flex-grow">
-      <x-app-icon :src="$app->icon"></x-app-icon>
+      <x-app-icon :src="$app->image"></x-app-icon>
 
 
       <div class="pl-5 w-full relative">
