@@ -2,9 +2,13 @@
 
 namespace App\Nova;
 
+use App\Actions\Media\TrimAppIcon;
 use App\Models\Enums\Stats\Event;
+use Artisan;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use Laravel\Nova\Fields\File;
 use Laravel\Nova\Http\Requests\NovaRequest;
 use Laravel\Nova\Resource as NovaResource;
 
@@ -70,6 +74,61 @@ abstract class Resource extends NovaResource
         }
 
         return $query;
+    }
+
+    public static function mediaLibraryImage($label, $relation, $field = null)
+    {
+        return File::make($label)
+            ->nullable()
+            ->store(function (Request $request, $model) use ($field, $label, $relation) {
+                $field ??= Str::slug(strtolower($label), '_');
+                $model->media()->delete();
+                $model->addMediaFromRequest($field)
+                    ->withResponsiveImages()
+                    ->toMediaCollection();
+
+                resolve(TrimAppIcon::class)->execute(
+                    media: $model->$relation(),
+                    conversion: 'preview',
+                    size: 77
+                );
+
+                resolve(TrimAppIcon::class)->execute(
+                    media: $model->$relation(),
+                    conversion: 'tiny',
+                    size: 10
+                );
+
+                resolve(TrimAppIcon::class)->execute(
+                    media: $model->$relation(),
+                    conversion: 'thumb',
+                    size: 50
+                );
+
+                // Artisan::call('media-library:regenerate', [
+                //     '--ids' => $model->$relation()->id
+                // ]);
+
+                return true;
+            })
+            ->preview(function ($url, $disk, $model) use ($relation) {
+                return $model->$relation()?->getUrl('preview');
+            })
+            ->thumbnail(function ($url, $disk, $model) use ($relation) {
+                return $model->$relation()?->getUrl('thumb');
+            })
+            ->download(function (Request $request, $model) {
+                $photo = $model->getFirstMedia();
+
+                return response()->download($photo->getPath(), $photo->file_name);
+            })
+            ->deletable(true)
+            ->delete(function (Request $request, $model) {
+                $model->media()->delete();
+
+                return true;
+            })
+            ->required();
     }
 
     public function handleStorage(string $folder, string $icon = 'icon')

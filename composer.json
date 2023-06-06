@@ -36,6 +36,7 @@
         "http-interop/http-factory-guzzle": "^1.2",
         "inertiajs/inertia-laravel": "^0.5.2",
         "inspheric/nova-url-field": "*",
+        "intervention/image": "^2.7",
         "ioshaven/plist": "*",
         "ioshaven/v4": "*",
         "jenssegers/agent": "^2.6",
@@ -52,6 +53,7 @@
         "meilisearch/meilisearch-php": "^0.24.0",
         "paypal/rest-api-sdk-php": " *",
         "rap2hpoutre/laravel-log-viewer": "^2.2",
+        "spatie/laravel-medialibrary": "^10.0.0",
         "spatie/laravel-queueable-action": "^2.14",
         "staudenmeir/eloquent-has-many-deep": "^1.15",
         "tightenco/ziggy": "^1.0"

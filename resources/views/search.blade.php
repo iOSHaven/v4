@@ -42,7 +42,7 @@
         @foreach($apps as $app)
             <li class="flex items-center justify-between w-full md:w-1/2 lg:w-1/3 px-3">
                 <a href="/apps/{{$app->uid}}" class="w-full flex items-center justify-start overflow-hidden py-3">
-                    <img src="{{ $app->icon }}" alt="" class="rounded-lg w-[40px] h-[40px] mr-3">
+                    <img src="{{ $app->image }}" alt="" class="rounded-lg w-[40px] h-[40px] mr-3">
                     <div>{{ $app->name }}</div>
                 </a>
                 <div class="-ml-4">
