@@ -45,6 +45,8 @@ class TrimAppIcon
             ->trim('transparent')
             ->fit($size, $size);
 
-        Storage::disk($disk)->put($newPath, $image->stream($format));
+        Storage::disk($disk)->put($newPath, $image->stream($format), [
+            'visibility' => 'public',
+        ]);
     }
 }
