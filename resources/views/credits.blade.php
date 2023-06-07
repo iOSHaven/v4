@@ -96,7 +96,7 @@
                 {{--      @dump($provider)--}}
                 <li class="flex items-center justify-center p-3">
                     <div class="w-2/3 flex items-center">
-                        <x-tinyProviderIcon :src="$provider->avatar" class="mr-2"></x-tinyProviderIcon>
+                        <x-tinyProviderIcon :src="$provider->avatar" class="mr-2 h-[20px]"></x-tinyProviderIcon>
                         <div>{{ $provider->name }}</div>
                     </div>
                     <div class="w-1/3 text-right">

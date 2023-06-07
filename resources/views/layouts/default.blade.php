@@ -162,7 +162,7 @@
 
     @include('layouts.footer')
     <!-- Scripts -->
-    <script type="text/javascript" src="{{ asset('js/app.js') }}?v=0.1"></script>
-    <script type="text/javascript" src="{{ asset('js/main.js') }}?v=0.1"></script>
+    <script type="text/javascript" src="{{ asset('js/app.js') }}?v=0.1" defer></script>
+    <script type="text/javascript" src="{{ asset('js/main.js') }}?v=0.1" defer></script>
 </body>
 </html>

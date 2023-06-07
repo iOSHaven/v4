@@ -6438,6 +6438,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lozad@npm:^1.16.0":
+  version: 1.16.0
+  resolution: "lozad@npm:1.16.0"
+  checksum: a6b5146a86dd5745b3eb33bc88ee06e1d210b93af8335f0af51628a448fce718e2fb0c8465b190298c5ce6c2bd8d39934a689a281dd0f5f759faf1bc96c5c769
+  languageName: node
+  linkType: hard
+
 "lru-cache@npm:^4.0.1, lru-cache@npm:^4.1.2":
   version: 4.1.5
   resolution: "lru-cache@npm:4.1.5"
@@ -8696,6 +8703,7 @@ __metadata:
     laravel-mix: ^6.0.39
     laravel-vite-plugin: ^0.5.2
     lodash: ^4.17.21
+    lozad: ^1.16.0
     marked: ^4.0.8
     mobile-pull-to-refresh: ^0.2.2
     node-fetch: ^3.1.0

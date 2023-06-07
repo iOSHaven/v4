@@ -34,14 +34,17 @@ class TrimAppIcon
         string $format = 'png',
         int $size = 77
     ) {
-        $path = Storage::disk(config('media-library.disk_name'))
+        $disk = config('media-library.disk_name');
+
+        $path = Storage::disk($disk)
             ->path($media->getPathRelativeToRoot($conversion));
 
         $name ??= $conversion;
         $newPath = Str::before($path, $conversion)."{$name}.{$format}";
-        $image = Image::make($path);
-        $image->trim('transparent')
-            ->fit($size, $size)
-            ->save($newPath, format: $format);
+        $image = Image::make($media->stream())
+            ->trim('transparent')
+            ->fit($size, $size);
+
+        Storage::disk($disk)->put($newPath, $image->stream($format));
     }
 }
