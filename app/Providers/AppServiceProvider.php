@@ -7,6 +7,7 @@ use Bluemmb\Faker\PicsumPhotosProvider;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Blade;
+use Illuminate\Support\Facades\Vite;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -50,6 +51,9 @@ class AppServiceProvider extends ServiceProvider
         $faker->addProvider(PicsumPhotosProvider::class);
         ProviderCollectionHelper::addAllProvidersTo($faker);
 
+        Vite::useScriptTagAttributes([
+            'defer' => true, // Specify an attribute without a value...
+        ]);
     }
 
     /**

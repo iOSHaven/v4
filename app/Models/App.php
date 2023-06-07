@@ -81,7 +81,12 @@ class App extends Model implements Target, HasMedia
         return $this->getFirstMedia();
     }
 
-    public function getImageAttribute()
+    public function getPreviewImageAttribute()
+    {
+        return $this->iconMedia()?->getUrl('preview') ?? $this->icon;
+    }
+
+    public function getImageSrcSetAttribute()
     {
         $preview = $this->iconMedia()?->getUrl('preview') ?? $this->icon;
         $tiny = $this->iconMedia()?->getUrl('tiny') ?? $this->icon;
