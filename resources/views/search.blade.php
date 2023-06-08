@@ -58,7 +58,7 @@
     <ul class="flex flex-wrap -mx-1 divide-y divide-gray-200">
         @foreach($shortcuts as $shorcut)
             <li class="flex items-center justify-between w-full md:w-1/2 lg:w-1/3 px-3">
-                <a href="/shortcuts/{{$shorcut->uid}}" class="w-full flex items-center justify-start overflow-hidden py-3">
+                <a href="/shortcuts/{{$shorcut->itunes_id}}" class="w-full flex items-center justify-start overflow-hidden py-3">
                     <img src="{{ $shorcut->icon }}" alt="" class="rounded-lg w-[40px] h-[40px] mr-3">
                     <div>{{ $shorcut->name }}</div>
                 </a>
