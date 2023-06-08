@@ -4,6 +4,17 @@ import "./autocomplete";
 import PullToRefresh from 'pulltorefreshjs';
 import { disablePageScroll, enablePageScroll, getScrollState } from 'scroll-lock';
 import 'framework7-icons';
+import lozad from 'lozad'
+
+window.observer = lozad('.lazy-image', {
+   loaded: function(el) {
+       // Custom implementation on a loaded element
+       console.log('loaded lazy image')
+       el.classList.add('loaded');
+   }
+});
+
+window.observer.observe();
 
 var breakpoint = 768;
 if (window.innerWidth < breakpoint) {

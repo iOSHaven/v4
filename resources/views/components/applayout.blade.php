@@ -3,15 +3,16 @@
 
     <a href="{{ "/app/$app->uid" }}" class="absolute top-0 left-0 right-0 bottom-0"></a>
     <div class="flex py-1 pointer-events-none flex-grow">
-      <x-app-icon :src="$app->icon"></x-app-icon>
+      <x-app-icon :src="$app->previewImage" :srcset="$app->imageSrcSet"></x-app-icon>
 
 
       <div class="pl-5 w-full relative">
         <div class="text-black dark:text-white">{{ $app->name }}</div>
         <div class="leading-none text-sm text-gray-500">{{ $app->short }}</div>
-        <div class="flex items-center justify-start mt-1">
+        <div class="flex items-center justify-start mt-1 space-x-1">
           @foreach($app->providers as $provider)
-            @component('components.tinyProviderIcon', ["provider" => $provider])@endcomponent
+            <x-tinyProviderIcon :src="$provider?->avatar" class="h-[20px]" />
+            {{-- @component('components.tinyProviderIcon', ["provider" => $provider])@endcomponent --}}
           @endforeach
         </div>
         <div class="pt-4 z-1 relative">

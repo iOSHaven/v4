@@ -69,6 +69,8 @@ class App extends Resource
                 ->readonly()
                 ->hideWhenCreating(),
 
+            static::mediaLibraryImage('Icon Media', 'iconMedia'),
+
             Avatar::make('icon')
                 ->store($this->handleStorage('/icons', 'icon'))
                 ->thumbnail($this->handleIcon($this->icon))

@@ -13,11 +13,17 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Laravel\Nova\Actions\Actionable;
 use Laravel\Scout\Searchable;
+use Spatie\Image\Manipulations;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class App extends Model implements Target
+class App extends Model implements Target, HasMedia
 {
     use SoftDeletes, Actionable, HasAnalytics, Searchable, HasFactory;
+
     // use StatBuckets;
+    use InteractsWithMedia;
 
     protected $fillable = [
         'name',
@@ -45,6 +51,47 @@ class App extends Model implements Target
     public function searchableAs()
     {
         return config('app.env').'-apps';
+    }
+
+    public function registerMediaConversions(Media $media = null): void
+    {
+        $this
+            ->addMediaConversion('tiny')
+            ->keepOriginalImageFormat()
+            ->fit(Manipulations::FIT_CROP, 10, 10)
+            ->nonQueued();
+
+        $this
+            ->addMediaConversion('preview')
+            ->keepOriginalImageFormat()
+            ->fit(Manipulations::FIT_CROP, 77, 77)
+            ->nonQueued();
+
+        $this
+            ->addMediaConversion('thumb')
+            ->keepOriginalImageFormat()
+            ->fit(Manipulations::FIT_CROP, 50, 50)
+            ->nonQueued();
+    }
+
+    public function iconMedia()
+    {
+        $this->loadMissing('media');
+
+        return $this->getFirstMedia();
+    }
+
+    public function getPreviewImageAttribute()
+    {
+        return $this->iconMedia()?->getUrl('preview') ?? $this->icon;
+    }
+
+    public function getImageSrcSetAttribute()
+    {
+        $preview = $this->iconMedia()?->getUrl('preview') ?? $this->icon;
+        $tiny = $this->iconMedia()?->getUrl('tiny') ?? $this->icon;
+
+        return "{$preview} 77w, {$tiny} 10w";
     }
 
     public static function findByUid($uid)
