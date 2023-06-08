@@ -2,6 +2,6 @@
 
 namespace App\Lib\Import\Concerns;
 
-interface SubscribesToEvents {
-    
+interface SubscribesToEvents
+{
 }
